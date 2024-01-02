@@ -42,7 +42,7 @@ public class FameGainProcedure {
 					});
 				}
 				if (sourceentity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal(("Earned " + entity.getPersistentData().getDouble("famegain") + " More Fame.")), true);
+					_player.displayClientMessage(Component.literal(("Earned " + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("famegain")) + " More Fame.")), true);
 			}
 		}
 	}
