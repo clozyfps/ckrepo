@@ -1,6 +1,20 @@
 package net.mcreator.craftkaisen.procedures;
 
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.event.TickEvent;
+
+import net.minecraft.world.level.GameType;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.client.Minecraft;
+
+import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
 
 import javax.annotation.Nullable;
 
@@ -36,13 +50,6 @@ public class SetStatsProcedure {
 			});
 		}
 		{
-			double _setval = 10 + (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).energyControl * 10;
-			entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.maxOutput = _setval;
-				capability.syncPlayerVariables(entity);
-			});
-		}
-		{
 			double _setval = 100 + (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).level * 20;
 			entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 				capability.maxExp = _setval;
@@ -50,6 +57,15 @@ public class SetStatsProcedure {
 			});
 		}
 		entity.getPersistentData().putDouble("rep", ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).reputation));
+		if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).energyControl != 9) {
+			{
+				double _setval = 10 + (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).energyControl * 10;
+				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.maxOutput = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+		}
 		if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy > (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new CraftKaisenModVariables.PlayerVariables())).maxCursedEnergy) {
 			{
