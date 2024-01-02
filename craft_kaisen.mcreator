@@ -12369,34 +12369,6 @@
       "path": "~/GUI"
     },
     {
-      "name": "RenderVoid",
-      "type": "procedure",
-      "sortid": 560,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "render_void",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/craftkaisen/procedures/RenderVoidProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "pose",
-            "type": "pose"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/Dimensions"
-    },
-    {
       "name": "CursedSpiritOrb",
       "type": "item",
       "sortid": 562,
@@ -17501,21 +17473,6 @@
       "path": "~/Procedures"
     },
     {
-      "name": "RatioParticle",
-      "type": "particle",
-      "sortid": 758,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "ratio_particle",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/particle/RatioParticleParticle.java",
-          "src/main/resources/assets/craft_kaisen/particles/ratio_particle.json"
-        ]
-      },
-      "path": "~/Particles"
-    },
-    {
       "name": "RatioHit",
       "type": "procedure",
       "sortid": 759,
@@ -17554,6 +17511,539 @@
         ]
       },
       "path": "~/Particles"
+    },
+    {
+      "name": "RatioParticle",
+      "type": "particle",
+      "sortid": 758,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ratio_particle",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/particle/RatioParticleParticle.java",
+          "src/main/resources/assets/craft_kaisen/particles/ratio_particle.json"
+        ]
+      },
+      "path": "~/Particles"
+    },
+    {
+      "name": "DisplayBar11",
+      "type": "procedure",
+      "sortid": 770,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_bar_11",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayBar11Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "DisplayBar10",
+      "type": "procedure",
+      "sortid": 769,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_bar_10",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayBar10Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "DisplayBar12",
+      "type": "procedure",
+      "sortid": 771,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_bar_12",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayBar12Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "DisplayBar1",
+      "type": "procedure",
+      "sortid": 760,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_bar_1",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayBar1Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "DisplayBar2",
+      "type": "procedure",
+      "sortid": 761,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_bar_2",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayBar2Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "DisplayBar3",
+      "type": "procedure",
+      "sortid": 762,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_bar_3",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayBar3Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "DisplayBar4",
+      "type": "procedure",
+      "sortid": 763,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_bar_4",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayBar4Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "DisplayBar5",
+      "type": "procedure",
+      "sortid": 764,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_bar_5",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayBar5Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "Ldawda",
+      "type": "item",
+      "sortid": 773,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ldawda",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/item/LdawdaItem.java",
+          "src/main/resources/assets/craft_kaisen/models/item/ldawda.json"
+        ]
+      },
+      "path": "~/Items"
+    },
+    {
+      "name": "DisplayBar6",
+      "type": "procedure",
+      "sortid": 765,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_bar_6",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayBar6Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "DisplayBar7",
+      "type": "procedure",
+      "sortid": 766,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_bar_7",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayBar7Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "DisplayBar8",
+      "type": "procedure",
+      "sortid": 767,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_bar_8",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayBar8Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "DisplayBar9",
+      "type": "procedure",
+      "sortid": 768,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_bar_9",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayBar9Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "LdawdaRightclicked",
+      "type": "procedure",
+      "sortid": 772,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ldawda_rightclicked",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/LdawdaRightclickedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Items"
+    },
+    {
+      "name": "DisplayOutput10",
+      "type": "procedure",
+      "sortid": 783,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_output_10",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayOutput10Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "DisplayOutput2",
+      "type": "procedure",
+      "sortid": 775,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_output_2",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayOutput2Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "DisplayOutput1",
+      "type": "procedure",
+      "sortid": 774,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_output_1",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayOutput1Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "DisplayOutput8",
+      "type": "procedure",
+      "sortid": 781,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_output_8",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayOutput8Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "DisplayBarEmpty",
+      "type": "procedure",
+      "sortid": 759,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_bar_empty",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayBarEmptyProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "DisplayOutput7",
+      "type": "procedure",
+      "sortid": 780,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_output_7",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayOutput7Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "DisplayOutput9",
+      "type": "procedure",
+      "sortid": 782,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_output_9",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayOutput9Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "DisplayOutput4",
+      "type": "procedure",
+      "sortid": 777,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_output_4",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayOutput4Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "DisplayOutput3",
+      "type": "procedure",
+      "sortid": 776,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_output_3",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayOutput3Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "DisplayOutput6",
+      "type": "procedure",
+      "sortid": 779,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_output_6",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayOutput6Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "DisplayOutput5",
+      "type": "procedure",
+      "sortid": 778,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_output_5",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayOutput5Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
     }
   ],
   "variable_elements": [
@@ -18378,6 +18868,7 @@
       "item.craft_kaisen.roppongi_cursed_spirit_spawn_egg": "Roppongi Cursed Spirit Spawn Egg",
       "advancements.grade_1.descr": "Reach The Required Fame.",
       "advancements.fearsome_womb.title": "Fearsome Womb",
+      "item.craft_kaisen.ldawda": "Ldawda",
       "item.craft_kaisen.miwa_katana": "Miwa Katana",
       "advancements.perfect_preparation.title": "Perfect Preparation",
       "item.craft_kaisen.yuta_okkotsu_spawn_egg": "Yuta Okkotsu Spawn Egg",
@@ -18522,6 +19013,10 @@
             "children": []
           },
           {
+            "name": "Weapon",
+            "children": []
+          },
+          {
             "name": "SukunaVessel",
             "children": []
           },
@@ -18569,25 +19064,16 @@
           {
             "name": "Cursed Energy",
             "children": []
-          },
-          {
-            "name": "Weapon",
-            "children": []
-          }
-        ]
-      },
-      {
-        "name": "Gamerules",
-        "children": [
-          {
-            "name": "Procedures",
-            "children": []
           }
         ]
       },
       {
         "name": "Procedures",
         "children": [
+          {
+            "name": "Quests",
+            "children": []
+          },
           {
             "name": "movelists",
             "children": []
@@ -18606,10 +19092,6 @@
           },
           {
             "name": "RepEvent",
-            "children": []
-          },
-          {
-            "name": "Quests",
             "children": []
           }
         ]
@@ -18633,10 +19115,6 @@
         ]
       },
       {
-        "name": "Tags",
-        "children": []
-      },
-      {
         "name": "GUI",
         "children": [
           {
@@ -18649,6 +19127,48 @@
             ]
           }
         ]
+      },
+      {
+        "name": "Weapons",
+        "children": [
+          {
+            "name": "Procedures",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Creative Tabs",
+        "children": []
+      },
+      {
+        "name": "Particles",
+        "children": []
+      },
+      {
+        "name": "Structure",
+        "children": []
+      },
+      {
+        "name": "Recipe",
+        "children": []
+      },
+      {
+        "name": "Gamerules",
+        "children": [
+          {
+            "name": "Procedures",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Projectile",
+        "children": []
+      },
+      {
+        "name": "Tags",
+        "children": []
       },
       {
         "name": "Overlay",
@@ -18669,15 +19189,6 @@
         "children": []
       },
       {
-        "name": "Weapons",
-        "children": [
-          {
-            "name": "Procedures",
-            "children": []
-          }
-        ]
-      },
-      {
         "name": "Items",
         "children": [
           {
@@ -18685,14 +19196,6 @@
             "children": []
           }
         ]
-      },
-      {
-        "name": "Creative Tabs",
-        "children": []
-      },
-      {
-        "name": "Particles",
-        "children": []
       },
       {
         "name": "Functions",
@@ -18721,10 +19224,6 @@
         ]
       },
       {
-        "name": "Structure",
-        "children": []
-      },
-      {
         "name": "Mobs",
         "children": [
           {
@@ -18740,10 +19239,6 @@
             "children": []
           }
         ]
-      },
-      {
-        "name": "Recipe",
-        "children": []
       },
       {
         "name": "Keybinds",
@@ -18762,10 +19257,6 @@
             "children": []
           }
         ]
-      },
-      {
-        "name": "Projectile",
-        "children": []
       }
     ]
   },

@@ -7,40 +7,6 @@
       {
         "type": "label",
         "data": {
-          "name": "label_proc_return_ce_overlay",
-          "text": {
-            "fixedValue": "",
-            "name": "ReturnCEOverlay"
-          },
-          "color": {
-            "value": -16737895,
-            "falpha": 0.0
-          },
-          "anchorPoint": "CENTER",
-          "x": 309,
-          "y": 218
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "name": "label_proc_return_output",
-          "text": {
-            "fixedValue": "",
-            "name": "ReturnOutput"
-          },
-          "color": {
-            "value": -1,
-            "falpha": 0.0
-          },
-          "anchorPoint": "CENTER",
-          "x": 309,
-          "y": 209
-        }
-      },
-      {
-        "type": "label",
-        "data": {
           "name": "label_target_one_na",
           "text": {
             "fixedValue": "Target One : N/A",
@@ -77,6 +43,315 @@
           "x": 24,
           "y": 215
         }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "cebarlayer12.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayBarEmpty"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "cebarlayer11.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayBar1"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "cebarlayer10.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayBar2"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "cebarlayer9.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayBar3"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "cebarlayer8.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayBar4"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "cebarlayer7.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayBar5"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "cebarlayer6.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayBar6"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "cebarlayer5.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayBar7"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "cebarlayer4.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayBar8"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "cebarlayer3.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayBar9"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "cebarlayer2.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayBar10"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "cebarlayer1.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayBar11"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "cebar.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayBar12"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "hotbarv.png",
+          "use1Xscale": true,
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "output1.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayOutput1"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "output2.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayOutput2"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "output3.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayOutput3"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "output4.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayOutput4"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "output5.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayOutput5"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "output6.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayOutput6"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "output7.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayOutput7"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "output8.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayOutput8"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "output9.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayOutput9"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "output10.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayOutput10"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
       }
     ],
     "baseTexture": "",
@@ -86,7 +361,7 @@
       "sy": 18,
       "ox": 11,
       "oy": 15,
-      "snapOnGrid": true
+      "snapOnGrid": false
     }
   }
 }
