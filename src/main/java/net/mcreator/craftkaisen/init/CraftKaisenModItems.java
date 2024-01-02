@@ -42,6 +42,7 @@ import net.mcreator.craftkaisen.item.NaginataItem;
 import net.mcreator.craftkaisen.item.MiwaKatanaItem;
 import net.mcreator.craftkaisen.item.MedicineItem;
 import net.mcreator.craftkaisen.item.MahoragaWheelItem;
+import net.mcreator.craftkaisen.item.LdawdaItem;
 import net.mcreator.craftkaisen.item.LapseBlueRangedItem;
 import net.mcreator.craftkaisen.item.JujutsuSorcererUniformItem;
 import net.mcreator.craftkaisen.item.InvertedSpearItem;
@@ -188,6 +189,7 @@ public class CraftKaisenModItems {
 	public static final RegistryObject<Item> ROOT_PROJECTILE = REGISTRY.register("root_projectile", () -> new RootProjectileItem());
 	public static final RegistryObject<Item> STRONGHIT = REGISTRY.register("stronghit", () -> new StronghitItem());
 	public static final RegistryObject<Item> LAPSE_BLUE_RANGED = REGISTRY.register("lapse_blue_ranged", () -> new LapseBlueRangedItem());
+	public static final RegistryObject<Item> LDAWDA = REGISTRY.register("ldawda", () -> new LdawdaItem());
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));

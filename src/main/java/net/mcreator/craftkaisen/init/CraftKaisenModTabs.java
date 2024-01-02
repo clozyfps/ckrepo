@@ -118,6 +118,7 @@ public class CraftKaisenModTabs {
 					tabData.accept(CraftKaisenModItems.PHONE.get());
 					tabData.accept(CraftKaisenModItems.MEDICINE.get());
 					tabData.accept(CraftKaisenModItems.CURSED_TEDDY_BEAR.get());
+					tabData.accept(CraftKaisenModItems.LDAWDA.get());
 				}).withSearchBar());
 		event.registerCreativeModeTab(new ResourceLocation("craft_kaisen", "ck_blocks"),
 				builder -> builder.title(Component.translatable("item_group.craft_kaisen.ck_blocks")).icon(() -> new ItemStack(CraftKaisenModBlocks.BARRIER_BLOCK.get())).displayItems((parameters, tabData) -> {

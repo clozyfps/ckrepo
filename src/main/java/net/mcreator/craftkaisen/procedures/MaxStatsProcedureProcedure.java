@@ -16,14 +16,14 @@ public class MaxStatsProcedureProcedure {
 			});
 		}
 		{
-			double _setval = 100000;
+			double _setval = 5000;
 			entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 				capability.cursedEnergyStat = _setval;
 				capability.syncPlayerVariables(entity);
 			});
 		}
 		{
-			double _setval = 100000;
+			double _setval = 5000;
 			entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 				capability.maxCursedEnergy = _setval;
 				capability.syncPlayerVariables(entity);
@@ -51,28 +51,28 @@ public class MaxStatsProcedureProcedure {
 			});
 		}
 		{
-			double _setval = 100000;
+			double _setval = 100;
 			entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 				capability.maxOutput = _setval;
 				capability.syncPlayerVariables(entity);
 			});
 		}
 		{
-			double _setval = 100000;
+			double _setval = 9;
 			entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 				capability.energyControl = _setval;
 				capability.syncPlayerVariables(entity);
 			});
 		}
 		{
-			double _setval = 100000;
+			double _setval = 100;
 			entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 				capability.currentOutput = _setval;
 				capability.syncPlayerVariables(entity);
 			});
 		}
 		{
-			double _setval = 1000;
+			double _setval = 100;
 			entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 				capability.level = _setval;
 				capability.syncPlayerVariables(entity);
