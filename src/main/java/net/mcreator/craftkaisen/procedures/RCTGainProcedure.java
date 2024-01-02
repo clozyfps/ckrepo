@@ -50,7 +50,7 @@ public class RCTGainProcedure {
 		if (!(entity instanceof ServerPlayer _plr2 && _plr2.level instanceof ServerLevel
 				&& _plr2.getAdvancements().getOrStartProgress(_plr2.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:reversed_cursed_technique"))).isDone())) {
 			if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).maxCursedEnergy >= 75) {
-				if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) <= 8) {
+				if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) <= 4) {
 					if (Math.random() < 0.0006) {
 						if (entity instanceof ServerPlayer _player) {
 							Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:reversed_cursed_technique"));

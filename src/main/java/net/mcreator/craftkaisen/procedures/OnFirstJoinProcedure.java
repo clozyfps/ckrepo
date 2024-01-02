@@ -51,28 +51,21 @@ public class OnFirstJoinProcedure {
 				});
 			}
 			{
-				double _setval = 0;
-				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.maxExp = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			{
-				double _setval = 0;
+				double _setval = 2;
 				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.skillPoints = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			{
-				double _setval = 0;
+				double _setval = 10;
 				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.currentCursedEnergy = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			{
-				double _setval = 0;
+				double _setval = 10;
 				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.maxCursedEnergy = _setval;
 					capability.syncPlayerVariables(entity);

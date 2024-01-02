@@ -36,10 +36,10 @@ public class QuestOverlayOverlay {
 		if (QuestOverlayDisplayOverlayIngameProcedure.execute(entity)) {
 			Minecraft.getInstance().font.draw(event.getPoseStack(),
 
-					ReturnCurrentQuestProcedure.execute(entity), w / 2 + -204, h / 2 + -111, -16777216);
+					ReturnCurrentQuestProcedure.execute(entity), w - 155, 7, -16777216);
 			Minecraft.getInstance().font.draw(event.getPoseStack(),
 
-					ReturnCurrentQuestProcedure.execute(entity), w / 2 + -203, h / 2 + -112, -1);
+					ReturnCurrentQuestProcedure.execute(entity), w - 154, 7, -1);
 		}
 	}
 }

@@ -50,6 +50,13 @@ public class BecomeSorcererProcedure {
 						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
+			{
+				String _setval = "Grade 4";
+				sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.Grade = _setval;
+					capability.syncPlayerVariables(sourceentity);
+				});
+			}
 		}
 	}
 }

@@ -16,9 +16,9 @@
             "value": -16777216,
             "falpha": 0.0
           },
-          "anchorPoint": "CENTER",
-          "x": 9,
-          "y": 9
+          "anchorPoint": "TOP_RIGHT",
+          "x": 272,
+          "y": 7
         }
       },
       {
@@ -33,9 +33,9 @@
             "value": -1,
             "falpha": 0.0
           },
-          "anchorPoint": "CENTER",
-          "x": 10,
-          "y": 8
+          "anchorPoint": "TOP_RIGHT",
+          "x": 273,
+          "y": 7
         }
       }
     ],
