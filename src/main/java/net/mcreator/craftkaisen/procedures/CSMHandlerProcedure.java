@@ -49,7 +49,7 @@ public class CSMHandlerProcedure {
 				}
 				v.getOrCreateTag().putString("reg", (ForgeRegistries.ENTITY_TYPES.getKey(entity.getType()).toString()));
 				if (sourceentity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal(("Captured" + ForgeRegistries.ENTITY_TYPES.getKey(entity.getType()).toString())), true);
+					_player.displayClientMessage(Component.literal(("Captured" + entity.getDisplayName().getString())), true);
 			}
 		}
 	}

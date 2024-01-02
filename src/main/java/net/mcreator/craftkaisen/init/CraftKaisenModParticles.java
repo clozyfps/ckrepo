@@ -13,6 +13,7 @@ import net.mcreator.craftkaisen.client.particle.SoundWaveParticle;
 import net.mcreator.craftkaisen.client.particle.SnowflakeParticle;
 import net.mcreator.craftkaisen.client.particle.RedParticleParticle;
 import net.mcreator.craftkaisen.client.particle.RedParticleBigParticle;
+import net.mcreator.craftkaisen.client.particle.RatioParticleParticle;
 import net.mcreator.craftkaisen.client.particle.PurplePulseParticle;
 import net.mcreator.craftkaisen.client.particle.PurpleParticleParticle;
 import net.mcreator.craftkaisen.client.particle.PurpleElectricityParticleParticle;
@@ -58,5 +59,6 @@ public class CraftKaisenModParticles {
 		event.registerSpriteSet(CraftKaisenModParticleTypes.DOMAIN_CLASH_PARTICLE.get(), DomainClashParticleParticle::provider);
 		event.registerSpriteSet(CraftKaisenModParticleTypes.BLACK_FLASH_LIGHTNING.get(), BlackFlashLightningParticle::provider);
 		event.registerSpriteSet(CraftKaisenModParticleTypes.RED_PARTICLE_BIG.get(), RedParticleBigParticle::provider);
+		event.registerSpriteSet(CraftKaisenModParticleTypes.RATIO_PARTICLE.get(), RatioParticleParticle::provider);
 	}
 }

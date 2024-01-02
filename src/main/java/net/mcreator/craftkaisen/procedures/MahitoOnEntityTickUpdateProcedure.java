@@ -3,6 +3,7 @@ package net.mcreator.craftkaisen.procedures;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
@@ -14,6 +15,8 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.core.particles.ParticleTypes;
 
+import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
+import net.mcreator.craftkaisen.entity.MahitoCloneEntity;
 import net.mcreator.craftkaisen.CraftKaisenMod;
 
 import java.util.stream.Collectors;
@@ -42,6 +45,23 @@ public class MahitoOnEntityTickUpdateProcedure {
 						}
 					}
 				});
+			}
+			if (Math.random() < 0.007) {
+				if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) <= 400) {
+					if (!entity.getPersistentData().getBoolean("split")) {
+						entity.getPersistentData().putBoolean("split", true);
+						if (world instanceof ServerLevel _level) {
+							Entity entityToSpawn = new MahitoCloneEntity(CraftKaisenModEntities.MAHITO_CLONE.get(), _level);
+							entityToSpawn.moveTo(x, y, z, 0, 0);
+							entityToSpawn.setYBodyRot(0);
+							entityToSpawn.setYHeadRot(0);
+							entityToSpawn.setDeltaMovement(0, 0, 0);
+							if (entityToSpawn instanceof Mob _mobToSpawn)
+								_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+							_level.addFreshEntity(entityToSpawn);
+						}
+					}
+				}
 			}
 			if (Math.random() < 0.007) {
 				{

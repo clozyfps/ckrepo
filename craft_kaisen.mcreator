@@ -15,22 +15,6 @@
           {
             "name": "entity",
             "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ]
       },
@@ -17497,19 +17481,58 @@
       "path": "~/Projectile"
     },
     {
-      "name": "Testt",
+      "name": "CooldownSet",
       "type": "procedure",
       "sortid": 757,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "testt",
+      "registry_name": "cooldown_set",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/procedures/TesttProcedure.java"
+          "src/main/java/net/mcreator/craftkaisen/procedures/CooldownSetProcedure.java"
         ],
         "dependencies": [
           {
             "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "RatioParticle",
+      "type": "particle",
+      "sortid": 758,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ratio_particle",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/particle/RatioParticleParticle.java",
+          "src/main/resources/assets/craft_kaisen/particles/ratio_particle.json"
+        ]
+      },
+      "path": "~/Particles"
+    },
+    {
+      "name": "RatioHit",
+      "type": "procedure",
+      "sortid": 759,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ratio_hit",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/RatioHitProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
             "type": "entity"
           },
           {
@@ -17529,26 +17552,8 @@
             "type": "world"
           }
         ]
-      }
-    },
-    {
-      "name": "TesttDeath",
-      "type": "procedure",
-      "sortid": 758,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "testt_death",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/craftkaisen/procedures/TesttDeathProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "sourceentity",
-            "type": "entity"
-          }
-        ]
-      }
+      },
+      "path": "~/Particles"
     }
   ],
   "variable_elements": [

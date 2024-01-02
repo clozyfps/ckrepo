@@ -17,10 +17,9 @@ import net.minecraft.util.Mth;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.core.particles.SimpleParticleType;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.BlockPos;
 
-import net.mcreator.craftkaisen.init.CraftKaisenModParticleTypes;
 import net.mcreator.craftkaisen.CraftKaisenMod;
 
 import java.util.stream.Collectors;
@@ -31,54 +30,6 @@ public class ReversalRedProjectileWhileProjectileFlyingTickProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, Entity immediatesourceentity) {
 		if (entity == null || immediatesourceentity == null)
 			return;
-		{
-			// Get the radius of the sphere
-			double radius = 2; // 3 blocks
-			// Set the tolerance for how close to the surface a point must be to create a particle
-			double tolerance = 0.15; // 0.1 blocks
-			for (double xx = -radius; xx <= radius; xx += 0.1) {
-				for (double yy = -radius; yy <= radius; yy += 0.1) {
-					for (double zz = -radius; zz <= radius; zz += 0.1) {
-						if (Math.abs(xx * xx + yy * yy + zz * zz - radius * radius) <= tolerance) {
-							// Calculate the position of the particle
-							double posX = x + xx;
-							double posY = y + yy;
-							double posZ = z + zz;
-							if (true) {
-								if (world instanceof ServerLevel)
-									((ServerLevel) world).sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.RED_PARTICLE.get()), posX, posY, posZ, (int) 1, 0.01, 0.01, 0.01, 0);
-							} else {
-								world.addParticle((SimpleParticleType) (CraftKaisenModParticleTypes.RED_PARTICLE.get()), posX, posY, posZ, 0, 0, 0);
-							}
-						}
-					}
-				}
-			}
-		}
-		{
-			// Get the radius of the sphere
-			double radius = 2; // 3 blocks
-			// Set the tolerance for how close to the surface a point must be to create a particle
-			double tolerance = 0.15; // 0.1 blocks
-			for (double xx = -radius; xx <= radius; xx += 0.1) {
-				for (double yy = -radius; yy <= radius; yy += 0.1) {
-					for (double zz = -radius; zz <= radius; zz += 0.1) {
-						if (Math.abs(xx * xx + yy * yy + zz * zz - radius * radius) <= tolerance) {
-							// Calculate the position of the particle
-							double posX = x + xx;
-							double posY = y + yy;
-							double posZ = z + zz;
-							if (true) {
-								if (world instanceof ServerLevel)
-									((ServerLevel) world).sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.RED_PARTICLE.get()), posX, posY, posZ, (int) 1, 0.01, 0.01, 0.01, 0);
-							} else {
-								world.addParticle((SimpleParticleType) (CraftKaisenModParticleTypes.RED_PARTICLE.get()), posX, posY, posZ, 0, 0, 0);
-							}
-						}
-					}
-				}
-			}
-		}
 		{
 			final Vec3 _center = new Vec3(x, y, z);
 			List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(10 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).collect(Collectors.toList());
@@ -135,5 +86,11 @@ public class ReversalRedProjectileWhileProjectileFlyingTickProcedure {
 			}
 		}
 		immediatesourceentity.setNoGravity(true);
+		if (world instanceof ServerLevel _level)
+			_level.sendParticles(ParticleTypes.EXPLOSION_EMITTER, x, y, z, 25, 4, 3, 4, 0);
+		if (world instanceof ServerLevel _level)
+			_level.sendParticles(ParticleTypes.POOF, x, y, z, 15, 4, 3, 4, 0);
+		if (world instanceof ServerLevel _level)
+			_level.sendParticles(ParticleTypes.CAMPFIRE_COSY_SMOKE, x, y, z, 5, 4, 3, 4, 0);
 	}
 }
