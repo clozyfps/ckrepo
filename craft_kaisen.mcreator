@@ -17493,6 +17493,10 @@
             "type": "entity"
           },
           {
+            "name": "amount",
+            "type": "number"
+          },
+          {
             "name": "x",
             "type": "number"
           },
@@ -17704,8 +17708,8 @@
       "registry_name": "ldawda",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/models/item/ldawda.json",
-          "src/main/java/net/mcreator/craftkaisen/item/LdawdaItem.java"
+          "src/main/java/net/mcreator/craftkaisen/item/LdawdaItem.java",
+          "src/main/resources/assets/craft_kaisen/models/item/ldawda.json"
         ]
       },
       "path": "~/Items"
@@ -17809,6 +17813,22 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -18228,6 +18248,22 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -18315,7 +18351,12 @@
         "files": [
           "src/main/java/net/mcreator/craftkaisen/procedures/RatioMasteryDisplayProcedure.java"
         ],
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
       },
       "path": "~/Overlay/Procedures"
     },
