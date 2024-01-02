@@ -1,0 +1,7 @@
+{
+  "_fv": 57,
+  "_type": "procedure",
+  "definition": {
+    "procedurexml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><xml xmlns=\"https://developers.google.com/blockly/xml\"><variables><variable id=\"xRadius\" type=\"Number\">xRadius</variable><variable id=\"zRadius\" type=\"Number\">zRadius</variable><variable id=\"degree\" type=\"Number\">degree</variable><variable id=\"x_pos\" type=\"Number\">x_pos</variable><variable id=\"y_pos\" type=\"Number\">y_pos</variable><variable id=\"z_pos\" type=\"Number\">z_pos</variable><variable id=\"loop\" type=\"Number\">loop</variable><variable id=\"particleAmount\" type=\"Number\">particleAmount</variable></variables><block deletable=\"false\" type=\"event_trigger\" x=\"40\" y=\"40\"><field name=\"trigger\">no_ext_trigger</field><next><block type=\"call_procedure\"><field name=\"procedure\">SimpleDomainCall</field></block></next></block></xml>"
+  }
+}

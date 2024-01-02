@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "craft_kaisen:block/void",
+    "up": "craft_kaisen:block/void",
+    "north": "craft_kaisen:block/void",
+    "east": "craft_kaisen:block/void",
+    "south": "craft_kaisen:block/void",
+    "west": "craft_kaisen:block/void",
+    "particle": "craft_kaisen:block/void"
+  },
+  "render_type": "solid"
+}

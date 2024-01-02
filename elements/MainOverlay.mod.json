@@ -1,0 +1,92 @@
+{
+  "_fv": 57,
+  "_type": "overlay",
+  "definition": {
+    "priority": "NORMAL",
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_ce_overlay",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnCEOverlay"
+          },
+          "color": {
+            "value": -16737895,
+            "falpha": 0.0
+          },
+          "anchorPoint": "CENTER",
+          "x": 309,
+          "y": 218
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_output",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnOutput"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "anchorPoint": "CENTER",
+          "x": 309,
+          "y": 209
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_target_one_na",
+          "text": {
+            "fixedValue": "Target One : N/A",
+            "name": "ReturnTargetOne"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayBoogieWoogieTargets"
+          },
+          "anchorPoint": "CENTER",
+          "x": 24,
+          "y": 206
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_target_two_na",
+          "text": {
+            "fixedValue": "Target Two : N/A",
+            "name": "ReturnTargetTwo"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayBoogieWoogieTargets"
+          },
+          "anchorPoint": "CENTER",
+          "x": 24,
+          "y": 215
+        }
+      }
+    ],
+    "baseTexture": "",
+    "overlayTarget": "Ingame",
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

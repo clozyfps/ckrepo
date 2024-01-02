@@ -1,0 +1,28 @@
+{
+  "_fv": 57,
+  "_type": "projectile",
+  "definition": {
+    "projectileItem": {
+      "value": "Blocks.AIR"
+    },
+    "showParticles": false,
+    "actionSound": {
+      "value": ""
+    },
+    "igniteFire": false,
+    "power": 2.0,
+    "damage": 10.0,
+    "knockback": 2,
+    "entityModel": "Default",
+    "customModelTexture": "",
+    "onHitsBlock": {
+      "name": "ReversalRedProjectileHitsBlock"
+    },
+    "onHitsEntity": {
+      "name": "ReversalRedProjectileHitsBlock"
+    },
+    "onFlyingTick": {
+      "name": "ReversalRedWhileProjectileFlyingTick"
+    }
+  }
+}

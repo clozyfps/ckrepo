@@ -1,0 +1,31 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "Items.DIAMOND"
+      },
+      {
+        "value": "Items.GOLD_INGOT"
+      },
+      {
+        "value": "Items.NETHERITE_INGOT"
+      },
+      {
+        "value": "Items.TOTEM_OF_UNDYING"
+      },
+      {
+        "value": "Items.GOLDEN_APPLE#0"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "miracle_items",
+    "namespace": "mod"
+  }
+}

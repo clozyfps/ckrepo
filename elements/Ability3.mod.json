@@ -1,0 +1,12 @@
+{
+  "_fv": 57,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "V",
+    "keyBindingName": "Ability 3",
+    "keyBindingCategoryKey": "craft_kaisen",
+    "onKeyPressed": {
+      "name": "Ab3pressed"
+    }
+  }
+}

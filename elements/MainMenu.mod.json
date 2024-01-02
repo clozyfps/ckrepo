@@ -1,0 +1,517 @@
+{
+  "_fv": 57,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 0,
+    "height": 0,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "entitymodel",
+        "data": {
+          "entityModel": {
+            "name": "ReturnPlayer"
+          },
+          "scale": 30,
+          "rotationX": 0,
+          "followMouseMovement": false,
+          "x": 129,
+          "y": 101
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_race_human",
+          "text": {
+            "fixedValue": "Human"
+          },
+          "color": {
+            "value": -11112336,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "ReturnHuman"
+          },
+          "x": 168,
+          "y": 53
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_skillpoints",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnSkillpoints"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 168,
+          "y": 62
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_curse",
+          "text": {
+            "fixedValue": "Curse"
+          },
+          "color": {
+            "value": -11005165,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "ReturnCursedSpirit"
+          },
+          "x": 168,
+          "y": 53
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_exp_display",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnExpDisplay"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 168,
+          "y": 71
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_rep",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnRep"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 168,
+          "y": 80
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_affiliation",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnAffiliation"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 168,
+          "y": 89
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_empty",
+          "text": {
+            "fixedValue": "---------------"
+          },
+          "color": {
+            "value": -11253961,
+            "falpha": 0.0
+          },
+          "x": 168,
+          "y": 116
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_level",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnLevel"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 168,
+          "y": 98
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_special",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnSpecial"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 168,
+          "y": 107
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_strength",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnStrength"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 168,
+          "y": 125
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_health",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnHealth"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 168,
+          "y": 134
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_cursed_energy",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnCursedEnergy"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 168,
+          "y": 152
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_energy_control",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnEnergyControl"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 168,
+          "y": 143
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_speed",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnSpeed"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 168,
+          "y": 161
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_button1png",
+          "image": "button-1.png.png",
+          "hoveredImage": "",
+          "onClick": {
+            "name": "OpenMoves"
+          },
+          "x": 285,
+          "y": 53
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_empty1",
+          "text": {
+            "fixedValue": ">>"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 291,
+          "y": 53
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_cursed_technique",
+          "text": {
+            "fixedValue": "Cursed Technique"
+          },
+          "width": 25,
+          "height": 11,
+          "x": 285,
+          "y": 53
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_smallbutton1png",
+          "image": "smallbutton-1.png.png",
+          "hoveredImage": "",
+          "onClick": {
+            "name": "StrengthButton"
+          },
+          "x": 285,
+          "y": 125
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_smallbutton1png1",
+          "image": "smallbutton-1.png.png",
+          "hoveredImage": "",
+          "onClick": {
+            "name": "HealthButton"
+          },
+          "x": 285,
+          "y": 134
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_smallbutton1png3",
+          "image": "smallbutton-1.png.png",
+          "hoveredImage": "",
+          "onClick": {
+            "name": "ControlButton"
+          },
+          "x": 285,
+          "y": 143
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_smallbutton1png2",
+          "image": "smallbutton-1.png.png",
+          "hoveredImage": "",
+          "onClick": {
+            "name": "EnergyButton"
+          },
+          "x": 285,
+          "y": 152
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_smallbutton1png4",
+          "image": "smallbutton-1.png.png",
+          "hoveredImage": "",
+          "onClick": {
+            "name": "SpeedButton"
+          },
+          "x": 285,
+          "y": 161
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_empty2",
+          "text": {
+            "fixedValue": "+"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 293,
+          "y": 125
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_empty3",
+          "text": {
+            "fixedValue": "+"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 293,
+          "y": 134
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_empty4",
+          "text": {
+            "fixedValue": "+"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 293,
+          "y": 161
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_empty5",
+          "text": {
+            "fixedValue": "+"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 293,
+          "y": 143
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_empty6",
+          "text": {
+            "fixedValue": "+"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 293,
+          "y": 152
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_increases_attack_damage",
+          "text": {
+            "fixedValue": "increases attack damage"
+          },
+          "width": 19,
+          "height": 9,
+          "x": 285,
+          "y": 125
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_increase_max_health",
+          "text": {
+            "fixedValue": "increase max health"
+          },
+          "width": 20,
+          "height": 9,
+          "x": 285,
+          "y": 134
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_increase_max_cursed_energy",
+          "text": {
+            "fixedValue": "increase max cursed energy"
+          },
+          "width": 19,
+          "height": 10,
+          "x": 285,
+          "y": 152
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_increase_energy_regen_rate_and_m",
+          "text": {
+            "fixedValue": "increase energy regen rate and max output"
+          },
+          "width": 19,
+          "height": 9,
+          "x": 285,
+          "y": 143
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_increase_movement_speed",
+          "text": {
+            "fixedValue": "increase movement speed"
+          },
+          "width": 20,
+          "height": 9,
+          "x": 285,
+          "y": 161
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "loloolo.png",
+          "use1Xscale": false,
+          "x": 51,
+          "y": 8
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

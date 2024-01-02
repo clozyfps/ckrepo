@@ -1,0 +1,9 @@
+{
+  "parent": "craft_kaisen:custom/sprinklernew",
+  "textures": {
+    "all": "craft_kaisen:block/sprinkletexture",
+    "particle": "craft_kaisen:block/sprinkletexture",
+    "0": "craft_kaisen:block/sprinkletexture"
+  },
+  "render_type": "solid"
+}

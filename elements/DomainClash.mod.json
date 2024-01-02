@@ -1,0 +1,143 @@
+{
+  "_fv": 57,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 50,
+    "height": 50,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "gui.png",
+          "use1Xscale": false,
+          "x": 124,
+          "y": 29
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_press",
+          "image": "press.png",
+          "hoveredImage": "press2.png",
+          "onClick": {
+            "name": "DomainClashUp"
+          },
+          "displayCondition": {
+            "name": "DisplayDomainNum1"
+          },
+          "x": 163,
+          "y": 73
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_press1",
+          "image": "press.png",
+          "hoveredImage": "press2.png",
+          "onClick": {
+            "name": "DomainClashUp"
+          },
+          "displayCondition": {
+            "name": "DisplayDomainNum2"
+          },
+          "x": 223,
+          "y": 80
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_press2",
+          "image": "press.png",
+          "hoveredImage": "press2.png",
+          "onClick": {
+            "name": "DomainClashUp"
+          },
+          "displayCondition": {
+            "name": "DisplayDomainNum3"
+          },
+          "x": 143,
+          "y": 104
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_press3",
+          "image": "press.png",
+          "hoveredImage": "press2.png",
+          "onClick": {
+            "name": "DomainClashUp"
+          },
+          "displayCondition": {
+            "name": "DisplayDomainNum5"
+          },
+          "x": 190,
+          "y": 132
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_press4",
+          "image": "press.png",
+          "hoveredImage": "press2.png",
+          "onClick": {
+            "name": "DomainClashUp"
+          },
+          "displayCondition": {
+            "name": "DisplayDomainNum6"
+          },
+          "x": 142,
+          "y": 165
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_press5",
+          "image": "press.png",
+          "hoveredImage": "press2.png",
+          "onClick": {
+            "name": "DomainClashUp"
+          },
+          "displayCondition": {
+            "name": "DisplayDomainNum7"
+          },
+          "x": 249,
+          "y": 114
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_press6",
+          "image": "press.png",
+          "hoveredImage": "press2.png",
+          "onClick": {
+            "name": "DomainClashUp"
+          },
+          "displayCondition": {
+            "name": "DisplayDomainNum4"
+          },
+          "x": 231,
+          "y": 160
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}
