@@ -9332,7 +9332,7 @@
           }
         ]
       },
-      "path": "~/Overlay/Procedures"
+      "path": "~/Overlay"
     },
     {
       "name": "PureLovePre",
@@ -17493,10 +17493,6 @@
             "type": "entity"
           },
           {
-            "name": "amount",
-            "type": "number"
-          },
-          {
             "name": "x",
             "type": "number"
           },
@@ -17708,8 +17704,8 @@
       "registry_name": "ldawda",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/item/LdawdaItem.java",
-          "src/main/resources/assets/craft_kaisen/models/item/ldawda.json"
+          "src/main/resources/assets/craft_kaisen/models/item/ldawda.json",
+          "src/main/java/net/mcreator/craftkaisen/item/LdawdaItem.java"
         ]
       },
       "path": "~/Items"
@@ -17813,22 +17809,6 @@
           {
             "name": "entity",
             "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ]
       },
@@ -18066,37 +18046,16 @@
       "path": "~/GUI/Procedures"
     },
     {
-      "name": "RatioMasteryDisplay",
-      "type": "procedure",
-      "sortid": 784,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "ratio_mastery_display",
-      "metadata": {
-        "return_type": "string",
-        "files": [
-          "src/main/java/net/mcreator/craftkaisen/procedures/RatioMasteryDisplayProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Overlay/Procedures"
-    },
-    {
-      "name": "RatioOverlayDisplayOverlayIngame",
+      "name": "DisplayGradeThree",
       "type": "procedure",
       "sortid": 785,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "ratio_overlay_display_overlay_ingame",
+      "registry_name": "display_grade_three",
       "metadata": {
         "return_type": "logic",
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/procedures/RatioOverlayDisplayOverlayIngameProcedure.java"
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayGradeThreeProcedure.java"
         ],
         "dependencies": [
           {
@@ -18105,21 +18064,174 @@
           }
         ]
       },
-      "path": "~/Overlay/Procedures"
+      "path": "~/GUI/Procedures"
     },
     {
-      "name": "RatioOverlay",
-      "type": "overlay",
+      "name": "DisplaySpecialGrade",
+      "type": "procedure",
+      "sortid": 791,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_special_grade",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplaySpecialGradeProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "DisplayGrade2",
+      "type": "procedure",
+      "sortid": 787,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_grade_2",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayGrade2Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "DisplayGrade1",
+      "type": "procedure",
+      "sortid": 789,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_grade_1",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayGrade1Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "DisplaySemiGrade1",
+      "type": "procedure",
+      "sortid": 788,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_semi_grade_1",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplaySemiGrade1Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "DisplaySpecialGrade1",
+      "type": "procedure",
+      "sortid": 790,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_special_grade_1",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplaySpecialGrade1Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "DisplayGradeFour",
+      "type": "procedure",
+      "sortid": 784,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_grade_four",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayGradeFourProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "DisplaySemiGrade2",
+      "type": "procedure",
       "sortid": 786,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "ratio_overlay",
+      "registry_name": "display_semi_grade_2",
       "metadata": {
+        "return_type": "logic",
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/screens/RatioOverlayOverlay.java"
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplaySemiGrade2Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
         ]
       },
-      "path": "~/Overlay"
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "RatioMoves",
+      "type": "procedure",
+      "sortid": 788,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ratio_moves",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/RatioMovesProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Abilities/MoveUse"
     },
     {
       "name": "CollapseProcedure",
@@ -18158,40 +18270,18 @@
       "path": "~/Abilities/Ratio"
     },
     {
-      "name": "RatioMoves",
-      "type": "procedure",
-      "sortid": 788,
+      "name": "RatioOverlay",
+      "type": "overlay",
+      "sortid": 786,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "ratio_moves",
+      "registry_name": "ratio_overlay",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/procedures/RatioMovesProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
+          "src/main/java/net/mcreator/craftkaisen/client/screens/RatioOverlayOverlay.java"
         ]
       },
-      "path": "~/Abilities/MoveUse"
+      "path": "~/Overlay"
     },
     {
       "name": "SetRatio",
@@ -18214,17 +18304,58 @@
       "path": "~/Commands/Procedures"
     },
     {
-      "name": "MahitoEntityDies",
+      "name": "RatioMasteryDisplay",
       "type": "procedure",
-      "sortid": 790,
+      "sortid": 784,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "mahito_entity_dies",
+      "registry_name": "ratio_mastery_display",
       "metadata": {
+        "return_type": "string",
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/procedures/MahitoEntityDiesProcedure.java"
+          "src/main/java/net/mcreator/craftkaisen/procedures/RatioMasteryDisplayProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/Overlay/Procedures"
+    },
+    {
+      "name": "RatioOverlayDisplayOverlayIngame",
+      "type": "procedure",
+      "sortid": 785,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ratio_overlay_display_overlay_ingame",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/RatioOverlayDisplayOverlayIngameProcedure.java"
         ],
         "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Overlay/Procedures"
+    },
+    {
+      "name": "TojiFushiguroEntityDies",
+      "type": "procedure",
+      "sortid": 791,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toji_fushiguro_entity_dies",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/TojiFushiguroEntityDiesProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
           {
             "name": "x",
             "type": "number"
@@ -18246,21 +18377,17 @@
       "path": "~/Mobs/Procedure"
     },
     {
-      "name": "TojiFushiguroEntityDies",
+      "name": "MahitoEntityDies",
       "type": "procedure",
-      "sortid": 791,
+      "sortid": 790,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "toji_fushiguro_entity_dies",
+      "registry_name": "mahito_entity_dies",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/procedures/TojiFushiguroEntityDiesProcedure.java"
+          "src/main/java/net/mcreator/craftkaisen/procedures/MahitoEntityDiesProcedure.java"
         ],
         "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
           {
             "name": "x",
             "type": "number"
@@ -18317,7 +18444,7 @@
       "name": "skillPoints",
       "type": "number",
       "scope": "player_persistent",
-      "value": "2.0"
+      "value": "0"
     },
     {
       "name": "currentCursedEnergy",
@@ -18635,7 +18762,7 @@
       "name": "Grade",
       "type": "string",
       "scope": "player_persistent",
-      "value": "Grade 4"
+      "value": "\"\""
     },
     {
       "name": "DomainClashCombo",
@@ -19259,6 +19386,10 @@
             "children": []
           },
           {
+            "name": "Ratio",
+            "children": []
+          },
+          {
             "name": "SukunaVessel",
             "children": []
           },
@@ -19305,10 +19436,6 @@
           },
           {
             "name": "Cursed Energy",
-            "children": []
-          },
-          {
-            "name": "Ratio",
             "children": []
           }
         ]

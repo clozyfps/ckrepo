@@ -331,7 +331,7 @@ public class CraftKaisenModVariables {
 		public double reputation = 0;
 		public double currentExp = 0;
 		public double maxExp = 0;
-		public double skillPoints = 2.0;
+		public double skillPoints = 0;
 		public double currentCursedEnergy = 0;
 		public double maxCursedEnergy = 0;
 		public double cursedEnergyStat = 0;
@@ -380,7 +380,7 @@ public class CraftKaisenModVariables {
 		public double EvadeLevel = 1.0;
 		public double Durability = 0;
 		public double Fame = 0;
-		public String Grade = "Grade 4";
+		public String Grade = "\"\"";
 		public double DomainClashCombo = 0;
 		public boolean inventorycurse = false;
 		public String RenderSpecial = "\"\"";

@@ -25,6 +25,13 @@ import net.mcreator.craftkaisen.procedures.ReturnEnergyControlProcedure;
 import net.mcreator.craftkaisen.procedures.ReturnCursedSpiritProcedure;
 import net.mcreator.craftkaisen.procedures.ReturnCursedEnergyProcedure;
 import net.mcreator.craftkaisen.procedures.ReturnAffiliationProcedure;
+import net.mcreator.craftkaisen.procedures.DisplaySpecialGradeProcedure;
+import net.mcreator.craftkaisen.procedures.DisplaySemiGrade2Procedure;
+import net.mcreator.craftkaisen.procedures.DisplaySemiGrade1Procedure;
+import net.mcreator.craftkaisen.procedures.DisplayGradeThreeProcedure;
+import net.mcreator.craftkaisen.procedures.DisplayGradeFourProcedure;
+import net.mcreator.craftkaisen.procedures.DisplayGrade2Procedure;
+import net.mcreator.craftkaisen.procedures.DisplayGrade1Procedure;
 import net.mcreator.craftkaisen.network.MainMenuButtonMessage;
 import net.mcreator.craftkaisen.CraftKaisenMod;
 
@@ -63,20 +70,20 @@ public class MainMenuScreen extends AbstractContainerScreen<MainMenuMenu> {
 		this.renderBackground(ms);
 		super.render(ms, mouseX, mouseY, partialTicks);
 		if (ReturnPlayerProcedure.execute(entity) instanceof LivingEntity livingEntity) {
-			InventoryScreen.renderEntityInInventoryFollowsAngle(ms, this.leftPos + -75, this.topPos + 1, 30, 0f, 0, livingEntity);
+			InventoryScreen.renderEntityInInventoryFollowsAngle(ms, this.leftPos + -149, this.topPos + 6, 30, 0f, 0, livingEntity);
 		}
 		this.renderTooltip(ms, mouseX, mouseY);
-		if (mouseX > leftPos + 71 && mouseX < leftPos + 96 && mouseY > topPos + -67 && mouseY < topPos + -56)
+		if (mouseX > leftPos + 143 && mouseX < leftPos + 168 && mouseY > topPos + 68 && mouseY < topPos + 79)
 			this.renderTooltip(ms, Component.translatable("gui.craft_kaisen.main_menu.tooltip_cursed_technique"), mouseX, mouseY);
-		if (mouseX > leftPos + 71 && mouseX < leftPos + 90 && mouseY > topPos + 5 && mouseY < topPos + 14)
+		if (mouseX > leftPos + 116 && mouseX < leftPos + 135 && mouseY > topPos + -76 && mouseY < topPos + -67)
 			this.renderTooltip(ms, Component.translatable("gui.craft_kaisen.main_menu.tooltip_increases_attack_damage"), mouseX, mouseY);
-		if (mouseX > leftPos + 71 && mouseX < leftPos + 91 && mouseY > topPos + 14 && mouseY < topPos + 23)
+		if (mouseX > leftPos + 116 && mouseX < leftPos + 136 && mouseY > topPos + -58 && mouseY < topPos + -49)
 			this.renderTooltip(ms, Component.translatable("gui.craft_kaisen.main_menu.tooltip_increase_max_health"), mouseX, mouseY);
-		if (mouseX > leftPos + 71 && mouseX < leftPos + 90 && mouseY > topPos + 32 && mouseY < topPos + 42)
+		if (mouseX > leftPos + 116 && mouseX < leftPos + 135 && mouseY > topPos + -22 && mouseY < topPos + -12)
 			this.renderTooltip(ms, Component.translatable("gui.craft_kaisen.main_menu.tooltip_increase_max_cursed_energy"), mouseX, mouseY);
-		if (mouseX > leftPos + 71 && mouseX < leftPos + 90 && mouseY > topPos + 23 && mouseY < topPos + 32)
+		if (mouseX > leftPos + 116 && mouseX < leftPos + 135 && mouseY > topPos + -40 && mouseY < topPos + -31)
 			this.renderTooltip(ms, Component.translatable("gui.craft_kaisen.main_menu.tooltip_increase_energy_regen_rate_and_m"), mouseX, mouseY);
-		if (mouseX > leftPos + 71 && mouseX < leftPos + 91 && mouseY > topPos + 41 && mouseY < topPos + 50)
+		if (mouseX > leftPos + 116 && mouseX < leftPos + 136 && mouseY > topPos + -4 && mouseY < topPos + 5)
 			this.renderTooltip(ms, Component.translatable("gui.craft_kaisen.main_menu.tooltip_increase_movement_speed"), mouseX, mouseY);
 	}
 
@@ -88,9 +95,37 @@ public class MainMenuScreen extends AbstractContainerScreen<MainMenuMenu> {
 		RenderSystem.setShaderTexture(0, texture);
 		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
 
-		RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/loloolo.png"));
-		this.blit(ms, this.leftPos + -163, this.topPos + -112, 0, 0, 322, 220, 322, 220);
+		RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/mainmenu.png"));
+		this.blit(ms, this.leftPos + -214, this.topPos + -120, 0, 0, 427, 240, 427, 240);
 
+		if (DisplayGradeFourProcedure.execute(entity)) {
+			RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/fourthgrade.png"));
+			this.blit(ms, this.leftPos + -214, this.topPos + -120, 0, 0, 427, 240, 427, 240);
+		}
+		if (DisplayGradeThreeProcedure.execute(entity)) {
+			RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/thirdgrade.png"));
+			this.blit(ms, this.leftPos + -214, this.topPos + -120, 0, 0, 427, 240, 427, 240);
+		}
+		if (DisplaySemiGrade2Procedure.execute(entity)) {
+			RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/stwograde.png"));
+			this.blit(ms, this.leftPos + -214, this.topPos + -120, 0, 0, 427, 240, 427, 240);
+		}
+		if (DisplayGrade2Procedure.execute(entity)) {
+			RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/twograde.png"));
+			this.blit(ms, this.leftPos + -214, this.topPos + -120, 0, 0, 427, 240, 427, 240);
+		}
+		if (DisplaySemiGrade1Procedure.execute(entity)) {
+			RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/sonegrade.png"));
+			this.blit(ms, this.leftPos + -214, this.topPos + -120, 0, 0, 427, 240, 427, 240);
+		}
+		if (DisplayGrade1Procedure.execute(entity)) {
+			RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/onegrade.png"));
+			this.blit(ms, this.leftPos + -214, this.topPos + -120, 0, 0, 427, 240, 427, 240);
+		}
+		if (DisplaySpecialGradeProcedure.execute(entity)) {
+			RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/spgrade.png"));
+			this.blit(ms, this.leftPos + -214, this.topPos + -120, 0, 0, 427, 240, 427, 240);
+		}
 		RenderSystem.disableBlend();
 	}
 
@@ -111,49 +146,48 @@ public class MainMenuScreen extends AbstractContainerScreen<MainMenuMenu> {
 	@Override
 	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
 		if (ReturnHumanProcedure.execute(entity))
-			this.font.draw(poseStack, Component.translatable("gui.craft_kaisen.main_menu.label_race_human"), -46, -67, -11112336);
+			this.font.draw(poseStack, Component.translatable("gui.craft_kaisen.main_menu.label_race_human"), -118, -85, -11112336);
 		this.font.draw(poseStack,
 
-				ReturnSkillpointsProcedure.execute(entity), -46, -58, -12829636);
+				ReturnSkillpointsProcedure.execute(entity), -118, -76, -12829636);
 		if (ReturnCursedSpiritProcedure.execute(entity))
-			this.font.draw(poseStack, Component.translatable("gui.craft_kaisen.main_menu.label_curse"), -46, -67, -11005165);
+			this.font.draw(poseStack, Component.translatable("gui.craft_kaisen.main_menu.label_curse"), -118, -85, -11005165);
 		this.font.draw(poseStack,
 
-				ReturnExpDisplayProcedure.execute(entity), -46, -49, -12829636);
+				ReturnExpDisplayProcedure.execute(entity), -118, -58, -12829636);
 		this.font.draw(poseStack,
 
-				ReturnRepProcedure.execute(entity), -46, -40, -12829636);
+				ReturnRepProcedure.execute(entity), -118, -40, -12829636);
 		this.font.draw(poseStack,
 
-				ReturnAffiliationProcedure.execute(entity), -46, -31, -12829636);
-		this.font.draw(poseStack, Component.translatable("gui.craft_kaisen.main_menu.label_empty"), -46, -4, -11253961);
+				ReturnAffiliationProcedure.execute(entity), -118, -22, -12829636);
 		this.font.draw(poseStack,
 
-				ReturnLevelProcedure.execute(entity), -46, -22, -12829636);
+				ReturnLevelProcedure.execute(entity), -118, -4, -12829636);
 		this.font.draw(poseStack,
 
-				ReturnSpecialProcedure.execute(entity), -46, -13, -12829636);
+				ReturnSpecialProcedure.execute(entity), -118, 14, -12829636);
 		this.font.draw(poseStack,
 
-				ReturnStrengthProcedure.execute(entity), -46, 5, -12829636);
+				ReturnStrengthProcedure.execute(entity), -1, -76, -12829636);
 		this.font.draw(poseStack,
 
-				ReturnHealthProcedure.execute(entity), -46, 14, -12829636);
+				ReturnHealthProcedure.execute(entity), -1, -58, -12829636);
 		this.font.draw(poseStack,
 
-				ReturnCursedEnergyProcedure.execute(entity), -46, 32, -12829636);
+				ReturnCursedEnergyProcedure.execute(entity), -1, -22, -12829636);
 		this.font.draw(poseStack,
 
-				ReturnEnergyControlProcedure.execute(entity), -46, 23, -12829636);
+				ReturnEnergyControlProcedure.execute(entity), -1, -40, -12829636);
 		this.font.draw(poseStack,
 
-				ReturnSpeedProcedure.execute(entity), -46, 41, -12829636);
-		this.font.draw(poseStack, Component.translatable("gui.craft_kaisen.main_menu.label_empty1"), 77, -67, -12829636);
-		this.font.draw(poseStack, Component.translatable("gui.craft_kaisen.main_menu.label_empty2"), 79, 5, -12829636);
-		this.font.draw(poseStack, Component.translatable("gui.craft_kaisen.main_menu.label_empty3"), 79, 14, -12829636);
-		this.font.draw(poseStack, Component.translatable("gui.craft_kaisen.main_menu.label_empty4"), 79, 41, -12829636);
-		this.font.draw(poseStack, Component.translatable("gui.craft_kaisen.main_menu.label_empty5"), 79, 23, -12829636);
-		this.font.draw(poseStack, Component.translatable("gui.craft_kaisen.main_menu.label_empty6"), 79, 32, -12829636);
+				ReturnSpeedProcedure.execute(entity), -1, -4, -12829636);
+		this.font.draw(poseStack, Component.translatable("gui.craft_kaisen.main_menu.label_empty1"), 152, 68, -12829636);
+		this.font.draw(poseStack, Component.translatable("gui.craft_kaisen.main_menu.label_empty2"), 125, -76, -12829636);
+		this.font.draw(poseStack, Component.translatable("gui.craft_kaisen.main_menu.label_empty3"), 125, -58, -12829636);
+		this.font.draw(poseStack, Component.translatable("gui.craft_kaisen.main_menu.label_empty4"), 125, -4, -12829636);
+		this.font.draw(poseStack, Component.translatable("gui.craft_kaisen.main_menu.label_empty5"), 125, -40, -12829636);
+		this.font.draw(poseStack, Component.translatable("gui.craft_kaisen.main_menu.label_empty6"), 125, -22, -12829636);
 	}
 
 	@Override
@@ -164,7 +198,7 @@ public class MainMenuScreen extends AbstractContainerScreen<MainMenuMenu> {
 	@Override
 	public void init() {
 		super.init();
-		imagebutton_button1png = new ImageButton(this.leftPos + 71, this.topPos + -67, 23, 12, 0, 0, 12, new ResourceLocation("craft_kaisen:textures/screens/atlas/imagebutton_button1png.png"), 23, 24, e -> {
+		imagebutton_button1png = new ImageButton(this.leftPos + 143, this.topPos + 68, 23, 12, 0, 0, 12, new ResourceLocation("craft_kaisen:textures/screens/atlas/imagebutton_button1png.png"), 23, 24, e -> {
 			if (true) {
 				CraftKaisenMod.PACKET_HANDLER.sendToServer(new MainMenuButtonMessage(0, x, y, z));
 				MainMenuButtonMessage.handleButtonAction(entity, 0, x, y, z);
@@ -172,7 +206,7 @@ public class MainMenuScreen extends AbstractContainerScreen<MainMenuMenu> {
 		});
 		guistate.put("button:imagebutton_button1png", imagebutton_button1png);
 		this.addRenderableWidget(imagebutton_button1png);
-		imagebutton_smallbutton1png = new ImageButton(this.leftPos + 71, this.topPos + 5, 20, 10, 0, 0, 10, new ResourceLocation("craft_kaisen:textures/screens/atlas/imagebutton_smallbutton1png.png"), 20, 20, e -> {
+		imagebutton_smallbutton1png = new ImageButton(this.leftPos + 116, this.topPos + -76, 20, 10, 0, 0, 10, new ResourceLocation("craft_kaisen:textures/screens/atlas/imagebutton_smallbutton1png.png"), 20, 20, e -> {
 			if (true) {
 				CraftKaisenMod.PACKET_HANDLER.sendToServer(new MainMenuButtonMessage(1, x, y, z));
 				MainMenuButtonMessage.handleButtonAction(entity, 1, x, y, z);
@@ -180,7 +214,7 @@ public class MainMenuScreen extends AbstractContainerScreen<MainMenuMenu> {
 		});
 		guistate.put("button:imagebutton_smallbutton1png", imagebutton_smallbutton1png);
 		this.addRenderableWidget(imagebutton_smallbutton1png);
-		imagebutton_smallbutton1png1 = new ImageButton(this.leftPos + 71, this.topPos + 14, 20, 10, 0, 0, 10, new ResourceLocation("craft_kaisen:textures/screens/atlas/imagebutton_smallbutton1png1.png"), 20, 20, e -> {
+		imagebutton_smallbutton1png1 = new ImageButton(this.leftPos + 116, this.topPos + -58, 20, 10, 0, 0, 10, new ResourceLocation("craft_kaisen:textures/screens/atlas/imagebutton_smallbutton1png1.png"), 20, 20, e -> {
 			if (true) {
 				CraftKaisenMod.PACKET_HANDLER.sendToServer(new MainMenuButtonMessage(2, x, y, z));
 				MainMenuButtonMessage.handleButtonAction(entity, 2, x, y, z);
@@ -188,7 +222,7 @@ public class MainMenuScreen extends AbstractContainerScreen<MainMenuMenu> {
 		});
 		guistate.put("button:imagebutton_smallbutton1png1", imagebutton_smallbutton1png1);
 		this.addRenderableWidget(imagebutton_smallbutton1png1);
-		imagebutton_smallbutton1png3 = new ImageButton(this.leftPos + 71, this.topPos + 23, 20, 10, 0, 0, 10, new ResourceLocation("craft_kaisen:textures/screens/atlas/imagebutton_smallbutton1png3.png"), 20, 20, e -> {
+		imagebutton_smallbutton1png3 = new ImageButton(this.leftPos + 116, this.topPos + -40, 20, 10, 0, 0, 10, new ResourceLocation("craft_kaisen:textures/screens/atlas/imagebutton_smallbutton1png3.png"), 20, 20, e -> {
 			if (true) {
 				CraftKaisenMod.PACKET_HANDLER.sendToServer(new MainMenuButtonMessage(3, x, y, z));
 				MainMenuButtonMessage.handleButtonAction(entity, 3, x, y, z);
@@ -196,7 +230,7 @@ public class MainMenuScreen extends AbstractContainerScreen<MainMenuMenu> {
 		});
 		guistate.put("button:imagebutton_smallbutton1png3", imagebutton_smallbutton1png3);
 		this.addRenderableWidget(imagebutton_smallbutton1png3);
-		imagebutton_smallbutton1png2 = new ImageButton(this.leftPos + 71, this.topPos + 32, 20, 10, 0, 0, 10, new ResourceLocation("craft_kaisen:textures/screens/atlas/imagebutton_smallbutton1png2.png"), 20, 20, e -> {
+		imagebutton_smallbutton1png2 = new ImageButton(this.leftPos + 116, this.topPos + -22, 20, 10, 0, 0, 10, new ResourceLocation("craft_kaisen:textures/screens/atlas/imagebutton_smallbutton1png2.png"), 20, 20, e -> {
 			if (true) {
 				CraftKaisenMod.PACKET_HANDLER.sendToServer(new MainMenuButtonMessage(4, x, y, z));
 				MainMenuButtonMessage.handleButtonAction(entity, 4, x, y, z);
@@ -204,7 +238,7 @@ public class MainMenuScreen extends AbstractContainerScreen<MainMenuMenu> {
 		});
 		guistate.put("button:imagebutton_smallbutton1png2", imagebutton_smallbutton1png2);
 		this.addRenderableWidget(imagebutton_smallbutton1png2);
-		imagebutton_smallbutton1png4 = new ImageButton(this.leftPos + 71, this.topPos + 41, 20, 10, 0, 0, 10, new ResourceLocation("craft_kaisen:textures/screens/atlas/imagebutton_smallbutton1png4.png"), 20, 20, e -> {
+		imagebutton_smallbutton1png4 = new ImageButton(this.leftPos + 116, this.topPos + -4, 20, 10, 0, 0, 10, new ResourceLocation("craft_kaisen:textures/screens/atlas/imagebutton_smallbutton1png4.png"), 20, 20, e -> {
 			if (true) {
 				CraftKaisenMod.PACKET_HANDLER.sendToServer(new MainMenuButtonMessage(5, x, y, z));
 				MainMenuButtonMessage.handleButtonAction(entity, 5, x, y, z);

@@ -19,8 +19,8 @@
           "scale": 30,
           "rotationX": 0,
           "followMouseMovement": false,
-          "x": 129,
-          "y": 101
+          "x": 55,
+          "y": 106
         }
       },
       {
@@ -37,8 +37,8 @@
           "displayCondition": {
             "name": "ReturnHuman"
           },
-          "x": 168,
-          "y": 53
+          "x": 96,
+          "y": 35
         }
       },
       {
@@ -53,8 +53,8 @@
             "value": -12829636,
             "falpha": 0.0
           },
-          "x": 168,
-          "y": 62
+          "x": 96,
+          "y": 44
         }
       },
       {
@@ -71,8 +71,8 @@
           "displayCondition": {
             "name": "ReturnCursedSpirit"
           },
-          "x": 168,
-          "y": 53
+          "x": 96,
+          "y": 35
         }
       },
       {
@@ -87,8 +87,8 @@
             "value": -12829636,
             "falpha": 0.0
           },
-          "x": 168,
-          "y": 71
+          "x": 96,
+          "y": 62
         }
       },
       {
@@ -103,7 +103,7 @@
             "value": -12829636,
             "falpha": 0.0
           },
-          "x": 168,
+          "x": 96,
           "y": 80
         }
       },
@@ -119,23 +119,8 @@
             "value": -12829636,
             "falpha": 0.0
           },
-          "x": 168,
-          "y": 89
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "name": "label_empty",
-          "text": {
-            "fixedValue": "---------------"
-          },
-          "color": {
-            "value": -11253961,
-            "falpha": 0.0
-          },
-          "x": 168,
-          "y": 116
+          "x": 96,
+          "y": 98
         }
       },
       {
@@ -150,8 +135,8 @@
             "value": -12829636,
             "falpha": 0.0
           },
-          "x": 168,
-          "y": 98
+          "x": 96,
+          "y": 116
         }
       },
       {
@@ -166,8 +151,8 @@
             "value": -12829636,
             "falpha": 0.0
           },
-          "x": 168,
-          "y": 107
+          "x": 96,
+          "y": 134
         }
       },
       {
@@ -182,8 +167,8 @@
             "value": -12829636,
             "falpha": 0.0
           },
-          "x": 168,
-          "y": 125
+          "x": 213,
+          "y": 44
         }
       },
       {
@@ -198,8 +183,8 @@
             "value": -12829636,
             "falpha": 0.0
           },
-          "x": 168,
-          "y": 134
+          "x": 213,
+          "y": 62
         }
       },
       {
@@ -214,8 +199,8 @@
             "value": -12829636,
             "falpha": 0.0
           },
-          "x": 168,
-          "y": 152
+          "x": 213,
+          "y": 98
         }
       },
       {
@@ -230,8 +215,8 @@
             "value": -12829636,
             "falpha": 0.0
           },
-          "x": 168,
-          "y": 143
+          "x": 213,
+          "y": 80
         }
       },
       {
@@ -246,8 +231,8 @@
             "value": -12829636,
             "falpha": 0.0
           },
-          "x": 168,
-          "y": 161
+          "x": 213,
+          "y": 116
         }
       },
       {
@@ -259,8 +244,8 @@
           "onClick": {
             "name": "OpenMoves"
           },
-          "x": 285,
-          "y": 53
+          "x": 357,
+          "y": 188
         }
       },
       {
@@ -274,8 +259,8 @@
             "value": -12829636,
             "falpha": 0.0
           },
-          "x": 291,
-          "y": 53
+          "x": 366,
+          "y": 188
         }
       },
       {
@@ -287,8 +272,8 @@
           },
           "width": 25,
           "height": 11,
-          "x": 285,
-          "y": 53
+          "x": 357,
+          "y": 188
         }
       },
       {
@@ -300,8 +285,8 @@
           "onClick": {
             "name": "StrengthButton"
           },
-          "x": 285,
-          "y": 125
+          "x": 330,
+          "y": 44
         }
       },
       {
@@ -313,8 +298,8 @@
           "onClick": {
             "name": "HealthButton"
           },
-          "x": 285,
-          "y": 134
+          "x": 330,
+          "y": 62
         }
       },
       {
@@ -326,8 +311,8 @@
           "onClick": {
             "name": "ControlButton"
           },
-          "x": 285,
-          "y": 143
+          "x": 330,
+          "y": 80
         }
       },
       {
@@ -339,8 +324,8 @@
           "onClick": {
             "name": "EnergyButton"
           },
-          "x": 285,
-          "y": 152
+          "x": 330,
+          "y": 98
         }
       },
       {
@@ -352,8 +337,8 @@
           "onClick": {
             "name": "SpeedButton"
           },
-          "x": 285,
-          "y": 161
+          "x": 330,
+          "y": 116
         }
       },
       {
@@ -367,8 +352,8 @@
             "value": -12829636,
             "falpha": 0.0
           },
-          "x": 293,
-          "y": 125
+          "x": 339,
+          "y": 44
         }
       },
       {
@@ -382,8 +367,8 @@
             "value": -12829636,
             "falpha": 0.0
           },
-          "x": 293,
-          "y": 134
+          "x": 339,
+          "y": 62
         }
       },
       {
@@ -397,8 +382,8 @@
             "value": -12829636,
             "falpha": 0.0
           },
-          "x": 293,
-          "y": 161
+          "x": 339,
+          "y": 116
         }
       },
       {
@@ -412,8 +397,8 @@
             "value": -12829636,
             "falpha": 0.0
           },
-          "x": 293,
-          "y": 143
+          "x": 339,
+          "y": 80
         }
       },
       {
@@ -427,8 +412,8 @@
             "value": -12829636,
             "falpha": 0.0
           },
-          "x": 293,
-          "y": 152
+          "x": 339,
+          "y": 98
         }
       },
       {
@@ -440,8 +425,8 @@
           },
           "width": 19,
           "height": 9,
-          "x": 285,
-          "y": 125
+          "x": 330,
+          "y": 44
         }
       },
       {
@@ -453,8 +438,8 @@
           },
           "width": 20,
           "height": 9,
-          "x": 285,
-          "y": 134
+          "x": 330,
+          "y": 62
         }
       },
       {
@@ -466,8 +451,8 @@
           },
           "width": 19,
           "height": 10,
-          "x": 285,
-          "y": 152
+          "x": 330,
+          "y": 98
         }
       },
       {
@@ -479,8 +464,8 @@
           },
           "width": 19,
           "height": 9,
-          "x": 285,
-          "y": 143
+          "x": 330,
+          "y": 80
         }
       },
       {
@@ -492,17 +477,101 @@
           },
           "width": 20,
           "height": 9,
-          "x": 285,
-          "y": 161
+          "x": 330,
+          "y": 116
         }
       },
       {
         "type": "image",
         "data": {
-          "image": "loloolo.png",
-          "use1Xscale": false,
-          "x": 51,
-          "y": 8
+          "image": "mainmenu.png",
+          "use1Xscale": true,
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "fourthgrade.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayGradeFour"
+          },
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "thirdgrade.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayGradeThree"
+          },
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "stwograde.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplaySemiGrade2"
+          },
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "twograde.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayGrade2"
+          },
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "sonegrade.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplaySemiGrade1"
+          },
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "onegrade.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayGrade1"
+          },
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "spgrade.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplaySpecialGrade"
+          },
+          "x": 0,
+          "y": 0
         }
       }
     ],
