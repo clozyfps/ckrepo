@@ -35,6 +35,7 @@ import net.minecraft.nbt.CompoundTag;
 
 import net.mcreator.craftkaisen.procedures.TojiFushiguroOnInitialEntitySpawnProcedure;
 import net.mcreator.craftkaisen.procedures.TojiFushiguroOnEntityTickUpdateProcedure;
+import net.mcreator.craftkaisen.procedures.TojiFushiguroEntityDiesProcedure;
 import net.mcreator.craftkaisen.init.CraftKaisenModItems;
 import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
 
@@ -92,6 +93,12 @@ public class TojiFushiguroEntity extends Monster {
 	@Override
 	public SoundEvent getDeathSound() {
 		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.death"));
+	}
+
+	@Override
+	public void die(DamageSource source) {
+		super.die(source);
+		TojiFushiguroEntityDiesProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
 	}
 
 	@Override

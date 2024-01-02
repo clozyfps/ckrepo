@@ -7,25 +7,25 @@
       {
         "type": "label",
         "data": {
-          "name": "label_proc_miracle_count",
+          "name": "label_ratio_chance",
           "text": {
-            "fixedValue": "",
-            "name": "MiracleCount"
+            "fixedValue": "Ratio Mastery:",
+            "name": "RatioMasteryDisplay"
           },
           "color": {
             "value": -1,
             "falpha": 0.0
           },
           "anchorPoint": "TOP_LEFT",
-          "x": 6,
-          "y": 5
+          "x": 10,
+          "y": 8
         }
       }
     ],
     "baseTexture": "",
     "overlayTarget": "Ingame",
     "displayCondition": {
-      "name": "MiracleOverlayDisplayOverlayIngame"
+      "name": "RatioOverlayDisplayOverlayIngame"
     },
     "gridSettings": {
       "sx": 18,

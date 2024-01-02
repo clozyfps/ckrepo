@@ -33,6 +33,7 @@ import net.minecraft.nbt.CompoundTag;
 
 import net.mcreator.craftkaisen.procedures.MahitoOnInitialEntitySpawnProcedure;
 import net.mcreator.craftkaisen.procedures.MahitoOnEntityTickUpdateProcedure;
+import net.mcreator.craftkaisen.procedures.MahitoEntityDiesProcedure;
 import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
 
 import javax.annotation.Nullable;
@@ -87,6 +88,12 @@ public class MahitoEntity extends Monster {
 	@Override
 	public SoundEvent getDeathSound() {
 		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.death"));
+	}
+
+	@Override
+	public void die(DamageSource source) {
+		super.die(source);
+		MahitoEntityDiesProcedure.execute(this.level, this.getX(), this.getY(), this.getZ());
 	}
 
 	@Override

@@ -131,6 +131,7 @@ public class CraftKaisenModVariables {
 			clone.CurrentBounties = original.CurrentBounties;
 			clone.HasBounty = original.HasBounty;
 			clone.Bounty = original.Bounty;
+			clone.RatioMastery = original.RatioMastery;
 			if (!event.isWasDeath()) {
 				clone.currentMove = original.currentMove;
 				clone.currentOutput = original.currentOutput;
@@ -330,7 +331,7 @@ public class CraftKaisenModVariables {
 		public double reputation = 0;
 		public double currentExp = 0;
 		public double maxExp = 0;
-		public double skillPoints = 0;
+		public double skillPoints = 2.0;
 		public double currentCursedEnergy = 0;
 		public double maxCursedEnergy = 0;
 		public double cursedEnergyStat = 0;
@@ -379,7 +380,7 @@ public class CraftKaisenModVariables {
 		public double EvadeLevel = 1.0;
 		public double Durability = 0;
 		public double Fame = 0;
-		public String Grade = "\"\"";
+		public String Grade = "Grade 4";
 		public double DomainClashCombo = 0;
 		public boolean inventorycurse = false;
 		public String RenderSpecial = "\"\"";
@@ -400,6 +401,7 @@ public class CraftKaisenModVariables {
 		public String CurrentBounties = "\"\"";
 		public boolean HasBounty = false;
 		public double Bounty = 0;
+		public double RatioMastery = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -483,6 +485,7 @@ public class CraftKaisenModVariables {
 			nbt.putString("CurrentBounties", CurrentBounties);
 			nbt.putBoolean("HasBounty", HasBounty);
 			nbt.putDouble("Bounty", Bounty);
+			nbt.putDouble("RatioMastery", RatioMastery);
 			return nbt;
 		}
 
@@ -563,6 +566,7 @@ public class CraftKaisenModVariables {
 			CurrentBounties = nbt.getString("CurrentBounties");
 			HasBounty = nbt.getBoolean("HasBounty");
 			Bounty = nbt.getDouble("Bounty");
+			RatioMastery = nbt.getDouble("RatioMastery");
 		}
 	}
 
@@ -662,6 +666,7 @@ public class CraftKaisenModVariables {
 					variables.CurrentBounties = message.data.CurrentBounties;
 					variables.HasBounty = message.data.HasBounty;
 					variables.Bounty = message.data.Bounty;
+					variables.RatioMastery = message.data.RatioMastery;
 				}
 			});
 			context.setPacketHandled(true);

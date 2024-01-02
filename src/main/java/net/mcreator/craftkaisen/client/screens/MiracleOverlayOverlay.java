@@ -36,7 +36,7 @@ public class MiracleOverlayOverlay {
 		if (MiracleOverlayDisplayOverlayIngameProcedure.execute(entity)) {
 			Minecraft.getInstance().font.draw(event.getPoseStack(),
 
-					MiracleCountProcedure.execute(entity), w / 2 + -206, h / 2 + -114, -1);
+					MiracleCountProcedure.execute(entity), 6, 5, -1);
 		}
 	}
 }
