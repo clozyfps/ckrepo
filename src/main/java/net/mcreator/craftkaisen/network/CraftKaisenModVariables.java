@@ -330,7 +330,7 @@ public class CraftKaisenModVariables {
 		public String affiliation = "";
 		public double reputation = 0;
 		public double currentExp = 0;
-		public double maxExp = 0;
+		public double maxExp = 20.0;
 		public double skillPoints = 0;
 		public double currentCursedEnergy = 0;
 		public double maxCursedEnergy = 0;

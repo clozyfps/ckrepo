@@ -19,6 +19,7 @@ import net.mcreator.craftkaisen.client.renderer.UnlimitedVoidMobRenderer;
 import net.mcreator.craftkaisen.client.renderer.TojiFushiguroRenderer;
 import net.mcreator.craftkaisen.client.renderer.ToadRenderer;
 import net.mcreator.craftkaisen.client.renderer.TenShadowRabbitRenderer;
+import net.mcreator.craftkaisen.client.renderer.SuguruGetoRenderer;
 import net.mcreator.craftkaisen.client.renderer.SmallPoxDomainSpawnerRenderer;
 import net.mcreator.craftkaisen.client.renderer.SmallPoxDeityRenderer;
 import net.mcreator.craftkaisen.client.renderer.ShadowFrogRenderer;
@@ -27,6 +28,7 @@ import net.mcreator.craftkaisen.client.renderer.RyomenSukunaRenderer;
 import net.mcreator.craftkaisen.client.renderer.RugbyFieldCursedSpiritRenderer;
 import net.mcreator.craftkaisen.client.renderer.RoundDeerRenderer;
 import net.mcreator.craftkaisen.client.renderer.RoppongiCursedSpiritRenderer;
+import net.mcreator.craftkaisen.client.renderer.RopeMobRenderer;
 import net.mcreator.craftkaisen.client.renderer.RikoAmanaiRenderer;
 import net.mcreator.craftkaisen.client.renderer.RikaRenderer;
 import net.mcreator.craftkaisen.client.renderer.ReversalRedEntityRenderer;
@@ -57,8 +59,12 @@ import net.mcreator.craftkaisen.client.renderer.EightHandledSwordDivergentSilaDi
 import net.mcreator.craftkaisen.client.renderer.CoffinMountainRenderer;
 import net.mcreator.craftkaisen.client.renderer.ChosoRenderer;
 import net.mcreator.craftkaisen.client.renderer.ChimeraShadowGardenMobRenderer;
+import net.mcreator.craftkaisen.client.renderer.BodyRepel3Renderer;
+import net.mcreator.craftkaisen.client.renderer.BodyRepel2Renderer;
+import net.mcreator.craftkaisen.client.renderer.BodyRepel1Renderer;
 import net.mcreator.craftkaisen.client.renderer.BlueEntityRenderer;
 import net.mcreator.craftkaisen.client.renderer.BlackDivineDogRenderer;
+import net.mcreator.craftkaisen.client.renderer.AwakenedMakiRenderer;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class CraftKaisenModEntityRenderers {
@@ -139,5 +145,11 @@ public class CraftKaisenModEntityRenderers {
 		event.registerEntityRenderer(CraftKaisenModEntities.ROOT_PROJECTILE_PROJECTILE.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.STRONGHIT_PROJECTILE.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.LAPSE_BLUE_RANGED_PROJECTILE.get(), ThrownItemRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.AWAKENED_MAKI.get(), AwakenedMakiRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.BODY_REPEL_1.get(), BodyRepel1Renderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.BODY_REPEL_2.get(), BodyRepel2Renderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.BODY_REPEL_3.get(), BodyRepel3Renderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.ROPE_MOB.get(), RopeMobRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.SUGURU_GETO.get(), SuguruGetoRenderer::new);
 	}
 }

@@ -55,6 +55,7 @@ import net.mcreator.craftkaisen.item.FireArrowItem;
 import net.mcreator.craftkaisen.item.FindBlueLocationItem;
 import net.mcreator.craftkaisen.item.ExplodeRangedItem;
 import net.mcreator.craftkaisen.item.EmberInsectProjectileItem;
+import net.mcreator.craftkaisen.item.DragonBoneItem;
 import net.mcreator.craftkaisen.item.DontMoveRangedItem;
 import net.mcreator.craftkaisen.item.DismantleItem;
 import net.mcreator.craftkaisen.item.DisasterFlameRangedItem;
@@ -190,6 +191,9 @@ public class CraftKaisenModItems {
 	public static final RegistryObject<Item> STRONGHIT = REGISTRY.register("stronghit", () -> new StronghitItem());
 	public static final RegistryObject<Item> LAPSE_BLUE_RANGED = REGISTRY.register("lapse_blue_ranged", () -> new LapseBlueRangedItem());
 	public static final RegistryObject<Item> LDAWDA = REGISTRY.register("ldawda", () -> new LdawdaItem());
+	public static final RegistryObject<Item> AWAKENED_MAKI_SPAWN_EGG = REGISTRY.register("awakened_maki_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.AWAKENED_MAKI, -16764109, -16777216, new Item.Properties()));
+	public static final RegistryObject<Item> DRAGON_BONE = REGISTRY.register("dragon_bone", () -> new DragonBoneItem());
+	public static final RegistryObject<Item> SUGURU_GETO_SPAWN_EGG = REGISTRY.register("suguru_geto_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.SUGURU_GETO, -16777216, -10178, new Item.Properties()));
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));

@@ -1,0 +1,38 @@
+{
+  "_fv": 57,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Sword",
+    "renderType": 1,
+    "blockingRenderType": 0,
+    "texture": "air102_layer_2",
+    "customModelName": "dragonbone:default",
+    "blockingModelName": "Normal blocking",
+    "name": "Dragon Bone",
+    "specialInformation": {
+      "fixedValue": [
+        "§dPerk - Build up Cursed Energy and use it on your next swing"
+      ]
+    },
+    "creativeTab": {
+      "value": "CUSTOM:CkWeapons"
+    },
+    "harvestLevel": 1,
+    "efficiency": 4.0,
+    "attackSpeed": 1.0,
+    "enchantability": 2,
+    "damageVsEntity": 4.0,
+    "usageCount": 100,
+    "blocksAffected": [],
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [],
+    "immuneToFire": false,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onRightClickedInAir": {
+      "name": "DragonBoneRightclicked"
+    }
+  }
+}

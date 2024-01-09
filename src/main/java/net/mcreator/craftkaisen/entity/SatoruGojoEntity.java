@@ -88,7 +88,7 @@ public class SatoruGojoEntity extends Monster {
 	@Override
 	public void baseTick() {
 		super.baseTick();
-		SatoruGojoOnEntityTickUpdateProcedure.execute(this.level, this);
+		SatoruGojoOnEntityTickUpdateProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
 	}
 
 	public static void init() {

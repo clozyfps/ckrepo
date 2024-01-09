@@ -51,7 +51,7 @@ public class LimitlessTick2Procedure {
 				if ((entity.getDirection()) == Direction.EAST) {
 					{
 						// Get the radius of the sphere
-						double radius = (entity.getPersistentData().getDouble("purpleCharge") * 0.01); // 3 blocks
+						double radius = 1; // 3 blocks
 						// Set the tolerance for how close to the surface a point must be to create a particle
 						double tolerance = 0.15; // 0.1 blocks
 						for (double xx = -radius; xx <= radius; xx += 0.1) {
@@ -75,7 +75,7 @@ public class LimitlessTick2Procedure {
 					}
 					{
 						// Get the radius of the sphere
-						double radius = (entity.getPersistentData().getDouble("purpleCharge") * 0.01); // 3 blocks
+						double radius = 1; // 3 blocks
 						// Set the tolerance for how close to the surface a point must be to create a particle
 						double tolerance = 0.15; // 0.1 blocks
 						for (double xx = -radius; xx <= radius; xx += 0.1) {
@@ -100,7 +100,7 @@ public class LimitlessTick2Procedure {
 				} else if ((entity.getDirection()) == Direction.WEST) {
 					{
 						// Get the radius of the sphere
-						double radius = (entity.getPersistentData().getDouble("purpleCharge") * 0.01); // 3 blocks
+						double radius = 1; // 3 blocks
 						// Set the tolerance for how close to the surface a point must be to create a particle
 						double tolerance = 0.15; // 0.1 blocks
 						for (double xx = -radius; xx <= radius; xx += 0.1) {
@@ -124,7 +124,7 @@ public class LimitlessTick2Procedure {
 					}
 					{
 						// Get the radius of the sphere
-						double radius = (entity.getPersistentData().getDouble("purpleCharge") * 0.01); // 3 blocks
+						double radius = 1; // 3 blocks
 						// Set the tolerance for how close to the surface a point must be to create a particle
 						double tolerance = 0.15; // 0.1 blocks
 						for (double xx = -radius; xx <= radius; xx += 0.1) {
@@ -149,7 +149,7 @@ public class LimitlessTick2Procedure {
 				} else if ((entity.getDirection()) == Direction.NORTH) {
 					{
 						// Get the radius of the sphere
-						double radius = (entity.getPersistentData().getDouble("purpleCharge") * 0.01); // 3 blocks
+						double radius = 1; // 3 blocks
 						// Set the tolerance for how close to the surface a point must be to create a particle
 						double tolerance = 0.15; // 0.1 blocks
 						for (double xx = -radius; xx <= radius; xx += 0.1) {
@@ -173,7 +173,7 @@ public class LimitlessTick2Procedure {
 					}
 					{
 						// Get the radius of the sphere
-						double radius = (entity.getPersistentData().getDouble("purpleCharge") * 0.01); // 3 blocks
+						double radius = 1; // 3 blocks
 						// Set the tolerance for how close to the surface a point must be to create a particle
 						double tolerance = 0.15; // 0.1 blocks
 						for (double xx = -radius; xx <= radius; xx += 0.1) {
@@ -198,7 +198,7 @@ public class LimitlessTick2Procedure {
 				} else if ((entity.getDirection()) == Direction.SOUTH) {
 					{
 						// Get the radius of the sphere
-						double radius = (entity.getPersistentData().getDouble("purpleCharge") * 0.01); // 3 blocks
+						double radius = 1; // 3 blocks
 						// Set the tolerance for how close to the surface a point must be to create a particle
 						double tolerance = 0.15; // 0.1 blocks
 						for (double xx = -radius; xx <= radius; xx += 0.1) {
@@ -222,7 +222,7 @@ public class LimitlessTick2Procedure {
 					}
 					{
 						// Get the radius of the sphere
-						double radius = (entity.getPersistentData().getDouble("purpleCharge") * 0.01); // 3 blocks
+						double radius = 1; // 3 blocks
 						// Set the tolerance for how close to the surface a point must be to create a particle
 						double tolerance = 0.15; // 0.1 blocks
 						for (double xx = -radius; xx <= radius; xx += 0.1) {
@@ -248,6 +248,7 @@ public class LimitlessTick2Procedure {
 			}
 			if (entity.getPersistentData().getDouble("hollowPurple") == 1) {
 				entity.getPersistentData().putDouble("purpleDistance", 0);
+				entity.getPersistentData().putDouble("hollowPurple", 0);
 				{
 					Entity _shootFrom = entity;
 					Level projectileLevel = _shootFrom.level;
@@ -273,8 +274,6 @@ public class LimitlessTick2Procedure {
 		}
 		if (entity.getPersistentData().getBoolean("purple") == true) {
 			entity.getPersistentData().putDouble("purpleDistance", (entity.getPersistentData().getDouble("purpleDistance") + 1));
-			HollowPurpeWhilstFlyingProcedure.execute(world, (x + entity.getLookAngle().x * (entity.getPersistentData().getDouble("purpleDistance") + 3)), (y + entity.getLookAngle().y * entity.getPersistentData().getDouble("purpleDistance")),
-					(z + entity.getLookAngle().z * (entity.getPersistentData().getDouble("purpleDistance") + 3)), entity);
 			{
 				final Vec3 _center = new Vec3((x + entity.getLookAngle().x * entity.getPersistentData().getDouble("purpleDistance")), (y + entity.getLookAngle().y * entity.getPersistentData().getDouble("purpleDistance")),
 						(z + entity.getLookAngle().z * entity.getPersistentData().getDouble("purpleDistance")));
@@ -287,10 +286,6 @@ public class LimitlessTick2Procedure {
 								(((z + entity.getLookAngle().z * entity.getPersistentData().getDouble("purpleDistance")) - entityiterator.getZ()) / 3)));
 					}
 				}
-			}
-			if (entity.getPersistentData().getDouble("purpleDistance") >= entity.getPersistentData().getDouble("purpleCharge") * 1) {
-				entity.getPersistentData().putBoolean("purple", false);
-				entity.getPersistentData().putDouble("purpleCharge", 0);
 			}
 		}
 	}

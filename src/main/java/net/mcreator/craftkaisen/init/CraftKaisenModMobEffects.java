@@ -16,7 +16,9 @@ import net.mcreator.craftkaisen.potion.UnlimitedVoidEffectMobEffect;
 import net.mcreator.craftkaisen.potion.TwistingMobEffect;
 import net.mcreator.craftkaisen.potion.TojiCooldownMobEffect;
 import net.mcreator.craftkaisen.potion.SukunaMobEffect;
+import net.mcreator.craftkaisen.potion.SoulMultiplicityActiveMobEffect;
 import net.mcreator.craftkaisen.potion.SmallPoxDeityCooldownMobEffect;
+import net.mcreator.craftkaisen.potion.SlicingMahitoMobEffect;
 import net.mcreator.craftkaisen.potion.SimpleDomainMobEffect;
 import net.mcreator.craftkaisen.potion.SimpleDomainCooldownMobEffect;
 import net.mcreator.craftkaisen.potion.RCTMobEffect;
@@ -35,6 +37,8 @@ import net.mcreator.craftkaisen.potion.DivergentFistPotionMobEffect;
 import net.mcreator.craftkaisen.potion.CooldownMobEffect;
 import net.mcreator.craftkaisen.potion.ConstantSliceMobEffect;
 import net.mcreator.craftkaisen.potion.BurnCooldownMobEffect;
+import net.mcreator.craftkaisen.potion.BodyShapeCooldownMobEffect;
+import net.mcreator.craftkaisen.potion.BodyShapeActiveMobEffect;
 import net.mcreator.craftkaisen.potion.BodyCrushingMobEffect;
 import net.mcreator.craftkaisen.CraftKaisenMod;
 
@@ -66,4 +70,8 @@ public class CraftKaisenModMobEffects {
 	public static final RegistryObject<MobEffect> SIMPLE_DOMAIN_COOLDOWN = REGISTRY.register("simple_domain_cooldown", () -> new SimpleDomainCooldownMobEffect());
 	public static final RegistryObject<MobEffect> RCT = REGISTRY.register("rct", () -> new RCTMobEffect());
 	public static final RegistryObject<MobEffect> COOLDOWN = REGISTRY.register("cooldown", () -> new CooldownMobEffect());
+	public static final RegistryObject<MobEffect> BODY_SHAPE_ACTIVE = REGISTRY.register("body_shape_active", () -> new BodyShapeActiveMobEffect());
+	public static final RegistryObject<MobEffect> BODY_SHAPE_COOLDOWN = REGISTRY.register("body_shape_cooldown", () -> new BodyShapeCooldownMobEffect());
+	public static final RegistryObject<MobEffect> SLICING_MAHITO = REGISTRY.register("slicing_mahito", () -> new SlicingMahitoMobEffect());
+	public static final RegistryObject<MobEffect> SOUL_MULTIPLICITY_ACTIVE = REGISTRY.register("soul_multiplicity_active", () -> new SoulMultiplicityActiveMobEffect());
 }

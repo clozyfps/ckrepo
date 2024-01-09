@@ -45,6 +45,8 @@ public class CraftKaisenModTabs {
 					tabData.accept(CraftKaisenModItems.NOBARA_KUGISAKI_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.OLD_LADY_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.RIKO_AMANAI_SPAWN_EGG.get());
+					tabData.accept(CraftKaisenModItems.AWAKENED_MAKI_SPAWN_EGG.get());
+					tabData.accept(CraftKaisenModItems.SUGURU_GETO_SPAWN_EGG.get());
 				}).withSearchBar());
 		event.registerCreativeModeTab(new ResourceLocation("craft_kaisen", "ck_weapons"),
 				builder -> builder.title(Component.translatable("item_group.craft_kaisen.ck_weapons")).icon(() -> new ItemStack(CraftKaisenModItems.PLAYFUL_CLOUD.get())).displayItems((parameters, tabData) -> {
@@ -59,6 +61,7 @@ public class CraftKaisenModTabs {
 					tabData.accept(CraftKaisenModItems.BLOOD_SPEAR.get());
 					tabData.accept(CraftKaisenModItems.BLOOD_AXE.get());
 					tabData.accept(CraftKaisenModItems.HAMMER.get());
+					tabData.accept(CraftKaisenModItems.DRAGON_BONE.get());
 				}).withSearchBar());
 		event.registerCreativeModeTab(new ResourceLocation("craft_kaisen", "ck_armor"),
 				builder -> builder.title(Component.translatable("item_group.craft_kaisen.ck_armor")).icon(() -> new ItemStack(CraftKaisenModItems.BANDAGE_BLIND_FOLD_HELMET.get())).displayItems((parameters, tabData) -> {

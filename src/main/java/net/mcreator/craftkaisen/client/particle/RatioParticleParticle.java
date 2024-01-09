@@ -38,7 +38,7 @@ public class RatioParticleParticle extends TextureSheetParticle {
 		super(world, x, y, z);
 		this.spriteSet = spriteSet;
 		this.setSize(0.2f, 0.2f);
-		this.quadSize *= 5f;
+		this.quadSize *= 11f;
 		this.lifetime = 7;
 		this.gravity = 0f;
 		this.hasPhysics = true;

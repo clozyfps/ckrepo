@@ -6,6 +6,8 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
@@ -23,7 +25,9 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
+import net.mcreator.craftkaisen.init.CraftKaisenModItems;
 import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
+import net.mcreator.craftkaisen.entity.SatoruGojoEntity;
 import net.mcreator.craftkaisen.entity.FlyHeadEntity;
 import net.mcreator.craftkaisen.CraftKaisenMod;
 
@@ -56,20 +60,18 @@ public class TojiFushiguroOnEntityTickUpdateProcedure {
 				if (Math.random() < 0.008) {
 					entity.setDeltaMovement(new Vec3(((-2.5) * entity.getLookAngle().x), ((-2) * entity.getLookAngle().y), ((-2.5) * entity.getLookAngle().z)));
 					CraftKaisenMod.queueServerWork(25, () -> {
-						entity.setDeltaMovement(new Vec3((((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getDeltaMovement().x() - entity.getDeltaMovement().x()) / 6),
-								(((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getDeltaMovement().y() - entity.getDeltaMovement().y()) / 6),
-								(((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getDeltaMovement().z() - entity.getDeltaMovement().z()) / 6)));
+						entity.setDeltaMovement(new Vec3((((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getX() - entity.getX()) / 6),
+								(((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getY() - entity.getY()) / 6), (((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getZ() - entity.getZ()) / 6)));
 						CraftKaisenMod.queueServerWork(5, () -> {
 							if (entity instanceof LivingEntity _entity)
 								_entity.swing(InteractionHand.MAIN_HAND, true);
-							(entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getPersistentData().putBoolean("vector", true);
 							{
 								final Vec3 _center = new Vec3(x, y, z);
 								List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(3 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
 										.collect(Collectors.toList());
 								for (Entity entityiterator : _entfound) {
 									if (!(entityiterator == entity)) {
-										entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC)), 10);
+										entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC)), 13);
 									}
 								}
 							}
@@ -107,19 +109,17 @@ public class TojiFushiguroOnEntityTickUpdateProcedure {
 					});
 				}
 				if (Math.random() < 0.01) {
-					entity.setDeltaMovement(new Vec3((((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getDeltaMovement().x() - entity.getDeltaMovement().x()) / 6),
-							(((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getDeltaMovement().y() - entity.getDeltaMovement().y()) / 6),
-							(((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getDeltaMovement().z() - entity.getDeltaMovement().z()) / 6)));
+					entity.setDeltaMovement(new Vec3((((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getX() - entity.getX()) / 5),
+							(((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getY() - entity.getY()) / 5), (((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getZ() - entity.getZ()) / 5)));
 					if (entity instanceof LivingEntity _entity)
 						_entity.swing(InteractionHand.MAIN_HAND, true);
-					(entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getPersistentData().putBoolean("vector", true);
 					{
 						final Vec3 _center = new Vec3(x, y, z);
 						List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(3 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
 								.collect(Collectors.toList());
 						for (Entity entityiterator : _entfound) {
 							if (!(entityiterator == entity)) {
-								entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC)), 10);
+								entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC)), 15);
 							}
 						}
 					}
@@ -146,11 +146,22 @@ public class TojiFushiguroOnEntityTickUpdateProcedure {
 								((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getZ()), 5, 0.1, 2, 0.1, 0);
 					if (world instanceof ServerLevel _level)
 						_level.sendParticles(ParticleTypes.POOF, ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getX()), ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getY()),
-								((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getZ()), 2, 1, 2, 1, 0);
+								((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getZ()), 15, 1, 2, 1, 0);
 				}
 				if (Math.random() < 0.008) {
 					if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 						_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 30, 25, false, false));
+				}
+			}
+		}
+		if ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof SatoruGojoEntity) {
+			if (!((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == CraftKaisenModItems.INVERTED_SPEAR.get())) {
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(CraftKaisenModItems.INVERTED_SPEAR.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
 				}
 			}
 		}

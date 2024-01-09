@@ -30,8 +30,8 @@
     "bootsSpecialInformation": {
       "fixedValue": []
     },
-    "helmetModelName": "Modelblindfold",
-    "helmetModelPart": "Head",
+    "helmetModelName": "Modelblackblindfold",
+    "helmetModelPart": "Head2",
     "helmetModelTexture": "black_wool.png",
     "bodyModelName": "Default",
     "bodyModelPart": "Body",
@@ -58,6 +58,18 @@
     "bodyImmuneToFire": false,
     "leggingsImmuneToFire": false,
     "bootsImmuneToFire": false,
+    "helmetPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bodyPiglinNeutral": {
+      "fixedValue": false
+    },
+    "leggingsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bootsPiglinNeutral": {
+      "fixedValue": false
+    },
     "maxDamage": 1000,
     "damageValueHelmet": 2,
     "damageValueBody": 6,

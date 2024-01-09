@@ -9,6 +9,8 @@ import net.minecraft.server.level.ServerPlayer;
 import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
 import net.mcreator.craftkaisen.entity.MahitoCloneEntity;
 
+import java.util.stream.Collectors;
+import java.util.List;
 import java.util.Comparator;
 
 public class LdawdaRightclickedProcedure {
@@ -32,6 +34,26 @@ public class LdawdaRightclickedProcedure {
 				_ent.teleportTo(x, y, z);
 				if (_ent instanceof ServerPlayer _serverPlayer)
 					_serverPlayer.connection.teleport(x, y, z, _ent.getYRot(), _ent.getXRot());
+			}
+			if (!entity.isShiftKeyDown()) {
+				{
+					final Vec3 _center = new Vec3(x, y, z);
+					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(10 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
+							.collect(Collectors.toList());
+					for (Entity entityiterator : _entfound) {
+						entityiterator.setDeltaMovement(new Vec3(((entity.getX() - entityiterator.getX()) / 5), ((entity.getY() - entityiterator.getY()) / 5), ((entity.getZ() - entityiterator.getZ()) / 5)));
+					}
+				}
+			} else if (entity.isShiftKeyDown()) {
+				{
+					final Vec3 _center = new Vec3(x, y, z);
+					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(10 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
+							.collect(Collectors.toList());
+					for (Entity entityiterator : _entfound) {
+						entityiterator.setDeltaMovement(new Vec3(((entity.getDeltaMovement().x() - entity.getDeltaMovement().x()) / 5), ((entity.getDeltaMovement().y() - entity.getDeltaMovement().y()) / 5),
+								((entity.getDeltaMovement().z() - entity.getDeltaMovement().z()) / 5)));
+					}
+				}
 			}
 		}
 	}

@@ -1292,10 +1292,10 @@
       "registry_name": "satoru_gojo",
       "metadata": {
         "files": [
-          "src/main/resources/data/craft_kaisen/forge/biome_modifier/satoru_gojo_biome_modifier.json",
+          "src/main/java/net/mcreator/craftkaisen/entity/SatoruGojoEntity.java",
           "src/main/java/net/mcreator/craftkaisen/client/renderer/SatoruGojoRenderer.java",
           "src/main/resources/assets/craft_kaisen/models/item/satoru_gojo_spawn_egg.json",
-          "src/main/java/net/mcreator/craftkaisen/entity/SatoruGojoEntity.java"
+          "src/main/resources/data/craft_kaisen/forge/biome_modifier/satoru_gojo_biome_modifier.json"
         ]
       },
       "path": "~/Mobs"
@@ -1315,6 +1315,18 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
           },
           {
             "name": "world",
@@ -3288,8 +3300,8 @@
       "registry_name": "bandage_blind_fold",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/item/BandageBlindFoldItem.java",
-          "src/main/resources/assets/craft_kaisen/models/item/bandage_blind_fold_helmet.json"
+          "src/main/resources/assets/craft_kaisen/models/item/bandage_blind_fold_helmet.json",
+          "src/main/java/net/mcreator/craftkaisen/item/BandageBlindFoldItem.java"
         ]
       },
       "path": "~/Armor"
@@ -5454,24 +5466,7 @@
         "files": [
           "src/main/java/net/mcreator/craftkaisen/procedures/BlackFlashProcedure.java"
         ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "sourceentity",
-            "type": "entity"
-          },
-          {
-            "name": "amount",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
+        "dependencies": []
       },
       "path": "~/Procedures"
     },
@@ -9332,7 +9327,7 @@
           }
         ]
       },
-      "path": "~/Overlay"
+      "path": "~/Overlay/Procedures"
     },
     {
       "name": "PureLovePre",
@@ -9989,6 +9984,10 @@
             "type": "entity"
           },
           {
+            "name": "immediatesourceentity",
+            "type": "entity"
+          },
+          {
             "name": "x",
             "type": "number"
           },
@@ -10053,8 +10052,8 @@
       "registry_name": "mist_purple",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/particles/mist_purple.json",
-          "src/main/java/net/mcreator/craftkaisen/client/particle/MistPurpleParticle.java"
+          "src/main/java/net/mcreator/craftkaisen/client/particle/MistPurpleParticle.java",
+          "src/main/resources/assets/craft_kaisen/particles/mist_purple.json"
         ]
       },
       "path": "~/Particles"
@@ -13382,16 +13381,7 @@
         "files": [
           "src/main/java/net/mcreator/craftkaisen/procedures/RedTickProcedure.java"
         ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
+        "dependencies": []
       },
       "path": "~/Procedures"
     },
@@ -17525,8 +17515,8 @@
       "registry_name": "ratio_particle",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/particles/ratio_particle.json",
-          "src/main/java/net/mcreator/craftkaisen/client/particle/RatioParticleParticle.java"
+          "src/main/java/net/mcreator/craftkaisen/client/particle/RatioParticleParticle.java",
+          "src/main/resources/assets/craft_kaisen/particles/ratio_particle.json"
         ]
       },
       "path": "~/Particles"
@@ -18448,6 +18438,541 @@
         ]
       },
       "path": "~/Mobs/Procedure"
+    },
+    {
+      "name": "CurrentCEOverlay",
+      "type": "procedure",
+      "sortid": 792,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "current_ce_overlay",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/CurrentCEOverlayProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Overlay/Procedures"
+    },
+    {
+      "name": "HealthOverlay",
+      "type": "procedure",
+      "sortid": 793,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "health_overlay",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/HealthOverlayProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Overlay/Procedures"
+    },
+    {
+      "name": "SixEyesOverlayDisplayOverlayIngame",
+      "type": "procedure",
+      "sortid": 794,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "six_eyes_overlay_display_overlay_ingame",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/SixEyesOverlayDisplayOverlayIngameProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Overlay/Procedures"
+    },
+    {
+      "name": "SixEyesOverlay",
+      "type": "overlay",
+      "sortid": 795,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "six_eyes_overlay",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/screens/SixEyesOverlayOverlay.java"
+        ]
+      },
+      "path": "~/Overlay"
+    },
+    {
+      "name": "AwakenedMaki",
+      "type": "livingentity",
+      "sortid": 796,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "awakened_maki",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/AwakenedMakiRenderer.java",
+          "src/main/resources/assets/craft_kaisen/models/item/awakened_maki_spawn_egg.json",
+          "src/main/java/net/mcreator/craftkaisen/entity/AwakenedMakiEntity.java",
+          "src/main/resources/data/craft_kaisen/forge/biome_modifier/awakened_maki_biome_modifier.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "DragonBone",
+      "type": "tool",
+      "sortid": 797,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dragon_bone",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/item/DragonBoneItem.java",
+          "src/main/resources/assets/craft_kaisen/models/item/dragon_bone.json"
+        ]
+      },
+      "path": "~/Weapons"
+    },
+    {
+      "name": "DragonBoneRightclicked",
+      "type": "procedure",
+      "sortid": 798,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dragon_bone_rightclicked",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DragonBoneRightclickedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/Weapons/Procedures"
+    },
+    {
+      "name": "DragonBoneBuildUp",
+      "type": "procedure",
+      "sortid": 799,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dragon_bone_build_up",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DragonBoneBuildUpProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "BodyRepel1",
+      "type": "livingentity",
+      "sortid": 800,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "body_repel_1",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/BodyRepel1Renderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/BodyRepel1Entity.java"
+        ]
+      },
+      "path": "~/Abilities/IdleTransfiguration"
+    },
+    {
+      "name": "BodyRepel2",
+      "type": "livingentity",
+      "sortid": 801,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "body_repel_2",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/BodyRepel2Renderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/BodyRepel2Entity.java"
+        ]
+      },
+      "path": "~/Abilities/IdleTransfiguration"
+    },
+    {
+      "name": "BodyRepel3",
+      "type": "livingentity",
+      "sortid": 802,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "body_repel_3",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/BodyRepel3Renderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/BodyRepel3Entity.java"
+        ]
+      },
+      "path": "~/Abilities/IdleTransfiguration"
+    },
+    {
+      "name": "BodyShapeActive",
+      "type": "potioneffect",
+      "sortid": 803,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "body_shape_active",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/potion/BodyShapeActiveMobEffect.java"
+        ]
+      },
+      "path": "~/Potions"
+    },
+    {
+      "name": "BodyShapeOverlayDisplayOverlayIngame",
+      "type": "procedure",
+      "sortid": 804,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "body_shape_overlay_display_overlay_ingame",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/BodyShapeOverlayDisplayOverlayIngameProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Overlay/Procedures"
+    },
+    {
+      "name": "BodyShapeOverlay",
+      "type": "overlay",
+      "sortid": 805,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "body_shape_overlay",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/screens/BodyShapeOverlayOverlay.java"
+        ]
+      },
+      "path": "~/Overlay"
+    },
+    {
+      "name": "BodyShapeCooldown",
+      "type": "potioneffect",
+      "sortid": 806,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "body_shape_cooldown",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/potion/BodyShapeCooldownMobEffect.java"
+        ]
+      },
+      "path": "~/Potions"
+    },
+    {
+      "name": "RopeMob",
+      "type": "livingentity",
+      "sortid": 807,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rope_mob",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/RopeMobRenderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/RopeMobEntity.java"
+        ]
+      },
+      "path": "~/Mobs/Abilities"
+    },
+    {
+      "name": "SlicingMahitoOnEffectActiveTick",
+      "type": "procedure",
+      "sortid": 808,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "slicing_mahito_on_effect_active_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/SlicingMahitoOnEffectActiveTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Potions/Procedures"
+    },
+    {
+      "name": "SlicingMahito",
+      "type": "potioneffect",
+      "sortid": 809,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "slicing_mahito",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/potion/SlicingMahitoMobEffect.java"
+        ]
+      },
+      "path": "~/Potions"
+    },
+    {
+      "name": "BodyShapeActiveOnEffectActiveTick",
+      "type": "procedure",
+      "sortid": 810,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "body_shape_active_on_effect_active_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/BodyShapeActiveOnEffectActiveTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Potions/Procedures"
+    },
+    {
+      "name": "SoulMultiplicityActive",
+      "type": "potioneffect",
+      "sortid": 811,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "soul_multiplicity_active",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/potion/SoulMultiplicityActiveMobEffect.java"
+        ]
+      },
+      "path": "~/Potions"
+    },
+    {
+      "name": "SoulMultiplicityOverlay",
+      "type": "overlay",
+      "sortid": 812,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "soul_multiplicity_overlay",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/screens/SoulMultiplicityOverlayOverlay.java"
+        ]
+      },
+      "path": "~/Overlay"
+    },
+    {
+      "name": "BodyRepelDespawn",
+      "type": "procedure",
+      "sortid": 813,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "body_repel_despawn",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/BodyRepelDespawnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "BodyRepelTick",
+      "type": "procedure",
+      "sortid": 814,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "body_repel_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/BodyRepelTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "SoulMultiplicityActiveOnEffectActiveTick",
+      "type": "procedure",
+      "sortid": 815,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "soul_multiplicity_active_on_effect_active_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/SoulMultiplicityActiveOnEffectActiveTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Potions/Procedures"
+    },
+    {
+      "name": "GojoRedTick",
+      "type": "procedure",
+      "sortid": 816,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gojo_red_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/GojoRedTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "SuguruGeto",
+      "type": "livingentity",
+      "sortid": 817,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "suguru_geto",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/entity/SuguruGetoEntity.java",
+          "src/main/resources/assets/craft_kaisen/models/item/suguru_geto_spawn_egg.json",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/SuguruGetoRenderer.java",
+          "src/main/resources/data/craft_kaisen/forge/biome_modifier/suguru_geto_biome_modifier.json"
+        ]
+      },
+      "path": "~/Mobs"
     }
   ],
   "variable_elements": [
@@ -18479,7 +19004,7 @@
       "name": "maxExp",
       "type": "number",
       "scope": "player_persistent",
-      "value": "0"
+      "value": "20.0"
     },
     {
       "name": "skillPoints",
@@ -19069,6 +19594,7 @@
       "item.craft_kaisen.toad_spawn_egg": "Toad Spawn Egg",
       "advancements.death_painting.descr": "WIP",
       "block.craft_kaisen.talisman_block": "Talisman Block",
+      "entity.craft_kaisen.suguru_geto": "Suguru Geto",
       "entity.craft_kaisen.mouth_cursed_spirit": "Mouth Cursed Spirit",
       "advancements.cursed_technique.title": "Cursed Technique",
       "entity.craft_kaisen.black_divine_dog": "Black Divine Dog",
@@ -19084,8 +19610,11 @@
       "advancements.grade_4.descr": "Reach The Required Fame.",
       "item_group.craft_kaisen.ck_mobs": "Craft Kaisen Humans",
       "gamerule.maximumSukunaVesselPlayers": "MaximumSukunaVesselPlayers (singeplayer)",
+      "gui.craft_kaisen.soul_multiplicity_overlay.label_shift_soul_summon": "SHIFT - Soul Summon",
       "advancements.divine_general_mahoraga.descr": "Tame Mahoraga",
       "subtitles.sukunadomain": "",
+      "gui.craft_kaisen.body_shape_overlay.label_ctrl_rope": "CTRL - Rope",
+      "gui.craft_kaisen.soul_multiplicity_overlay.label_alt_soul_isomer": "ALT - Soul Isomer",
       "itemGroup.tabck_mobs": "Craft Kaisen Humans",
       "item.craft_kaisen.naginata": "Naginata",
       "advancements.special_grade.title": "Special Grade",
@@ -19094,6 +19623,7 @@
       "entity.craft_kaisen.riko_amanai": "Riko Amanai",
       "advancements.special_grade.descr": "Reach The Required Fame.",
       "item_group.craft_kaisen.ck_weapons": "Ck Weapons",
+      "effect.craft_kaisen.body_shape_active": "BodyShape",
       "gui.craft_kaisen.start_screen.label_cursed_spirit": "Curse",
       "item.craft_kaisen.inventory_curse_mob_spawn_egg": "Inventory Curse Mob Spawn Egg",
       "entity.craft_kaisen.nobara_kugisaki": "Nobara Kugisaki",
@@ -19103,7 +19633,10 @@
       "advancements.perception_of_the_soul.descr": "Learn to percieve yours aswell as others souls.",
       "item.craft_kaisen.hammer": "Hammer",
       "item.craft_kaisen.finger_bearer_spawn_egg": "Finger Bearer Spawn Egg",
+      "entity.craft_kaisen.body_repel_2": "Body Repel 2",
       "itemGroup.tabck_weapons": "Ck Weapons",
+      "entity.craft_kaisen.body_repel_1": "Body Repel 1",
+      "entity.craft_kaisen.body_repel_3": "Body Repel 3",
       "advancements.perfect_preparation.descr": "Survive Through The Shibuya Incident",
       "entity.craft_kaisen.maximum_elephant": "Maximum Elephant",
       "advancements.great_serpent_advancement.descr": "Tame The Great Serpent",
@@ -19150,6 +19683,7 @@
       "entity.craft_kaisen.mahito_clone": "Mahito Clone",
       "item.craft_kaisen.bandage_blind_fold_helmet": "Bandage Blind Fold",
       "entity.craft_kaisen.finger_bearer": "Finger Bearer",
+      "gui.craft_kaisen.body_shape_overlay.label_alt": "ALT - Spike ",
       "block.craft_kaisen.sprinkler_on": "Sprinkler On",
       "advancements.grade_3.descr": "Reach The Required Fame.",
       "advancements.jujutsu_sorcerer.title": "Jujutsu Sorcerer",
@@ -19172,17 +19706,20 @@
       "item.craft_kaisen.nanami_knife": "Nanami Knife",
       "biome.craft_kaisen.u_vbiome": "U Vbiome",
       "entity.craft_kaisen.choso": "Choso",
+      "effect.craft_kaisen.body_shape_cooldown": "BodyShapeCooldown",
       "advancements.round_deer_advancement.descr": "Tame The Round Deer",
       "advancements.young_fishand_reverse_punishment.title": "Young Fish and Reverse Punishment",
       "itemGroup.tabck_armor": "Ck Armor",
       "entity.craft_kaisen.toad": "Toad",
       "block.craft_kaisen.sprinkler": "Sprinkler",
+      "item.craft_kaisen.suguru_geto_spawn_egg": "Suguru Geto Spawn Egg",
       "advancements.cursed_child.descr": "Kill Yuta",
       "entity.craft_kaisen.ember_insect": "Ember Insect",
       "block.craft_kaisen.domain_block": "Domain Block",
       "advancements.stand_proud_you_are_strong.title": "Stand Proud, You\u0027re Strong",
       "item.craft_kaisen.black_blind_fold_helmet": "Black Blind Fold ",
       "item.craft_kaisen.jujutsu_sorcerer_uniform_chestplate": "Jujutsu Sorcerer Uniform",
+      "item.craft_kaisen.awakened_maki_spawn_egg": "Maki Zenin Spawn Egg",
       "entity.craft_kaisen.rika": "Rika",
       "item.craft_kaisen.mahito_spawn_egg": "Mahito Spawn Egg",
       "gui.craft_kaisen.start_screen.label_empty1": "\u003c",
@@ -19197,6 +19734,7 @@
       "advancements.rabbit_escape.descr": "Tame Rabbit Escape",
       "block.craft_kaisen.shibuya_gates": "Shibuya Gates",
       "item.craft_kaisen.reversal_red_projectile": "Reversal Red Projectile",
+      "gui.craft_kaisen.soul_multiplicity_overlay.label_ctrl_body_repel": "CTRL - Body Repel",
       "effect.craft_kaisen.burn_cooldown": "BurnCooldown",
       "entity.craft_kaisen.resurrected_toji": "Resurrected Toji",
       "item.craft_kaisen.crumble_away_ranged": "Crumble Away Ranged",
@@ -19221,6 +19759,7 @@
       "item_group.craft_kaisen.ck_blocks": "Ck Blocks",
       "item.craft_kaisen.rainbow_dragon_spawn_egg": "Rainbow Dragon Spawn Egg",
       "advancements.semi_grade_2.title": "Semi Grade 2",
+      "entity.craft_kaisen.rope_mob": "Rope Mob",
       "entity.craft_kaisen.shadow_frog": "Shadow Frog",
       "item.craft_kaisen.water_maximum_elephant": "Water Maximum Elephant",
       "entity.craft_kaisen.great_serpent": "Great Serpent",
@@ -19255,13 +19794,17 @@
       "effect.craft_kaisen.sukuna": "Sukuna",
       "gui.craft_kaisen.main_menu.label_race_human": "Human",
       "item.craft_kaisen.jogo_spawn_egg": "Jogo Spawn Egg",
+      "gui.craft_kaisen.body_shape_overlay.label_shift_slicing": "SHIFT - Slicing",
       "entity.craft_kaisen.small_pox_deity": "Small Pox Deity",
       "gui.craft_kaisen.main_menu.tooltip_increase_energy_regen_rate_and_m": "increase energy regen rate and max output",
       "item.craft_kaisen.nobara_outfit_chestplate": "Female Jujutsu Sorcerer Outfit",
       "effect.craft_kaisen.pure_love_pre": "PureLove",
       "advancements.six_eyes_advancement.descr": "Your cursed energy manipulation allows for almost zero cursed energy cost.",
+      "item.craft_kaisen.dragon_bone": "Dragon Bone",
       "advancements.grade_3.title": "Grade 3",
       "item.craft_kaisen.blood_meteorite": "Blood Meteorite",
+      "entity.craft_kaisen.awakened_maki": "Maki Zenin",
+      "effect.craft_kaisen.soul_multiplicity_active": "SMactive",
       "gui.craft_kaisen.main_menu.tooltip_cursed_technique": "Cursed Technique",
       "advancements.reversed_cursed_technique.descr": "[5% Chance] Have a near death experience ",
       "item.craft_kaisen.great_serpent_spawn_egg": "Great Serpent Spawn Egg",
@@ -19269,6 +19812,7 @@
       "item.craft_kaisen.yuta_outfit_chestplate": "Yuta Shirt",
       "advancements.rika_tamed.title": "Rika",
       "gui.craft_kaisen.imbue_gui.button_imbue": "Imbue",
+      "effect.craft_kaisen.slicing_mahito": "SlicingMahito",
       "key.craft_kaisen.armor_special": "Armor Special",
       "advancements.blessed_by_the_sparks_advancement.descr": "Your chances for landing a black flash are significantly increased.",
       "advancements.rabbit_escape.title": "Rabbit Escape",
@@ -19325,6 +19869,7 @@
       "item.craft_kaisen.rika_spawn_egg": "Rika Spawn Egg",
       "item.craft_kaisen.rugby_field_cursed_spirit_spawn_egg": "Rugby Field Cursed Spirit Spawn Egg",
       "effect.craft_kaisen.evade_cooldown": "EvadeCooldown",
+      "gui.craft_kaisen.body_shape_overlay.label_ctrl_alt_shape_shift": "CTRL + ALT - Shape Shift",
       "gamerule.forceSukunaTechnique.description": "Forces sukuna technique on whoever is controlling the body of a vessel.",
       "entity.craft_kaisen.roppongi_cursed_spirit": "Roppongi Cursed Spirit",
       "effect.craft_kaisen.simple_domain": "Simple Domain",
@@ -19373,6 +19918,7 @@
       "item.craft_kaisen.crushed_ranged": "Crushed Ranged",
       "gamerule.sukunaVesselMode.description": "Control Wether vessels are singleplayer or multiplayer (2 player controlled vessels(",
       "gui.craft_kaisen.start_screen.label_race": "RACE:",
+      "gui.craft_kaisen.six_eyes_overlay.label_empty": "",
       "entity.craft_kaisen.small_pox_domain_spawner": "Small Pox Domain Spawner",
       "item.craft_kaisen.cursed_ring": "Cursed Ring",
       "item.craft_kaisen.playful_cloud": "Playful Cloud"
