@@ -57,6 +57,7 @@ import net.mcreator.craftkaisen.item.ExplodeRangedItem;
 import net.mcreator.craftkaisen.item.EmberInsectProjectileItem;
 import net.mcreator.craftkaisen.item.DragonBoneItem;
 import net.mcreator.craftkaisen.item.DontMoveRangedItem;
+import net.mcreator.craftkaisen.item.DistortedBodyItem;
 import net.mcreator.craftkaisen.item.DismantleItem;
 import net.mcreator.craftkaisen.item.DisasterFlameRangedItem;
 import net.mcreator.craftkaisen.item.CursedWombDeathPaintingItem;
@@ -194,6 +195,10 @@ public class CraftKaisenModItems {
 	public static final RegistryObject<Item> AWAKENED_MAKI_SPAWN_EGG = REGISTRY.register("awakened_maki_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.AWAKENED_MAKI, -16764109, -16777216, new Item.Properties()));
 	public static final RegistryObject<Item> DRAGON_BONE = REGISTRY.register("dragon_bone", () -> new DragonBoneItem());
 	public static final RegistryObject<Item> SUGURU_GETO_SPAWN_EGG = REGISTRY.register("suguru_geto_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.SUGURU_GETO, -16777216, -10178, new Item.Properties()));
+	public static final RegistryObject<Item> DISTORTED_BODY_HELMET = REGISTRY.register("distorted_body_helmet", () -> new DistortedBodyItem.Helmet());
+	public static final RegistryObject<Item> DISTORTED_BODY_CHESTPLATE = REGISTRY.register("distorted_body_chestplate", () -> new DistortedBodyItem.Chestplate());
+	public static final RegistryObject<Item> DISTORTED_BODY_LEGGINGS = REGISTRY.register("distorted_body_leggings", () -> new DistortedBodyItem.Leggings());
+	public static final RegistryObject<Item> PANDA_SPAWN_EGG = REGISTRY.register("panda_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.PANDA, -1, -16777216, new Item.Properties()));
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));

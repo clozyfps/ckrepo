@@ -47,6 +47,7 @@ public class CraftKaisenModTabs {
 					tabData.accept(CraftKaisenModItems.RIKO_AMANAI_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.AWAKENED_MAKI_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.SUGURU_GETO_SPAWN_EGG.get());
+					tabData.accept(CraftKaisenModItems.PANDA_SPAWN_EGG.get());
 				}).withSearchBar());
 		event.registerCreativeModeTab(new ResourceLocation("craft_kaisen", "ck_weapons"),
 				builder -> builder.title(Component.translatable("item_group.craft_kaisen.ck_weapons")).icon(() -> new ItemStack(CraftKaisenModItems.PLAYFUL_CLOUD.get())).displayItems((parameters, tabData) -> {

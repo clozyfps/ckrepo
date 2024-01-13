@@ -7,7 +7,6 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Mob;
@@ -27,7 +26,6 @@ import net.minecraft.client.Minecraft;
 
 import net.mcreator.craftkaisen.init.CraftKaisenModParticleTypes;
 import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
-import net.mcreator.craftkaisen.CraftKaisenMod;
 
 import java.util.stream.Collectors;
 import java.util.List;
@@ -63,55 +61,6 @@ public class SatoruGojoOnEntityTickUpdateProcedure {
 					if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 						_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.COOLDOWN.get(), 25, 1, false, false));
 					ReversalRedProceduresProcedure.execute(entity);
-				} else if (Math.random() < 0.004) {
-					if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-						_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.COOLDOWN.get(), 25, 1, false, false));
-					{
-						// Get the radius of the sphere
-						double radius = 3; // 3 blocks
-						// Set the tolerance for how close to the surface a point must be to create a particle
-						double tolerance = 0.15; // 0.1 blocks
-						for (double xx = -radius; xx <= radius; xx += 0.1) {
-							for (double yy = -radius; yy <= radius; yy += 0.1) {
-								for (double zz = -radius; zz <= radius; zz += 0.1) {
-									if (Math.abs(xx * xx + yy * yy + zz * zz - radius * radius) <= tolerance) {
-										// Calculate the position of the particle
-										double posX = (entity.level.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(6)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity))
-												.getBlockPos().getX()) + xx;
-										double posY = (entity.level.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(6)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity))
-												.getBlockPos().getY()) + yy;
-										double posZ = (entity.level.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(6)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity))
-												.getBlockPos().getZ()) + zz;
-										if (true) {
-											if (world instanceof ServerLevel)
-												((ServerLevel) world).sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.BLUE_PARTICLE.get()), posX, posY, posZ, (int) 1, 0.01, 0.01, 0.01, 0);
-										} else {
-											world.addParticle((SimpleParticleType) (CraftKaisenModParticleTypes.BLUE_PARTICLE.get()), posX, posY, posZ, 0, 0, 0);
-										}
-									}
-								}
-							}
-						}
-					}
-					(entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).setDeltaMovement(new Vec3(
-							(((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getX()
-									- entity.level.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(6)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getX())
-									/ 6),
-							(((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getY()
-									- entity.level.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(6)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getY())
-									/ 6),
-							(((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getZ()
-									- entity.level.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(6)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getZ())
-									/ 6)));
-					CraftKaisenMod.queueServerWork(1, () -> {
-						(entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).setDeltaMovement(new Vec3(
-								((entity.level.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(6)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getX()
-										- (entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getX()) / 6),
-								((entity.level.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(6)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getY()
-										- (entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getY()) / 6),
-								((entity.level.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(6)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getZ()
-										- (entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getZ()) / 6)));
-					});
 				} else if (Math.random() < 0.002) {
 					{
 						final Vec3 _center = new Vec3(x, y, z);
@@ -162,7 +111,7 @@ public class SatoruGojoOnEntityTickUpdateProcedure {
 						for (Entity entityiterator : _entfound) {
 							if (!(entityiterator == entity) && entityiterator == (entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null)) {
 								if (world instanceof ServerLevel _level)
-									_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.PUNCH_IMPACT.get()), (entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), 3, 0.1, 0.1, 0.1, 0);
+									_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.PUNCH_IMPACT.get()), (entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), 3, 0.1, 2, 0.1, 0);
 								if (world instanceof ServerLevel _level)
 									_level.sendParticles(ParticleTypes.POOF, (entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), 1, 0.1, 0.1, 0.1, 1);
 								if (world instanceof ServerLevel _level)

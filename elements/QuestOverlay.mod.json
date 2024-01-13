@@ -7,23 +7,6 @@
       {
         "type": "label",
         "data": {
-          "name": "label_proc_return_current_quest1",
-          "text": {
-            "fixedValue": "",
-            "name": "ReturnCurrentQuest"
-          },
-          "color": {
-            "value": -16777216,
-            "falpha": 0.0
-          },
-          "anchorPoint": "TOP_RIGHT",
-          "x": 272,
-          "y": 7
-        }
-      },
-      {
-        "type": "label",
-        "data": {
           "name": "label_proc_return_current_quest",
           "text": {
             "fixedValue": "",
@@ -34,7 +17,7 @@
             "falpha": 0.0
           },
           "anchorPoint": "TOP_RIGHT",
-          "x": 273,
+          "x": 259,
           "y": 7
         }
       }

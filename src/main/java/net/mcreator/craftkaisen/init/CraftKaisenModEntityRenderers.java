@@ -35,6 +35,7 @@ import net.mcreator.craftkaisen.client.renderer.ReversalRedEntityRenderer;
 import net.mcreator.craftkaisen.client.renderer.ResurrectedTojiRenderer;
 import net.mcreator.craftkaisen.client.renderer.RainbowDragonRenderer;
 import net.mcreator.craftkaisen.client.renderer.PoxDeityDomainRenderer;
+import net.mcreator.craftkaisen.client.renderer.PandaRenderer;
 import net.mcreator.craftkaisen.client.renderer.OldLadyRenderer;
 import net.mcreator.craftkaisen.client.renderer.NueRenderer;
 import net.mcreator.craftkaisen.client.renderer.NobaraKugisakiRenderer;
@@ -151,5 +152,6 @@ public class CraftKaisenModEntityRenderers {
 		event.registerEntityRenderer(CraftKaisenModEntities.BODY_REPEL_3.get(), BodyRepel3Renderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.ROPE_MOB.get(), RopeMobRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.SUGURU_GETO.get(), SuguruGetoRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.PANDA.get(), PandaRenderer::new);
 	}
 }

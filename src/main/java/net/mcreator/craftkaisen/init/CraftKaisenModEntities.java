@@ -51,6 +51,7 @@ import net.mcreator.craftkaisen.entity.ResurrectedTojiEntity;
 import net.mcreator.craftkaisen.entity.RainbowDragonEntity;
 import net.mcreator.craftkaisen.entity.PureLoveBeamRangedProjectileEntity;
 import net.mcreator.craftkaisen.entity.PoxDeityDomainEntity;
+import net.mcreator.craftkaisen.entity.PandaEntity;
 import net.mcreator.craftkaisen.entity.OldLadyEntity;
 import net.mcreator.craftkaisen.entity.NueEntity;
 import net.mcreator.craftkaisen.entity.NobaraKugisakiEntity;
@@ -377,6 +378,10 @@ public class CraftKaisenModEntities {
 			EntityType.Builder.<SuguruGetoEntity>of(SuguruGetoEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(SuguruGetoEntity::new)
 
 					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<PandaEntity>> PANDA = register("panda",
+			EntityType.Builder.<PandaEntity>of(PandaEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(PandaEntity::new)
+
+					.sized(0.6f, 1.8f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -438,6 +443,7 @@ public class CraftKaisenModEntities {
 			BodyRepel3Entity.init();
 			RopeMobEntity.init();
 			SuguruGetoEntity.init();
+			PandaEntity.init();
 		});
 	}
 
@@ -496,5 +502,6 @@ public class CraftKaisenModEntities {
 		event.put(BODY_REPEL_3.get(), BodyRepel3Entity.createAttributes().build());
 		event.put(ROPE_MOB.get(), RopeMobEntity.createAttributes().build());
 		event.put(SUGURU_GETO.get(), SuguruGetoEntity.createAttributes().build());
+		event.put(PANDA.get(), PandaEntity.createAttributes().build());
 	}
 }

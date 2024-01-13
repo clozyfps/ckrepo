@@ -132,6 +132,7 @@ public class CraftKaisenModVariables {
 			clone.HasBounty = original.HasBounty;
 			clone.Bounty = original.Bounty;
 			clone.RatioMastery = original.RatioMastery;
+			clone.TojiEventHappened = original.TojiEventHappened;
 			if (!event.isWasDeath()) {
 				clone.currentMove = original.currentMove;
 				clone.currentOutput = original.currentOutput;
@@ -402,6 +403,7 @@ public class CraftKaisenModVariables {
 		public boolean HasBounty = false;
 		public double Bounty = 0;
 		public double RatioMastery = 0;
+		public boolean TojiEventHappened = false;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -486,6 +488,7 @@ public class CraftKaisenModVariables {
 			nbt.putBoolean("HasBounty", HasBounty);
 			nbt.putDouble("Bounty", Bounty);
 			nbt.putDouble("RatioMastery", RatioMastery);
+			nbt.putBoolean("TojiEventHappened", TojiEventHappened);
 			return nbt;
 		}
 
@@ -567,6 +570,7 @@ public class CraftKaisenModVariables {
 			HasBounty = nbt.getBoolean("HasBounty");
 			Bounty = nbt.getDouble("Bounty");
 			RatioMastery = nbt.getDouble("RatioMastery");
+			TojiEventHappened = nbt.getBoolean("TojiEventHappened");
 		}
 	}
 
@@ -667,6 +671,7 @@ public class CraftKaisenModVariables {
 					variables.HasBounty = message.data.HasBounty;
 					variables.Bounty = message.data.Bounty;
 					variables.RatioMastery = message.data.RatioMastery;
+					variables.TojiEventHappened = message.data.TojiEventHappened;
 				}
 			});
 			context.setPacketHandled(true);

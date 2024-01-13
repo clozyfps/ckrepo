@@ -34,6 +34,7 @@ import net.mcreator.craftkaisen.client.model.Modelmaximummeteornewwww;
 import net.mcreator.craftkaisen.client.model.Modelmaximumelephantnew;
 import net.mcreator.craftkaisen.client.model.Modelmaximumelephant;
 import net.mcreator.craftkaisen.client.model.Modelmahoraga_wheel;
+import net.mcreator.craftkaisen.client.model.Modelmahitodistorted;
 import net.mcreator.craftkaisen.client.model.Modeljogo;
 import net.mcreator.craftkaisen.client.model.Modeljjkoutfiot;
 import net.mcreator.craftkaisen.client.model.Modelinventorycurseground;
@@ -109,6 +110,7 @@ public class CraftKaisenModModels {
 		event.registerLayerDefinition(Modelsukunafit.LAYER_LOCATION, Modelsukunafit::createBodyLayer);
 		event.registerLayerDefinition(Modelmouthcursedspirit.LAYER_LOCATION, Modelmouthcursedspirit::createBodyLayer);
 		event.registerLayerDefinition(Modelreversalred.LAYER_LOCATION, Modelreversalred::createBodyLayer);
+		event.registerLayerDefinition(Modelmahitodistorted.LAYER_LOCATION, Modelmahitodistorted::createBodyLayer);
 		event.registerLayerDefinition(ModelTenShadowBunny.LAYER_LOCATION, ModelTenShadowBunny::createBodyLayer);
 		event.registerLayerDefinition(Modeldivinedog.LAYER_LOCATION, Modeldivinedog::createBodyLayer);
 		event.registerLayerDefinition(Modelmaximummeteornewwww.LAYER_LOCATION, Modelmaximummeteornewwww::createBodyLayer);

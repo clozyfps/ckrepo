@@ -34,6 +34,7 @@ import net.mcreator.craftkaisen.potion.EvadeCooldownMobEffect;
 import net.mcreator.craftkaisen.potion.DomainExpansionMobEffect;
 import net.mcreator.craftkaisen.potion.DomainAmplificationMobEffect;
 import net.mcreator.craftkaisen.potion.DivergentFistPotionMobEffect;
+import net.mcreator.craftkaisen.potion.DistortedBodyKillingMobEffect;
 import net.mcreator.craftkaisen.potion.CooldownMobEffect;
 import net.mcreator.craftkaisen.potion.ConstantSliceMobEffect;
 import net.mcreator.craftkaisen.potion.BurnCooldownMobEffect;
@@ -74,4 +75,5 @@ public class CraftKaisenModMobEffects {
 	public static final RegistryObject<MobEffect> BODY_SHAPE_COOLDOWN = REGISTRY.register("body_shape_cooldown", () -> new BodyShapeCooldownMobEffect());
 	public static final RegistryObject<MobEffect> SLICING_MAHITO = REGISTRY.register("slicing_mahito", () -> new SlicingMahitoMobEffect());
 	public static final RegistryObject<MobEffect> SOUL_MULTIPLICITY_ACTIVE = REGISTRY.register("soul_multiplicity_active", () -> new SoulMultiplicityActiveMobEffect());
+	public static final RegistryObject<MobEffect> DISTORTED_BODY_KILLING = REGISTRY.register("distorted_body_killing", () -> new DistortedBodyKillingMobEffect());
 }
