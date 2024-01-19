@@ -29,6 +29,7 @@ import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.Packet;
 
 import net.mcreator.craftkaisen.procedures.SatoruGojoOnEntityTickUpdateProcedure;
+import net.mcreator.craftkaisen.procedures.SatoruGojoEntityDiesProcedure;
 import net.mcreator.craftkaisen.init.CraftKaisenModItems;
 import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
 
@@ -83,6 +84,12 @@ public class SatoruGojoEntity extends Monster {
 	@Override
 	public SoundEvent getDeathSound() {
 		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.death"));
+	}
+
+	@Override
+	public void die(DamageSource source) {
+		super.die(source);
+		SatoruGojoEntityDiesProcedure.execute(this);
 	}
 
 	@Override

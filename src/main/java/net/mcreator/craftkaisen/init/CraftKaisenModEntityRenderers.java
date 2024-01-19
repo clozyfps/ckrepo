@@ -41,6 +41,7 @@ import net.mcreator.craftkaisen.client.renderer.NueRenderer;
 import net.mcreator.craftkaisen.client.renderer.NobaraKugisakiRenderer;
 import net.mcreator.craftkaisen.client.renderer.NanamiKentoRenderer;
 import net.mcreator.craftkaisen.client.renderer.MouthCursedSpiritRenderer;
+import net.mcreator.craftkaisen.client.renderer.MegunaRenderer;
 import net.mcreator.craftkaisen.client.renderer.MaximumElephantRenderer;
 import net.mcreator.craftkaisen.client.renderer.MaxMeteorRenderer;
 import net.mcreator.craftkaisen.client.renderer.MalevolentShrineRenderer;
@@ -51,7 +52,9 @@ import net.mcreator.craftkaisen.client.renderer.JogoRenderer;
 import net.mcreator.craftkaisen.client.renderer.InventoryCurseMobRenderer;
 import net.mcreator.craftkaisen.client.renderer.HeianEraSukunaRenderer;
 import net.mcreator.craftkaisen.client.renderer.HanamiRenderer;
+import net.mcreator.craftkaisen.client.renderer.HajimeKashimoRenderer;
 import net.mcreator.craftkaisen.client.renderer.GreatSerpentRenderer;
+import net.mcreator.craftkaisen.client.renderer.FlyingCursedSpiritRenderer;
 import net.mcreator.craftkaisen.client.renderer.FlyHeadRenderer;
 import net.mcreator.craftkaisen.client.renderer.FingerBearerRenderer;
 import net.mcreator.craftkaisen.client.renderer.EmberInsectRenderer;
@@ -153,5 +156,10 @@ public class CraftKaisenModEntityRenderers {
 		event.registerEntityRenderer(CraftKaisenModEntities.ROPE_MOB.get(), RopeMobRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.SUGURU_GETO.get(), SuguruGetoRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.PANDA.get(), PandaRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.FLYING_CURSED_SPIRIT.get(), FlyingCursedSpiritRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.MEGUNA.get(), MegunaRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.HOLLOW_PURPLE_GOJO.get(), ThrownItemRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.HAJIME_KASHIMO.get(), HajimeKashimoRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.FINGER_BEARER_PROJECTILE.get(), ThrownItemRenderer::new);
 	}
 }

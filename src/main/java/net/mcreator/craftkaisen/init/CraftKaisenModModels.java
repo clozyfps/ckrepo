@@ -35,8 +35,8 @@ import net.mcreator.craftkaisen.client.model.Modelmaximumelephantnew;
 import net.mcreator.craftkaisen.client.model.Modelmaximumelephant;
 import net.mcreator.craftkaisen.client.model.Modelmahoraga_wheel;
 import net.mcreator.craftkaisen.client.model.Modelmahitodistorted;
-import net.mcreator.craftkaisen.client.model.Modeljogo;
 import net.mcreator.craftkaisen.client.model.Modeljjkoutfiot;
+import net.mcreator.craftkaisen.client.model.Modelitadoriuniform;
 import net.mcreator.craftkaisen.client.model.Modelinventorycurseground;
 import net.mcreator.craftkaisen.client.model.Modelhanami;
 import net.mcreator.craftkaisen.client.model.Modelgetosandalsnew;
@@ -59,6 +59,7 @@ import net.mcreator.craftkaisen.client.model.Modelbodyrepel1;
 import net.mcreator.craftkaisen.client.model.Modelblackblindfold;
 import net.mcreator.craftkaisen.client.model.ModelTenShadowBunny;
 import net.mcreator.craftkaisen.client.model.ModelRika;
+import net.mcreator.craftkaisen.client.model.ModelJogoModel;
 import net.mcreator.craftkaisen.client.model.ModelFingerBearernew;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = {Dist.CLIENT})
@@ -80,7 +81,7 @@ public class CraftKaisenModModels {
 		event.registerLayerDefinition(Modeltenshadowsgreatserpent.LAYER_LOCATION, Modeltenshadowsgreatserpent::createBodyLayer);
 		event.registerLayerDefinition(Modelyutafinal.LAYER_LOCATION, Modelyutafinal::createBodyLayer);
 		event.registerLayerDefinition(Modelcursedspiritgrasshopper.LAYER_LOCATION, Modelcursedspiritgrasshopper::createBodyLayer);
-		event.registerLayerDefinition(Modeljogo.LAYER_LOCATION, Modeljogo::createBodyLayer);
+		event.registerLayerDefinition(ModelJogoModel.LAYER_LOCATION, ModelJogoModel::createBodyLayer);
 		event.registerLayerDefinition(Modeltojipants.LAYER_LOCATION, Modeltojipants::createBodyLayer);
 		event.registerLayerDefinition(Modelemberinsect.LAYER_LOCATION, Modelemberinsect::createBodyLayer);
 		event.registerLayerDefinition(Modelchosodrip.LAYER_LOCATION, Modelchosodrip::createBodyLayer);
@@ -103,6 +104,7 @@ public class CraftKaisenModModels {
 		event.registerLayerDefinition(Modelserpentground.LAYER_LOCATION, Modelserpentground::createBodyLayer);
 		event.registerLayerDefinition(Modelchoso.LAYER_LOCATION, Modelchoso::createBodyLayer);
 		event.registerLayerDefinition(Modelbodyrepel1.LAYER_LOCATION, Modelbodyrepel1::createBodyLayer);
+		event.registerLayerDefinition(Modelitadoriuniform.LAYER_LOCATION, Modelitadoriuniform::createBodyLayer);
 		event.registerLayerDefinition(ModeltpCircle.LAYER_LOCATION, ModeltpCircle::createBodyLayer);
 		event.registerLayerDefinition(Modeltojishirt.LAYER_LOCATION, Modeltojishirt::createBodyLayer);
 		event.registerLayerDefinition(Modelhanami.LAYER_LOCATION, Modelhanami::createBodyLayer);

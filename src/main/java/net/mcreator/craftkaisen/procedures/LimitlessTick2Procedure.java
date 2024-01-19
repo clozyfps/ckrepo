@@ -274,6 +274,9 @@ public class LimitlessTick2Procedure {
 		}
 		if (entity.getPersistentData().getBoolean("purple") == true) {
 			entity.getPersistentData().putDouble("purpleDistance", (entity.getPersistentData().getDouble("purpleDistance") + 1));
+			entity.getPersistentData().putDouble("purpleDistance", 0);
+			entity.getPersistentData().putDouble("hollowPurple", 0);
+			entity.getPersistentData().putBoolean("purple", false);
 			{
 				final Vec3 _center = new Vec3((x + entity.getLookAngle().x * entity.getPersistentData().getDouble("purpleDistance")), (y + entity.getLookAngle().y * entity.getPersistentData().getDouble("purpleDistance")),
 						(z + entity.getLookAngle().z * entity.getPersistentData().getDouble("purpleDistance")));

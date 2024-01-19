@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "nyoi_staff_texture"
+      },
+      "name": "default"
+    }
+  }
+}

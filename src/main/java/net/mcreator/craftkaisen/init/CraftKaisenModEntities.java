@@ -58,6 +58,7 @@ import net.mcreator.craftkaisen.entity.NobaraKugisakiEntity;
 import net.mcreator.craftkaisen.entity.NanamiKentoEntity;
 import net.mcreator.craftkaisen.entity.NailProjectileProjectileEntity;
 import net.mcreator.craftkaisen.entity.MouthCursedSpiritEntity;
+import net.mcreator.craftkaisen.entity.MegunaEntity;
 import net.mcreator.craftkaisen.entity.MaximumElephantEntity;
 import net.mcreator.craftkaisen.entity.MaxMeteorEntity;
 import net.mcreator.craftkaisen.entity.MalevolentShrineEntity;
@@ -68,13 +69,17 @@ import net.mcreator.craftkaisen.entity.KoGuyEntity;
 import net.mcreator.craftkaisen.entity.JogoEntity;
 import net.mcreator.craftkaisen.entity.InventoryCurseMobEntity;
 import net.mcreator.craftkaisen.entity.HollowPurpleProjectileProjectileEntity;
+import net.mcreator.craftkaisen.entity.HollowPurpleGojoEntity;
 import net.mcreator.craftkaisen.entity.HeianEraSukunaEntity;
 import net.mcreator.craftkaisen.entity.HanamiEntity;
+import net.mcreator.craftkaisen.entity.HajimeKashimoEntity;
 import net.mcreator.craftkaisen.entity.GreatSerpentEntity;
+import net.mcreator.craftkaisen.entity.FlyingCursedSpiritEntity;
 import net.mcreator.craftkaisen.entity.FlyHeadEntity;
 import net.mcreator.craftkaisen.entity.FlowerProjectileProjectileEntity;
 import net.mcreator.craftkaisen.entity.FireArrowProjectileEntity;
 import net.mcreator.craftkaisen.entity.FireArrowMobProjectileEntity;
+import net.mcreator.craftkaisen.entity.FingerBearerProjectileEntity;
 import net.mcreator.craftkaisen.entity.FingerBearerEntity;
 import net.mcreator.craftkaisen.entity.FindBlueLocationProjectileEntity;
 import net.mcreator.craftkaisen.entity.ExplodeRangedProjectileEntity;
@@ -382,6 +387,23 @@ public class CraftKaisenModEntities {
 			EntityType.Builder.<PandaEntity>of(PandaEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(PandaEntity::new)
 
 					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<FlyingCursedSpiritEntity>> FLYING_CURSED_SPIRIT = register("flying_cursed_spirit",
+			EntityType.Builder.<FlyingCursedSpiritEntity>of(FlyingCursedSpiritEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(FlyingCursedSpiritEntity::new)
+
+					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<MegunaEntity>> MEGUNA = register("meguna",
+			EntityType.Builder.<MegunaEntity>of(MegunaEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(MegunaEntity::new)
+
+					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<HollowPurpleGojoEntity>> HOLLOW_PURPLE_GOJO = register("projectile_hollow_purple_gojo", EntityType.Builder.<HollowPurpleGojoEntity>of(HollowPurpleGojoEntity::new, MobCategory.MISC)
+			.setCustomClientFactory(HollowPurpleGojoEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<HajimeKashimoEntity>> HAJIME_KASHIMO = register("hajime_kashimo",
+			EntityType.Builder.<HajimeKashimoEntity>of(HajimeKashimoEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(HajimeKashimoEntity::new)
+
+					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<FingerBearerProjectileEntity>> FINGER_BEARER_PROJECTILE = register("projectile_finger_bearer_projectile",
+			EntityType.Builder.<FingerBearerProjectileEntity>of(FingerBearerProjectileEntity::new, MobCategory.MISC).setCustomClientFactory(FingerBearerProjectileEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
+					.setUpdateInterval(1).sized(0.5f, 0.5f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -444,6 +466,9 @@ public class CraftKaisenModEntities {
 			RopeMobEntity.init();
 			SuguruGetoEntity.init();
 			PandaEntity.init();
+			FlyingCursedSpiritEntity.init();
+			MegunaEntity.init();
+			HajimeKashimoEntity.init();
 		});
 	}
 
@@ -503,5 +528,8 @@ public class CraftKaisenModEntities {
 		event.put(ROPE_MOB.get(), RopeMobEntity.createAttributes().build());
 		event.put(SUGURU_GETO.get(), SuguruGetoEntity.createAttributes().build());
 		event.put(PANDA.get(), PandaEntity.createAttributes().build());
+		event.put(FLYING_CURSED_SPIRIT.get(), FlyingCursedSpiritEntity.createAttributes().build());
+		event.put(MEGUNA.get(), MegunaEntity.createAttributes().build());
+		event.put(HAJIME_KASHIMO.get(), HajimeKashimoEntity.createAttributes().build());
 	}
 }

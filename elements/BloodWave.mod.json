@@ -1,0 +1,20 @@
+{
+  "_fv": 57,
+  "_type": "potioneffect",
+  "definition": {
+    "effectName": "BloodWave",
+    "icon": "domain_amplification.png",
+    "color": {
+      "value": -3407821,
+      "falpha": 0.0
+    },
+    "isInstant": false,
+    "isBad": false,
+    "isBenefitical": false,
+    "renderStatusInInventory": false,
+    "renderStatusInHUD": false,
+    "onActiveTick": {
+      "name": "BloodWaveOnEffectActiveTick"
+    }
+  }
+}

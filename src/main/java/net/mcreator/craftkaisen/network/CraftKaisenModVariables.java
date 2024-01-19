@@ -133,6 +133,10 @@ public class CraftKaisenModVariables {
 			clone.Bounty = original.Bounty;
 			clone.RatioMastery = original.RatioMastery;
 			clone.TojiEventHappened = original.TojiEventHappened;
+			clone.Clan = original.Clan;
+			clone.ClansInWorld = original.ClansInWorld;
+			clone.CreatedClan = original.CreatedClan;
+			clone.Perk = original.Perk;
 			if (!event.isWasDeath()) {
 				clone.currentMove = original.currentMove;
 				clone.currentOutput = original.currentOutput;
@@ -150,6 +154,8 @@ public class CraftKaisenModVariables {
 				clone.DomainClashCombo = original.DomainClashCombo;
 				clone.flowerexpand = original.flowerexpand;
 				clone.BlackFlashRarity = original.BlackFlashRarity;
+				clone.PerkPage = original.PerkPage;
+				clone.PerkDescription = original.PerkDescription;
 			}
 		}
 
@@ -214,7 +220,9 @@ public class CraftKaisenModVariables {
 		public String vesselPlayerOne = "\"\"";
 		public String vesselTechnique = "\"\"";
 		public String vesselPlayerTwo = "\"\"";
-		public double worldEventTimer = 0;
+		public double worldeventlocation = 0;
+		public double WorldEventTimer = 0;
+		public double WEZ = 0;
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -226,7 +234,9 @@ public class CraftKaisenModVariables {
 			vesselPlayerOne = nbt.getString("vesselPlayerOne");
 			vesselTechnique = nbt.getString("vesselTechnique");
 			vesselPlayerTwo = nbt.getString("vesselPlayerTwo");
-			worldEventTimer = nbt.getDouble("worldEventTimer");
+			worldeventlocation = nbt.getDouble("worldeventlocation");
+			WorldEventTimer = nbt.getDouble("WorldEventTimer");
+			WEZ = nbt.getDouble("WEZ");
 		}
 
 		@Override
@@ -234,7 +244,9 @@ public class CraftKaisenModVariables {
 			nbt.putString("vesselPlayerOne", vesselPlayerOne);
 			nbt.putString("vesselTechnique", vesselTechnique);
 			nbt.putString("vesselPlayerTwo", vesselPlayerTwo);
-			nbt.putDouble("worldEventTimer", worldEventTimer);
+			nbt.putDouble("worldeventlocation", worldeventlocation);
+			nbt.putDouble("WorldEventTimer", WorldEventTimer);
+			nbt.putDouble("WEZ", WEZ);
 			return nbt;
 		}
 
@@ -404,6 +416,12 @@ public class CraftKaisenModVariables {
 		public double Bounty = 0;
 		public double RatioMastery = 0;
 		public boolean TojiEventHappened = false;
+		public String Clan = "\"\"";
+		public String ClansInWorld = "\"\"";
+		public String CreatedClan = "\"\"";
+		public String Perk = "\"\"";
+		public String PerkPage = "\"\"";
+		public String PerkDescription = "\"\"";
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -489,6 +507,12 @@ public class CraftKaisenModVariables {
 			nbt.putDouble("Bounty", Bounty);
 			nbt.putDouble("RatioMastery", RatioMastery);
 			nbt.putBoolean("TojiEventHappened", TojiEventHappened);
+			nbt.putString("Clan", Clan);
+			nbt.putString("ClansInWorld", ClansInWorld);
+			nbt.putString("CreatedClan", CreatedClan);
+			nbt.putString("Perk", Perk);
+			nbt.putString("PerkPage", PerkPage);
+			nbt.putString("PerkDescription", PerkDescription);
 			return nbt;
 		}
 
@@ -571,6 +595,12 @@ public class CraftKaisenModVariables {
 			Bounty = nbt.getDouble("Bounty");
 			RatioMastery = nbt.getDouble("RatioMastery");
 			TojiEventHappened = nbt.getBoolean("TojiEventHappened");
+			Clan = nbt.getString("Clan");
+			ClansInWorld = nbt.getString("ClansInWorld");
+			CreatedClan = nbt.getString("CreatedClan");
+			Perk = nbt.getString("Perk");
+			PerkPage = nbt.getString("PerkPage");
+			PerkDescription = nbt.getString("PerkDescription");
 		}
 	}
 
@@ -672,6 +702,12 @@ public class CraftKaisenModVariables {
 					variables.Bounty = message.data.Bounty;
 					variables.RatioMastery = message.data.RatioMastery;
 					variables.TojiEventHappened = message.data.TojiEventHappened;
+					variables.Clan = message.data.Clan;
+					variables.ClansInWorld = message.data.ClansInWorld;
+					variables.CreatedClan = message.data.CreatedClan;
+					variables.Perk = message.data.Perk;
+					variables.PerkPage = message.data.PerkPage;
+					variables.PerkDescription = message.data.PerkDescription;
 				}
 			});
 			context.setPacketHandled(true);

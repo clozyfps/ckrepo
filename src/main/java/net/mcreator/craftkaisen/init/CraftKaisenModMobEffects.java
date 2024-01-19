@@ -41,6 +41,7 @@ import net.mcreator.craftkaisen.potion.BurnCooldownMobEffect;
 import net.mcreator.craftkaisen.potion.BodyShapeCooldownMobEffect;
 import net.mcreator.craftkaisen.potion.BodyShapeActiveMobEffect;
 import net.mcreator.craftkaisen.potion.BodyCrushingMobEffect;
+import net.mcreator.craftkaisen.potion.BloodWaveMobEffect;
 import net.mcreator.craftkaisen.CraftKaisenMod;
 
 public class CraftKaisenModMobEffects {
@@ -76,4 +77,5 @@ public class CraftKaisenModMobEffects {
 	public static final RegistryObject<MobEffect> SLICING_MAHITO = REGISTRY.register("slicing_mahito", () -> new SlicingMahitoMobEffect());
 	public static final RegistryObject<MobEffect> SOUL_MULTIPLICITY_ACTIVE = REGISTRY.register("soul_multiplicity_active", () -> new SoulMultiplicityActiveMobEffect());
 	public static final RegistryObject<MobEffect> DISTORTED_BODY_KILLING = REGISTRY.register("distorted_body_killing", () -> new DistortedBodyKillingMobEffect());
+	public static final RegistryObject<MobEffect> BLOOD_WAVE = REGISTRY.register("blood_wave", () -> new BloodWaveMobEffect());
 }

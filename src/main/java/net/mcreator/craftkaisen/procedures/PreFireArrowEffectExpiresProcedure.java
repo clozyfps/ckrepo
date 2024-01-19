@@ -19,6 +19,7 @@ import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
 import net.mcreator.craftkaisen.init.CraftKaisenModParticleTypes;
 import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
 import net.mcreator.craftkaisen.entity.RyomenSukunaEntity;
+import net.mcreator.craftkaisen.entity.MegunaEntity;
 import net.mcreator.craftkaisen.entity.FireArrowProjectileEntity;
 import net.mcreator.craftkaisen.entity.FireArrowMobProjectileEntity;
 
@@ -44,7 +45,7 @@ public class PreFireArrowEffectExpiresProcedure {
 			_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.FIRE_ARROW_PARTICLE.get()), x, y, z, 1, 0.1, 0.1, 0.1, 1);
 		if (entity instanceof LivingEntity _entity)
 			_entity.swing(InteractionHand.MAIN_HAND, true);
-		if (!(entity instanceof RyomenSukunaEntity || entity.getPersistentData().getBoolean("sukuna"))) {
+		if (!(entity instanceof RyomenSukunaEntity || entity instanceof MegunaEntity || entity.getPersistentData().getBoolean("sukuna"))) {
 			{
 				Entity _shootFrom = entity;
 				Level projectileLevel = _shootFrom.level;

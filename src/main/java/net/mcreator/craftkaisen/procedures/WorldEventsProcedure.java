@@ -1,30 +1,98 @@
 package net.mcreator.craftkaisen.procedures;
 
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.TickEvent;
 
+import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.util.RandomSource;
+import net.minecraft.util.Mth;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.chat.Component;
+import net.minecraft.core.BlockPos;
+
+import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
+import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
+import net.mcreator.craftkaisen.entity.MegunaEntity;
+
 import javax.annotation.Nullable;
+
+import java.util.ArrayList;
 
 @Mod.EventBusSubscriber
 public class WorldEventsProcedure {
 	@SubscribeEvent
 	public static void onWorldTick(TickEvent.LevelTickEvent event) {
 		if (event.phase == TickEvent.Phase.END) {
-			execute(event);
+			execute(event, event.level);
 		}
 	}
 
-	public static void execute() {
-		execute(null);
+	public static void execute(LevelAccessor world) {
+		execute(null, world);
 	}
 
-	private static void execute(@Nullable Event event) {
+	private static void execute(@Nullable Event event, LevelAccessor world) {
 		double v = 0;
 		double vLevel = 0;
 		double vType = 0;
 		double vMob = 0;
 		double vFaction = 0;
+		double randomworldevent = 0;
+		double worldeventx = 0;
+		double worldeventz = 0;
+		double nearx = 0;
+		double nearz = 0;
+		double neary = 0;
+		if (CraftKaisenModVariables.MapVariables.get(world).WorldEventTimer < 35000) {
+			CraftKaisenModVariables.MapVariables.get(world).WorldEventTimer = CraftKaisenModVariables.MapVariables.get(world).WorldEventTimer + 1;
+			CraftKaisenModVariables.MapVariables.get(world).syncData(world);
+		} else if (CraftKaisenModVariables.MapVariables.get(world).WorldEventTimer >= 35000) {
+			CraftKaisenModVariables.MapVariables.get(world).WorldEventTimer = 0;
+			CraftKaisenModVariables.MapVariables.get(world).syncData(world);
+			randomworldevent = Mth.nextInt(RandomSource.create(), 1, 2);
+			if (randomworldevent == 1) {
+				for (Entity entityiterator : new ArrayList<>(world.players())) {
+					nearx = nearx + entityiterator.getX();
+					nearz = nearz + entityiterator.getZ();
+					neary = world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) nearx, (int) nearz);
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.lightning_bolt.thunder")),
+									SoundSource.NEUTRAL, 1, 1);
+						} else {
+							_level.playLocalSound((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.lightning_bolt.thunder")), SoundSource.NEUTRAL, 1, 1,
+									false);
+						}
+					}
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("ambient.cave")), SoundSource.NEUTRAL, 1, 1);
+						} else {
+							_level.playLocalSound((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("ambient.cave")), SoundSource.NEUTRAL, 1, 1, false);
+						}
+					}
+				}
+				if (!world.isClientSide() && world.getServer() != null)
+					world.getServer().getPlayerList().broadcastSystemMessage(
+							Component.literal(("\u00A74Meguna has appeared at x: " + new java.text.DecimalFormat("#").format(Math.round(worldeventx)) + " z: " + new java.text.DecimalFormat("#").format(Math.round(worldeventz)))), false);
+				if (world instanceof ServerLevel _level) {
+					Entity entityToSpawn = new MegunaEntity(CraftKaisenModEntities.MEGUNA.get(), _level);
+					entityToSpawn.moveTo(nearx, neary, nearz, world.getRandom().nextFloat() * 360F, 0);
+					if (entityToSpawn instanceof Mob _mobToSpawn)
+						_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+					_level.addFreshEntity(entityToSpawn);
+				}
+			}
+		}
 	}
 }

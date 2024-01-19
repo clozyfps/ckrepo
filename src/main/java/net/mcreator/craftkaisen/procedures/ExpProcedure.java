@@ -10,6 +10,8 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.util.RandomSource;
+import net.minecraft.util.Mth;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
@@ -35,6 +37,7 @@ public class ExpProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
+		double randomperk = 0;
 		if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentExp >= (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new CraftKaisenModVariables.PlayerVariables())).maxExp) {
 			{
@@ -57,6 +60,73 @@ public class ExpProcedure {
 					capability.level = _setval;
 					capability.syncPlayerVariables(entity);
 				});
+			}
+			if (Math.random() < 0.01) {
+				randomperk = Mth.nextInt(RandomSource.create(), 1, 4);
+				if (randomperk == 1) {
+					{
+						String _setval = "Safe Farming";
+						entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.PerkPage = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					{
+						String _setval = "More Exp With Mobs, Less Exp With Players";
+						entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.PerkDescription = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+				}
+				if (randomperk == 2) {
+					{
+						String _setval = "Tough Skin";
+						entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.PerkPage = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					{
+						String _setval = "Take Less Damage";
+						entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.PerkDescription = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+				}
+				if (randomperk == 3) {
+					{
+						String _setval = "Regainer";
+						entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.PerkPage = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					{
+						String _setval = "Gain Health When Killing A Mob";
+						entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.PerkDescription = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+				}
+				if (randomperk == 4) {
+					{
+						String _setval = "Fearmonger";
+						entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.PerkPage = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					{
+						String _setval = "Put Fear Into Players When They Hit You";
+						entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.PerkDescription = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+				}
 			}
 			if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).special).equals("No Energy")
 					|| ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).special).equals("Physically Gifted")) {

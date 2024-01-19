@@ -6,7 +6,7 @@
     "renderType": 1,
     "blockingRenderType": 0,
     "texture": "air102_layer_2",
-    "customModelName": "playful_cloud:default",
+    "customModelName": "playfulcloudnew:default",
     "blockingModelName": "Normal blocking",
     "name": "Playful Cloud",
     "specialInformation": {
@@ -24,6 +24,9 @@
     "damageVsEntity": 17.0,
     "usageCount": 1000,
     "blocksAffected": [],
+    "glowCondition": {
+      "fixedValue": false
+    },
     "repairItems": [],
     "immuneToFire": false,
     "stayInGridWhenCrafting": false,
