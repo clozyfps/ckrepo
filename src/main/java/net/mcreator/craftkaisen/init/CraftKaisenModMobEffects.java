@@ -25,6 +25,7 @@ import net.mcreator.craftkaisen.potion.SmallPoxDeityCooldownMobEffect;
 import net.mcreator.craftkaisen.potion.SlicingMahitoMobEffect;
 import net.mcreator.craftkaisen.potion.SimpleDomainMobEffect;
 import net.mcreator.craftkaisen.potion.SimpleDomainCooldownMobEffect;
+import net.mcreator.craftkaisen.potion.RikaStatusMobEffect;
 import net.mcreator.craftkaisen.potion.ReikiMobEffect;
 import net.mcreator.craftkaisen.potion.RCTMobEffect;
 import net.mcreator.craftkaisen.potion.PureLovePreMobEffect;
@@ -92,4 +93,5 @@ public class CraftKaisenModMobEffects {
 	public static final RegistryObject<MobEffect> CLEAVE = REGISTRY.register("cleave", () -> new CleaveMobEffect());
 	public static final RegistryObject<MobEffect> REIKI = REGISTRY.register("reiki", () -> new ReikiMobEffect());
 	public static final RegistryObject<MobEffect> STOP_ATTACKS = REGISTRY.register("stop_attacks", () -> new StopAttacksMobEffect());
+	public static final RegistryObject<MobEffect> RIKA_STATUS = REGISTRY.register("rika_status", () -> new RikaStatusMobEffect());
 }

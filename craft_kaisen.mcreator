@@ -22286,6 +22286,106 @@
         ]
       },
       "path": "~/Tags"
+    },
+    {
+      "name": "CaveAirDespawn",
+      "type": "procedure",
+      "sortid": 953,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cave_air_despawn",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/CaveAirDespawnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Tags"
+    },
+    {
+      "name": "RikaAttacks",
+      "type": "procedure",
+      "sortid": 950,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rika_attacks",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/RikaAttacksProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "Ckmob",
+      "type": "tag",
+      "sortid": 952,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ckmob",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/tags/entity_types/ckmob.json"
+        ]
+      },
+      "path": "~/Tags"
+    },
+    {
+      "name": "RikaStatus",
+      "type": "potioneffect",
+      "sortid": 951,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rika_status",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/potion/RikaStatusMobEffect.java"
+        ]
+      },
+      "path": "~/Potions"
     }
   ],
   "variable_elements": [
@@ -23082,6 +23182,7 @@
       "gui.craft_kaisen.body_shape_overlay.label_alt": "ALT - Spike ",
       "block.craft_kaisen.sprinkler_on": "Sprinkler On",
       "advancements.jujutsu_kaisen.descr": "Begin your journey in the world of JJK",
+      "subtitles.crit": "",
       "item.craft_kaisen.nail": "Nail",
       "item.craft_kaisen.cursed_mask": "Cursed Mask",
       "entity.craft_kaisen.choso": "Choso",
@@ -23138,6 +23239,7 @@
       "effect.craft_kaisen.cooldown": "Cooldown",
       "advancements.young_fishand_reverse_punishment.descr": "Kill Mahito",
       "entity.craft_kaisen.hanami": "Hanami",
+      "subtitles.clap": "",
       "gui.craft_kaisen.main_menu.label_race_human": "Human",
       "gamerule.hardcoreLives.description": "Start with 2 lives, get 1 more life every time you level up (max is 2)",
       "item.craft_kaisen.jogo_spawn_egg": "Jogo Spawn Egg",
