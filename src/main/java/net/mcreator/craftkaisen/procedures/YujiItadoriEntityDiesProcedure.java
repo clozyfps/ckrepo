@@ -1,12 +1,8 @@
 package net.mcreator.craftkaisen.procedures;
 
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.entity.item.ItemEntity;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.server.level.ServerLevel;
+import net.minecraftforge.eventbus.api.Event;
 
-import net.mcreator.craftkaisen.init.CraftKaisenModItems;
+import javax.annotation.Nullable;
 
 public class YujiItadoriEntityDiesProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {

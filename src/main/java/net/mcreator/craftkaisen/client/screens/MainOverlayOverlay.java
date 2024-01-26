@@ -12,11 +12,13 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.chat.Component;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.client.Minecraft;
 
 import net.mcreator.craftkaisen.procedures.ReturnTargetTwoProcedure;
 import net.mcreator.craftkaisen.procedures.ReturnTargetOneProcedure;
+import net.mcreator.craftkaisen.procedures.ReturnCEOverlayProcedure;
 import net.mcreator.craftkaisen.procedures.DisplayOutput9Procedure;
 import net.mcreator.craftkaisen.procedures.DisplayOutput8Procedure;
 import net.mcreator.craftkaisen.procedures.DisplayOutput7Procedure;
@@ -172,6 +174,56 @@ public class MainOverlayOverlay {
 				Minecraft.getInstance().font.draw(event.getPoseStack(),
 
 						ReturnTargetTwoProcedure.execute(entity), w / 2 + -189, h / 2 + 95, -1);
+			if (DisplayBar12Procedure.execute(entity))
+				Minecraft.getInstance().font.draw(event.getPoseStack(),
+
+						ReturnCEOverlayProcedure.execute(entity), 18, h / 2 + -77, -12283715);
+			if (DisplayBar11Procedure.execute(entity))
+				Minecraft.getInstance().font.draw(event.getPoseStack(),
+
+						ReturnCEOverlayProcedure.execute(entity), 18, h / 2 + -66, -12283715);
+			if (DisplayBar10Procedure.execute(entity))
+				Minecraft.getInstance().font.draw(event.getPoseStack(),
+
+						ReturnCEOverlayProcedure.execute(entity), 18, h / 2 + -54, -12283715);
+			if (DisplayBar9Procedure.execute(entity))
+				Minecraft.getInstance().font.draw(event.getPoseStack(),
+
+						ReturnCEOverlayProcedure.execute(entity), 18, h / 2 + -42, -12283715);
+			if (DisplayBar8Procedure.execute(entity))
+				Minecraft.getInstance().font.draw(event.getPoseStack(),
+
+						ReturnCEOverlayProcedure.execute(entity), 18, h / 2 + -30, -12283715);
+			if (DisplayBar7Procedure.execute(entity))
+				Minecraft.getInstance().font.draw(event.getPoseStack(),
+
+						ReturnCEOverlayProcedure.execute(entity), 18, h / 2 + -18, -12283715);
+			if (DisplayBar6Procedure.execute(entity))
+				Minecraft.getInstance().font.draw(event.getPoseStack(),
+
+						ReturnCEOverlayProcedure.execute(entity), 18, h / 2 + -6, -12283715);
+			if (DisplayBar5Procedure.execute(entity))
+				Minecraft.getInstance().font.draw(event.getPoseStack(),
+
+						ReturnCEOverlayProcedure.execute(entity), 18, h / 2 + 6, -12283715);
+			if (DisplayBar4Procedure.execute(entity))
+				Minecraft.getInstance().font.draw(event.getPoseStack(),
+
+						ReturnCEOverlayProcedure.execute(entity), 18, h / 2 + 18, -12283715);
+			if (DisplayBar3Procedure.execute(entity))
+				Minecraft.getInstance().font.draw(event.getPoseStack(),
+
+						ReturnCEOverlayProcedure.execute(entity), 18, h / 2 + 30, -12283715);
+			if (DisplayBar2Procedure.execute(entity))
+				Minecraft.getInstance().font.draw(event.getPoseStack(),
+
+						ReturnCEOverlayProcedure.execute(entity), 18, h / 2 + 42, -12283715);
+			if (DisplayBar1Procedure.execute(entity))
+				Minecraft.getInstance().font.draw(event.getPoseStack(),
+
+						ReturnCEOverlayProcedure.execute(entity), 18, h / 2 + 54, -12283715);
+			if (DisplayBarEmptyProcedure.execute(entity))
+				Minecraft.getInstance().font.draw(event.getPoseStack(), Component.translatable("gui.craft_kaisen.main_overlay.label_0"), 18, h / 2 + 65, -12283715);
 		}
 		RenderSystem.depthMask(true);
 		RenderSystem.defaultBlendFunc();

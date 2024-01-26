@@ -9,7 +9,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "craft_kaisen:cursed_doll",
+          "name": "craft_kaisen:deleted_mod_element",
           "weight": 1,
           "functions": [
             {
@@ -65,7 +65,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "craft_kaisen:cursed_totem",
+          "name": "craft_kaisen:deleted_mod_element",
           "weight": 1,
           "functions": [
             {

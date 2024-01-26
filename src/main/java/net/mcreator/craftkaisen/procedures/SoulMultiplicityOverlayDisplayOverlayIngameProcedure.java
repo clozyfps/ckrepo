@@ -1,9 +1,8 @@
 package net.mcreator.craftkaisen.procedures;
 
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Entity;
+import net.minecraftforge.eventbus.api.Event;
 
-import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
+import javax.annotation.Nullable;
 
 public class SoulMultiplicityOverlayDisplayOverlayIngameProcedure {
 	public static boolean execute(Entity entity) {

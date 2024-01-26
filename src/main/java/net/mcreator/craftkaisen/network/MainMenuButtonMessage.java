@@ -14,6 +14,7 @@ import net.minecraft.core.BlockPos;
 import net.mcreator.craftkaisen.world.inventory.MainMenuMenu;
 import net.mcreator.craftkaisen.procedures.StrengthButtonProcedure;
 import net.mcreator.craftkaisen.procedures.SpeedButtonProcedure;
+import net.mcreator.craftkaisen.procedures.OpenSelfVowGUIProcedure;
 import net.mcreator.craftkaisen.procedures.OpenMovesProcedure;
 import net.mcreator.craftkaisen.procedures.HealthButtonProcedure;
 import net.mcreator.craftkaisen.procedures.EnergyButtonProcedure;
@@ -90,6 +91,10 @@ public class MainMenuButtonMessage {
 		if (buttonID == 5) {
 
 			SpeedButtonProcedure.execute(entity);
+		}
+		if (buttonID == 6) {
+
+			OpenSelfVowGUIProcedure.execute(world, x, y, z, entity);
 		}
 	}
 

@@ -1,18 +1,8 @@
 package net.mcreator.craftkaisen.procedures;
 
-import net.minecraft.world.phys.Vec3;
-import net.minecraft.world.phys.AABB;
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.network.chat.Component;
+import net.minecraftforge.eventbus.api.Event;
 
-import net.mcreator.craftkaisen.entity.HajimeKashimoEntity;
-import net.mcreator.craftkaisen.CraftKaisenMod;
-
-import java.util.stream.Collectors;
-import java.util.List;
-import java.util.Comparator;
+import javax.annotation.Nullable;
 
 public class SurgeEffectStartedappliedProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {

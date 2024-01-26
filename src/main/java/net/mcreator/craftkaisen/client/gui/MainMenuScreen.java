@@ -51,6 +51,7 @@ public class MainMenuScreen extends AbstractContainerScreen<MainMenuMenu> {
 	ImageButton imagebutton_smallbutton1png3;
 	ImageButton imagebutton_smallbutton1png2;
 	ImageButton imagebutton_smallbutton1png4;
+	ImageButton imagebutton_click;
 
 	public MainMenuScreen(MainMenuMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -70,7 +71,7 @@ public class MainMenuScreen extends AbstractContainerScreen<MainMenuMenu> {
 		this.renderBackground(ms);
 		super.render(ms, mouseX, mouseY, partialTicks);
 		if (ReturnPlayerProcedure.execute(entity) instanceof LivingEntity livingEntity) {
-			InventoryScreen.renderEntityInInventoryFollowsAngle(ms, this.leftPos + -149, this.topPos + 6, 30, 0f, 0, livingEntity);
+			InventoryScreen.renderEntityInInventoryFollowsAngle(ms, this.leftPos + -149, this.topPos + -4, 50, 0f + (float) Math.atan((this.leftPos + -149 - mouseX) / 40.0), (float) Math.atan((this.topPos + -53 - mouseY) / 40.0), livingEntity);
 		}
 		this.renderTooltip(ms, mouseX, mouseY);
 		if (mouseX > leftPos + 143 && mouseX < leftPos + 168 && mouseY > topPos + 68 && mouseY < topPos + 79)
@@ -126,6 +127,13 @@ public class MainMenuScreen extends AbstractContainerScreen<MainMenuMenu> {
 			RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/spgrade.png"));
 			this.blit(ms, this.leftPos + -214, this.topPos + -120, 0, 0, 427, 240, 427, 240);
 		}
+
+		RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/pageoneopen.png"));
+		this.blit(ms, this.leftPos + -214, this.topPos + -120, 0, 0, 427, 240, 427, 240);
+
+		RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/pagetwoclosed.png"));
+		this.blit(ms, this.leftPos + -214, this.topPos + -121, 0, 0, 427, 240, 427, 240);
+
 		RenderSystem.disableBlend();
 	}
 
@@ -246,5 +254,13 @@ public class MainMenuScreen extends AbstractContainerScreen<MainMenuMenu> {
 		});
 		guistate.put("button:imagebutton_smallbutton1png4", imagebutton_smallbutton1png4);
 		this.addRenderableWidget(imagebutton_smallbutton1png4);
+		imagebutton_click = new ImageButton(this.leftPos + -190, this.topPos + -66, 20, 20, 0, 0, 20, new ResourceLocation("craft_kaisen:textures/screens/atlas/imagebutton_click.png"), 20, 40, e -> {
+			if (true) {
+				CraftKaisenMod.PACKET_HANDLER.sendToServer(new MainMenuButtonMessage(6, x, y, z));
+				MainMenuButtonMessage.handleButtonAction(entity, 6, x, y, z);
+			}
+		});
+		guistate.put("button:imagebutton_click", imagebutton_click);
+		this.addRenderableWidget(imagebutton_click);
 	}
 }

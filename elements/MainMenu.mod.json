@@ -16,11 +16,11 @@
           "entityModel": {
             "name": "ReturnPlayer"
           },
-          "scale": 30,
+          "scale": 50,
           "rotationX": 0,
-          "followMouseMovement": false,
+          "followMouseMovement": true,
           "x": 55,
-          "y": 106
+          "y": 96
         }
       },
       {
@@ -573,6 +573,37 @@
           "x": 0,
           "y": 0
         }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "pageoneopen.png",
+          "use1Xscale": true,
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "pagetwoclosed.png",
+          "use1Xscale": true,
+          "x": 0,
+          "y": -1
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_click",
+          "image": "click.png",
+          "hoveredImage": "",
+          "onClick": {
+            "name": "OpenSelfVowGUI"
+          },
+          "x": 24,
+          "y": 54
+        }
       }
     ],
     "gridSettings": {
@@ -580,7 +611,7 @@
       "sy": 18,
       "ox": 11,
       "oy": 15,
-      "snapOnGrid": true
+      "snapOnGrid": false
     }
   }
 }

@@ -1,42 +1,17 @@
 
 package net.mcreator.craftkaisen.entity;
 
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.network.PlayMessages;
-import net.minecraftforge.network.NetworkHooks;
-
-import net.minecraft.world.level.Level;
-import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.SpawnEggItem;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
-import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
-import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
-import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
-import net.minecraft.world.entity.ai.goal.FloatGoal;
+import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
-import net.minecraft.world.entity.TamableAnimal;
-import net.minecraft.world.entity.MobType;
-import net.minecraft.world.entity.MobSpawnType;
-import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.AgeableMob;
-import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.InteractionResult;
-import net.minecraft.world.InteractionHand;
+import net.minecraft.world.level.material.Material;
+import net.minecraft.nbt.Tag;
+import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.protocol.game.ClientGamePacketListener;
-import net.minecraft.network.protocol.Packet;
 
-import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
+import javax.annotation.Nullable;
 
 public class MergedBeastAgitoEntity extends TamableAnimal {
+
 	public MergedBeastAgitoEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(CraftKaisenModEntities.MERGED_BEAST_AGITO.get(), world);
 	}
@@ -46,6 +21,7 @@ public class MergedBeastAgitoEntity extends TamableAnimal {
 		maxUpStep = 0.6f;
 		xpReward = 0;
 		setNoAi(false);
+
 	}
 
 	@Override
@@ -56,16 +32,20 @@ public class MergedBeastAgitoEntity extends TamableAnimal {
 	@Override
 	protected void registerGoals() {
 		super.registerGoals();
+
 		this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.6, true) {
+
 			@Override
 			protected double getAttackReachSqr(LivingEntity entity) {
 				return this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth();
 			}
+
 		});
 		this.goalSelector.addGoal(2, new RandomStrollGoal(this, 1));
 		this.targetSelector.addGoal(3, new HurtByTargetGoal(this));
 		this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
 		this.goalSelector.addGoal(5, new FloatGoal(this));
+
 	}
 
 	@Override
@@ -87,6 +67,7 @@ public class MergedBeastAgitoEntity extends TamableAnimal {
 	public InteractionResult mobInteract(Player sourceentity, InteractionHand hand) {
 		ItemStack itemstack = sourceentity.getItemInHand(hand);
 		InteractionResult retval = InteractionResult.sidedSuccess(this.level.isClientSide());
+
 		Item item = itemstack.getItem();
 		if (itemstack.getItem() instanceof SpawnEggItem) {
 			retval = super.mobInteract(sourceentity, hand);
@@ -115,6 +96,7 @@ public class MergedBeastAgitoEntity extends TamableAnimal {
 				} else {
 					this.level.broadcastEntityEvent(this, (byte) 6);
 				}
+
 				this.setPersistenceRequired();
 				retval = InteractionResult.sidedSuccess(this.level.isClientSide());
 			} else {
@@ -123,6 +105,7 @@ public class MergedBeastAgitoEntity extends TamableAnimal {
 					this.setPersistenceRequired();
 			}
 		}
+
 		return retval;
 	}
 
@@ -139,6 +122,7 @@ public class MergedBeastAgitoEntity extends TamableAnimal {
 	}
 
 	public static void init() {
+
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
@@ -148,7 +132,10 @@ public class MergedBeastAgitoEntity extends TamableAnimal {
 		builder = builder.add(Attributes.ARMOR, 0.1);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 20);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 50);
+
 		builder = builder.add(Attributes.ATTACK_KNOCKBACK, 3);
+
 		return builder;
 	}
+
 }
