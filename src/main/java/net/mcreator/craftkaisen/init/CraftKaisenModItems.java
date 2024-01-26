@@ -45,6 +45,7 @@ import net.mcreator.craftkaisen.item.MahoragaWheelItem;
 import net.mcreator.craftkaisen.item.LdawdaItem;
 import net.mcreator.craftkaisen.item.LapseBlueRangedItem;
 import net.mcreator.craftkaisen.item.JujutsuSorcererUniformItem;
+import net.mcreator.craftkaisen.item.JujutsuHistoryBookItem;
 import net.mcreator.craftkaisen.item.InvertedSpearItem;
 import net.mcreator.craftkaisen.item.HollowPurpleProjectileItem;
 import net.mcreator.craftkaisen.item.HammerItem;
@@ -190,6 +191,7 @@ public class CraftKaisenModItems {
 	public static final RegistryObject<Item> STRONGHIT = REGISTRY.register("stronghit", () -> new StronghitItem());
 	public static final RegistryObject<Item> LAPSE_BLUE_RANGED = REGISTRY.register("lapse_blue_ranged", () -> new LapseBlueRangedItem());
 	public static final RegistryObject<Item> LDAWDA = REGISTRY.register("ldawda", () -> new LdawdaItem());
+	public static final RegistryObject<Item> JUJUTSU_HISTORY_BOOK = REGISTRY.register("jujutsu_history_book", () -> new JujutsuHistoryBookItem());
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));

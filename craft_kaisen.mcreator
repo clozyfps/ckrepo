@@ -474,6 +474,10 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -18448,6 +18452,166 @@
         ]
       },
       "path": "~/Mobs/Procedure"
+    },
+    {
+      "name": "SelfVowGUI",
+      "type": "gui",
+      "sortid": 792,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "self_vow_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/world/inventory/SelfVowGUIMenu.java",
+          "src/main/java/net/mcreator/craftkaisen/client/gui/SelfVowGUIScreen.java",
+          "src/main/java/net/mcreator/craftkaisen/network/SelfVowGUIButtonMessage.java"
+        ]
+      },
+      "path": "~/GUI"
+    },
+    {
+      "name": "OpenSelfVowGUI",
+      "type": "procedure",
+      "sortid": 793,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "open_self_vow_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/OpenSelfVowGUIProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "JujutsuHistoryBook",
+      "type": "item",
+      "sortid": 795,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "jujutsu_history_book",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/item/JujutsuHistoryBookItem.java",
+          "src/main/resources/assets/craft_kaisen/models/item/jujutsu_history_book.json"
+        ]
+      },
+      "path": "~/Items"
+    },
+    {
+      "name": "JujutsuHistoryBookTrade",
+      "type": "villagertrade",
+      "sortid": 796,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "jujutsu_history_book_trade",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/Villager Trades"
+    },
+    {
+      "name": "JujutsuHistoryBookHasItemGlowingEffect",
+      "type": "procedure",
+      "sortid": 797,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "jujutsu_history_book_has_item_glowing_effect",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/JujutsuHistoryBookHasItemGlowingEffectProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/Items/Procedure"
+    },
+    {
+      "name": "JujutsuHistoryBookRandomizer",
+      "type": "procedure",
+      "sortid": 798,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "jujutsu_history_book_randomizer",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/JujutsuHistoryBookRandomizerProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Items/Procedure"
+    },
+    {
+      "name": "HistoryBookRightClicked",
+      "type": "procedure",
+      "sortid": 799,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "history_book_right_clicked",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/HistoryBookRightClickedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Items/Procedure"
     }
   ],
   "variable_elements": [
@@ -18930,6 +19094,78 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "0"
+    },
+    {
+      "name": "SimpleDomainUnlocked",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "DomainExpansionUnlocked",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "DomainAmplificationUnlocked",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "Intelligence",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0.0"
+    },
+    {
+      "name": "EligibleMoves",
+      "type": "string",
+      "scope": "map",
+      "value": "Simple Barrier - Hollow Wicker Basket"
+    },
+    {
+      "name": "MoveCombo",
+      "type": "string",
+      "scope": "player_lifetime",
+      "value": "\"\""
+    },
+    {
+      "name": "Ability7",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "\"\""
+    },
+    {
+      "name": "Ability8",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "\"\""
+    },
+    {
+      "name": "Ability9",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "\"\""
+    },
+    {
+      "name": "Ability10",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "\"\""
+    },
+    {
+      "name": "Ability11",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "\"\""
+    },
+    {
+      "name": "Ability12",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "\"\""
     }
   ],
   "sound_elements": [
@@ -19220,6 +19456,7 @@
       "effect.craft_kaisen.twisting": "Twisting",
       "item_group.craft_kaisen.ck_blocks": "Ck Blocks",
       "item.craft_kaisen.rainbow_dragon_spawn_egg": "Rainbow Dragon Spawn Egg",
+      "gui.craft_kaisen.main_overlay.label_0": "0",
       "advancements.semi_grade_2.title": "Semi Grade 2",
       "entity.craft_kaisen.shadow_frog": "Shadow Frog",
       "item.craft_kaisen.water_maximum_elephant": "Water Maximum Elephant",
@@ -19355,6 +19592,7 @@
       "item.craft_kaisen.inverted_spear": "Inverted Spear",
       "item.craft_kaisen.fire_arrow_mob": "Fire Arrow Mob",
       "effect.craft_kaisen.lapse_blue_control": "Lapse Blue",
+      "item.craft_kaisen.jujutsu_history_book": "Jujutsu History Book",
       "entity.craft_kaisen.rugby_field_cursed_spirit": "Rugby Field Cursed Spirit",
       "item_group.craft_kaisen.ck_items": "Ck Items",
       "advancements.cursed_child.title": "Cursed Child",
@@ -19671,6 +19909,10 @@
             "children": []
           }
         ]
+      },
+      {
+        "name": "Villager Trades",
+        "children": []
       }
     ]
   },

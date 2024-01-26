@@ -52,7 +52,7 @@ public class Ability1Message {
 			return;
 		if (type == 0) {
 
-			Ability1OnKeyPressedProcedure.execute(entity);
+			Ability1OnKeyPressedProcedure.execute(world, entity);
 		}
 	}
 

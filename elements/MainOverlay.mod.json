@@ -352,6 +352,265 @@
           "x": 0,
           "y": 0
         }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_cursed_energy",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnCEOverlay"
+          },
+          "color": {
+            "value": -12283715,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayBar12"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 18,
+          "y": 43
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_ce_overlay",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnCEOverlay"
+          },
+          "color": {
+            "value": -12283715,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayBar11"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 18,
+          "y": 54
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_ce_overlay1",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnCEOverlay"
+          },
+          "color": {
+            "value": -12283715,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayBar10"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 18,
+          "y": 66
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_ce_overlay2",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnCEOverlay"
+          },
+          "color": {
+            "value": -12283715,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayBar9"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 18,
+          "y": 78
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_ce_overlay3",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnCEOverlay"
+          },
+          "color": {
+            "value": -12283715,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayBar8"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 18,
+          "y": 90
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_ce_overlay4",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnCEOverlay"
+          },
+          "color": {
+            "value": -12283715,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayBar7"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 18,
+          "y": 102
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_ce_overlay5",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnCEOverlay"
+          },
+          "color": {
+            "value": -12283715,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayBar6"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 18,
+          "y": 114
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_ce_overlay6",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnCEOverlay"
+          },
+          "color": {
+            "value": -12283715,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayBar5"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 18,
+          "y": 126
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_ce_overlay7",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnCEOverlay"
+          },
+          "color": {
+            "value": -12283715,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayBar4"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 18,
+          "y": 138
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_ce_overlay8",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnCEOverlay"
+          },
+          "color": {
+            "value": -12283715,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayBar3"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 18,
+          "y": 150
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_ce_overlay9",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnCEOverlay"
+          },
+          "color": {
+            "value": -12283715,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayBar2"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 18,
+          "y": 162
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_ce_overlay10",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnCEOverlay"
+          },
+          "color": {
+            "value": -12283715,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayBar1"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 18,
+          "y": 174
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_0",
+          "text": {
+            "fixedValue": "0"
+          },
+          "color": {
+            "value": -12283715,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayBarEmpty"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 18,
+          "y": 185
+        }
       }
     ],
     "baseTexture": "",
