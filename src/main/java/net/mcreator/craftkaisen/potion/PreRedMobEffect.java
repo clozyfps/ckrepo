@@ -27,7 +27,7 @@ public class PreRedMobEffect extends MobEffect {
 
 	@Override
 	public void applyEffectTick(LivingEntity entity, int amplifier) {
-		PreRedOnEffectActiveTickProcedure.execute(entity.level, entity.getX(), entity.getY(), entity.getZ(), entity);
+		PreRedOnEffectActiveTickProcedure.execute(entity.level, entity);
 	}
 
 	@Override

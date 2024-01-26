@@ -4,8 +4,8 @@
   "definition": {
     "mobName": "Heian Era Sukuna",
     "mobLabel": "",
-    "mobModelName": "Modelcustom_model",
-    "mobModelTexture": "sukuna-jujutsu-kaisen-on-planetminecraft-com_1.png",
+    "mobModelName": "ModelTrueSukuna",
+    "mobModelTexture": "truesukunatexture.png",
     "transparentModelCondition": {
       "fixedValue": false
     },
@@ -28,11 +28,11 @@
     "mountedYOffset": 0.0,
     "hasSpawnEgg": true,
     "spawnEggBaseColor": {
-      "value": -403824,
+      "value": -2244734,
       "falpha": 0.0
     },
     "spawnEggDotColor": {
-      "value": -21804,
+      "value": -2878701,
       "falpha": 0.0
     },
     "creativeTab": {
@@ -115,6 +115,9 @@
       "value": ""
     },
     "entityDataEntries": [],
+    "whenMobDies": {
+      "name": "RyomenSukunaEntityDies"
+    },
     "onMobTickUpdate": {
       "name": "RyomenSukunaOnEntityTickUpdate"
     },

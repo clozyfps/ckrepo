@@ -45,6 +45,7 @@ import net.mcreator.craftkaisen.procedures.SetCopyProcedure;
 import net.mcreator.craftkaisen.procedures.SetCSMProcedure;
 import net.mcreator.craftkaisen.procedures.SetBoogieWoogieProcedure;
 import net.mcreator.craftkaisen.procedures.SetBloodManipulationProcedure;
+import net.mcreator.craftkaisen.procedures.SetAuspiciousBeastsSummonProcedure;
 import net.mcreator.craftkaisen.procedures.ResetButtonProcedure;
 
 import com.mojang.brigadier.arguments.DoubleArgumentType;
@@ -249,6 +250,20 @@ public class SetCommandCommand {
 						direction = entity.getDirection();
 
 					SetRatioProcedure.execute(entity);
+					return 0;
+				})).then(Commands.literal("AuspiciousBeastsSummon").executes(arguments -> {
+					Level world = arguments.getSource().getUnsidedLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null && world instanceof ServerLevel _servLevel)
+						entity = FakePlayerFactory.getMinecraft(_servLevel);
+					Direction direction = Direction.DOWN;
+					if (entity != null)
+						direction = entity.getDirection();
+
+					SetAuspiciousBeastsSummonProcedure.execute(entity);
 					return 0;
 				})))).then(Commands.literal("Race").then(Commands.argument("name", EntityArgument.player()).then(Commands.literal("Human").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();

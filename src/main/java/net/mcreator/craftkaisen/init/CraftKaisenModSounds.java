@@ -27,4 +27,6 @@ public class CraftKaisenModSounds {
 	public static final RegistryObject<SoundEvent> SUKUNA = REGISTRY.register("sukuna", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("craft_kaisen", "sukuna")));
 	public static final RegistryObject<SoundEvent> SUKUNADOMAIN = REGISTRY.register("sukunadomain", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("craft_kaisen", "sukunadomain")));
 	public static final RegistryObject<SoundEvent> TELEPORT = REGISTRY.register("teleport", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("craft_kaisen", "teleport")));
+	public static final RegistryObject<SoundEvent> CRIT = REGISTRY.register("crit", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("craft_kaisen", "crit")));
+	public static final RegistryObject<SoundEvent> CLAP = REGISTRY.register("clap", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("craft_kaisen", "clap")));
 }

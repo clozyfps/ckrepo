@@ -36,6 +36,13 @@ public class Kill5SpiritsProcedure {
 				&& (sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).DoingMission == true) {
 			if (entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("craft_kaisen:cursed_spirits")))) {
 				sourceentity.getPersistentData().putDouble("exorcise5spirits", (sourceentity.getPersistentData().getDouble("exorcise5spirits") + 1));
+				{
+					String _setval = "Exorcise 5 Cursed Spirits " + new java.text.DecimalFormat("#").format(sourceentity.getPersistentData().getDouble("exorcise5spirits")) + "/5";
+					sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.CurrentMission = _setval;
+						capability.syncPlayerVariables(sourceentity);
+					});
+				}
 				if (sourceentity.getPersistentData().getDouble("exorcise5spirits") >= 5) {
 					sourceentity.getPersistentData().putDouble("exorcise5spirits", 0);
 					{

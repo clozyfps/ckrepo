@@ -6,8 +6,20 @@
     "mobLabel": "",
     "mobModelName": "Biped",
     "mobModelTexture": "nanami_kento_mc.png",
+    "transparentModelCondition": {
+      "fixedValue": false
+    },
+    "isShakingCondition": {
+      "fixedValue": false
+    },
     "solidBoundingBox": {
       "fixedValue": false
+    },
+    "visualScale": {
+      "fixedValue": 1.0
+    },
+    "boundingBoxScale": {
+      "fixedValue": 1.0
     },
     "modelLayers": [],
     "modelWidth": 0.6,
@@ -49,7 +61,7 @@
     },
     "mobBehaviourType": "Mob",
     "mobCreatureType": "UNDEFINED",
-    "attackStrength": 16,
+    "attackStrength": 17,
     "attackKnockback": 2.0,
     "knockbackResistance": 0.0,
     "movementSpeed": 0.3,
@@ -57,9 +69,12 @@
     "armorBaseValue": 0.1,
     "trackingRange": 64,
     "followRange": 50,
-    "health": 315,
+    "health": 370,
     "xpAmount": 1,
     "waterMob": false,
+    "breatheUnderwater": {
+      "fixedValue": false
+    },
     "pushedByFluids": {
       "fixedValue": true
     },

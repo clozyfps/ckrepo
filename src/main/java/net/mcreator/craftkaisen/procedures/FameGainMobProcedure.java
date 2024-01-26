@@ -14,12 +14,14 @@ import net.mcreator.craftkaisen.entity.RyomenSukunaEntity;
 import net.mcreator.craftkaisen.entity.RugbyFieldCursedSpiritEntity;
 import net.mcreator.craftkaisen.entity.RoppongiCursedSpiritEntity;
 import net.mcreator.craftkaisen.entity.MouthCursedSpiritEntity;
+import net.mcreator.craftkaisen.entity.MegunaEntity;
 import net.mcreator.craftkaisen.entity.MahitoEntity;
 import net.mcreator.craftkaisen.entity.KoGuyEntity;
 import net.mcreator.craftkaisen.entity.JogoEntity;
 import net.mcreator.craftkaisen.entity.InventoryCurseMobEntity;
 import net.mcreator.craftkaisen.entity.HeianEraSukunaEntity;
 import net.mcreator.craftkaisen.entity.HanamiEntity;
+import net.mcreator.craftkaisen.entity.FlyingCursedSpiritEntity;
 import net.mcreator.craftkaisen.entity.FingerBearerEntity;
 
 import javax.annotation.Nullable;
@@ -73,6 +75,12 @@ public class FameGainMobProcedure {
 		}
 		if (entity instanceof SmallPoxDeityEntity) {
 			entity.getPersistentData().putDouble("famegain", (Mth.nextInt(RandomSource.create(), 700, 900)));
+		}
+		if (entity instanceof FlyingCursedSpiritEntity) {
+			entity.getPersistentData().putDouble("famegain", (Mth.nextInt(RandomSource.create(), 300, 500)));
+		}
+		if (entity instanceof MegunaEntity) {
+			entity.getPersistentData().putDouble("famegain", (Mth.nextInt(RandomSource.create(), 80000, 100000)));
 		}
 	}
 }

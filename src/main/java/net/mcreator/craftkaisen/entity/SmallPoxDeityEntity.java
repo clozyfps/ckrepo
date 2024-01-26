@@ -42,6 +42,7 @@ import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.Packet;
 
 import net.mcreator.craftkaisen.procedures.SmallPoxDeityOnEntityTickUpdateProcedure;
+import net.mcreator.craftkaisen.procedures.SmallPoxDeityEntityDiesProcedure;
 import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
 
 public class SmallPoxDeityEntity extends Monster implements GeoEntity {
@@ -113,6 +114,12 @@ public class SmallPoxDeityEntity extends Monster implements GeoEntity {
 	@Override
 	public SoundEvent getDeathSound() {
 		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.death"));
+	}
+
+	@Override
+	public void die(DamageSource source) {
+		super.die(source);
+		SmallPoxDeityEntityDiesProcedure.execute(this, source.getEntity());
 	}
 
 	@Override

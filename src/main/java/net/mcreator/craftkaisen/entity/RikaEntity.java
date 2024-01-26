@@ -85,7 +85,7 @@ public class RikaEntity extends TamableAnimal {
 		super.registerGoals();
 		this.targetSelector.addGoal(1, new OwnerHurtTargetGoal(this));
 		this.goalSelector.addGoal(2, new OwnerHurtByTargetGoal(this));
-		this.goalSelector.addGoal(3, new MeleeAttackGoal(this, 2.2, true) {
+		this.goalSelector.addGoal(3, new MeleeAttackGoal(this, 2.7, true) {
 			@Override
 			protected double getAttackReachSqr(LivingEntity entity) {
 				return this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth();
@@ -113,7 +113,7 @@ public class RikaEntity extends TamableAnimal {
 			public void start() {
 				LivingEntity livingentity = RikaEntity.this.getTarget();
 				Vec3 vec3d = livingentity.getEyePosition(1);
-				RikaEntity.this.moveControl.setWantedPosition(vec3d.x, vec3d.y, vec3d.z, 2.5);
+				RikaEntity.this.moveControl.setWantedPosition(vec3d.x, vec3d.y, vec3d.z, 4);
 			}
 
 			@Override
@@ -125,7 +125,7 @@ public class RikaEntity extends TamableAnimal {
 					double d0 = RikaEntity.this.distanceToSqr(livingentity);
 					if (d0 < 50) {
 						Vec3 vec3d = livingentity.getEyePosition(1);
-						RikaEntity.this.moveControl.setWantedPosition(vec3d.x, vec3d.y, vec3d.z, 2.5);
+						RikaEntity.this.moveControl.setWantedPosition(vec3d.x, vec3d.y, vec3d.z, 4);
 					}
 				}
 			}
@@ -254,14 +254,14 @@ public class RikaEntity extends TamableAnimal {
 
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
-		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.3);
+		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.5);
 		builder = builder.add(Attributes.MAX_HEALTH, 590);
 		builder = builder.add(Attributes.ARMOR, 0.1);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 18);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 50);
 		builder = builder.add(Attributes.KNOCKBACK_RESISTANCE, 15);
 		builder = builder.add(Attributes.ATTACK_KNOCKBACK, 1);
-		builder = builder.add(Attributes.FLYING_SPEED, 0.3);
+		builder = builder.add(Attributes.FLYING_SPEED, 0.5);
 		return builder;
 	}
 }

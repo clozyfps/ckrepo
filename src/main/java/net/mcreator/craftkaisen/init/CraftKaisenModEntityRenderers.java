@@ -17,8 +17,10 @@ import net.mcreator.craftkaisen.client.renderer.WoodenBoxRenderer;
 import net.mcreator.craftkaisen.client.renderer.WhiteDivineDogRenderer;
 import net.mcreator.craftkaisen.client.renderer.UnlimitedVoidMobRenderer;
 import net.mcreator.craftkaisen.client.renderer.TojiFushiguroRenderer;
+import net.mcreator.craftkaisen.client.renderer.TogeInumakiRenderer;
 import net.mcreator.craftkaisen.client.renderer.ToadRenderer;
 import net.mcreator.craftkaisen.client.renderer.TenShadowRabbitRenderer;
+import net.mcreator.craftkaisen.client.renderer.TakadaRenderer;
 import net.mcreator.craftkaisen.client.renderer.SuguruGetoRenderer;
 import net.mcreator.craftkaisen.client.renderer.SmallPoxDomainSpawnerRenderer;
 import net.mcreator.craftkaisen.client.renderer.SmallPoxDeityRenderer;
@@ -41,7 +43,9 @@ import net.mcreator.craftkaisen.client.renderer.NueRenderer;
 import net.mcreator.craftkaisen.client.renderer.NobaraKugisakiRenderer;
 import net.mcreator.craftkaisen.client.renderer.NanamiKentoRenderer;
 import net.mcreator.craftkaisen.client.renderer.MouthCursedSpiritRenderer;
+import net.mcreator.craftkaisen.client.renderer.MergedBeastAgitoRenderer;
 import net.mcreator.craftkaisen.client.renderer.MegunaRenderer;
+import net.mcreator.craftkaisen.client.renderer.MegumiFushiguroRenderer;
 import net.mcreator.craftkaisen.client.renderer.MaximumElephantRenderer;
 import net.mcreator.craftkaisen.client.renderer.MaxMeteorRenderer;
 import net.mcreator.craftkaisen.client.renderer.MalevolentShrineRenderer;
@@ -69,6 +73,7 @@ import net.mcreator.craftkaisen.client.renderer.BodyRepel1Renderer;
 import net.mcreator.craftkaisen.client.renderer.BlueEntityRenderer;
 import net.mcreator.craftkaisen.client.renderer.BlackDivineDogRenderer;
 import net.mcreator.craftkaisen.client.renderer.AwakenedMakiRenderer;
+import net.mcreator.craftkaisen.client.renderer.AoiTodoRenderer;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class CraftKaisenModEntityRenderers {
@@ -161,5 +166,11 @@ public class CraftKaisenModEntityRenderers {
 		event.registerEntityRenderer(CraftKaisenModEntities.HOLLOW_PURPLE_GOJO.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.HAJIME_KASHIMO.get(), HajimeKashimoRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.FINGER_BEARER_PROJECTILE.get(), ThrownItemRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.MERGED_BEAST_AGITO.get(), MergedBeastAgitoRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.MEGUMI_FUSHIGURO.get(), MegumiFushiguroRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.TOGE_INUMAKI.get(), TogeInumakiRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.KAICHI.get(), ThrownItemRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.TAKADA.get(), TakadaRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.AOI_TODO.get(), AoiTodoRenderer::new);
 	}
 }

@@ -7,6 +7,7 @@ import net.minecraftforge.network.NetworkHooks;
 
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
@@ -19,6 +20,7 @@ import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.sounds.SoundEvent;
@@ -26,6 +28,9 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.Packet;
 
+import net.mcreator.craftkaisen.procedures.YujiItadoriOnEntityTickUpdateProcedure;
+import net.mcreator.craftkaisen.procedures.YujiItadoriEntityDiesProcedure;
+import net.mcreator.craftkaisen.init.CraftKaisenModItems;
 import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
 
 public class YujiItadoriEntity extends Monster {
@@ -38,6 +43,8 @@ public class YujiItadoriEntity extends Monster {
 		maxUpStep = 0.6f;
 		xpReward = 6;
 		setNoAi(false);
+		this.setItemSlot(EquipmentSlot.CHEST, new ItemStack(CraftKaisenModItems.ITADORI_OUTFIT_CHESTPLATE.get()));
+		this.setItemSlot(EquipmentSlot.LEGS, new ItemStack(CraftKaisenModItems.ITADORI_OUTFIT_LEGGINGS.get()));
 	}
 
 	@Override
@@ -66,11 +73,6 @@ public class YujiItadoriEntity extends Monster {
 	}
 
 	@Override
-	public double getMyRidingOffset() {
-		return -0.35D;
-	}
-
-	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.hurt"));
 	}
@@ -78,6 +80,18 @@ public class YujiItadoriEntity extends Monster {
 	@Override
 	public SoundEvent getDeathSound() {
 		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.death"));
+	}
+
+	@Override
+	public void die(DamageSource source) {
+		super.die(source);
+		YujiItadoriEntityDiesProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
+	}
+
+	@Override
+	public void baseTick() {
+		super.baseTick();
+		YujiItadoriOnEntityTickUpdateProcedure.execute();
 	}
 
 	public static void init() {
@@ -89,7 +103,7 @@ public class YujiItadoriEntity extends Monster {
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.4);
 		builder = builder.add(Attributes.MAX_HEALTH, 370);
 		builder = builder.add(Attributes.ARMOR, 0.2);
-		builder = builder.add(Attributes.ATTACK_DAMAGE, 21);
+		builder = builder.add(Attributes.ATTACK_DAMAGE, 24);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 50);
 		builder = builder.add(Attributes.ATTACK_KNOCKBACK, 3);
 		return builder;

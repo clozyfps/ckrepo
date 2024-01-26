@@ -34,44 +34,46 @@ public class NueOnEntityTickUpdateProcedure {
 		if (entity == null)
 			return;
 		if ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof LivingEntity) {
-			if (Math.random() < 0.01) {
-				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.NUE_ELECTRICITY_EFFECT.get(), 120, 1, false, false));
-			}
-			if (Math.random() < 0.01) {
-				entity.setDeltaMovement(new Vec3((((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getX() - entity.getX()) / 4),
-						(((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getY() - entity.getY()) / 4), (((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getZ() - entity.getZ()) / 4)));
-				CraftKaisenMod.queueServerWork(10, () -> {
-					if (world instanceof ServerLevel _level)
-						_level.sendParticles(ParticleTypes.EXPLOSION_EMITTER, x, y, z, 10, 3, 3, 3, 0);
-					if (world instanceof ServerLevel _level)
-						_level.sendParticles(ParticleTypes.POOF, x, y, z, 7, 3, 3, 3, 0);
-					if (world instanceof Level _level) {
-						if (!_level.isClientSide()) {
-							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.explode")), SoundSource.NEUTRAL, 1, 1);
-						} else {
-							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.explode")), SoundSource.NEUTRAL, 1, 1, false);
+			if (!(entity instanceof LivingEntity _livEnt2 && _livEnt2.hasEffect(CraftKaisenModMobEffects.STOP_ATTACKS.get()))) {
+				if (Math.random() < 0.01) {
+					if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+						_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.NUE_ELECTRICITY_EFFECT.get(), 120, 1, false, false));
+				}
+				if (Math.random() < 0.01) {
+					entity.setDeltaMovement(new Vec3((((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getX() - entity.getX()) / 4),
+							(((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getY() - entity.getY()) / 4), (((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getZ() - entity.getZ()) / 4)));
+					CraftKaisenMod.queueServerWork(10, () -> {
+						if (world instanceof ServerLevel _level)
+							_level.sendParticles(ParticleTypes.EXPLOSION_EMITTER, x, y, z, 10, 3, 3, 3, 0);
+						if (world instanceof ServerLevel _level)
+							_level.sendParticles(ParticleTypes.POOF, x, y, z, 7, 3, 3, 3, 0);
+						if (world instanceof Level _level) {
+							if (!_level.isClientSide()) {
+								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.explode")), SoundSource.NEUTRAL, 1, 1);
+							} else {
+								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.explode")), SoundSource.NEUTRAL, 1, 1, false);
+							}
 						}
-					}
-					int horizontalRadiusSphere = (int) 5 - 1;
-					int verticalRadiusSphere = (int) 5 - 1;
-					int yIterationsSphere = verticalRadiusSphere;
-					for (int i = -yIterationsSphere; i <= yIterationsSphere; i++) {
-						for (int xi = -horizontalRadiusSphere; xi <= horizontalRadiusSphere; xi++) {
-							for (int zi = -horizontalRadiusSphere; zi <= horizontalRadiusSphere; zi++) {
-								double distanceSq = (xi * xi) / (double) (horizontalRadiusSphere * horizontalRadiusSphere) + (i * i) / (double) (verticalRadiusSphere * verticalRadiusSphere)
-										+ (zi * zi) / (double) (horizontalRadiusSphere * horizontalRadiusSphere);
-								if (distanceSq <= 1.0) {
-									world.destroyBlock(BlockPos.containing(x + xi, y + i, z + zi), false);
-									world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), Blocks.AIR.defaultBlockState(), 3);
+						int horizontalRadiusSphere = (int) 5 - 1;
+						int verticalRadiusSphere = (int) 5 - 1;
+						int yIterationsSphere = verticalRadiusSphere;
+						for (int i = -yIterationsSphere; i <= yIterationsSphere; i++) {
+							for (int xi = -horizontalRadiusSphere; xi <= horizontalRadiusSphere; xi++) {
+								for (int zi = -horizontalRadiusSphere; zi <= horizontalRadiusSphere; zi++) {
+									double distanceSq = (xi * xi) / (double) (horizontalRadiusSphere * horizontalRadiusSphere) + (i * i) / (double) (verticalRadiusSphere * verticalRadiusSphere)
+											+ (zi * zi) / (double) (horizontalRadiusSphere * horizontalRadiusSphere);
+									if (distanceSq <= 1.0) {
+										world.destroyBlock(BlockPos.containing(x + xi, y + i, z + zi), false);
+										world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), Blocks.AIR.defaultBlockState(), 3);
+									}
 								}
 							}
 						}
-					}
-				});
+					});
+				}
 			}
 		}
-		if (entity instanceof LivingEntity _livEnt26 && _livEnt26.hasEffect(CraftKaisenModMobEffects.NUE_ELECTRICITY_EFFECT.get())) {
+		if (entity instanceof LivingEntity _livEnt27 && _livEnt27.hasEffect(CraftKaisenModMobEffects.NUE_ELECTRICITY_EFFECT.get())) {
 			{
 				final Vec3 _center = new Vec3(x, y, z);
 				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(9 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))

@@ -6,6 +6,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.chat.Component;
 import net.minecraft.advancements.AdvancementProgress;
 import net.minecraft.advancements.Advancement;
 
@@ -17,8 +18,10 @@ public class FinishCharacterProcedure {
 			return;
 		double SixEyes = 0;
 		double Flash = 0;
+		double overflow = 0;
 		SixEyes = Mth.nextInt(RandomSource.create(), 1, 1000);
 		Flash = Mth.nextInt(RandomSource.create(), 1, 100);
+		overflow = Mth.nextInt(RandomSource.create(), 1, 200);
 		if (entity instanceof Player _player)
 			_player.closeContainer();
 		{
@@ -38,6 +41,15 @@ public class FinishCharacterProcedure {
 						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
+			if (entity instanceof Player _player && !_player.level.isClientSide())
+				_player.displayClientMessage(Component.literal("You are born with the legendary Six Eyes."), false);
+			{
+				String _setval = "Six Eyes";
+				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.special = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
 		}
 		if (Flash == 1) {
 			if (entity instanceof ServerPlayer _player) {
@@ -47,6 +59,48 @@ public class FinishCharacterProcedure {
 					for (String criteria : _ap.getRemainingCriteria())
 						_player.getAdvancements().award(_adv, criteria);
 				}
+			}
+			if (entity instanceof Player _player && !_player.level.isClientSide())
+				_player.displayClientMessage(Component.literal("You are blessed by the sparks."), false);
+			{
+				String _setval = "Blessed By The Sparks";
+				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.special = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+			{
+				double _setval = 3500;
+				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.BlackFlashRarity = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+		}
+		if (overflow == 1) {
+			if (entity instanceof ServerPlayer _player) {
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:overflowing"));
+				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+				if (!_ap.isDone()) {
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
+				}
+			}
+			if (entity instanceof Player _player && !_player.level.isClientSide())
+				_player.displayClientMessage(Component.literal("You are born with a exceptional amount of cursed energy"), false);
+			{
+				String _setval = "Overflowing Cursed Energy";
+				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.special = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+			{
+				double _setval = 80;
+				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.cursedEnergyStat = _setval;
+					capability.syncPlayerVariables(entity);
+				});
 			}
 		}
 	}

@@ -47,7 +47,7 @@ public class AdaptionTimerProcedure {
 							.collect(Collectors.toList());
 					for (Entity entityiterator : _entfound) {
 						if (entityiterator instanceof Player _player && !_player.level.isClientSide())
-							_player.displayClientMessage(Component.literal(("\u00A7lMahoraga Adapted in" + "\u00A7" + new java.text.DecimalFormat("##").format(entity.getPersistentData().getDouble("adaptingtimergoal") / 20) + " Seconds")), false);
+							_player.displayClientMessage(Component.literal(("\u00A7lMahoraga Adapted in " + "\u00A7" + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("adaptingtimergoal") / 20) + " Seconds")), false);
 					}
 				}
 			} else if (entity.getPersistentData().getDouble("adaptingtimer") < entity.getPersistentData().getDouble("adaptingtimergoal")) {

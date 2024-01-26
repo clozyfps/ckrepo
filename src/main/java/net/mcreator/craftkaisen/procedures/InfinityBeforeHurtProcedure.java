@@ -9,6 +9,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 
+import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
 import net.mcreator.craftkaisen.init.CraftKaisenModItems;
 import net.mcreator.craftkaisen.entity.SatoruGojoEntity;
 
@@ -31,7 +32,8 @@ public class InfinityBeforeHurtProcedure {
 		if (entity == null || immediatesourceentity == null)
 			return;
 		if (entity.getPersistentData().getBoolean("infinity") || entity instanceof SatoruGojoEntity) {
-			if (!((immediatesourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == CraftKaisenModItems.INVERTED_SPEAR.get())) {
+			if (!((immediatesourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == CraftKaisenModItems.INVERTED_SPEAR.get())
+					|| immediatesourceentity instanceof LivingEntity _livEnt4 && _livEnt4.hasEffect(CraftKaisenModMobEffects.DOMAIN_AMPLIFICATION.get())) {
 				if (event != null && event.isCancelable()) {
 					event.setCanceled(true);
 				}

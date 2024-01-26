@@ -4,12 +4,33 @@
   "definition": {
     "mobName": "Yuji Itadori",
     "mobLabel": "",
-    "mobModelName": "Biped",
-    "mobModelTexture": "itadori.png",
+    "mobModelName": "ModelItadoriYuji",
+    "mobModelTexture": "itadoriyujitexture.png",
+    "transparentModelCondition": {
+      "fixedValue": false
+    },
+    "isShakingCondition": {
+      "fixedValue": false
+    },
     "solidBoundingBox": {
       "fixedValue": false
     },
-    "modelLayers": [],
+    "visualScale": {
+      "fixedValue": 1.0
+    },
+    "boundingBoxScale": {
+      "fixedValue": 1.0
+    },
+    "modelLayers": [
+      {
+        "model": "ModelYujikuna",
+        "texture": "yujikunatexture.png",
+        "glow": false,
+        "condition": {
+          "name": "YujiItadoriDisplayCondition"
+        }
+      }
+    ],
     "modelWidth": 0.6,
     "modelHeight": 1.8,
     "modelShadowSize": 0.5,
@@ -39,17 +60,17 @@
       "value": ""
     },
     "equipmentBody": {
-      "value": ""
+      "value": "CUSTOM:ItadoriOutfit.body"
     },
     "equipmentLeggings": {
-      "value": ""
+      "value": "CUSTOM:ItadoriOutfit.legs"
     },
     "equipmentBoots": {
       "value": ""
     },
     "mobBehaviourType": "Mob",
     "mobCreatureType": "UNDEFINED",
-    "attackStrength": 21,
+    "attackStrength": 24,
     "attackKnockback": 3.0,
     "knockbackResistance": 0.0,
     "movementSpeed": 0.4,
@@ -60,6 +81,9 @@
     "health": 370,
     "xpAmount": 6,
     "waterMob": false,
+    "breatheUnderwater": {
+      "fixedValue": false
+    },
     "pushedByFluids": {
       "fixedValue": true
     },
@@ -100,6 +124,12 @@
       "value": ""
     },
     "entityDataEntries": [],
+    "whenMobDies": {
+      "name": "YujiItadoriEntityDies"
+    },
+    "onMobTickUpdate": {
+      "name": "YujiItadoriOnEntityTickUpdate"
+    },
     "hasAI": true,
     "aiBase": "(none)",
     "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"attack_on_collide\"><field name=\"speed\">1.5</field><field name=\"longmemory\">TRUE</field><field name=\"condition\">null,null</field><next><block type=\"wander\"><field name=\"speed\">1</field><field name=\"condition\">null,null</field><next><block type=\"attack_action\"><field name=\"callhelp\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"look_around\"><field name=\"condition\">null,null</field><next><block type=\"swim_in_water\"><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></next></block></xml>",

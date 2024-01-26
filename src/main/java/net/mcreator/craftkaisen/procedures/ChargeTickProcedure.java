@@ -58,13 +58,13 @@ public class ChargeTickProcedure {
 					_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 							"particle minecraft:dust 0.97 0.29 0.09 2 ^0 ^0 ^0 0.3 1.2 0.3 0 5");
 				if (world instanceof ServerLevel _level)
-					_level.sendParticles(ParticleTypes.FLAME, x, y, z, 2, 0.1, 2, 0.1, 0);
+					_level.sendParticles(ParticleTypes.FLAME, x, y, z, 3, 0.1, 2, 0.1, 0);
 			} else if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).CeNature).equals("Rough")) {
 				if (world instanceof ServerLevel _level)
-					_level.sendParticles(ParticleTypes.CRIT, x, y, z, 3, 0.1, 2, 0.1, 0.1);
+					_level.sendParticles(ParticleTypes.CRIT, x, y, z, 5, 0.1, 2, 0.1, 0.1);
 			} else if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).CeNature).equals("Electricity")) {
 				if (world instanceof ServerLevel _level)
-					_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.PURPLE_ELECTRICITY.get()), x, y, z, 1, 0.1, 2, 0.1, 0.1);
+					_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.PURPLE_ELECTRICITY.get()), x, y, z, 3, 0.1, 2, 0.1, 0.1);
 			}
 			if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).race).equals("Curse")) {
 				if (world instanceof ServerLevel _level)

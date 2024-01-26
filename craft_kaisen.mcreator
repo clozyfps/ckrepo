@@ -474,10 +474,6 @@
           {
             "name": "entity",
             "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ]
       },
@@ -5331,6 +5327,22 @@
         ],
         "dependencies": [
           {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
             "name": "world",
             "type": "world"
           }
@@ -5470,7 +5482,24 @@
         "files": [
           "src/main/java/net/mcreator/craftkaisen/procedures/BlackFlashProcedure.java"
         ],
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "amount",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
       },
       "path": "~/Procedures"
     },
@@ -20212,6 +20241,2046 @@
         ]
       },
       "path": "~/Procedures"
+    },
+    {
+      "name": "YujiItadoriEntityDies",
+      "type": "procedure",
+      "sortid": 871,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "yuji_itadori_entity_dies",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/YujiItadoriEntityDiesProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Procedure"
+    },
+    {
+      "name": "CleaveOnEffectActiveTick",
+      "type": "procedure",
+      "sortid": 897,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cleave_on_effect_active_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/CleaveOnEffectActiveTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Potions/Procedures"
+    },
+    {
+      "name": "SurgeEffectStartedapplied",
+      "type": "procedure",
+      "sortid": 899,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "surge_effect_startedapplied",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/SurgeEffectStartedappliedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Potions/Procedures"
+    },
+    {
+      "name": "Takada",
+      "type": "livingentity",
+      "sortid": 921,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "takada",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/entity/TakadaEntity.java",
+          "src/main/resources/assets/craft_kaisen/models/item/takada_spawn_egg.json",
+          "src/main/resources/data/craft_kaisen/forge/biome_modifier/takada_biome_modifier.json",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/TakadaRenderer.java"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "MergedBeastAgitoAdvancement",
+      "type": "achievement",
+      "sortid": 864,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "merged_beast_agito_advancement",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/advancements/merged_beast_agito_advancement.json"
+        ]
+      },
+      "path": "~/Advancement"
+    },
+    {
+      "name": "TogeInumakiRightClickedOnEntity",
+      "type": "procedure",
+      "sortid": 892,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toge_inumaki_right_clicked_on_entity",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/TogeInumakiRightClickedOnEntityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Procedure"
+    },
+    {
+      "name": "HeianSlicesOnEffectActiveTick",
+      "type": "procedure",
+      "sortid": 885,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "heian_slices_on_effect_active_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/HeianSlicesOnEffectActiveTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Potions/Procedures"
+    },
+    {
+      "name": "ClapProcedure",
+      "type": "procedure",
+      "sortid": 891,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "clap_procedure",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/ClapProcedureProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/BoogieWoogie"
+    },
+    {
+      "name": "RyomenSukunaEntityDies",
+      "type": "procedure",
+      "sortid": 869,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ryomen_sukuna_entity_dies",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/RyomenSukunaEntityDiesProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Procedure"
+    },
+    {
+      "name": "ThroughBlocks",
+      "type": "potioneffect",
+      "sortid": 895,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "through_blocks",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/potion/ThroughBlocksMobEffect.java"
+        ]
+      },
+      "path": "~/Potions"
+    },
+    {
+      "name": "Overflowing",
+      "type": "achievement",
+      "sortid": 931,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "overflowing",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/advancements/overflowing.json"
+        ]
+      },
+      "path": "~/Advancement"
+    },
+    {
+      "name": "SurgeOnEffectActiveTick",
+      "type": "procedure",
+      "sortid": 875,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "surge_on_effect_active_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/SurgeOnEffectActiveTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Potions/Procedures"
+    },
+    {
+      "name": "KaichiProjectileHitsLivingEntity",
+      "type": "procedure",
+      "sortid": 909,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kaichi_projectile_hits_living_entity",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/KaichiProjectileHitsLivingEntityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "immediatesourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/AuspiciousBeastsSummon"
+    },
+    {
+      "name": "CursedMask",
+      "type": "item",
+      "sortid": 919,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cursed_mask",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/models/item/cursed_mask.json",
+          "src/main/java/net/mcreator/craftkaisen/item/CursedMaskItem.java"
+        ]
+      },
+      "path": "~/Items"
+    },
+    {
+      "name": "AoiTodo",
+      "type": "livingentity",
+      "sortid": 925,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "aoi_todo",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/forge/biome_modifier/aoi_todo_biome_modifier.json",
+          "src/main/resources/assets/craft_kaisen/models/item/aoi_todo_spawn_egg.json",
+          "src/main/java/net/mcreator/craftkaisen/entity/AoiTodoEntity.java",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/AoiTodoRenderer.java"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "CursedObjects",
+      "type": "loottable",
+      "sortid": 932,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cursed_objects",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/loot_tables/chests/cursed_objects.json"
+        ]
+      },
+      "path": "~/Loot Tables"
+    },
+    {
+      "name": "Kaichi",
+      "type": "projectile",
+      "sortid": 910,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kaichi",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/entity/KaichiEntity.java"
+        ]
+      },
+      "path": "~/Abilities/AuspiciousBeastsSummon"
+    },
+    {
+      "name": "TestLast",
+      "type": "procedure",
+      "sortid": 874,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "test_last",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/TestLastProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Items/Procedure"
+    },
+    {
+      "name": "QuestBoardRecipe",
+      "type": "recipe",
+      "sortid": 903,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "quest_board_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/recipes/quest_board_recipe.json"
+        ]
+      },
+      "path": "~/Recipe"
+    },
+    {
+      "name": "ReikiOnEffectActiveTick",
+      "type": "procedure",
+      "sortid": 911,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "reiki_on_effect_active_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/ReikiOnEffectActiveTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/AuspiciousBeastsSummon"
+    },
+    {
+      "name": "SacredTreasure",
+      "type": "achievement",
+      "sortid": 939,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sacred_treasure",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/advancements/sacred_treasure.json"
+        ]
+      },
+      "path": "~/Advancement"
+    },
+    {
+      "name": "YujiItadoriDisplayCondition",
+      "type": "procedure",
+      "sortid": 870,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "yuji_itadori_display_condition",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/YujiItadoriDisplayConditionProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Procedure"
+    },
+    {
+      "name": "AuspiciousBeastsSummonMoves",
+      "type": "procedure",
+      "sortid": 914,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "auspicious_beasts_summon_moves",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/AuspiciousBeastsSummonMovesProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Abilities/MoveUse"
+    },
+    {
+      "name": "HeianEra",
+      "type": "achievement",
+      "sortid": 941,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "heian_era",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/advancements/heian_era.json"
+        ]
+      },
+      "path": "~/Advancement"
+    },
+    {
+      "name": "PhoneRightclicked",
+      "type": "procedure",
+      "sortid": 902,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "phone_rightclicked",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/PhoneRightclickedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Items/Procedure"
+    },
+    {
+      "name": "Cleave",
+      "type": "potioneffect",
+      "sortid": 898,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cleave",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/potion/CleaveMobEffect.java"
+        ]
+      },
+      "path": "~/Potions"
+    },
+    {
+      "name": "TogeInumaki",
+      "type": "livingentity",
+      "sortid": 893,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toge_inumaki",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/TogeInumakiRenderer.java",
+          "src/main/resources/assets/craft_kaisen/models/item/toge_inumaki_spawn_egg.json",
+          "src/main/resources/data/craft_kaisen/forge/biome_modifier/toge_inumaki_biome_modifier.json",
+          "src/main/java/net/mcreator/craftkaisen/entity/TogeInumakiEntity.java"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "MalevolentShrineProcedureNew",
+      "type": "procedure",
+      "sortid": 935,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "malevolent_shrine_procedure_new",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/MalevolentShrineProcedureNewProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/SukunaVessel"
+    },
+    {
+      "name": "YutaKatanaLivingEntityIsHitWithTool",
+      "type": "procedure",
+      "sortid": 884,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "yuta_katana_living_entity_is_hit_with_tool",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/YutaKatanaLivingEntityIsHitWithToolProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Weapons/Procedures"
+    },
+    {
+      "name": "CursedDoll",
+      "type": "item",
+      "sortid": 916,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cursed_doll",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/models/item/cursed_doll.json",
+          "src/main/java/net/mcreator/craftkaisen/item/CursedDollItem.java"
+        ]
+      },
+      "path": "~/Items"
+    },
+    {
+      "name": "TakadaOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 923,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "takada_on_entity_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/TakadaOnEntityTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Procedure"
+    },
+    {
+      "name": "StopTargeting",
+      "type": "procedure",
+      "sortid": 943,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stop_targeting",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/StopTargetingProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "MergedBeastAgito",
+      "type": "livingentity",
+      "sortid": 863,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "merged_beast_agito",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/models/item/merged_beast_agito_spawn_egg.json",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/MergedBeastAgitoRenderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/MergedBeastAgitoEntity.java"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "CursedNecklace",
+      "type": "item",
+      "sortid": 917,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cursed_necklace",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/models/item/cursed_necklace.json",
+          "src/main/java/net/mcreator/craftkaisen/item/CursedNecklaceItem.java"
+        ]
+      },
+      "path": "~/Items"
+    },
+    {
+      "name": "Slice1",
+      "type": "function",
+      "sortid": 880,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "slice_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/functions/slice_1.mcfunction"
+        ]
+      },
+      "path": "~/Functions"
+    },
+    {
+      "name": "RemoveAttack",
+      "type": "procedure",
+      "sortid": 944,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "remove_attack",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/RemoveAttackProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "HeianSukunaSlices",
+      "type": "procedure",
+      "sortid": 887,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "heian_sukuna_slices",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/HeianSukunaSlicesProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "HajimeKashimoOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 900,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hajime_kashimo_on_entity_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/HajimeKashimoOnEntityTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Procedure"
+    },
+    {
+      "name": "StopAttacks",
+      "type": "potioneffect",
+      "sortid": 942,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stop_attacks",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/potion/StopAttacksMobEffect.java"
+        ]
+      },
+      "path": "~/Potions"
+    },
+    {
+      "name": "RyuProcedure",
+      "type": "procedure",
+      "sortid": 913,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ryu_procedure",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/RyuProcedureProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/AuspiciousBeastsSummon"
+    },
+    {
+      "name": "Kill20CursedSpirits",
+      "type": "procedure",
+      "sortid": 926,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kill_20_cursed_spirits",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/Kill20CursedSpiritsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/Quests"
+    },
+    {
+      "name": "ShrineSlice2",
+      "type": "particle",
+      "sortid": 889,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shrine_slice_2",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/particle/ShrineSlice2Particle.java",
+          "src/main/resources/assets/craft_kaisen/particles/shrine_slice_2.json"
+        ]
+      },
+      "path": "~/Particles"
+    },
+    {
+      "name": "ShrineSlice1",
+      "type": "particle",
+      "sortid": 888,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shrine_slice_1",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/particle/ShrineSlice1Particle.java",
+          "src/main/resources/assets/craft_kaisen/particles/shrine_slice_1.json"
+        ]
+      },
+      "path": "~/Particles"
+    },
+    {
+      "name": "TakadaOnInitialEntitySpawn",
+      "type": "procedure",
+      "sortid": 924,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "takada_on_initial_entity_spawn",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/TakadaOnInitialEntitySpawnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Procedure"
+    },
+    {
+      "name": "SetAuspiciousBeastsSummon",
+      "type": "procedure",
+      "sortid": 915,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_auspicious_beasts_summon",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/SetAuspiciousBeastsSummonProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Commands/Procedures"
+    },
+    {
+      "name": "Slice3",
+      "type": "function",
+      "sortid": 882,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "slice_3",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/functions/slice_3.mcfunction"
+        ]
+      },
+      "path": "~/Functions"
+    },
+    {
+      "name": "Slice2",
+      "type": "function",
+      "sortid": 881,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "slice_2",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/functions/slice_2.mcfunction"
+        ]
+      },
+      "path": "~/Functions"
+    },
+    {
+      "name": "Surge",
+      "type": "potioneffect",
+      "sortid": 876,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "surge",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/potion/SurgeMobEffect.java"
+        ]
+      },
+      "path": "~/Potions"
+    },
+    {
+      "name": "ShrineSlice3",
+      "type": "particle",
+      "sortid": 890,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shrine_slice_3",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/particle/ShrineSlice3Particle.java",
+          "src/main/resources/assets/craft_kaisen/particles/shrine_slice_3.json"
+        ]
+      },
+      "path": "~/Particles"
+    },
+    {
+      "name": "PhoneRecipe",
+      "type": "recipe",
+      "sortid": 933,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "phone_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/recipes/phone_recipe.json"
+        ]
+      },
+      "path": "~/Recipe"
+    },
+    {
+      "name": "RyomenSukunaOnInitialEntitySpawn2",
+      "type": "procedure",
+      "sortid": 934,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ryomen_sukuna_on_initial_entity_spawn_2",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/RyomenSukunaOnInitialEntitySpawn2Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Procedure"
+    },
+    {
+      "name": "YutaKatanaEntitySwingsItem",
+      "type": "procedure",
+      "sortid": 883,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "yuta_katana_entity_swings_item",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/YutaKatanaEntitySwingsItemProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Weapons/Procedures"
+    },
+    {
+      "name": "AoiTodoOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 946,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "aoi_todo_on_entity_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/AoiTodoOnEntityTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Procedure"
+    },
+    {
+      "name": "KillMahito",
+      "type": "procedure",
+      "sortid": 927,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kill_mahito",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/KillMahitoProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/Quests"
+    },
+    {
+      "name": "KillJogo",
+      "type": "procedure",
+      "sortid": 929,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kill_jogo",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/KillJogoProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/Quests"
+    },
+    {
+      "name": "TestExtra",
+      "type": "procedure",
+      "sortid": 873,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "test_extra",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/TestExtraProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Items/Procedure"
+    },
+    {
+      "name": "PinkSlice2",
+      "type": "function",
+      "sortid": 878,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pink_slice_2",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/functions/pink_slice_2.mcfunction"
+        ]
+      },
+      "path": "~/Functions"
+    },
+    {
+      "name": "PinkSlice3",
+      "type": "function",
+      "sortid": 879,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pink_slice_3",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/functions/pink_slice_3.mcfunction"
+        ]
+      },
+      "path": "~/Functions"
+    },
+    {
+      "name": "SukunaItadori",
+      "type": "potioneffect",
+      "sortid": 872,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sukuna_itadori",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/potion/SukunaItadoriMobEffect.java"
+        ]
+      },
+      "path": "~/Potions"
+    },
+    {
+      "name": "SmallPoxDeityEntityDies",
+      "type": "procedure",
+      "sortid": 945,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "small_pox_deity_entity_dies",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/SmallPoxDeityEntityDiesProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Procedure"
+    },
+    {
+      "name": "PinkSlice1",
+      "type": "function",
+      "sortid": 877,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pink_slice_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/functions/pink_slice_1.mcfunction"
+        ]
+      },
+      "path": "~/Functions"
+    },
+    {
+      "name": "PurpleBloodSlash",
+      "type": "particle",
+      "sortid": 906,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "purple_blood_slash",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/particles/purple_blood_slash.json",
+          "src/main/java/net/mcreator/craftkaisen/client/particle/PurpleBloodSlashParticle.java"
+        ]
+      },
+      "path": "~/Particles"
+    },
+    {
+      "name": "KillToji",
+      "type": "procedure",
+      "sortid": 928,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kill_toji",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/KillTojiProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/Quests"
+    },
+    {
+      "name": "MegumiFushiguroOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 866,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "megumi_fushiguro_on_entity_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/MegumiFushiguroOnEntityTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Procedure"
+    },
+    {
+      "name": "AdvancementGive",
+      "type": "procedure",
+      "sortid": 937,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "advancement_give",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/AdvancementGiveProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "ThroughBlocksOnEffectActiveTick",
+      "type": "procedure",
+      "sortid": 894,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "through_blocks_on_effect_active_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/ThroughBlocksOnEffectActiveTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Potions/Procedures"
+    },
+    {
+      "name": "TogeInumakiOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 901,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toge_inumaki_on_entity_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/TogeInumakiOnEntityTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Procedure"
+    },
+    {
+      "name": "SkiMask",
+      "type": "armor",
+      "sortid": 905,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ski_mask",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/models/item/ski_mask_helmet.json",
+          "src/main/java/net/mcreator/craftkaisen/item/SkiMaskItem.java"
+        ]
+      },
+      "path": "~/Armor"
+    },
+    {
+      "name": "AgitoProcedure",
+      "type": "procedure",
+      "sortid": 865,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "agito_procedure",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/AgitoProcedureProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/TenShadows"
+    },
+    {
+      "name": "TheHonoredOne",
+      "type": "achievement",
+      "sortid": 938,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "the_honored_one",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/advancements/the_honored_one.json"
+        ]
+      },
+      "path": "~/Advancement"
+    },
+    {
+      "name": "CursedGlasses",
+      "type": "item",
+      "sortid": 918,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cursed_glasses",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/models/item/cursed_glasses.json",
+          "src/main/java/net/mcreator/craftkaisen/item/CursedGlassesItem.java"
+        ]
+      },
+      "path": "~/Items"
+    },
+    {
+      "name": "ShinjukuShowdown",
+      "type": "achievement",
+      "sortid": 940,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shinjuku_showdown",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/advancements/shinjuku_showdown.json"
+        ]
+      },
+      "path": "~/Advancement"
+    },
+    {
+      "name": "ClanInvitePaperRecipe",
+      "type": "recipe",
+      "sortid": 904,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "clan_invite_paper_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/recipes/clan_invite_paper_recipe.json"
+        ]
+      },
+      "path": "~/Recipe"
+    },
+    {
+      "name": "Reiki",
+      "type": "potioneffect",
+      "sortid": 912,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "reiki",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/potion/ReikiMobEffect.java"
+        ]
+      },
+      "path": "~/Abilities/AuspiciousBeastsSummon"
+    },
+    {
+      "name": "KillSukuna",
+      "type": "procedure",
+      "sortid": 930,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kill_sukuna",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/KillSukunaProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/Quests"
+    },
+    {
+      "name": "LivesDeath",
+      "type": "procedure",
+      "sortid": 948,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lives_death",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/LivesDeathProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "NanamiRatio",
+      "type": "procedure",
+      "sortid": 868,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nanami_ratio",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/NanamiRatioProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "amount",
+            "type": "number"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "KaichiProjectileHitsBlock",
+      "type": "procedure",
+      "sortid": 908,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kaichi_projectile_hits_block",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/KaichiProjectileHitsBlockProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "immediatesourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/AuspiciousBeastsSummon"
+    },
+    {
+      "name": "ChimeraShadowGarden",
+      "type": "procedure",
+      "sortid": 936,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "chimera_shadow_garden",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/ChimeraShadowGardenProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/TenShadows"
+    },
+    {
+      "name": "MegumiFushiguro",
+      "type": "livingentity",
+      "sortid": 867,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "megumi_fushiguro",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/MegumiFushiguroRenderer.java",
+          "src/main/resources/assets/craft_kaisen/models/item/megumi_fushiguro_spawn_egg.json",
+          "src/main/java/net/mcreator/craftkaisen/entity/MegumiFushiguroEntity.java",
+          "src/main/resources/data/craft_kaisen/forge/biome_modifier/megumi_fushiguro_biome_modifier.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "KaichiWhileProjectileFlyingTick",
+      "type": "procedure",
+      "sortid": 907,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kaichi_while_projectile_flying_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/KaichiWhileProjectileFlyingTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "immediatesourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/AuspiciousBeastsSummon"
+    },
+    {
+      "name": "PendantTick",
+      "type": "procedure",
+      "sortid": 922,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pendant_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/PendantTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "CursedTotem",
+      "type": "item",
+      "sortid": 920,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cursed_totem",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/models/item/cursed_totem.json",
+          "src/main/java/net/mcreator/craftkaisen/item/CursedTotemItem.java"
+        ]
+      },
+      "path": "~/Items"
+    },
+    {
+      "name": "HardcoreLives",
+      "type": "gamerule",
+      "sortid": 947,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hardcore_lives",
+      "metadata": {
+        "files": [],
+        "type": "logic"
+      },
+      "path": "~/Gamerules"
+    },
+    {
+      "name": "HeianSlices",
+      "type": "potioneffect",
+      "sortid": 886,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "heian_slices",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/potion/HeianSlicesMobEffect.java"
+        ]
+      },
+      "path": "~/Potions"
+    },
+    {
+      "name": "YutaOkkotsuEntityDies",
+      "type": "procedure",
+      "sortid": 896,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "yuta_okkotsu_entity_dies",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/YutaOkkotsuEntityDiesProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Procedure"
+    },
+    {
+      "name": "LiveReset",
+      "type": "procedure",
+      "sortid": 949,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "live_reset",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/LiveResetProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures"
     }
   ],
   "variable_elements": [
@@ -20820,6 +22889,12 @@
       "type": "number",
       "scope": "map",
       "value": "0"
+    },
+    {
+      "name": "Lives",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "2.0"
     }
   ],
   "sound_elements": [
@@ -20915,6 +22990,22 @@
       "name": "teleport",
       "files": [
         "timestop-teleport"
+      ],
+      "category": "neutral",
+      "subtitle": ""
+    },
+    {
+      "name": "crit",
+      "files": [
+        "audio_-_tf2_blade_slice_-_creator_marketplace"
+      ],
+      "category": "neutral",
+      "subtitle": ""
+    },
+    {
+      "name": "clap",
+      "files": [
+        "clap"
       ],
       "category": "neutral",
       "subtitle": ""
@@ -21332,6 +23423,10 @@
             "children": []
           },
           {
+            "name": "AuspiciousBeastsSummon",
+            "children": []
+          },
+          {
             "name": "MoveUse",
             "children": []
           },
@@ -21515,6 +23610,10 @@
         ]
       },
       {
+        "name": "Loot Tables",
+        "children": []
+      },
+      {
         "name": "Projectile",
         "children": [
           {
@@ -21548,6 +23647,10 @@
       {
         "name": "Items",
         "children": [
+          {
+            "name": "Testing",
+            "children": []
+          },
           {
             "name": "Procedure",
             "children": []

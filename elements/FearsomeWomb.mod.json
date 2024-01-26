@@ -3,7 +3,7 @@
   "_type": "achievement",
   "definition": {
     "achievementName": "Fearsome Womb",
-    "achievementDescription": "Find a Finger Bearer",
+    "achievementDescription": "Kill a Finger Bearer",
     "achievementIcon": {
       "value": "Blocks.AIR"
     },

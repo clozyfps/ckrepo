@@ -35,6 +35,7 @@ import net.minecraft.nbt.CompoundTag;
 
 import net.mcreator.craftkaisen.procedures.YutaOkkotsuOnInitialEntitySpawnProcedure;
 import net.mcreator.craftkaisen.procedures.YutaOkkotsuOnEntityTickUpdateProcedure;
+import net.mcreator.craftkaisen.procedures.YutaOkkotsuEntityDiesProcedure;
 import net.mcreator.craftkaisen.init.CraftKaisenModItems;
 import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
 
@@ -96,6 +97,12 @@ public class YutaOkkotsuEntity extends Monster {
 	}
 
 	@Override
+	public void die(DamageSource source) {
+		super.die(source);
+		YutaOkkotsuEntityDiesProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
+	}
+
+	@Override
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData livingdata, @Nullable CompoundTag tag) {
 		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
 		YutaOkkotsuOnInitialEntitySpawnProcedure.execute(this);
@@ -115,7 +122,7 @@ public class YutaOkkotsuEntity extends Monster {
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.3);
-		builder = builder.add(Attributes.MAX_HEALTH, 670);
+		builder = builder.add(Attributes.MAX_HEALTH, 720);
 		builder = builder.add(Attributes.ARMOR, 0.1);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 25);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 50);

@@ -42,7 +42,7 @@
     "bossBarColor": "PINK",
     "bossBarType": "PROGRESS",
     "equipmentMainHand": {
-      "value": ""
+      "value": "CUSTOM:SplitSoulKatana"
     },
     "equipmentOffHand": {
       "value": ""

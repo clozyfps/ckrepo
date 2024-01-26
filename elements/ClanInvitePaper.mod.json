@@ -3,14 +3,14 @@
   "_type": "item",
   "definition": {
     "renderType": 0,
-    "texture": "air102_layer_2",
+    "texture": "yay_envelope",
     "customModelName": "Normal",
     "customProperties": {},
     "states": [],
     "name": "Clan Invite Paper",
     "rarity": "COMMON",
     "creativeTab": {
-      "value": "CUSTOM:CkMobs"
+      "value": "CUSTOM:CkItems"
     },
     "stackSize": 1,
     "enchantability": 0,

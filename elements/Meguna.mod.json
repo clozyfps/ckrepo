@@ -4,8 +4,8 @@
   "definition": {
     "mobName": "Meguna",
     "mobLabel": "",
-    "mobModelName": "Biped",
-    "mobModelTexture": "meguna.png",
+    "mobModelName": "ModelMeguna",
+    "mobModelTexture": "megunatexture.png",
     "transparentModelCondition": {
       "fixedValue": false
     },
@@ -36,7 +36,7 @@
       "falpha": 0.0
     },
     "creativeTab": {
-      "value": "CUSTOM:CkMobs"
+      "value": "CUSTOM:CkCurses"
     },
     "isBoss": true,
     "bossBarColor": "WHITE",
@@ -61,12 +61,12 @@
     },
     "mobBehaviourType": "Mob",
     "mobCreatureType": "UNDEFINED",
-    "attackStrength": 31,
+    "attackStrength": 37,
     "attackKnockback": 5.0,
     "knockbackResistance": 0.1,
     "movementSpeed": 0.5,
     "stepHeight": 0.6,
-    "armorBaseValue": 0.1,
+    "armorBaseValue": 0.3,
     "trackingRange": 64,
     "followRange": 50,
     "health": 900,

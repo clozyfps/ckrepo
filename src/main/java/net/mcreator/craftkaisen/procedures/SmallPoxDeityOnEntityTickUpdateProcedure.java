@@ -22,9 +22,7 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
 import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
-import net.mcreator.craftkaisen.init.CraftKaisenModBlocks;
 import net.mcreator.craftkaisen.entity.WoodenBoxEntity;
-import net.mcreator.craftkaisen.entity.PoxDeityDomainEntity;
 
 import java.util.stream.Collectors;
 import java.util.List;
@@ -68,37 +66,12 @@ public class SmallPoxDeityOnEntityTickUpdateProcedure {
 						}
 						if (!entity.level.isClientSide())
 							entity.discard();
-						int horizontalRadiusHemiTop = (int) 15 - 1;
-						int verticalRadiusHemiTop = (int) 15;
-						int yIterationsHemiTop = verticalRadiusHemiTop;
-						for (int i = 0; i < yIterationsHemiTop; i++) {
-							if (i == verticalRadiusHemiTop) {
-								continue;
-							}
-							for (int xi = -horizontalRadiusHemiTop; xi <= horizontalRadiusHemiTop; xi++) {
-								for (int zi = -horizontalRadiusHemiTop; zi <= horizontalRadiusHemiTop; zi++) {
-									double distanceSq = (xi * xi) / (double) (horizontalRadiusHemiTop * horizontalRadiusHemiTop) + (i * i) / (double) (verticalRadiusHemiTop * verticalRadiusHemiTop)
-											+ (zi * zi) / (double) (horizontalRadiusHemiTop * horizontalRadiusHemiTop);
-									if (distanceSq <= 1.0) {
-										world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_BLOCK.get().defaultBlockState(), 3);
-									}
-								}
-							}
-						}
-						if (world instanceof ServerLevel _level) {
-							Entity entityToSpawn = new PoxDeityDomainEntity(CraftKaisenModEntities.POX_DEITY_DOMAIN.get(), _level);
-							entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
-							if (entityToSpawn instanceof Mob _mobToSpawn)
-								_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-							_level.addFreshEntity(entityToSpawn);
-						}
-						SmallBoxReplaceProcedure.execute(world, x, y, z);
 					}
 				}
 			}
 		} else if ((entity.level.dimension()) == (ResourceKey.create(Registries.DIMENSION, new ResourceLocation("craft_kaisen:small_pox_domain_dimension")))) {
 			if ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof LivingEntity) {
-				if (!(entity instanceof LivingEntity _livEnt20 && _livEnt20.hasEffect(CraftKaisenModMobEffects.SMALL_POX_DEITY_COOLDOWN.get()))) {
+				if (!(entity instanceof LivingEntity _livEnt14 && _livEnt14.hasEffect(CraftKaisenModMobEffects.SMALL_POX_DEITY_COOLDOWN.get()))) {
 					if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 						_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.SMALL_POX_DEITY_COOLDOWN.get(), 100, 0, false, false));
 					{

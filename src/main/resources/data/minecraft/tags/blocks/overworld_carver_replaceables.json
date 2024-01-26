@@ -1,7 +1,8 @@
 {
   "replace": false,
   "values": [
-    "minecraft:air",
-    "minecraft:barrier"
+    "minecraft:grass_block",
+    "minecraft:barrier",
+    "minecraft:air"
   ]
 }

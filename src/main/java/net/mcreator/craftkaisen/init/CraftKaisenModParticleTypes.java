@@ -38,4 +38,8 @@ public class CraftKaisenModParticleTypes {
 	public static final RegistryObject<SimpleParticleType> BLACK_FLASH_LIGHTNING = REGISTRY.register("black_flash_lightning", () -> new SimpleParticleType(true));
 	public static final RegistryObject<SimpleParticleType> RED_PARTICLE_BIG = REGISTRY.register("red_particle_big", () -> new SimpleParticleType(true));
 	public static final RegistryObject<SimpleParticleType> RATIO_PARTICLE = REGISTRY.register("ratio_particle", () -> new SimpleParticleType(true));
+	public static final RegistryObject<SimpleParticleType> SHRINE_SLICE_1 = REGISTRY.register("shrine_slice_1", () -> new SimpleParticleType(true));
+	public static final RegistryObject<SimpleParticleType> SHRINE_SLICE_2 = REGISTRY.register("shrine_slice_2", () -> new SimpleParticleType(true));
+	public static final RegistryObject<SimpleParticleType> SHRINE_SLICE_3 = REGISTRY.register("shrine_slice_3", () -> new SimpleParticleType(true));
+	public static final RegistryObject<SimpleParticleType> PURPLE_BLOOD_SLASH = REGISTRY.register("purple_blood_slash", () -> new SimpleParticleType(true));
 }

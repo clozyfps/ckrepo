@@ -18,6 +18,7 @@ import net.mcreator.craftkaisen.entity.RikaEntity;
 import net.mcreator.craftkaisen.entity.ResurrectedTojiEntity;
 import net.mcreator.craftkaisen.entity.NanamiKentoEntity;
 import net.mcreator.craftkaisen.entity.MouthCursedSpiritEntity;
+import net.mcreator.craftkaisen.entity.MegunaEntity;
 import net.mcreator.craftkaisen.entity.MahitoEntity;
 import net.mcreator.craftkaisen.entity.KoGuyEntity;
 import net.mcreator.craftkaisen.entity.JogoEntity;
@@ -91,6 +92,9 @@ public class SetEntityReputationsProcedure {
 		}
 		if (entity instanceof YutaOkkotsuEntity) {
 			entity.getPersistentData().putDouble("rep", 100);
+		}
+		if (entity instanceof MegunaEntity) {
+			entity.getPersistentData().putDouble("rep", (-500));
 		}
 	}
 }

@@ -30,7 +30,7 @@ public class FingerBearerProjectileWhileProjectileFlyingTickProcedure {
 			return;
 		if (world instanceof ServerLevel _level)
 			_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-					"particle minecraft:dust 0.84 0.12 0.24 2 ^0 ^0 ^0 2 1.2 2 0 45");
+					"particle minecraft:dust 0.92 0.48 0.08 2 ^0 ^0 ^0 2 1.2 2 0 65");
 		if (world instanceof ServerLevel _level)
 			_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 					"particle minecraft:dust 0 0 0 2 ^0 ^0 ^0 2 1.2 2 0 45");

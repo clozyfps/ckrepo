@@ -65,7 +65,7 @@ public class YutaSummonRikaProcedure {
 					}
 					if (!entity.getPersistentData().getBoolean("prerika")) {
 						if (Math.random() < 0.001) {
-							entity.getPersistentData().putBoolean("release", true);
+							entity.getPersistentData().putBoolean("releaserika", true);
 						}
 					}
 				}

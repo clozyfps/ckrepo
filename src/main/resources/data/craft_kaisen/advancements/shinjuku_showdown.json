@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "craft_kaisen:cursed_mask"
+    },
+    "title": {
+      "translate": "advancements.shinjuku_showdown.title"
+    },
+    "description": {
+      "translate": "advancements.shinjuku_showdown.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "shinjuku_showdown": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 5
+  },
+  "parent": "craft_kaisen:young_fishand_reverse_punishment"
+}

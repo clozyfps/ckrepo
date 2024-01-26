@@ -1,14 +1,8 @@
 package net.mcreator.craftkaisen.procedures;
 
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.network.chat.Component;
-import net.minecraft.commands.CommandSourceStack;
+import net.minecraftforge.eventbus.api.Event;
 
-import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
-
-import com.mojang.brigadier.context.CommandContext;
-import com.mojang.brigadier.arguments.StringArgumentType;
+import javax.annotation.Nullable;
 
 public class ClanCreateProcedure {
 	public static void execute(CommandContext<CommandSourceStack> arguments, Entity entity) {

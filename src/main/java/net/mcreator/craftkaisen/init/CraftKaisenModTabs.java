@@ -49,9 +49,12 @@ public class CraftKaisenModTabs {
 					tabData.accept(CraftKaisenModItems.SUGURU_GETO_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.PANDA_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.FLYING_CURSED_SPIRIT_SPAWN_EGG.get());
-					tabData.accept(CraftKaisenModItems.MEGUNA_SPAWN_EGG.get());
-					tabData.accept(CraftKaisenModItems.CLAN_INVITE_PAPER.get());
 					tabData.accept(CraftKaisenModItems.HAJIME_KASHIMO_SPAWN_EGG.get());
+					tabData.accept(CraftKaisenModItems.MERGED_BEAST_AGITO_SPAWN_EGG.get());
+					tabData.accept(CraftKaisenModItems.MEGUMI_FUSHIGURO_SPAWN_EGG.get());
+					tabData.accept(CraftKaisenModItems.TOGE_INUMAKI_SPAWN_EGG.get());
+					tabData.accept(CraftKaisenModItems.TAKADA_SPAWN_EGG.get());
+					tabData.accept(CraftKaisenModItems.AOI_TODO_SPAWN_EGG.get());
 				}).withSearchBar());
 		event.registerCreativeModeTab(new ResourceLocation("craft_kaisen", "ck_weapons"),
 				builder -> builder.title(Component.translatable("item_group.craft_kaisen.ck_weapons")).icon(() -> new ItemStack(CraftKaisenModItems.PLAYFUL_CLOUD.get())).displayItems((parameters, tabData) -> {
@@ -91,6 +94,7 @@ public class CraftKaisenModTabs {
 					tabData.accept(CraftKaisenModItems.MAHORAGA_WHEEL_HELMET.get());
 					tabData.accept(CraftKaisenModItems.ITADORI_OUTFIT_CHESTPLATE.get());
 					tabData.accept(CraftKaisenModItems.ITADORI_OUTFIT_LEGGINGS.get());
+					tabData.accept(CraftKaisenModItems.SKI_MASK_HELMET.get());
 				}).withSearchBar());
 		event.registerCreativeModeTab(new ResourceLocation("craft_kaisen", "ck_curses"),
 				builder -> builder.title(Component.translatable("item_group.craft_kaisen.ck_curses")).icon(() -> new ItemStack(CraftKaisenModItems.HEIAN_ERA_SUKUNA_SPAWN_EGG.get())).displayItems((parameters, tabData) -> {
@@ -118,6 +122,7 @@ public class CraftKaisenModTabs {
 					tabData.accept(CraftKaisenModItems.RAINBOW_DRAGON_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.SMALL_POX_DEITY_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.FLY_HEAD_SPAWN_EGG.get());
+					tabData.accept(CraftKaisenModItems.MEGUNA_SPAWN_EGG.get());
 				}).withSearchBar());
 		event.registerCreativeModeTab(new ResourceLocation("craft_kaisen", "ck_items"),
 				builder -> builder.title(Component.translatable("item_group.craft_kaisen.ck_items")).icon(() -> new ItemStack(CraftKaisenModItems.NAIL.get())).displayItems((parameters, tabData) -> {
@@ -129,6 +134,12 @@ public class CraftKaisenModTabs {
 					tabData.accept(CraftKaisenModItems.PHONE.get());
 					tabData.accept(CraftKaisenModItems.MEDICINE.get());
 					tabData.accept(CraftKaisenModItems.CURSED_TEDDY_BEAR.get());
+					tabData.accept(CraftKaisenModItems.CLAN_INVITE_PAPER.get());
+					tabData.accept(CraftKaisenModItems.CURSED_DOLL.get());
+					tabData.accept(CraftKaisenModItems.CURSED_NECKLACE.get());
+					tabData.accept(CraftKaisenModItems.CURSED_GLASSES.get());
+					tabData.accept(CraftKaisenModItems.CURSED_MASK.get());
+					tabData.accept(CraftKaisenModItems.CURSED_TOTEM.get());
 				}).withSearchBar());
 		event.registerCreativeModeTab(new ResourceLocation("craft_kaisen", "ck_blocks"),
 				builder -> builder.title(Component.translatable("item_group.craft_kaisen.ck_blocks")).icon(() -> new ItemStack(CraftKaisenModBlocks.BARRIER_BLOCK.get())).displayItems((parameters, tabData) -> {

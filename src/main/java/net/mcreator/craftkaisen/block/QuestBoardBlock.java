@@ -111,7 +111,7 @@ public class QuestBoardBlock extends Block {
 		double hitY = hit.getLocation().y;
 		double hitZ = hit.getLocation().z;
 		Direction direction = hit.getDirection();
-		QuestBoardOnBlockRightClickedProcedure.execute(entity);
+		QuestBoardOnBlockRightClickedProcedure.execute(world, x, y, z, entity);
 		return InteractionResult.SUCCESS;
 	}
 }
