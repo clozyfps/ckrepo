@@ -9,7 +9,10 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
+import net.minecraft.tags.TagKey;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.core.registries.Registries;
 
 import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
 
@@ -87,6 +90,24 @@ public class ExpKillProcedure {
 							capability.syncPlayerVariables(sourceentity);
 						});
 					}
+				}
+			}
+			if (entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("craft_kaisen:cursed_spirits")))) {
+				{
+					double _setval = (sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).reputation + 2;
+					sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.reputation = _setval;
+						capability.syncPlayerVariables(sourceentity);
+					});
+				}
+			}
+			if (entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("craft_kaisen:sorcerers")))) {
+				{
+					double _setval = (sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).reputation - 1;
+					sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.reputation = _setval;
+						capability.syncPlayerVariables(sourceentity);
+					});
 				}
 			}
 		}

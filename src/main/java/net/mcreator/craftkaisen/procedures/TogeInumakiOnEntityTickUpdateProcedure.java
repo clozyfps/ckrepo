@@ -1,8 +1,22 @@
 package net.mcreator.craftkaisen.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.effect.MobEffectInstance;
 
-import javax.annotation.Nullable;
+import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
+import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
+import net.mcreator.craftkaisen.entity.SleepRangedProjectileEntity;
+import net.mcreator.craftkaisen.entity.RunAwayRangedProjectileEntity;
+import net.mcreator.craftkaisen.entity.ExplodeRangedProjectileEntity;
+import net.mcreator.craftkaisen.entity.DontMoveRangedProjectileEntity;
+import net.mcreator.craftkaisen.entity.CrushedRangedProjectileEntity;
+import net.mcreator.craftkaisen.entity.CrumbleAwayRangedProjectileEntity;
 
 public class TogeInumakiOnEntityTickUpdateProcedure {
 	public static void execute(Entity entity) {

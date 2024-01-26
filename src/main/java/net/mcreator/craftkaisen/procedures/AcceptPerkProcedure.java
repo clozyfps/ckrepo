@@ -1,13 +1,28 @@
 package net.mcreator.craftkaisen.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.registries.ForgeRegistries;
 
-import javax.annotation.Nullable;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.core.BlockPos;
+
+import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
 
 public class AcceptPerkProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
+		{
+			String _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).PerkPage;
+			entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				capability.Perk = _setval;
+				capability.syncPlayerVariables(entity);
+			});
+		}
 		if (entity instanceof Player _player)
 			_player.closeContainer();
 		if (world instanceof Level _level) {

@@ -1,0 +1,151 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Entities",
+    "items": [],
+    "blocks": [],
+    "functions": [],
+    "entities": [
+      {
+        "value": "CUSTOM:AoiTodo"
+      },
+      {
+        "value": "CUSTOM:AwakenedMaki"
+      },
+      {
+        "value": "CUSTOM:BlackDivineDog"
+      },
+      {
+        "value": "CUSTOM:BlackMucusProjectile"
+      },
+      {
+        "value": "CUSTOM:BlastAwayRangedProjectile"
+      },
+      {
+        "value": "CUSTOM:BloodMeteoriteProjectile"
+      },
+      {
+        "value": "CUSTOM:BlueEntity"
+      },
+      {
+        "value": "CUSTOM:BodyRepel1"
+      },
+      {
+        "value": "CUSTOM:BodyRepel2"
+      },
+      {
+        "value": "CUSTOM:BodyRepel3"
+      },
+      {
+        "value": "CUSTOM:ChimeraShadowGardenMob"
+      },
+      {
+        "value": "CUSTOM:Choso"
+      },
+      {
+        "value": "CUSTOM:CoffinMountain"
+      },
+      {
+        "value": "CUSTOM:CrumbleAwayRangedProjectile"
+      },
+      {
+        "value": "CUSTOM:CrushedRangedProjectile"
+      },
+      {
+        "value": "CUSTOM:DismantleProjectile"
+      },
+      {
+        "value": "CUSTOM:DisasterFlameRangedProjectile"
+      },
+      {
+        "value": "CUSTOM:DontMoveRangedProjectile"
+      },
+      {
+        "value": "CUSTOM:EightHandledSwordDivergentSilaDivineGeneralMahoraga"
+      },
+      {
+        "value": "CUSTOM:EmberInsect"
+      },
+      {
+        "value": "CUSTOM:EmberInsectProjectileProjectile"
+      },
+      {
+        "value": "CUSTOM:ExplodeRangedProjectile"
+      },
+      {
+        "value": "CUSTOM:FindBlueLocationProjectile"
+      },
+      {
+        "value": "CUSTOM:FingerBearer"
+      },
+      {
+        "value": "CUSTOM:FlyHead"
+      },
+      {
+        "value": "CUSTOM:FlyingCursedSpirit"
+      },
+      {
+        "value": "CUSTOM:GreatSerpent"
+      },
+      {
+        "value": "CUSTOM:HajimeKashimo"
+      },
+      {
+        "value": "CUSTOM:Hanami"
+      },
+      {
+        "value": "CUSTOM:Jogo"
+      },
+      {
+        "value": "CUSTOM:KoGuy"
+      },
+      {
+        "value": "CUSTOM:Mahito"
+      },
+      {
+        "value": "CUSTOM:MegumiFushiguro"
+      },
+      {
+        "value": "CUSTOM:NanamiKento"
+      },
+      {
+        "value": "CUSTOM:NobaraKugisaki"
+      },
+      {
+        "value": "CUSTOM:Rika"
+      },
+      {
+        "value": "CUSTOM:RoppongiCursedSpirit"
+      },
+      {
+        "value": "CUSTOM:RugbyFieldCursedSpirit"
+      },
+      {
+        "value": "CUSTOM:RyomenSukuna"
+      },
+      {
+        "value": "CUSTOM:SatoruGojo"
+      },
+      {
+        "value": "CUSTOM:SuguruGeto"
+      },
+      {
+        "value": "CUSTOM:TogeInumaki"
+      },
+      {
+        "value": "CUSTOM:TojiFushiguro"
+      },
+      {
+        "value": "CUSTOM:YujiItadori"
+      },
+      {
+        "value": "CUSTOM:YutaOkkotsu"
+      }
+    ],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "ckmob",
+    "namespace": "mod"
+  }
+}

@@ -1,8 +1,14 @@
 package net.mcreator.craftkaisen.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Entity;
 
-import javax.annotation.Nullable;
+import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
+import net.mcreator.craftkaisen.entity.FingerBearerProjectileEntity;
 
 public class FingerBearerOnEntityTickUpdateProcedure {
 	public static void execute(Entity entity) {
@@ -16,7 +22,7 @@ public class FingerBearerOnEntityTickUpdateProcedure {
 					if (!projectileLevel.isClientSide()) {
 						Projectile _entityToSpawn = new Object() {
 							public Projectile getArrow(Level level, Entity shooter, float damage, int knockback, byte piercing) {
-								AbstractArrow entityToSpawn = new FingerBearerProjectileEntity(CraftKaisenModEntities.DELETED_MOD_ELEMENT.get(), level);
+								AbstractArrow entityToSpawn = new FingerBearerProjectileEntity(CraftKaisenModEntities.FINGER_BEARER_PROJECTILE.get(), level);
 								entityToSpawn.setOwner(shooter);
 								entityToSpawn.setBaseDamage(damage);
 								entityToSpawn.setKnockback(knockback);

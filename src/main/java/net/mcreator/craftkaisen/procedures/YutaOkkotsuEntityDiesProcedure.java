@@ -1,8 +1,14 @@
 package net.mcreator.craftkaisen.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.entity.TamableAnimal;
+import net.minecraft.world.entity.Entity;
 
-import javax.annotation.Nullable;
+import net.mcreator.craftkaisen.entity.RikaEntity;
+
+import java.util.Comparator;
 
 public class YutaOkkotsuEntityDiesProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
