@@ -166,6 +166,9 @@ public class MainOverlayOverlay {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/output10.png"));
 				Minecraft.getInstance().gui.blit(event.getPoseStack(), 0, h / 2 + -120, 0, 0, 427, 240, 427, 240);
 			}
+			RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/lockedhalf.png"));
+			Minecraft.getInstance().gui.blit(event.getPoseStack(), 0, h / 2 + -120, 0, 0, 427, 240, 427, 240);
+
 			if (DisplayBoogieWoogieTargetsProcedure.execute(entity))
 				Minecraft.getInstance().font.draw(event.getPoseStack(),
 

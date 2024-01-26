@@ -611,6 +611,16 @@
           "x": 18,
           "y": 185
         }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "lockedhalf.png",
+          "use1Xscale": true,
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
       }
     ],
     "baseTexture": "",
