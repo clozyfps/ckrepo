@@ -23,6 +23,8 @@ import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.craftkaisen.init.CraftKaisenModParticleTypes;
+import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
+import net.mcreator.craftkaisen.entity.YutaOkkotsuEntity;
 import net.mcreator.craftkaisen.entity.TojiFushiguroEntity;
 import net.mcreator.craftkaisen.entity.ResurrectedTojiEntity;
 import net.mcreator.craftkaisen.entity.GreatSerpentEntity;
@@ -88,6 +90,26 @@ public class SwordClashProcedure {
 		}
 		if (Math.random() < 0.3) {
 			if (entity instanceof TojiFushiguroEntity) {
+				if (entity instanceof LivingEntity _entity)
+					_entity.swing(InteractionHand.MAIN_HAND, true);
+				if (world instanceof Level _level) {
+					if (!_level.isClientSide()) {
+						_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:clank")), SoundSource.NEUTRAL, 1, 1);
+					} else {
+						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:clank")), SoundSource.NEUTRAL, 1, 1, false);
+					}
+				}
+				if (world instanceof ServerLevel _level)
+					_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.CLASH_PARTICLE.get()), x, y, z, 2, 1, 2, 1, 2);
+				if (entity instanceof Mob _entity && immediatesourceentity instanceof LivingEntity _ent)
+					_entity.setTarget(_ent);
+				if (event != null && event.isCancelable()) {
+					event.setCanceled(true);
+				}
+			}
+		}
+		if (Math.random() < 0.4) {
+			if (entity instanceof YutaOkkotsuEntity && entity instanceof LivingEntity _livEnt19 && _livEnt19.hasEffect(CraftKaisenModMobEffects.SURGE.get())) {
 				if (entity instanceof LivingEntity _entity)
 					_entity.swing(InteractionHand.MAIN_HAND, true);
 				if (world instanceof Level _level) {

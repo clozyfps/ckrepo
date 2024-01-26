@@ -37,6 +37,13 @@ public class Execute5EvilMobsProcedure {
 				&& (sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).DoingMission == true) {
 			if (entity instanceof Monster || entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("craft_kaisen:cursed_spirits")))) {
 				sourceentity.getPersistentData().putDouble("execute5mobs", (sourceentity.getPersistentData().getDouble("execute5mobs") + 1));
+				{
+					String _setval = "Execute 5 Evil Mobs " + sourceentity.getPersistentData().getDouble("execute5mobs") + "/5";
+					sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.CurrentMission = _setval;
+						capability.syncPlayerVariables(sourceentity);
+					});
+				}
 				if (sourceentity.getPersistentData().getDouble("execute5mobs") >= 5) {
 					sourceentity.getPersistentData().putDouble("execute5mobs", 0);
 					{

@@ -28,6 +28,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.Packet;
 
+import net.mcreator.craftkaisen.procedures.HajimeKashimoOnEntityTickUpdateProcedure;
 import net.mcreator.craftkaisen.init.CraftKaisenModItems;
 import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
 
@@ -84,6 +85,12 @@ public class HajimeKashimoEntity extends Monster {
 		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.death"));
 	}
 
+	@Override
+	public void baseTick() {
+		super.baseTick();
+		HajimeKashimoOnEntityTickUpdateProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
+	}
+
 	public static void init() {
 		SpawnPlacements.register(CraftKaisenModEntities.HAJIME_KASHIMO.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules);
 	}
@@ -91,7 +98,7 @@ public class HajimeKashimoEntity extends Monster {
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.4);
-		builder = builder.add(Attributes.MAX_HEALTH, 390);
+		builder = builder.add(Attributes.MAX_HEALTH, 420);
 		builder = builder.add(Attributes.ARMOR, 0.1);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 19);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 50);

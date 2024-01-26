@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "craft_kaisen:mahoraga_wheel_helmet"
+    },
+    "title": {
+      "translate": "advancements.sacred_treasure.title"
+    },
+    "description": {
+      "translate": "advancements.sacred_treasure.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "sacred_treasure": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 4
+  },
+  "parent": "craft_kaisen:the_honored_one"
+}

@@ -16,9 +16,9 @@
             "value": -1,
             "falpha": 0.0
           },
-          "anchorPoint": "TOP_RIGHT",
-          "x": 259,
-          "y": 7
+          "anchorPoint": "TOP_CENTER",
+          "x": 207,
+          "y": 5
         }
       }
     ],

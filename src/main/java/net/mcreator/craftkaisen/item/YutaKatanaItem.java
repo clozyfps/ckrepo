@@ -8,7 +8,11 @@ import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.network.chat.Component;
+
+import net.mcreator.craftkaisen.procedures.YutaKatanaLivingEntityIsHitWithToolProcedure;
+import net.mcreator.craftkaisen.procedures.YutaKatanaEntitySwingsItemProcedure;
 
 import java.util.List;
 
@@ -42,7 +46,21 @@ public class YutaKatanaItem extends SwordItem {
 	}
 
 	@Override
+	public boolean hurtEnemy(ItemStack itemstack, LivingEntity entity, LivingEntity sourceentity) {
+		boolean retval = super.hurtEnemy(itemstack, entity, sourceentity);
+		YutaKatanaLivingEntityIsHitWithToolProcedure.execute(entity.level, entity.getX(), entity.getY(), entity.getZ(), entity);
+		return retval;
+	}
+
+	@Override
 	public void appendHoverText(ItemStack itemstack, Level world, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, world, list, flag);
+	}
+
+	@Override
+	public boolean onEntitySwing(ItemStack itemstack, LivingEntity entity) {
+		boolean retval = super.onEntitySwing(itemstack, entity);
+		YutaKatanaEntitySwingsItemProcedure.execute(entity.level, entity.getX(), entity.getY(), entity.getZ(), entity);
+		return retval;
 	}
 }

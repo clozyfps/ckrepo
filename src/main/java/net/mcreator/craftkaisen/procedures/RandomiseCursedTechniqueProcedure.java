@@ -4,7 +4,11 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
+import net.minecraft.advancements.AdvancementProgress;
+import net.minecraft.advancements.Advancement;
 
 import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
 
@@ -14,7 +18,8 @@ public class RandomiseCursedTechniqueProcedure {
 			return;
 		double techniqueNumber = 0;
 		double restrictionNumber = 0;
-		techniqueNumber = Mth.nextInt(RandomSource.create(), 1, 12);
+		double specialNumber = 0;
+		techniqueNumber = Mth.nextInt(RandomSource.create(), 1, 13);
 		if (techniqueNumber == 1) {
 			{
 				String _setval = "Limitless";
@@ -46,6 +51,14 @@ public class RandomiseCursedTechniqueProcedure {
 					capability.technique = _setval;
 					capability.syncPlayerVariables(entity);
 				});
+			}
+			if (entity instanceof ServerPlayer _player) {
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:perception_of_the_soul"));
+				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+				if (!_ap.isDone()) {
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
+				}
 			}
 		} else if (techniqueNumber == 5) {
 			{
@@ -106,6 +119,14 @@ public class RandomiseCursedTechniqueProcedure {
 		} else if (techniqueNumber == 12) {
 			{
 				String _setval = "Miracle";
+				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.technique = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+		} else if (techniqueNumber == 13) {
+			{
+				String _setval = "Auspicious Beasts Summon";
 				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.technique = _setval;
 					capability.syncPlayerVariables(entity);

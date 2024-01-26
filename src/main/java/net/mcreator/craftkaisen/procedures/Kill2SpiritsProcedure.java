@@ -36,6 +36,13 @@ public class Kill2SpiritsProcedure {
 				&& (sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).DoingMission == true) {
 			if (entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("craft_kaisen:cursed_spirits")))) {
 				sourceentity.getPersistentData().putDouble("exorcise2spirits", (sourceentity.getPersistentData().getDouble("exorcise2spirits") + 1));
+				{
+					String _setval = "Exorcise 2 Cursed Spirits " + new java.text.DecimalFormat("#").format(sourceentity.getPersistentData().getDouble("exorcise2spirits")) + "/2";
+					sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.CurrentMission = _setval;
+						capability.syncPlayerVariables(sourceentity);
+					});
+				}
 				if (sourceentity.getPersistentData().getDouble("exorcise2spirits") >= 2) {
 					sourceentity.getPersistentData().putDouble("exorcise2spirits", 0);
 					{

@@ -33,6 +33,7 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 
 import net.mcreator.craftkaisen.procedures.RyomenSukunaOnEntityTickUpdateProcedure;
+import net.mcreator.craftkaisen.procedures.RyomenSukunaEntityDiesProcedure;
 import net.mcreator.craftkaisen.procedures.HeianEraSukunaOnInitialEntitySpawnProcedure;
 import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
 
@@ -86,6 +87,12 @@ public class HeianEraSukunaEntity extends Monster {
 	@Override
 	public SoundEvent getDeathSound() {
 		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.death"));
+	}
+
+	@Override
+	public void die(DamageSource source) {
+		super.die(source);
+		RyomenSukunaEntityDiesProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
 	}
 
 	@Override

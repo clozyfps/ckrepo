@@ -19,8 +19,8 @@ public class BlueTickProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		int horizontalRadiusSphere = (int) 7 - 1;
-		int verticalRadiusSphere = (int) 7 - 1;
+		int horizontalRadiusSphere = (int) 4 - 1;
+		int verticalRadiusSphere = (int) 4 - 1;
 		int yIterationsSphere = verticalRadiusSphere;
 		for (int i = -yIterationsSphere; i <= yIterationsSphere; i++) {
 			for (int xi = -horizontalRadiusSphere; xi <= horizontalRadiusSphere; xi++) {

@@ -12,6 +12,9 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.util.RandomSource;
+import net.minecraft.util.Mth;
+import net.minecraft.tags.TagKey;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
@@ -44,8 +47,8 @@ public class MalevolentShrineOnEntityTickUpdateProcedure {
 			if (!entity.level.isClientSide())
 				entity.discard();
 		}
-		int horizontalRadiusHemiTop = (int) (entity.getPersistentData().getDouble("shrineTick") / 30) - 1;
-		int verticalRadiusHemiTop = (int) (entity.getPersistentData().getDouble("shrineTick") / 30);
+		int horizontalRadiusHemiTop = (int) (entity.getPersistentData().getDouble("shrineTick") / 22) - 1;
+		int verticalRadiusHemiTop = (int) (entity.getPersistentData().getDouble("shrineTick") / 22);
 		int yIterationsHemiTop = verticalRadiusHemiTop;
 		for (int i = 0; i < yIterationsHemiTop; i++) {
 			if (i == verticalRadiusHemiTop) {
@@ -72,11 +75,15 @@ public class MalevolentShrineOnEntityTickUpdateProcedure {
 			for (Entity entityiterator : _entfound) {
 				if (!(entity == entityiterator) && !(entity instanceof TamableAnimal _tamIsTamedBy && entityiterator instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false)
 						&& !(entityiterator instanceof LivingEntity _livEnt27 && _livEnt27.hasEffect(CraftKaisenModMobEffects.SIMPLE_DOMAIN.get()))
-						&& (entity.getPersistentData().getString("tamer")).equals(entityiterator.getDisplayName().getString())) {
-					if (world instanceof ServerLevel _level)
-						_level.sendParticles(ParticleTypes.SWEEP_ATTACK, (entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), 2, 0.6, 0.6, 0.6, 0.6);
-					if (world instanceof ServerLevel _level)
-						_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.BLOOD_SPLASH.get()), (entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), 2, 0.2, (entityiterator.getBbHeight()), 0.2, 0.1);
+						&& !(entity.getPersistentData().getString("tamer")).equals(entityiterator.getDisplayName().getString())) {
+					if (entityiterator.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("craft_kaisen:cursed_spirits")))) {
+						if (world instanceof ServerLevel _level)
+							_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.PURPLE_BLOOD_SLASH.get()), (entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), 2, 0.2, (entityiterator.getBbHeight()), 0.2,
+									0.1);
+					} else {
+						if (world instanceof ServerLevel _level)
+							_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.BLOOD_SPLASH.get()), (entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), 2, 0.2, (entityiterator.getBbHeight()), 0.2, 0.1);
+					}
 					if (world instanceof Level _level) {
 						if (!_level.isClientSide()) {
 							_level.playSound(null, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.player.attack.sweep")),
@@ -94,12 +101,25 @@ public class MalevolentShrineOnEntityTickUpdateProcedure {
 						}
 					}
 					entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC), (entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null)), 18);
-				} else if (entityiterator instanceof LivingEntity _livEnt50 && _livEnt50.hasEffect(CraftKaisenModMobEffects.SIMPLE_DOMAIN.get())) {
+				} else if (entityiterator instanceof LivingEntity _livEnt52 && _livEnt52.hasEffect(CraftKaisenModMobEffects.SIMPLE_DOMAIN.get())) {
 					if (Math.random() < 0.01) {
 						entity.getPersistentData().putDouble("simpledomainlevel", (entity.getPersistentData().getDouble("simpledomainlevel") - 1));
 					}
 				}
 			}
+		}
+		entity.getPersistentData().putDouble("slicerandom", (Mth.nextInt(RandomSource.create(), 1, 3)));
+		if (entity.getPersistentData().getDouble("slicerandom") == 1) {
+			if (world instanceof ServerLevel _level)
+				_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.SHRINE_SLICE_1.get()), x, y, z, 25, 50, 10, 50, 0.2);
+		}
+		if (entity.getPersistentData().getDouble("slicerandom") == 2) {
+			if (world instanceof ServerLevel _level)
+				_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.SHRINE_SLICE_2.get()), x, y, z, 25, 50, 10, 50, 0.2);
+		}
+		if (entity.getPersistentData().getDouble("slicerandom") == 3) {
+			if (world instanceof ServerLevel _level)
+				_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.SHRINE_SLICE_3.get()), x, y, z, 25, 50, 10, 50, 0.2);
 		}
 	}
 }

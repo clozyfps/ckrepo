@@ -137,6 +137,7 @@ public class CraftKaisenModVariables {
 			clone.ClansInWorld = original.ClansInWorld;
 			clone.CreatedClan = original.CreatedClan;
 			clone.Perk = original.Perk;
+			clone.Lives = original.Lives;
 			if (!event.isWasDeath()) {
 				clone.currentMove = original.currentMove;
 				clone.currentOutput = original.currentOutput;
@@ -406,7 +407,7 @@ public class CraftKaisenModVariables {
 		public boolean RCT = false;
 		public double RCTLevel = 0;
 		public double RCTExp = 0;
-		public double BlackFlashRarity = 10.0;
+		public double BlackFlashRarity = 4999.0;
 		public String Traits = "\"\"";
 		public boolean YutaEventHappened = false;
 		public String Passives = "\"\"";
@@ -422,6 +423,7 @@ public class CraftKaisenModVariables {
 		public String Perk = "\"\"";
 		public String PerkPage = "\"\"";
 		public String PerkDescription = "\"\"";
+		public double Lives = 2.0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -513,6 +515,7 @@ public class CraftKaisenModVariables {
 			nbt.putString("Perk", Perk);
 			nbt.putString("PerkPage", PerkPage);
 			nbt.putString("PerkDescription", PerkDescription);
+			nbt.putDouble("Lives", Lives);
 			return nbt;
 		}
 
@@ -601,6 +604,7 @@ public class CraftKaisenModVariables {
 			Perk = nbt.getString("Perk");
 			PerkPage = nbt.getString("PerkPage");
 			PerkDescription = nbt.getString("PerkDescription");
+			Lives = nbt.getDouble("Lives");
 		}
 	}
 
@@ -708,6 +712,7 @@ public class CraftKaisenModVariables {
 					variables.Perk = message.data.Perk;
 					variables.PerkPage = message.data.PerkPage;
 					variables.PerkDescription = message.data.PerkDescription;
+					variables.Lives = message.data.Lives;
 				}
 			});
 			context.setPacketHandled(true);

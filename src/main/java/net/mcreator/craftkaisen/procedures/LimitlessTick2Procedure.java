@@ -5,8 +5,6 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.TickEvent;
 
-import net.minecraft.world.phys.Vec3;
-import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.projectile.Projectile;
@@ -21,10 +19,6 @@ import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
 import net.mcreator.craftkaisen.entity.HollowPurpleProjectileProjectileEntity;
 
 import javax.annotation.Nullable;
-
-import java.util.stream.Collectors;
-import java.util.List;
-import java.util.Comparator;
 
 @Mod.EventBusSubscriber
 public class LimitlessTick2Procedure {
@@ -267,26 +261,6 @@ public class LimitlessTick2Procedure {
 						_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
 						_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, 4, 0);
 						projectileLevel.addFreshEntity(_entityToSpawn);
-					}
-				}
-				entity.getPersistentData().putBoolean("purple", true);
-			}
-		}
-		if (entity.getPersistentData().getBoolean("purple") == true) {
-			entity.getPersistentData().putDouble("purpleDistance", (entity.getPersistentData().getDouble("purpleDistance") + 1));
-			entity.getPersistentData().putDouble("purpleDistance", 0);
-			entity.getPersistentData().putDouble("hollowPurple", 0);
-			entity.getPersistentData().putBoolean("purple", false);
-			{
-				final Vec3 _center = new Vec3((x + entity.getLookAngle().x * entity.getPersistentData().getDouble("purpleDistance")), (y + entity.getLookAngle().y * entity.getPersistentData().getDouble("purpleDistance")),
-						(z + entity.getLookAngle().z * entity.getPersistentData().getDouble("purpleDistance")));
-				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate((entity.getPersistentData().getDouble("purpleCharge") / 20) / 2d), e -> true).stream()
-						.sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).collect(Collectors.toList());
-				for (Entity entityiterator : _entfound) {
-					if (!(entity == entityiterator)) {
-						entityiterator.setDeltaMovement(new Vec3((((x + entity.getLookAngle().x * entity.getPersistentData().getDouble("purpleDistance")) - entityiterator.getX()) / 3),
-								(((y + entity.getLookAngle().y * entity.getPersistentData().getDouble("purpleDistance")) - entityiterator.getY()) / 3),
-								(((z + entity.getLookAngle().z * entity.getPersistentData().getDouble("purpleDistance")) - entityiterator.getZ()) / 3)));
 					}
 				}
 			}

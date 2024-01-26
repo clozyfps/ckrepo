@@ -161,7 +161,7 @@ public class SetMovesProcedure {
 				}
 			}
 			if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Ten Shadows")) {
-				entity.getPersistentData().putDouble("maxMoves", 11);
+				entity.getPersistentData().putDouble("maxMoves", 12);
 				if (entity.getPersistentData().getDouble("moveNumber") == 1) {
 					entity.getPersistentData().putString("moveDisplay", "Black Divine Dog");
 					entity.getPersistentData().putDouble("moveCost", 5);
@@ -196,6 +196,9 @@ public class SetMovesProcedure {
 					entity.getPersistentData().putString("moveDisplay", "Divine Mahoraga");
 					entity.getPersistentData().putDouble("moveCost", 50);
 				} else if (entity.getPersistentData().getDouble("moveNumber") == 11) {
+					entity.getPersistentData().putString("moveDisplay", "Merged Beast Agito");
+					entity.getPersistentData().putDouble("moveCost", 40);
+				} else if (entity.getPersistentData().getDouble("moveNumber") == 12) {
 					entity.getPersistentData().putString("moveDisplay", "Chimera Shadow Garden");
 					entity.getPersistentData().putDouble("moveCost", 40);
 				}
@@ -286,6 +289,21 @@ public class SetMovesProcedure {
 				if (entity.getPersistentData().getDouble("moveNumber") == 1) {
 					entity.getPersistentData().putString("moveDisplay", "Collapse");
 					entity.getPersistentData().putDouble("moveCost", 5);
+				}
+			}
+			if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Auspicious Beasts Summon")) {
+				entity.getPersistentData().putDouble("maxMoves", 3);
+				if (entity.getPersistentData().getDouble("moveNumber") == 1) {
+					entity.getPersistentData().putString("moveDisplay", "Kaichi");
+					entity.getPersistentData().putDouble("moveCost", 5);
+				}
+				if (entity.getPersistentData().getDouble("moveNumber") == 2) {
+					entity.getPersistentData().putString("moveDisplay", "Reiki");
+					entity.getPersistentData().putDouble("moveCost", 10);
+				}
+				if (entity.getPersistentData().getDouble("moveNumber") == 3) {
+					entity.getPersistentData().putString("moveDisplay", "Ryu");
+					entity.getPersistentData().putDouble("moveCost", 15);
 				}
 			}
 		} else if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).Page).equals("Cursed Energy")) {

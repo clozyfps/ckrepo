@@ -8,6 +8,6 @@ public class ReturnSpecialProcedure {
 	public static String execute(Entity entity) {
 		if (entity == null)
 			return "";
-		return "Special: " + new java.text.DecimalFormat("##.##").format((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentExp);
+		return "Special: " + (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).special;
 	}
 }

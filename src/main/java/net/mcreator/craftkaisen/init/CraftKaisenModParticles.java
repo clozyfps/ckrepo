@@ -11,6 +11,9 @@ import net.minecraftforge.api.distmarker.Dist;
 
 import net.mcreator.craftkaisen.client.particle.SoundWaveParticle;
 import net.mcreator.craftkaisen.client.particle.SnowflakeParticle;
+import net.mcreator.craftkaisen.client.particle.ShrineSlice3Particle;
+import net.mcreator.craftkaisen.client.particle.ShrineSlice2Particle;
+import net.mcreator.craftkaisen.client.particle.ShrineSlice1Particle;
 import net.mcreator.craftkaisen.client.particle.RedParticleParticle;
 import net.mcreator.craftkaisen.client.particle.RedParticleBigParticle;
 import net.mcreator.craftkaisen.client.particle.RatioParticleParticle;
@@ -18,6 +21,7 @@ import net.mcreator.craftkaisen.client.particle.PurplePulseParticle;
 import net.mcreator.craftkaisen.client.particle.PurpleParticleParticle;
 import net.mcreator.craftkaisen.client.particle.PurpleElectricityParticleParticle;
 import net.mcreator.craftkaisen.client.particle.PurpleElectricityParticle;
+import net.mcreator.craftkaisen.client.particle.PurpleBloodSlashParticle;
 import net.mcreator.craftkaisen.client.particle.PunchImpactParticle;
 import net.mcreator.craftkaisen.client.particle.NueElectricityParticle;
 import net.mcreator.craftkaisen.client.particle.MistPurpleParticle;
@@ -60,5 +64,9 @@ public class CraftKaisenModParticles {
 		event.registerSpriteSet(CraftKaisenModParticleTypes.BLACK_FLASH_LIGHTNING.get(), BlackFlashLightningParticle::provider);
 		event.registerSpriteSet(CraftKaisenModParticleTypes.RED_PARTICLE_BIG.get(), RedParticleBigParticle::provider);
 		event.registerSpriteSet(CraftKaisenModParticleTypes.RATIO_PARTICLE.get(), RatioParticleParticle::provider);
+		event.registerSpriteSet(CraftKaisenModParticleTypes.SHRINE_SLICE_1.get(), ShrineSlice1Particle::provider);
+		event.registerSpriteSet(CraftKaisenModParticleTypes.SHRINE_SLICE_2.get(), ShrineSlice2Particle::provider);
+		event.registerSpriteSet(CraftKaisenModParticleTypes.SHRINE_SLICE_3.get(), ShrineSlice3Particle::provider);
+		event.registerSpriteSet(CraftKaisenModParticleTypes.PURPLE_BLOOD_SLASH.get(), PurpleBloodSlashParticle::provider);
 	}
 }

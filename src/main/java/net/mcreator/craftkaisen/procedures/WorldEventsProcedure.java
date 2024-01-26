@@ -53,10 +53,10 @@ public class WorldEventsProcedure {
 		double nearx = 0;
 		double nearz = 0;
 		double neary = 0;
-		if (CraftKaisenModVariables.MapVariables.get(world).WorldEventTimer < 35000) {
+		if (CraftKaisenModVariables.MapVariables.get(world).WorldEventTimer < 120000) {
 			CraftKaisenModVariables.MapVariables.get(world).WorldEventTimer = CraftKaisenModVariables.MapVariables.get(world).WorldEventTimer + 1;
 			CraftKaisenModVariables.MapVariables.get(world).syncData(world);
-		} else if (CraftKaisenModVariables.MapVariables.get(world).WorldEventTimer >= 35000) {
+		} else if (CraftKaisenModVariables.MapVariables.get(world).WorldEventTimer >= 120000) {
 			CraftKaisenModVariables.MapVariables.get(world).WorldEventTimer = 0;
 			CraftKaisenModVariables.MapVariables.get(world).syncData(world);
 			randomworldevent = Mth.nextInt(RandomSource.create(), 1, 2);
@@ -83,8 +83,8 @@ public class WorldEventsProcedure {
 					}
 				}
 				if (!world.isClientSide() && world.getServer() != null)
-					world.getServer().getPlayerList().broadcastSystemMessage(
-							Component.literal(("\u00A74Meguna has appeared at x: " + new java.text.DecimalFormat("#").format(Math.round(worldeventx)) + " z: " + new java.text.DecimalFormat("#").format(Math.round(worldeventz)))), false);
+					world.getServer().getPlayerList()
+							.broadcastSystemMessage(Component.literal(("\u00A74Meguna has appeared at x: " + new java.text.DecimalFormat("#").format(Math.round(nearx)) + " z: " + new java.text.DecimalFormat("#").format(Math.round(nearz)))), false);
 				if (world instanceof ServerLevel _level) {
 					Entity entityToSpawn = new MegunaEntity(CraftKaisenModEntities.MEGUNA.get(), _level);
 					entityToSpawn.moveTo(nearx, neary, nearz, world.getRandom().nextFloat() * 360F, 0);

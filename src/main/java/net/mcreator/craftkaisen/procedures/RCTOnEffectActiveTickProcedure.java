@@ -7,6 +7,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 
 import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
+import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
 
 public class RCTOnEffectActiveTickProcedure {
 	public static void execute(Entity entity) {
@@ -26,6 +27,10 @@ public class RCTOnEffectActiveTickProcedure {
 							capability.currentCursedEnergy = _setval;
 							capability.syncPlayerVariables(entity);
 						});
+					}
+					if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy < 2) {
+						if (entity instanceof LivingEntity _entity)
+							_entity.removeEffect(CraftKaisenModMobEffects.RCT.get());
 					}
 					if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).RCTExp < 900) {
 						{

@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "craft_kaisen:merged_beast_agito_spawn_egg"
+    },
+    "title": {
+      "translate": "advancements.merged_beast_agito_advancement.title"
+    },
+    "description": {
+      "translate": "advancements.merged_beast_agito_advancement.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "merged_beast_agito_advancement": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 5
+  },
+  "parent": "craft_kaisen:divine_general_mahoraga"
+}

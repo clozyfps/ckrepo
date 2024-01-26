@@ -103,5 +103,21 @@
         "stream": false
       }
     ]
+  },
+  "crit": {
+    "sounds": [
+      {
+        "name": "craft_kaisen:audio_-_tf2_blade_slice_-_creator_marketplace",
+        "stream": false
+      }
+    ]
+  },
+  "clap": {
+    "sounds": [
+      {
+        "name": "craft_kaisen:clap",
+        "stream": false
+      }
+    ]
   }
 }

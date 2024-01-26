@@ -33,15 +33,15 @@
     "helmetModelName": "Default",
     "helmetModelPart": "Helmet",
     "helmetModelTexture": "From armor",
-    "bodyModelName": "Modeluniform",
-    "bodyModelPart": "Body",
-    "armsModelPartL": "LeftArm",
-    "armsModelPartR": "RightArm",
-    "bodyModelTexture": "uniform.png",
-    "leggingsModelName": "Modeluniform",
-    "leggingsModelPartL": "LeftLeg",
-    "leggingsModelPartR": "RightLeg",
-    "leggingsModelTexture": "uniform.png",
+    "bodyModelName": "ModelSorcererArmor",
+    "bodyModelPart": "torso",
+    "armsModelPartL": "left_arm",
+    "armsModelPartR": "right_arm",
+    "bodyModelTexture": "sorcereramor.png",
+    "leggingsModelName": "ModelSorcererArmor",
+    "leggingsModelPartL": "left_leg",
+    "leggingsModelPartR": "right_leg",
+    "leggingsModelTexture": "sorcereramor.png",
     "bootsModelName": "Default",
     "bootsModelPartL": "Boots L",
     "bootsModelPartR": "Boots R",
@@ -58,6 +58,18 @@
     "bodyImmuneToFire": false,
     "leggingsImmuneToFire": false,
     "bootsImmuneToFire": false,
+    "helmetPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bodyPiglinNeutral": {
+      "fixedValue": false
+    },
+    "leggingsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bootsPiglinNeutral": {
+      "fixedValue": false
+    },
     "maxDamage": 1000,
     "damageValueHelmet": 2,
     "damageValueBody": 6,

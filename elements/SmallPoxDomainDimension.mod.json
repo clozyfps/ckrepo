@@ -4,15 +4,18 @@
   "definition": {
     "biomesInDimension": [
       {
-        "value": "taiga"
+        "value": "roofed_forest"
+      },
+      {
+        "value": "mutated_redwood_taiga"
       }
     ],
     "worldGenType": "Normal world gen",
     "mainFillerBlock": {
-      "value": "Blocks.AIR"
+      "value": "Blocks.GRASS"
     },
     "fluidBlock": {
-      "value": "Blocks.AIR"
+      "value": "Blocks.FLOWING_WATER"
     },
     "airColor": {
       "value": -13415063,

@@ -37,15 +37,6 @@ public class ReputationSetProcedure {
 					});
 				}
 			}
-			if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).reputation >= 10) {
-				{
-					String _setval = "Sorcerer";
-					entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.affiliation = _setval;
-						capability.syncPlayerVariables(entity);
-					});
-				}
-			}
 		} else if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).race).equals("Curse")) {
 			{
 				String _setval = "Curse User";

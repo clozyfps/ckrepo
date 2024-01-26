@@ -15,8 +15,10 @@ public class MalevolentShrineOnInitialEntitySpawnProcedure {
 		if (!world.getEntitiesOfClass(MalevolentShrineEntity.class, AABB.ofSize(new Vec3(x, y, z), 40, 40, 40), e -> true).isEmpty()) {
 			if (!entity.level.isClientSide())
 				entity.discard();
-			(entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null).getPersistentData().putBoolean("domain", false);
-			(entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null).getPersistentData().putBoolean("predomain", false);
+			if (entity instanceof TamableAnimal _tamEnt ? _tamEnt.isTame() : false) {
+				(entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null).getPersistentData().putBoolean("domain", false);
+				(entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null).getPersistentData().putBoolean("predomain", false);
+			}
 		}
 	}
 }

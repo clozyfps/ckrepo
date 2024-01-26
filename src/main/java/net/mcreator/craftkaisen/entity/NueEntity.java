@@ -136,7 +136,7 @@ public class NueEntity extends TamableAnimal implements GeoEntity {
 			public void start() {
 				LivingEntity livingentity = NueEntity.this.getTarget();
 				Vec3 vec3d = livingentity.getEyePosition(1);
-				NueEntity.this.moveControl.setWantedPosition(vec3d.x, vec3d.y, vec3d.z, 2);
+				NueEntity.this.moveControl.setWantedPosition(vec3d.x, vec3d.y, vec3d.z, 3);
 			}
 
 			@Override
@@ -148,14 +148,14 @@ public class NueEntity extends TamableAnimal implements GeoEntity {
 					double d0 = NueEntity.this.distanceToSqr(livingentity);
 					if (d0 < 80) {
 						Vec3 vec3d = livingentity.getEyePosition(1);
-						NueEntity.this.moveControl.setWantedPosition(vec3d.x, vec3d.y, vec3d.z, 2);
+						NueEntity.this.moveControl.setWantedPosition(vec3d.x, vec3d.y, vec3d.z, 3);
 					}
 				}
 			}
 		});
 		this.targetSelector.addGoal(2, new OwnerHurtTargetGoal(this));
 		this.goalSelector.addGoal(3, new OwnerHurtByTargetGoal(this));
-		this.goalSelector.addGoal(4, new RandomStrollGoal(this, 1.7, 20) {
+		this.goalSelector.addGoal(4, new RandomStrollGoal(this, 2.4, 20) {
 			@Override
 			protected Vec3 getPosition() {
 				RandomSource random = NueEntity.this.getRandom();
@@ -311,14 +311,14 @@ public class NueEntity extends TamableAnimal implements GeoEntity {
 
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
-		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.3);
+		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.5);
 		builder = builder.add(Attributes.MAX_HEALTH, 215);
 		builder = builder.add(Attributes.ARMOR, 0.1);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 16);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 50);
 		builder = builder.add(Attributes.KNOCKBACK_RESISTANCE, 5);
 		builder = builder.add(Attributes.ATTACK_KNOCKBACK, 4);
-		builder = builder.add(Attributes.FLYING_SPEED, 0.3);
+		builder = builder.add(Attributes.FLYING_SPEED, 0.5);
 		return builder;
 	}
 

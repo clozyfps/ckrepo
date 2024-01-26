@@ -5,7 +5,7 @@
     "mobName": "Mahito",
     "mobLabel": "",
     "mobModelName": "Biped",
-    "mobModelTexture": "mahitoh.png",
+    "mobModelTexture": "mahitonew.png",
     "transparentModelCondition": {
       "fixedValue": false
     },

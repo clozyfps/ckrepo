@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "craft_kaisen:sukuna_outfit_chestplate"
+    },
+    "title": {
+      "translate": "advancements.heian_era.title"
+    },
+    "description": {
+      "translate": "advancements.heian_era.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "heian_era": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 5
+  },
+  "parent": "craft_kaisen:shinjuku_showdown"
+}

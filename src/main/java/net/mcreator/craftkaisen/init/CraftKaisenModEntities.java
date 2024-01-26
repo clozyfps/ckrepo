@@ -25,8 +25,10 @@ import net.mcreator.craftkaisen.entity.VolcanicEruptionProjectileEntity;
 import net.mcreator.craftkaisen.entity.UnlimitedVoidMobEntity;
 import net.mcreator.craftkaisen.entity.TwistRangedProjectileEntity;
 import net.mcreator.craftkaisen.entity.TojiFushiguroEntity;
+import net.mcreator.craftkaisen.entity.TogeInumakiEntity;
 import net.mcreator.craftkaisen.entity.ToadEntity;
 import net.mcreator.craftkaisen.entity.TenShadowRabbitEntity;
+import net.mcreator.craftkaisen.entity.TakadaEntity;
 import net.mcreator.craftkaisen.entity.SuguruGetoEntity;
 import net.mcreator.craftkaisen.entity.StronghitProjectileEntity;
 import net.mcreator.craftkaisen.entity.SmallPoxDomainSpawnerEntity;
@@ -58,7 +60,9 @@ import net.mcreator.craftkaisen.entity.NobaraKugisakiEntity;
 import net.mcreator.craftkaisen.entity.NanamiKentoEntity;
 import net.mcreator.craftkaisen.entity.NailProjectileProjectileEntity;
 import net.mcreator.craftkaisen.entity.MouthCursedSpiritEntity;
+import net.mcreator.craftkaisen.entity.MergedBeastAgitoEntity;
 import net.mcreator.craftkaisen.entity.MegunaEntity;
+import net.mcreator.craftkaisen.entity.MegumiFushiguroEntity;
 import net.mcreator.craftkaisen.entity.MaximumElephantEntity;
 import net.mcreator.craftkaisen.entity.MaxMeteorEntity;
 import net.mcreator.craftkaisen.entity.MalevolentShrineEntity;
@@ -66,6 +70,7 @@ import net.mcreator.craftkaisen.entity.MahitoEntity;
 import net.mcreator.craftkaisen.entity.MahitoCloneEntity;
 import net.mcreator.craftkaisen.entity.LapseBlueRangedProjectileEntity;
 import net.mcreator.craftkaisen.entity.KoGuyEntity;
+import net.mcreator.craftkaisen.entity.KaichiEntity;
 import net.mcreator.craftkaisen.entity.JogoEntity;
 import net.mcreator.craftkaisen.entity.InventoryCurseMobEntity;
 import net.mcreator.craftkaisen.entity.HollowPurpleProjectileProjectileEntity;
@@ -103,6 +108,7 @@ import net.mcreator.craftkaisen.entity.BlastAwayRangedProjectileEntity;
 import net.mcreator.craftkaisen.entity.BlackMucusProjectileEntity;
 import net.mcreator.craftkaisen.entity.BlackDivineDogEntity;
 import net.mcreator.craftkaisen.entity.AwakenedMakiEntity;
+import net.mcreator.craftkaisen.entity.AoiTodoEntity;
 import net.mcreator.craftkaisen.CraftKaisenMod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -404,6 +410,26 @@ public class CraftKaisenModEntities {
 	public static final RegistryObject<EntityType<FingerBearerProjectileEntity>> FINGER_BEARER_PROJECTILE = register("projectile_finger_bearer_projectile",
 			EntityType.Builder.<FingerBearerProjectileEntity>of(FingerBearerProjectileEntity::new, MobCategory.MISC).setCustomClientFactory(FingerBearerProjectileEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
 					.setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<MergedBeastAgitoEntity>> MERGED_BEAST_AGITO = register("merged_beast_agito",
+			EntityType.Builder.<MergedBeastAgitoEntity>of(MergedBeastAgitoEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(MergedBeastAgitoEntity::new)
+
+					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<MegumiFushiguroEntity>> MEGUMI_FUSHIGURO = register("megumi_fushiguro",
+			EntityType.Builder.<MegumiFushiguroEntity>of(MegumiFushiguroEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(MegumiFushiguroEntity::new)
+
+					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<TogeInumakiEntity>> TOGE_INUMAKI = register("toge_inumaki",
+			EntityType.Builder.<TogeInumakiEntity>of(TogeInumakiEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(TogeInumakiEntity::new)
+
+					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<KaichiEntity>> KAICHI = register("projectile_kaichi",
+			EntityType.Builder.<KaichiEntity>of(KaichiEntity::new, MobCategory.MISC).setCustomClientFactory(KaichiEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<TakadaEntity>> TAKADA = register("takada",
+			EntityType.Builder.<TakadaEntity>of(TakadaEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(TakadaEntity::new).fireImmune().sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<AoiTodoEntity>> AOI_TODO = register("aoi_todo",
+			EntityType.Builder.<AoiTodoEntity>of(AoiTodoEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(AoiTodoEntity::new)
+
+					.sized(0.6f, 1.8f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -469,6 +495,11 @@ public class CraftKaisenModEntities {
 			FlyingCursedSpiritEntity.init();
 			MegunaEntity.init();
 			HajimeKashimoEntity.init();
+			MergedBeastAgitoEntity.init();
+			MegumiFushiguroEntity.init();
+			TogeInumakiEntity.init();
+			TakadaEntity.init();
+			AoiTodoEntity.init();
 		});
 	}
 
@@ -531,5 +562,10 @@ public class CraftKaisenModEntities {
 		event.put(FLYING_CURSED_SPIRIT.get(), FlyingCursedSpiritEntity.createAttributes().build());
 		event.put(MEGUNA.get(), MegunaEntity.createAttributes().build());
 		event.put(HAJIME_KASHIMO.get(), HajimeKashimoEntity.createAttributes().build());
+		event.put(MERGED_BEAST_AGITO.get(), MergedBeastAgitoEntity.createAttributes().build());
+		event.put(MEGUMI_FUSHIGURO.get(), MegumiFushiguroEntity.createAttributes().build());
+		event.put(TOGE_INUMAKI.get(), TogeInumakiEntity.createAttributes().build());
+		event.put(TAKADA.get(), TakadaEntity.createAttributes().build());
+		event.put(AOI_TODO.get(), AoiTodoEntity.createAttributes().build());
 	}
 }

@@ -9,11 +9,11 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
 
 import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
-import net.mcreator.craftkaisen.entity.SmallPoxDomainSpawnerEntity;
+import net.mcreator.craftkaisen.entity.SmallPoxDeityEntity;
 import net.mcreator.craftkaisen.CraftKaisenMod;
 
 public class SmallPoxDomainDimensionPlayerEntersDimensionProcedure {
-	public static void execute(LevelAccessor world, Entity entity) {
+	public static void execute(LevelAccessor world, double z, Entity entity) {
 		if (entity == null)
 			return;
 		double v = 0;
@@ -24,13 +24,10 @@ public class SmallPoxDomainDimensionPlayerEntersDimensionProcedure {
 				_serverPlayer.connection.teleport((world.getLevelData().getXSpawn()), (world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, world.getLevelData().getXSpawn(), world.getLevelData().getZSpawn())),
 						(world.getLevelData().getZSpawn()), _ent.getYRot(), _ent.getXRot());
 		}
-		CraftKaisenMod.queueServerWork(30, () -> {
+		CraftKaisenMod.queueServerWork(10, () -> {
 			if (world instanceof ServerLevel _level) {
-				Entity entityToSpawn = new SmallPoxDomainSpawnerEntity(CraftKaisenModEntities.SMALL_POX_DOMAIN_SPAWNER.get(), _level);
-				entityToSpawn.moveTo((entity.getX()), (entity.getY()), (entity.getZ()), 0, 0);
-				entityToSpawn.setYBodyRot(0);
-				entityToSpawn.setYHeadRot(0);
-				entityToSpawn.setDeltaMovement(0, 0, 0);
+				Entity entityToSpawn = new SmallPoxDeityEntity(CraftKaisenModEntities.SMALL_POX_DEITY.get(), _level);
+				entityToSpawn.moveTo((entity.getX() + 3), (world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, world.getLevelData().getXSpawn(), world.getLevelData().getZSpawn())), z, world.getRandom().nextFloat() * 360F, 0);
 				if (entityToSpawn instanceof Mob _mobToSpawn)
 					_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
 				_level.addFreshEntity(entityToSpawn);

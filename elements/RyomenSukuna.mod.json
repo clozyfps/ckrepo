@@ -4,10 +4,22 @@
   "definition": {
     "mobName": "Ryomen Sukuna",
     "mobLabel": "",
-    "mobModelName": "Biped",
-    "mobModelTexture": "ryomen-sukuna-on-planetminecraft-com.png",
+    "mobModelName": "ModelYujikunaShirtless",
+    "mobModelTexture": "yujikunashirtlesstexture.png",
+    "transparentModelCondition": {
+      "fixedValue": false
+    },
+    "isShakingCondition": {
+      "fixedValue": false
+    },
     "solidBoundingBox": {
       "fixedValue": false
+    },
+    "visualScale": {
+      "fixedValue": 1.0
+    },
+    "boundingBoxScale": {
+      "fixedValue": 1.0
     },
     "modelLayers": [],
     "modelWidth": 0.6,
@@ -60,6 +72,9 @@
     "health": 890,
     "xpAmount": 3,
     "waterMob": false,
+    "breatheUnderwater": {
+      "fixedValue": false
+    },
     "pushedByFluids": {
       "fixedValue": true
     },
@@ -100,8 +115,14 @@
       "value": ""
     },
     "entityDataEntries": [],
+    "whenMobDies": {
+      "name": "RyomenSukunaEntityDies"
+    },
     "onMobTickUpdate": {
       "name": "RyomenSukunaOnEntityTickUpdate"
+    },
+    "onInitialSpawn": {
+      "name": "RyomenSukunaOnInitialEntitySpawn2"
     },
     "hasAI": true,
     "aiBase": "(none)",

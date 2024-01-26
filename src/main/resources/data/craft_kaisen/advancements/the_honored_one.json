@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "craft_kaisen:bandage_blind_fold_helmet"
+    },
+    "title": {
+      "translate": "advancements.the_honored_one.title"
+    },
+    "description": {
+      "translate": "advancements.the_honored_one.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "the_honored_one": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 5
+  },
+  "parent": "craft_kaisen:cursed_child"
+}

@@ -20,6 +20,8 @@ import net.mcreator.craftkaisen.entity.WhiteDivineDogEntity;
 import net.mcreator.craftkaisen.entity.ToadEntity;
 import net.mcreator.craftkaisen.entity.TenShadowRabbitEntity;
 import net.mcreator.craftkaisen.entity.RoundDeerEntity;
+import net.mcreator.craftkaisen.entity.NueEntity;
+import net.mcreator.craftkaisen.entity.MergedBeastAgitoEntity;
 import net.mcreator.craftkaisen.entity.MaximumElephantEntity;
 import net.mcreator.craftkaisen.entity.GreatSerpentEntity;
 import net.mcreator.craftkaisen.entity.EightHandledSwordDivergentSilaDivineGeneralMahoragaEntity;
@@ -54,9 +56,9 @@ public class TenShadowDeathProcedure {
 				}
 			}
 		}
-		if (sourceentity instanceof Player) {
-			if (((sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Ten Shadows")) {
-				if (entity instanceof BlackDivineDogEntity) {
+		if (sourceentity instanceof Player || sourceentity instanceof ServerPlayer) {
+			if (entity instanceof BlackDivineDogEntity) {
+				if (((sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Ten Shadows")) {
 					if (sourceentity instanceof ServerPlayer _player) {
 						Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:black_divine_dog_advancement"));
 						AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
@@ -66,7 +68,8 @@ public class TenShadowDeathProcedure {
 						}
 					}
 				}
-			} else if (entity instanceof WhiteDivineDogEntity) {
+			}
+			if (entity instanceof WhiteDivineDogEntity) {
 				if (((sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Ten Shadows")) {
 					if (sourceentity instanceof ServerPlayer _player) {
 						Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:white_divine_dog_advancement"));
@@ -77,7 +80,8 @@ public class TenShadowDeathProcedure {
 						}
 					}
 				}
-			} else if (entity instanceof GreatSerpentEntity) {
+			}
+			if (entity instanceof GreatSerpentEntity) {
 				if (((sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Ten Shadows")) {
 					if (sourceentity instanceof ServerPlayer _player) {
 						Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:great_serpent_advancement"));
@@ -88,7 +92,8 @@ public class TenShadowDeathProcedure {
 						}
 					}
 				}
-			} else if (entity instanceof EightHandledSwordDivergentSilaDivineGeneralMahoragaEntity) {
+			}
+			if (entity instanceof EightHandledSwordDivergentSilaDivineGeneralMahoragaEntity) {
 				if (((sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Ten Shadows")) {
 					if (sourceentity instanceof ServerPlayer _player) {
 						Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:divine_general_mahoraga"));
@@ -99,7 +104,8 @@ public class TenShadowDeathProcedure {
 						}
 					}
 				}
-			} else if (entity instanceof ToadEntity) {
+			}
+			if (entity instanceof ToadEntity) {
 				if (((sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Ten Shadows")) {
 					if (sourceentity instanceof ServerPlayer _player) {
 						Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:toad_advancement"));
@@ -110,7 +116,8 @@ public class TenShadowDeathProcedure {
 						}
 					}
 				}
-			} else if (entity instanceof MaximumElephantEntity) {
+			}
+			if (entity instanceof MaximumElephantEntity) {
 				if (((sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Ten Shadows")) {
 					if (sourceentity instanceof ServerPlayer _player) {
 						Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:maximum_elephant_advancement"));
@@ -121,7 +128,8 @@ public class TenShadowDeathProcedure {
 						}
 					}
 				}
-			} else if (entity instanceof TenShadowRabbitEntity) {
+			}
+			if (entity instanceof TenShadowRabbitEntity) {
 				if (((sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Ten Shadows")) {
 					if (sourceentity instanceof ServerPlayer _player) {
 						Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:rabbit_escape"));
@@ -132,10 +140,35 @@ public class TenShadowDeathProcedure {
 						}
 					}
 				}
-			} else if (entity instanceof RoundDeerEntity) {
+			}
+			if (entity instanceof RoundDeerEntity) {
 				if (((sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Ten Shadows")) {
 					if (sourceentity instanceof ServerPlayer _player) {
 						Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:round_deer_advancement"));
+						AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+						if (!_ap.isDone()) {
+							for (String criteria : _ap.getRemainingCriteria())
+								_player.getAdvancements().award(_adv, criteria);
+						}
+					}
+				}
+			}
+			if (entity instanceof NueEntity) {
+				if (((sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Ten Shadows")) {
+					if (sourceentity instanceof ServerPlayer _player) {
+						Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:nue_advancement"));
+						AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+						if (!_ap.isDone()) {
+							for (String criteria : _ap.getRemainingCriteria())
+								_player.getAdvancements().award(_adv, criteria);
+						}
+					}
+				}
+			}
+			if (entity instanceof MergedBeastAgitoEntity) {
+				if (((sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Ten Shadows")) {
+					if (sourceentity instanceof ServerPlayer _player) {
+						Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:merged_beast_agito_advancement"));
 						AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 						if (!_ap.isDone()) {
 							for (String criteria : _ap.getRemainingCriteria())
