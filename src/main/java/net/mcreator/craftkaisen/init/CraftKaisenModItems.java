@@ -46,11 +46,13 @@ import net.mcreator.craftkaisen.item.MedicineItem;
 import net.mcreator.craftkaisen.item.MahoragaWheelItem;
 import net.mcreator.craftkaisen.item.LdawdaItem;
 import net.mcreator.craftkaisen.item.LapseBlueRangedItem;
+import net.mcreator.craftkaisen.item.KamutokeItem;
 import net.mcreator.craftkaisen.item.JujutsuSorcererUniformItem;
 import net.mcreator.craftkaisen.item.JujutsuHistoryBookItem;
 import net.mcreator.craftkaisen.item.ItadoriOutfitItem;
 import net.mcreator.craftkaisen.item.InvertedSpearItem;
 import net.mcreator.craftkaisen.item.HollowPurpleProjectileItem;
+import net.mcreator.craftkaisen.item.HitenItem;
 import net.mcreator.craftkaisen.item.HammerItem;
 import net.mcreator.craftkaisen.item.GetoOutfitItem;
 import net.mcreator.craftkaisen.item.FlowerProjectileItem;
@@ -228,6 +230,8 @@ public class CraftKaisenModItems {
 	public static final RegistryObject<Item> CURSED_TOTEM = REGISTRY.register("cursed_totem", () -> new CursedTotemItem());
 	public static final RegistryObject<Item> TAKADA_SPAWN_EGG = REGISTRY.register("takada_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.TAKADA, -1, -9458589, new Item.Properties()));
 	public static final RegistryObject<Item> AOI_TODO_SPAWN_EGG = REGISTRY.register("aoi_todo_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.AOI_TODO, -7717975, -1256054, new Item.Properties()));
+	public static final RegistryObject<Item> HITEN = REGISTRY.register("hiten", () -> new HitenItem());
+	public static final RegistryObject<Item> KAMUTOKE = REGISTRY.register("kamutoke", () -> new KamutokeItem());
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));

@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "craft_kaisen:item/air102_layer_2"
+  }
+}

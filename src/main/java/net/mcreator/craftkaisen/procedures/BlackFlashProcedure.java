@@ -6,8 +6,6 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 
-import net.minecraft.world.phys.Vec3;
-import net.minecraft.world.phys.Vec2;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
@@ -16,19 +14,13 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.util.RandomSource;
-import net.minecraft.util.Mth;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.chat.Component;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.core.particles.SimpleParticleType;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.BlockPos;
-import net.minecraft.commands.CommandSourceStack;
-import net.minecraft.commands.CommandSource;
 import net.minecraft.advancements.AdvancementProgress;
 import net.minecraft.advancements.Advancement;
 
@@ -58,45 +50,57 @@ public class BlackFlashProcedure {
 		double vanim = 0;
 		if (immediatesourceentity instanceof Player) {
 			if ((immediatesourceentity.getPersistentData().getString("currentmoveactive")).isEmpty()) {
-				immediatesourceentity.getPersistentData().putDouble("bf", (Mth.nextInt(RandomSource.create(), 1, 5000)));
-				if (!(immediatesourceentity instanceof LivingEntity _livEnt4 && _livEnt4.hasEffect(CraftKaisenModMobEffects.ZONE.get()))) {
-					vanim = Mth.nextInt(RandomSource.create(), 1, 10000);
-				} else if (immediatesourceentity instanceof LivingEntity _livEnt6 && _livEnt6.hasEffect(CraftKaisenModMobEffects.ZONE.get())) {
-					vanim = Mth.nextInt(RandomSource.create(), 1, 2000);
-				}
 				if ((immediatesourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy > 0) {
-					if (immediatesourceentity.getPersistentData()
-							.getDouble("bf") > (immediatesourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).BlackFlashRarity) {
-						if (world instanceof ServerLevel _level)
-							_level.getServer().getCommands().performPrefixedCommand(
-									new CommandSourceStack(CommandSource.NULL, new Vec3((entity.getX()), (entity.getY()), (entity.getZ())), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-									"particle minecraft:dust 0 0 0 3 ^0 ^0 ^0 2.2 1.5 2.2 0 20");
-						if (world instanceof ServerLevel _level)
-							_level.getServer().getCommands().performPrefixedCommand(
-									new CommandSourceStack(CommandSource.NULL, new Vec3((entity.getX()), (entity.getY()), (entity.getZ())), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-									"particle minecraft:dust 1 0 0 3 ^0 ^0 ^0 2.2 1.5 2.2 0 30");
-						if (world instanceof Level _level) {
-							if (!_level.isClientSide()) {
-								_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:electric")), SoundSource.NEUTRAL, 1, 1);
-							} else {
-								_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:electric")), SoundSource.NEUTRAL, 1, 1, false);
+					if (!((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).special).equals("Blessed By The Sparks")) {
+						if (Math.random() < 0.00001) {
+							if (world instanceof Level _level) {
+								if (!_level.isClientSide()) {
+									_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:electric")), SoundSource.NEUTRAL, 1, 1);
+								} else {
+									_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:electric")), SoundSource.NEUTRAL, 1, 1, false);
+								}
 							}
-						}
-						if (world instanceof ServerLevel _level)
-							_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.BLACK_FLASH_LIGHTNING.get()), (entity.getX()), (entity.getY()), (entity.getZ()), 15, 1, 0.5, 1, 0);
-						if (world instanceof ServerLevel _level)
-							_level.sendParticles(ParticleTypes.POOF, (entity.getX()), (entity.getY()), (entity.getZ()), 3, 0.5, 2, 0.5, 0.5);
-						entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC), immediatesourceentity), (float) (amount * 2.5));
-						if (immediatesourceentity instanceof ServerPlayer _player) {
-							Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:black_flash_advancement"));
-							AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
-							if (!_ap.isDone()) {
-								for (String criteria : _ap.getRemainingCriteria())
-									_player.getAdvancements().award(_adv, criteria);
+							if (world instanceof ServerLevel _level)
+								_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.BLACK_FLASH_LIGHTNING.get()), (entity.getX()), (entity.getY()), (entity.getZ()), 15, 1, 0.5, 1, 0);
+							if (world instanceof ServerLevel _level)
+								_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.BLACK_LIGHTNING.get()), (entity.getX()), (entity.getY()), (entity.getZ()), 15, 1, 0.5, 1, 0);
+							entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC), immediatesourceentity), (float) (amount * 2.5));
+							if (immediatesourceentity instanceof ServerPlayer _player) {
+								Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:black_flash_advancement"));
+								AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+								if (!_ap.isDone()) {
+									for (String criteria : _ap.getRemainingCriteria())
+										_player.getAdvancements().award(_adv, criteria);
+								}
 							}
+							if (immediatesourceentity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+								_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.ZONE.get(), 1000, 0));
 						}
-						if (immediatesourceentity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-							_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.ZONE.get(), 1000, 0));
+					} else if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).special).equals("Blessed By The Sparks")) {
+						if (Math.random() < 0.0001) {
+							if (world instanceof Level _level) {
+								if (!_level.isClientSide()) {
+									_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:electric")), SoundSource.NEUTRAL, 1, 1);
+								} else {
+									_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:electric")), SoundSource.NEUTRAL, 1, 1, false);
+								}
+							}
+							if (world instanceof ServerLevel _level)
+								_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.BLACK_FLASH_LIGHTNING.get()), (entity.getX()), (entity.getY()), (entity.getZ()), 15, 1, 0.5, 1, 0);
+							if (world instanceof ServerLevel _level)
+								_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.BLACK_LIGHTNING.get()), (entity.getX()), (entity.getY()), (entity.getZ()), 15, 1, 0.5, 1, 0);
+							entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC), immediatesourceentity), (float) (amount * 2.5));
+							if (immediatesourceentity instanceof ServerPlayer _player) {
+								Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:black_flash_advancement"));
+								AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+								if (!_ap.isDone()) {
+									for (String criteria : _ap.getRemainingCriteria())
+										_player.getAdvancements().award(_adv, criteria);
+								}
+							}
+							if (immediatesourceentity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+								_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.ZONE.get(), 1000, 0));
+						}
 					}
 				}
 			}
