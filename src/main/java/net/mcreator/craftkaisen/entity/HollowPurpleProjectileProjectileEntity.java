@@ -65,7 +65,7 @@ public class HollowPurpleProjectileProjectileEntity extends AbstractArrow implem
 	@Override
 	public void tick() {
 		super.tick();
-		HollowPurpeWhilstFlyingProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), this.getOwner());
+		HollowPurpeWhilstFlyingProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), this.getOwner(), this);
 		if (this.inGround)
 			this.discard();
 	}

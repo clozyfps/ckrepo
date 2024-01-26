@@ -2,12 +2,7 @@
   "mappings": {
     "default": {
       "map": {
-        "0": "sp1",
-        "2": "sp2",
-        "3": "sp3",
-        "4": "sp4",
-        "5": "sp5",
-        "missing": ""
+        "0": "split_soul_katana_texture"
       },
       "name": "default"
     }

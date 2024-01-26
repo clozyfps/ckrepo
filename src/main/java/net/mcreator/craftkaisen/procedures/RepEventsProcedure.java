@@ -47,6 +47,18 @@ public class RepEventsProcedure {
 						}
 					}
 				}
+				if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).TojiEventHappened == false) {
+					if (entity.getPersistentData().getDouble("repevent") == 2) {
+						YutaAmbushProcedureProcedure.execute(world, y, z, entity);
+						{
+							boolean _setval = true;
+							entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.TojiEventHappened = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+					}
+				}
 			}
 		}
 	}

@@ -29,6 +29,7 @@ import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.Packet;
 
 import net.mcreator.craftkaisen.procedures.SatoruGojoOnEntityTickUpdateProcedure;
+import net.mcreator.craftkaisen.procedures.SatoruGojoEntityDiesProcedure;
 import net.mcreator.craftkaisen.init.CraftKaisenModItems;
 import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
 
@@ -86,9 +87,15 @@ public class SatoruGojoEntity extends Monster {
 	}
 
 	@Override
+	public void die(DamageSource source) {
+		super.die(source);
+		SatoruGojoEntityDiesProcedure.execute(this);
+	}
+
+	@Override
 	public void baseTick() {
 		super.baseTick();
-		SatoruGojoOnEntityTickUpdateProcedure.execute(this.level, this);
+		SatoruGojoOnEntityTickUpdateProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
 	}
 
 	public static void init() {

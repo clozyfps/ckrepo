@@ -132,16 +132,21 @@ public class CraftKaisenModVariables {
 			clone.HasBounty = original.HasBounty;
 			clone.Bounty = original.Bounty;
 			clone.RatioMastery = original.RatioMastery;
-			clone.SimpleDomainUnlocked = original.SimpleDomainUnlocked;
-			clone.DomainExpansionUnlocked = original.DomainExpansionUnlocked;
 			clone.DomainAmplificationUnlocked = original.DomainAmplificationUnlocked;
-			clone.Intelligence = original.Intelligence;
-			clone.Ability7 = original.Ability7;
-			clone.Ability8 = original.Ability8;
 			clone.Ability9 = original.Ability9;
-			clone.Ability10 = original.Ability10;
-			clone.Ability11 = original.Ability11;
 			clone.Ability12 = original.Ability12;
+			clone.Ability8 = original.Ability8;
+			clone.Ability11 = original.Ability11;
+			clone.DomainExpansionUnlocked = original.DomainExpansionUnlocked;
+			clone.Ability7 = original.Ability7;
+			clone.Ability10 = original.Ability10;
+			clone.Intelligence = original.Intelligence;
+			clone.SimpleDomainUnlocked = original.SimpleDomainUnlocked;
+			clone.CreatedClan = original.CreatedClan;
+			clone.TojiEventHappened = original.TojiEventHappened;
+			clone.Clan = original.Clan;
+			clone.ClansInWorld = original.ClansInWorld;
+			clone.Perk = original.Perk;
 			if (!event.isWasDeath()) {
 				clone.currentMove = original.currentMove;
 				clone.currentOutput = original.currentOutput;
@@ -160,6 +165,8 @@ public class CraftKaisenModVariables {
 				clone.flowerexpand = original.flowerexpand;
 				clone.BlackFlashRarity = original.BlackFlashRarity;
 				clone.MoveCombo = original.MoveCombo;
+				clone.PerkDescription = original.PerkDescription;
+				clone.PerkPage = original.PerkPage;
 			}
 		}
 
@@ -224,8 +231,10 @@ public class CraftKaisenModVariables {
 		public String vesselPlayerOne = "\"\"";
 		public String vesselTechnique = "\"\"";
 		public String vesselPlayerTwo = "\"\"";
-		public double worldEventTimer = 0;
 		public String EligibleMoves = "Simple Barrier - Hollow Wicker Basket";
+		public double worldeventlocation = 0;
+		public double WorldEventTimer = 0;
+		public double WEZ = 0;
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -237,8 +246,10 @@ public class CraftKaisenModVariables {
 			vesselPlayerOne = nbt.getString("vesselPlayerOne");
 			vesselTechnique = nbt.getString("vesselTechnique");
 			vesselPlayerTwo = nbt.getString("vesselPlayerTwo");
-			worldEventTimer = nbt.getDouble("worldEventTimer");
 			EligibleMoves = nbt.getString("EligibleMoves");
+			worldeventlocation = nbt.getDouble("worldeventlocation");
+			WorldEventTimer = nbt.getDouble("WorldEventTimer");
+			WEZ = nbt.getDouble("WEZ");
 		}
 
 		@Override
@@ -246,8 +257,10 @@ public class CraftKaisenModVariables {
 			nbt.putString("vesselPlayerOne", vesselPlayerOne);
 			nbt.putString("vesselTechnique", vesselTechnique);
 			nbt.putString("vesselPlayerTwo", vesselPlayerTwo);
-			nbt.putDouble("worldEventTimer", worldEventTimer);
 			nbt.putString("EligibleMoves", EligibleMoves);
+			nbt.putDouble("worldeventlocation", worldeventlocation);
+			nbt.putDouble("WorldEventTimer", WorldEventTimer);
+			nbt.putDouble("WEZ", WEZ);
 			return nbt;
 		}
 
@@ -416,17 +429,24 @@ public class CraftKaisenModVariables {
 		public boolean HasBounty = false;
 		public double Bounty = 0;
 		public double RatioMastery = 0;
-		public boolean SimpleDomainUnlocked = false;
-		public boolean DomainExpansionUnlocked = false;
 		public boolean DomainAmplificationUnlocked = false;
+		public String Ability9 = "\"\"";
+		public String Ability12 = "\"\"";
+		public String Ability8 = "\"\"";
+		public String Ability11 = "\"\"";
+		public boolean DomainExpansionUnlocked = false;
+		public String Ability7 = "\"\"";
+		public String Ability10 = "\"\"";
 		public double Intelligence = 0.0;
 		public String MoveCombo = "\"\"";
-		public String Ability7 = "\"\"";
-		public String Ability8 = "\"\"";
-		public String Ability9 = "\"\"";
-		public String Ability10 = "\"\"";
-		public String Ability11 = "\"\"";
-		public String Ability12 = "\"\"";
+		public boolean SimpleDomainUnlocked = false;
+		public String CreatedClan = "\"\"";
+		public boolean TojiEventHappened = false;
+		public String Clan = "\"\"";
+		public String ClansInWorld = "\"\"";
+		public String PerkDescription = "\"\"";
+		public String PerkPage = "\"\"";
+		public String Perk = "\"\"";
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -511,17 +531,24 @@ public class CraftKaisenModVariables {
 			nbt.putBoolean("HasBounty", HasBounty);
 			nbt.putDouble("Bounty", Bounty);
 			nbt.putDouble("RatioMastery", RatioMastery);
-			nbt.putBoolean("SimpleDomainUnlocked", SimpleDomainUnlocked);
-			nbt.putBoolean("DomainExpansionUnlocked", DomainExpansionUnlocked);
 			nbt.putBoolean("DomainAmplificationUnlocked", DomainAmplificationUnlocked);
+			nbt.putString("Ability9", Ability9);
+			nbt.putString("Ability12", Ability12);
+			nbt.putString("Ability8", Ability8);
+			nbt.putString("Ability11", Ability11);
+			nbt.putBoolean("DomainExpansionUnlocked", DomainExpansionUnlocked);
+			nbt.putString("Ability7", Ability7);
+			nbt.putString("Ability10", Ability10);
 			nbt.putDouble("Intelligence", Intelligence);
 			nbt.putString("MoveCombo", MoveCombo);
-			nbt.putString("Ability7", Ability7);
-			nbt.putString("Ability8", Ability8);
-			nbt.putString("Ability9", Ability9);
-			nbt.putString("Ability10", Ability10);
-			nbt.putString("Ability11", Ability11);
-			nbt.putString("Ability12", Ability12);
+			nbt.putBoolean("SimpleDomainUnlocked", SimpleDomainUnlocked);
+			nbt.putString("CreatedClan", CreatedClan);
+			nbt.putBoolean("TojiEventHappened", TojiEventHappened);
+			nbt.putString("Clan", Clan);
+			nbt.putString("ClansInWorld", ClansInWorld);
+			nbt.putString("PerkDescription", PerkDescription);
+			nbt.putString("PerkPage", PerkPage);
+			nbt.putString("Perk", Perk);
 			return nbt;
 		}
 
@@ -603,17 +630,24 @@ public class CraftKaisenModVariables {
 			HasBounty = nbt.getBoolean("HasBounty");
 			Bounty = nbt.getDouble("Bounty");
 			RatioMastery = nbt.getDouble("RatioMastery");
-			SimpleDomainUnlocked = nbt.getBoolean("SimpleDomainUnlocked");
-			DomainExpansionUnlocked = nbt.getBoolean("DomainExpansionUnlocked");
 			DomainAmplificationUnlocked = nbt.getBoolean("DomainAmplificationUnlocked");
+			Ability9 = nbt.getString("Ability9");
+			Ability12 = nbt.getString("Ability12");
+			Ability8 = nbt.getString("Ability8");
+			Ability11 = nbt.getString("Ability11");
+			DomainExpansionUnlocked = nbt.getBoolean("DomainExpansionUnlocked");
+			Ability7 = nbt.getString("Ability7");
+			Ability10 = nbt.getString("Ability10");
 			Intelligence = nbt.getDouble("Intelligence");
 			MoveCombo = nbt.getString("MoveCombo");
-			Ability7 = nbt.getString("Ability7");
-			Ability8 = nbt.getString("Ability8");
-			Ability9 = nbt.getString("Ability9");
-			Ability10 = nbt.getString("Ability10");
-			Ability11 = nbt.getString("Ability11");
-			Ability12 = nbt.getString("Ability12");
+			SimpleDomainUnlocked = nbt.getBoolean("SimpleDomainUnlocked");
+			CreatedClan = nbt.getString("CreatedClan");
+			TojiEventHappened = nbt.getBoolean("TojiEventHappened");
+			Clan = nbt.getString("Clan");
+			ClansInWorld = nbt.getString("ClansInWorld");
+			PerkDescription = nbt.getString("PerkDescription");
+			PerkPage = nbt.getString("PerkPage");
+			Perk = nbt.getString("Perk");
 		}
 	}
 
@@ -714,17 +748,24 @@ public class CraftKaisenModVariables {
 					variables.HasBounty = message.data.HasBounty;
 					variables.Bounty = message.data.Bounty;
 					variables.RatioMastery = message.data.RatioMastery;
-					variables.SimpleDomainUnlocked = message.data.SimpleDomainUnlocked;
-					variables.DomainExpansionUnlocked = message.data.DomainExpansionUnlocked;
 					variables.DomainAmplificationUnlocked = message.data.DomainAmplificationUnlocked;
+					variables.Ability9 = message.data.Ability9;
+					variables.Ability12 = message.data.Ability12;
+					variables.Ability8 = message.data.Ability8;
+					variables.Ability11 = message.data.Ability11;
+					variables.DomainExpansionUnlocked = message.data.DomainExpansionUnlocked;
+					variables.Ability7 = message.data.Ability7;
+					variables.Ability10 = message.data.Ability10;
 					variables.Intelligence = message.data.Intelligence;
 					variables.MoveCombo = message.data.MoveCombo;
-					variables.Ability7 = message.data.Ability7;
-					variables.Ability8 = message.data.Ability8;
-					variables.Ability9 = message.data.Ability9;
-					variables.Ability10 = message.data.Ability10;
-					variables.Ability11 = message.data.Ability11;
-					variables.Ability12 = message.data.Ability12;
+					variables.SimpleDomainUnlocked = message.data.SimpleDomainUnlocked;
+					variables.CreatedClan = message.data.CreatedClan;
+					variables.TojiEventHappened = message.data.TojiEventHappened;
+					variables.Clan = message.data.Clan;
+					variables.ClansInWorld = message.data.ClansInWorld;
+					variables.PerkDescription = message.data.PerkDescription;
+					variables.PerkPage = message.data.PerkPage;
+					variables.Perk = message.data.Perk;
 				}
 			});
 			context.setPacketHandled(true);

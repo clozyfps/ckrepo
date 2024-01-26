@@ -14,6 +14,7 @@ import net.minecraft.world.inventory.MenuType;
 import net.mcreator.craftkaisen.world.inventory.StartScreenMenu;
 import net.mcreator.craftkaisen.world.inventory.SelfVowGUIMenu;
 import net.mcreator.craftkaisen.world.inventory.PhoneGUIMenu;
+import net.mcreator.craftkaisen.world.inventory.PerkGuiMenu;
 import net.mcreator.craftkaisen.world.inventory.MoveGuiMenu;
 import net.mcreator.craftkaisen.world.inventory.MainMenuMenu;
 import net.mcreator.craftkaisen.world.inventory.InventoryCurseGuiMenu;
@@ -33,4 +34,5 @@ public class CraftKaisenModMenus {
 	public static final RegistryObject<MenuType<ImbueGUIMenu>> IMBUE_GUI = REGISTRY.register("imbue_gui", () -> IForgeMenuType.create(ImbueGUIMenu::new));
 	public static final RegistryObject<MenuType<PhoneGUIMenu>> PHONE_GUI = REGISTRY.register("phone_gui", () -> IForgeMenuType.create(PhoneGUIMenu::new));
 	public static final RegistryObject<MenuType<SelfVowGUIMenu>> SELF_VOW_GUI = REGISTRY.register("self_vow_gui", () -> IForgeMenuType.create(SelfVowGUIMenu::new));
+	public static final RegistryObject<MenuType<PerkGuiMenu>> PERK_GUI = REGISTRY.register("perk_gui", () -> IForgeMenuType.create(PerkGuiMenu::new));
 }

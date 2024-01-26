@@ -34,17 +34,14 @@ public class SlicingExcorsismWhileProjectileFlyingTickProcedure {
 		if (entity == null || immediatesourceentity == null)
 			return;
 		if (world instanceof ServerLevel _level)
-			_level.getServer().getCommands().performPrefixedCommand(
-					new CommandSourceStack(CommandSource.NULL, new Vec3((immediatesourceentity.getX()), (immediatesourceentity.getY() + 1), (immediatesourceentity.getZ())), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null)
-							.withSuppressedOutput(),
-					"particle minecraft:dust 1 0 0 3.5 ^0 ^0 ^0 0.2 0.3 0.2 0 15");
+			_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+					"particle minecraft:dust 1 0 0 4 ^0 ^0 ^0 0.2 0.1 0.2 0 5");
 		if (world instanceof ServerLevel _level)
-			_level.sendParticles(ParticleTypes.SWEEP_ATTACK, x, y, z, (int) ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 10), 0.1, 1, 0.1, 0);
+			_level.sendParticles(ParticleTypes.SWEEP_ATTACK, x, y, z, 1, 0.1, 1, 0.1, 0);
 		if (world instanceof ServerLevel _level)
-			_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.BLOOD.get()), x, y, z,
-					(int) ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 10), 0.1, 1, 0.1, 0.3);
+			_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.BLOOD.get()), x, y, z, 25, 0.1, 1, 0.1, 0.3);
 		if (world instanceof ServerLevel _level)
-			_level.sendParticles(ParticleTypes.CRIT, x, y, z, 25, 0.7, 1, 0.7, 0);
+			_level.sendParticles(ParticleTypes.CRIT, x, y, z, 5, 0.7, 1, 0.7, 0);
 		immediatesourceentity.setNoGravity(true);
 		CraftKaisenMod.queueServerWork(40, () -> {
 			if (!immediatesourceentity.level.isClientSide())

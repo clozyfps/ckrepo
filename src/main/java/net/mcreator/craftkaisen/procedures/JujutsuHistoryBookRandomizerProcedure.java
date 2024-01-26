@@ -1,17 +1,6 @@
 package net.mcreator.craftkaisen.procedures;
 
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.event.TickEvent;
-
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.util.RandomSource;
-import net.minecraft.util.Mth;
-
-import net.mcreator.craftkaisen.init.CraftKaisenModItems;
 
 import javax.annotation.Nullable;
 
@@ -34,7 +23,7 @@ public class JujutsuHistoryBookRandomizerProcedure {
 		double type = 0;
 		double ct = 0;
 		double barrier = 0;
-		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == CraftKaisenModItems.JUJUTSU_HISTORY_BOOK.get()
+		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == CraftKaisenModItems.DELETED_MOD_ELEMENT.get()
 				&& ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getString("HistoryType")).isEmpty()) {
 			type = Mth.nextInt(RandomSource.create(), 1, 4);
 			if (type == 1) {

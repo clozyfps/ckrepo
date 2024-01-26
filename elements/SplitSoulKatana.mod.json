@@ -6,12 +6,12 @@
     "renderType": 1,
     "blockingRenderType": 0,
     "texture": "air102_layer_2",
-    "customModelName": "splitsoulkatananew:default",
+    "customModelName": "splitsoulkatana:default",
     "blockingModelName": "Normal blocking",
     "name": "Split Soul Katana",
     "specialInformation": {
       "fixedValue": [
-        "Perk - Increased damage against cursed spirits/Does Extra Damage To Mahito"
+        "§dPerk - Increased damage against cursed spirits/Does Extra Damage To Mahito"
       ]
     },
     "creativeTab": {
@@ -24,6 +24,9 @@
     "damageVsEntity": 13.0,
     "usageCount": 1000,
     "blocksAffected": [],
+    "glowCondition": {
+      "fixedValue": false
+    },
     "repairItems": [],
     "immuneToFire": false,
     "stayInGridWhenCrafting": false,

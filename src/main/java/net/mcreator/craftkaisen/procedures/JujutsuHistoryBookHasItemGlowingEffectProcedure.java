@@ -1,6 +1,8 @@
 package net.mcreator.craftkaisen.procedures;
 
-import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.eventbus.api.Event;
+
+import javax.annotation.Nullable;
 
 public class JujutsuHistoryBookHasItemGlowingEffectProcedure {
 	public static boolean execute(ItemStack itemstack) {

@@ -43,7 +43,7 @@ public class RCTMultiProcedure {
 						_level.sendParticles(ParticleTypes.HEART, x, y, z, 1, 1, 2, 1, 0);
 					if (entity instanceof LivingEntity _entity)
 						_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1)
-								+ (sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).RCTLevel / 9));
+								+ (sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).RCTLevel / 10));
 				}
 			}
 		}

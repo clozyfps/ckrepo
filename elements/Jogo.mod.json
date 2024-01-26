@@ -4,10 +4,22 @@
   "definition": {
     "mobName": "Jogo",
     "mobLabel": "",
-    "mobModelName": "Modeljogo",
-    "mobModelTexture": "jogo.png",
+    "mobModelName": "ModelJogoModel",
+    "mobModelTexture": "jogotexture.png",
+    "transparentModelCondition": {
+      "fixedValue": false
+    },
+    "isShakingCondition": {
+      "fixedValue": false
+    },
     "solidBoundingBox": {
       "fixedValue": false
+    },
+    "visualScale": {
+      "fixedValue": 1.0
+    },
+    "boundingBoxScale": {
+      "fixedValue": 1.0
     },
     "modelLayers": [],
     "modelWidth": 0.6,
@@ -60,6 +72,9 @@
     "health": 690,
     "xpAmount": 0,
     "waterMob": false,
+    "breatheUnderwater": {
+      "fixedValue": false
+    },
     "pushedByFluids": {
       "fixedValue": true
     },

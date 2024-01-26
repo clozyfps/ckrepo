@@ -27,6 +27,7 @@ import net.mcreator.craftkaisen.entity.TwistRangedProjectileEntity;
 import net.mcreator.craftkaisen.entity.TojiFushiguroEntity;
 import net.mcreator.craftkaisen.entity.ToadEntity;
 import net.mcreator.craftkaisen.entity.TenShadowRabbitEntity;
+import net.mcreator.craftkaisen.entity.SuguruGetoEntity;
 import net.mcreator.craftkaisen.entity.StronghitProjectileEntity;
 import net.mcreator.craftkaisen.entity.SmallPoxDomainSpawnerEntity;
 import net.mcreator.craftkaisen.entity.SmallPoxDeityEntity;
@@ -39,6 +40,7 @@ import net.mcreator.craftkaisen.entity.RunAwayRangedProjectileEntity;
 import net.mcreator.craftkaisen.entity.RugbyFieldCursedSpiritEntity;
 import net.mcreator.craftkaisen.entity.RoundDeerEntity;
 import net.mcreator.craftkaisen.entity.RoppongiCursedSpiritEntity;
+import net.mcreator.craftkaisen.entity.RopeMobEntity;
 import net.mcreator.craftkaisen.entity.RootProjectileProjectileEntity;
 import net.mcreator.craftkaisen.entity.RikoAmanaiEntity;
 import net.mcreator.craftkaisen.entity.RikaEntity;
@@ -49,12 +51,14 @@ import net.mcreator.craftkaisen.entity.ResurrectedTojiEntity;
 import net.mcreator.craftkaisen.entity.RainbowDragonEntity;
 import net.mcreator.craftkaisen.entity.PureLoveBeamRangedProjectileEntity;
 import net.mcreator.craftkaisen.entity.PoxDeityDomainEntity;
+import net.mcreator.craftkaisen.entity.PandaEntity;
 import net.mcreator.craftkaisen.entity.OldLadyEntity;
 import net.mcreator.craftkaisen.entity.NueEntity;
 import net.mcreator.craftkaisen.entity.NobaraKugisakiEntity;
 import net.mcreator.craftkaisen.entity.NanamiKentoEntity;
 import net.mcreator.craftkaisen.entity.NailProjectileProjectileEntity;
 import net.mcreator.craftkaisen.entity.MouthCursedSpiritEntity;
+import net.mcreator.craftkaisen.entity.MegunaEntity;
 import net.mcreator.craftkaisen.entity.MaximumElephantEntity;
 import net.mcreator.craftkaisen.entity.MaxMeteorEntity;
 import net.mcreator.craftkaisen.entity.MalevolentShrineEntity;
@@ -65,13 +69,17 @@ import net.mcreator.craftkaisen.entity.KoGuyEntity;
 import net.mcreator.craftkaisen.entity.JogoEntity;
 import net.mcreator.craftkaisen.entity.InventoryCurseMobEntity;
 import net.mcreator.craftkaisen.entity.HollowPurpleProjectileProjectileEntity;
+import net.mcreator.craftkaisen.entity.HollowPurpleGojoEntity;
 import net.mcreator.craftkaisen.entity.HeianEraSukunaEntity;
 import net.mcreator.craftkaisen.entity.HanamiEntity;
+import net.mcreator.craftkaisen.entity.HajimeKashimoEntity;
 import net.mcreator.craftkaisen.entity.GreatSerpentEntity;
+import net.mcreator.craftkaisen.entity.FlyingCursedSpiritEntity;
 import net.mcreator.craftkaisen.entity.FlyHeadEntity;
 import net.mcreator.craftkaisen.entity.FlowerProjectileProjectileEntity;
 import net.mcreator.craftkaisen.entity.FireArrowProjectileEntity;
 import net.mcreator.craftkaisen.entity.FireArrowMobProjectileEntity;
+import net.mcreator.craftkaisen.entity.FingerBearerProjectileEntity;
 import net.mcreator.craftkaisen.entity.FingerBearerEntity;
 import net.mcreator.craftkaisen.entity.FindBlueLocationProjectileEntity;
 import net.mcreator.craftkaisen.entity.ExplodeRangedProjectileEntity;
@@ -86,11 +94,15 @@ import net.mcreator.craftkaisen.entity.CrumbleAwayRangedProjectileEntity;
 import net.mcreator.craftkaisen.entity.CoffinMountainEntity;
 import net.mcreator.craftkaisen.entity.ChosoEntity;
 import net.mcreator.craftkaisen.entity.ChimeraShadowGardenMobEntity;
+import net.mcreator.craftkaisen.entity.BodyRepel3Entity;
+import net.mcreator.craftkaisen.entity.BodyRepel2Entity;
+import net.mcreator.craftkaisen.entity.BodyRepel1Entity;
 import net.mcreator.craftkaisen.entity.BlueEntityEntity;
 import net.mcreator.craftkaisen.entity.BloodMeteoriteProjectileEntity;
 import net.mcreator.craftkaisen.entity.BlastAwayRangedProjectileEntity;
 import net.mcreator.craftkaisen.entity.BlackMucusProjectileEntity;
 import net.mcreator.craftkaisen.entity.BlackDivineDogEntity;
+import net.mcreator.craftkaisen.entity.AwakenedMakiEntity;
 import net.mcreator.craftkaisen.CraftKaisenMod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -355,6 +367,43 @@ public class CraftKaisenModEntities {
 	public static final RegistryObject<EntityType<LapseBlueRangedProjectileEntity>> LAPSE_BLUE_RANGED_PROJECTILE = register("projectile_lapse_blue_ranged_projectile",
 			EntityType.Builder.<LapseBlueRangedProjectileEntity>of(LapseBlueRangedProjectileEntity::new, MobCategory.MISC).setCustomClientFactory(LapseBlueRangedProjectileEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
 					.setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<AwakenedMakiEntity>> AWAKENED_MAKI = register("awakened_maki",
+			EntityType.Builder.<AwakenedMakiEntity>of(AwakenedMakiEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(AwakenedMakiEntity::new)
+
+					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<BodyRepel1Entity>> BODY_REPEL_1 = register("body_repel_1", EntityType.Builder.<BodyRepel1Entity>of(BodyRepel1Entity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
+			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(BodyRepel1Entity::new).fireImmune().sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<BodyRepel2Entity>> BODY_REPEL_2 = register("body_repel_2", EntityType.Builder.<BodyRepel2Entity>of(BodyRepel2Entity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
+			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(BodyRepel2Entity::new).fireImmune().sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<BodyRepel3Entity>> BODY_REPEL_3 = register("body_repel_3", EntityType.Builder.<BodyRepel3Entity>of(BodyRepel3Entity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
+			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(BodyRepel3Entity::new).fireImmune().sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<RopeMobEntity>> ROPE_MOB = register("rope_mob",
+			EntityType.Builder.<RopeMobEntity>of(RopeMobEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(RopeMobEntity::new).fireImmune().sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<SuguruGetoEntity>> SUGURU_GETO = register("suguru_geto",
+			EntityType.Builder.<SuguruGetoEntity>of(SuguruGetoEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(SuguruGetoEntity::new)
+
+					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<PandaEntity>> PANDA = register("panda",
+			EntityType.Builder.<PandaEntity>of(PandaEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(PandaEntity::new)
+
+					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<FlyingCursedSpiritEntity>> FLYING_CURSED_SPIRIT = register("flying_cursed_spirit",
+			EntityType.Builder.<FlyingCursedSpiritEntity>of(FlyingCursedSpiritEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(FlyingCursedSpiritEntity::new)
+
+					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<MegunaEntity>> MEGUNA = register("meguna",
+			EntityType.Builder.<MegunaEntity>of(MegunaEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(MegunaEntity::new)
+
+					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<HollowPurpleGojoEntity>> HOLLOW_PURPLE_GOJO = register("projectile_hollow_purple_gojo", EntityType.Builder.<HollowPurpleGojoEntity>of(HollowPurpleGojoEntity::new, MobCategory.MISC)
+			.setCustomClientFactory(HollowPurpleGojoEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<HajimeKashimoEntity>> HAJIME_KASHIMO = register("hajime_kashimo",
+			EntityType.Builder.<HajimeKashimoEntity>of(HajimeKashimoEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(HajimeKashimoEntity::new)
+
+					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<FingerBearerProjectileEntity>> FINGER_BEARER_PROJECTILE = register("projectile_finger_bearer_projectile",
+			EntityType.Builder.<FingerBearerProjectileEntity>of(FingerBearerProjectileEntity::new, MobCategory.MISC).setCustomClientFactory(FingerBearerProjectileEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
+					.setUpdateInterval(1).sized(0.5f, 0.5f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -410,6 +459,16 @@ public class CraftKaisenModEntities {
 			OldLadyEntity.init();
 			RikoAmanaiEntity.init();
 			BlueEntityEntity.init();
+			AwakenedMakiEntity.init();
+			BodyRepel1Entity.init();
+			BodyRepel2Entity.init();
+			BodyRepel3Entity.init();
+			RopeMobEntity.init();
+			SuguruGetoEntity.init();
+			PandaEntity.init();
+			FlyingCursedSpiritEntity.init();
+			MegunaEntity.init();
+			HajimeKashimoEntity.init();
 		});
 	}
 
@@ -462,5 +521,15 @@ public class CraftKaisenModEntities {
 		event.put(OLD_LADY.get(), OldLadyEntity.createAttributes().build());
 		event.put(RIKO_AMANAI.get(), RikoAmanaiEntity.createAttributes().build());
 		event.put(BLUE_ENTITY.get(), BlueEntityEntity.createAttributes().build());
+		event.put(AWAKENED_MAKI.get(), AwakenedMakiEntity.createAttributes().build());
+		event.put(BODY_REPEL_1.get(), BodyRepel1Entity.createAttributes().build());
+		event.put(BODY_REPEL_2.get(), BodyRepel2Entity.createAttributes().build());
+		event.put(BODY_REPEL_3.get(), BodyRepel3Entity.createAttributes().build());
+		event.put(ROPE_MOB.get(), RopeMobEntity.createAttributes().build());
+		event.put(SUGURU_GETO.get(), SuguruGetoEntity.createAttributes().build());
+		event.put(PANDA.get(), PandaEntity.createAttributes().build());
+		event.put(FLYING_CURSED_SPIRIT.get(), FlyingCursedSpiritEntity.createAttributes().build());
+		event.put(MEGUNA.get(), MegunaEntity.createAttributes().build());
+		event.put(HAJIME_KASHIMO.get(), HajimeKashimoEntity.createAttributes().build());
 	}
 }

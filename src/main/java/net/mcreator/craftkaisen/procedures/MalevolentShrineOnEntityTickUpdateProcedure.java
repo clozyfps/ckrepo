@@ -4,6 +4,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.TamableAnimal;
@@ -43,12 +44,35 @@ public class MalevolentShrineOnEntityTickUpdateProcedure {
 			if (!entity.level.isClientSide())
 				entity.discard();
 		}
+		int horizontalRadiusHemiTop = (int) (entity.getPersistentData().getDouble("shrineTick") / 30) - 1;
+		int verticalRadiusHemiTop = (int) (entity.getPersistentData().getDouble("shrineTick") / 30);
+		int yIterationsHemiTop = verticalRadiusHemiTop;
+		for (int i = 0; i < yIterationsHemiTop; i++) {
+			if (i == verticalRadiusHemiTop) {
+				continue;
+			}
+			for (int xi = -horizontalRadiusHemiTop; xi <= horizontalRadiusHemiTop; xi++) {
+				for (int zi = -horizontalRadiusHemiTop; zi <= horizontalRadiusHemiTop; zi++) {
+					double distanceSq = (xi * xi) / (double) (horizontalRadiusHemiTop * horizontalRadiusHemiTop) + (i * i) / (double) (verticalRadiusHemiTop * verticalRadiusHemiTop)
+							+ (zi * zi) / (double) (horizontalRadiusHemiTop * horizontalRadiusHemiTop);
+					if (distanceSq <= 1.0) {
+						if (!((world.getBlockState(BlockPos.containing(x + xi, y + i, z + zi))).getBlock() == Blocks.AIR)) {
+							world.destroyBlock(BlockPos.containing(x + xi, y + i, z + zi), false);
+							world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), Blocks.AIR.defaultBlockState(), 3);
+							if (world instanceof ServerLevel _level)
+								_level.sendParticles(ParticleTypes.SWEEP_ATTACK, x + xi, y + i, z + zi, 1, 0.1, 1, 0.1, 0);
+						}
+					}
+				}
+			}
+		}
 		{
 			final Vec3 _center = new Vec3(x, y, z);
 			List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(100 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).collect(Collectors.toList());
 			for (Entity entityiterator : _entfound) {
 				if (!(entity == entityiterator) && !(entity instanceof TamableAnimal _tamIsTamedBy && entityiterator instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false)
-						&& !(entityiterator instanceof LivingEntity _livEnt7 && _livEnt7.hasEffect(CraftKaisenModMobEffects.SIMPLE_DOMAIN.get()))) {
+						&& !(entityiterator instanceof LivingEntity _livEnt27 && _livEnt27.hasEffect(CraftKaisenModMobEffects.SIMPLE_DOMAIN.get()))
+						&& (entity.getPersistentData().getString("tamer")).equals(entityiterator.getDisplayName().getString())) {
 					if (world instanceof ServerLevel _level)
 						_level.sendParticles(ParticleTypes.SWEEP_ATTACK, (entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), 2, 0.6, 0.6, 0.6, 0.6);
 					if (world instanceof ServerLevel _level)
@@ -70,7 +94,7 @@ public class MalevolentShrineOnEntityTickUpdateProcedure {
 						}
 					}
 					entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC), (entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null)), 18);
-				} else if (entityiterator instanceof LivingEntity _livEnt28 && _livEnt28.hasEffect(CraftKaisenModMobEffects.SIMPLE_DOMAIN.get())) {
+				} else if (entityiterator instanceof LivingEntity _livEnt50 && _livEnt50.hasEffect(CraftKaisenModMobEffects.SIMPLE_DOMAIN.get())) {
 					if (Math.random() < 0.01) {
 						entity.getPersistentData().putDouble("simpledomainlevel", (entity.getPersistentData().getDouble("simpledomainlevel") - 1));
 					}
