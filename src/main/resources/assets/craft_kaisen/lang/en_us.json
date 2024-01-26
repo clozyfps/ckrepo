@@ -1,7 +1,7 @@
 {
   "item.craft_kaisen.geto_outfit_chestplate": "Geto Robe",
-  "effect.craft_kaisen.distorted_body_killing": "Instant Spirit Body of Distorted Killing",
   "subtitles.sukuna": "sukuna talking",
+  "effect.craft_kaisen.distorted_body_killing": "Instant Spirit Body of Distorted Killing",
   "item.craft_kaisen.nyoi_staff": "Nyoi Staff",
   "advancements.jujutsu_sorcerer.descr": "Kill a Cursed Spirit",
   "advancements.sukuna_vessel.descr": "Become a Vessel Of Ryomen Sukuna",
@@ -199,6 +199,7 @@
   "gui.craft_kaisen.start_screen.label_race": "RACE:",
   "item.craft_kaisen.cursed_ring": "Cursed Ring",
   "item.craft_kaisen.playful_cloud": "Playful Cloud",
+  "effect.craft_kaisen.rika_status": "Status",
   "gui.craft_kaisen.main_menu.label_curse": "Curse",
   "gui.craft_kaisen.domain_clash.label_domain_clash": "Domain Clash!!",
   "advancements.jujutsu_kaisen.title": "Jujutsu Kaisen",

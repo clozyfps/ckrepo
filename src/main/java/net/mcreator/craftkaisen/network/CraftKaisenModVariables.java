@@ -132,6 +132,12 @@ public class CraftKaisenModVariables {
 			clone.HasBounty = original.HasBounty;
 			clone.Bounty = original.Bounty;
 			clone.RatioMastery = original.RatioMastery;
+			clone.TojiEventHappened = original.TojiEventHappened;
+			clone.Clan = original.Clan;
+			clone.ClansInWorld = original.ClansInWorld;
+			clone.CreatedClan = original.CreatedClan;
+			clone.Perk = original.Perk;
+			clone.Lives = original.Lives;
 			clone.DomainAmplificationUnlocked = original.DomainAmplificationUnlocked;
 			clone.Ability9 = original.Ability9;
 			clone.Ability12 = original.Ability12;
@@ -142,12 +148,6 @@ public class CraftKaisenModVariables {
 			clone.Ability10 = original.Ability10;
 			clone.Intelligence = original.Intelligence;
 			clone.SimpleDomainUnlocked = original.SimpleDomainUnlocked;
-			clone.CreatedClan = original.CreatedClan;
-			clone.TojiEventHappened = original.TojiEventHappened;
-			clone.Clan = original.Clan;
-			clone.ClansInWorld = original.ClansInWorld;
-			clone.Perk = original.Perk;
-			clone.Lives = original.Lives;
 			if (!event.isWasDeath()) {
 				clone.currentMove = original.currentMove;
 				clone.currentOutput = original.currentOutput;
@@ -165,9 +165,9 @@ public class CraftKaisenModVariables {
 				clone.DomainClashCombo = original.DomainClashCombo;
 				clone.flowerexpand = original.flowerexpand;
 				clone.BlackFlashRarity = original.BlackFlashRarity;
-				clone.MoveCombo = original.MoveCombo;
-				clone.PerkDescription = original.PerkDescription;
 				clone.PerkPage = original.PerkPage;
+				clone.PerkDescription = original.PerkDescription;
+				clone.MoveCombo = original.MoveCombo;
 			}
 		}
 
@@ -232,10 +232,10 @@ public class CraftKaisenModVariables {
 		public String vesselPlayerOne = "\"\"";
 		public String vesselTechnique = "\"\"";
 		public String vesselPlayerTwo = "\"\"";
-		public String EligibleMoves = "Simple Barrier - Hollow Wicker Basket";
 		public double worldeventlocation = 0;
 		public double WorldEventTimer = 0;
 		public double WEZ = 0;
+		public String EligibleMoves = "Simple Barrier - Hollow Wicker Basket";
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -247,10 +247,10 @@ public class CraftKaisenModVariables {
 			vesselPlayerOne = nbt.getString("vesselPlayerOne");
 			vesselTechnique = nbt.getString("vesselTechnique");
 			vesselPlayerTwo = nbt.getString("vesselPlayerTwo");
-			EligibleMoves = nbt.getString("EligibleMoves");
 			worldeventlocation = nbt.getDouble("worldeventlocation");
 			WorldEventTimer = nbt.getDouble("WorldEventTimer");
 			WEZ = nbt.getDouble("WEZ");
+			EligibleMoves = nbt.getString("EligibleMoves");
 		}
 
 		@Override
@@ -258,10 +258,10 @@ public class CraftKaisenModVariables {
 			nbt.putString("vesselPlayerOne", vesselPlayerOne);
 			nbt.putString("vesselTechnique", vesselTechnique);
 			nbt.putString("vesselPlayerTwo", vesselPlayerTwo);
-			nbt.putString("EligibleMoves", EligibleMoves);
 			nbt.putDouble("worldeventlocation", worldeventlocation);
 			nbt.putDouble("WorldEventTimer", WorldEventTimer);
 			nbt.putDouble("WEZ", WEZ);
+			nbt.putString("EligibleMoves", EligibleMoves);
 			return nbt;
 		}
 
@@ -358,7 +358,7 @@ public class CraftKaisenModVariables {
 		public String affiliation = "";
 		public double reputation = 0;
 		public double currentExp = 0;
-		public double maxExp = 0;
+		public double maxExp = 20.0;
 		public double skillPoints = 0;
 		public double currentCursedEnergy = 0;
 		public double maxCursedEnergy = 0;
@@ -430,6 +430,14 @@ public class CraftKaisenModVariables {
 		public boolean HasBounty = false;
 		public double Bounty = 0;
 		public double RatioMastery = 0;
+		public boolean TojiEventHappened = false;
+		public String Clan = "\"\"";
+		public String ClansInWorld = "\"\"";
+		public String CreatedClan = "\"\"";
+		public String Perk = "\"\"";
+		public String PerkPage = "\"\"";
+		public String PerkDescription = "\"\"";
+		public double Lives = 2.0;
 		public boolean DomainAmplificationUnlocked = false;
 		public String Ability9 = "\"\"";
 		public String Ability12 = "\"\"";
@@ -441,14 +449,6 @@ public class CraftKaisenModVariables {
 		public double Intelligence = 0.0;
 		public String MoveCombo = "\"\"";
 		public boolean SimpleDomainUnlocked = false;
-		public String CreatedClan = "\"\"";
-		public boolean TojiEventHappened = false;
-		public String Clan = "\"\"";
-		public String ClansInWorld = "\"\"";
-		public String PerkDescription = "\"\"";
-		public String PerkPage = "\"\"";
-		public String Perk = "\"\"";
-		public double Lives = 2.0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -533,6 +533,14 @@ public class CraftKaisenModVariables {
 			nbt.putBoolean("HasBounty", HasBounty);
 			nbt.putDouble("Bounty", Bounty);
 			nbt.putDouble("RatioMastery", RatioMastery);
+			nbt.putBoolean("TojiEventHappened", TojiEventHappened);
+			nbt.putString("Clan", Clan);
+			nbt.putString("ClansInWorld", ClansInWorld);
+			nbt.putString("CreatedClan", CreatedClan);
+			nbt.putString("Perk", Perk);
+			nbt.putString("PerkPage", PerkPage);
+			nbt.putString("PerkDescription", PerkDescription);
+			nbt.putDouble("Lives", Lives);
 			nbt.putBoolean("DomainAmplificationUnlocked", DomainAmplificationUnlocked);
 			nbt.putString("Ability9", Ability9);
 			nbt.putString("Ability12", Ability12);
@@ -544,14 +552,6 @@ public class CraftKaisenModVariables {
 			nbt.putDouble("Intelligence", Intelligence);
 			nbt.putString("MoveCombo", MoveCombo);
 			nbt.putBoolean("SimpleDomainUnlocked", SimpleDomainUnlocked);
-			nbt.putString("CreatedClan", CreatedClan);
-			nbt.putBoolean("TojiEventHappened", TojiEventHappened);
-			nbt.putString("Clan", Clan);
-			nbt.putString("ClansInWorld", ClansInWorld);
-			nbt.putString("PerkDescription", PerkDescription);
-			nbt.putString("PerkPage", PerkPage);
-			nbt.putString("Perk", Perk);
-			nbt.putDouble("Lives", Lives);
 			return nbt;
 		}
 
@@ -633,6 +633,14 @@ public class CraftKaisenModVariables {
 			HasBounty = nbt.getBoolean("HasBounty");
 			Bounty = nbt.getDouble("Bounty");
 			RatioMastery = nbt.getDouble("RatioMastery");
+			TojiEventHappened = nbt.getBoolean("TojiEventHappened");
+			Clan = nbt.getString("Clan");
+			ClansInWorld = nbt.getString("ClansInWorld");
+			CreatedClan = nbt.getString("CreatedClan");
+			Perk = nbt.getString("Perk");
+			PerkPage = nbt.getString("PerkPage");
+			PerkDescription = nbt.getString("PerkDescription");
+			Lives = nbt.getDouble("Lives");
 			DomainAmplificationUnlocked = nbt.getBoolean("DomainAmplificationUnlocked");
 			Ability9 = nbt.getString("Ability9");
 			Ability12 = nbt.getString("Ability12");
@@ -644,14 +652,6 @@ public class CraftKaisenModVariables {
 			Intelligence = nbt.getDouble("Intelligence");
 			MoveCombo = nbt.getString("MoveCombo");
 			SimpleDomainUnlocked = nbt.getBoolean("SimpleDomainUnlocked");
-			CreatedClan = nbt.getString("CreatedClan");
-			TojiEventHappened = nbt.getBoolean("TojiEventHappened");
-			Clan = nbt.getString("Clan");
-			ClansInWorld = nbt.getString("ClansInWorld");
-			PerkDescription = nbt.getString("PerkDescription");
-			PerkPage = nbt.getString("PerkPage");
-			Perk = nbt.getString("Perk");
-			Lives = nbt.getDouble("Lives");
 		}
 	}
 
@@ -752,6 +752,14 @@ public class CraftKaisenModVariables {
 					variables.HasBounty = message.data.HasBounty;
 					variables.Bounty = message.data.Bounty;
 					variables.RatioMastery = message.data.RatioMastery;
+					variables.TojiEventHappened = message.data.TojiEventHappened;
+					variables.Clan = message.data.Clan;
+					variables.ClansInWorld = message.data.ClansInWorld;
+					variables.CreatedClan = message.data.CreatedClan;
+					variables.Perk = message.data.Perk;
+					variables.PerkPage = message.data.PerkPage;
+					variables.PerkDescription = message.data.PerkDescription;
+					variables.Lives = message.data.Lives;
 					variables.DomainAmplificationUnlocked = message.data.DomainAmplificationUnlocked;
 					variables.Ability9 = message.data.Ability9;
 					variables.Ability12 = message.data.Ability12;
@@ -763,14 +771,6 @@ public class CraftKaisenModVariables {
 					variables.Intelligence = message.data.Intelligence;
 					variables.MoveCombo = message.data.MoveCombo;
 					variables.SimpleDomainUnlocked = message.data.SimpleDomainUnlocked;
-					variables.CreatedClan = message.data.CreatedClan;
-					variables.TojiEventHappened = message.data.TojiEventHappened;
-					variables.Clan = message.data.Clan;
-					variables.ClansInWorld = message.data.ClansInWorld;
-					variables.PerkDescription = message.data.PerkDescription;
-					variables.PerkPage = message.data.PerkPage;
-					variables.Perk = message.data.Perk;
-					variables.Lives = message.data.Lives;
 				}
 			});
 			context.setPacketHandled(true);
