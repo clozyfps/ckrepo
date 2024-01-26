@@ -1,9 +1,26 @@
 
 package net.mcreator.craftkaisen.network;
 
+import net.minecraftforge.network.NetworkEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+
+import net.minecraft.world.level.Level;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.core.BlockPos;
+
+import net.mcreator.craftkaisen.world.inventory.PerkGuiMenu;
+import net.mcreator.craftkaisen.procedures.DeclinePerkProcedure;
+import net.mcreator.craftkaisen.procedures.AcceptPerkProcedure;
+import net.mcreator.craftkaisen.CraftKaisenMod;
+
+import java.util.function.Supplier;
+import java.util.HashMap;
+
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class PerkGuiButtonMessage {
-
 	private final int buttonID, x, y, z;
 
 	public PerkGuiButtonMessage(FriendlyByteBuf buffer) {
@@ -35,7 +52,6 @@ public class PerkGuiButtonMessage {
 			int x = message.x;
 			int y = message.y;
 			int z = message.z;
-
 			handleButtonAction(entity, buttonID, x, y, z);
 		});
 		context.setPacketHandled(true);
@@ -44,18 +60,16 @@ public class PerkGuiButtonMessage {
 	public static void handleButtonAction(Player entity, int buttonID, int x, int y, int z) {
 		Level world = entity.level;
 		HashMap guistate = PerkGuiMenu.guistate;
-
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(new BlockPos(x, y, z)))
 			return;
-
 		if (buttonID == 0) {
 
-			AcceptPerkProcedure.execute();
+			AcceptPerkProcedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 1) {
 
-			DeclinePerkProcedure.execute();
+			DeclinePerkProcedure.execute(entity);
 		}
 	}
 
@@ -63,5 +77,4 @@ public class PerkGuiButtonMessage {
 	public static void registerMessage(FMLCommonSetupEvent event) {
 		CraftKaisenMod.addNetworkMessage(PerkGuiButtonMessage.class, PerkGuiButtonMessage::buffer, PerkGuiButtonMessage::new, PerkGuiButtonMessage::handler);
 	}
-
 }
