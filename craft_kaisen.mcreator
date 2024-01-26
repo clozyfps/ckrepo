@@ -18555,7 +18555,7 @@
             "type": "entity"
           },
           {
-            "name": "immediatesourceentity",
+            "name": "sourceentity",
             "type": "entity"
           },
           {
@@ -22264,6 +22264,42 @@
       "path": "~/Items"
     },
     {
+      "name": "CaveAirDespawn",
+      "type": "procedure",
+      "sortid": 953,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cave_air_despawn",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/CaveAirDespawnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Tags"
+    },
+    {
       "name": "RikaAttacks",
       "type": "procedure",
       "sortid": 950,
@@ -22300,20 +22336,6 @@
       "path": "~/Procedures"
     },
     {
-      "name": "RikaStatus",
-      "type": "potioneffect",
-      "sortid": 951,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "rika_status",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/craftkaisen/potion/RikaStatusMobEffect.java"
-        ]
-      },
-      "path": "~/Potions"
-    },
-    {
       "name": "Ckmob",
       "type": "tag",
       "sortid": 952,
@@ -22328,40 +22350,18 @@
       "path": "~/Tags"
     },
     {
-      "name": "CaveAirDespawn",
-      "type": "procedure",
-      "sortid": 953,
+      "name": "RikaStatus",
+      "type": "potioneffect",
+      "sortid": 951,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "cave_air_despawn",
+      "registry_name": "rika_status",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/procedures/CaveAirDespawnProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
+          "src/main/java/net/mcreator/craftkaisen/potion/RikaStatusMobEffect.java"
         ]
       },
-      "path": "~/Tags"
+      "path": "~/Potions"
     }
   ],
   "variable_elements": [
