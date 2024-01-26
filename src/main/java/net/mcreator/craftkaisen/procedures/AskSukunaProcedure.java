@@ -11,6 +11,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.network.chat.Component;
 
+import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
 import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
 
 import javax.annotation.Nullable;
@@ -30,21 +31,23 @@ public class AskSukunaProcedure {
 		if (entity == null || text == null)
 			return;
 		double random = 0;
-		if (text.contains("Sukuna Come Out")) {
-			if (!(entity instanceof LivingEntity _livEnt0 && _livEnt0.hasEffect(CraftKaisenModMobEffects.SUKUNA.get()))) {
-				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal("\u00A7l\u00A74Sure."), true);
-				CallSukunaActivationProcedure.execute(world, x, y, z, entity);
-			} else if (entity instanceof LivingEntity _livEnt2 && _livEnt2.hasEffect(CraftKaisenModMobEffects.SUKUNA.get())) {
-				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal("\u00A7l\u00A74Im Already Out."), true);
-			}
-		} else if (text.contains("Sukuna Leave")) {
-			if (entity instanceof LivingEntity _livEnt4 && _livEnt4.hasEffect(CraftKaisenModMobEffects.SUKUNA.get())) {
-				if (entity instanceof LivingEntity _entity)
-					_entity.removeEffect(CraftKaisenModMobEffects.SUKUNA.get());
-				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal("\u00A7l\u00A74Sure."), true);
+		if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).SukunaLevel > 0) {
+			if (text.contains("Sukuna Come Out")) {
+				if (!(entity instanceof LivingEntity _livEnt0 && _livEnt0.hasEffect(CraftKaisenModMobEffects.SUKUNA.get()))) {
+					if (entity instanceof Player _player && !_player.level.isClientSide())
+						_player.displayClientMessage(Component.literal("\u00A7l\u00A74Sure."), true);
+					CallSukunaActivationProcedure.execute(world, x, y, z, entity);
+				} else if (entity instanceof LivingEntity _livEnt2 && _livEnt2.hasEffect(CraftKaisenModMobEffects.SUKUNA.get())) {
+					if (entity instanceof Player _player && !_player.level.isClientSide())
+						_player.displayClientMessage(Component.literal("\u00A7l\u00A74Im Already Out."), true);
+				}
+			} else if (text.contains("Sukuna Leave")) {
+				if (entity instanceof LivingEntity _livEnt4 && _livEnt4.hasEffect(CraftKaisenModMobEffects.SUKUNA.get())) {
+					if (entity instanceof LivingEntity _entity)
+						_entity.removeEffect(CraftKaisenModMobEffects.SUKUNA.get());
+					if (entity instanceof Player _player && !_player.level.isClientSide())
+						_player.displayClientMessage(Component.literal("\u00A7l\u00A74Sure."), true);
+				}
 			}
 		}
 	}

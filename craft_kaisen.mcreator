@@ -18555,7 +18555,7 @@
             "type": "entity"
           },
           {
-            "name": "sourceentity",
+            "name": "immediatesourceentity",
             "type": "entity"
           },
           {
@@ -22362,6 +22362,62 @@
         ]
       },
       "path": "~/Potions"
+    },
+    {
+      "name": "BlackFlashRaritySet",
+      "type": "procedure",
+      "sortid": 954,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "black_flash_rarity_set",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/BlackFlashRaritySetProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "MegumiFushiguroEntityDies",
+      "type": "procedure",
+      "sortid": 955,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "megumi_fushiguro_entity_dies",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/MegumiFushiguroEntityDiesProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Procedure"
     }
   ],
   "variable_elements": [

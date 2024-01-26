@@ -16,7 +16,7 @@ import java.util.List;
 
 public class SukunaFingerItem extends Item {
 	public SukunaFingerItem() {
-		super(new Item.Properties().stacksTo(20).rarity(Rarity.EPIC).food((new FoodProperties.Builder()).nutrition(4).saturationMod(0.3f).alwaysEat().build()));
+		super(new Item.Properties().stacksTo(1).rarity(Rarity.EPIC).food((new FoodProperties.Builder()).nutrition(4).saturationMod(0.3f).alwaysEat().build()));
 	}
 
 	@Override

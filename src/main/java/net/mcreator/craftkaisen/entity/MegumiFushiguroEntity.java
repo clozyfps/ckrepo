@@ -29,6 +29,7 @@ import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.Packet;
 
 import net.mcreator.craftkaisen.procedures.MegumiFushiguroOnEntityTickUpdateProcedure;
+import net.mcreator.craftkaisen.procedures.MegumiFushiguroEntityDiesProcedure;
 import net.mcreator.craftkaisen.init.CraftKaisenModItems;
 import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
 
@@ -79,6 +80,12 @@ public class MegumiFushiguroEntity extends Monster {
 	@Override
 	public SoundEvent getDeathSound() {
 		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.death"));
+	}
+
+	@Override
+	public void die(DamageSource source) {
+		super.die(source);
+		MegumiFushiguroEntityDiesProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
 	}
 
 	@Override

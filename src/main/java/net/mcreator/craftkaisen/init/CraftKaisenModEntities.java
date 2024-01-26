@@ -209,7 +209,7 @@ public class CraftKaisenModEntities {
 	public static final RegistryObject<EntityType<MaximumElephantEntity>> MAXIMUM_ELEPHANT = register("maximum_elephant",
 			EntityType.Builder.<MaximumElephantEntity>of(MaximumElephantEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(MaximumElephantEntity::new)
 
-					.sized(0.6f, 1.8f));
+					.sized(2.1f, 2.8f));
 	public static final RegistryObject<EntityType<BlackDivineDogEntity>> BLACK_DIVINE_DOG = register("black_divine_dog",
 			EntityType.Builder.<BlackDivineDogEntity>of(BlackDivineDogEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(BlackDivineDogEntity::new)
 
@@ -253,7 +253,7 @@ public class CraftKaisenModEntities {
 			EntityType.Builder.<EightHandledSwordDivergentSilaDivineGeneralMahoragaEntity>of(EightHandledSwordDivergentSilaDivineGeneralMahoragaEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
 					.setUpdateInterval(3).setCustomClientFactory(EightHandledSwordDivergentSilaDivineGeneralMahoragaEntity::new)
 
-					.sized(0.6f, 1.8f));
+					.sized(1.3f, 2.8f));
 	public static final RegistryObject<EntityType<RainbowDragonEntity>> RAINBOW_DRAGON = register("rainbow_dragon",
 			EntityType.Builder.<RainbowDragonEntity>of(RainbowDragonEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(RainbowDragonEntity::new)
 

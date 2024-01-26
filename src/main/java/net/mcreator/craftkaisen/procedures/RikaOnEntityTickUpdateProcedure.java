@@ -100,6 +100,5 @@ public class RikaOnEntityTickUpdateProcedure {
 					entity.discard();
 			}
 		}
-		RikaAttacksProcedure.execute(world, x, y, z, entity);
 	}
 }

@@ -12,7 +12,7 @@
     "creativeTab": {
       "value": "CUSTOM:CkItems"
     },
-    "stackSize": 20,
+    "stackSize": 1,
     "enchantability": 0,
     "useDuration": 25,
     "toolType": 1.0,
@@ -31,6 +31,9 @@
         "§l§5Special Grade Cursed Object: Finger"
       ]
     },
+    "glowCondition": {
+      "fixedValue": false
+    },
     "guiBoundTo": "<NONE>",
     "inventorySize": 9,
     "inventoryStackSize": 64,
@@ -39,6 +42,9 @@
     },
     "enableRanged": false,
     "shootConstantly": false,
+    "projectile": {
+      "value": "CUSTOM:ReversalRedProjectileProjectile"
+    },
     "isFood": true,
     "nutritionalValue": 4,
     "saturation": 0.3,
