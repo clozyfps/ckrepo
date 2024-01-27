@@ -3,12 +3,15 @@ package net.mcreator.craftkaisen.client.gui;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
+import net.minecraft.client.gui.screens.inventory.InventoryScreen;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.components.ImageButton;
 
 import net.mcreator.craftkaisen.world.inventory.SelfVowGUIMenu;
+import net.mcreator.craftkaisen.procedures.ReturnPlayerProcedure;
 import net.mcreator.craftkaisen.procedures.DisplaySpecialGradeProcedure;
 import net.mcreator.craftkaisen.procedures.DisplaySemiGrade2Procedure;
 import net.mcreator.craftkaisen.procedures.DisplaySemiGrade1Procedure;
@@ -30,6 +33,7 @@ public class SelfVowGUIScreen extends AbstractContainerScreen<SelfVowGUIMenu> {
 	private final int x, y, z;
 	private final Player entity;
 	ImageButton imagebutton_click;
+	ImageButton imagebutton_click1;
 
 	public SelfVowGUIScreen(SelfVowGUIMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -46,6 +50,9 @@ public class SelfVowGUIScreen extends AbstractContainerScreen<SelfVowGUIMenu> {
 	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
 		this.renderBackground(ms);
 		super.render(ms, mouseX, mouseY, partialTicks);
+		if (ReturnPlayerProcedure.execute(entity) instanceof LivingEntity livingEntity) {
+			InventoryScreen.renderEntityInInventoryFollowsAngle(ms, this.leftPos + -60, this.topPos + 94, 40, 0f + (float) Math.atan((this.leftPos + -60 - mouseX) / 40.0), (float) Math.atan((this.topPos + 45 - mouseY) / 40.0), livingEntity);
+		}
 		this.renderTooltip(ms, mouseX, mouseY);
 	}
 
@@ -92,6 +99,10 @@ public class SelfVowGUIScreen extends AbstractContainerScreen<SelfVowGUIMenu> {
 			RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/spgrade.png"));
 			this.blit(ms, this.leftPos + -126, this.topPos + -37, 0, 0, 427, 240, 427, 240);
 		}
+
+		RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/pagethreeclosed.png"));
+		this.blit(ms, this.leftPos + -126, this.topPos + -37, 0, 0, 427, 240, 427, 240);
+
 		RenderSystem.disableBlend();
 	}
 
@@ -129,5 +140,13 @@ public class SelfVowGUIScreen extends AbstractContainerScreen<SelfVowGUIMenu> {
 		});
 		guistate.put("button:imagebutton_click", imagebutton_click);
 		this.addRenderableWidget(imagebutton_click);
+		imagebutton_click1 = new ImageButton(this.leftPos + -102, this.topPos + 39, 20, 20, 0, 0, 20, new ResourceLocation("craft_kaisen:textures/screens/atlas/imagebutton_click1.png"), 20, 40, e -> {
+			if (true) {
+				CraftKaisenMod.PACKET_HANDLER.sendToServer(new SelfVowGUIButtonMessage(1, x, y, z));
+				SelfVowGUIButtonMessage.handleButtonAction(entity, 1, x, y, z);
+			}
+		});
+		guistate.put("button:imagebutton_click1", imagebutton_click1);
+		this.addRenderableWidget(imagebutton_click1);
 	}
 }

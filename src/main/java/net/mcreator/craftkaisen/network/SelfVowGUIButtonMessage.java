@@ -12,6 +12,7 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.craftkaisen.world.inventory.SelfVowGUIMenu;
+import net.mcreator.craftkaisen.procedures.OpenMovesProcedure;
 import net.mcreator.craftkaisen.procedures.MenuOnKeyPressedProcedure;
 import net.mcreator.craftkaisen.CraftKaisenMod;
 
@@ -65,6 +66,10 @@ public class SelfVowGUIButtonMessage {
 		if (buttonID == 0) {
 
 			MenuOnKeyPressedProcedure.execute(world, x, y, z, entity);
+		}
+		if (buttonID == 1) {
+
+			OpenMovesProcedure.execute(world, x, y, z, entity);
 		}
 	}
 

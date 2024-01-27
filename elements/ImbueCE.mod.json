@@ -1,0 +1,9 @@
+{
+  "_fv": 57,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "I",
+    "keyBindingName": "Imbue CE",
+    "keyBindingCategoryKey": "craft_kaisen"
+  }
+}

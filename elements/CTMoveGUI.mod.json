@@ -1,0 +1,484 @@
+{
+  "_fv": 57,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": false,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "mainmenu.png",
+          "use1Xscale": true,
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "pageoneclosed.png",
+          "use1Xscale": true,
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "pagetwoclosed.png",
+          "use1Xscale": true,
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_click",
+          "image": "click.png",
+          "hoveredImage": "",
+          "onClick": {
+            "name": "MenuOnKeyPressed"
+          },
+          "x": 24,
+          "y": 34
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_click1",
+          "image": "click.png",
+          "hoveredImage": "",
+          "onClick": {
+            "name": "OpenSelfVowGUI"
+          },
+          "x": 24,
+          "y": 55
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "fourthgrade.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayGradeFour"
+          },
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "thirdgrade.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayGradeThree"
+          },
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "stwograde.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplaySemiGrade2"
+          },
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "twograde.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayGrade2"
+          },
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "sonegrade.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplaySemiGrade1"
+          },
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "onegrade.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayGrade1"
+          },
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "spgrade.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplaySpecialGrade"
+          },
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "pagethreeopen.png",
+          "use1Xscale": true,
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_set_ability_1",
+          "text": "Set Ability 1",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "SetAbility1"
+          },
+          "width": 92,
+          "height": 20,
+          "x": 96,
+          "y": 83
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_set_ability_2",
+          "text": "Set Ability 2",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "SetAbility2"
+          },
+          "width": 92,
+          "height": 20,
+          "x": 96,
+          "y": 106
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_set_ability_3",
+          "text": "Set Ability 3",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "SetAbility3"
+          },
+          "width": 92,
+          "height": 20,
+          "x": 96,
+          "y": 128
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_set_ability_4",
+          "text": "Set Ability 4",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "SetAbility4"
+          },
+          "width": 92,
+          "height": 20,
+          "x": 96,
+          "y": 150
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_set_ability_5",
+          "text": "Set Ability 5",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "SetAbility5"
+          },
+          "width": 92,
+          "height": 20,
+          "x": 96,
+          "y": 172
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_set_ability_6",
+          "text": "Set Ability 6",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "SetAbility6"
+          },
+          "width": 92,
+          "height": 20,
+          "x": 194,
+          "y": 106
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_set_ability_41",
+          "text": "Foward Page >>",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "ForwardPage"
+          },
+          "width": 92,
+          "height": 20,
+          "x": 194,
+          "y": 35
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_set_ability_31",
+          "text": "<< Back Page",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "BackPage"
+          },
+          "width": 92,
+          "height": 20,
+          "x": 194,
+          "y": 59
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_technique",
+          "text": {
+            "fixedValue": "Melee",
+            "name": "ReturnTechnique"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 99,
+          "y": 55
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_move_display",
+          "text": {
+            "fixedValue": "Punch",
+            "name": "ReturnMoveDisplay"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 289,
+          "y": 39
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_move_cost",
+          "text": {
+            "fixedValue": "Cost: 10",
+            "name": "ReturnMoveCost"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 289,
+          "y": 63
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_set_ability_32",
+          "text": "Next Move >>",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "Forwardbutton"
+          },
+          "width": 92,
+          "height": 20,
+          "x": 292,
+          "y": 83
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_set_ability_33",
+          "text": "<< Back Move",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "BackButton"
+          },
+          "width": 92,
+          "height": 20,
+          "x": 194,
+          "y": 83
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_set_ability_42",
+          "text": "Unlock",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "UnlockButton"
+          },
+          "displayCondition": {
+            "name": "ShowUnlock"
+          },
+          "width": 92,
+          "height": 20,
+          "x": 292,
+          "y": 106
+        }
+      },
+      {
+        "type": "entitymodel",
+        "data": {
+          "entityModel": {
+            "name": "ReturnPlayer"
+          },
+          "scale": 40,
+          "rotationX": 0,
+          "followMouseMovement": true,
+          "x": 56,
+          "y": 111
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_page",
+          "text": {
+            "fixedValue": "Page:"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 99,
+          "y": 43
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_set_ability_7",
+          "text": "Set Ability 7",
+          "isUndecorated": false,
+          "width": 92,
+          "height": 20,
+          "x": 194,
+          "y": 128
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_set_ability_8",
+          "text": "Set Ability 8",
+          "isUndecorated": false,
+          "width": 92,
+          "height": 20,
+          "x": 194,
+          "y": 150
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_set_ability_9",
+          "text": "Set Ability 9",
+          "isUndecorated": false,
+          "width": 92,
+          "height": 20,
+          "x": 194,
+          "y": 172
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_set_ability_11",
+          "text": "Set Ability 10",
+          "isUndecorated": false,
+          "width": 92,
+          "height": 20,
+          "x": 292,
+          "y": 128
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_set_ability_12",
+          "text": "Set Ability 11",
+          "isUndecorated": false,
+          "width": 92,
+          "height": 20,
+          "x": 292,
+          "y": 150
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_set_ability_13",
+          "text": "Set Ability 12",
+          "isUndecorated": false,
+          "width": 92,
+          "height": 20,
+          "x": 292,
+          "y": 172
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

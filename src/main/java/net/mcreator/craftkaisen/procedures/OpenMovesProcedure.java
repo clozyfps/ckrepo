@@ -14,7 +14,7 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.craftkaisen.world.inventory.StartScreenMenu;
-import net.mcreator.craftkaisen.world.inventory.MoveGuiMenu;
+import net.mcreator.craftkaisen.world.inventory.CTMoveGUIMenu;
 import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
 
 import io.netty.buffer.Unpooled;
@@ -47,12 +47,12 @@ public class OpenMovesProcedure {
 				NetworkHooks.openScreen((ServerPlayer) _ent, new MenuProvider() {
 					@Override
 					public Component getDisplayName() {
-						return Component.literal("MoveGui");
+						return Component.literal("CTMoveGUI");
 					}
 
 					@Override
 					public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
-						return new MoveGuiMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos));
+						return new CTMoveGUIMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos));
 					}
 				}, _bpos);
 			}

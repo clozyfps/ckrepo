@@ -133,6 +133,41 @@
           "x": 0,
           "y": 0
         }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "pagethreeclosed.png",
+          "use1Xscale": true,
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_click1",
+          "image": "click.png",
+          "hoveredImage": "",
+          "onClick": {
+            "name": "OpenMoves"
+          },
+          "x": 24,
+          "y": 76
+        }
+      },
+      {
+        "type": "entitymodel",
+        "data": {
+          "entityModel": {
+            "name": "ReturnPlayer"
+          },
+          "scale": 40,
+          "rotationX": 0,
+          "followMouseMovement": true,
+          "x": 56,
+          "y": 111
+        }
       }
     ],
     "gridSettings": {

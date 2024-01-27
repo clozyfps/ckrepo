@@ -16,11 +16,11 @@
           "entityModel": {
             "name": "ReturnPlayer"
           },
-          "scale": 50,
+          "scale": 40,
           "rotationX": 0,
           "followMouseMovement": true,
-          "x": 55,
-          "y": 96
+          "x": 56,
+          "y": 111
         }
       },
       {
@@ -233,47 +233,6 @@
           },
           "x": 213,
           "y": 116
-        }
-      },
-      {
-        "type": "imagebutton",
-        "data": {
-          "name": "imagebutton_button1png",
-          "image": "button-1.png.png",
-          "hoveredImage": "",
-          "onClick": {
-            "name": "OpenMoves"
-          },
-          "x": 357,
-          "y": 188
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "name": "label_empty1",
-          "text": {
-            "fixedValue": ">>"
-          },
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "x": 366,
-          "y": 188
-        }
-      },
-      {
-        "type": "tooltip",
-        "data": {
-          "name": "tooltip_cursed_technique",
-          "text": {
-            "fixedValue": "Cursed Technique"
-          },
-          "width": 25,
-          "height": 11,
-          "x": 357,
-          "y": 188
         }
       },
       {
@@ -586,10 +545,19 @@
       {
         "type": "image",
         "data": {
+          "image": "pagethreeclosed.png",
+          "use1Xscale": true,
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
           "image": "pagetwoclosed.png",
           "use1Xscale": true,
           "x": 0,
-          "y": -1
+          "y": 0
         }
       },
       {
@@ -602,7 +570,20 @@
             "name": "OpenSelfVowGUI"
           },
           "x": 24,
-          "y": 54
+          "y": 55
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_click1",
+          "image": "click.png",
+          "hoveredImage": "",
+          "onClick": {
+            "name": "OpenMoves"
+          },
+          "x": 24,
+          "y": 76
         }
       }
     ],

@@ -70,31 +70,31 @@ public class MainMenuButtonMessage {
 			return;
 		if (buttonID == 0) {
 
-			OpenMovesProcedure.execute(world, x, y, z, entity);
+			StrengthButtonProcedure.execute(entity);
 		}
 		if (buttonID == 1) {
 
-			StrengthButtonProcedure.execute(entity);
+			HealthButtonProcedure.execute(entity);
 		}
 		if (buttonID == 2) {
 
-			HealthButtonProcedure.execute(entity);
+			ControlButtonProcedure.execute(entity);
 		}
 		if (buttonID == 3) {
 
-			ControlButtonProcedure.execute(entity);
+			EnergyButtonProcedure.execute(entity);
 		}
 		if (buttonID == 4) {
 
-			EnergyButtonProcedure.execute(entity);
+			SpeedButtonProcedure.execute(entity);
 		}
 		if (buttonID == 5) {
 
-			SpeedButtonProcedure.execute(entity);
+			OpenSelfVowGUIProcedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 6) {
 
-			OpenSelfVowGUIProcedure.execute(world, x, y, z, entity);
+			OpenMovesProcedure.execute(world, x, y, z, entity);
 		}
 	}
 
