@@ -183,6 +183,7 @@ public class CraftKaisenModKeyMappings {
 			isDownOld = isDown;
 		}
 	};
+	public static final KeyMapping IMBUE_CE = new KeyMapping("key.craft_kaisen.imbue_ce", GLFW.GLFW_KEY_I, "key.categories.craft_kaisen");
 	private static long CHARGE_CURSED_ENERGY_LASTPRESS = 0;
 	private static long REVERSE_CURSED_TECHNIQUE_LASTPRESS = 0;
 
@@ -199,6 +200,7 @@ public class CraftKaisenModKeyMappings {
 		event.register(MENU);
 		event.register(TOGGLE_CT_SPECIAL);
 		event.register(REVERSE_CURSED_TECHNIQUE);
+		event.register(IMBUE_CE);
 	}
 
 	@Mod.EventBusSubscriber({Dist.CLIENT})

@@ -20,6 +20,7 @@ import net.mcreator.craftkaisen.client.gui.MainMenuScreen;
 import net.mcreator.craftkaisen.client.gui.InventoryCurseGuiScreen;
 import net.mcreator.craftkaisen.client.gui.ImbueGUIScreen;
 import net.mcreator.craftkaisen.client.gui.DomainClashScreen;
+import net.mcreator.craftkaisen.client.gui.CTMoveGUIScreen;
 import net.mcreator.craftkaisen.client.gui.CSMGUIScreen;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -37,6 +38,7 @@ public class CraftKaisenModScreens {
 			MenuScreens.register(CraftKaisenModMenus.PHONE_GUI.get(), PhoneGUIScreen::new);
 			MenuScreens.register(CraftKaisenModMenus.SELF_VOW_GUI.get(), SelfVowGUIScreen::new);
 			MenuScreens.register(CraftKaisenModMenus.PERK_GUI.get(), PerkGuiScreen::new);
+			MenuScreens.register(CraftKaisenModMenus.CT_MOVE_GUI.get(), CTMoveGUIScreen::new);
 		});
 	}
 }

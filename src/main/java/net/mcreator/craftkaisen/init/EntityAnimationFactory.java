@@ -44,14 +44,14 @@ public class EntityAnimationFactory {
 					syncable.animationprocedure = animation;
 				}
 			}
-			if (event.getEntity() instanceof FlyingCursedSpiritEntity syncable) {
+			if (event.getEntity() instanceof PandaEntity syncable) {
 				String animation = syncable.getSyncedAnimation();
 				if (!animation.equals("undefined")) {
 					syncable.setAnimation("undefined");
 					syncable.animationprocedure = animation;
 				}
 			}
-			if (event.getEntity() instanceof PandaEntity syncable) {
+			if (event.getEntity() instanceof FlyingCursedSpiritEntity syncable) {
 				String animation = syncable.getSyncedAnimation();
 				if (!animation.equals("undefined")) {
 					syncable.setAnimation("undefined");

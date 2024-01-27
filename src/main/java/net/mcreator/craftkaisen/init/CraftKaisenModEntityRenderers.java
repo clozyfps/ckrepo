@@ -160,6 +160,7 @@ public class CraftKaisenModEntityRenderers {
 		event.registerEntityRenderer(CraftKaisenModEntities.BODY_REPEL_3.get(), BodyRepel3Renderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.ROPE_MOB.get(), RopeMobRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.SUGURU_GETO.get(), SuguruGetoRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.PANDA.get(), PandaRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.FLYING_CURSED_SPIRIT.get(), FlyingCursedSpiritRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.MEGUNA.get(), MegunaRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.HOLLOW_PURPLE_GOJO.get(), ThrownItemRenderer::new);
@@ -171,6 +172,5 @@ public class CraftKaisenModEntityRenderers {
 		event.registerEntityRenderer(CraftKaisenModEntities.KAICHI.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.TAKADA.get(), TakadaRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.AOI_TODO.get(), AoiTodoRenderer::new);
-		event.registerEntityRenderer(CraftKaisenModEntities.PANDA.get(), PandaRenderer::new);
 	}
 }

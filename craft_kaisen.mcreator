@@ -5333,7 +5333,7 @@
           "src/main/resources/assets/craft_kaisen/models/item/test.json"
         ]
       },
-      "path": "~/Items/Testing"
+      "path": "~/Items"
     },
     {
       "name": "UnlimitedVoidMobOnEntityTickUpdate",
@@ -13109,6 +13109,10 @@
             "type": "entity"
           },
           {
+            "name": "z",
+            "type": "number"
+          },
+          {
             "name": "world",
             "type": "world"
           }
@@ -17600,7 +17604,7 @@
           "src/main/resources/assets/craft_kaisen/models/item/ldawda.json"
         ]
       },
-      "path": "~/Items/Testing"
+      "path": "~/Items"
     },
     {
       "name": "DisplayBar6",
@@ -17720,7 +17724,7 @@
           }
         ]
       },
-      "path": "~/Items/Procedure"
+      "path": "~/Items"
     },
     {
       "name": "DisplayOutput10",
@@ -19036,6 +19040,24 @@
           "src/main/resources/assets/craft_kaisen/models/item/suguru_geto_spawn_egg.json",
           "src/main/java/net/mcreator/craftkaisen/client/renderer/SuguruGetoRenderer.java",
           "src/main/resources/data/craft_kaisen/forge/biome_modifier/suguru_geto_biome_modifier.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "Panda",
+      "type": "animatedentity",
+      "sortid": 823,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "panda",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/entity/PandaEntity.java",
+          "src/main/resources/assets/craft_kaisen/models/item/panda_spawn_egg.json",
+          "src/main/java/net/mcreator/craftkaisen/entity/model/PandaModel.java",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/PandaRenderer.java",
+          "src/main/resources/data/craft_kaisen/forge/biome_modifier/panda_biome_modifier.json"
         ]
       },
       "path": "~/Mobs"
@@ -22556,24 +22578,6 @@
       "path": "~/Procedures"
     },
     {
-      "name": "Panda",
-      "type": "animatedentity",
-      "sortid": 965,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "panda",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/craftkaisen/entity/PandaEntity.java",
-          "src/main/resources/assets/craft_kaisen/models/item/panda_spawn_egg.json",
-          "src/main/java/net/mcreator/craftkaisen/entity/model/PandaModel.java",
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/PandaRenderer.java",
-          "src/main/resources/data/craft_kaisen/forge/biome_modifier/panda_biome_modifier.json"
-        ]
-      },
-      "path": "~/Mobs"
-    },
-    {
       "name": "NanamiKentoDisplayCondition",
       "type": "procedure",
       "sortid": 966,
@@ -22621,6 +22625,36 @@
         ]
       },
       "path": "~/Procedures"
+    },
+    {
+      "name": "ImbueCE",
+      "type": "keybind",
+      "sortid": 956,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "imbue_ce",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/network/ImbueCEMessage.java"
+        ]
+      },
+      "path": "~/Keybinds"
+    },
+    {
+      "name": "CTMoveGUI",
+      "type": "gui",
+      "sortid": 957,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ct_move_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/network/CTMoveGUIButtonMessage.java",
+          "src/main/java/net/mcreator/craftkaisen/client/gui/CTMoveGUIScreen.java",
+          "src/main/java/net/mcreator/craftkaisen/world/inventory/CTMoveGUIMenu.java"
+        ]
+      },
+      "path": "~/GUI"
     }
   ],
   "variable_elements": [
@@ -23418,7 +23452,6 @@
       "advancements.jujutsu_kaisen.descr": "Begin your journey in the world of JJK",
       "subtitles.crit": "",
       "item.craft_kaisen.nail": "Nail",
-      "gamerule.sMPSetting.description": "Sets the mod to smp settings",
       "item.craft_kaisen.cursed_mask": "Cursed Mask",
       "entity.craft_kaisen.choso": "Choso",
       "effect.craft_kaisen.body_shape_cooldown": "BodyShapeCooldown",
@@ -23496,7 +23529,6 @@
       "item.craft_kaisen.miwa_katana": "Miwa Katana",
       "advancements.perfect_preparation.title": "Perfect Preparation",
       "item.craft_kaisen.yuta_okkotsu_spawn_egg": "Yuta Okkotsu Spawn Egg",
-      "item.craft_kaisen.kamutoke": "\"Supreme Martial Solution\" Kamutoke",
       "item.craft_kaisen.itadori_outfit_chestplate": "Itadori Uniform ",
       "gui.craft_kaisen.perk_gui.button_accept": "Accept",
       "subtitles.hit": "strong hit",
@@ -23669,7 +23701,6 @@
       "item.craft_kaisen.crumble_away_ranged": "Crumble Away Ranged",
       "item.craft_kaisen.sleep_ranged": "Sleep Ranged",
       "item.craft_kaisen.test": "Test",
-      "gamerule.sMPSetting": "smpsetting",
       "advancements.semi_grade_1.title": "Semi Grade 1",
       "entity.craft_kaisen.reversal_red_entity": "Reversal Red Entity",
       "gamerule.maximumSukunaVesselPlayers.description": "Control how many players can be a sukuna vessel",
@@ -23719,6 +23750,7 @@
       "item.craft_kaisen.roppongi_cursed_spirit_spawn_egg": "Roppongi Cursed Spirit Spawn Egg",
       "advancements.grade_1.descr": "Reach The Required Fame.",
       "entity.craft_kaisen.panda": "Panda",
+      "key.categories.craft_kaisen": "Craft Kaisen",
       "entity.craft_kaisen.heian_era_sukuna": "Heian Era Sukuna",
       "gamerule.sukunaVesselMode": "SukunaVesselMultiplayer",
       "effect.craft_kaisen.surge": "Surge",
@@ -23770,7 +23802,6 @@
       "item.craft_kaisen.flower_projectile": "Flower Projectile",
       "advancements.grade_4.title": "Grade 4",
       "item.craft_kaisen.hollow_purple_projectile": "Hollow Purple Projectile",
-      "item.craft_kaisen.hiten": "Hiten",
       "entity.craft_kaisen.blue_entity": "Blue Entity",
       "item_group.craft_kaisen.ck_items": "Ck Items",
       "advancements.cursed_child.title": "Cursed Child",
