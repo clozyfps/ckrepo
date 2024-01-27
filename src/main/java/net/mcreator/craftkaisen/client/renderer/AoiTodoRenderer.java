@@ -20,7 +20,7 @@ public class AoiTodoRenderer extends HumanoidMobRenderer<AoiTodoEntity, Humanoid
 
 	@Override
 	protected void scale(AoiTodoEntity entity, PoseStack poseStack, float f) {
-		poseStack.scale(1.3f, 1.3f, 1.3f);
+		poseStack.scale(1.1f, 1.1f, 1.1f);
 	}
 
 	@Override

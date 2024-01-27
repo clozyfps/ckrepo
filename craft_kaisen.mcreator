@@ -8981,20 +8981,6 @@
       "path": "~/Ranged/Procedures"
     },
     {
-      "name": "Evade",
-      "type": "keybind",
-      "sortid": 400,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "evade",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/craftkaisen/network/EvadeMessage.java"
-        ]
-      },
-      "path": "~/Keybinds"
-    },
-    {
       "name": "AutoGuard",
       "type": "procedure",
       "sortid": 398,
@@ -11341,56 +11327,6 @@
         ]
       },
       "path": "~/Mobs"
-    },
-    {
-      "name": "ArmorSpecialOnKeyPressed",
-      "type": "procedure",
-      "sortid": 479,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "armor_special_on_key_pressed",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/craftkaisen/procedures/ArmorSpecialOnKeyPressedProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/Keybinds/Procedures"
-    },
-    {
-      "name": "ArmorSpecial",
-      "type": "keybind",
-      "sortid": 480,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "armor_special",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/craftkaisen/network/ArmorSpecialMessage.java"
-        ]
-      },
-      "path": "~/Keybinds"
     },
     {
       "name": "SukunaFingerPlayerFinishesUsingItem",
@@ -22670,6 +22606,55 @@
         ]
       },
       "path": "~/Particles"
+    },
+    {
+      "name": "NanamiKentoDisplayCondition",
+      "type": "procedure",
+      "sortid": 966,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nanami_kento_display_condition",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/NanamiKentoDisplayConditionProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Procedure"
+    },
+    {
+      "name": "RightClickBoogieWoogie",
+      "type": "procedure",
+      "sortid": 967,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "right_click_boogie_woogie",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/RightClickBoogieWoogieProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures"
     }
   ],
   "variable_elements": [
@@ -23456,7 +23441,6 @@
       "effect.craft_kaisen.small_pox_deity_cooldown": "SPDC",
       "item.craft_kaisen.fly_head_spawn_egg": "Fly Head Spawn Egg",
       "item.craft_kaisen.white_divine_dog_spawn_egg": "White Divine Dog Spawn Egg",
-      "key.craft_kaisen.evade": "Evade",
       "advancements.nue_advancement.descr": "Summon Nue",
       "advancements.black_divine_dog_advancement.title": "Black Divine Dog",
       "item.craft_kaisen.yuta_outfit_leggings": "Yuta Pants",
@@ -23524,7 +23508,6 @@
       "effect.craft_kaisen.cooldown": "Cooldown",
       "advancements.young_fishand_reverse_punishment.descr": "Kill Mahito",
       "entity.craft_kaisen.hanami": "Hanami",
-      "gui.craft_kaisen.ct_move_gui.label_page": "Page:",
       "subtitles.clap": "",
       "gui.craft_kaisen.main_menu.label_race_human": "Human",
       "gamerule.hardcoreLives.description": "Start with 2 lives, get 1 more life every time you level up (max is 2)",
@@ -23541,11 +23524,9 @@
       "item.craft_kaisen.yuta_outfit_chestplate": "Yuta Shirt",
       "gui.craft_kaisen.imbue_gui.button_imbue": "Imbue",
       "effect.craft_kaisen.slicing_mahito": "SlicingMahito",
-      "key.craft_kaisen.armor_special": "Armor Special",
       "item.craft_kaisen.fire_arrow": "Fire Arrow",
       "advancements.fearsome_womb.title": "Fearsome Womb",
       "item.craft_kaisen.ldawda": "Ldawda",
-      "key.craft_kaisen.imbue_ce": "Imbue CE",
       "item.craft_kaisen.miwa_katana": "Miwa Katana",
       "advancements.perfect_preparation.title": "Perfect Preparation",
       "item.craft_kaisen.yuta_okkotsu_spawn_egg": "Yuta Okkotsu Spawn Egg",
@@ -23629,22 +23610,12 @@
       "advancements.black_divine_dog_advancement.descr": "Summon The Black Divine Dog",
       "block.craft_kaisen.quest_board": "Quest Board",
       "advancements.shinjuku_showdown.descr": "Kill Meguna",
-      "gui.craft_kaisen.ct_move_gui.button_set_ability_41": "Foward Page \u003e\u003e",
       "entity.craft_kaisen.ko_guy": "Ko-Guy",
-      "gui.craft_kaisen.ct_move_gui.button_set_ability_42": "Unlock",
-      "gui.craft_kaisen.ct_move_gui.button_set_ability_4": "Set Ability 4",
       "gui.craft_kaisen.lapse_blue_overlay.label_ctrl_move_away": "SNEAK - Push",
-      "gui.craft_kaisen.ct_move_gui.button_set_ability_3": "Set Ability 3",
       "effect.craft_kaisen.piercing_blood": "PiercingBlood",
       "item.craft_kaisen.eight_handled_sword_divergent_sila_divine_general_mahoraga_spawn_egg": "Eight Handled Sword Divergent Sila Divine General Mahoraga Spawn Egg",
-      "gui.craft_kaisen.ct_move_gui.button_set_ability_2": "Set Ability 2",
       "item.craft_kaisen.toad_spawn_egg": "Toad Spawn Egg",
-      "gui.craft_kaisen.ct_move_gui.button_set_ability_1": "Set Ability 1",
-      "gui.craft_kaisen.ct_move_gui.button_set_ability_8": "Set Ability 8",
-      "gui.craft_kaisen.ct_move_gui.button_set_ability_7": "Set Ability 7",
-      "gui.craft_kaisen.ct_move_gui.button_set_ability_6": "Set Ability 6",
       "block.craft_kaisen.talisman_block": "Talisman Block",
-      "gui.craft_kaisen.ct_move_gui.button_set_ability_5": "Set Ability 5",
       "entity.craft_kaisen.suguru_geto": "Suguru Geto",
       "advancements.cursed_technique.title": "Cursed Technique",
       "advancements.the_honored_one.descr": "Kill Satoru Gojo",
@@ -23669,7 +23640,6 @@
       "itemGroup.tabck_weapons": "Ck Weapons",
       "entity.craft_kaisen.body_repel_1": "Body Repel 1",
       "entity.craft_kaisen.body_repel_3": "Body Repel 3",
-      "gui.craft_kaisen.ct_move_gui.button_set_ability_9": "Set Ability 9",
       "advancements.great_serpent_advancement.descr": "Tame The Great Serpent",
       "entity.craft_kaisen.wooden_box": "Wooden Box",
       "advancements.merged_beast_agito_advancement.title": "Merged Beast Agito",
@@ -23683,11 +23653,8 @@
       "advancements.rika_tamed.descr": "Gain Rika\u0027s Trust",
       "advancements.grade_1.title": "Grade 1",
       "gui.craft_kaisen.start_screen.label_empty": "\u003e",
-      "gui.craft_kaisen.ct_move_gui.button_set_ability_32": "Next Move \u003e\u003e",
-      "gui.craft_kaisen.ct_move_gui.button_set_ability_33": "\u003c\u003c Back Move",
       "gui.craft_kaisen.main_menu.label_empty1": "\u003e\u003e",
       "item.craft_kaisen.hanami_spawn_egg": "Hanami Spawn Egg",
-      "gui.craft_kaisen.ct_move_gui.button_set_ability_31": "\u003c\u003c Back Page",
       "gui.craft_kaisen.main_menu.label_empty5": "+",
       "advancements.ten_shadows_technique.descr": "Get the ten shadows technique",
       "item.craft_kaisen.ember_insect_projectile": "Ember Insect Projectile",
@@ -23724,9 +23691,6 @@
       "entity.craft_kaisen.ember_insect": "Ember Insect",
       "gui.craft_kaisen.perk_gui.button_decline": "Decline",
       "item.craft_kaisen.jujutsu_sorcerer_uniform_chestplate": "Jujutsu Sorcerer Uniform",
-      "gui.craft_kaisen.ct_move_gui.button_set_ability_12": "Set Ability 11",
-      "gui.craft_kaisen.ct_move_gui.button_set_ability_13": "Set Ability 12",
-      "gui.craft_kaisen.ct_move_gui.button_set_ability_11": "Set Ability 10",
       "item.craft_kaisen.awakened_maki_spawn_egg": "Maki Zenin Spawn Egg",
       "gui.craft_kaisen.block_point_overlay.label_empty": "",
       "item.craft_kaisen.slicing_excorism": "Slicing Excorism",

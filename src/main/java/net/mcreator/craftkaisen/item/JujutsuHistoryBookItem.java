@@ -33,7 +33,7 @@ public class JujutsuHistoryBookItem extends Item {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level world, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, world, list, flag);
-		list.add(Component.literal("A book that could contain secrets lost to the modern ages."));
+		list.add(Component.literal("\u00A7l\u00A75A book that could contain secrets lost to the modern ages."));
 	}
 
 	@Override
