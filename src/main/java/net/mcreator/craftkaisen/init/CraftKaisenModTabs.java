@@ -71,6 +71,8 @@ public class CraftKaisenModTabs {
 					tabData.accept(CraftKaisenModItems.HAMMER.get());
 					tabData.accept(CraftKaisenModItems.DRAGON_BONE.get());
 					tabData.accept(CraftKaisenModItems.NYOI_STAFF.get());
+					tabData.accept(CraftKaisenModItems.HITEN.get());
+					tabData.accept(CraftKaisenModItems.KAMUTOKE.get());
 				}).withSearchBar());
 		event.registerCreativeModeTab(new ResourceLocation("craft_kaisen", "ck_armor"),
 				builder -> builder.title(Component.translatable("item_group.craft_kaisen.ck_armor")).icon(() -> new ItemStack(CraftKaisenModItems.BANDAGE_BLIND_FOLD_HELMET.get())).displayItems((parameters, tabData) -> {

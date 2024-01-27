@@ -22472,6 +22472,204 @@
         ]
       },
       "path": "~/GUI"
+    },
+    {
+      "name": "SMPSetting",
+      "type": "gamerule",
+      "sortid": 963,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "smp_setting",
+      "metadata": {
+        "files": [],
+        "type": "logic"
+      },
+      "path": "~/Gamerules"
+    },
+    {
+      "name": "SixEyesTick",
+      "type": "procedure",
+      "sortid": 958,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "six_eyes_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/SixEyesTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "BossDrops",
+      "type": "procedure",
+      "sortid": 964,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "boss_drops",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/BossDropsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "Hiten",
+      "type": "tool",
+      "sortid": 960,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hiten",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/models/item/hiten.json",
+          "src/main/java/net/mcreator/craftkaisen/item/HitenItem.java"
+        ]
+      },
+      "path": "~/Weapons"
+    },
+    {
+      "name": "SetCe",
+      "type": "procedure",
+      "sortid": 956,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_ce",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/SetCeProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "SetCeMobs",
+      "type": "procedure",
+      "sortid": 957,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_ce_mobs",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/SetCeMobsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "KamutokeRightclicked",
+      "type": "procedure",
+      "sortid": 961,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kamutoke_rightclicked",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/KamutokeRightclickedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Weapons/Procedures"
+    },
+    {
+      "name": "Kamutoke",
+      "type": "tool",
+      "sortid": 962,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kamutoke",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/item/KamutokeItem.java",
+          "src/main/resources/assets/craft_kaisen/models/item/kamutoke.json"
+        ]
+      },
+      "path": "~/Weapons"
+    },
+    {
+      "name": "BlackLightning",
+      "type": "particle",
+      "sortid": 959,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "black_lightning",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/particle/BlackLightningParticle.java",
+          "src/main/resources/assets/craft_kaisen/particles/black_lightning.json"
+        ]
+      },
+      "path": "~/Particles"
     }
   ],
   "variable_elements": [

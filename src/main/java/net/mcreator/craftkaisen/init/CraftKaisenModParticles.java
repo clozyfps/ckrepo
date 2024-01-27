@@ -34,6 +34,7 @@ import net.mcreator.craftkaisen.client.particle.ClashParticleParticle;
 import net.mcreator.craftkaisen.client.particle.BlueParticleParticle;
 import net.mcreator.craftkaisen.client.particle.BloodSplashParticle;
 import net.mcreator.craftkaisen.client.particle.BloodParticle;
+import net.mcreator.craftkaisen.client.particle.BlackLightningParticle;
 import net.mcreator.craftkaisen.client.particle.BlackFlashPulseParticle;
 import net.mcreator.craftkaisen.client.particle.BlackFlashLightningParticle;
 
@@ -68,5 +69,6 @@ public class CraftKaisenModParticles {
 		event.registerSpriteSet(CraftKaisenModParticleTypes.SHRINE_SLICE_2.get(), ShrineSlice2Particle::provider);
 		event.registerSpriteSet(CraftKaisenModParticleTypes.SHRINE_SLICE_3.get(), ShrineSlice3Particle::provider);
 		event.registerSpriteSet(CraftKaisenModParticleTypes.PURPLE_BLOOD_SLASH.get(), PurpleBloodSlashParticle::provider);
+		event.registerSpriteSet(CraftKaisenModParticleTypes.BLACK_LIGHTNING.get(), BlackLightningParticle::provider);
 	}
 }

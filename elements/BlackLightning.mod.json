@@ -2,20 +2,20 @@
   "_fv": 57,
   "_type": "particle",
   "definition": {
-    "texture": "shrineslice1.png",
-    "animate": false,
+    "texture": "blacklightning.png",
+    "animate": true,
     "frameDuration": 1,
     "width": 0.2,
     "height": 0.2,
-    "scale": 55.0,
+    "scale": 10.0,
     "speedFactor": 0.0,
     "gravity": 0.0,
-    "maxAge": 3,
+    "maxAge": 7,
     "maxAgeDiff": 0,
     "angularVelocity": 0.0,
     "angularAcceleration": 0.0,
-    "canCollide": false,
+    "canCollide": true,
     "alwaysShow": true,
-    "renderType": "TRANSLUCENT"
+    "renderType": "OPAQUE"
   }
 }

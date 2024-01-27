@@ -14,4 +14,5 @@ public class CraftKaisenModGameRules {
 	public static final GameRules.Key<GameRules.BooleanValue> SUKUNA_VESSEL_MODE = GameRules.register("sukunaVesselMode", GameRules.Category.MISC, GameRules.BooleanValue.create(false));
 	public static final GameRules.Key<GameRules.BooleanValue> FORCE_SUKUNA_TECHNIQUE = GameRules.register("forceSukunaTechnique", GameRules.Category.MISC, GameRules.BooleanValue.create(true));
 	public static final GameRules.Key<GameRules.BooleanValue> HARDCORE_LIVES = GameRules.register("hardcoreLives", GameRules.Category.PLAYER, GameRules.BooleanValue.create(false));
+	public static final GameRules.Key<GameRules.BooleanValue> SMP_SETTING = GameRules.register("sMPSetting", GameRules.Category.MISC, GameRules.BooleanValue.create(false));
 }

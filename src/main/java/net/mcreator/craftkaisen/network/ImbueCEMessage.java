@@ -1,19 +1,11 @@
 
 package net.mcreator.craftkaisen.network;
 
-import net.minecraftforge.network.NetworkEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-
-import net.minecraft.network.FriendlyByteBuf;
-
 import net.mcreator.craftkaisen.CraftKaisenMod;
-
-import java.util.function.Supplier;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ImbueCEMessage {
+
 	int type, pressedms;
 
 	public ImbueCEMessage(int type, int pressedms) {
@@ -42,4 +34,5 @@ public class ImbueCEMessage {
 	public static void registerMessage(FMLCommonSetupEvent event) {
 		CraftKaisenMod.addNetworkMessage(ImbueCEMessage.class, ImbueCEMessage::buffer, ImbueCEMessage::new, ImbueCEMessage::handler);
 	}
+
 }

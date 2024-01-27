@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "truesukunatexture"
+      },
+      "name": "default"
+    }
+  }
+}
