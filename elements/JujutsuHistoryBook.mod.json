@@ -28,7 +28,7 @@
     "damageVsEntity": 0.0,
     "specialInformation": {
       "fixedValue": [
-        "A book that could contain secrets lost to the modern ages."
+        "§l§5A book that could contain secrets lost to the modern ages."
       ]
     },
     "glowCondition": {

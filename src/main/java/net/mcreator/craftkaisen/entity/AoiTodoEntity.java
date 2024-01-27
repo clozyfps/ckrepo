@@ -99,7 +99,7 @@ public class AoiTodoEntity extends Monster {
 
 	@Override
 	public EntityDimensions getDimensions(Pose pose) {
-		return super.getDimensions(pose).scale(1.3f);
+		return super.getDimensions(pose).scale(1.1f);
 	}
 
 	public static void init() {

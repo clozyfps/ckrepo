@@ -389,10 +389,6 @@ public class CraftKaisenModEntities {
 			EntityType.Builder.<SuguruGetoEntity>of(SuguruGetoEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(SuguruGetoEntity::new)
 
 					.sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<PandaEntity>> PANDA = register("panda",
-			EntityType.Builder.<PandaEntity>of(PandaEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(PandaEntity::new)
-
-					.sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<FlyingCursedSpiritEntity>> FLYING_CURSED_SPIRIT = register("flying_cursed_spirit",
 			EntityType.Builder.<FlyingCursedSpiritEntity>of(FlyingCursedSpiritEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(FlyingCursedSpiritEntity::new)
 
@@ -428,6 +424,10 @@ public class CraftKaisenModEntities {
 			EntityType.Builder.<TakadaEntity>of(TakadaEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(TakadaEntity::new).fireImmune().sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<AoiTodoEntity>> AOI_TODO = register("aoi_todo",
 			EntityType.Builder.<AoiTodoEntity>of(AoiTodoEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(AoiTodoEntity::new)
+
+					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<PandaEntity>> PANDA = register("panda",
+			EntityType.Builder.<PandaEntity>of(PandaEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(PandaEntity::new)
 
 					.sized(0.6f, 1.8f));
 
@@ -491,7 +491,6 @@ public class CraftKaisenModEntities {
 			BodyRepel3Entity.init();
 			RopeMobEntity.init();
 			SuguruGetoEntity.init();
-			PandaEntity.init();
 			FlyingCursedSpiritEntity.init();
 			MegunaEntity.init();
 			HajimeKashimoEntity.init();
@@ -500,6 +499,7 @@ public class CraftKaisenModEntities {
 			TogeInumakiEntity.init();
 			TakadaEntity.init();
 			AoiTodoEntity.init();
+			PandaEntity.init();
 		});
 	}
 
@@ -558,7 +558,6 @@ public class CraftKaisenModEntities {
 		event.put(BODY_REPEL_3.get(), BodyRepel3Entity.createAttributes().build());
 		event.put(ROPE_MOB.get(), RopeMobEntity.createAttributes().build());
 		event.put(SUGURU_GETO.get(), SuguruGetoEntity.createAttributes().build());
-		event.put(PANDA.get(), PandaEntity.createAttributes().build());
 		event.put(FLYING_CURSED_SPIRIT.get(), FlyingCursedSpiritEntity.createAttributes().build());
 		event.put(MEGUNA.get(), MegunaEntity.createAttributes().build());
 		event.put(HAJIME_KASHIMO.get(), HajimeKashimoEntity.createAttributes().build());
@@ -567,5 +566,6 @@ public class CraftKaisenModEntities {
 		event.put(TOGE_INUMAKI.get(), TogeInumakiEntity.createAttributes().build());
 		event.put(TAKADA.get(), TakadaEntity.createAttributes().build());
 		event.put(AOI_TODO.get(), AoiTodoEntity.createAttributes().build());
+		event.put(PANDA.get(), PandaEntity.createAttributes().build());
 	}
 }

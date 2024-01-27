@@ -19,9 +19,7 @@ import net.mcreator.craftkaisen.network.ToggleCTSpecialMessage;
 import net.mcreator.craftkaisen.network.ReverseCursedTechniqueMessage;
 import net.mcreator.craftkaisen.network.OutputMessage;
 import net.mcreator.craftkaisen.network.MenuMessage;
-import net.mcreator.craftkaisen.network.EvadeMessage;
 import net.mcreator.craftkaisen.network.ChargeCursedEnergyMessage;
-import net.mcreator.craftkaisen.network.ArmorSpecialMessage;
 import net.mcreator.craftkaisen.network.Ability6Message;
 import net.mcreator.craftkaisen.network.Ability5Message;
 import net.mcreator.craftkaisen.network.Ability4Message;
@@ -167,19 +165,6 @@ public class CraftKaisenModKeyMappings {
 			isDownOld = isDown;
 		}
 	};
-	public static final KeyMapping EVADE = new KeyMapping("key.craft_kaisen.evade", GLFW.GLFW_KEY_F, "key.categories.craft_kaisen") {
-		private boolean isDownOld = false;
-
-		@Override
-		public void setDown(boolean isDown) {
-			super.setDown(isDown);
-			if (isDownOld != isDown && isDown) {
-				CraftKaisenMod.PACKET_HANDLER.sendToServer(new EvadeMessage(0, 0));
-				EvadeMessage.pressAction(Minecraft.getInstance().player, 0, 0);
-			}
-			isDownOld = isDown;
-		}
-	};
 	public static final KeyMapping REVERSE_CURSED_TECHNIQUE = new KeyMapping("key.craft_kaisen.reverse_cursed_technique", GLFW.GLFW_KEY_H, "key.categories.craft_kaisen") {
 		private boolean isDownOld = false;
 
@@ -194,19 +179,6 @@ public class CraftKaisenModKeyMappings {
 				int dt = (int) (System.currentTimeMillis() - REVERSE_CURSED_TECHNIQUE_LASTPRESS);
 				CraftKaisenMod.PACKET_HANDLER.sendToServer(new ReverseCursedTechniqueMessage(1, dt));
 				ReverseCursedTechniqueMessage.pressAction(Minecraft.getInstance().player, 1, dt);
-			}
-			isDownOld = isDown;
-		}
-	};
-	public static final KeyMapping ARMOR_SPECIAL = new KeyMapping("key.craft_kaisen.armor_special", GLFW.GLFW_KEY_O, "key.categories.craft_kaisen") {
-		private boolean isDownOld = false;
-
-		@Override
-		public void setDown(boolean isDown) {
-			super.setDown(isDown);
-			if (isDownOld != isDown && isDown) {
-				CraftKaisenMod.PACKET_HANDLER.sendToServer(new ArmorSpecialMessage(0, 0));
-				ArmorSpecialMessage.pressAction(Minecraft.getInstance().player, 0, 0);
 			}
 			isDownOld = isDown;
 		}
@@ -226,9 +198,7 @@ public class CraftKaisenModKeyMappings {
 		event.register(OUTPUT);
 		event.register(MENU);
 		event.register(TOGGLE_CT_SPECIAL);
-		event.register(EVADE);
 		event.register(REVERSE_CURSED_TECHNIQUE);
-		event.register(ARMOR_SPECIAL);
 	}
 
 	@Mod.EventBusSubscriber({Dist.CLIENT})
@@ -246,9 +216,7 @@ public class CraftKaisenModKeyMappings {
 				OUTPUT.consumeClick();
 				MENU.consumeClick();
 				TOGGLE_CT_SPECIAL.consumeClick();
-				EVADE.consumeClick();
 				REVERSE_CURSED_TECHNIQUE.consumeClick();
-				ARMOR_SPECIAL.consumeClick();
 			}
 		}
 	}

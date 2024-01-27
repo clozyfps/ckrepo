@@ -5,7 +5,7 @@
     "mobName": "Nanami Kento",
     "mobLabel": "",
     "mobModelName": "Biped",
-    "mobModelTexture": "nanami_kento_mc.png",
+    "mobModelTexture": "kento-nanami-by-user-buhh-steve-model-on-planetminecraft-com.png",
     "transparentModelCondition": {
       "fixedValue": false
     },
@@ -21,7 +21,16 @@
     "boundingBoxScale": {
       "fixedValue": 1.0
     },
-    "modelLayers": [],
+    "modelLayers": [
+      {
+        "model": "Default",
+        "texture": "nanami-kento-on-planetminecraft-com.png",
+        "glow": false,
+        "condition": {
+          "name": "NanamiKentoDisplayCondition"
+        }
+      }
+    ],
     "modelWidth": 0.6,
     "modelHeight": 1.8,
     "modelShadowSize": 0.5,

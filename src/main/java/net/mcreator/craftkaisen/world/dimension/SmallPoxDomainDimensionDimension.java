@@ -48,7 +48,7 @@ public class SmallPoxDomainDimensionDimension {
 		double y = entity.getY();
 		double z = entity.getZ();
 		if (event.getTo() == ResourceKey.create(Registries.DIMENSION, new ResourceLocation("craft_kaisen:small_pox_domain_dimension"))) {
-			SmallPoxDomainDimensionPlayerEntersDimensionProcedure.execute(world, z, entity);
+			SmallPoxDomainDimensionPlayerEntersDimensionProcedure.execute(world, entity);
 		}
 	}
 }

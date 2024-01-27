@@ -211,7 +211,6 @@ public class CraftKaisenModItems {
 	public static final RegistryObject<Item> DISTORTED_BODY_HELMET = REGISTRY.register("distorted_body_helmet", () -> new DistortedBodyItem.Helmet());
 	public static final RegistryObject<Item> DISTORTED_BODY_CHESTPLATE = REGISTRY.register("distorted_body_chestplate", () -> new DistortedBodyItem.Chestplate());
 	public static final RegistryObject<Item> DISTORTED_BODY_LEGGINGS = REGISTRY.register("distorted_body_leggings", () -> new DistortedBodyItem.Leggings());
-	public static final RegistryObject<Item> PANDA_SPAWN_EGG = REGISTRY.register("panda_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.PANDA, -1, -16777216, new Item.Properties()));
 	public static final RegistryObject<Item> FLYING_CURSED_SPIRIT_SPAWN_EGG = REGISTRY.register("flying_cursed_spirit_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.FLYING_CURSED_SPIRIT, -1528117, -1, new Item.Properties()));
 	public static final RegistryObject<Item> MEGUNA_SPAWN_EGG = REGISTRY.register("meguna_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.MEGUNA, -1, -13421773, new Item.Properties()));
 	public static final RegistryObject<Item> CLAN_INVITE_PAPER = REGISTRY.register("clan_invite_paper", () -> new ClanInvitePaperItem());
@@ -232,6 +231,7 @@ public class CraftKaisenModItems {
 	public static final RegistryObject<Item> AOI_TODO_SPAWN_EGG = REGISTRY.register("aoi_todo_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.AOI_TODO, -7717975, -1256054, new Item.Properties()));
 	public static final RegistryObject<Item> HITEN = REGISTRY.register("hiten", () -> new HitenItem());
 	public static final RegistryObject<Item> KAMUTOKE = REGISTRY.register("kamutoke", () -> new KamutokeItem());
+	public static final RegistryObject<Item> PANDA_SPAWN_EGG = REGISTRY.register("panda_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.PANDA, -1, -16777216, new Item.Properties()));
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));

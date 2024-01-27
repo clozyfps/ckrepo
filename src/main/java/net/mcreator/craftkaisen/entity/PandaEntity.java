@@ -144,9 +144,9 @@ public class PandaEntity extends Monster implements GeoEntity {
 			if ((event.isMoving() || !(event.getLimbSwingAmount() > -0.15F && event.getLimbSwingAmount() < 0.15F))
 
 			) {
-				return event.setAndContinue(RawAnimation.begin().thenLoop("Walking"));
+				return event.setAndContinue(RawAnimation.begin().thenLoop("walking"));
 			}
-			return event.setAndContinue(RawAnimation.begin().thenLoop("Idle"));
+			return event.setAndContinue(RawAnimation.begin().thenLoop("idle"));
 		}
 		return PlayState.STOP;
 	}
@@ -164,7 +164,7 @@ public class PandaEntity extends Monster implements GeoEntity {
 		}
 		if (this.swinging && event.getController().getAnimationState() == AnimationController.State.STOPPED) {
 			event.getController().forceAnimationReset();
-			return event.setAndContinue(RawAnimation.begin().thenPlay("Attack"));
+			return event.setAndContinue(RawAnimation.begin().thenPlay("attack"));
 		}
 		return PlayState.CONTINUE;
 	}
