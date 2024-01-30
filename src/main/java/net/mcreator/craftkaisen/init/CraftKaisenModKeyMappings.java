@@ -19,6 +19,7 @@ import net.mcreator.craftkaisen.network.ToggleCTSpecialMessage;
 import net.mcreator.craftkaisen.network.ReverseCursedTechniqueMessage;
 import net.mcreator.craftkaisen.network.OutputMessage;
 import net.mcreator.craftkaisen.network.MenuMessage;
+import net.mcreator.craftkaisen.network.ImbueCEMessage;
 import net.mcreator.craftkaisen.network.ChargeCursedEnergyMessage;
 import net.mcreator.craftkaisen.network.Ability6Message;
 import net.mcreator.craftkaisen.network.Ability5Message;
@@ -183,9 +184,27 @@ public class CraftKaisenModKeyMappings {
 			isDownOld = isDown;
 		}
 	};
-	public static final KeyMapping IMBUE_CE = new KeyMapping("key.craft_kaisen.imbue_ce", GLFW.GLFW_KEY_I, "key.categories.craft_kaisen");
+	public static final KeyMapping IMBUE_CE = new KeyMapping("key.craft_kaisen.imbue_ce", GLFW.GLFW_KEY_I, "key.categories.craft_kaisen") {
+		private boolean isDownOld = false;
+
+		@Override
+		public void setDown(boolean isDown) {
+			super.setDown(isDown);
+			if (isDownOld != isDown && isDown) {
+				CraftKaisenMod.PACKET_HANDLER.sendToServer(new ImbueCEMessage(0, 0));
+				ImbueCEMessage.pressAction(Minecraft.getInstance().player, 0, 0);
+				IMBUE_CE_LASTPRESS = System.currentTimeMillis();
+			} else if (isDownOld != isDown && !isDown) {
+				int dt = (int) (System.currentTimeMillis() - IMBUE_CE_LASTPRESS);
+				CraftKaisenMod.PACKET_HANDLER.sendToServer(new ImbueCEMessage(1, dt));
+				ImbueCEMessage.pressAction(Minecraft.getInstance().player, 1, dt);
+			}
+			isDownOld = isDown;
+		}
+	};
 	private static long CHARGE_CURSED_ENERGY_LASTPRESS = 0;
 	private static long REVERSE_CURSED_TECHNIQUE_LASTPRESS = 0;
+	private static long IMBUE_CE_LASTPRESS = 0;
 
 	@SubscribeEvent
 	public static void registerKeyMappings(RegisterKeyMappingsEvent event) {
@@ -219,6 +238,7 @@ public class CraftKaisenModKeyMappings {
 				MENU.consumeClick();
 				TOGGLE_CT_SPECIAL.consumeClick();
 				REVERSE_CURSED_TECHNIQUE.consumeClick();
+				IMBUE_CE.consumeClick();
 			}
 		}
 	}

@@ -4,6 +4,12 @@
   "definition": {
     "triggerKey": "I",
     "keyBindingName": "Imbue CE",
-    "keyBindingCategoryKey": "craft_kaisen"
+    "keyBindingCategoryKey": "craft_kaisen",
+    "onKeyPressed": {
+      "name": "ImbueCEOnKeyPressed"
+    },
+    "onKeyReleased": {
+      "name": "ImbueCEOnKeyReleased"
+    }
   }
 }
