@@ -92,7 +92,6 @@ import net.mcreator.craftkaisen.entity.GreenClosedDoorEntity;
 import net.mcreator.craftkaisen.entity.GreatSerpentEntity;
 import net.mcreator.craftkaisen.entity.GoldOpenDoorEntity;
 import net.mcreator.craftkaisen.entity.GoldClosedDoorEntity;
-import net.mcreator.craftkaisen.entity.FlyingCursedSpiritEntity;
 import net.mcreator.craftkaisen.entity.FlyHeadEntity;
 import net.mcreator.craftkaisen.entity.FlowerProjectileProjectileEntity;
 import net.mcreator.craftkaisen.entity.FireArrowStormEntity;

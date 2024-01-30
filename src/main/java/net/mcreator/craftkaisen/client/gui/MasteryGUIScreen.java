@@ -1,9 +1,23 @@
 package net.mcreator.craftkaisen.client.gui;
 
+import net.minecraft.world.level.Level;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.chat.Component;
+import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+
+import net.mcreator.craftkaisen.world.inventory.MasteryGUIMenu;
+import net.mcreator.craftkaisen.procedures.RctMasteryProcedure;
+import net.mcreator.craftkaisen.procedures.CEMasteryProcedure;
+
+import java.util.HashMap;
+
+import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.blaze3d.systems.RenderSystem;
+
 public class MasteryGUIScreen extends AbstractContainerScreen<MasteryGUIMenu> {
-
 	private final static HashMap<String, Object> guistate = MasteryGUIMenu.guistate;
-
 	private final Level world;
 	private final int x, y, z;
 	private final Player entity;
@@ -24,11 +38,8 @@ public class MasteryGUIScreen extends AbstractContainerScreen<MasteryGUIMenu> {
 	@Override
 	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
 		this.renderBackground(ms);
-
 		super.render(ms, mouseX, mouseY, partialTicks);
-
 		this.renderTooltip(ms, mouseX, mouseY);
-
 	}
 
 	@Override
@@ -36,10 +47,8 @@ public class MasteryGUIScreen extends AbstractContainerScreen<MasteryGUIMenu> {
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
-
 		RenderSystem.setShaderTexture(0, texture);
 		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
-
 		RenderSystem.disableBlend();
 	}
 
@@ -49,7 +58,6 @@ public class MasteryGUIScreen extends AbstractContainerScreen<MasteryGUIMenu> {
 			this.minecraft.player.closeContainer();
 			return true;
 		}
-
 		return super.keyPressed(key, b, c);
 	}
 
@@ -65,7 +73,7 @@ public class MasteryGUIScreen extends AbstractContainerScreen<MasteryGUIMenu> {
 				RctMasteryProcedure.execute(entity), 7, 6, -12829636);
 		this.font.draw(poseStack,
 
-				CEMasteryProcedure.execute(), 7, 27, -12829636);
+				CEMasteryProcedure.execute(entity), 7, 27, -12829636);
 	}
 
 	@Override
@@ -76,7 +84,5 @@ public class MasteryGUIScreen extends AbstractContainerScreen<MasteryGUIMenu> {
 	@Override
 	public void init() {
 		super.init();
-
 	}
-
 }

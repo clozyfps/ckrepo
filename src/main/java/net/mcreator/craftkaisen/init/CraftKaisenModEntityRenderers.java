@@ -69,7 +69,6 @@ import net.mcreator.craftkaisen.client.renderer.GreenClosedDoorRenderer;
 import net.mcreator.craftkaisen.client.renderer.GreatSerpentRenderer;
 import net.mcreator.craftkaisen.client.renderer.GoldOpenDoorRenderer;
 import net.mcreator.craftkaisen.client.renderer.GoldClosedDoorRenderer;
-import net.mcreator.craftkaisen.client.renderer.FlyingCursedSpiritRenderer;
 import net.mcreator.craftkaisen.client.renderer.FlyHeadRenderer;
 import net.mcreator.craftkaisen.client.renderer.FireArrowStormRenderer;
 import net.mcreator.craftkaisen.client.renderer.FingerBearerRenderer;

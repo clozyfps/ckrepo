@@ -1,11 +1,16 @@
 
 package net.mcreator.craftkaisen.client.renderer;
 
-public class RedClosedDoorRenderer extends MobRenderer<RedClosedDoorEntity, ModelHakariDoorsClosed<RedClosedDoorEntity>> {
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.client.renderer.entity.MobRenderer;
+import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
+import net.mcreator.craftkaisen.entity.RedClosedDoorEntity;
+import net.mcreator.craftkaisen.client.model.ModelHakariDoorsClosed;
+
+public class RedClosedDoorRenderer extends MobRenderer<RedClosedDoorEntity, ModelHakariDoorsClosed<RedClosedDoorEntity>> {
 	public RedClosedDoorRenderer(EntityRendererProvider.Context context) {
 		super(context, new ModelHakariDoorsClosed(context.bakeLayer(ModelHakariDoorsClosed.LAYER_LOCATION)), 0.5f);
-
 	}
 
 	@Override
@@ -17,5 +22,4 @@ public class RedClosedDoorRenderer extends MobRenderer<RedClosedDoorEntity, Mode
 	protected boolean isShaking(RedClosedDoorEntity entity) {
 		return true;
 	}
-
 }
