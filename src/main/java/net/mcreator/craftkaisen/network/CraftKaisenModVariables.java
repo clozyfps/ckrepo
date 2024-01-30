@@ -149,9 +149,9 @@ public class CraftKaisenModVariables {
 			clone.Perk = original.Perk;
 			clone.Lives = original.Lives;
 			clone.SelfVow = original.SelfVow;
-			clone.PageSelfVow = original.PageSelfVow;
 			clone.SfDesc = original.SfDesc;
 			clone.CeMastery = original.CeMastery;
+			clone.PageSelfVow = original.PageSelfVow;
 			if (!event.isWasDeath()) {
 				clone.currentMove = original.currentMove;
 				clone.currentOutput = original.currentOutput;
@@ -454,9 +454,9 @@ public class CraftKaisenModVariables {
 		public String Perk = "\"\"";
 		public double Lives = 2.0;
 		public String SelfVow = "\"\"";
-		public String PageSelfVow = "Overtime";
 		public String SfDesc = "\"\"";
 		public double CeMastery = 0;
+		public String PageSelfVow = "Overtime";
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -561,9 +561,9 @@ public class CraftKaisenModVariables {
 			nbt.putString("Perk", Perk);
 			nbt.putDouble("Lives", Lives);
 			nbt.putString("SelfVow", SelfVow);
-			nbt.putString("PageSelfVow", PageSelfVow);
 			nbt.putString("SfDesc", SfDesc);
 			nbt.putDouble("CeMastery", CeMastery);
+			nbt.putString("PageSelfVow", PageSelfVow);
 			return nbt;
 		}
 
@@ -665,9 +665,9 @@ public class CraftKaisenModVariables {
 			Perk = nbt.getString("Perk");
 			Lives = nbt.getDouble("Lives");
 			SelfVow = nbt.getString("SelfVow");
-			PageSelfVow = nbt.getString("PageSelfVow");
 			SfDesc = nbt.getString("SfDesc");
 			CeMastery = nbt.getDouble("CeMastery");
+			PageSelfVow = nbt.getString("PageSelfVow");
 		}
 	}
 
@@ -788,9 +788,9 @@ public class CraftKaisenModVariables {
 					variables.Perk = message.data.Perk;
 					variables.Lives = message.data.Lives;
 					variables.SelfVow = message.data.SelfVow;
-					variables.PageSelfVow = message.data.PageSelfVow;
 					variables.SfDesc = message.data.SfDesc;
 					variables.CeMastery = message.data.CeMastery;
+					variables.PageSelfVow = message.data.PageSelfVow;
 				}
 			});
 			context.setPacketHandled(true);

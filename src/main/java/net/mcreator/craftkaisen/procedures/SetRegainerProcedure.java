@@ -1,13 +1,8 @@
 package net.mcreator.craftkaisen.procedures;
 
-import net.minecraft.world.entity.Entity;
-import net.minecraft.commands.arguments.EntityArgument;
-import net.minecraft.commands.CommandSourceStack;
+import net.minecraftforge.eventbus.api.Event;
 
-import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
-
-import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import com.mojang.brigadier.context.CommandContext;
+import javax.annotation.Nullable;
 
 public class SetRegainerProcedure {
 	public static void execute(CommandContext<CommandSourceStack> arguments) {

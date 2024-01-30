@@ -1,17 +1,8 @@
 package net.mcreator.craftkaisen.procedures;
 
-import net.minecraft.world.level.Level;
-import net.minecraft.world.entity.projectile.Projectile;
-import net.minecraft.world.entity.projectile.AbstractArrow;
-import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraftforge.eventbus.api.Event;
 
-import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
-import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
-import net.mcreator.craftkaisen.entity.IceTickingEntity;
-import net.mcreator.craftkaisen.entity.IceNeedleEntity;
+import javax.annotation.Nullable;
 
 public class UraumeOnEntityTickUpdateProcedure {
 	public static void execute(Entity entity) {
@@ -26,7 +17,7 @@ public class UraumeOnEntityTickUpdateProcedure {
 						if (!projectileLevel.isClientSide()) {
 							Projectile _entityToSpawn = new Object() {
 								public Projectile getArrow(Level level, Entity shooter, float damage, int knockback) {
-									AbstractArrow entityToSpawn = new IceTickingEntity(CraftKaisenModEntities.ICE_TICKING.get(), level);
+									AbstractArrow entityToSpawn = new IceTickingEntity(CraftKaisenModEntities.DELETED_MOD_ELEMENT.get(), level);
 									entityToSpawn.setOwner(shooter);
 									entityToSpawn.setBaseDamage(damage);
 									entityToSpawn.setKnockback(knockback);
@@ -47,7 +38,7 @@ public class UraumeOnEntityTickUpdateProcedure {
 						if (!projectileLevel.isClientSide()) {
 							Projectile _entityToSpawn = new Object() {
 								public Projectile getArrow(Level level, Entity shooter, float damage, int knockback) {
-									AbstractArrow entityToSpawn = new IceNeedleEntity(CraftKaisenModEntities.ICE_NEEDLE.get(), level);
+									AbstractArrow entityToSpawn = new IceNeedleEntity(CraftKaisenModEntities.DELETED_MOD_ELEMENT.get(), level);
 									entityToSpawn.setOwner(shooter);
 									entityToSpawn.setBaseDamage(damage);
 									entityToSpawn.setKnockback(knockback);
@@ -63,7 +54,7 @@ public class UraumeOnEntityTickUpdateProcedure {
 				}
 				if (Math.random() < 0.001) {
 					if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-						_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.WINTRY_ICICLE.get(), 30, 0, false, false));
+						_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.DELETED_MOD_ELEMENT.get(), 30, 0, false, false));
 				}
 			}
 		}

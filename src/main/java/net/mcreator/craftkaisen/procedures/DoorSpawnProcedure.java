@@ -1,46 +1,8 @@
 package net.mcreator.craftkaisen.procedures;
 
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.event.entity.EntityJoinLevelEvent;
-
-import net.minecraft.world.phys.Vec3;
-import net.minecraft.world.phys.AABB;
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.entity.MobSpawnType;
-import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.damagesource.DamageTypes;
-import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.tags.TagKey;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.core.particles.SimpleParticleType;
-import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.core.BlockPos;
-
-import net.mcreator.craftkaisen.init.CraftKaisenModParticleTypes;
-import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
-import net.mcreator.craftkaisen.entity.RedOpenDoorEntity;
-import net.mcreator.craftkaisen.entity.RedClosedDoorEntity;
-import net.mcreator.craftkaisen.entity.RainbowOpenDoorEntity;
-import net.mcreator.craftkaisen.entity.RainbowClosedDoorEntity;
-import net.mcreator.craftkaisen.entity.GreenOpenDoorEntity;
-import net.mcreator.craftkaisen.entity.GreenClosedDoorEntity;
-import net.mcreator.craftkaisen.entity.GoldOpenDoorEntity;
-import net.mcreator.craftkaisen.entity.GoldClosedDoorEntity;
-import net.mcreator.craftkaisen.CraftKaisenMod;
 
 import javax.annotation.Nullable;
-
-import java.util.stream.Collectors;
-import java.util.List;
-import java.util.Comparator;
 
 @Mod.EventBusSubscriber
 public class DoorSpawnProcedure {
@@ -190,7 +152,7 @@ public class DoorSpawnProcedure {
 				if (!entity.level.isClientSide())
 					entity.discard();
 				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = new RainbowClosedDoorEntity(CraftKaisenModEntities.RAINBOW_CLOSED_DOOR.get(), _level);
+					Entity entityToSpawn = new RainbowClosedDoorEntity(CraftKaisenModEntities.DELETED_MOD_ELEMENT.get(), _level);
 					entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
 					if (entityToSpawn instanceof Mob _mobToSpawn)
 						_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);

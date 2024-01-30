@@ -218,6 +218,7 @@ public class CraftKaisenModItems {
 	public static final RegistryObject<Item> DISTORTED_BODY_CHESTPLATE = REGISTRY.register("distorted_body_chestplate", () -> new DistortedBodyItem.Chestplate());
 	public static final RegistryObject<Item> DISTORTED_BODY_LEGGINGS = REGISTRY.register("distorted_body_leggings", () -> new DistortedBodyItem.Leggings());
 	public static final RegistryObject<Item> PANDA_SPAWN_EGG = REGISTRY.register("panda_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.PANDA, -1, -16777216, new Item.Properties()));
+	public static final RegistryObject<Item> FLYING_CURSED_SPIRIT_SPAWN_EGG = REGISTRY.register("flying_cursed_spirit_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.FLYING_CURSED_SPIRIT, -1528117, -1, new Item.Properties()));
 	public static final RegistryObject<Item> MEGUNA_SPAWN_EGG = REGISTRY.register("meguna_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.MEGUNA, -1, -13421773, new Item.Properties()));
 	public static final RegistryObject<Item> CLAN_INVITE_PAPER = REGISTRY.register("clan_invite_paper", () -> new ClanInvitePaperItem());
 	public static final RegistryObject<Item> NYOI_STAFF = REGISTRY.register("nyoi_staff", () -> new NyoiStaffItem());
@@ -247,7 +248,6 @@ public class CraftKaisenModItems {
 	public static final RegistryObject<Item> MAHITO_OUTFIT_LEGGINGS = REGISTRY.register("mahito_outfit_leggings", () -> new MahitoOutfitItem.Leggings());
 	public static final RegistryObject<Item> NANAMI_OUTFIT_CHESTPLATE = REGISTRY.register("nanami_outfit_chestplate", () -> new NanamiOutfitItem.Chestplate());
 	public static final RegistryObject<Item> NANAMI_OUTFIT_LEGGINGS = REGISTRY.register("nanami_outfit_leggings", () -> new NanamiOutfitItem.Leggings());
-	public static final RegistryObject<Item> FLYING_CURSED_SPIRIT_SPAWN_EGG = REGISTRY.register("flying_cursed_spirit_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.FLYING_CURSED_SPIRIT, -1528117, -1, new Item.Properties()));
 	public static final RegistryObject<Item> RAINBOW_CLOSED_DOOR_SPAWN_EGG = REGISTRY.register("rainbow_closed_door_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.RAINBOW_CLOSED_DOOR, -1, -1, new Item.Properties()));
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {

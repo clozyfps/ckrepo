@@ -1,13 +1,11 @@
 package net.mcreator.craftkaisen.procedures;
 
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.entity.Entity;
+import net.minecraftforge.eventbus.api.Event;
 
-import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
+import javax.annotation.Nullable;
 
 public class RerollCtRightclickedProcedure {
-	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, ItemStack itemstack) {
+	public static void execute(Entity entity, ItemStack itemstack) {
 		if (entity == null)
 			return;
 		{
@@ -52,7 +50,7 @@ public class RerollCtRightclickedProcedure {
 				capability.syncPlayerVariables(entity);
 			});
 		}
-		RandomiseCursedTechniqueProcedure.execute(world, x, y, z, entity);
+		RandomiseCursedTechniqueProcedure.execute(entity);
 		itemstack.shrink(1);
 	}
 }

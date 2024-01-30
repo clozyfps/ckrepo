@@ -409,6 +409,10 @@ public class CraftKaisenModEntities {
 			EntityType.Builder.<PandaEntity>of(PandaEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(PandaEntity::new)
 
 					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<FlyingCursedSpiritEntity>> FLYING_CURSED_SPIRIT = register("flying_cursed_spirit",
+			EntityType.Builder.<FlyingCursedSpiritEntity>of(FlyingCursedSpiritEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(FlyingCursedSpiritEntity::new)
+
+					.sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<MegunaEntity>> MEGUNA = register("meguna",
 			EntityType.Builder.<MegunaEntity>of(MegunaEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(MegunaEntity::new)
 
@@ -460,10 +464,6 @@ public class CraftKaisenModEntities {
 			EntityType.Builder.<IceTickingEntity>of(IceTickingEntity::new, MobCategory.MISC).setCustomClientFactory(IceTickingEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 	public static final RegistryObject<EntityType<UraumeEntity>> URAUME = register("uraume",
 			EntityType.Builder.<UraumeEntity>of(UraumeEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(UraumeEntity::new)
-
-					.sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<FlyingCursedSpiritEntity>> FLYING_CURSED_SPIRIT = register("flying_cursed_spirit",
-			EntityType.Builder.<FlyingCursedSpiritEntity>of(FlyingCursedSpiritEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(FlyingCursedSpiritEntity::new)
 
 					.sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<GreenOpenDoorEntity>> GREEN_OPEN_DOOR = register("green_open_door",
@@ -548,6 +548,7 @@ public class CraftKaisenModEntities {
 			RopeMobEntity.init();
 			SuguruGetoEntity.init();
 			PandaEntity.init();
+			FlyingCursedSpiritEntity.init();
 			MegunaEntity.init();
 			HajimeKashimoEntity.init();
 			MergedBeastAgitoEntity.init();
@@ -559,7 +560,6 @@ public class CraftKaisenModEntities {
 			HundredDemonsTickEntity.init();
 			IcileEntity.init();
 			UraumeEntity.init();
-			FlyingCursedSpiritEntity.init();
 			GreenOpenDoorEntity.init();
 			RedOpenDoorEntity.init();
 			GoldOpenDoorEntity.init();
@@ -627,6 +627,7 @@ public class CraftKaisenModEntities {
 		event.put(ROPE_MOB.get(), RopeMobEntity.createAttributes().build());
 		event.put(SUGURU_GETO.get(), SuguruGetoEntity.createAttributes().build());
 		event.put(PANDA.get(), PandaEntity.createAttributes().build());
+		event.put(FLYING_CURSED_SPIRIT.get(), FlyingCursedSpiritEntity.createAttributes().build());
 		event.put(MEGUNA.get(), MegunaEntity.createAttributes().build());
 		event.put(HAJIME_KASHIMO.get(), HajimeKashimoEntity.createAttributes().build());
 		event.put(MERGED_BEAST_AGITO.get(), MergedBeastAgitoEntity.createAttributes().build());
@@ -638,7 +639,6 @@ public class CraftKaisenModEntities {
 		event.put(HUNDRED_DEMONS_TICK.get(), HundredDemonsTickEntity.createAttributes().build());
 		event.put(ICILE.get(), IcileEntity.createAttributes().build());
 		event.put(URAUME.get(), UraumeEntity.createAttributes().build());
-		event.put(FLYING_CURSED_SPIRIT.get(), FlyingCursedSpiritEntity.createAttributes().build());
 		event.put(GREEN_OPEN_DOOR.get(), GreenOpenDoorEntity.createAttributes().build());
 		event.put(RED_OPEN_DOOR.get(), RedOpenDoorEntity.createAttributes().build());
 		event.put(GOLD_OPEN_DOOR.get(), GoldOpenDoorEntity.createAttributes().build());

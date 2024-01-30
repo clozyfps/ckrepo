@@ -1,36 +1,17 @@
 
 package net.mcreator.craftkaisen.entity;
 
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.network.PlayMessages;
-import net.minecraftforge.network.NetworkHooks;
-
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.entity.projectile.ThrownPotion;
-import net.minecraft.world.entity.projectile.AbstractArrow;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.ai.navigation.PathNavigation;
-import net.minecraft.world.entity.ai.navigation.FlyingPathNavigation;
-import net.minecraft.world.entity.ai.control.FlyingMoveControl;
+import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
-import net.minecraft.world.entity.MobType;
-import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.AreaEffectCloud;
-import net.minecraft.world.damagesource.DamageTypes;
-import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.level.material.Material;
+import net.minecraft.nbt.Tag;
+import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.protocol.game.ClientGamePacketListener;
-import net.minecraft.network.protocol.Packet;
-import net.minecraft.core.BlockPos;
 
-import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
+import javax.annotation.Nullable;
 
 public class RainbowOpenDoorEntity extends Monster {
+
 	public RainbowOpenDoorEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(CraftKaisenModEntities.RAINBOW_OPEN_DOOR.get(), world);
 	}
@@ -40,7 +21,9 @@ public class RainbowOpenDoorEntity extends Monster {
 		maxUpStep = 0.6f;
 		xpReward = 0;
 		setNoAi(true);
+
 		this.moveControl = new FlyingMoveControl(this, 10, true);
+
 	}
 
 	@Override
@@ -75,6 +58,7 @@ public class RainbowOpenDoorEntity extends Monster {
 
 	@Override
 	public boolean causeFallDamage(float l, float d, DamageSource source) {
+
 		return false;
 	}
 
@@ -122,10 +106,12 @@ public class RainbowOpenDoorEntity extends Monster {
 
 	public void aiStep() {
 		super.aiStep();
+
 		this.setNoGravity(true);
 	}
 
 	public static void init() {
+
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
@@ -135,7 +121,10 @@ public class RainbowOpenDoorEntity extends Monster {
 		builder = builder.add(Attributes.ARMOR, 0);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 3);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 16);
+
 		builder = builder.add(Attributes.FLYING_SPEED, 0.3);
+
 		return builder;
 	}
+
 }

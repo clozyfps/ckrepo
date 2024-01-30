@@ -1,14 +1,8 @@
 package net.mcreator.craftkaisen.procedures;
 
-import net.minecraft.world.level.Level;
-import net.minecraft.world.entity.projectile.Projectile;
-import net.minecraft.world.entity.projectile.AbstractArrow;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.InteractionHand;
+import net.minecraftforge.eventbus.api.Event;
 
-import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
-import net.mcreator.craftkaisen.entity.DoorsCheckerEntity;
+import javax.annotation.Nullable;
 
 public class DoorsProcedureProcedure {
 	public static void execute(Entity entity) {
@@ -21,7 +15,7 @@ public class DoorsProcedureProcedure {
 			if (!projectileLevel.isClientSide()) {
 				Projectile _entityToSpawn = new Object() {
 					public Projectile getArrow(Level level, Entity shooter, float damage, int knockback) {
-						AbstractArrow entityToSpawn = new DoorsCheckerEntity(CraftKaisenModEntities.DOORS_CHECKER.get(), level);
+						AbstractArrow entityToSpawn = new DoorsCheckerEntity(CraftKaisenModEntities.DELETED_MOD_ELEMENT.get(), level);
 						entityToSpawn.setOwner(shooter);
 						entityToSpawn.setBaseDamage(damage);
 						entityToSpawn.setKnockback(knockback);
