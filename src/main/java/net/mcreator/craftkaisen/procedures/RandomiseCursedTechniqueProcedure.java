@@ -83,7 +83,7 @@ public class RandomiseCursedTechniqueProcedure {
 			}
 		} else if (techniqueNumber == 7) {
 			{
-				String _setval = "Inverse";
+				String _setval = "Missile Fists";
 				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.technique = _setval;
 					capability.syncPlayerVariables(entity);

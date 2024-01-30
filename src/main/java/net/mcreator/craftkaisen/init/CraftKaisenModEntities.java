@@ -77,6 +77,7 @@ import net.mcreator.craftkaisen.entity.LapseBlueRangedProjectileEntity;
 import net.mcreator.craftkaisen.entity.KoGuyEntity;
 import net.mcreator.craftkaisen.entity.KaichiEntity;
 import net.mcreator.craftkaisen.entity.JogoEntity;
+import net.mcreator.craftkaisen.entity.JinichiZeninEntity;
 import net.mcreator.craftkaisen.entity.InventoryCurseMobEntity;
 import net.mcreator.craftkaisen.entity.IcileEntity;
 import net.mcreator.craftkaisen.entity.IceTickingEntity;
@@ -95,6 +96,7 @@ import net.mcreator.craftkaisen.entity.GoldClosedDoorEntity;
 import net.mcreator.craftkaisen.entity.FlyingCursedSpiritEntity;
 import net.mcreator.craftkaisen.entity.FlyHeadEntity;
 import net.mcreator.craftkaisen.entity.FlowerProjectileProjectileEntity;
+import net.mcreator.craftkaisen.entity.FistProjectileEntity;
 import net.mcreator.craftkaisen.entity.FireArrowStormEntity;
 import net.mcreator.craftkaisen.entity.FireArrowProjectileEntity;
 import net.mcreator.craftkaisen.entity.FireArrowMobProjectileEntity;
@@ -169,7 +171,7 @@ public class CraftKaisenModEntities {
 			EntityType.Builder.<RugbyFieldCursedSpiritEntity>of(RugbyFieldCursedSpiritEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 					.setCustomClientFactory(RugbyFieldCursedSpiritEntity::new)
 
-					.sized(0.6f, 1.8f));
+					.sized(2f, 1.8f));
 	public static final RegistryObject<EntityType<KoGuyEntity>> KO_GUY = register("ko_guy",
 			EntityType.Builder.<KoGuyEntity>of(KoGuyEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(KoGuyEntity::new)
 
@@ -409,10 +411,6 @@ public class CraftKaisenModEntities {
 			EntityType.Builder.<PandaEntity>of(PandaEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(PandaEntity::new)
 
 					.sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<FlyingCursedSpiritEntity>> FLYING_CURSED_SPIRIT = register("flying_cursed_spirit",
-			EntityType.Builder.<FlyingCursedSpiritEntity>of(FlyingCursedSpiritEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(FlyingCursedSpiritEntity::new)
-
-					.sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<MegunaEntity>> MEGUNA = register("meguna",
 			EntityType.Builder.<MegunaEntity>of(MegunaEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(MegunaEntity::new)
 
@@ -486,6 +484,16 @@ public class CraftKaisenModEntities {
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(RainbowClosedDoorEntity::new).fireImmune().sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<DoorsCheckerEntity>> DOORS_CHECKER = register("projectile_doors_checker",
 			EntityType.Builder.<DoorsCheckerEntity>of(DoorsCheckerEntity::new, MobCategory.MISC).setCustomClientFactory(DoorsCheckerEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<JinichiZeninEntity>> JINICHI_ZENIN = register("jinichi_zenin",
+			EntityType.Builder.<JinichiZeninEntity>of(JinichiZeninEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(JinichiZeninEntity::new)
+
+					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<FistProjectileEntity>> FIST_PROJECTILE = register("projectile_fist_projectile",
+			EntityType.Builder.<FistProjectileEntity>of(FistProjectileEntity::new, MobCategory.MISC).setCustomClientFactory(FistProjectileEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<FlyingCursedSpiritEntity>> FLYING_CURSED_SPIRIT = register("flying_cursed_spirit",
+			EntityType.Builder.<FlyingCursedSpiritEntity>of(FlyingCursedSpiritEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(FlyingCursedSpiritEntity::new)
+
+					.sized(0.6f, 1.8f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -548,7 +556,6 @@ public class CraftKaisenModEntities {
 			RopeMobEntity.init();
 			SuguruGetoEntity.init();
 			PandaEntity.init();
-			FlyingCursedSpiritEntity.init();
 			MegunaEntity.init();
 			HajimeKashimoEntity.init();
 			MergedBeastAgitoEntity.init();
@@ -568,6 +575,8 @@ public class CraftKaisenModEntities {
 			RedClosedDoorEntity.init();
 			GoldClosedDoorEntity.init();
 			RainbowClosedDoorEntity.init();
+			JinichiZeninEntity.init();
+			FlyingCursedSpiritEntity.init();
 		});
 	}
 
@@ -627,7 +636,6 @@ public class CraftKaisenModEntities {
 		event.put(ROPE_MOB.get(), RopeMobEntity.createAttributes().build());
 		event.put(SUGURU_GETO.get(), SuguruGetoEntity.createAttributes().build());
 		event.put(PANDA.get(), PandaEntity.createAttributes().build());
-		event.put(FLYING_CURSED_SPIRIT.get(), FlyingCursedSpiritEntity.createAttributes().build());
 		event.put(MEGUNA.get(), MegunaEntity.createAttributes().build());
 		event.put(HAJIME_KASHIMO.get(), HajimeKashimoEntity.createAttributes().build());
 		event.put(MERGED_BEAST_AGITO.get(), MergedBeastAgitoEntity.createAttributes().build());
@@ -647,5 +655,7 @@ public class CraftKaisenModEntities {
 		event.put(RED_CLOSED_DOOR.get(), RedClosedDoorEntity.createAttributes().build());
 		event.put(GOLD_CLOSED_DOOR.get(), GoldClosedDoorEntity.createAttributes().build());
 		event.put(RAINBOW_CLOSED_DOOR.get(), RainbowClosedDoorEntity.createAttributes().build());
+		event.put(JINICHI_ZENIN.get(), JinichiZeninEntity.createAttributes().build());
+		event.put(FLYING_CURSED_SPIRIT.get(), FlyingCursedSpiritEntity.createAttributes().build());
 	}
 }

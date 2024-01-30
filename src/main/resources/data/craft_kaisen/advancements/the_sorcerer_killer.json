@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "craft_kaisen:inverted_spear"
+    },
+    "title": {
+      "translate": "advancements.the_sorcerer_killer.title"
+    },
+    "description": {
+      "translate": "advancements.the_sorcerer_killer.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "the_sorcerer_killer": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 5
+  },
+  "parent": "craft_kaisen:the_honored_one"
+}

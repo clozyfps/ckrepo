@@ -16,7 +16,7 @@ public class CursedEnergySwitchProcedure {
 				entity.getPersistentData().putString("moveDisplay", "Simple Domain");
 				entity.getPersistentData().putDouble("moveCost", 20);
 			} else {
-				entity.getPersistentData().putString("moveDisplay", "Needs to be learned.. (SD)");
+				entity.getPersistentData().putString("moveDisplay", "Havent Learned Yet");
 			}
 		} else if (entity.getPersistentData().getDouble("moveNumber") == 2) {
 			if (entity instanceof ServerPlayer _plr7 && _plr7.level instanceof ServerLevel
@@ -24,7 +24,7 @@ public class CursedEnergySwitchProcedure {
 				entity.getPersistentData().putString("moveDisplay", "Domain Amplification");
 				entity.getPersistentData().putDouble("moveCost", 35);
 			} else {
-				entity.getPersistentData().putString("moveDisplay", "Needs to be learned.. (DA)");
+				entity.getPersistentData().putString("moveDisplay", "Havent Learned Yet");
 			}
 		}
 	}

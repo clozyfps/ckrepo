@@ -30,6 +30,7 @@ import net.mcreator.craftkaisen.procedures.SetRatioProcedure;
 import net.mcreator.craftkaisen.procedures.SetPhysicallyGiftedProcedure;
 import net.mcreator.craftkaisen.procedures.SetPPLTProcedure;
 import net.mcreator.craftkaisen.procedures.SetNoEnergyProcedure;
+import net.mcreator.craftkaisen.procedures.SetMissileFistsProcedure;
 import net.mcreator.craftkaisen.procedures.SetMiracleProcedure;
 import net.mcreator.craftkaisen.procedures.SetLimitlessProcedure;
 import net.mcreator.craftkaisen.procedures.SetLevelProcedure;
@@ -302,6 +303,20 @@ public class SetCommandCommand {
 						direction = entity.getDirection();
 
 					SetPPLTProcedure.execute(entity);
+					return 0;
+				})).then(Commands.literal("MissileFists").executes(arguments -> {
+					Level world = arguments.getSource().getUnsidedLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null && world instanceof ServerLevel _servLevel)
+						entity = FakePlayerFactory.getMinecraft(_servLevel);
+					Direction direction = Direction.DOWN;
+					if (entity != null)
+						direction = entity.getDirection();
+
+					SetMissileFistsProcedure.execute(arguments);
 					return 0;
 				})))).then(Commands.literal("Race").then(Commands.argument("name", EntityArgument.player()).then(Commands.literal("Human").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();

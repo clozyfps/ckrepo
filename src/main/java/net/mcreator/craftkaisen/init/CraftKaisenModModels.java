@@ -47,6 +47,7 @@ import net.mcreator.craftkaisen.client.model.Modelhanami;
 import net.mcreator.craftkaisen.client.model.Modelgetosandalsnew;
 import net.mcreator.craftkaisen.client.model.Modelgetorobes;
 import net.mcreator.craftkaisen.client.model.Modelgetolegs;
+import net.mcreator.craftkaisen.client.model.Modelfist;
 import net.mcreator.craftkaisen.client.model.Modelfemaleuniform;
 import net.mcreator.craftkaisen.client.model.Modelemberinsect;
 import net.mcreator.craftkaisen.client.model.Modeldivinemahoraga;
@@ -88,6 +89,7 @@ import net.mcreator.craftkaisen.client.model.ModelFingerBearernew;
 public class CraftKaisenModModels {
 	@SubscribeEvent
 	public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
+		event.registerLayerDefinition(Modelfist.LAYER_LOCATION, Modelfist::createBodyLayer);
 		event.registerLayerDefinition(ModelRoppongiCurse.LAYER_LOCATION, ModelRoppongiCurse::createBodyLayer);
 		event.registerLayerDefinition(Modelyutafitnew.LAYER_LOCATION, Modelyutafitnew::createBodyLayer);
 		event.registerLayerDefinition(ModelYujikunaShirtless.LAYER_LOCATION, ModelYujikunaShirtless::createBodyLayer);

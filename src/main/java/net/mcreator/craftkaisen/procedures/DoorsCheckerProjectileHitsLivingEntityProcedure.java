@@ -1,8 +1,22 @@
 package net.mcreator.craftkaisen.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.util.RandomSource;
+import net.minecraft.util.Mth;
+import net.minecraft.server.level.ServerLevel;
 
-import javax.annotation.Nullable;
+import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
+import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
+import net.mcreator.craftkaisen.entity.RedOpenDoorEntity;
+import net.mcreator.craftkaisen.entity.RainbowOpenDoorEntity;
+import net.mcreator.craftkaisen.entity.GreenOpenDoorEntity;
+import net.mcreator.craftkaisen.entity.GoldOpenDoorEntity;
 
 public class DoorsCheckerProjectileHitsLivingEntityProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, Entity sourceentity) {
@@ -16,7 +30,7 @@ public class DoorsCheckerProjectileHitsLivingEntityProcedure {
 					if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 						_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 20, 6, false, false));
 					if (world instanceof ServerLevel _level) {
-						Entity entityToSpawn = new GreenOpenDoorEntity(CraftKaisenModEntities.DELETED_MOD_ELEMENT.get(), _level);
+						Entity entityToSpawn = new GreenOpenDoorEntity(CraftKaisenModEntities.GREEN_OPEN_DOOR.get(), _level);
 						entityToSpawn.moveTo(x, y, z, 0, 0);
 						entityToSpawn.setYBodyRot(0);
 						entityToSpawn.setYHeadRot(0);
@@ -31,7 +45,7 @@ public class DoorsCheckerProjectileHitsLivingEntityProcedure {
 					if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 						_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 20, 6, false, false));
 					if (world instanceof ServerLevel _level) {
-						Entity entityToSpawn = new RedOpenDoorEntity(CraftKaisenModEntities.DELETED_MOD_ELEMENT.get(), _level);
+						Entity entityToSpawn = new RedOpenDoorEntity(CraftKaisenModEntities.RED_OPEN_DOOR.get(), _level);
 						entityToSpawn.moveTo(x, y, z, 0, 0);
 						entityToSpawn.setYBodyRot(0);
 						entityToSpawn.setYHeadRot(0);
@@ -46,7 +60,7 @@ public class DoorsCheckerProjectileHitsLivingEntityProcedure {
 					if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 						_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 20, 6, false, false));
 					if (world instanceof ServerLevel _level) {
-						Entity entityToSpawn = new GoldOpenDoorEntity(CraftKaisenModEntities.DELETED_MOD_ELEMENT.get(), _level);
+						Entity entityToSpawn = new GoldOpenDoorEntity(CraftKaisenModEntities.GOLD_OPEN_DOOR.get(), _level);
 						entityToSpawn.moveTo(x, y, z, 0, 0);
 						entityToSpawn.setYBodyRot(0);
 						entityToSpawn.setYHeadRot(0);
@@ -61,7 +75,7 @@ public class DoorsCheckerProjectileHitsLivingEntityProcedure {
 					if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 						_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 20, 6, false, false));
 					if (world instanceof ServerLevel _level) {
-						Entity entityToSpawn = new RainbowOpenDoorEntity(CraftKaisenModEntities.DELETED_MOD_ELEMENT.get(), _level);
+						Entity entityToSpawn = new RainbowOpenDoorEntity(CraftKaisenModEntities.RAINBOW_OPEN_DOOR.get(), _level);
 						entityToSpawn.moveTo(x, y, z, 0, 0);
 						entityToSpawn.setYBodyRot(0);
 						entityToSpawn.setYHeadRot(0);
@@ -74,7 +88,7 @@ public class DoorsCheckerProjectileHitsLivingEntityProcedure {
 				}
 			} else if (!sourceentity.getPersistentData().getBoolean("domain")) {
 				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = new GreenOpenDoorEntity(CraftKaisenModEntities.DELETED_MOD_ELEMENT.get(), _level);
+					Entity entityToSpawn = new GreenOpenDoorEntity(CraftKaisenModEntities.GREEN_OPEN_DOOR.get(), _level);
 					entityToSpawn.moveTo(x, y, z, 0, 0);
 					entityToSpawn.setYBodyRot(0);
 					entityToSpawn.setYHeadRot(0);

@@ -58,6 +58,7 @@ import net.mcreator.craftkaisen.client.renderer.MahitoRenderer;
 import net.mcreator.craftkaisen.client.renderer.MahitoCloneRenderer;
 import net.mcreator.craftkaisen.client.renderer.KoGuyRenderer;
 import net.mcreator.craftkaisen.client.renderer.JogoRenderer;
+import net.mcreator.craftkaisen.client.renderer.JinichiZeninRenderer;
 import net.mcreator.craftkaisen.client.renderer.InventoryCurseMobRenderer;
 import net.mcreator.craftkaisen.client.renderer.IcileRenderer;
 import net.mcreator.craftkaisen.client.renderer.HundredDemonsTickRenderer;
@@ -71,6 +72,7 @@ import net.mcreator.craftkaisen.client.renderer.GoldOpenDoorRenderer;
 import net.mcreator.craftkaisen.client.renderer.GoldClosedDoorRenderer;
 import net.mcreator.craftkaisen.client.renderer.FlyingCursedSpiritRenderer;
 import net.mcreator.craftkaisen.client.renderer.FlyHeadRenderer;
+import net.mcreator.craftkaisen.client.renderer.FistProjectileRenderer;
 import net.mcreator.craftkaisen.client.renderer.FireArrowStormRenderer;
 import net.mcreator.craftkaisen.client.renderer.FingerBearerRenderer;
 import net.mcreator.craftkaisen.client.renderer.EmberInsectRenderer;
@@ -173,7 +175,6 @@ public class CraftKaisenModEntityRenderers {
 		event.registerEntityRenderer(CraftKaisenModEntities.ROPE_MOB.get(), RopeMobRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.SUGURU_GETO.get(), SuguruGetoRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.PANDA.get(), PandaRenderer::new);
-		event.registerEntityRenderer(CraftKaisenModEntities.FLYING_CURSED_SPIRIT.get(), FlyingCursedSpiritRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.MEGUNA.get(), MegunaRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.HOLLOW_PURPLE_GOJO.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.HAJIME_KASHIMO.get(), HajimeKashimoRenderer::new);
@@ -200,5 +201,8 @@ public class CraftKaisenModEntityRenderers {
 		event.registerEntityRenderer(CraftKaisenModEntities.GOLD_CLOSED_DOOR.get(), GoldClosedDoorRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.RAINBOW_CLOSED_DOOR.get(), RainbowClosedDoorRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.DOORS_CHECKER.get(), ThrownItemRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.JINICHI_ZENIN.get(), JinichiZeninRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.FIST_PROJECTILE.get(), FistProjectileRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.FLYING_CURSED_SPIRIT.get(), FlyingCursedSpiritRenderer::new);
 	}
 }

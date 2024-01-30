@@ -17,7 +17,7 @@ public class RugbyFieldCursedSpiritRenderer extends MobRenderer<RugbyFieldCursed
 
 	@Override
 	protected void scale(RugbyFieldCursedSpiritEntity entity, PoseStack poseStack, float f) {
-		poseStack.scale(1.2f, 1.2f, 1.2f);
+		poseStack.scale(1.3f, 1.3f, 1.3f);
 	}
 
 	@Override

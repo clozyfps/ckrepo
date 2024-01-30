@@ -39,6 +39,7 @@ import net.mcreator.craftkaisen.potion.PiercingBloodMobEffect;
 import net.mcreator.craftkaisen.potion.NueElectricityEffectMobEffect;
 import net.mcreator.craftkaisen.potion.LapseBlueControlMobEffect;
 import net.mcreator.craftkaisen.potion.HeianSlicesMobEffect;
+import net.mcreator.craftkaisen.potion.FlowMobEffect;
 import net.mcreator.craftkaisen.potion.EvadeCooldownMobEffect;
 import net.mcreator.craftkaisen.potion.DomainExpansionMobEffect;
 import net.mcreator.craftkaisen.potion.DomainAmplificationMobEffect;
@@ -98,4 +99,5 @@ public class CraftKaisenModMobEffects {
 	public static final RegistryObject<MobEffect> RIKA_STATUS = REGISTRY.register("rika_status", () -> new RikaStatusMobEffect());
 	public static final RegistryObject<MobEffect> RIKAS_LOVE = REGISTRY.register("rikas_love", () -> new RikasLoveMobEffect());
 	public static final RegistryObject<MobEffect> WINTRY_ICICLE = REGISTRY.register("wintry_icicle", () -> new WintryIcicleMobEffect());
+	public static final RegistryObject<MobEffect> FLOW = REGISTRY.register("flow", () -> new FlowMobEffect());
 }
