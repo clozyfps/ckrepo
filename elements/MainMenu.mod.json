@@ -585,6 +585,53 @@
           "x": 24,
           "y": 76
         }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_perk",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnPerk"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 96,
+          "y": 152
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_display_yen",
+          "text": {
+            "fixedValue": "",
+            "name": "DisplayYen"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 96,
+          "y": 170
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_mastery",
+          "text": "Mastery",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "OpenMastery"
+          },
+          "width": 61,
+          "height": 20,
+          "x": 322,
+          "y": 184
+        }
       }
     ],
     "gridSettings": {

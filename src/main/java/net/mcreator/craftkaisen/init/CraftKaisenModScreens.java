@@ -16,7 +16,9 @@ import net.mcreator.craftkaisen.client.gui.SelfVowGUIScreen;
 import net.mcreator.craftkaisen.client.gui.PhoneGUIScreen;
 import net.mcreator.craftkaisen.client.gui.PerkGuiScreen;
 import net.mcreator.craftkaisen.client.gui.MoveGuiScreen;
+import net.mcreator.craftkaisen.client.gui.MasteryGUIScreen;
 import net.mcreator.craftkaisen.client.gui.MainMenuScreen;
+import net.mcreator.craftkaisen.client.gui.KenjakuGUIScreen;
 import net.mcreator.craftkaisen.client.gui.InventoryCurseGuiScreen;
 import net.mcreator.craftkaisen.client.gui.ImbueGUIScreen;
 import net.mcreator.craftkaisen.client.gui.DomainClashScreen;
@@ -39,6 +41,8 @@ public class CraftKaisenModScreens {
 			MenuScreens.register(CraftKaisenModMenus.SELF_VOW_GUI.get(), SelfVowGUIScreen::new);
 			MenuScreens.register(CraftKaisenModMenus.PERK_GUI.get(), PerkGuiScreen::new);
 			MenuScreens.register(CraftKaisenModMenus.CT_MOVE_GUI.get(), CTMoveGUIScreen::new);
+			MenuScreens.register(CraftKaisenModMenus.KENJAKU_GUI.get(), KenjakuGUIScreen::new);
+			MenuScreens.register(CraftKaisenModMenus.MASTERY_GUI.get(), MasteryGUIScreen::new);
 		});
 	}
 }

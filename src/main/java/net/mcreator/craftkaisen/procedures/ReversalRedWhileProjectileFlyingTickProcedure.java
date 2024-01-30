@@ -43,6 +43,7 @@ public class ReversalRedWhileProjectileFlyingTickProcedure {
 					if (!(entity == entityiterator)) {
 						entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.EXPLOSION), immediatesourceentity, entity), 12);
 						entityiterator.setDeltaMovement(new Vec3(((entity.getX() + entityiterator.getX()) / 9), ((entity.getY() + entityiterator.getY()) / 9), ((entity.getZ() + entityiterator.getZ()) / 9)));
+						entityiterator.setDeltaMovement(new Vec3((1 * entity.getLookAngle().x), (1 * entity.getLookAngle().y), (1 * entity.getLookAngle().z)));
 					}
 				}
 			}
@@ -82,6 +83,7 @@ public class ReversalRedWhileProjectileFlyingTickProcedure {
 					if (!(entity == entityiterator)) {
 						entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.EXPLOSION), immediatesourceentity, entity),
 								(float) ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 8));
+						entityiterator.setDeltaMovement(new Vec3((1 * entity.getLookAngle().x), (1 * entity.getLookAngle().y), (1 * entity.getLookAngle().z)));
 					}
 				}
 			}

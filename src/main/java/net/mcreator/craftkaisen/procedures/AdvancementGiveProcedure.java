@@ -38,7 +38,7 @@ public class AdvancementGiveProcedure {
 		if (entity == null || sourceentity == null)
 			return;
 		if (entity instanceof MahitoEntity) {
-			if (entity instanceof Player || entity instanceof ServerPlayer) {
+			if (sourceentity instanceof Player || sourceentity instanceof ServerPlayer) {
 				if (sourceentity instanceof ServerPlayer _player) {
 					Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:young_fishand_reverse_punishment"));
 					AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
@@ -50,7 +50,7 @@ public class AdvancementGiveProcedure {
 			}
 		}
 		if (entity instanceof YutaOkkotsuEntity) {
-			if (entity instanceof Player || entity instanceof ServerPlayer) {
+			if (sourceentity instanceof Player || sourceentity instanceof ServerPlayer) {
 				if (sourceentity instanceof ServerPlayer _player) {
 					Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:cursed_child"));
 					AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
@@ -62,7 +62,7 @@ public class AdvancementGiveProcedure {
 			}
 		}
 		if (entity instanceof SatoruGojoEntity) {
-			if (entity instanceof Player || entity instanceof ServerPlayer) {
+			if (sourceentity instanceof Player || sourceentity instanceof ServerPlayer) {
 				if (sourceentity instanceof ServerPlayer _player) {
 					Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:the_honored_one"));
 					AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
@@ -74,7 +74,7 @@ public class AdvancementGiveProcedure {
 			}
 		}
 		if (entity instanceof EightHandledSwordDivergentSilaDivineGeneralMahoragaEntity) {
-			if (entity instanceof Player || entity instanceof ServerPlayer) {
+			if (sourceentity instanceof Player || sourceentity instanceof ServerPlayer) {
 				if (sourceentity instanceof ServerPlayer _player) {
 					Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:sacred_treasure"));
 					AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
@@ -86,7 +86,7 @@ public class AdvancementGiveProcedure {
 			}
 		}
 		if (entity instanceof EightHandledSwordDivergentSilaDivineGeneralMahoragaEntity) {
-			if (entity instanceof Player || entity instanceof ServerPlayer) {
+			if (sourceentity instanceof Player || sourceentity instanceof ServerPlayer) {
 				if (sourceentity instanceof ServerPlayer _player) {
 					Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:sacred_treasure"));
 					AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
@@ -98,7 +98,7 @@ public class AdvancementGiveProcedure {
 			}
 		}
 		if (entity instanceof MegunaEntity) {
-			if (entity instanceof Player || entity instanceof ServerPlayer) {
+			if (sourceentity instanceof Player || sourceentity instanceof ServerPlayer) {
 				if (sourceentity instanceof ServerPlayer _player) {
 					Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:shinjuku_showdown"));
 					AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
@@ -110,7 +110,7 @@ public class AdvancementGiveProcedure {
 			}
 		}
 		if (entity instanceof HeianEraSukunaEntity) {
-			if (entity instanceof Player || entity instanceof ServerPlayer) {
+			if (sourceentity instanceof Player || sourceentity instanceof ServerPlayer) {
 				if (sourceentity instanceof ServerPlayer _player) {
 					Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:heian_era"));
 					AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);

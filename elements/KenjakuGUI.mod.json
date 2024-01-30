@@ -1,0 +1,129 @@
+{
+  "_fv": 57,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 250,
+    "height": 130,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "name": "label_do_you_want_to_steal_their",
+          "text": {
+            "fixedValue": "Do you want to steal their - "
+          },
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "x": 95,
+          "y": 60
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_player_technique_kenjaku",
+          "text": {
+            "fixedValue": "",
+            "name": "PlayerTechniqueKenjaku"
+          },
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "x": 159,
+          "y": 82
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_technique",
+          "text": {
+            "fixedValue": "Technique - "
+          },
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "x": 95,
+          "y": 82
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_special",
+          "text": {
+            "fixedValue": "Special - "
+          },
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "x": 95,
+          "y": 98
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_player_technique_kenjaku1",
+          "text": {
+            "fixedValue": "",
+            "name": "PlayerTraitKenjaku"
+          },
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "x": 150,
+          "y": 98
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_accept",
+          "text": "Accept",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "AcceptKenjaku"
+          },
+          "width": 56,
+          "height": 20,
+          "x": 128,
+          "y": 144
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_decline",
+          "text": "Decline",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "DeclinePerk"
+          },
+          "width": 61,
+          "height": 20,
+          "x": 251,
+          "y": 144
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

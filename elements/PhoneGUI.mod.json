@@ -38,6 +38,9 @@
           "name": "button_place",
           "text": "Place",
           "isUndecorated": false,
+          "onClick": {
+            "name": "PlaceBounty"
+          },
           "width": 51,
           "height": 20,
           "x": 189,

@@ -148,6 +148,10 @@ public class CraftKaisenModVariables {
 			clone.ClansInWorld = original.ClansInWorld;
 			clone.Perk = original.Perk;
 			clone.Lives = original.Lives;
+			clone.SelfVow = original.SelfVow;
+			clone.PageSelfVow = original.PageSelfVow;
+			clone.SfDesc = original.SfDesc;
+			clone.CeMastery = original.CeMastery;
 			if (!event.isWasDeath()) {
 				clone.currentMove = original.currentMove;
 				clone.currentOutput = original.currentOutput;
@@ -449,6 +453,10 @@ public class CraftKaisenModVariables {
 		public String PerkPage = "\"\"";
 		public String Perk = "\"\"";
 		public double Lives = 2.0;
+		public String SelfVow = "\"\"";
+		public String PageSelfVow = "Overtime";
+		public String SfDesc = "\"\"";
+		public double CeMastery = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -552,6 +560,10 @@ public class CraftKaisenModVariables {
 			nbt.putString("PerkPage", PerkPage);
 			nbt.putString("Perk", Perk);
 			nbt.putDouble("Lives", Lives);
+			nbt.putString("SelfVow", SelfVow);
+			nbt.putString("PageSelfVow", PageSelfVow);
+			nbt.putString("SfDesc", SfDesc);
+			nbt.putDouble("CeMastery", CeMastery);
 			return nbt;
 		}
 
@@ -652,6 +664,10 @@ public class CraftKaisenModVariables {
 			PerkPage = nbt.getString("PerkPage");
 			Perk = nbt.getString("Perk");
 			Lives = nbt.getDouble("Lives");
+			SelfVow = nbt.getString("SelfVow");
+			PageSelfVow = nbt.getString("PageSelfVow");
+			SfDesc = nbt.getString("SfDesc");
+			CeMastery = nbt.getDouble("CeMastery");
 		}
 	}
 
@@ -771,6 +787,10 @@ public class CraftKaisenModVariables {
 					variables.PerkPage = message.data.PerkPage;
 					variables.Perk = message.data.Perk;
 					variables.Lives = message.data.Lives;
+					variables.SelfVow = message.data.SelfVow;
+					variables.PageSelfVow = message.data.PageSelfVow;
+					variables.SfDesc = message.data.SfDesc;
+					variables.CeMastery = message.data.CeMastery;
 				}
 			});
 			context.setPacketHandled(true);

@@ -42,53 +42,55 @@ public class MahitoDistortedBodyActivateProcedure {
 			return;
 		if (entity instanceof MahitoEntity) {
 			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) <= 40) {
-				{
-					Entity _entity = entity;
-					if (_entity instanceof Player _player) {
-						_player.getInventory().armor.set(3, new ItemStack(CraftKaisenModItems.DISTORTED_BODY_HELMET.get()));
-						_player.getInventory().setChanged();
-					} else if (_entity instanceof LivingEntity _living) {
-						_living.setItemSlot(EquipmentSlot.HEAD, new ItemStack(CraftKaisenModItems.DISTORTED_BODY_HELMET.get()));
+				if (!entity.getPersistentData().getBoolean("distortedbody")) {
+					{
+						Entity _entity = entity;
+						if (_entity instanceof Player _player) {
+							_player.getInventory().armor.set(3, new ItemStack(CraftKaisenModItems.DISTORTED_BODY_HELMET.get()));
+							_player.getInventory().setChanged();
+						} else if (_entity instanceof LivingEntity _living) {
+							_living.setItemSlot(EquipmentSlot.HEAD, new ItemStack(CraftKaisenModItems.DISTORTED_BODY_HELMET.get()));
+						}
 					}
-				}
-				{
-					Entity _entity = entity;
-					if (_entity instanceof Player _player) {
-						_player.getInventory().armor.set(2, new ItemStack(CraftKaisenModItems.DISTORTED_BODY_CHESTPLATE.get()));
-						_player.getInventory().setChanged();
-					} else if (_entity instanceof LivingEntity _living) {
-						_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(CraftKaisenModItems.DISTORTED_BODY_CHESTPLATE.get()));
+					{
+						Entity _entity = entity;
+						if (_entity instanceof Player _player) {
+							_player.getInventory().armor.set(2, new ItemStack(CraftKaisenModItems.DISTORTED_BODY_CHESTPLATE.get()));
+							_player.getInventory().setChanged();
+						} else if (_entity instanceof LivingEntity _living) {
+							_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(CraftKaisenModItems.DISTORTED_BODY_CHESTPLATE.get()));
+						}
 					}
-				}
-				{
-					Entity _entity = entity;
-					if (_entity instanceof Player _player) {
-						_player.getInventory().armor.set(1, new ItemStack(CraftKaisenModItems.DISTORTED_BODY_LEGGINGS.get()));
-						_player.getInventory().setChanged();
-					} else if (_entity instanceof LivingEntity _living) {
-						_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(CraftKaisenModItems.DISTORTED_BODY_LEGGINGS.get()));
+					{
+						Entity _entity = entity;
+						if (_entity instanceof Player _player) {
+							_player.getInventory().armor.set(1, new ItemStack(CraftKaisenModItems.DISTORTED_BODY_LEGGINGS.get()));
+							_player.getInventory().setChanged();
+						} else if (_entity instanceof LivingEntity _living) {
+							_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(CraftKaisenModItems.DISTORTED_BODY_LEGGINGS.get()));
+						}
 					}
-				}
-				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 200, 20, false, false));
-				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 5000, 5, false, false));
-				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 5000, 7, false, false));
-				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 70, 250, false, false));
-				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 70, 250, false, false));
-				{
-					final Vec3 _center = new Vec3(x, y, z);
-					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(10 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
-							.collect(Collectors.toList());
-					for (Entity entityiterator : _entfound) {
-						if (entityiterator instanceof Player _player && !_player.level.isClientSide())
-							_player.displayClientMessage(Component.literal("Finally.. I've realized the true essence of my being!"), false);
+					if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+						_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 200, 20, false, false));
+					if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+						_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 5000, 5, false, false));
+					if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+						_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 5000, 7, false, false));
+					if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+						_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 70, 250, false, false));
+					if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+						_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 70, 250, false, false));
+					{
+						final Vec3 _center = new Vec3(x, y, z);
+						List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(10 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
+								.collect(Collectors.toList());
+						for (Entity entityiterator : _entfound) {
+							if (entityiterator instanceof Player _player && !_player.level.isClientSide())
+								_player.displayClientMessage(Component.literal("Finally.. I've realized the true essence of my being!"), false);
+						}
 					}
+					entity.getPersistentData().putBoolean("distortedbody", true);
 				}
-				entity.getPersistentData().putBoolean("distortedbody", true);
 			}
 		}
 	}

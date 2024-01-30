@@ -10,6 +10,8 @@ import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.components.Button;
 
 import net.mcreator.craftkaisen.world.inventory.PhoneGUIMenu;
+import net.mcreator.craftkaisen.network.PhoneGUIButtonMessage;
+import net.mcreator.craftkaisen.CraftKaisenMod;
 
 import java.util.HashMap;
 
@@ -136,6 +138,10 @@ public class PhoneGUIScreen extends AbstractContainerScreen<PhoneGUIMenu> {
 		guistate.put("text:BountyPlayer", BountyPlayer);
 		this.addWidget(this.BountyPlayer);
 		button_place = Button.builder(Component.translatable("gui.craft_kaisen.phone_gui.button_place"), e -> {
+			if (true) {
+				CraftKaisenMod.PACKET_HANDLER.sendToServer(new PhoneGUIButtonMessage(0, x, y, z));
+				PhoneGUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
+			}
 		}).bounds(this.leftPos + -25, this.topPos + 104, 51, 20).build();
 		guistate.put("button:button_place", button_place);
 		this.addRenderableWidget(button_place);

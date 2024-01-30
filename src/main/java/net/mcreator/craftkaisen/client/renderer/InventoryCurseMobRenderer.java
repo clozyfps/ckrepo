@@ -6,15 +6,15 @@ import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
 import net.mcreator.craftkaisen.entity.InventoryCurseMobEntity;
-import net.mcreator.craftkaisen.client.model.Modelinventorycurseground;
+import net.mcreator.craftkaisen.client.model.ModelInventoryCurse;
 
-public class InventoryCurseMobRenderer extends MobRenderer<InventoryCurseMobEntity, Modelinventorycurseground<InventoryCurseMobEntity>> {
+public class InventoryCurseMobRenderer extends MobRenderer<InventoryCurseMobEntity, ModelInventoryCurse<InventoryCurseMobEntity>> {
 	public InventoryCurseMobRenderer(EntityRendererProvider.Context context) {
-		super(context, new Modelinventorycurseground(context.bakeLayer(Modelinventorycurseground.LAYER_LOCATION)), 0.5f);
+		super(context, new ModelInventoryCurse(context.bakeLayer(ModelInventoryCurse.LAYER_LOCATION)), 0.5f);
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(InventoryCurseMobEntity entity) {
-		return new ResourceLocation("craft_kaisen:textures/entities/inventorycursetexture.png");
+		return new ResourceLocation("craft_kaisen:textures/entities/invcursetex.png");
 	}
 }

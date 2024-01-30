@@ -1,10 +1,8 @@
 {
   "type": "forge:add_spawns",
-  "biomes": {
-    "type": "forge:any"
-  },
+  "biomes": "windswept_hills",
   "spawners": {
-    "type": "craft_kaisen:takada",
+    "type": "craft_kaisen:rainbow_dragon",
     "weight": 1,
     "minCount": 1,
     "maxCount": 1

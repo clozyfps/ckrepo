@@ -6,15 +6,15 @@ import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
 import net.mcreator.craftkaisen.entity.FlyHeadEntity;
-import net.mcreator.craftkaisen.client.model.Modelcurse_1;
+import net.mcreator.craftkaisen.client.model.ModelFlyHead;
 
-public class FlyHeadRenderer extends MobRenderer<FlyHeadEntity, Modelcurse_1<FlyHeadEntity>> {
+public class FlyHeadRenderer extends MobRenderer<FlyHeadEntity, ModelFlyHead<FlyHeadEntity>> {
 	public FlyHeadRenderer(EntityRendererProvider.Context context) {
-		super(context, new Modelcurse_1(context.bakeLayer(Modelcurse_1.LAYER_LOCATION)), 0.5f);
+		super(context, new ModelFlyHead(context.bakeLayer(ModelFlyHead.LAYER_LOCATION)), 0.5f);
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(FlyHeadEntity entity) {
-		return new ResourceLocation("craft_kaisen:textures/entities/mainflyheadtexture.png");
+		return new ResourceLocation("craft_kaisen:textures/entities/flyheadtex.png");
 	}
 }

@@ -30,23 +30,19 @@ public class SpecialTickProcedure {
 		double techniqueNumber = 0;
 		double restrictionNumber = 0;
 		if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).special).equals("Physically Gifted")) {
-			if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).energyControl >= 3) {
-				{
-					double _setval = 3;
-					entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.energyControl = _setval;
-						capability.syncPlayerVariables(entity);
-					});
-				}
+			{
+				double _setval = 0;
+				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.energyControl = _setval;
+					capability.syncPlayerVariables(entity);
+				});
 			}
-			if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).cursedEnergyStat >= 3) {
-				{
-					double _setval = 3;
-					entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.cursedEnergyStat = _setval;
-						capability.syncPlayerVariables(entity);
-					});
-				}
+			{
+				double _setval = 0;
+				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.cursedEnergyStat = _setval;
+					capability.syncPlayerVariables(entity);
+				});
 			}
 		}
 		if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).special).equals("No Energy")) {
@@ -88,18 +84,27 @@ public class SpecialTickProcedure {
 				});
 			}
 		}
+		if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).special).equals("Physically Gifted")) {
+			{
+				String _setval = "";
+				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.technique = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+		}
 		if (!((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).special).equals("")) {
 			if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).specialCheck == false) {
 				if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).special).equals("Physically Gifted")) {
 					{
-						double _setval = 25;
+						double _setval = 10;
 						entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 							capability.strengthStat = _setval;
 							capability.syncPlayerVariables(entity);
 						});
 					}
 					{
-						double _setval = 25;
+						double _setval = 10;
 						entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 							capability.healthStat = _setval;
 							capability.syncPlayerVariables(entity);
@@ -162,6 +167,22 @@ public class SpecialTickProcedure {
 					}
 					{
 						double _setval = 50;
+						entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.cursedEnergyStat = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+				}
+				if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).special).equals("Overflowing")) {
+					{
+						double _setval = 90;
+						entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.energyControl = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					{
+						double _setval = 90;
 						entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 							capability.cursedEnergyStat = _setval;
 							capability.syncPlayerVariables(entity);

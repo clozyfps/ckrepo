@@ -25,5 +25,8 @@ public class DeclinePerkProcedure {
 		}
 		if (entity instanceof Player _player)
 			_player.closeContainer();
+		entity.getPersistentData().putString("playeruser", "");
+		entity.getPersistentData().putString("playertechnique", "");
+		entity.getPersistentData().putString("playerspecial", "");
 	}
 }

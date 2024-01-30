@@ -31,6 +31,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.Packet;
 
+import net.mcreator.craftkaisen.init.CraftKaisenModItems;
 import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
 
 public class RikoAmanaiEntity extends TamableAnimal {
@@ -130,7 +131,7 @@ public class RikoAmanaiEntity extends TamableAnimal {
 
 	@Override
 	public boolean isFood(ItemStack stack) {
-		return Ingredient.of().test(stack);
+		return Ingredient.of(new ItemStack(CraftKaisenModItems.TEST.get())).test(stack);
 	}
 
 	public static void init() {

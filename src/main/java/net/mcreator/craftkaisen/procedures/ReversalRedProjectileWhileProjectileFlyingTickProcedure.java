@@ -17,6 +17,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.BlockPos;
 
+import net.mcreator.craftkaisen.entity.SatoruGojoEntity;
 import net.mcreator.craftkaisen.CraftKaisenMod;
 
 import java.util.stream.Collectors;
@@ -27,42 +28,84 @@ public class ReversalRedProjectileWhileProjectileFlyingTickProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, Entity immediatesourceentity) {
 		if (entity == null || immediatesourceentity == null)
 			return;
-		{
-			final Vec3 _center = new Vec3(x, y, z);
-			List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(10 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).collect(Collectors.toList());
-			for (Entity entityiterator : _entfound) {
-				if (!(entity == entityiterator) && !(entityiterator instanceof FallingBlockEntity)) {
+		if (entity instanceof SatoruGojoEntity) {
+			{
+				final Vec3 _center = new Vec3(x, y, z);
+				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(15 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
+						.collect(Collectors.toList());
+				for (Entity entityiterator : _entfound) {
+					if (!(entity == entityiterator) && !(entityiterator instanceof FallingBlockEntity)) {
+					}
 				}
 			}
+			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 5, 250, false, false));
+			CraftKaisenMod.queueServerWork(30, () -> {
+				if (!immediatesourceentity.level.isClientSide())
+					immediatesourceentity.discard();
+			});
+			for (int index0 = 0; index0 < 5; index0++) {
+				if (world instanceof Level _level) {
+					if (!_level.isClientSide()) {
+						_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.dragon_fireball.explode")), SoundSource.NEUTRAL, 1, 1);
+					} else {
+						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.dragon_fireball.explode")), SoundSource.NEUTRAL, 1, 1, false);
+					}
+				}
+				if (world instanceof Level _level) {
+					if (!_level.isClientSide()) {
+						_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.explode")), SoundSource.NEUTRAL, 1, 1);
+					} else {
+						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.explode")), SoundSource.NEUTRAL, 1, 1, false);
+					}
+				}
+			}
+			immediatesourceentity.setNoGravity(true);
+			if (world instanceof ServerLevel _level)
+				_level.sendParticles(ParticleTypes.EXPLOSION_EMITTER, x, y, z, 25, 4, 3, 4, 0);
+			if (world instanceof ServerLevel _level)
+				_level.sendParticles(ParticleTypes.POOF, x, y, z, 15, 4, 3, 4, 0);
+			if (world instanceof ServerLevel _level)
+				_level.sendParticles(ParticleTypes.CAMPFIRE_COSY_SMOKE, x, y, z, 5, 4, 3, 4, 0);
+		} else if (!(entity instanceof SatoruGojoEntity)) {
+			{
+				final Vec3 _center = new Vec3(x, y, z);
+				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(15 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
+						.collect(Collectors.toList());
+				for (Entity entityiterator : _entfound) {
+					if (!(entity == entityiterator) && !(entityiterator instanceof FallingBlockEntity)) {
+					}
+				}
+			}
+			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 5, 250, false, false));
+			CraftKaisenMod.queueServerWork(30, () -> {
+				if (!immediatesourceentity.level.isClientSide())
+					immediatesourceentity.discard();
+			});
+			for (int index1 = 0; index1 < 5; index1++) {
+				if (world instanceof Level _level) {
+					if (!_level.isClientSide()) {
+						_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.dragon_fireball.explode")), SoundSource.NEUTRAL, 1, 1);
+					} else {
+						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.dragon_fireball.explode")), SoundSource.NEUTRAL, 1, 1, false);
+					}
+				}
+				if (world instanceof Level _level) {
+					if (!_level.isClientSide()) {
+						_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.explode")), SoundSource.NEUTRAL, 1, 1);
+					} else {
+						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.explode")), SoundSource.NEUTRAL, 1, 1, false);
+					}
+				}
+			}
+			immediatesourceentity.setNoGravity(true);
+			if (world instanceof ServerLevel _level)
+				_level.sendParticles(ParticleTypes.EXPLOSION_EMITTER, x, y, z, 25, 4, 3, 4, 0);
+			if (world instanceof ServerLevel _level)
+				_level.sendParticles(ParticleTypes.POOF, x, y, z, 15, 4, 3, 4, 0);
+			if (world instanceof ServerLevel _level)
+				_level.sendParticles(ParticleTypes.CAMPFIRE_COSY_SMOKE, x, y, z, 5, 4, 3, 4, 0);
 		}
-		if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-			_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 5, 250, false, false));
-		CraftKaisenMod.queueServerWork(30, () -> {
-			if (!immediatesourceentity.level.isClientSide())
-				immediatesourceentity.discard();
-		});
-		for (int index0 = 0; index0 < 5; index0++) {
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.dragon_fireball.explode")), SoundSource.NEUTRAL, 1, 1);
-				} else {
-					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.dragon_fireball.explode")), SoundSource.NEUTRAL, 1, 1, false);
-				}
-			}
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.explode")), SoundSource.NEUTRAL, 1, 1);
-				} else {
-					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.explode")), SoundSource.NEUTRAL, 1, 1, false);
-				}
-			}
-		}
-		immediatesourceentity.setNoGravity(true);
-		if (world instanceof ServerLevel _level)
-			_level.sendParticles(ParticleTypes.EXPLOSION_EMITTER, x, y, z, 25, 4, 3, 4, 0);
-		if (world instanceof ServerLevel _level)
-			_level.sendParticles(ParticleTypes.POOF, x, y, z, 15, 4, 3, 4, 0);
-		if (world instanceof ServerLevel _level)
-			_level.sendParticles(ParticleTypes.CAMPFIRE_COSY_SMOKE, x, y, z, 5, 4, 3, 4, 0);
 	}
 }

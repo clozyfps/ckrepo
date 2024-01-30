@@ -6,6 +6,7 @@ import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
@@ -35,79 +36,88 @@ public class ExpKillProcedure {
 		if (entity == null || sourceentity == null)
 			return;
 		if (sourceentity instanceof Player) {
-			if (((sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).race).equals("Human")) {
-				if (((sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).Perk).equals("Safe Farming")) {
-					if (entity instanceof Player || entity instanceof ServerPlayer) {
-						{
-							double _setval = (sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentExp + Mth.nextInt(RandomSource.create(), 1, 2);
-							sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.currentExp = _setval;
-								capability.syncPlayerVariables(sourceentity);
-							});
+			if (!(entity instanceof Animal)) {
+				{
+					double _setval = (sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).Yen + Mth.nextInt(RandomSource.create(), 10, 15);
+					sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.Yen = _setval;
+						capability.syncPlayerVariables(sourceentity);
+					});
+				}
+				if (((sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).race).equals("Human")) {
+					if (((sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).Perk).equals("Safe Farming")) {
+						if (entity instanceof Player || entity instanceof ServerPlayer) {
+							{
+								double _setval = (sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentExp + Mth.nextInt(RandomSource.create(), 1, 2);
+								sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.currentExp = _setval;
+									capability.syncPlayerVariables(sourceentity);
+								});
+							}
+						} else if (!(entity instanceof Player || entity instanceof ServerPlayer)) {
+							{
+								double _setval = (sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentExp + Mth.nextInt(RandomSource.create(), 3, 6);
+								sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.currentExp = _setval;
+									capability.syncPlayerVariables(sourceentity);
+								});
+							}
 						}
-					} else if (!(entity instanceof Player || entity instanceof ServerPlayer)) {
+					} else {
 						{
-							double _setval = (sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentExp + Mth.nextInt(RandomSource.create(), 3, 6);
+							double _setval = (sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentExp + Mth.nextInt(RandomSource.create(), 2, 3);
 							sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 								capability.currentExp = _setval;
 								capability.syncPlayerVariables(sourceentity);
 							});
 						}
 					}
-				} else {
+				} else if (((sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).race).equals("Curse")) {
+					if (((sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).Perk).equals("Safe Farming")) {
+						if (entity instanceof Player || entity instanceof ServerPlayer) {
+							{
+								double _setval = (sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentExp + Mth.nextInt(RandomSource.create(), 3, 4);
+								sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.currentExp = _setval;
+									capability.syncPlayerVariables(sourceentity);
+								});
+							}
+						} else if (!(entity instanceof Player || entity instanceof ServerPlayer)) {
+							{
+								double _setval = (sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentExp + Mth.nextInt(RandomSource.create(), 5, 8);
+								sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.currentExp = _setval;
+									capability.syncPlayerVariables(sourceentity);
+								});
+							}
+						}
+					} else {
+						{
+							double _setval = (sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentExp + Mth.nextInt(RandomSource.create(), 5, 6);
+							sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.currentExp = _setval;
+								capability.syncPlayerVariables(sourceentity);
+							});
+						}
+					}
+				}
+				if (entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("craft_kaisen:cursed_spirits")))) {
 					{
-						double _setval = (sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentExp + Mth.nextInt(RandomSource.create(), 2, 3);
+						double _setval = (sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).reputation + 3;
 						sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.currentExp = _setval;
+							capability.reputation = _setval;
 							capability.syncPlayerVariables(sourceentity);
 						});
 					}
 				}
-			} else if (((sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).race).equals("Curse")) {
-				if (((sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).Perk).equals("Safe Farming")) {
-					if (entity instanceof Player || entity instanceof ServerPlayer) {
-						{
-							double _setval = (sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentExp + Mth.nextInt(RandomSource.create(), 3, 4);
-							sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.currentExp = _setval;
-								capability.syncPlayerVariables(sourceentity);
-							});
-						}
-					} else if (!(entity instanceof Player || entity instanceof ServerPlayer)) {
-						{
-							double _setval = (sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentExp + Mth.nextInt(RandomSource.create(), 5, 8);
-							sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.currentExp = _setval;
-								capability.syncPlayerVariables(sourceentity);
-							});
-						}
-					}
-				} else {
+				if (entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("craft_kaisen:sorcerers")))) {
 					{
-						double _setval = (sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentExp + Mth.nextInt(RandomSource.create(), 5, 6);
+						double _setval = (sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).reputation - 1;
 						sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.currentExp = _setval;
+							capability.reputation = _setval;
 							capability.syncPlayerVariables(sourceentity);
 						});
 					}
-				}
-			}
-			if (entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("craft_kaisen:cursed_spirits")))) {
-				{
-					double _setval = (sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).reputation + 2;
-					sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.reputation = _setval;
-						capability.syncPlayerVariables(sourceentity);
-					});
-				}
-			}
-			if (entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("craft_kaisen:sorcerers")))) {
-				{
-					double _setval = (sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).reputation - 1;
-					sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.reputation = _setval;
-						capability.syncPlayerVariables(sourceentity);
-					});
 				}
 			}
 		}

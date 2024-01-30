@@ -47,11 +47,11 @@ public class SatoruGojoOnEntityTickUpdateProcedure {
 							if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 								_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 15, 6, false, false));
 						}
-						if (Math.random() < 0.002) {
+						if (Math.random() < 0.007) {
 							if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 								_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.COOLDOWN.get(), 40, 1, false, false));
 							if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-								_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.PRE_RED.get(), 20, 0, false, false));
+								_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.PRE_RED.get(), 15, 0, false, false));
 						} else if (Math.random() < 0.002) {
 							{
 								final Vec3 _center = new Vec3(x, y, z);

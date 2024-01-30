@@ -16,7 +16,9 @@ import net.mcreator.craftkaisen.world.inventory.SelfVowGUIMenu;
 import net.mcreator.craftkaisen.world.inventory.PhoneGUIMenu;
 import net.mcreator.craftkaisen.world.inventory.PerkGuiMenu;
 import net.mcreator.craftkaisen.world.inventory.MoveGuiMenu;
+import net.mcreator.craftkaisen.world.inventory.MasteryGUIMenu;
 import net.mcreator.craftkaisen.world.inventory.MainMenuMenu;
+import net.mcreator.craftkaisen.world.inventory.KenjakuGUIMenu;
 import net.mcreator.craftkaisen.world.inventory.InventoryCurseGuiMenu;
 import net.mcreator.craftkaisen.world.inventory.ImbueGUIMenu;
 import net.mcreator.craftkaisen.world.inventory.DomainClashMenu;
@@ -37,4 +39,6 @@ public class CraftKaisenModMenus {
 	public static final RegistryObject<MenuType<SelfVowGUIMenu>> SELF_VOW_GUI = REGISTRY.register("self_vow_gui", () -> IForgeMenuType.create(SelfVowGUIMenu::new));
 	public static final RegistryObject<MenuType<PerkGuiMenu>> PERK_GUI = REGISTRY.register("perk_gui", () -> IForgeMenuType.create(PerkGuiMenu::new));
 	public static final RegistryObject<MenuType<CTMoveGUIMenu>> CT_MOVE_GUI = REGISTRY.register("ct_move_gui", () -> IForgeMenuType.create(CTMoveGUIMenu::new));
+	public static final RegistryObject<MenuType<KenjakuGUIMenu>> KENJAKU_GUI = REGISTRY.register("kenjaku_gui", () -> IForgeMenuType.create(KenjakuGUIMenu::new));
+	public static final RegistryObject<MenuType<MasteryGUIMenu>> MASTERY_GUI = REGISTRY.register("mastery_gui", () -> IForgeMenuType.create(MasteryGUIMenu::new));
 }

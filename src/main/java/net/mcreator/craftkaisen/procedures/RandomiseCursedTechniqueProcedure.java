@@ -1,21 +1,38 @@
 package net.mcreator.craftkaisen.procedures;
 
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
+import net.minecraft.advancements.AdvancementProgress;
+import net.minecraft.advancements.Advancement;
 
 import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
+import net.mcreator.craftkaisen.init.CraftKaisenModItems;
 
 public class RandomiseCursedTechniqueProcedure {
-	public static void execute(Entity entity) {
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
 		double techniqueNumber = 0;
 		double restrictionNumber = 0;
 		double specialNumber = 0;
-		techniqueNumber = Mth.nextInt(RandomSource.create(), 1, 10);
+		techniqueNumber = Mth.nextInt(RandomSource.create(), 1, 11);
+		if (entity instanceof ServerPlayer _player) {
+			Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:cursed_technique"));
+			AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+			if (!_ap.isDone()) {
+				for (String criteria : _ap.getRemainingCriteria())
+					_player.getAdvancements().award(_adv, criteria);
+			}
+		}
 		if (techniqueNumber == 1) {
 			{
 				String _setval = "Disaster Flames";
@@ -88,9 +105,30 @@ public class RandomiseCursedTechniqueProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
+			if (world instanceof ServerLevel _level) {
+				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.SKI_MASK_HELMET.get()));
+				entityToSpawn.setPickUpDelay(1);
+				_level.addFreshEntity(entityToSpawn);
+			}
 		} else if (techniqueNumber == 10) {
 			{
 				String _setval = "Copy";
+				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.technique = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+		} else if (techniqueNumber == 11) {
+			{
+				String _setval = "Blood Manipulation";
+				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.technique = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+		} else if (techniqueNumber == 12) {
+			{
+				String _setval = "Ice Formation";
 				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.technique = _setval;
 					capability.syncPlayerVariables(entity);
@@ -126,8 +164,7 @@ public class RandomiseCursedTechniqueProcedure {
 		}
 		if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).special).equals("Physically Gifted")) {
 			if (entity instanceof Player _player && !_player.level.isClientSide())
-				_player.displayClientMessage(Component.literal("You were born with very little cursed energy but a physically gifted body (Capped at 3 cursed energy and energy control stats) (granted 25 strength and health stats + 10 speed stat)"),
-						false);
+				_player.displayClientMessage(Component.literal("You were born with no cursed energy but with increased physical stats"), false);
 		}
 		if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).special).equals("No Energy")) {
 			if (entity instanceof Player _player && !_player.level.isClientSide())

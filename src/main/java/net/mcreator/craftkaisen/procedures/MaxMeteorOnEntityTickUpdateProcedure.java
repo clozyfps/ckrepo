@@ -66,8 +66,8 @@ public class MaxMeteorOnEntityTickUpdateProcedure {
 			_level.sendParticles(ParticleTypes.POOF, x, y, z, 10, 5, 1, 5, 1);
 		if (world instanceof ServerLevel _level)
 			_level.sendParticles(ParticleTypes.SMOKE, x, y, z, 25, 3, 1, 3, 1);
-		int horizontalRadiusHemiBot = (int) 8 - 1;
-		int verticalRadiusHemiBot = (int) 8;
+		int horizontalRadiusHemiBot = (int) 6 - 1;
+		int verticalRadiusHemiBot = (int) 6;
 		int yIterationsHemiBot = verticalRadiusHemiBot;
 		for (int i = -yIterationsHemiBot; i <= 0; i++) {
 			if (i == -verticalRadiusHemiBot) {
@@ -79,6 +79,8 @@ public class MaxMeteorOnEntityTickUpdateProcedure {
 							+ (zi * zi) / (double) (horizontalRadiusHemiBot * horizontalRadiusHemiBot);
 					if (distanceSq <= 1.0) {
 						if (world.getBlockState(BlockPos.containing(x + xi, y + i, z + zi)).canOcclude()) {
+							if (world instanceof Level _level && !_level.isClientSide())
+								_level.explode(null, x, y, z, 20, Level.ExplosionInteraction.BLOCK);
 							if (world instanceof ServerLevel _level)
 								_level.sendParticles(ParticleTypes.LAVA, x, y, z, 10, 13, 6, 13, 0);
 							if (world instanceof ServerLevel _level)
@@ -103,7 +105,7 @@ public class MaxMeteorOnEntityTickUpdateProcedure {
 								for (Entity entityiterator : _entfound) {
 									if (!(entity == entityiterator)) {
 										if (entityiterator instanceof Player || entityiterator instanceof ServerPlayer) {
-											entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.LAVA)), 35);
+											entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.LAVA)), 45);
 										} else {
 											entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.LAVA)), 95);
 										}

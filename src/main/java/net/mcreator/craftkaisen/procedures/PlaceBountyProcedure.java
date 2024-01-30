@@ -22,34 +22,57 @@ public class PlaceBountyProcedure {
 					&& !(guistate.containsKey("text:BountyPlayer") ? ((EditBox) guistate.get("text:BountyPlayer")).getValue() : "").isEmpty()) {
 				if ((entityiterator.getDisplayName().getString()).equals(guistate.containsKey("text:PlayerBounty") ? ((EditBox) guistate.get("text:PlayerBounty")).getValue() : "")) {
 					if ((entityiterator.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).HasBounty == false) {
-						{
-							boolean _setval = true;
-							entityiterator.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.HasBounty = _setval;
-								capability.syncPlayerVariables(entityiterator);
-							});
-						}
-						if (entityiterator instanceof Player _player && !_player.level.isClientSide())
-							_player.displayClientMessage(Component.literal(("A bounty of \u00A5" + (guistate.containsKey("text:BountyPlayer") ? ((EditBox) guistate.get("text:BountyPlayer")).getValue() : "") + " Yen has been placed on your head.")),
-									false);
-						if (entity instanceof Player _player && !_player.level.isClientSide())
-							_player.displayClientMessage(Component.literal("Bounty Placed"), false);
-						if (entity instanceof Player _player)
-							_player.closeContainer();
-						{
-							double _setval = new Object() {
-								double convert(String s) {
-									try {
-										return Double.parseDouble(s.trim());
-									} catch (Exception e) {
-									}
-									return 0;
+						if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).Yen >= new Object() {
+							double convert(String s) {
+								try {
+									return Double.parseDouble(s.trim());
+								} catch (Exception e) {
 								}
-							}.convert(guistate.containsKey("text:BountyPlayer") ? ((EditBox) guistate.get("text:BountyPlayer")).getValue() : "");
-							entityiterator.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.Bounty = _setval;
-								capability.syncPlayerVariables(entityiterator);
-							});
+								return 0;
+							}
+						}.convert(guistate.containsKey("text:BountyPlayer") ? ((EditBox) guistate.get("text:BountyPlayer")).getValue() : "")) {
+							{
+								boolean _setval = true;
+								entityiterator.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.HasBounty = _setval;
+									capability.syncPlayerVariables(entityiterator);
+								});
+							}
+							if (entityiterator instanceof Player _player && !_player.level.isClientSide())
+								_player.displayClientMessage(
+										Component.literal(("A bounty of \u00A5" + (guistate.containsKey("text:BountyPlayer") ? ((EditBox) guistate.get("text:BountyPlayer")).getValue() : "") + " Yen has been placed on your head.")), false);
+							if (entity instanceof Player _player && !_player.level.isClientSide())
+								_player.displayClientMessage(Component.literal("Bounty Placed"), false);
+							if (entity instanceof Player _player)
+								_player.closeContainer();
+							{
+								double _setval = new Object() {
+									double convert(String s) {
+										try {
+											return Double.parseDouble(s.trim());
+										} catch (Exception e) {
+										}
+										return 0;
+									}
+								}.convert(guistate.containsKey("text:BountyPlayer") ? ((EditBox) guistate.get("text:BountyPlayer")).getValue() : "");
+								entityiterator.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.Bounty = _setval;
+									capability.syncPlayerVariables(entityiterator);
+								});
+							}
+						} else if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).Yen < new Object() {
+							double convert(String s) {
+								try {
+									return Double.parseDouble(s.trim());
+								} catch (Exception e) {
+								}
+								return 0;
+							}
+						}.convert(guistate.containsKey("text:BountyPlayer") ? ((EditBox) guistate.get("text:BountyPlayer")).getValue() : "")) {
+							if (entity instanceof Player _player && !_player.level.isClientSide())
+								_player.displayClientMessage(Component.literal("You dont have enough yen."), false);
+							if (entity instanceof Player _player)
+								_player.closeContainer();
 						}
 					} else if ((entityiterator.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).HasBounty == true) {
 						if (entity instanceof Player _player && !_player.level.isClientSide())

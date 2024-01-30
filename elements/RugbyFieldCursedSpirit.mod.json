@@ -4,10 +4,22 @@
   "definition": {
     "mobName": "Rugby Field Cursed Spirit",
     "mobLabel": "",
-    "mobModelName": "Modelcursedspiritrugbyfield",
-    "mobModelTexture": "rugbyfieldcursedspirit_3.png",
+    "mobModelName": "ModelRugbyFieldCurse",
+    "mobModelTexture": "rugbyfieldcursetexture.png",
+    "transparentModelCondition": {
+      "fixedValue": false
+    },
+    "isShakingCondition": {
+      "fixedValue": false
+    },
     "solidBoundingBox": {
       "fixedValue": false
+    },
+    "visualScale": {
+      "fixedValue": 1.2
+    },
+    "boundingBoxScale": {
+      "fixedValue": 1.1
     },
     "modelLayers": [],
     "modelWidth": 0.6,
@@ -60,6 +72,9 @@
     "health": 129,
     "xpAmount": 0,
     "waterMob": false,
+    "breatheUnderwater": {
+      "fixedValue": false
+    },
     "pushedByFluids": {
       "fixedValue": true
     },

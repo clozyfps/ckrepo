@@ -59,7 +59,7 @@ public class TogeInumakiEntity extends Monster {
 	@Override
 	protected void registerGoals() {
 		super.registerGoals();
-		this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.3, true) {
+		this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.5, true) {
 			@Override
 			protected double getAttackReachSqr(LivingEntity entity) {
 				return this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth();
@@ -119,9 +119,9 @@ public class TogeInumakiEntity extends Monster {
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.4);
-		builder = builder.add(Attributes.MAX_HEALTH, 190);
-		builder = builder.add(Attributes.ARMOR, 0.1);
-		builder = builder.add(Attributes.ATTACK_DAMAGE, 12);
+		builder = builder.add(Attributes.MAX_HEALTH, 210);
+		builder = builder.add(Attributes.ARMOR, 0.3);
+		builder = builder.add(Attributes.ATTACK_DAMAGE, 22);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 50);
 		builder = builder.add(Attributes.ATTACK_KNOCKBACK, 1);
 		return builder;

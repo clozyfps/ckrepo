@@ -37,7 +37,7 @@ public class NueOnEntityTickUpdateProcedure {
 			if (!(entity instanceof LivingEntity _livEnt2 && _livEnt2.hasEffect(CraftKaisenModMobEffects.STOP_ATTACKS.get()))) {
 				if (Math.random() < 0.01) {
 					if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-						_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.NUE_ELECTRICITY_EFFECT.get(), 120, 1, false, false));
+						_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.NUE_ELECTRICITY_EFFECT.get(), 20, 1, false, false));
 				}
 				if (Math.random() < 0.01) {
 					entity.setDeltaMovement(new Vec3((((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getX() - entity.getX()) / 4),

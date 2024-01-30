@@ -22,8 +22,8 @@
       "fixedValue": 1.0
     },
     "modelLayers": [],
-    "modelWidth": 0.6,
-    "modelHeight": 1.8,
+    "modelWidth": 1.4000000000000001,
+    "modelHeight": 2.2,
     "modelShadowSize": 0.5,
     "mountedYOffset": 0.0,
     "hasSpawnEgg": true,
@@ -129,7 +129,11 @@
     "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"59\" y=\"64\"><next><block type=\"fight_as_owner\"><field name=\"condition\">null,null</field><next><block type=\"protect_owner\"><field name=\"condition\">null,null</field><next><block type=\"attack_on_collide\"><field name=\"speed\">2.7</field><field name=\"longmemory\">TRUE</field><field name=\"condition\">null,null</field><next><block type=\"attack_fly\"><field name=\"radius\">50</field><field name=\"speed\">4</field><field name=\"condition\">null,null</field><next><block type=\"wander\"><field name=\"speed\">1</field><field name=\"condition\">null,null</field><next><block type=\"attack_action\"><field name=\"callhelp\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"look_around\"><field name=\"condition\">null,null</field><next><block type=\"swim_in_water\"><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></xml>",
     "breedable": true,
     "tameable": true,
-    "breedTriggerItems": [],
+    "breedTriggerItems": [
+      {
+        "value": "CUSTOM:Test"
+      }
+    ],
     "ranged": false,
     "rangedAttackItem": {
       "value": ""

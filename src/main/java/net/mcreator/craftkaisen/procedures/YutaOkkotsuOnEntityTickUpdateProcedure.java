@@ -34,8 +34,10 @@ public class YutaOkkotsuOnEntityTickUpdateProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
+		if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+			_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 99999, 1, false, false));
 		if ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof LivingEntity) {
-			if (!(entity instanceof LivingEntity _livEnt2 && _livEnt2.hasEffect(CraftKaisenModMobEffects.STOP_ATTACKS.get()))) {
+			if (!(entity instanceof LivingEntity _livEnt3 && _livEnt3.hasEffect(CraftKaisenModMobEffects.STOP_ATTACKS.get()))) {
 				if (Math.random() < 0.003) {
 					entity.setDeltaMovement(new Vec3((((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getX() - entity.getX()) / 5),
 							(((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getY() - entity.getY()) / 5), (((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getZ() - entity.getZ()) / 5)));
@@ -67,7 +69,7 @@ public class YutaOkkotsuOnEntityTickUpdateProcedure {
 				}
 				if (Math.random() < 0.003) {
 					if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) <= 20) {
-						if (!(entity instanceof LivingEntity _livEnt26 && _livEnt26.hasEffect(CraftKaisenModMobEffects.SURGE.get()))) {
+						if (!(entity instanceof LivingEntity _livEnt27 && _livEnt27.hasEffect(CraftKaisenModMobEffects.SURGE.get()))) {
 							if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 								_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.SURGE.get(), 800, 0, false, false));
 							if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())

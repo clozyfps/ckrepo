@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "craft_kaisen:gold_closed_door",
+    "craft_kaisen:gold_open_door",
+    "craft_kaisen:green_closed_door",
+    "craft_kaisen:green_open_door",
+    "craft_kaisen:rainbow_closed_door",
+    "craft_kaisen:rainbow_open_door",
+    "craft_kaisen:red_closed_door",
+    "craft_kaisen:red_open_door"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "_fv": 57,
+  "_type": "gamerule",
+  "definition": {
+    "type": "Logic",
+    "displayName": "malevolentshrineblockdamage",
+    "description": "toggle if malevolent shrine should damage blocks",
+    "category": "PLAYER",
+    "defaultValueLogic": true,
+    "defaultValueNumber": 0
+  }
+}

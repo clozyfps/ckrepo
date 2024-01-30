@@ -23,18 +23,27 @@ import net.mcreator.craftkaisen.procedures.SetSpeedStatProcedure;
 import net.mcreator.craftkaisen.procedures.SetSorcererProcedure;
 import net.mcreator.craftkaisen.procedures.SetSkillPointsProcedure;
 import net.mcreator.craftkaisen.procedures.SetSixEyesProcedure;
+import net.mcreator.craftkaisen.procedures.SetSafeFarmingProcedure;
+import net.mcreator.craftkaisen.procedures.SetRoughProcedure;
+import net.mcreator.craftkaisen.procedures.SetRegainerProcedure;
 import net.mcreator.craftkaisen.procedures.SetRatioProcedure;
 import net.mcreator.craftkaisen.procedures.SetPhysicallyGiftedProcedure;
+import net.mcreator.craftkaisen.procedures.SetPPLTProcedure;
 import net.mcreator.craftkaisen.procedures.SetNoEnergyProcedure;
 import net.mcreator.craftkaisen.procedures.SetMiracleProcedure;
 import net.mcreator.craftkaisen.procedures.SetLimitlessProcedure;
 import net.mcreator.craftkaisen.procedures.SetLevelProcedure;
 import net.mcreator.craftkaisen.procedures.SetInverseProcedure;
+import net.mcreator.craftkaisen.procedures.SetIceProcedure;
 import net.mcreator.craftkaisen.procedures.SetHumanProcedure;
 import net.mcreator.craftkaisen.procedures.SetHealthStatProcedure;
+import net.mcreator.craftkaisen.procedures.SetFrostProcedure;
 import net.mcreator.craftkaisen.procedures.SetFragileBodyProcedure;
+import net.mcreator.craftkaisen.procedures.SetFlameProcedure;
+import net.mcreator.craftkaisen.procedures.SetFearmongerProcedure;
 import net.mcreator.craftkaisen.procedures.SetExpProcedure;
 import net.mcreator.craftkaisen.procedures.SetEnergyControlProcedure;
+import net.mcreator.craftkaisen.procedures.SetElectricityProcedure;
 import net.mcreator.craftkaisen.procedures.SetDisasterPlantsProcedure;
 import net.mcreator.craftkaisen.procedures.SetDisasterFlamesProcedure;
 import net.mcreator.craftkaisen.procedures.SetCursedSpeechProcedure;
@@ -45,6 +54,7 @@ import net.mcreator.craftkaisen.procedures.SetCopyProcedure;
 import net.mcreator.craftkaisen.procedures.SetCSMProcedure;
 import net.mcreator.craftkaisen.procedures.SetBoogieWoogieProcedure;
 import net.mcreator.craftkaisen.procedures.SetBloodManipulationProcedure;
+import net.mcreator.craftkaisen.procedures.SetBasicProcedure;
 import net.mcreator.craftkaisen.procedures.SetAuspiciousBeastsSummonProcedure;
 import net.mcreator.craftkaisen.procedures.ResetButtonProcedure;
 
@@ -55,7 +65,7 @@ public class SetCommandCommand {
 	@SubscribeEvent
 	public static void registerCommand(RegisterCommandsEvent event) {
 		event.getDispatcher()
-				.register(Commands.literal("craftKaisen").requires(s -> s.hasPermission(2)).then(Commands.literal("Technique").then(Commands.argument("name", EntityArgument.player()).then(Commands.literal("Limitless").executes(arguments -> {
+				.register(Commands.literal("craftKaisen").requires(s -> s.hasPermission(1)).then(Commands.literal("Technique").then(Commands.argument("name", EntityArgument.players()).then(Commands.literal("Limitless").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
@@ -67,7 +77,7 @@ public class SetCommandCommand {
 					if (entity != null)
 						direction = entity.getDirection();
 
-					SetLimitlessProcedure.execute(entity);
+					SetLimitlessProcedure.execute(arguments);
 					return 0;
 				})).then(Commands.literal("CursedSpeech").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
@@ -95,7 +105,7 @@ public class SetCommandCommand {
 					if (entity != null)
 						direction = entity.getDirection();
 
-					SetSukunaProcedure.execute(entity);
+					SetSukunaProcedure.execute(arguments);
 					return 0;
 				})).then(Commands.literal("Copy").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
@@ -109,7 +119,7 @@ public class SetCommandCommand {
 					if (entity != null)
 						direction = entity.getDirection();
 
-					SetCopyProcedure.execute(entity);
+					SetCopyProcedure.execute(arguments);
 					return 0;
 				})).then(Commands.literal("BloodManipulation").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
@@ -123,7 +133,7 @@ public class SetCommandCommand {
 					if (entity != null)
 						direction = entity.getDirection();
 
-					SetBloodManipulationProcedure.execute(entity);
+					SetBloodManipulationProcedure.execute(arguments);
 					return 0;
 				})).then(Commands.literal("Miracle").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
@@ -165,7 +175,7 @@ public class SetCommandCommand {
 					if (entity != null)
 						direction = entity.getDirection();
 
-					SetTenShadowsProcedure.execute(entity);
+					SetTenShadowsProcedure.execute(arguments);
 					return 0;
 				})).then(Commands.literal("StrawDoll").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
@@ -193,7 +203,7 @@ public class SetCommandCommand {
 					if (entity != null)
 						direction = entity.getDirection();
 
-					SetDisasterFlamesProcedure.execute(entity);
+					SetDisasterFlamesProcedure.execute(arguments);
 					return 0;
 				})).then(Commands.literal("DisasterPlants").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
@@ -207,7 +217,7 @@ public class SetCommandCommand {
 					if (entity != null)
 						direction = entity.getDirection();
 
-					SetDisasterPlantsProcedure.execute(entity);
+					SetDisasterPlantsProcedure.execute(arguments);
 					return 0;
 				})).then(Commands.literal("CursedSpiritManipulation").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
@@ -221,7 +231,7 @@ public class SetCommandCommand {
 					if (entity != null)
 						direction = entity.getDirection();
 
-					SetCSMProcedure.execute(entity);
+					SetCSMProcedure.execute(arguments);
 					return 0;
 				})).then(Commands.literal("BoogieWoogie").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
@@ -235,7 +245,7 @@ public class SetCommandCommand {
 					if (entity != null)
 						direction = entity.getDirection();
 
-					SetBoogieWoogieProcedure.execute(entity);
+					SetBoogieWoogieProcedure.execute(arguments);
 					return 0;
 				})).then(Commands.literal("Ratio").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
@@ -249,7 +259,7 @@ public class SetCommandCommand {
 					if (entity != null)
 						direction = entity.getDirection();
 
-					SetRatioProcedure.execute(entity);
+					SetRatioProcedure.execute(arguments);
 					return 0;
 				})).then(Commands.literal("AuspiciousBeastsSummon").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
@@ -264,6 +274,34 @@ public class SetCommandCommand {
 						direction = entity.getDirection();
 
 					SetAuspiciousBeastsSummonProcedure.execute(entity);
+					return 0;
+				})).then(Commands.literal("IceFormation").executes(arguments -> {
+					Level world = arguments.getSource().getUnsidedLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null && world instanceof ServerLevel _servLevel)
+						entity = FakePlayerFactory.getMinecraft(_servLevel);
+					Direction direction = Direction.DOWN;
+					if (entity != null)
+						direction = entity.getDirection();
+
+					SetIceProcedure.execute(arguments);
+					return 0;
+				})).then(Commands.literal("PrivatePureLoveTrain").executes(arguments -> {
+					Level world = arguments.getSource().getUnsidedLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null && world instanceof ServerLevel _servLevel)
+						entity = FakePlayerFactory.getMinecraft(_servLevel);
+					Direction direction = Direction.DOWN;
+					if (entity != null)
+						direction = entity.getDirection();
+
+					SetPPLTProcedure.execute(entity);
 					return 0;
 				})))).then(Commands.literal("Race").then(Commands.argument("name", EntityArgument.player()).then(Commands.literal("Human").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
@@ -417,7 +455,7 @@ public class SetCommandCommand {
 					if (entity != null)
 						direction = entity.getDirection();
 
-					SetSixEyesProcedure.execute(entity);
+					SetSixEyesProcedure.execute(arguments);
 					return 0;
 				})).then(Commands.literal("PhysicallyGifted").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
@@ -501,8 +539,120 @@ public class SetCommandCommand {
 					if (entity != null)
 						direction = entity.getDirection();
 
-					ResetButtonProcedure.execute(entity);
+					ResetButtonProcedure.execute(arguments);
 					return 0;
-				}))));
+				}))).then(Commands.literal("Perk").then(Commands.argument("name", EntityArgument.player()).then(Commands.literal("Regainer").executes(arguments -> {
+					Level world = arguments.getSource().getUnsidedLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null && world instanceof ServerLevel _servLevel)
+						entity = FakePlayerFactory.getMinecraft(_servLevel);
+					Direction direction = Direction.DOWN;
+					if (entity != null)
+						direction = entity.getDirection();
+
+					SetRegainerProcedure.execute(arguments);
+					return 0;
+				})).then(Commands.literal("SafeFarming").executes(arguments -> {
+					Level world = arguments.getSource().getUnsidedLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null && world instanceof ServerLevel _servLevel)
+						entity = FakePlayerFactory.getMinecraft(_servLevel);
+					Direction direction = Direction.DOWN;
+					if (entity != null)
+						direction = entity.getDirection();
+
+					SetSafeFarmingProcedure.execute(arguments);
+					return 0;
+				})).then(Commands.literal("Fearmonger").executes(arguments -> {
+					Level world = arguments.getSource().getUnsidedLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null && world instanceof ServerLevel _servLevel)
+						entity = FakePlayerFactory.getMinecraft(_servLevel);
+					Direction direction = Direction.DOWN;
+					if (entity != null)
+						direction = entity.getDirection();
+
+					SetFearmongerProcedure.execute(arguments);
+					return 0;
+				})))).then(Commands.literal("CETrait").then(Commands.argument("name", EntityArgument.player()).then(Commands.literal("Basic").executes(arguments -> {
+					Level world = arguments.getSource().getUnsidedLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null && world instanceof ServerLevel _servLevel)
+						entity = FakePlayerFactory.getMinecraft(_servLevel);
+					Direction direction = Direction.DOWN;
+					if (entity != null)
+						direction = entity.getDirection();
+
+					SetBasicProcedure.execute(arguments);
+					return 0;
+				})).then(Commands.literal("Flame").executes(arguments -> {
+					Level world = arguments.getSource().getUnsidedLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null && world instanceof ServerLevel _servLevel)
+						entity = FakePlayerFactory.getMinecraft(_servLevel);
+					Direction direction = Direction.DOWN;
+					if (entity != null)
+						direction = entity.getDirection();
+
+					SetFlameProcedure.execute(arguments);
+					return 0;
+				})).then(Commands.literal("Electricity").executes(arguments -> {
+					Level world = arguments.getSource().getUnsidedLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null && world instanceof ServerLevel _servLevel)
+						entity = FakePlayerFactory.getMinecraft(_servLevel);
+					Direction direction = Direction.DOWN;
+					if (entity != null)
+						direction = entity.getDirection();
+
+					SetElectricityProcedure.execute(arguments);
+					return 0;
+				})).then(Commands.literal("Frost").executes(arguments -> {
+					Level world = arguments.getSource().getUnsidedLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null && world instanceof ServerLevel _servLevel)
+						entity = FakePlayerFactory.getMinecraft(_servLevel);
+					Direction direction = Direction.DOWN;
+					if (entity != null)
+						direction = entity.getDirection();
+
+					SetFrostProcedure.execute(arguments);
+					return 0;
+				})).then(Commands.literal("Rough").executes(arguments -> {
+					Level world = arguments.getSource().getUnsidedLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null && world instanceof ServerLevel _servLevel)
+						entity = FakePlayerFactory.getMinecraft(_servLevel);
+					Direction direction = Direction.DOWN;
+					if (entity != null)
+						direction = entity.getDirection();
+
+					SetRoughProcedure.execute(arguments);
+					return 0;
+				})))));
 	}
 }

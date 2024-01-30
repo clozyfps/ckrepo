@@ -75,8 +75,10 @@ public class DismantleFlyingProcedure {
 						double distanceSq = (xi * xi) / (double) (horizontalRadiusSphere * horizontalRadiusSphere) + (i * i) / (double) (verticalRadiusSphere * verticalRadiusSphere)
 								+ (zi * zi) / (double) (horizontalRadiusSphere * horizontalRadiusSphere);
 						if (distanceSq <= 1.0) {
-							world.destroyBlock(BlockPos.containing(x + xi, y + i, z + zi), false);
-							world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), Blocks.AIR.defaultBlockState(), 3);
+							if (entity.getY() > y + i) {
+								world.destroyBlock(BlockPos.containing(x + xi, y + i, z + zi), false);
+								world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), Blocks.AIR.defaultBlockState(), 3);
+							}
 						}
 					}
 				}
@@ -115,8 +117,10 @@ public class DismantleFlyingProcedure {
 						double distanceSq = (xi * xi) / (double) (horizontalRadiusSphere * horizontalRadiusSphere) + (i * i) / (double) (verticalRadiusSphere * verticalRadiusSphere)
 								+ (zi * zi) / (double) (horizontalRadiusSphere * horizontalRadiusSphere);
 						if (distanceSq <= 1.0) {
-							world.destroyBlock(BlockPos.containing(x + xi, y + i, z + zi), false);
-							world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), Blocks.AIR.defaultBlockState(), 3);
+							if (entity.getY() > y + i) {
+								world.destroyBlock(BlockPos.containing(x + xi, y + i, z + zi), false);
+								world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), Blocks.AIR.defaultBlockState(), 3);
+							}
 						}
 					}
 				}
