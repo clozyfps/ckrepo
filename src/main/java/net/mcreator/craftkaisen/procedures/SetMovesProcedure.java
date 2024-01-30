@@ -306,12 +306,44 @@ public class SetMovesProcedure {
 					entity.getPersistentData().putDouble("moveCost", 15);
 				}
 			}
+			if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Ice Formation")) {
+				entity.getPersistentData().putDouble("maxMoves", 3);
+				if (entity.getPersistentData().getDouble("moveNumber") == 1) {
+					entity.getPersistentData().putString("moveDisplay", "Ice Needle");
+					entity.getPersistentData().putDouble("moveCost", 6);
+				}
+				if (entity.getPersistentData().getDouble("moveNumber") == 2) {
+					entity.getPersistentData().putString("moveDisplay", "Ice Fall");
+					entity.getPersistentData().putDouble("moveCost", 10);
+				}
+				if (entity.getPersistentData().getDouble("moveNumber") == 3) {
+					entity.getPersistentData().putString("moveDisplay", "Frost Calm");
+					entity.getPersistentData().putDouble("moveCost", 12);
+				}
+			}
+			if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Private Pure Love Train")) {
+				entity.getPersistentData().putDouble("maxMoves", 3);
+				if (entity.getPersistentData().getDouble("moveNumber") == 1) {
+					entity.getPersistentData().putString("moveDisplay", "Doors");
+					entity.getPersistentData().putDouble("moveCost", 6);
+				}
+				if (entity.getPersistentData().getDouble("moveNumber") == 2) {
+					entity.getPersistentData().putString("moveDisplay", "Pachinko Balls");
+					entity.getPersistentData().putDouble("moveCost", 10);
+				}
+				if (entity.getPersistentData().getDouble("moveNumber") == 3) {
+					entity.getPersistentData().putString("moveDisplay", "Idle Death Gamble");
+					entity.getPersistentData().putDouble("moveCost", 25);
+				}
+			}
 		} else if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).Page).equals("Cursed Energy")) {
 			CursedEnergySwitchProcedure.execute(entity);
 		} else if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).Page).equals("Melee")) {
 			MeleeSwitchProcedure.execute(entity);
 		} else if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).Page).equals("Weapon")) {
 			WeaponSwitchProcedure.execute(entity);
+		} else if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).Page).equals("Restricted")) {
+			RestrictedSwitchProcedure.execute(entity);
 		}
 	}
 }

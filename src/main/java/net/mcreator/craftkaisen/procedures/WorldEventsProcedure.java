@@ -6,7 +6,6 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.TickEvent;
 
-import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.MobSpawnType;
@@ -23,6 +22,7 @@ import net.minecraft.core.BlockPos;
 import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
 import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
 import net.mcreator.craftkaisen.entity.MegunaEntity;
+import net.mcreator.craftkaisen.entity.HundredDemonsTickEntity;
 
 import javax.annotation.Nullable;
 
@@ -61,10 +61,10 @@ public class WorldEventsProcedure {
 			CraftKaisenModVariables.MapVariables.get(world).syncData(world);
 			randomworldevent = Mth.nextInt(RandomSource.create(), 1, 2);
 			if (randomworldevent == 1) {
+				nearx = world.getLevelData().getXSpawn() + Mth.nextInt(RandomSource.create(), 100, 1500);
+				nearz = world.getLevelData().getZSpawn() + Mth.nextInt(RandomSource.create(), 100, 1500);
+				neary = world.getLevelData().getYSpawn();
 				for (Entity entityiterator : new ArrayList<>(world.players())) {
-					nearx = nearx + entityiterator.getX();
-					nearz = nearz + entityiterator.getZ();
-					neary = world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) nearx, (int) nearz);
 					if (world instanceof Level _level) {
 						if (!_level.isClientSide()) {
 							_level.playSound(null, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.lightning_bolt.thunder")),
@@ -87,6 +87,39 @@ public class WorldEventsProcedure {
 							.broadcastSystemMessage(Component.literal(("\u00A74Meguna has appeared at x: " + new java.text.DecimalFormat("#").format(Math.round(nearx)) + " z: " + new java.text.DecimalFormat("#").format(Math.round(nearz)))), false);
 				if (world instanceof ServerLevel _level) {
 					Entity entityToSpawn = new MegunaEntity(CraftKaisenModEntities.MEGUNA.get(), _level);
+					entityToSpawn.moveTo(nearx, neary, nearz, world.getRandom().nextFloat() * 360F, 0);
+					if (entityToSpawn instanceof Mob _mobToSpawn)
+						_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+					_level.addFreshEntity(entityToSpawn);
+				}
+			}
+			if (randomworldevent == 2) {
+				nearx = world.getLevelData().getXSpawn() + Mth.nextInt(RandomSource.create(), 100, 1500);
+				nearz = world.getLevelData().getZSpawn() + Mth.nextInt(RandomSource.create(), 100, 1500);
+				neary = world.getLevelData().getYSpawn();
+				for (Entity entityiterator : new ArrayList<>(world.players())) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.lightning_bolt.thunder")),
+									SoundSource.NEUTRAL, 1, 1);
+						} else {
+							_level.playLocalSound((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.lightning_bolt.thunder")), SoundSource.NEUTRAL, 1, 1,
+									false);
+						}
+					}
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("ambient.cave")), SoundSource.NEUTRAL, 1, 1);
+						} else {
+							_level.playLocalSound((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("ambient.cave")), SoundSource.NEUTRAL, 1, 1, false);
+						}
+					}
+				}
+				if (!world.isClientSide() && world.getServer() != null)
+					world.getServer().getPlayerList().broadcastSystemMessage(
+							Component.literal(("\u00A74 Night Parade of a Hundred Demons has started at x: " + new java.text.DecimalFormat("#").format(Math.round(nearx)) + " z: " + new java.text.DecimalFormat("#").format(Math.round(nearz)))), false);
+				if (world instanceof ServerLevel _level) {
+					Entity entityToSpawn = new HundredDemonsTickEntity(CraftKaisenModEntities.HUNDRED_DEMONS_TICK.get(), _level);
 					entityToSpawn.moveTo(nearx, neary, nearz, world.getRandom().nextFloat() * 360F, 0);
 					if (entityToSpawn instanceof Mob _mobToSpawn)
 						_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);

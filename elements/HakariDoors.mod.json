@@ -1,0 +1,40 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Entities",
+    "items": [],
+    "blocks": [],
+    "functions": [],
+    "entities": [
+      {
+        "value": "CUSTOM:GoldClosedDoor"
+      },
+      {
+        "value": "CUSTOM:GoldOpenDoor"
+      },
+      {
+        "value": "CUSTOM:GreenClosedDoor"
+      },
+      {
+        "value": "CUSTOM:GreenOpenDoor"
+      },
+      {
+        "value": "CUSTOM:RainbowClosedDoor"
+      },
+      {
+        "value": "CUSTOM:RainbowOpenDoor"
+      },
+      {
+        "value": "CUSTOM:RedClosedDoor"
+      },
+      {
+        "value": "CUSTOM:RedOpenDoor"
+      }
+    ],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "hakari_doors",
+    "namespace": "mod"
+  }
+}

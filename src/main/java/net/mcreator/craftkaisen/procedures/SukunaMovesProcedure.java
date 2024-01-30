@@ -46,7 +46,7 @@ public class SukunaMovesProcedure {
 							capability.syncPlayerVariables(entity);
 						});
 					}
-					DismantleProcedureProcedure.execute(world, entity);
+					DismantleProcedureProcedure.execute(entity);
 					if (entity instanceof Player _player && !_player.level.isClientSide())
 						_player.displayClientMessage(Component.literal("Dismantle."), true);
 					entity.getPersistentData().putDouble(("cooldown" + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("coolset"))), 30);
@@ -141,11 +141,11 @@ public class SukunaMovesProcedure {
 							capability.syncPlayerVariables(entity);
 						});
 					}
-					DismantleProcedureProcedure.execute(world, entity);
+					DismantleProcedureProcedure.execute(entity);
 					CraftKaisenMod.queueServerWork(10, () -> {
-						DismantleProcedureProcedure.execute(world, entity);
+						DismantleProcedureProcedure.execute(entity);
 						CraftKaisenMod.queueServerWork(10, () -> {
-							DismantleProcedureProcedure.execute(world, entity);
+							DismantleProcedureProcedure.execute(entity);
 						});
 					});
 					if (entity instanceof Player _player && !_player.level.isClientSide())

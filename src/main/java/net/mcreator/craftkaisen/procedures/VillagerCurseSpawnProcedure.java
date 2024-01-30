@@ -25,7 +25,7 @@ public class VillagerCurseSpawnProcedure {
 		if (entity == null)
 			return;
 		if (entity instanceof Villager) {
-			entity.getPersistentData().putDouble("villagermood", 100);
+			entity.getPersistentData().putDouble("villagermood", 250);
 		}
 	}
 }

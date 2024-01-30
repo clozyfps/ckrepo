@@ -16,6 +16,7 @@ import net.mcreator.craftkaisen.procedures.StrengthButtonProcedure;
 import net.mcreator.craftkaisen.procedures.SpeedButtonProcedure;
 import net.mcreator.craftkaisen.procedures.OpenSelfVowGUIProcedure;
 import net.mcreator.craftkaisen.procedures.OpenMovesProcedure;
+import net.mcreator.craftkaisen.procedures.OpenMasteryProcedure;
 import net.mcreator.craftkaisen.procedures.HealthButtonProcedure;
 import net.mcreator.craftkaisen.procedures.EnergyButtonProcedure;
 import net.mcreator.craftkaisen.procedures.ControlButtonProcedure;
@@ -70,29 +71,33 @@ public class MainMenuButtonMessage {
 			return;
 		if (buttonID == 0) {
 
-			StrengthButtonProcedure.execute(entity);
+			OpenMasteryProcedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 1) {
 
-			HealthButtonProcedure.execute(entity);
+			StrengthButtonProcedure.execute(entity);
 		}
 		if (buttonID == 2) {
 
-			ControlButtonProcedure.execute(entity);
+			HealthButtonProcedure.execute(entity);
 		}
 		if (buttonID == 3) {
 
-			EnergyButtonProcedure.execute(entity);
+			ControlButtonProcedure.execute(entity);
 		}
 		if (buttonID == 4) {
 
-			SpeedButtonProcedure.execute(entity);
+			EnergyButtonProcedure.execute(entity);
 		}
 		if (buttonID == 5) {
 
-			OpenSelfVowGUIProcedure.execute(world, x, y, z, entity);
+			SpeedButtonProcedure.execute(entity);
 		}
 		if (buttonID == 6) {
+
+			OpenSelfVowGUIProcedure.execute(world, x, y, z, entity);
+		}
+		if (buttonID == 7) {
 
 			OpenMovesProcedure.execute(world, x, y, z, entity);
 		}

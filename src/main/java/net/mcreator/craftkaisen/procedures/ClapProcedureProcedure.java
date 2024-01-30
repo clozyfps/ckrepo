@@ -15,6 +15,8 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.BlockPos;
 
+import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
+
 import java.util.stream.Collectors;
 import java.util.List;
 import java.util.Comparator;
@@ -48,17 +50,19 @@ public class ClapProcedureProcedure {
 						.collect(Collectors.toList());
 				for (Entity entityiterator : _entfound) {
 					if (!(entity == entityiterator)) {
-						{
-							Entity _ent = entity;
-							_ent.teleportTo((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()));
-							if (_ent instanceof ServerPlayer _serverPlayer)
-								_serverPlayer.connection.teleport((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), _ent.getYRot(), _ent.getXRot());
-						}
-						{
-							Entity _ent = entityiterator;
-							_ent.teleportTo(currentx, currenty, currentz);
-							if (_ent instanceof ServerPlayer _serverPlayer)
-								_serverPlayer.connection.teleport(currentx, currenty, currentz, _ent.getYRot(), _ent.getXRot());
+						if (!((entityiterator.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).special).equals("Physically Gifted")) {
+							{
+								Entity _ent = entity;
+								_ent.teleportTo((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()));
+								if (_ent instanceof ServerPlayer _serverPlayer)
+									_serverPlayer.connection.teleport((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), _ent.getYRot(), _ent.getXRot());
+							}
+							{
+								Entity _ent = entityiterator;
+								_ent.teleportTo(currentx, currenty, currentz);
+								if (_ent instanceof ServerPlayer _serverPlayer)
+									_serverPlayer.connection.teleport(currentx, currenty, currentz, _ent.getYRot(), _ent.getXRot());
+							}
 						}
 					}
 				}
@@ -84,16 +88,16 @@ public class ClapProcedureProcedure {
 							if (entity instanceof LivingEntity _entity)
 								_entity.swing(InteractionHand.MAIN_HAND, true);
 							{
-								Entity _ent = entityiterator;
-								_ent.teleportTo(currentx, currenty, currentz);
-								if (_ent instanceof ServerPlayer _serverPlayer)
-									_serverPlayer.connection.teleport(currentx, currenty, currentz, _ent.getYRot(), _ent.getXRot());
-							}
-							{
 								Entity _ent = entity;
 								_ent.teleportTo((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()));
 								if (_ent instanceof ServerPlayer _serverPlayer)
 									_serverPlayer.connection.teleport((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), _ent.getYRot(), _ent.getXRot());
+							}
+							{
+								Entity _ent = entityiterator;
+								_ent.teleportTo(currentx, currenty, currentz);
+								if (_ent instanceof ServerPlayer _serverPlayer)
+									_serverPlayer.connection.teleport(currentx, currenty, currentz, _ent.getYRot(), _ent.getXRot());
 							}
 						}
 					}

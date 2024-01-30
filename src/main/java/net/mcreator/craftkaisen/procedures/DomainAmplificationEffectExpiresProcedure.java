@@ -2,6 +2,7 @@ package net.mcreator.craftkaisen.procedures;
 
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
@@ -21,5 +22,7 @@ public class DomainAmplificationEffectExpiresProcedure {
 		}
 		if (entity instanceof LivingEntity _entity)
 			_entity.removeEffect(CraftKaisenModMobEffects.DOMAIN_AMPLIFICATION.get());
+		if (entity instanceof LivingEntity _entity)
+			_entity.removeEffect(MobEffects.GLOWING);
 	}
 }

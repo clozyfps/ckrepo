@@ -13109,6 +13109,10 @@
             "type": "entity"
           },
           {
+            "name": "z",
+            "type": "number"
+          },
+          {
             "name": "world",
             "type": "world"
           }
@@ -22653,80 +22657,6 @@
       "path": "~/Procedures"
     },
     {
-      "name": "ImbueCEOnKeyPressed",
-      "type": "procedure",
-      "sortid": 968,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "imbue_ce_on_key_pressed",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/craftkaisen/procedures/ImbueCEOnKeyPressedProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Keybinds/Procedures"
-    },
-    {
-      "name": "ImbueCEOnKeyReleased",
-      "type": "procedure",
-      "sortid": 969,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "imbue_ce_on_key_released",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/craftkaisen/procedures/ImbueCEOnKeyReleasedProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Keybinds/Procedures"
-    },
-    {
-      "name": "ImbueCEProcedure",
-      "type": "procedure",
-      "sortid": 970,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "imbue_ce_procedure",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/craftkaisen/procedures/ImbueCEProcedureProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Keybinds/Procedures"
-    },
-    {
-      "name": "ValidCursedWeapons",
-      "type": "tag",
-      "sortid": 971,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "valid_cursed_weapons",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/craft_kaisen/tags/items/valid_cursed_weapons.json"
-        ]
-      },
-      "path": "~/Tags"
-    },
-    {
       "name": "ImbuedWeaponAttack",
       "type": "procedure",
       "sortid": 972,
@@ -22765,6 +22695,2232 @@
         ]
       },
       "path": "~/Procedures"
+    },
+    {
+      "name": "ImbueCEProcedure",
+      "type": "procedure",
+      "sortid": 970,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "imbue_ce_procedure",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/ImbueCEProcedureProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Keybinds/Procedures"
+    },
+    {
+      "name": "ImbueCEOnKeyPressed",
+      "type": "procedure",
+      "sortid": 968,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "imbue_ce_on_key_pressed",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/ImbueCEOnKeyPressedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Keybinds/Procedures"
+    },
+    {
+      "name": "ValidCursedWeapons",
+      "type": "tag",
+      "sortid": 971,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "valid_cursed_weapons",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/tags/items/valid_cursed_weapons.json"
+        ]
+      },
+      "path": "~/Tags"
+    },
+    {
+      "name": "ImbueCEOnKeyReleased",
+      "type": "procedure",
+      "sortid": 969,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "imbue_ce_on_key_released",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/ImbueCEOnKeyReleasedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Keybinds/Procedures"
+    },
+    {
+      "name": "IceNeedleProjectileHitsLivingEntity",
+      "type": "procedure",
+      "sortid": 1020,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ice_needle_projectile_hits_living_entity",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/IceNeedleProjectileHitsLivingEntityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/IceFormation"
+    },
+    {
+      "name": "DisableSpeed",
+      "type": "command",
+      "sortid": 1004,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "disable_speed",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/command/DisableSpeedCommand.java"
+        ]
+      },
+      "path": "~/Commands"
+    },
+    {
+      "name": "RedClosedDoor",
+      "type": "livingentity",
+      "sortid": 1059,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "red_closed_door",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/RedClosedDoorRenderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/RedClosedDoorEntity.java"
+        ]
+      },
+      "path": "~/Mobs/Abilities"
+    },
+    {
+      "name": "DoorsCheckerWhileProjectileFlyingTick",
+      "type": "procedure",
+      "sortid": 1066,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "doors_checker_while_projectile_flying_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DoorsCheckerWhileProjectileFlyingTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "immediatesourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/PrivatePureLoveTrain"
+    },
+    {
+      "name": "HundredDemonsTickOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 994,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hundred_demons_tick_on_entity_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/HundredDemonsTickOnEntityTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Abilities"
+    },
+    {
+      "name": "ResistanceSorcerers",
+      "type": "procedure",
+      "sortid": 1042,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "resistance_sorcerers",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/ResistanceSorcerersProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "SetRough",
+      "type": "procedure",
+      "sortid": 1032,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_rough",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/SetRoughProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/Commands/Procedures"
+    },
+    {
+      "name": "DoorsCheckerProjectileHitsLivingEntity",
+      "type": "procedure",
+      "sortid": 1065,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "doors_checker_projectile_hits_living_entity",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DoorsCheckerProjectileHitsLivingEntityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/PrivatePureLoveTrain"
+    },
+    {
+      "name": "Icile",
+      "type": "livingentity",
+      "sortid": 1015,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "icile",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/entity/IcileEntity.java",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/IcileRenderer.java"
+        ]
+      },
+      "path": "~/Mobs/Abilities"
+    },
+    {
+      "name": "MalevolentShrineBlockDamage",
+      "type": "gamerule",
+      "sortid": 968,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "malevolent_shrine_block_damage",
+      "metadata": {
+        "files": [],
+        "type": "logic"
+      },
+      "path": "~/Gamerules"
+    },
+    {
+      "name": "RedOpenDoor",
+      "type": "livingentity",
+      "sortid": 1055,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "red_open_door",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/entity/RedOpenDoorEntity.java",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/RedOpenDoorRenderer.java"
+        ]
+      },
+      "path": "~/Mobs/Abilities"
+    },
+    {
+      "name": "IceMoves",
+      "type": "procedure",
+      "sortid": 1026,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ice_moves",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/IceMovesProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Abilities/MoveUse"
+    },
+    {
+      "name": "DismantlePr",
+      "type": "projectile",
+      "sortid": 972,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dismantle_pr",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/entity/DismantlePrEntity.java"
+        ]
+      },
+      "path": "~/Abilities/SukunaVessel"
+    },
+    {
+      "name": "FireArrowMobProjectileProjectileHitsLivingEntity",
+      "type": "procedure",
+      "sortid": 992,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fire_arrow_mob_projectile_projectile_hits_living_entity",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/FireArrowMobProjectileProjectileHitsLivingEntityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/SukunaVessel"
+    },
+    {
+      "name": "AwakenedMakiOnInitialEntitySpawn",
+      "type": "procedure",
+      "sortid": 1049,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "awakened_maki_on_initial_entity_spawn",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/AwakenedMakiOnInitialEntitySpawnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Procedure"
+    },
+    {
+      "name": "RerollCt",
+      "type": "item",
+      "sortid": 989,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "reroll_ct",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/models/item/reroll_ct.json",
+          "src/main/java/net/mcreator/craftkaisen/item/RerollCtItem.java"
+        ]
+      },
+      "path": "~/Items"
+    },
+    {
+      "name": "DoorsProcedure",
+      "type": "procedure",
+      "sortid": 1068,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "doors_procedure",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DoorsProcedureProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Abilities/PrivatePureLoveTrain"
+    },
+    {
+      "name": "ExpMobs",
+      "type": "procedure",
+      "sortid": 980,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "exp_mobs",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/ExpMobsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "IcileOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 1018,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "icile_on_entity_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/IcileOnEntityTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Potions/Procedures"
+    },
+    {
+      "name": "RikasLove",
+      "type": "potioneffect",
+      "sortid": 982,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rikas_love",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/potion/RikasLoveMobEffect.java"
+        ]
+      },
+      "path": "~/Potions"
+    },
+    {
+      "name": "SpeedDisableProcedure",
+      "type": "procedure",
+      "sortid": 1003,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "speed_disable_procedure",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/SpeedDisableProcedureProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Commands/Procedures"
+    },
+    {
+      "name": "KashimoOutfit",
+      "type": "armor",
+      "sortid": 1039,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kashimo_outfit",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/item/KashimoOutfitItem.java",
+          "src/main/resources/assets/craft_kaisen/models/item/kashimo_outfit_chestplate.json",
+          "src/main/resources/assets/craft_kaisen/models/item/kashimo_outfit_leggings.json"
+        ]
+      },
+      "path": "~/Armor"
+    },
+    {
+      "name": "IceTickingWhileProjectileFlyingTick",
+      "type": "procedure",
+      "sortid": 1023,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ice_ticking_while_projectile_flying_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/IceTickingWhileProjectileFlyingTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "immediatesourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/IceFormation"
+    },
+    {
+      "name": "SatoruGojoOnInitialEntitySpawn",
+      "type": "procedure",
+      "sortid": 993,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "satoru_gojo_on_initial_entity_spawn",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/SatoruGojoOnInitialEntitySpawnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Procedure"
+    },
+    {
+      "name": "SukunaGive",
+      "type": "item",
+      "sortid": 976,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sukuna_give",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/models/item/sukuna_give.json",
+          "src/main/java/net/mcreator/craftkaisen/item/SukunaGiveItem.java"
+        ]
+      },
+      "path": "~/Items"
+    },
+    {
+      "name": "OpenMastery",
+      "type": "procedure",
+      "sortid": 1047,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "open_mastery",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/OpenMasteryProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "SetPPLT",
+      "type": "procedure",
+      "sortid": 1070,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_pplt",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/SetPPLTProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Commands/Procedures"
+    },
+    {
+      "name": "ReturnSf",
+      "type": "procedure",
+      "sortid": 973,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_sf",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/ReturnSfProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "RestrictedSwitch",
+      "type": "procedure",
+      "sortid": 983,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "restricted_switch",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/RestrictedSwitchProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/movelists"
+    },
+    {
+      "name": "SetElectricity",
+      "type": "procedure",
+      "sortid": 1033,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_electricity",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/SetElectricityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/Commands/Procedures"
+    },
+    {
+      "name": "BlitzProcedure",
+      "type": "procedure",
+      "sortid": 985,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "blitz_procedure",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/BlitzProcedureProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/Restricted"
+    },
+    {
+      "name": "Potentional",
+      "type": "achievement",
+      "sortid": 1043,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "potentional",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/advancements/potentional.json"
+        ]
+      },
+      "path": "~/Advancement"
+    },
+    {
+      "name": "WintryIcicleOnEffectActiveTick",
+      "type": "procedure",
+      "sortid": 1016,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wintry_icicle_on_effect_active_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/WintryIcicleOnEffectActiveTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Potions/Procedures"
+    },
+    {
+      "name": "KenjakuUserdisplay",
+      "type": "procedure",
+      "sortid": 1008,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kenjaku_userdisplay",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/KenjakuUserdisplayProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "MahitoOutfit",
+      "type": "armor",
+      "sortid": 1040,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mahito_outfit",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/item/MahitoOutfitItem.java",
+          "src/main/resources/assets/craft_kaisen/models/item/mahito_outfit_chestplate.json",
+          "src/main/resources/assets/craft_kaisen/models/item/mahito_outfit_leggings.json"
+        ]
+      },
+      "path": "~/Armor"
+    },
+    {
+      "name": "GoldOpenDoor",
+      "type": "livingentity",
+      "sortid": 1056,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gold_open_door",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/GoldOpenDoorRenderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/GoldOpenDoorEntity.java"
+        ]
+      },
+      "path": "~/Mobs/Abilities"
+    },
+    {
+      "name": "FireArrowStormOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 990,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fire_arrow_storm_on_entity_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/FireArrowStormOnEntityTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Abilities"
+    },
+    {
+      "name": "KillBounty",
+      "type": "procedure",
+      "sortid": 1038,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kill_bounty",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/KillBountyProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "PlayerTechniqueKenjaku",
+      "type": "procedure",
+      "sortid": 1006,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_technique_kenjaku",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/PlayerTechniqueKenjakuProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "GoldClosedDoor",
+      "type": "livingentity",
+      "sortid": 1060,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gold_closed_door",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/entity/GoldClosedDoorEntity.java",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/GoldClosedDoorRenderer.java"
+        ]
+      },
+      "path": "~/Mobs/Abilities"
+    },
+    {
+      "name": "GiftedGiveRightclicked",
+      "type": "procedure",
+      "sortid": 977,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gifted_give_rightclicked",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/GiftedGiveRightclickedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Items/Procedure"
+    },
+    {
+      "name": "DismantlePrProjectileHitsLivingEntity",
+      "type": "procedure",
+      "sortid": 969,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dismantle_pr_projectile_hits_living_entity",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DismantlePrProjectileHitsLivingEntityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/SukunaVessel"
+    },
+    {
+      "name": "JujutsuHistoryBookPlayerFinishesUsingItem",
+      "type": "procedure",
+      "sortid": 1000,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "jujutsu_history_book_player_finishes_using_item",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/JujutsuHistoryBookPlayerFinishesUsingItemProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Items/Procedure"
+    },
+    {
+      "name": "UraumeOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 1051,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "uraume_on_entity_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/UraumeOnEntityTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Procedure"
+    },
+    {
+      "name": "IceNeedleProjectileHitsBlock",
+      "type": "procedure",
+      "sortid": 1021,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ice_needle_projectile_hits_block",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/IceNeedleProjectileHitsBlockProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/IceFormation"
+    },
+    {
+      "name": "CursedSpiritRegeneration",
+      "type": "procedure",
+      "sortid": 996,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cursed_spirit_regeneration",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/CursedSpiritRegenerationProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "SetFrost",
+      "type": "procedure",
+      "sortid": 1034,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_frost",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/SetFrostProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/Commands/Procedures"
+    },
+    {
+      "name": "CEMastery",
+      "type": "procedure",
+      "sortid": 1045,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ce_mastery",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/CEMasteryProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "NanamiKentoOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 1014,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nanami_kento_on_entity_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/NanamiKentoOnEntityTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Procedure"
+    },
+    {
+      "name": "DismantlePrWhileProjectileFlyingTick",
+      "type": "procedure",
+      "sortid": 971,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dismantle_pr_while_projectile_flying_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DismantlePrWhileProjectileFlyingTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "immediatesourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/SukunaVessel"
+    },
+    {
+      "name": "RestrictedMoves",
+      "type": "procedure",
+      "sortid": 984,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "restricted_moves",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/RestrictedMovesProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/MoveUse"
+    },
+    {
+      "name": "WintryIcicle",
+      "type": "potioneffect",
+      "sortid": 1017,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wintry_icicle",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/potion/WintryIcicleMobEffect.java"
+        ]
+      },
+      "path": "~/Potions"
+    },
+    {
+      "name": "Uraume",
+      "type": "livingentity",
+      "sortid": 1036,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "uraume",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/UraumeRenderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/UraumeEntity.java",
+          "src/main/resources/assets/craft_kaisen/models/item/uraume_spawn_egg.json",
+          "src/main/resources/data/craft_kaisen/forge/biome_modifier/uraume_biome_modifier.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "PlayerUserKenjaku",
+      "type": "procedure",
+      "sortid": 1005,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_user_kenjaku",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/PlayerUserKenjakuProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "AcceptKenjaku",
+      "type": "procedure",
+      "sortid": 1009,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "accept_kenjaku",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/AcceptKenjakuProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "NanamiOutfit",
+      "type": "armor",
+      "sortid": 1041,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nanami_outfit",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/models/item/nanami_outfit_chestplate.json",
+          "src/main/java/net/mcreator/craftkaisen/item/NanamiOutfitItem.java",
+          "src/main/resources/assets/craft_kaisen/models/item/nanami_outfit_leggings.json"
+        ]
+      },
+      "path": "~/Armor"
+    },
+    {
+      "name": "SetIce",
+      "type": "procedure",
+      "sortid": 1027,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_ice",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/SetIceProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/Commands/Procedures"
+    },
+    {
+      "name": "DismantlePrProjectileHitsBlock",
+      "type": "procedure",
+      "sortid": 970,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dismantle_pr_projectile_hits_block",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DismantlePrProjectileHitsBlockProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/SukunaVessel"
+    },
+    {
+      "name": "SetBasic",
+      "type": "procedure",
+      "sortid": 1035,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_basic",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/SetBasicProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/Commands/Procedures"
+    },
+    {
+      "name": "RainbowOpenDoor",
+      "type": "livingentity",
+      "sortid": 1057,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rainbow_open_door",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/entity/RainbowOpenDoorEntity.java",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/RainbowOpenDoorRenderer.java"
+        ]
+      },
+      "path": "~/Mobs/Abilities"
+    },
+    {
+      "name": "RikaHit",
+      "type": "procedure",
+      "sortid": 1011,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rika_hit",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/RikaHitProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "FireArrowStorm",
+      "type": "livingentity",
+      "sortid": 991,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fire_arrow_storm",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/FireArrowStormRenderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/FireArrowStormEntity.java"
+        ]
+      },
+      "path": "~/Mobs/Abilities"
+    },
+    {
+      "name": "IceNeedle",
+      "type": "projectile",
+      "sortid": 1022,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ice_needle",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/entity/IceNeedleEntity.java"
+        ]
+      },
+      "path": "~/Abilities/IceFormation"
+    },
+    {
+      "name": "MasteredReversedCursedTechnique",
+      "type": "achievement",
+      "sortid": 1063,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mastered_reversed_cursed_technique",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/advancements/mastered_reversed_cursed_technique.json"
+        ]
+      },
+      "path": "~/Advancement"
+    },
+    {
+      "name": "RerollCtRightclicked",
+      "type": "procedure",
+      "sortid": 988,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "reroll_ct_rightclicked",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/RerollCtRightclickedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/Items/Procedure"
+    },
+    {
+      "name": "DomainAmplificationLearned",
+      "type": "achievement",
+      "sortid": 999,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "domain_amplification_learned",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/advancements/domain_amplification_learned.json"
+        ]
+      },
+      "path": "~/Advancement"
+    },
+    {
+      "name": "SetRegainer",
+      "type": "procedure",
+      "sortid": 1028,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_regainer",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/SetRegainerProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/Commands/Procedures"
+    },
+    {
+      "name": "IceNeedleWhileProjectileFlyingTick",
+      "type": "procedure",
+      "sortid": 1019,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ice_needle_while_projectile_flying_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/IceNeedleWhileProjectileFlyingTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "immediatesourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/IceFormation"
+    },
+    {
+      "name": "IceTicking",
+      "type": "projectile",
+      "sortid": 1025,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ice_ticking",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/entity/IceTickingEntity.java"
+        ]
+      },
+      "path": "~/Abilities/IceFormation"
+    },
+    {
+      "name": "SimpleDomainLearned",
+      "type": "achievement",
+      "sortid": 998,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "simple_domain_learned",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/advancements/simple_domain_learned.json"
+        ]
+      },
+      "path": "~/Advancement"
+    },
+    {
+      "name": "DisplayYen",
+      "type": "procedure",
+      "sortid": 1037,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_yen",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayYenProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "GreenClosedDoor",
+      "type": "livingentity",
+      "sortid": 1058,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "green_closed_door",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/GreenClosedDoorRenderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/GreenClosedDoorEntity.java"
+        ]
+      },
+      "path": "~/Mobs/Abilities"
+    },
+    {
+      "name": "SetFearmonger",
+      "type": "procedure",
+      "sortid": 1029,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_fearmonger",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/SetFearmongerProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/Commands/Procedures"
+    },
+    {
+      "name": "ReturnSfDesc",
+      "type": "procedure",
+      "sortid": 974,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_sf_desc",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/ReturnSfDescProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "RikaDespawn",
+      "type": "procedure",
+      "sortid": 979,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rika_despawn",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/RikaDespawnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "HanamiOnInitialEntitySpawn",
+      "type": "procedure",
+      "sortid": 1050,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hanami_on_initial_entity_spawn",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/HanamiOnInitialEntitySpawnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Procedure"
+    },
+    {
+      "name": "DoorSpawn",
+      "type": "procedure",
+      "sortid": 1064,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "door_spawn",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DoorSpawnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/PrivatePureLoveTrain"
+    },
+    {
+      "name": "RikasLoveOnEffectActiveTick",
+      "type": "procedure",
+      "sortid": 981,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rikas_love_on_effect_active_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/RikasLoveOnEffectActiveTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Potions/Procedures"
+    },
+    {
+      "name": "RctMastery",
+      "type": "procedure",
+      "sortid": 1044,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rct_mastery",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/RctMasteryProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "IceTickingProjectileHitsLivingEntity",
+      "type": "procedure",
+      "sortid": 1024,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ice_ticking_projectile_hits_living_entity",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/IceTickingProjectileHitsLivingEntityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Abilities/IceFormation"
+    },
+    {
+      "name": "SetFlame",
+      "type": "procedure",
+      "sortid": 1031,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_flame",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/SetFlameProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/Commands/Procedures"
+    },
+    {
+      "name": "HakariDoors",
+      "type": "tag",
+      "sortid": 1062,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hakari_doors",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/tags/entity_types/hakari_doors.json"
+        ]
+      },
+      "path": "~/Tags"
+    },
+    {
+      "name": "CursedToolTrades",
+      "type": "villagertrade",
+      "sortid": 1013,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cursed_tool_trades",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/Villager Trades"
+    },
+    {
+      "name": "HrRegen",
+      "type": "procedure",
+      "sortid": 1001,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hr_regen",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/HrRegenProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "MasteryGUI",
+      "type": "gui",
+      "sortid": 1046,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mastery_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/gui/MasteryGUIScreen.java",
+          "src/main/java/net/mcreator/craftkaisen/world/inventory/MasteryGUIMenu.java"
+        ]
+      },
+      "path": "~/GUI"
+    },
+    {
+      "name": "HundredDemonsTick",
+      "type": "livingentity",
+      "sortid": 995,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hundred_demons_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/HundredDemonsTickRenderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/HundredDemonsTickEntity.java"
+        ]
+      },
+      "path": "~/Mobs/Abilities"
+    },
+    {
+      "name": "GreenOpenDoor",
+      "type": "livingentity",
+      "sortid": 1054,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "green_open_door",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/entity/GreenOpenDoorEntity.java",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/GreenOpenDoorRenderer.java"
+        ]
+      },
+      "path": "~/Mobs/Abilities"
+    },
+    {
+      "name": "GiftedGive",
+      "type": "item",
+      "sortid": 978,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gifted_give",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/item/GiftedGiveItem.java",
+          "src/main/resources/assets/craft_kaisen/models/item/gifted_give.json"
+        ]
+      },
+      "path": "~/Items"
+    },
+    {
+      "name": "PlayerTraitKenjaku",
+      "type": "procedure",
+      "sortid": 1007,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_trait_kenjaku",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/PlayerTraitKenjakuProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "DoorsChecker",
+      "type": "projectile",
+      "sortid": 1067,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "doors_checker",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/entity/DoorsCheckerEntity.java"
+        ]
+      },
+      "path": "~/Abilities/PrivatePureLoveTrain"
+    },
+    {
+      "name": "SetSafeFarming",
+      "type": "procedure",
+      "sortid": 1030,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_safe_farming",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/SetSafeFarmingProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/Commands/Procedures"
+    },
+    {
+      "name": "ReturnPerk",
+      "type": "procedure",
+      "sortid": 1012,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_perk",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/ReturnPerkProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "KenjakuGUI",
+      "type": "gui",
+      "sortid": 1010,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kenjaku_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/network/KenjakuGUIButtonMessage.java",
+          "src/main/java/net/mcreator/craftkaisen/world/inventory/KenjakuGUIMenu.java",
+          "src/main/java/net/mcreator/craftkaisen/client/gui/KenjakuGUIScreen.java"
+        ]
+      },
+      "path": "~/GUI"
+    },
+    {
+      "name": "SpectatorSkill",
+      "type": "procedure",
+      "sortid": 1048,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spectator_skill",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/SpectatorSkillProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "HistoryOfJujutsu",
+      "type": "achievement",
+      "sortid": 997,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "history_of_jujutsu",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/advancements/history_of_jujutsu.json"
+        ]
+      },
+      "path": "~/Advancement"
+    },
+    {
+      "name": "ChosoOnInitialEntitySpawn",
+      "type": "procedure",
+      "sortid": 1002,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "choso_on_initial_entity_spawn",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/ChosoOnInitialEntitySpawnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Procedure"
+    },
+    {
+      "name": "FlyingCursedSpiritOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 1053,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flying_cursed_spirit_on_entity_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/FlyingCursedSpiritOnEntityTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Procedure"
+    },
+    {
+      "name": "SukunaGiveRightclicked",
+      "type": "procedure",
+      "sortid": 975,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sukuna_give_rightclicked",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/SukunaGiveRightclickedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Items/Procedure"
+    },
+    {
+      "name": "WaterWalkingProcedure",
+      "type": "procedure",
+      "sortid": 986,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "water_walking_procedure",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/WaterWalkingProcedureProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/Abilities/Restricted"
+    },
+    {
+      "name": "RainbowClosedDoor",
+      "type": "livingentity",
+      "sortid": 1061,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rainbow_closed_door",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/models/item/rainbow_closed_door_spawn_egg.json",
+          "src/main/java/net/mcreator/craftkaisen/entity/RainbowClosedDoorEntity.java",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/RainbowClosedDoorRenderer.java"
+        ]
+      },
+      "path": "~/Mobs/Abilities"
+    },
+    {
+      "name": "BehindYouProcedure",
+      "type": "procedure",
+      "sortid": 987,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "behind_you_procedure",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/BehindYouProcedureProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/Restricted"
+    },
+    {
+      "name": "PPLTMoves",
+      "type": "procedure",
+      "sortid": 1069,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pplt_moves",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/PPLTMovesProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Abilities/MoveUse"
     }
   ],
   "variable_elements": [
@@ -23379,6 +25535,30 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "2.0"
+    },
+    {
+      "name": "SelfVow",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "\"\""
+    },
+    {
+      "name": "SfDesc",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "\"\""
+    },
+    {
+      "name": "CeMastery",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "PageSelfVow",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "Overtime"
     }
   ],
   "sound_elements": [
@@ -23990,6 +26170,10 @@
             "children": []
           },
           {
+            "name": "PrivatePureLoveTrain",
+            "children": []
+          },
+          {
             "name": "TenShadows",
             "children": []
           },
@@ -24044,6 +26228,14 @@
           },
           {
             "name": "BloodManipulation",
+            "children": []
+          },
+          {
+            "name": "IceFormation",
+            "children": []
+          },
+          {
+            "name": "Restricted",
             "children": []
           },
           {

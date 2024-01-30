@@ -10,13 +10,13 @@
         "entries": [
           {
             "price1": {
-              "value": "Blocks.STONE#0"
+              "value": "Items.DIAMOND"
             },
-            "countPrice1": 1,
+            "countPrice1": 20,
             "price2": {
-              "value": ""
+              "value": "Items.EMERALD"
             },
-            "countPrice2": 1,
+            "countPrice2": 18,
             "offer": {
               "value": "CUSTOM:JujutsuHistoryBook"
             },

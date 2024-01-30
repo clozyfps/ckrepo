@@ -11,6 +11,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraft.world.effect.MobEffect;
 
 import net.mcreator.craftkaisen.potion.ZoneMobEffect;
+import net.mcreator.craftkaisen.potion.WintryIcicleMobEffect;
 import net.mcreator.craftkaisen.potion.VesselPotionEffectMobEffect;
 import net.mcreator.craftkaisen.potion.UnlimitedVoidEffectMobEffect;
 import net.mcreator.craftkaisen.potion.TwistingMobEffect;
@@ -25,6 +26,7 @@ import net.mcreator.craftkaisen.potion.SmallPoxDeityCooldownMobEffect;
 import net.mcreator.craftkaisen.potion.SlicingMahitoMobEffect;
 import net.mcreator.craftkaisen.potion.SimpleDomainMobEffect;
 import net.mcreator.craftkaisen.potion.SimpleDomainCooldownMobEffect;
+import net.mcreator.craftkaisen.potion.RikasLoveMobEffect;
 import net.mcreator.craftkaisen.potion.RikaStatusMobEffect;
 import net.mcreator.craftkaisen.potion.ReikiMobEffect;
 import net.mcreator.craftkaisen.potion.RCTMobEffect;
@@ -94,4 +96,6 @@ public class CraftKaisenModMobEffects {
 	public static final RegistryObject<MobEffect> REIKI = REGISTRY.register("reiki", () -> new ReikiMobEffect());
 	public static final RegistryObject<MobEffect> STOP_ATTACKS = REGISTRY.register("stop_attacks", () -> new StopAttacksMobEffect());
 	public static final RegistryObject<MobEffect> RIKA_STATUS = REGISTRY.register("rika_status", () -> new RikaStatusMobEffect());
+	public static final RegistryObject<MobEffect> RIKAS_LOVE = REGISTRY.register("rikas_love", () -> new RikasLoveMobEffect());
+	public static final RegistryObject<MobEffect> WINTRY_ICICLE = REGISTRY.register("wintry_icicle", () -> new WintryIcicleMobEffect());
 }

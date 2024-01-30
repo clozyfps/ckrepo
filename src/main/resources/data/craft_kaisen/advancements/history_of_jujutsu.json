@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "craft_kaisen:jujutsu_history_book"
+    },
+    "title": {
+      "translate": "advancements.history_of_jujutsu.title"
+    },
+    "description": {
+      "translate": "advancements.history_of_jujutsu.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "history_of_jujutsu": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 5
+  },
+  "parent": "craft_kaisen:jujutsu_sorcerer"
+}

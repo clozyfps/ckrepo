@@ -6,11 +6,23 @@
     "mobLabel": "",
     "mobModelName": "Modelserpentground",
     "mobModelTexture": "serpent.png",
+    "transparentModelCondition": {
+      "fixedValue": false
+    },
+    "isShakingCondition": {
+      "fixedValue": false
+    },
     "solidBoundingBox": {
       "fixedValue": false
     },
+    "visualScale": {
+      "fixedValue": 1.0
+    },
+    "boundingBoxScale": {
+      "fixedValue": 1.0
+    },
     "modelLayers": [],
-    "modelWidth": 0.6,
+    "modelWidth": 1.4000000000000001,
     "modelHeight": 1.8,
     "modelShadowSize": 0.5,
     "mountedYOffset": 6.0,
@@ -60,6 +72,9 @@
     "health": 200,
     "xpAmount": 0,
     "waterMob": false,
+    "breatheUnderwater": {
+      "fixedValue": false
+    },
     "pushedByFluids": {
       "fixedValue": true
     },

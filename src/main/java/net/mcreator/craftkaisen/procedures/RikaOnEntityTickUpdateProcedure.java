@@ -3,6 +3,7 @@ package net.mcreator.craftkaisen.procedures;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
@@ -10,6 +11,8 @@ import net.minecraft.server.level.ServerPlayer;
 
 import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
 import net.mcreator.craftkaisen.entity.YutaOkkotsuEntity;
+
+import java.util.ArrayList;
 
 public class RikaOnEntityTickUpdateProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
@@ -22,82 +25,51 @@ public class RikaOnEntityTickUpdateProcedure {
 		double max_rotation_step = 0;
 		double rotation_direction = 0;
 		double rotation_speed = 0;
-		if ((entity instanceof TamableAnimal _tamEnt ? _tamEnt.isTame() : false) && !((entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null).getPersistentData().getBoolean("releaserika"))) {
-			{
-				Entity _ent = entity;
-				_ent.teleportTo(
-						((entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null).getX() + Math.sin(Math.toRadians((entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null).getYRot())) * 2.5
-								+ Math.cos(Math.toRadians((entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null).getYRot())) * (-1) * 0.8),
-						((entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null).getY() + 0.5),
-						((entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null).getZ() + Math.cos(Math.toRadians((entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null).getYRot())) * (-1) * (-0.2)
-								- Math.sin(Math.toRadians((entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null).getYRot())) * 1.2));
-				if (_ent instanceof ServerPlayer _serverPlayer)
-					_serverPlayer.connection.teleport(
-							((entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null).getX() + Math.sin(Math.toRadians((entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null).getYRot())) * 2.5
-									+ Math.cos(Math.toRadians((entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null).getYRot())) * (-1) * 0.8),
-							((entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null).getY() + 0.5),
-							((entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null).getZ() + Math.cos(Math.toRadians((entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null).getYRot())) * (-1) * (-0.2)
-									- Math.sin(Math.toRadians((entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null).getYRot())) * 1.2),
-							_ent.getYRot(), _ent.getXRot());
-			}
-		}
-		if ((entity instanceof TamableAnimal _tamEnt ? _tamEnt.isTame() : false) && !((entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null).getPersistentData().getBoolean("releaserika"))) {
-			rotation_speed = 36;
-			player_yaw = (entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null).getYRot();
-			entity_yaw = entity.getYRot();
-			if (player_yaw != entity_yaw) {
-				difference = player_yaw - entity_yaw;
-				if (difference > 180) {
-					difference = difference - 360;
-				}
-				if (difference < -180) {
-					difference = difference + 360;
-				}
-				if (Math.abs(player_yaw) < 180) {
-					if (Math.abs(difference) < rotation_speed) {
-						rotation_step = 0;
-					} else {
-						if (difference > 0) {
-							rotation_direction = 1;
-						} else {
-							rotation_direction = -1;
-						}
-						max_rotation_step = rotation_direction * Math.abs(rotation_speed);
-						if (Math.abs(difference) <= max_rotation_step) {
-							rotation_step = 0;
-						} else {
-							rotation_step = max_rotation_step;
-						}
-					}
-				} else {
-					rotation_step = 0;
-				}
-				entity_yaw = entity_yaw + rotation_step;
-				if (entity_yaw > 180) {
-					entity_yaw = entity_yaw - 360;
-				}
-				if (entity_yaw < -180) {
-					entity_yaw = entity_yaw + 360;
-				}
-				{
-					Entity _ent = entity;
-					_ent.setYRot((float) entity_yaw);
-					_ent.setXRot(entity.getXRot());
-					_ent.setYBodyRot(_ent.getYRot());
-					_ent.setYHeadRot(_ent.getYRot());
-					_ent.yRotO = _ent.getYRot();
-					_ent.xRotO = _ent.getXRot();
-					if (_ent instanceof LivingEntity _entity) {
-						_entity.yBodyRotO = _entity.getYRot();
-						_entity.yHeadRotO = _entity.getYRot();
+		entity.getPersistentData().putDouble("rikatimer", (entity.getPersistentData().getDouble("rikatimer") + 1));
+		if (entity.getPersistentData().getDouble("rikatimer") >= 100) {
+			if (!(entity instanceof TamableAnimal _tamEnt ? _tamEnt.isTame() : false)) {
+				if (!(!world.getEntitiesOfClass(YutaOkkotsuEntity.class, AABB.ofSize(new Vec3(x, y, z), 100, 100, 100), e -> true).isEmpty())) {
+					if (!(!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 15, 15, 15), e -> true).isEmpty())) {
+						if (!entity.level.isClientSide())
+							entity.discard();
 					}
 				}
 			}
+			entity.getPersistentData().putDouble("rikatimer", 0);
 		}
-		if (!(!world.getEntitiesOfClass(YutaOkkotsuEntity.class, AABB.ofSize(new Vec3(x, y, z), 100, 100, 100), e -> true).isEmpty())) {
-			if (entity instanceof LivingEntity _livEnt27 && _livEnt27.hasEffect(CraftKaisenModMobEffects.RIKA_STATUS.get())) {
-				if (!entity.level.isClientSide())
-					entity.discard();
+		for (Entity entityiterator : new ArrayList<>(world.players())) {
+			if (entity instanceof TamableAnimal _tamEnt ? _tamEnt.isTame() : false) {
+				if ((entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) == entityiterator) {
+					if (entity instanceof LivingEntity _livEnt11 && _livEnt11.hasEffect(CraftKaisenModMobEffects.RIKA_STATUS.get())) {
+						if (!(!world.getEntitiesOfClass(YutaOkkotsuEntity.class, AABB.ofSize(new Vec3(x, y, z), 100, 100, 100), e -> true).isEmpty())) {
+							if (!entity.level.isClientSide())
+								entity.discard();
+						}
+					}
+					if (!((entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null).getPersistentData().getBoolean("releaserika"))) {
+						{
+							Entity _ent = entity;
+							_ent.setYRot((entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null).getYRot());
+							_ent.setXRot((entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null).getXRot());
+							_ent.setYBodyRot(_ent.getYRot());
+							_ent.setYHeadRot(_ent.getYRot());
+							_ent.yRotO = _ent.getYRot();
+							_ent.xRotO = _ent.getXRot();
+							if (_ent instanceof LivingEntity _entity) {
+								_entity.yBodyRotO = _entity.getYRot();
+								_entity.yHeadRotO = _entity.getYRot();
+							}
+						}
+						{
+							Entity _ent = entity;
+							_ent.teleportTo(((entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null).getX() - 1), ((entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null).getY()),
+									((entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null).getZ() - 1));
+							if (_ent instanceof ServerPlayer _serverPlayer)
+								_serverPlayer.connection.teleport(((entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null).getX() - 1), ((entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null).getY()),
+										((entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null).getZ() - 1), _ent.getYRot(), _ent.getXRot());
+						}
+					}
+				}
 			}
 		}
 	}

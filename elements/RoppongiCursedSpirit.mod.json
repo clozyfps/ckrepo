@@ -4,13 +4,25 @@
   "definition": {
     "mobName": "Roppongi Cursed Spirit",
     "mobLabel": "",
-    "mobModelName": "Modelroppongicursedspirit",
-    "mobModelTexture": "roppongicursedspirit.png",
+    "mobModelName": "ModelRoppongiCurse",
+    "mobModelTexture": "roppongicursetexture.png",
+    "transparentModelCondition": {
+      "fixedValue": false
+    },
+    "isShakingCondition": {
+      "fixedValue": false
+    },
     "solidBoundingBox": {
       "fixedValue": false
     },
+    "visualScale": {
+      "fixedValue": 1.0
+    },
+    "boundingBoxScale": {
+      "fixedValue": 1.0
+    },
     "modelLayers": [],
-    "modelWidth": 0.6,
+    "modelWidth": 0.7999999999999999,
     "modelHeight": 1.8,
     "modelShadowSize": 0.5,
     "mountedYOffset": 0.0,
@@ -60,6 +72,9 @@
     "health": 99,
     "xpAmount": 0,
     "waterMob": false,
+    "breatheUnderwater": {
+      "fixedValue": false
+    },
     "pushedByFluids": {
       "fixedValue": true
     },

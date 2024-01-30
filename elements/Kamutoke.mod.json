@@ -3,10 +3,10 @@
   "_type": "tool",
   "definition": {
     "toolType": "Sword",
-    "renderType": 0,
+    "renderType": 1,
     "blockingRenderType": 0,
     "texture": "air102_layer_2",
-    "customModelName": "Normal",
+    "customModelName": "kamutoke:default",
     "blockingModelName": "Normal blocking",
     "name": "\"Supreme Martial Solution\" Kamutoke",
     "specialInformation": {

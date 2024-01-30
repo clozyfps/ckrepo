@@ -10,6 +10,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
+import net.minecraft.network.chat.Component;
 
 import net.mcreator.craftkaisen.init.CraftKaisenModItems;
 
@@ -36,33 +37,14 @@ public class JujutsuHistoryBookRandomizerProcedure {
 		double barrier = 0;
 		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == CraftKaisenModItems.JUJUTSU_HISTORY_BOOK.get()
 				&& ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getString("HistoryType")).isEmpty()) {
-			type = Mth.nextInt(RandomSource.create(), 1, 4);
+			type = Mth.nextInt(RandomSource.create(), 1, 2);
 			if (type == 1) {
-				(entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().putString("HistoryType", "CT");
-				ct = Mth.nextInt(RandomSource.create(), 1, 3);
-				if (ct == 1) {
-					(entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().putString("CTType", "Limitless");
-				} else if (ct == 2) {
-					(entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().putString("CTType", "Ten Shadows");
-				} else if (ct == 3) {
-					(entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().putString("CTType", "Blood Manipulation");
-				}
-			} else if (type == 2) {
-				(entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().putString("HistoryType", "Barriers");
-				barrier = Mth.nextInt(RandomSource.create(), 1, 30);
-				if (barrier >= 1 && barrier < 7) {
-					(entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().putString("BarrierType", "Simple Barrier");
-				} else if (barrier >= 7 && barrier < 15) {
-					(entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().putString("BarrierType", "Hollow Wicker Basket");
-				} else if (barrier >= 15 && barrier < 21) {
-					(entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().putString("BarrierType", "Simple Domain");
-				} else if (barrier >= 21 && barrier < 26) {
-					(entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().putString("BarrierType", "Domain Expansion");
-				} else if (barrier >= 26) {
-					(entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().putString("BarrierType", "Domain Amplification");
-				}
-			} else {
-				(entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().putString("HistoryType", "Scribbles");
+				(entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().putString("HistoryType", "Simple Domain");
+				(entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).setHoverName(Component.literal("\u00A7dJujutsu History Book: Simple Domain"));
+			}
+			if (type == 2) {
+				(entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().putString("HistoryType", "Domain Amplification");
+				(entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).setHoverName(Component.literal("\u00A7dJujutsu History Book: Domain Amplification"));
 			}
 		}
 	}

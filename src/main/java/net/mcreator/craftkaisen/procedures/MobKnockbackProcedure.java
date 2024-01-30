@@ -12,14 +12,11 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.tags.TagKey;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.BlockPos;
-
-import net.mcreator.craftkaisen.CraftKaisenMod;
 
 import javax.annotation.Nullable;
 
@@ -39,7 +36,7 @@ public class MobKnockbackProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity, Entity sourceentity) {
 		if (entity == null || sourceentity == null)
 			return;
-		if (entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("craft_kaisen:sorcerers")))) {
+		if (sourceentity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("craft_kaisen:sorcerers")))) {
 			if (Math.random() < 0.3) {
 				entity.setDeltaMovement(new Vec3((2 * sourceentity.getLookAngle().x), (3 * sourceentity.getLookAngle().y), (2 * sourceentity.getLookAngle().z)));
 				if (world instanceof Level _level) {
@@ -51,20 +48,10 @@ public class MobKnockbackProcedure {
 				}
 				if (world instanceof ServerLevel _level)
 					_level.sendParticles(ParticleTypes.POOF, x, y, z, 8, 1, 2, 1, 1);
-				if (Math.random() < 0.02) {
-					CraftKaisenMod.queueServerWork(15, () -> {
-						{
-							Entity _ent = sourceentity;
-							_ent.teleportTo((entity.getX()), (entity.getY()), (entity.getZ()));
-							if (_ent instanceof ServerPlayer _serverPlayer)
-								_serverPlayer.connection.teleport((entity.getX()), (entity.getY()), (entity.getZ()), _ent.getYRot(), _ent.getXRot());
-						}
-					});
-				}
 				entity.getPersistentData().putBoolean("slam", true);
 			}
 		}
-		if (entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("craft_kaisen:curse_user")))) {
+		if (sourceentity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("craft_kaisen:curse_user")))) {
 			if (Math.random() < 0.3) {
 				entity.setDeltaMovement(new Vec3((4 * sourceentity.getLookAngle().x), (2.5 * sourceentity.getLookAngle().y), (4 * sourceentity.getLookAngle().z)));
 				if (world instanceof Level _level) {

@@ -66,7 +66,7 @@ public class MalevolentShrineProcedureNewProcedure {
 					CraftKaisenMod.queueServerWork(25, () -> {
 						if (world instanceof ServerLevel _level) {
 							Entity entityToSpawn = new MalevolentShrineEntity(CraftKaisenModEntities.MALEVOLENT_SHRINE.get(), _level);
-							entityToSpawn.moveTo((entity.getX() - 3), (entity.getY() - 1), (entity.getZ() - 3), 0, 0);
+							entityToSpawn.moveTo((entity.getX() - 3), (entity.getY()), (entity.getZ() - 3), 0, 0);
 							entityToSpawn.setYBodyRot(0);
 							entityToSpawn.setYHeadRot(0);
 							entityToSpawn.setDeltaMovement(0, 0, 0);

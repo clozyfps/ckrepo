@@ -37,6 +37,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.Packet;
 
+import net.mcreator.craftkaisen.init.CraftKaisenModItems;
 import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
 
 public class BlackDivineDogEntity extends TamableAnimal {
@@ -141,7 +142,7 @@ public class BlackDivineDogEntity extends TamableAnimal {
 
 	@Override
 	public boolean isFood(ItemStack stack) {
-		return Ingredient.of().test(stack);
+		return Ingredient.of(new ItemStack(CraftKaisenModItems.TEST.get())).test(stack);
 	}
 
 	public static void init() {

@@ -20,6 +20,7 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.craftkaisen.init.CraftKaisenModParticleTypes;
+import net.mcreator.craftkaisen.CraftKaisenMod;
 
 import java.util.stream.Collectors;
 import java.util.List;
@@ -87,5 +88,9 @@ public class FireArrowWhileProjectileFlyingTickProcedure {
 				_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.firecharge.use")), SoundSource.NEUTRAL, 1, 1, false);
 			}
 		}
+		CraftKaisenMod.queueServerWork(40, () -> {
+			if (!immediatesourceentity.level.isClientSide())
+				immediatesourceentity.discard();
+		});
 	}
 }

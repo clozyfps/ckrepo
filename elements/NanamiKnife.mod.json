@@ -8,7 +8,7 @@
     "texture": "air102_layer_2",
     "customModelName": "nanamikentoknife:default",
     "blockingModelName": "Normal blocking",
-    "name": "Nanami Knife",
+    "name": "Blunt Blade",
     "specialInformation": {
       "fixedValue": []
     },
@@ -22,6 +22,9 @@
     "damageVsEntity": 8.0,
     "usageCount": 1000,
     "blocksAffected": [],
+    "glowCondition": {
+      "fixedValue": false
+    },
     "repairItems": [],
     "immuneToFire": false,
     "stayInGridWhenCrafting": false,

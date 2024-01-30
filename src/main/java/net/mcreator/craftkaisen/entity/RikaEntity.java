@@ -50,6 +50,7 @@ import net.minecraft.core.BlockPos;
 import net.mcreator.craftkaisen.procedures.RikaOnInitialEntitySpawnProcedure;
 import net.mcreator.craftkaisen.procedures.RikaOnEntityTickUpdateProcedure;
 import net.mcreator.craftkaisen.procedures.RikaEntityDiesProcedure;
+import net.mcreator.craftkaisen.init.CraftKaisenModItems;
 import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
 
 import javax.annotation.Nullable;
@@ -232,7 +233,7 @@ public class RikaEntity extends TamableAnimal {
 
 	@Override
 	public boolean isFood(ItemStack stack) {
-		return Ingredient.of().test(stack);
+		return Ingredient.of(new ItemStack(CraftKaisenModItems.TEST.get())).test(stack);
 	}
 
 	@Override

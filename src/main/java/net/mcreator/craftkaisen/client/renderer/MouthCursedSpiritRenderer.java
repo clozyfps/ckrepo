@@ -6,15 +6,15 @@ import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
 import net.mcreator.craftkaisen.entity.MouthCursedSpiritEntity;
-import net.mcreator.craftkaisen.client.model.Modelmouthcursedspirit;
+import net.mcreator.craftkaisen.client.model.ModelMouthSpirit;
 
-public class MouthCursedSpiritRenderer extends MobRenderer<MouthCursedSpiritEntity, Modelmouthcursedspirit<MouthCursedSpiritEntity>> {
+public class MouthCursedSpiritRenderer extends MobRenderer<MouthCursedSpiritEntity, ModelMouthSpirit<MouthCursedSpiritEntity>> {
 	public MouthCursedSpiritRenderer(EntityRendererProvider.Context context) {
-		super(context, new Modelmouthcursedspirit(context.bakeLayer(Modelmouthcursedspirit.LAYER_LOCATION)), 0.5f);
+		super(context, new ModelMouthSpirit(context.bakeLayer(ModelMouthSpirit.LAYER_LOCATION)), 0.5f);
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(MouthCursedSpiritEntity entity) {
-		return new ResourceLocation("craft_kaisen:textures/entities/mouthcursedspirit.png");
+		return new ResourceLocation("craft_kaisen:textures/entities/mouthspirittexture.png");
 	}
 }

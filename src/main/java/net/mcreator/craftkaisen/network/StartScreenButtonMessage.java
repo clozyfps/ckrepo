@@ -65,7 +65,7 @@ public class StartScreenButtonMessage {
 			return;
 		if (buttonID == 0) {
 
-			FinishCharacterProcedure.execute(entity);
+			FinishCharacterProcedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 1) {
 

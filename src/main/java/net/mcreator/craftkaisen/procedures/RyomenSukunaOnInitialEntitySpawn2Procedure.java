@@ -6,7 +6,7 @@ public class RyomenSukunaOnInitialEntitySpawn2Procedure {
 	public static void execute(Entity entity) {
 		if (entity == null)
 			return;
-		if (Math.random() < 0.08) {
+		if (Math.random() < 0.2) {
 			if (!entity.level.isClientSide())
 				entity.discard();
 		}

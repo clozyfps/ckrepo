@@ -4,7 +4,7 @@
     "type": "forge:any"
   },
   "spawners": {
-    "type": "craft_kaisen:small_pox_deity",
+    "type": "craft_kaisen:uraume",
     "weight": 1,
     "minCount": 1,
     "maxCount": 1

@@ -43,6 +43,13 @@ public class MahoragaAdaptionProcedure {
 						_player.displayClientMessage(Component.literal("Mahoraga Adapted To This Already"), true);
 				}
 			}
+			if ((sourceentity.getPersistentData().getString("currentmoveactive")).isEmpty()) {
+				if (Math.random() < 0.3) {
+					if (event != null && event.isCancelable()) {
+						event.setCanceled(true);
+					}
+				}
+			}
 		}
 	}
 }

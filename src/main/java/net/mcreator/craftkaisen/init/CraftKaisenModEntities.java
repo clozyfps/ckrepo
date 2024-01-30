@@ -22,6 +22,7 @@ import net.mcreator.craftkaisen.entity.WoodenBoxEntity;
 import net.mcreator.craftkaisen.entity.WhiteDivineDogEntity;
 import net.mcreator.craftkaisen.entity.WaterMaximumElephantProjectileEntity;
 import net.mcreator.craftkaisen.entity.VolcanicEruptionProjectileEntity;
+import net.mcreator.craftkaisen.entity.UraumeEntity;
 import net.mcreator.craftkaisen.entity.UnlimitedVoidMobEntity;
 import net.mcreator.craftkaisen.entity.TwistRangedProjectileEntity;
 import net.mcreator.craftkaisen.entity.TojiFushiguroEntity;
@@ -50,7 +51,11 @@ import net.mcreator.craftkaisen.entity.ReversalRedProjectileProjectileEntity;
 import net.mcreator.craftkaisen.entity.ReversalRedProjectile1Entity;
 import net.mcreator.craftkaisen.entity.ReversalRedEntityEntity;
 import net.mcreator.craftkaisen.entity.ResurrectedTojiEntity;
+import net.mcreator.craftkaisen.entity.RedOpenDoorEntity;
+import net.mcreator.craftkaisen.entity.RedClosedDoorEntity;
+import net.mcreator.craftkaisen.entity.RainbowOpenDoorEntity;
 import net.mcreator.craftkaisen.entity.RainbowDragonEntity;
+import net.mcreator.craftkaisen.entity.RainbowClosedDoorEntity;
 import net.mcreator.craftkaisen.entity.PureLoveBeamRangedProjectileEntity;
 import net.mcreator.craftkaisen.entity.PoxDeityDomainEntity;
 import net.mcreator.craftkaisen.entity.PandaEntity;
@@ -73,15 +78,24 @@ import net.mcreator.craftkaisen.entity.KoGuyEntity;
 import net.mcreator.craftkaisen.entity.KaichiEntity;
 import net.mcreator.craftkaisen.entity.JogoEntity;
 import net.mcreator.craftkaisen.entity.InventoryCurseMobEntity;
+import net.mcreator.craftkaisen.entity.IcileEntity;
+import net.mcreator.craftkaisen.entity.IceTickingEntity;
+import net.mcreator.craftkaisen.entity.IceNeedleEntity;
+import net.mcreator.craftkaisen.entity.HundredDemonsTickEntity;
 import net.mcreator.craftkaisen.entity.HollowPurpleProjectileProjectileEntity;
 import net.mcreator.craftkaisen.entity.HollowPurpleGojoEntity;
 import net.mcreator.craftkaisen.entity.HeianEraSukunaEntity;
 import net.mcreator.craftkaisen.entity.HanamiEntity;
 import net.mcreator.craftkaisen.entity.HajimeKashimoEntity;
+import net.mcreator.craftkaisen.entity.GreenOpenDoorEntity;
+import net.mcreator.craftkaisen.entity.GreenClosedDoorEntity;
 import net.mcreator.craftkaisen.entity.GreatSerpentEntity;
+import net.mcreator.craftkaisen.entity.GoldOpenDoorEntity;
+import net.mcreator.craftkaisen.entity.GoldClosedDoorEntity;
 import net.mcreator.craftkaisen.entity.FlyingCursedSpiritEntity;
 import net.mcreator.craftkaisen.entity.FlyHeadEntity;
 import net.mcreator.craftkaisen.entity.FlowerProjectileProjectileEntity;
+import net.mcreator.craftkaisen.entity.FireArrowStormEntity;
 import net.mcreator.craftkaisen.entity.FireArrowProjectileEntity;
 import net.mcreator.craftkaisen.entity.FireArrowMobProjectileEntity;
 import net.mcreator.craftkaisen.entity.FingerBearerProjectileEntity;
@@ -91,8 +105,10 @@ import net.mcreator.craftkaisen.entity.ExplodeRangedProjectileEntity;
 import net.mcreator.craftkaisen.entity.EmberInsectProjectileProjectileEntity;
 import net.mcreator.craftkaisen.entity.EmberInsectEntity;
 import net.mcreator.craftkaisen.entity.EightHandledSwordDivergentSilaDivineGeneralMahoragaEntity;
+import net.mcreator.craftkaisen.entity.DoorsCheckerEntity;
 import net.mcreator.craftkaisen.entity.DontMoveRangedProjectileEntity;
 import net.mcreator.craftkaisen.entity.DismantleProjectileEntity;
+import net.mcreator.craftkaisen.entity.DismantlePrEntity;
 import net.mcreator.craftkaisen.entity.DisasterFlameRangedProjectileEntity;
 import net.mcreator.craftkaisen.entity.CrushedRangedProjectileEntity;
 import net.mcreator.craftkaisen.entity.CrumbleAwayRangedProjectileEntity;
@@ -136,7 +152,7 @@ public class CraftKaisenModEntities {
 			EntityType.Builder.<RoppongiCursedSpiritEntity>of(RoppongiCursedSpiritEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 					.setCustomClientFactory(RoppongiCursedSpiritEntity::new)
 
-					.sized(0.6f, 1.8f));
+					.sized(0.8f, 1.8f));
 	public static final RegistryObject<EntityType<YutaOkkotsuEntity>> YUTA_OKKOTSU = register("yuta_okkotsu",
 			EntityType.Builder.<YutaOkkotsuEntity>of(YutaOkkotsuEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(YutaOkkotsuEntity::new)
 
@@ -144,11 +160,11 @@ public class CraftKaisenModEntities {
 	public static final RegistryObject<EntityType<RikaEntity>> RIKA = register("rika",
 			EntityType.Builder.<RikaEntity>of(RikaEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(RikaEntity::new)
 
-					.sized(0.6f, 1.8f));
+					.sized(1.4f, 2.2f));
 	public static final RegistryObject<EntityType<GreatSerpentEntity>> GREAT_SERPENT = register("great_serpent",
 			EntityType.Builder.<GreatSerpentEntity>of(GreatSerpentEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(GreatSerpentEntity::new)
 
-					.sized(0.6f, 1.8f));
+					.sized(1.4f, 1.8f));
 	public static final RegistryObject<EntityType<RugbyFieldCursedSpiritEntity>> RUGBY_FIELD_CURSED_SPIRIT = register("rugby_field_cursed_spirit",
 			EntityType.Builder.<RugbyFieldCursedSpiritEntity>of(RugbyFieldCursedSpiritEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 					.setCustomClientFactory(RugbyFieldCursedSpiritEntity::new)
@@ -193,7 +209,7 @@ public class CraftKaisenModEntities {
 	public static final RegistryObject<EntityType<HanamiEntity>> HANAMI = register("hanami",
 			EntityType.Builder.<HanamiEntity>of(HanamiEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(HanamiEntity::new)
 
-					.sized(0.6f, 1.8f));
+					.sized(1.8f, 2.4f));
 	public static final RegistryObject<EntityType<JogoEntity>> JOGO = register("jogo",
 			EntityType.Builder.<JogoEntity>of(JogoEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(JogoEntity::new)
 
@@ -201,7 +217,7 @@ public class CraftKaisenModEntities {
 	public static final RegistryObject<EntityType<RoundDeerEntity>> ROUND_DEER = register("round_deer",
 			EntityType.Builder.<RoundDeerEntity>of(RoundDeerEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(RoundDeerEntity::new)
 
-					.sized(0.6f, 1.8f));
+					.sized(2.2f, 2.1f));
 	public static final RegistryObject<EntityType<ResurrectedTojiEntity>> RESURRECTED_TOJI = register("resurrected_toji",
 			EntityType.Builder.<ResurrectedTojiEntity>of(ResurrectedTojiEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(ResurrectedTojiEntity::new)
 
@@ -253,7 +269,7 @@ public class CraftKaisenModEntities {
 			EntityType.Builder.<EightHandledSwordDivergentSilaDivineGeneralMahoragaEntity>of(EightHandledSwordDivergentSilaDivineGeneralMahoragaEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
 					.setUpdateInterval(3).setCustomClientFactory(EightHandledSwordDivergentSilaDivineGeneralMahoragaEntity::new)
 
-					.sized(1.3f, 2.8f));
+					.sized(2.1f, 2.8f));
 	public static final RegistryObject<EntityType<RainbowDragonEntity>> RAINBOW_DRAGON = register("rainbow_dragon",
 			EntityType.Builder.<RainbowDragonEntity>of(RainbowDragonEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(RainbowDragonEntity::new)
 
@@ -413,7 +429,7 @@ public class CraftKaisenModEntities {
 	public static final RegistryObject<EntityType<MergedBeastAgitoEntity>> MERGED_BEAST_AGITO = register("merged_beast_agito",
 			EntityType.Builder.<MergedBeastAgitoEntity>of(MergedBeastAgitoEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(MergedBeastAgitoEntity::new)
 
-					.sized(0.6f, 1.8f));
+					.sized(1f, 3f));
 	public static final RegistryObject<EntityType<MegumiFushiguroEntity>> MEGUMI_FUSHIGURO = register("megumi_fushiguro",
 			EntityType.Builder.<MegumiFushiguroEntity>of(MegumiFushiguroEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(MegumiFushiguroEntity::new)
 
@@ -430,6 +446,46 @@ public class CraftKaisenModEntities {
 			EntityType.Builder.<AoiTodoEntity>of(AoiTodoEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(AoiTodoEntity::new)
 
 					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<DismantlePrEntity>> DISMANTLE_PR = register("projectile_dismantle_pr",
+			EntityType.Builder.<DismantlePrEntity>of(DismantlePrEntity::new, MobCategory.MISC).setCustomClientFactory(DismantlePrEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<FireArrowStormEntity>> FIRE_ARROW_STORM = register("fire_arrow_storm",
+			EntityType.Builder.<FireArrowStormEntity>of(FireArrowStormEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(FireArrowStormEntity::new)
+
+					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<HundredDemonsTickEntity>> HUNDRED_DEMONS_TICK = register("hundred_demons_tick", EntityType.Builder.<HundredDemonsTickEntity>of(HundredDemonsTickEntity::new, MobCategory.MONSTER)
+			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(HundredDemonsTickEntity::new).fireImmune().sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<IcileEntity>> ICILE = register("icile",
+			EntityType.Builder.<IcileEntity>of(IcileEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(IcileEntity::new)
+
+					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<IceNeedleEntity>> ICE_NEEDLE = register("projectile_ice_needle",
+			EntityType.Builder.<IceNeedleEntity>of(IceNeedleEntity::new, MobCategory.MISC).setCustomClientFactory(IceNeedleEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<IceTickingEntity>> ICE_TICKING = register("projectile_ice_ticking",
+			EntityType.Builder.<IceTickingEntity>of(IceTickingEntity::new, MobCategory.MISC).setCustomClientFactory(IceTickingEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<UraumeEntity>> URAUME = register("uraume",
+			EntityType.Builder.<UraumeEntity>of(UraumeEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(UraumeEntity::new)
+
+					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<GreenOpenDoorEntity>> GREEN_OPEN_DOOR = register("green_open_door",
+			EntityType.Builder.<GreenOpenDoorEntity>of(GreenOpenDoorEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(GreenOpenDoorEntity::new)
+
+					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<RedOpenDoorEntity>> RED_OPEN_DOOR = register("red_open_door", EntityType.Builder.<RedOpenDoorEntity>of(RedOpenDoorEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
+			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(RedOpenDoorEntity::new).fireImmune().sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<GoldOpenDoorEntity>> GOLD_OPEN_DOOR = register("gold_open_door", EntityType.Builder.<GoldOpenDoorEntity>of(GoldOpenDoorEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
+			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(GoldOpenDoorEntity::new).fireImmune().sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<RainbowOpenDoorEntity>> RAINBOW_OPEN_DOOR = register("rainbow_open_door", EntityType.Builder.<RainbowOpenDoorEntity>of(RainbowOpenDoorEntity::new, MobCategory.MONSTER)
+			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(RainbowOpenDoorEntity::new).fireImmune().sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<GreenClosedDoorEntity>> GREEN_CLOSED_DOOR = register("green_closed_door", EntityType.Builder.<GreenClosedDoorEntity>of(GreenClosedDoorEntity::new, MobCategory.MONSTER)
+			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(GreenClosedDoorEntity::new).fireImmune().sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<RedClosedDoorEntity>> RED_CLOSED_DOOR = register("red_closed_door", EntityType.Builder.<RedClosedDoorEntity>of(RedClosedDoorEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
+			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(RedClosedDoorEntity::new).fireImmune().sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<GoldClosedDoorEntity>> GOLD_CLOSED_DOOR = register("gold_closed_door", EntityType.Builder.<GoldClosedDoorEntity>of(GoldClosedDoorEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
+			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(GoldClosedDoorEntity::new).fireImmune().sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<RainbowClosedDoorEntity>> RAINBOW_CLOSED_DOOR = register("rainbow_closed_door", EntityType.Builder.<RainbowClosedDoorEntity>of(RainbowClosedDoorEntity::new, MobCategory.MONSTER)
+			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(RainbowClosedDoorEntity::new).fireImmune().sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<DoorsCheckerEntity>> DOORS_CHECKER = register("projectile_doors_checker",
+			EntityType.Builder.<DoorsCheckerEntity>of(DoorsCheckerEntity::new, MobCategory.MISC).setCustomClientFactory(DoorsCheckerEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -500,6 +556,18 @@ public class CraftKaisenModEntities {
 			TogeInumakiEntity.init();
 			TakadaEntity.init();
 			AoiTodoEntity.init();
+			FireArrowStormEntity.init();
+			HundredDemonsTickEntity.init();
+			IcileEntity.init();
+			UraumeEntity.init();
+			GreenOpenDoorEntity.init();
+			RedOpenDoorEntity.init();
+			GoldOpenDoorEntity.init();
+			RainbowOpenDoorEntity.init();
+			GreenClosedDoorEntity.init();
+			RedClosedDoorEntity.init();
+			GoldClosedDoorEntity.init();
+			RainbowClosedDoorEntity.init();
 		});
 	}
 
@@ -567,5 +635,17 @@ public class CraftKaisenModEntities {
 		event.put(TOGE_INUMAKI.get(), TogeInumakiEntity.createAttributes().build());
 		event.put(TAKADA.get(), TakadaEntity.createAttributes().build());
 		event.put(AOI_TODO.get(), AoiTodoEntity.createAttributes().build());
+		event.put(FIRE_ARROW_STORM.get(), FireArrowStormEntity.createAttributes().build());
+		event.put(HUNDRED_DEMONS_TICK.get(), HundredDemonsTickEntity.createAttributes().build());
+		event.put(ICILE.get(), IcileEntity.createAttributes().build());
+		event.put(URAUME.get(), UraumeEntity.createAttributes().build());
+		event.put(GREEN_OPEN_DOOR.get(), GreenOpenDoorEntity.createAttributes().build());
+		event.put(RED_OPEN_DOOR.get(), RedOpenDoorEntity.createAttributes().build());
+		event.put(GOLD_OPEN_DOOR.get(), GoldOpenDoorEntity.createAttributes().build());
+		event.put(RAINBOW_OPEN_DOOR.get(), RainbowOpenDoorEntity.createAttributes().build());
+		event.put(GREEN_CLOSED_DOOR.get(), GreenClosedDoorEntity.createAttributes().build());
+		event.put(RED_CLOSED_DOOR.get(), RedClosedDoorEntity.createAttributes().build());
+		event.put(GOLD_CLOSED_DOOR.get(), GoldClosedDoorEntity.createAttributes().build());
+		event.put(RAINBOW_CLOSED_DOOR.get(), RainbowClosedDoorEntity.createAttributes().build());
 	}
 }

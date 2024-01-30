@@ -5,12 +5,12 @@ import net.minecraft.world.phys.Vec2;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.network.chat.Component;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
 
+import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
 import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
 
 public class SimpleDomainCallProcedure {
@@ -126,8 +126,26 @@ public class SimpleDomainCallProcedure {
 		} else if (entity.getPersistentData().getDouble("simpledomainlevel") == 0) {
 			if (entity instanceof LivingEntity _entity)
 				_entity.removeEffect(CraftKaisenModMobEffects.SIMPLE_DOMAIN.get());
-			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-				_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.SIMPLE_DOMAIN_COOLDOWN.get(), 200, 0, false, false));
+		}
+		{
+			double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy - 1;
+			entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				capability.currentCursedEnergy = _setval;
+				capability.syncPlayerVariables(entity);
+			});
+		}
+		if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy <= 0) {
+			if (entity instanceof LivingEntity _entity)
+				_entity.removeEffect(CraftKaisenModMobEffects.SIMPLE_DOMAIN.get());
+			{
+				double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy - 1;
+				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.currentCursedEnergy = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+			entity.getPersistentData().putDouble(("cooldown" + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("coolset"))), 400);
+			entity.getPersistentData().putDouble("simpledomainlevel", 4);
 		}
 	}
 }

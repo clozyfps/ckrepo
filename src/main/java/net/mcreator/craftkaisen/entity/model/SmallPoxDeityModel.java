@@ -1,10 +1,6 @@
 package net.mcreator.craftkaisen.entity.model;
 
-import software.bernie.geckolib.model.GeoModel;
-
-import net.minecraft.resources.ResourceLocation;
-
-import net.mcreator.craftkaisen.entity.SmallPoxDeityEntity;
+import software.bernie.geckolib.core.animation.AnimationState;
 
 public class SmallPoxDeityModel extends GeoModel<SmallPoxDeityEntity> {
 	@Override
