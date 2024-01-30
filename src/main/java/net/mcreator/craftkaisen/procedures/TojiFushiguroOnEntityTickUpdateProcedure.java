@@ -1,17 +1,8 @@
 package net.mcreator.craftkaisen.procedures;
 
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.InteractionHand;
+import net.minecraftforge.eventbus.api.Event;
 
-import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
-import net.mcreator.craftkaisen.init.CraftKaisenModItems;
-import net.mcreator.craftkaisen.entity.SatoruGojoEntity;
+import javax.annotation.Nullable;
 
 public class TojiFushiguroOnEntityTickUpdateProcedure {
 	public static void execute(Entity entity) {

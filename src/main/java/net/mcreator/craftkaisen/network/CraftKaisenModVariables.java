@@ -152,8 +152,8 @@ public class CraftKaisenModVariables {
 			clone.SfDesc = original.SfDesc;
 			clone.CeMastery = original.CeMastery;
 			clone.PageSelfVow = original.PageSelfVow;
-			clone.FlowCooldownActive = original.FlowCooldownActive;
 			clone.FlowCooldownTimer = original.FlowCooldownTimer;
+			clone.FlowCooldownActive = original.FlowCooldownActive;
 			if (!event.isWasDeath()) {
 				clone.currentMove = original.currentMove;
 				clone.currentOutput = original.currentOutput;
@@ -459,8 +459,8 @@ public class CraftKaisenModVariables {
 		public String SfDesc = "\"\"";
 		public double CeMastery = 0;
 		public String PageSelfVow = "Overtime";
-		public boolean FlowCooldownActive = false;
 		public double FlowCooldownTimer = 0;
+		public boolean FlowCooldownActive = false;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -568,8 +568,8 @@ public class CraftKaisenModVariables {
 			nbt.putString("SfDesc", SfDesc);
 			nbt.putDouble("CeMastery", CeMastery);
 			nbt.putString("PageSelfVow", PageSelfVow);
-			nbt.putBoolean("FlowCooldownActive", FlowCooldownActive);
 			nbt.putDouble("FlowCooldownTimer", FlowCooldownTimer);
+			nbt.putBoolean("FlowCooldownActive", FlowCooldownActive);
 			return nbt;
 		}
 
@@ -674,8 +674,8 @@ public class CraftKaisenModVariables {
 			SfDesc = nbt.getString("SfDesc");
 			CeMastery = nbt.getDouble("CeMastery");
 			PageSelfVow = nbt.getString("PageSelfVow");
-			FlowCooldownActive = nbt.getBoolean("FlowCooldownActive");
 			FlowCooldownTimer = nbt.getDouble("FlowCooldownTimer");
+			FlowCooldownActive = nbt.getBoolean("FlowCooldownActive");
 		}
 	}
 
@@ -799,8 +799,8 @@ public class CraftKaisenModVariables {
 					variables.SfDesc = message.data.SfDesc;
 					variables.CeMastery = message.data.CeMastery;
 					variables.PageSelfVow = message.data.PageSelfVow;
-					variables.FlowCooldownActive = message.data.FlowCooldownActive;
 					variables.FlowCooldownTimer = message.data.FlowCooldownTimer;
+					variables.FlowCooldownActive = message.data.FlowCooldownActive;
 				}
 			});
 			context.setPacketHandled(true);

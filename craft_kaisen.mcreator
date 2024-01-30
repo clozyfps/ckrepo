@@ -19473,6 +19473,24 @@
       "path": "~/Procedures"
     },
     {
+      "name": "FlyingCursedSpirit",
+      "type": "animatedentity",
+      "sortid": 829,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flying_cursed_spirit",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/FlyingCursedSpiritRenderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/model/FlyingCursedSpiritModel.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/FlyingCursedSpiritEntity.java",
+          "src/main/resources/data/craft_kaisen/forge/biome_modifier/flying_cursed_spirit_biome_modifier.json",
+          "src/main/resources/assets/craft_kaisen/models/item/flying_cursed_spirit_spawn_egg.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
       "name": "KashimoHit",
       "type": "procedure",
       "sortid": 850,
@@ -24799,6 +24817,106 @@
       "path": "~/Abilities/MoveUse"
     },
     {
+      "name": "FlowOnEffectActiveTick",
+      "type": "procedure",
+      "sortid": 1086,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flow_on_effect_active_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/FlowOnEffectActiveTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Potions/Procedures"
+    },
+    {
+      "name": "FlowGain",
+      "type": "procedure",
+      "sortid": 1089,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flow_gain",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/FlowGainProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "FlowAttack",
+      "type": "procedure",
+      "sortid": 1085,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flow_attack",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/FlowAttackProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "amount",
+            "type": "number"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
       "name": "VoidRemove",
       "type": "procedure",
       "sortid": 1071,
@@ -24829,146 +24947,6 @@
         ]
       },
       "path": "~/Abilities/Limitless"
-    },
-    {
-      "name": "UnlimitedVoidProcedure",
-      "type": "procedure",
-      "sortid": 1072,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "unlimited_void_procedure",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/craftkaisen/procedures/UnlimitedVoidProcedureProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/Abilities/Limitless"
-    },
-    {
-      "name": "CursedEnergyFlow",
-      "type": "achievement",
-      "sortid": 1073,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "cursed_energy_flow",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/craft_kaisen/advancements/cursed_energy_flow.json"
-        ]
-      },
-      "path": "~/Advancement"
-    },
-    {
-      "name": "TheSorcererKiller",
-      "type": "achievement",
-      "sortid": 1074,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "the_sorcerer_killer",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/craft_kaisen/advancements/the_sorcerer_killer.json"
-        ]
-      },
-      "path": "~/Advancement"
-    },
-    {
-      "name": "FistProjectileWhileProjectileFlyingTick",
-      "type": "procedure",
-      "sortid": 1075,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "fist_projectile_while_projectile_flying_tick",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/craftkaisen/procedures/FistProjectileWhileProjectileFlyingTickProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "immediatesourceentity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/Abilities/MissileFists"
-    },
-    {
-      "name": "FistProjectileProjectileHitsBlock",
-      "type": "procedure",
-      "sortid": 1076,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "fist_projectile_projectile_hits_block",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/craftkaisen/procedures/FistProjectileProjectileHitsBlockProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/Abilities/MissileFists"
     },
     {
       "name": "JinichiZenin",
@@ -25020,39 +24998,19 @@
       "path": "~/Abilities/MissileFists"
     },
     {
-      "name": "FistProjectile",
-      "type": "projectile",
-      "sortid": 1079,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "fist_projectile",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/craftkaisen/entity/FistProjectileEntity.java",
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/FistProjectileRenderer.java"
-        ]
-      },
-      "path": "~/Abilities/MissileFists"
-    },
-    {
-      "name": "JinichiZeninOnEntityTickUpdate",
+      "name": "FlowEffectExpires",
       "type": "procedure",
-      "sortid": 1080,
+      "sortid": 1090,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "jinichi_zenin_on_entity_tick_update",
+      "registry_name": "flow_effect_expires",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/procedures/JinichiZeninOnEntityTickUpdateProcedure.java"
+          "src/main/java/net/mcreator/craftkaisen/procedures/FlowEffectExpiresProcedure.java"
         ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
+        "dependencies": []
       },
-      "path": "~/Mobs/Procedure"
+      "path": "~/Potions/Procedures"
     },
     {
       "name": "DivergentFists",
@@ -25069,15 +25027,15 @@
       "path": "~/Advancement"
     },
     {
-      "name": "PassiveSkillUnlock",
+      "name": "MissileFistsMoves",
       "type": "procedure",
-      "sortid": 1082,
+      "sortid": 1091,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "passive_skill_unlock",
+      "registry_name": "missile_fists_moves",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/procedures/PassiveSkillUnlockProcedure.java"
+          "src/main/java/net/mcreator/craftkaisen/procedures/MissileFistsMovesProcedure.java"
         ],
         "dependencies": [
           {
@@ -25086,7 +25044,97 @@
           }
         ]
       },
-      "path": "~/Procedures"
+      "path": "~/Abilities/MoveUse"
+    },
+    {
+      "name": "UnlimitedVoidProcedure",
+      "type": "procedure",
+      "sortid": 1072,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "unlimited_void_procedure",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/UnlimitedVoidProcedureProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/Limitless"
+    },
+    {
+      "name": "Flow",
+      "type": "potioneffect",
+      "sortid": 1084,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flow",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/potion/FlowMobEffect.java"
+        ]
+      },
+      "path": "~/Potions"
+    },
+    {
+      "name": "FistProjectileWhileProjectileFlyingTick",
+      "type": "procedure",
+      "sortid": 1075,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fist_projectile_while_projectile_flying_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/FistProjectileWhileProjectileFlyingTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "immediatesourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/MissileFists"
     },
     {
       "name": "FlowEffectStartedapplied",
@@ -25125,115 +25173,107 @@
       "path": "~/Potions/Procedures"
     },
     {
-      "name": "Flow",
-      "type": "potioneffect",
-      "sortid": 1084,
+      "name": "CursedEnergyFlow",
+      "type": "achievement",
+      "sortid": 1073,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "flow",
+      "registry_name": "cursed_energy_flow",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/potion/FlowMobEffect.java"
+          "src/main/resources/data/craft_kaisen/advancements/cursed_energy_flow.json"
         ]
       },
-      "path": "~/Potions"
+      "path": "~/Advancement"
     },
     {
-      "name": "FlowAttack",
+      "name": "SetMissileFists",
       "type": "procedure",
-      "sortid": 1085,
+      "sortid": 1092,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "flow_attack",
+      "registry_name": "set_missile_fists",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/procedures/FlowAttackProcedure.java"
+          "src/main/java/net/mcreator/craftkaisen/procedures/SetMissileFistsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/Commands/Procedures"
+    },
+    {
+      "name": "JinichiZeninOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 1080,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "jinichi_zenin_on_entity_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/JinichiZeninOnEntityTickUpdateProcedure.java"
         ],
         "dependencies": [
           {
             "name": "entity",
             "type": "entity"
-          },
+          }
+        ]
+      },
+      "path": "~/Mobs/Procedure"
+    },
+    {
+      "name": "TheSorcererKiller",
+      "type": "achievement",
+      "sortid": 1074,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "the_sorcerer_killer",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/advancements/the_sorcerer_killer.json"
+        ]
+      },
+      "path": "~/Advancement"
+    },
+    {
+      "name": "FistProjectile",
+      "type": "projectile",
+      "sortid": 1079,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fist_projectile",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/entity/FistProjectileEntity.java",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/FistProjectileRenderer.java"
+        ]
+      },
+      "path": "~/Abilities/MissileFists"
+    },
+    {
+      "name": "PassiveSkillUnlock",
+      "type": "procedure",
+      "sortid": 1082,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "passive_skill_unlock",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/PassiveSkillUnlockProcedure.java"
+        ],
+        "dependencies": [
           {
-            "name": "sourceentity",
+            "name": "entity",
             "type": "entity"
-          },
-          {
-            "name": "amount",
-            "type": "number"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ]
       },
       "path": "~/Procedures"
-    },
-    {
-      "name": "FlowOnEffectActiveTick",
-      "type": "procedure",
-      "sortid": 1086,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "flow_on_effect_active_tick",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/craftkaisen/procedures/FlowOnEffectActiveTickProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/Potions/Procedures"
-    },
-    {
-      "name": "FlyingCursedSpirit",
-      "type": "livingentity",
-      "sortid": 1087,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "flying_cursed_spirit",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/FlyingCursedSpiritRenderer.java",
-          "src/main/java/net/mcreator/craftkaisen/entity/FlyingCursedSpiritEntity.java",
-          "src/main/resources/data/craft_kaisen/forge/biome_modifier/flying_cursed_spirit_biome_modifier.json",
-          "src/main/resources/assets/craft_kaisen/models/item/flying_cursed_spirit_spawn_egg.json"
-        ]
-      },
-      "path": "~/Mobs"
     },
     {
       "name": "FlowCooldown",
@@ -25256,35 +25296,91 @@
       "path": "~/Procedures"
     },
     {
-      "name": "FlowGain",
+      "name": "FistProjectileProjectileHitsBlock",
       "type": "procedure",
-      "sortid": 1089,
+      "sortid": 1076,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "flow_gain",
+      "registry_name": "fist_projectile_projectile_hits_block",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/procedures/FlowGainProcedure.java"
+          "src/main/java/net/mcreator/craftkaisen/procedures/FistProjectileProjectileHitsBlockProcedure.java"
         ],
         "dependencies": [
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/MissileFists"
+    },
+    {
+      "name": "ImbuedWeaponAttack",
+      "type": "procedure",
+      "sortid": 972,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "imbued_weapon_attack",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/ImbuedWeaponAttackProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
       "path": "~/Procedures"
     },
     {
-      "name": "FlowEffectExpires",
+      "name": "ImbueCEProcedure",
       "type": "procedure",
-      "sortid": 1090,
+      "sortid": 970,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "flow_effect_expires",
+      "registry_name": "imbue_ce_procedure",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/procedures/FlowEffectExpiresProcedure.java"
+          "src/main/java/net/mcreator/craftkaisen/procedures/ImbueCEProcedureProcedure.java"
         ],
         "dependencies": [
           {
@@ -25293,18 +25389,18 @@
           }
         ]
       },
-      "path": "~/Potions/Procedures"
+      "path": "~/Keybinds/Procedures"
     },
     {
-      "name": "MissileFistsMoves",
+      "name": "ImbueCEOnKeyPressed",
       "type": "procedure",
-      "sortid": 1091,
+      "sortid": 968,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "missile_fists_moves",
+      "registry_name": "imbue_ce_on_key_pressed",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/procedures/MissileFistsMovesProcedure.java"
+          "src/main/java/net/mcreator/craftkaisen/procedures/ImbueCEOnKeyPressedProcedure.java"
         ],
         "dependencies": [
           {
@@ -25313,27 +25409,41 @@
           }
         ]
       },
-      "path": "~/Abilities/MoveUse"
+      "path": "~/Keybinds/Procedures"
     },
     {
-      "name": "SetMissileFists",
-      "type": "procedure",
-      "sortid": 1092,
+      "name": "ValidCursedWeapons",
+      "type": "tag",
+      "sortid": 971,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "set_missile_fists",
+      "registry_name": "valid_cursed_weapons",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/procedures/SetMissileFistsProcedure.java"
+          "src/main/resources/data/craft_kaisen/tags/items/valid_cursed_weapons.json"
+        ]
+      },
+      "path": "~/Tags"
+    },
+    {
+      "name": "ImbueCEOnKeyReleased",
+      "type": "procedure",
+      "sortid": 969,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "imbue_ce_on_key_released",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/ImbueCEOnKeyReleasedProcedure.java"
         ],
         "dependencies": [
           {
-            "name": "arguments",
-            "type": "cmdcontext"
+            "name": "entity",
+            "type": "entity"
           }
         ]
       },
-      "path": "~/Commands/Procedures"
+      "path": "~/Keybinds/Procedures"
     }
   ],
   "variable_elements": [
@@ -25974,16 +26084,16 @@
       "value": "Overtime"
     },
     {
-      "name": "FlowCooldownActive",
-      "type": "logic",
-      "scope": "player_persistent",
-      "value": "false"
-    },
-    {
       "name": "FlowCooldownTimer",
       "type": "number",
       "scope": "player_persistent",
       "value": "0"
+    },
+    {
+      "name": "FlowCooldownActive",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
     }
   ],
   "sound_elements": [
@@ -26106,8 +26216,8 @@
       "effect.craft_kaisen.distorted_body_killing": "Instant Spirit Body of Distorted Killing",
       "subtitles.sukuna": "sukuna talking",
       "item.craft_kaisen.nyoi_staff": "Nyoi Staff",
-      "advancements.sukuna_vessel.descr": "Become a Vessel Of Ryomen Sukuna",
       "advancements.jujutsu_sorcerer.descr": "Kill a Cursed Spirit",
+      "advancements.sukuna_vessel.descr": "Become a Vessel Of Ryomen Sukuna",
       "gui.craft_kaisen.move_gui.button_empty3": "\u003e",
       "gui.craft_kaisen.move_gui.button_empty2": "\u003c",
       "item.craft_kaisen.cursed_doll": "Cursed Doll",
@@ -26123,32 +26233,30 @@
       "item.craft_kaisen.mahoraga_wheel_helmet": "Mahoraga Wheel",
       "gui.craft_kaisen.imbue_gui.ImbueValue": "Cursed Energy Amount",
       "entity.craft_kaisen.round_deer": "Round Deer",
-      "advancements.ten_shadows_technique.title": "Ten Shadows Technique",
       "entity.craft_kaisen.icile": "Icile",
+      "advancements.ten_shadows_technique.title": "Ten Shadows Technique",
       "item.craft_kaisen.ember_insect_spawn_egg": "Ember Insect Spawn Egg",
-      "entity.craft_kaisen.inventory_curse_mob": "Inventory Curse Mob",
       "item.craft_kaisen.choso_armor_leggings": "Choso Pants",
-      "entity.craft_kaisen.jinichi_zenin": "Jinichi Zenin",
+      "entity.craft_kaisen.inventory_curse_mob": "Inventory Curse Mob",
       "advancements.grade_4.descr": "Reach The Required Fame.",
       "gui.craft_kaisen.soul_multiplicity_overlay.label_shift_soul_summon": "SHIFT - Soul Summon",
-      "advancements.divine_general_mahoraga.descr": "Tame Mahoraga",
       "subtitles.sukunadomain": "",
+      "advancements.divine_general_mahoraga.descr": "Tame Mahoraga",
       "item.craft_kaisen.distorted_body_leggings": "Distorted Body Legs",
       "item.craft_kaisen.toge_inumaki_spawn_egg": "Toge Inumaki Spawn Egg",
       "gui.craft_kaisen.body_shape_overlay.label_ctrl_rope": "CTRL - Rope",
       "gui.craft_kaisen.soul_multiplicity_overlay.label_alt_soul_isomer": "ALT - Soul Isomer",
       "item.craft_kaisen.naginata": "Naginata",
-      "item.craft_kaisen.ski_mask_helmet": "Ski Mask",
       "advancements.special_grade.title": "Special Grade",
+      "item.craft_kaisen.ski_mask_helmet": "Ski Mask",
       "advancements.history_of_jujutsu.descr": "Find a Jujutsu History Book",
       "item.craft_kaisen.takada_spawn_egg": "Takada Spawn Egg",
       "item_group.craft_kaisen.ck_weapons": "Ck Weapons",
-      "advancements.the_sorcerer_killer.descr": "Kill Toji Fushiguro",
       "key.craft_kaisen.reverse_cursed_technique": "Reverse Cursed Technique",
       "entity.craft_kaisen.red_open_door": "Red Open Door",
-      "advancements.simple_domain_learned.title": "Simple Domain",
-      "advancements.perfect_preparation.descr": "Kill Kenjaku",
       "item.craft_kaisen.mahito_outfit_chestplate": "Mahito Outfit ",
+      "advancements.perfect_preparation.descr": "Kill Kenjaku",
+      "advancements.simple_domain_learned.title": "Simple Domain",
       "entity.craft_kaisen.maximum_elephant": "Maximum Elephant",
       "item.craft_kaisen.cursed_womb_death_painting": "Cursed Womb: Death Painting",
       "item.craft_kaisen.explode_ranged": "Explode Ranged",
@@ -26159,8 +26267,8 @@
       "item.craft_kaisen.sukuna_outfit_leggings": "Sukuna Pants",
       "advancements.cursed_technique.descr": "Get a Cursed Technique",
       "item.craft_kaisen.phone": "Phone",
-      "item.craft_kaisen.choso_armor_chestplate": "Choso Outfit",
       "effect.craft_kaisen.small_pox_deity_cooldown": "SPDC",
+      "item.craft_kaisen.choso_armor_chestplate": "Choso Outfit",
       "item.craft_kaisen.fly_head_spawn_egg": "Fly Head Spawn Egg",
       "item.craft_kaisen.uraume_spawn_egg": "Uraume Spawn Egg",
       "item.craft_kaisen.white_divine_dog_spawn_egg": "White Divine Dog Spawn Egg",
@@ -26169,10 +26277,9 @@
       "item.craft_kaisen.yuta_outfit_leggings": "Yuta Pants",
       "item.craft_kaisen.choso_spawn_egg": "Choso Spawn Egg",
       "effect.craft_kaisen.pre_red": "PreRed",
-      "entity.craft_kaisen.finger_bearer": "Finger Bearer",
       "gui.craft_kaisen.body_shape_overlay.label_alt": "ALT - Spike ",
+      "entity.craft_kaisen.finger_bearer": "Finger Bearer",
       "block.craft_kaisen.sprinkler_on": "Sprinkler On",
-      "advancements.cursed_energy_flow.descr": "Reach Enough Cursed Energy Mastery",
       "item.craft_kaisen.kashimo_outfit_leggings": "Kashimo Outfit",
       "advancements.jujutsu_kaisen.descr": "Begin your journey in the world of JJK",
       "subtitles.crit": "",
@@ -26183,15 +26290,15 @@
       "entity.craft_kaisen.choso": "Choso",
       "effect.craft_kaisen.body_shape_cooldown": "BodyShapeCooldown",
       "advancements.round_deer_advancement.descr": "Tame The Round Deer",
-      "block.craft_kaisen.sprinkler": "Sprinkler",
       "itemGroup.tabck_armor": "Ck Armor",
+      "block.craft_kaisen.sprinkler": "Sprinkler",
       "item.craft_kaisen.suguru_geto_spawn_egg": "Suguru Geto Spawn Egg",
       "advancements.cursed_child.descr": "Kill Yuta",
       "block.craft_kaisen.domain_block": "Domain Block",
       "advancements.stand_proud_you_are_strong.title": "Stand Proud, You\u0027re Strong",
       "item.craft_kaisen.black_blind_fold_helmet": "Black Blind Fold ",
-      "gui.craft_kaisen.kenjaku_gui.label_special": "Special - ",
       "advancements.merged_beast_agito_advancement.descr": "Tame Merged Beast Agito",
+      "gui.craft_kaisen.kenjaku_gui.label_special": "Special - ",
       "effect.craft_kaisen.blood_wave": "BloodWave",
       "gui.craft_kaisen.kenjaku_gui.label_do_you_want_to_steal_their": "Do you want to steal their - ",
       "entity.craft_kaisen.rika": "Rika",
@@ -26258,7 +26365,6 @@
       "item.craft_kaisen.yuta_outfit_chestplate": "Yuta Shirt",
       "gui.craft_kaisen.imbue_gui.button_imbue": "Imbue",
       "effect.craft_kaisen.slicing_mahito": "SlicingMahito",
-      "advancements.the_sorcerer_killer.title": "The Sorcerer Killer",
       "item.craft_kaisen.fire_arrow": "Fire Arrow",
       "advancements.fearsome_womb.title": "Fearsome Womb",
       "item.craft_kaisen.ldawda": "Ldawda",
@@ -26320,7 +26426,6 @@
       "item.craft_kaisen.gifted_give": "Gifted Give",
       "entity.craft_kaisen.green_open_door": "Green Open Door",
       "advancements.semi_grade_3.descr": "Reach The Required Fame.",
-      "item.craft_kaisen.jinichi_zenin_spawn_egg": "Jinichi Zenin Spawn Egg",
       "item.craft_kaisen.distorted_body_helmet": "Distorted Body Face",
       "advancements.domain_amplification_learned.descr": "Learn Domain Amplification",
       "entity.craft_kaisen.nue": "Nue",
@@ -26354,7 +26459,6 @@
       "gui.craft_kaisen.move_gui.button_2": "2",
       "gui.craft_kaisen.move_gui.button_1": "1",
       "advancements.semi_grade_3.title": "Semi Grade 3",
-      "advancements.divergent_fists.title": "Divergent Fists",
       "entity.craft_kaisen.coffin_mountain": "Coffin Mountain",
       "advancements.black_divine_dog_advancement.descr": "Summon The Black Divine Dog",
       "block.craft_kaisen.quest_board": "Quest Board",
@@ -26468,7 +26572,6 @@
       "item.craft_kaisen.slicing_excorism": "Slicing Excorism",
       "item_group.craft_kaisen.ck_armor": "Ck Armor",
       "entity.craft_kaisen.uraume": "Uraume",
-      "effect.craft_kaisen.flow": "Flow",
       "item.craft_kaisen.mouth_cursed_spirit_spawn_egg": "Mouth Cursed Spirit Spawn Egg",
       "entity.craft_kaisen.yuta_okkotsu": "Yuta Okkotsu",
       "advancements.rabbit_escape.descr": "Tame Rabbit Escape",
@@ -26544,7 +26647,6 @@
       "entity.craft_kaisen.megumi_fushiguro": "Megumi Fushiguro",
       "subtitles.electric": "electricity",
       "gui.craft_kaisen.move_gui.button_unlock": "Unlock",
-      "advancements.cursed_energy_flow.title": "Cursed Energy Flow",
       "advancements.grade_2.descr": "Reach The Required Fame.",
       "effect.craft_kaisen.stop_attacks": "Stop Attacks",
       "item.craft_kaisen.yuta_katana": "Yuta Katana",
@@ -26555,7 +26657,6 @@
       "advancements.fearsome_womb.descr": "Kill a Finger Bearer",
       "item.craft_kaisen.blast_away_ranged": "Blast Away Ranged",
       "effect.craft_kaisen.pure_love_active": "PureLoveActive",
-      "advancements.divergent_fists.descr": "Reach Enough Cursed Energy Mastery",
       "advancements.maximum_elephant_advancement.title": "Maximum Elephant",
       "advancements.grade_2.title": "Grade 2",
       "advancements.mastered_reversed_cursed_technique.descr": "Master RCT",
@@ -26621,6 +26722,10 @@
       {
         "name": "Abilities",
         "children": [
+          {
+            "name": "MissileFists",
+            "children": []
+          },
           {
             "name": "Miracles",
             "children": []
@@ -26721,10 +26826,6 @@
           },
           {
             "name": "Cursed Energy",
-            "children": []
-          },
-          {
-            "name": "MissileFists",
             "children": []
           }
         ]

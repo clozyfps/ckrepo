@@ -22,7 +22,6 @@ import net.mcreator.craftkaisen.entity.JogoEntity;
 import net.mcreator.craftkaisen.entity.InventoryCurseMobEntity;
 import net.mcreator.craftkaisen.entity.HeianEraSukunaEntity;
 import net.mcreator.craftkaisen.entity.HanamiEntity;
-import net.mcreator.craftkaisen.entity.FlyingCursedSpiritEntity;
 import net.mcreator.craftkaisen.entity.FingerBearerEntity;
 
 import javax.annotation.Nullable;

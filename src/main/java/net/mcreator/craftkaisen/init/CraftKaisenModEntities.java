@@ -93,7 +93,6 @@ import net.mcreator.craftkaisen.entity.GreenClosedDoorEntity;
 import net.mcreator.craftkaisen.entity.GreatSerpentEntity;
 import net.mcreator.craftkaisen.entity.GoldOpenDoorEntity;
 import net.mcreator.craftkaisen.entity.GoldClosedDoorEntity;
-import net.mcreator.craftkaisen.entity.FlyingCursedSpiritEntity;
 import net.mcreator.craftkaisen.entity.FlyHeadEntity;
 import net.mcreator.craftkaisen.entity.FlowerProjectileProjectileEntity;
 import net.mcreator.craftkaisen.entity.FistProjectileEntity;
@@ -411,6 +410,10 @@ public class CraftKaisenModEntities {
 			EntityType.Builder.<PandaEntity>of(PandaEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(PandaEntity::new)
 
 					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<FlyingCursedSpiritEntity>> FLYING_CURSED_SPIRIT = register("flying_cursed_spirit",
+			EntityType.Builder.<FlyingCursedSpiritEntity>of(FlyingCursedSpiritEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(FlyingCursedSpiritEntity::new)
+
+					.sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<MegunaEntity>> MEGUNA = register("meguna",
 			EntityType.Builder.<MegunaEntity>of(MegunaEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(MegunaEntity::new)
 
@@ -490,10 +493,6 @@ public class CraftKaisenModEntities {
 					.sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<FistProjectileEntity>> FIST_PROJECTILE = register("projectile_fist_projectile",
 			EntityType.Builder.<FistProjectileEntity>of(FistProjectileEntity::new, MobCategory.MISC).setCustomClientFactory(FistProjectileEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
-	public static final RegistryObject<EntityType<FlyingCursedSpiritEntity>> FLYING_CURSED_SPIRIT = register("flying_cursed_spirit",
-			EntityType.Builder.<FlyingCursedSpiritEntity>of(FlyingCursedSpiritEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(FlyingCursedSpiritEntity::new)
-
-					.sized(0.6f, 1.8f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -556,6 +555,7 @@ public class CraftKaisenModEntities {
 			RopeMobEntity.init();
 			SuguruGetoEntity.init();
 			PandaEntity.init();
+			FlyingCursedSpiritEntity.init();
 			MegunaEntity.init();
 			HajimeKashimoEntity.init();
 			MergedBeastAgitoEntity.init();
@@ -576,7 +576,6 @@ public class CraftKaisenModEntities {
 			GoldClosedDoorEntity.init();
 			RainbowClosedDoorEntity.init();
 			JinichiZeninEntity.init();
-			FlyingCursedSpiritEntity.init();
 		});
 	}
 
@@ -636,6 +635,7 @@ public class CraftKaisenModEntities {
 		event.put(ROPE_MOB.get(), RopeMobEntity.createAttributes().build());
 		event.put(SUGURU_GETO.get(), SuguruGetoEntity.createAttributes().build());
 		event.put(PANDA.get(), PandaEntity.createAttributes().build());
+		event.put(FLYING_CURSED_SPIRIT.get(), FlyingCursedSpiritEntity.createAttributes().build());
 		event.put(MEGUNA.get(), MegunaEntity.createAttributes().build());
 		event.put(HAJIME_KASHIMO.get(), HajimeKashimoEntity.createAttributes().build());
 		event.put(MERGED_BEAST_AGITO.get(), MergedBeastAgitoEntity.createAttributes().build());
@@ -656,6 +656,5 @@ public class CraftKaisenModEntities {
 		event.put(GOLD_CLOSED_DOOR.get(), GoldClosedDoorEntity.createAttributes().build());
 		event.put(RAINBOW_CLOSED_DOOR.get(), RainbowClosedDoorEntity.createAttributes().build());
 		event.put(JINICHI_ZENIN.get(), JinichiZeninEntity.createAttributes().build());
-		event.put(FLYING_CURSED_SPIRIT.get(), FlyingCursedSpiritEntity.createAttributes().build());
 	}
 }

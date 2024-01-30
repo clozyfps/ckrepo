@@ -1,18 +1,8 @@
 package net.mcreator.craftkaisen.procedures;
 
-import net.minecraft.world.level.Level;
-import net.minecraft.world.entity.projectile.Projectile;
-import net.minecraft.world.entity.projectile.AbstractArrow;
-import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.InteractionHand;
+import net.minecraftforge.eventbus.api.Event;
 
-import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
-import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
-import net.mcreator.craftkaisen.entity.FistProjectileEntity;
+import javax.annotation.Nullable;
 
 public class JinichiZeninOnEntityTickUpdateProcedure {
 	public static void execute(Entity entity) {
@@ -30,7 +20,7 @@ public class JinichiZeninOnEntityTickUpdateProcedure {
 					if (!projectileLevel.isClientSide()) {
 						Projectile _entityToSpawn = new Object() {
 							public Projectile getArrow(Level level, Entity shooter, float damage, int knockback) {
-								AbstractArrow entityToSpawn = new FistProjectileEntity(CraftKaisenModEntities.FIST_PROJECTILE.get(), level);
+								AbstractArrow entityToSpawn = new FistProjectileEntity(CraftKaisenModEntities.DELETED_MOD_ELEMENT.get(), level);
 								entityToSpawn.setOwner(shooter);
 								entityToSpawn.setBaseDamage(damage);
 								entityToSpawn.setKnockback(knockback);
