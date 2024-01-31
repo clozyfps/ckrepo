@@ -35,7 +35,7 @@ public class PlayerAdaptionTimerProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Adaptation")) {
+		if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Adaption")) {
 			if (entity.getPersistentData().getDouble("DamageAdaptationTimer") > 1) {
 				entity.getPersistentData().putDouble("DamageAdaptationTimer", (entity.getPersistentData().getDouble("DamageAdaptationTimer") - 1));
 			} else if (entity.getPersistentData().getDouble("DamageAdaptationTimer") == 1 && entity.getPersistentData().getBoolean("DamageAdapted") == false) {

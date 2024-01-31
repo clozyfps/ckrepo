@@ -40,12 +40,12 @@ public class PlayerAdaptionProcedure {
 		if (entity == null)
 			return;
 		if (entity instanceof Player) {
-			if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Adaptation")) {
+			if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Adaption")) {
 				if (damagesource.is(DamageTypes.GENERIC)) {
 					if (entity.getPersistentData().getBoolean("DamageAdapted") == false) {
-						if (entity.getPersistentData().getDouble("DamageAdaptation") < 1000) {
+						if (entity.getPersistentData().getDouble("DamageAdaptation") < 500) {
 							entity.getPersistentData().putDouble("DamageAdaptation", (entity.getPersistentData().getDouble("DamageAdaptation") + 1));
-						} else if (entity.getPersistentData().getDouble("DamageAdaptation") == 1000) {
+						} else if (entity.getPersistentData().getDouble("DamageAdaptation") == 500) {
 							entity.getPersistentData().putDouble("DamageAdaptation", (entity.getPersistentData().getDouble("DamageAdaptation") + 1));
 							entity.getPersistentData().putDouble("DamageAdaptationTimer", 1200);
 							if (world instanceof Level _level) {
@@ -66,9 +66,9 @@ public class PlayerAdaptionProcedure {
 				}
 				if (damagesource.is(DamageTypes.PLAYER_ATTACK)) {
 					if (entity.getPersistentData().getBoolean("PlayerAttackAdapted") == false) {
-						if (entity.getPersistentData().getDouble("PlayerAttackAdaptation") < 1000) {
+						if (entity.getPersistentData().getDouble("PlayerAttackAdaptation") < 500) {
 							entity.getPersistentData().putDouble("PlayerAttackAdaptation", (entity.getPersistentData().getDouble("PlayerAttackAdaptation") + 1));
-						} else if (entity.getPersistentData().getDouble("PlayerAttackAdaptation") == 1000) {
+						} else if (entity.getPersistentData().getDouble("PlayerAttackAdaptation") == 500) {
 							entity.getPersistentData().putDouble("PlayerAttackAdaptation", (entity.getPersistentData().getDouble("PlayerAttackAdaptation") + 1));
 							entity.getPersistentData().putDouble("PlayerAttackAdaptationTimer", 1200);
 							if (world instanceof Level _level) {
@@ -89,9 +89,9 @@ public class PlayerAdaptionProcedure {
 				}
 				if (damagesource.is(DamageTypes.MOB_ATTACK) || damagesource.is(DamageTypes.MOB_ATTACK_NO_AGGRO) || damagesource.is(DamageTypes.STING)) {
 					if (entity.getPersistentData().getBoolean("MobAttackAdapted") == false) {
-						if (entity.getPersistentData().getDouble("MobAttackAdaptation") < 1000) {
+						if (entity.getPersistentData().getDouble("MobAttackAdaptation") < 500) {
 							entity.getPersistentData().putDouble("MobAttackAdaptation", (entity.getPersistentData().getDouble("MobAttackAdaptation") + 1));
-						} else if (entity.getPersistentData().getDouble("MobAttackAdaptation") == 1000) {
+						} else if (entity.getPersistentData().getDouble("MobAttackAdaptation") == 500) {
 							entity.getPersistentData().putDouble("MobAttackAdaptation", (entity.getPersistentData().getDouble("MobAttackAdaptation") + 1));
 							entity.getPersistentData().putDouble("MobAttackAdaptationTimer", 1200);
 							if (world instanceof Level _level) {
@@ -112,9 +112,9 @@ public class PlayerAdaptionProcedure {
 				}
 				if (damagesource.is(DamageTypes.IN_FIRE) || damagesource.is(DamageTypes.ON_FIRE) || damagesource.is(DamageTypes.LAVA) || damagesource.is(DamageTypes.HOT_FLOOR) || damagesource.is(DamageTypes.LIGHTNING_BOLT)) {
 					if (entity.getPersistentData().getBoolean("BurningAdapted") == false) {
-						if (entity.getPersistentData().getDouble("BurningAdaptation") < 750) {
+						if (entity.getPersistentData().getDouble("BurningAdaptation") < 300) {
 							entity.getPersistentData().putDouble("BurningAdaptation", (entity.getPersistentData().getDouble("BurningAdaptation") + 1));
-						} else if (entity.getPersistentData().getDouble("BurningAdaptation") == 750) {
+						} else if (entity.getPersistentData().getDouble("BurningAdaptation") == 300) {
 							entity.getPersistentData().putDouble("BurningAdaptation", (entity.getPersistentData().getDouble("BurningAdaptation") + 1));
 							entity.getPersistentData().putDouble("BurningAdaptationTimer", 1200);
 							if (world instanceof Level _level) {
@@ -136,9 +136,9 @@ public class PlayerAdaptionProcedure {
 				if (damagesource.is(DamageTypes.EXPLOSION) || damagesource.is(DamageTypes.PLAYER_EXPLOSION) || damagesource.is(DamageTypes.BAD_RESPAWN_POINT) || damagesource.is(DamageTypes.FIREBALL)
 						|| damagesource.is(DamageTypes.UNATTRIBUTED_FIREBALL)) {
 					if (entity.getPersistentData().getBoolean("ExplosionAdapted") == false) {
-						if (entity.getPersistentData().getDouble("ExplosionAdaptation") < 750) {
+						if (entity.getPersistentData().getDouble("ExplosionAdaptation") < 300) {
 							entity.getPersistentData().putDouble("ExplosionAdaptation", (entity.getPersistentData().getDouble("ExplosionAdaptation") + 1));
-						} else if (entity.getPersistentData().getDouble("ExplosionAdaptation") == 750) {
+						} else if (entity.getPersistentData().getDouble("ExplosionAdaptation") == 300) {
 							entity.getPersistentData().putDouble("ExplosionAdaptation", (entity.getPersistentData().getDouble("ExplosionAdaptation") + 1));
 							entity.getPersistentData().putDouble("ExplosionAdaptationTimer", 1200);
 							if (world instanceof Level _level) {
@@ -159,9 +159,9 @@ public class PlayerAdaptionProcedure {
 				}
 				if (damagesource.is(DamageTypes.FALL) || damagesource.is(DamageTypes.FLY_INTO_WALL)) {
 					if (entity.getPersistentData().getBoolean("FallDamageAdapted") == false) {
-						if (entity.getPersistentData().getDouble("FallDamageAdaptation") < 500) {
+						if (entity.getPersistentData().getDouble("FallDamageAdaptation") < 250) {
 							entity.getPersistentData().putDouble("FallDamageAdaptation", (entity.getPersistentData().getDouble("FallDamageAdaptation") + 1));
-						} else if (entity.getPersistentData().getDouble("FallDamageAdaptation") == 500) {
+						} else if (entity.getPersistentData().getDouble("FallDamageAdaptation") == 250) {
 							entity.getPersistentData().putDouble("FallDamageAdaptation", (entity.getPersistentData().getDouble("FallDamageAdaptation") + 1));
 							entity.getPersistentData().putDouble("FallDamageAdaptationTimer", 1200);
 							if (world instanceof Level _level) {
@@ -182,9 +182,9 @@ public class PlayerAdaptionProcedure {
 				}
 				if (damagesource.is(DamageTypes.FALLING_BLOCK) || damagesource.is(DamageTypes.FALLING_STALACTITE) || damagesource.is(DamageTypes.FALLING_ANVIL)) {
 					if (entity.getPersistentData().getBoolean("FallingBlockAdapted") == false) {
-						if (entity.getPersistentData().getDouble("FallingBlockAdaptation") < 250) {
+						if (entity.getPersistentData().getDouble("FallingBlockAdaptation") < 100) {
 							entity.getPersistentData().putDouble("FallingBlockAdaptation", (entity.getPersistentData().getDouble("FallingBlockAdaptation") + 1));
-						} else if (entity.getPersistentData().getDouble("FallingBlockAdaptation") == 250) {
+						} else if (entity.getPersistentData().getDouble("FallingBlockAdaptation") == 100) {
 							entity.getPersistentData().putDouble("FallingBlockAdaptation", (entity.getPersistentData().getDouble("FallingBlockAdaptation") + 1));
 							entity.getPersistentData().putDouble("FallingBlockAdaptationTimer", 1200);
 							if (world instanceof Level _level) {
@@ -205,9 +205,9 @@ public class PlayerAdaptionProcedure {
 				}
 				if (damagesource.is(DamageTypes.DROWN) || damagesource.is(DamageTypes.DRY_OUT) || damagesource.is(DamageTypes.IN_WALL)) {
 					if (entity.getPersistentData().getBoolean("SuffocationAdapted") == false) {
-						if (entity.getPersistentData().getDouble("SuffocationAdaptation") < 500) {
+						if (entity.getPersistentData().getDouble("SuffocationAdaptation") < 150) {
 							entity.getPersistentData().putDouble("SuffocationAdaptation", (entity.getPersistentData().getDouble("SuffocationAdaptation") + 1));
-						} else if (entity.getPersistentData().getDouble("SuffocationAdaptation") == 500) {
+						} else if (entity.getPersistentData().getDouble("SuffocationAdaptation") == 150) {
 							entity.getPersistentData().putDouble("SuffocationAdaptation", (entity.getPersistentData().getDouble("SuffocationAdaptation") + 1));
 							entity.getPersistentData().putDouble("SuffocationAdaptationTimer", 1200);
 							if (world instanceof Level _level) {
@@ -228,9 +228,9 @@ public class PlayerAdaptionProcedure {
 				}
 				if (damagesource.is(DamageTypes.STALAGMITE) || damagesource.is(DamageTypes.CACTUS) || damagesource.is(DamageTypes.SWEET_BERRY_BUSH)) {
 					if (entity.getPersistentData().getBoolean("DamageBlockAdapted") == false) {
-						if (entity.getPersistentData().getDouble("DamageBlockAdaptation") < 250) {
+						if (entity.getPersistentData().getDouble("DamageBlockAdaptation") < 100) {
 							entity.getPersistentData().putDouble("DamageBlockAdaptation", (entity.getPersistentData().getDouble("DamageBlockAdaptation") + 1));
-						} else if (entity.getPersistentData().getDouble("DamageBlockAdaptation") == 250) {
+						} else if (entity.getPersistentData().getDouble("DamageBlockAdaptation") == 100) {
 							entity.getPersistentData().putDouble("DamageBlockAdaptation", (entity.getPersistentData().getDouble("DamageBlockAdaptation") + 1));
 							entity.getPersistentData().putDouble("DamageBlockAdaptationTimer", 1200);
 							if (world instanceof Level _level) {
@@ -251,9 +251,9 @@ public class PlayerAdaptionProcedure {
 				}
 				if (damagesource.is(DamageTypes.ARROW) || damagesource.is(DamageTypes.FIREWORKS) || damagesource.is(DamageTypes.MOB_PROJECTILE) || damagesource.is(DamageTypes.TRIDENT)) {
 					if (entity.getPersistentData().getBoolean("ProjectileAdapted") == false) {
-						if (entity.getPersistentData().getDouble("ProjectileAdaptation") < 500) {
+						if (entity.getPersistentData().getDouble("ProjectileAdaptation") < 250) {
 							entity.getPersistentData().putDouble("ProjectileAdaptation", (entity.getPersistentData().getDouble("ProjectileAdaptation") + 1));
-						} else if (entity.getPersistentData().getDouble("ProjectileAdaptation") == 500) {
+						} else if (entity.getPersistentData().getDouble("ProjectileAdaptation") == 250) {
 							entity.getPersistentData().putDouble("ProjectileAdaptation", (entity.getPersistentData().getDouble("ProjectileAdaptation") + 1));
 							entity.getPersistentData().putDouble("ProjectileAdaptationTimer", 1200);
 							if (world instanceof Level _level) {
@@ -274,9 +274,9 @@ public class PlayerAdaptionProcedure {
 				}
 				if (damagesource.is(DamageTypes.WITHER) || damagesource.is(DamageTypes.WITHER_SKULL)) {
 					if (entity.getPersistentData().getBoolean("WitherAdapted") == false) {
-						if (entity.getPersistentData().getDouble("WitherAdaptation") < 250) {
+						if (entity.getPersistentData().getDouble("WitherAdaptation") < 150) {
 							entity.getPersistentData().putDouble("WitherAdaptation", (entity.getPersistentData().getDouble("WitherAdaptation") + 1));
-						} else if (entity.getPersistentData().getDouble("WitherAdaptation") == 250) {
+						} else if (entity.getPersistentData().getDouble("WitherAdaptation") == 150) {
 							entity.getPersistentData().putDouble("WitherAdaptation", (entity.getPersistentData().getDouble("WitherAdaptation") + 1));
 							entity.getPersistentData().putDouble("WitherAdaptationTimer", 1200);
 							if (world instanceof Level _level) {
@@ -297,9 +297,9 @@ public class PlayerAdaptionProcedure {
 				}
 				if (damagesource.is(DamageTypes.INDIRECT_MAGIC) || damagesource.is(DamageTypes.MAGIC) || damagesource.is(DamageTypes.THORNS)) {
 					if (entity.getPersistentData().getBoolean("MagicAdapted") == false) {
-						if (entity.getPersistentData().getDouble("MagicAdaptation") < 500) {
+						if (entity.getPersistentData().getDouble("MagicAdaptation") < 150) {
 							entity.getPersistentData().putDouble("MagicAdaptation", (entity.getPersistentData().getDouble("MagicAdaptation") + 1));
-						} else if (entity.getPersistentData().getDouble("MagicAdaptation") == 500) {
+						} else if (entity.getPersistentData().getDouble("MagicAdaptation") == 150) {
 							entity.getPersistentData().putDouble("MagicAdaptation", (entity.getPersistentData().getDouble("MagicAdaptation") + 1));
 							entity.getPersistentData().putDouble("MagicAdaptationTimer", 1200);
 							if (world instanceof Level _level) {
@@ -320,9 +320,9 @@ public class PlayerAdaptionProcedure {
 				}
 				if (damagesource.is(DamageTypes.STARVE)) {
 					if (entity.getPersistentData().getBoolean("StarvingAdapted") == false) {
-						if (entity.getPersistentData().getDouble("StarvingAdaptation") < 250) {
+						if (entity.getPersistentData().getDouble("StarvingAdaptation") < 100) {
 							entity.getPersistentData().putDouble("StarvingAdaptation", (entity.getPersistentData().getDouble("StarvingAdaptation") + 1));
-						} else if (entity.getPersistentData().getDouble("StarvingAdaptation") == 250) {
+						} else if (entity.getPersistentData().getDouble("StarvingAdaptation") == 100) {
 							entity.getPersistentData().putDouble("StarvingAdaptation", (entity.getPersistentData().getDouble("StarvingAdaptation") + 1));
 							entity.getPersistentData().putDouble("StarvingAdaptationTimer", 1200);
 							if (world instanceof Level _level) {
@@ -343,9 +343,9 @@ public class PlayerAdaptionProcedure {
 				}
 				if (damagesource.is(DamageTypes.DRAGON_BREATH) || damagesource.is(DamageTypes.CRAMMING) || damagesource.is(DamageTypes.FREEZE) || damagesource.is(DamageTypes.SONIC_BOOM)) {
 					if (entity.getPersistentData().getBoolean("MiscAdapted") == false) {
-						if (entity.getPersistentData().getDouble("MiscAdaptation") < 500) {
+						if (entity.getPersistentData().getDouble("MiscAdaptation") < 100) {
 							entity.getPersistentData().putDouble("MiscAdaptation", (entity.getPersistentData().getDouble("MiscAdaptation") + 1));
-						} else if (entity.getPersistentData().getDouble("MiscAdaptation") == 500) {
+						} else if (entity.getPersistentData().getDouble("MiscAdaptation") == 100) {
 							entity.getPersistentData().putDouble("MiscAdaptation", (entity.getPersistentData().getDouble("MiscAdaptation") + 1));
 							entity.getPersistentData().putDouble("MiscAdaptationTimer", 1200);
 							if (world instanceof Level _level) {
@@ -366,9 +366,9 @@ public class PlayerAdaptionProcedure {
 				}
 				if (damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:blood_damage")))) {
 					if (entity.getPersistentData().getBoolean("BloodAdapted") == false) {
-						if (entity.getPersistentData().getDouble("BloodAdaptation") < 500) {
+						if (entity.getPersistentData().getDouble("BloodAdaptation") < 200) {
 							entity.getPersistentData().putDouble("BloodAdaptation", (entity.getPersistentData().getDouble("BloodAdaptation") + 1));
-						} else if (entity.getPersistentData().getDouble("BloodAdaptation") == 500) {
+						} else if (entity.getPersistentData().getDouble("BloodAdaptation") == 200) {
 							entity.getPersistentData().putDouble("BloodAdaptation", (entity.getPersistentData().getDouble("BloodAdaptation") + 1));
 							entity.getPersistentData().putDouble("BloodAdaptationTimer", 1200);
 							if (world instanceof Level _level) {
@@ -389,9 +389,9 @@ public class PlayerAdaptionProcedure {
 				}
 				if (damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:dismantle_damage")))) {
 					if (entity.getPersistentData().getBoolean("DismantleAdapted") == false) {
-						if (entity.getPersistentData().getDouble("DismantleAdaptation") < 500) {
+						if (entity.getPersistentData().getDouble("DismantleAdaptation") < 200) {
 							entity.getPersistentData().putDouble("DismantleAdaptation", (entity.getPersistentData().getDouble("DismantleAdaptation") + 1));
-						} else if (entity.getPersistentData().getDouble("DismantleAdaptation") == 500) {
+						} else if (entity.getPersistentData().getDouble("DismantleAdaptation") == 200) {
 							entity.getPersistentData().putDouble("DismantleAdaptation", (entity.getPersistentData().getDouble("DismantleAdaptation") + 1));
 							entity.getPersistentData().putDouble("DismantleAdaptationTimer", 1200);
 							if (world instanceof Level _level) {
@@ -412,9 +412,9 @@ public class PlayerAdaptionProcedure {
 				}
 				if (damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:malevolent_shrine_damage")))) {
 					if (entity.getPersistentData().getBoolean("ShrineAdapted") == false) {
-						if (entity.getPersistentData().getDouble("ShrineAdaptation") < 500) {
+						if (entity.getPersistentData().getDouble("ShrineAdaptation") < 350) {
 							entity.getPersistentData().putDouble("ShrineAdaptation", (entity.getPersistentData().getDouble("ShrineAdaptation") + 1));
-						} else if (entity.getPersistentData().getDouble("ShrineAdaptation") == 500) {
+						} else if (entity.getPersistentData().getDouble("ShrineAdaptation") == 350) {
 							entity.getPersistentData().putDouble("ShrineAdaptation", (entity.getPersistentData().getDouble("ShrineAdaptation") + 1));
 							entity.getPersistentData().putDouble("ShrineAdaptationTimer", 7000);
 							if (world instanceof Level _level) {
@@ -435,9 +435,9 @@ public class PlayerAdaptionProcedure {
 				}
 				if (damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:ratio_damage")))) {
 					if (entity.getPersistentData().getBoolean("RatioAdapted") == false) {
-						if (entity.getPersistentData().getDouble("RatioAdaptation") < 500) {
+						if (entity.getPersistentData().getDouble("RatioAdaptation") < 200) {
 							entity.getPersistentData().putDouble("RatioAdaptation", (entity.getPersistentData().getDouble("RatioAdaptation") + 1));
-						} else if (entity.getPersistentData().getDouble("RatioAdaptation") == 500) {
+						} else if (entity.getPersistentData().getDouble("RatioAdaptation") == 200) {
 							entity.getPersistentData().putDouble("RatioAdaptation", (entity.getPersistentData().getDouble("RatioAdaptation") + 1));
 							entity.getPersistentData().putDouble("RatioAdaptationTimer", 2500);
 							if (world instanceof Level _level) {
@@ -458,9 +458,9 @@ public class PlayerAdaptionProcedure {
 				}
 				if (damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:frame_attack")))) {
 					if (entity.getPersistentData().getBoolean("FrameAdapted") == false) {
-						if (entity.getPersistentData().getDouble("FrameAdaptation") < 500) {
+						if (entity.getPersistentData().getDouble("FrameAdaptation") < 200) {
 							entity.getPersistentData().putDouble("FrameAdaptation", (entity.getPersistentData().getDouble("FrameAdaptation") + 1));
-						} else if (entity.getPersistentData().getDouble("FrameAdaptation") == 500) {
+						} else if (entity.getPersistentData().getDouble("FrameAdaptation") == 200) {
 							entity.getPersistentData().putDouble("FrameAdaptation", (entity.getPersistentData().getDouble("FrameAdaptation") + 1));
 							entity.getPersistentData().putDouble("FrameAdaptationTimer", 1200);
 							if (world instanceof Level _level) {
@@ -481,9 +481,9 @@ public class PlayerAdaptionProcedure {
 				}
 				if (damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:reversal_red_damage")))) {
 					if (entity.getPersistentData().getBoolean("ReversalRedAdapted") == false) {
-						if (entity.getPersistentData().getDouble("ReversalRedAdaptation") < 500) {
+						if (entity.getPersistentData().getDouble("ReversalRedAdaptation") < 200) {
 							entity.getPersistentData().putDouble("ReversalRedAdaptation", (entity.getPersistentData().getDouble("ReversalRedAdaptation") + 1));
-						} else if (entity.getPersistentData().getDouble("ReversalRedAdaptation") == 500) {
+						} else if (entity.getPersistentData().getDouble("ReversalRedAdaptation") == 200) {
 							entity.getPersistentData().putDouble("ReversalRedAdaptation", (entity.getPersistentData().getDouble("ReversalRedAdaptation") + 1));
 							entity.getPersistentData().putDouble("ReversalRedAdaptationTimer", 1200);
 							if (world instanceof Level _level) {
