@@ -11,6 +11,7 @@
     "name": "Inverted Spear",
     "specialInformation": {
       "fixedValue": [
+        "§l§5Special Grade Cursed Tool: Inverted Spear",
         "Perk - Disables Infinity"
       ]
     },
@@ -24,6 +25,9 @@
     "damageVsEntity": 10.0,
     "usageCount": 1000,
     "blocksAffected": [],
+    "glowCondition": {
+      "fixedValue": false
+    },
     "repairItems": [],
     "immuneToFire": false,
     "stayInGridWhenCrafting": false,

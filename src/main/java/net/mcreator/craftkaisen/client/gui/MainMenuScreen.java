@@ -28,6 +28,7 @@ import net.mcreator.craftkaisen.procedures.ReturnCursedSpiritProcedure;
 import net.mcreator.craftkaisen.procedures.ReturnCursedEnergyProcedure;
 import net.mcreator.craftkaisen.procedures.ReturnAffiliationProcedure;
 import net.mcreator.craftkaisen.procedures.DisplayYenProcedure;
+import net.mcreator.craftkaisen.procedures.DisplayTechniqueProcedure;
 import net.mcreator.craftkaisen.procedures.DisplaySpecialGradeProcedure;
 import net.mcreator.craftkaisen.procedures.DisplaySemiGrade2Procedure;
 import net.mcreator.craftkaisen.procedures.DisplaySemiGrade1Procedure;
@@ -206,6 +207,9 @@ public class MainMenuScreen extends AbstractContainerScreen<MainMenuMenu> {
 		this.font.draw(poseStack,
 
 				DisplayYenProcedure.execute(entity), -118, 50, -12829636);
+		this.font.draw(poseStack,
+
+				DisplayTechniqueProcedure.execute(entity), -118, 68, -12829636);
 	}
 
 	@Override

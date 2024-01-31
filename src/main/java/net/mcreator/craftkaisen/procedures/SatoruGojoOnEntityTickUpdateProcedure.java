@@ -36,9 +36,12 @@ public class SatoruGojoOnEntityTickUpdateProcedure {
 			if (!entity.getPersistentData().getBoolean("floating")) {
 				if ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof LivingEntity) {
 					if (!(entity instanceof LivingEntity _livEnt4 && _livEnt4.hasEffect(CraftKaisenModMobEffects.COOLDOWN.get()))) {
-						if (Math.random() < 0.0005) {
-							if (entity.getPersistentData().getBoolean("gojoskin")) {
-								entity.getPersistentData().putBoolean("floating", true);
+						if (Math.random() < 0.001) {
+							if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) <= 100) {
+								if (!(entity instanceof LivingEntity _livEnt6 && _livEnt6.hasEffect(CraftKaisenModMobEffects.SURGE.get()))) {
+									if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+										_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.SURGE.get(), 9000, 0, false, false));
+								}
 							}
 						}
 						if (Math.random() < 0.001) {
@@ -46,6 +49,33 @@ public class SatoruGojoOnEntityTickUpdateProcedure {
 								_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.COOLDOWN.get(), 30, 0, false, false));
 							if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 								_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 15, 6, false, false));
+						}
+						if (Math.random() < 0.0009) {
+							entity.getPersistentData().putDouble("hollowPurple", 35);
+							if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+								_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.COOLDOWN.get(), 100, 1, false, false));
+							if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+								_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 45, 250, false, false));
+							if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+								_entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 45, 250, false, false));
+						}
+						if (Math.random() < 0.001) {
+							{
+								final Vec3 _center = new Vec3(x, y, z);
+								List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(15 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
+										.collect(Collectors.toList());
+								for (Entity entityiterator : _entfound) {
+									if (!(entity == entityiterator) && (entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == entityiterator) {
+										entityiterator.setDeltaMovement(new Vec3(((entity.getX() - entityiterator.getX()) / 5), ((entity.getY() - entityiterator.getY()) / 5), ((entity.getZ() - entityiterator.getZ()) / 5)));
+										if (world instanceof ServerLevel _level)
+											_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.BLUE_PARTICLE.get()), x, y, z, 15, 3, 2, 3, 0);
+										if (world instanceof ServerLevel _level)
+											_level.sendParticles(ParticleTypes.POOF, x, y, z, 25, 3, 2, 3, 0.4);
+										if (world instanceof ServerLevel _level)
+											_level.sendParticles(ParticleTypes.ELECTRIC_SPARK, x, y, z, 2, 3, 2, 3, 0);
+									}
+								}
+							}
 						}
 						if (Math.random() < 0.007) {
 							if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
@@ -108,6 +138,15 @@ public class SatoruGojoOnEntityTickUpdateProcedure {
 										if (world instanceof ServerLevel _level)
 											_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.BLOOD_SPLASH.get()), (entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), 1, 0.2, (entityiterator.getBbHeight()),
 													0.2, 0.1);
+										if (world instanceof Level _level) {
+											if (!_level.isClientSide()) {
+												_level.playSound(null, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:crit")),
+														SoundSource.NEUTRAL, 1, 1);
+											} else {
+												_level.playLocalSound((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:crit")), SoundSource.NEUTRAL, 1,
+														1, false);
+											}
+										}
 									}
 								}
 							}

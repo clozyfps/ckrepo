@@ -23,6 +23,7 @@ import net.minecraft.commands.CommandSource;
 import net.mcreator.craftkaisen.init.CraftKaisenModParticleTypes;
 import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
 import net.mcreator.craftkaisen.entity.YutaOkkotsuEntity;
+import net.mcreator.craftkaisen.entity.SatoruGojoEntity;
 import net.mcreator.craftkaisen.entity.HajimeKashimoEntity;
 
 public class SurgeOnEffectActiveTickProcedure {
@@ -67,6 +68,17 @@ public class SurgeOnEffectActiveTickProcedure {
 				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 5, 4, false, false));
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 5, 0, false, false));
+		}
+		if (entity instanceof SatoruGojoEntity && (entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(CraftKaisenModMobEffects.SURGE.get()) ? _livEnt.getEffect(CraftKaisenModMobEffects.SURGE.get()).getDuration() : 0) >= 8900) {
+			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+				_entity.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 5, 0, false, false));
+		} else if (entity instanceof SatoruGojoEntity && (entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(CraftKaisenModMobEffects.SURGE.get()) ? _livEnt.getEffect(CraftKaisenModMobEffects.SURGE.get()).getDuration() : 0) < 8900) {
+			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 5, 8, false, false));
+			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 5, 7, false, false));
+			if (world instanceof ServerLevel _level)
+				_level.sendParticles(ParticleTypes.ELECTRIC_SPARK, x, y, z, 1, 0.1, 2, 0.1, 0);
 		}
 	}
 }

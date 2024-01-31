@@ -1,0 +1,35 @@
+{
+  "_fv": 57,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Sword",
+    "renderType": 1,
+    "blockingRenderType": 0,
+    "texture": "air102_layer_2",
+    "customModelName": "swordofextermination:default",
+    "blockingModelName": "Normal blocking",
+    "name": "Sword Of Extermination",
+    "specialInformation": {
+      "fixedValue": [
+        "§l§5Special Grade Cursed Tool: Sword Of Extermination"
+      ]
+    },
+    "creativeTab": {
+      "value": "CUSTOM:CkWeapons"
+    },
+    "harvestLevel": 1,
+    "efficiency": 4.0,
+    "attackSpeed": 6.0,
+    "enchantability": 2,
+    "damageVsEntity": 17.0,
+    "usageCount": 9000,
+    "blocksAffected": [],
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [],
+    "immuneToFire": false,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false
+  }
+}

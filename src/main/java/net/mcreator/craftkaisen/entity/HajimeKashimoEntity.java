@@ -98,11 +98,11 @@ public class HajimeKashimoEntity extends Monster {
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.4);
-		builder = builder.add(Attributes.MAX_HEALTH, 530);
+		builder = builder.add(Attributes.MAX_HEALTH, 610);
 		builder = builder.add(Attributes.ARMOR, 0.4);
-		builder = builder.add(Attributes.ATTACK_DAMAGE, 51);
+		builder = builder.add(Attributes.ATTACK_DAMAGE, 59);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 50);
-		builder = builder.add(Attributes.ATTACK_KNOCKBACK, 3);
+		builder = builder.add(Attributes.ATTACK_KNOCKBACK, 4);
 		return builder;
 	}
 }

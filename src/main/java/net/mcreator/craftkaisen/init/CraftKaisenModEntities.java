@@ -37,6 +37,7 @@ import net.mcreator.craftkaisen.entity.SmallPoxDeityEntity;
 import net.mcreator.craftkaisen.entity.SlicingExcorismProjectileEntity;
 import net.mcreator.craftkaisen.entity.SleepRangedProjectileEntity;
 import net.mcreator.craftkaisen.entity.ShadowFrogEntity;
+import net.mcreator.craftkaisen.entity.ScouterCrowProjectileEntity;
 import net.mcreator.craftkaisen.entity.SatoruGojoEntity;
 import net.mcreator.craftkaisen.entity.RyomenSukunaEntity;
 import net.mcreator.craftkaisen.entity.RunAwayRangedProjectileEntity;
@@ -66,6 +67,7 @@ import net.mcreator.craftkaisen.entity.NanamiKentoEntity;
 import net.mcreator.craftkaisen.entity.NailProjectileProjectileEntity;
 import net.mcreator.craftkaisen.entity.MouthCursedSpiritEntity;
 import net.mcreator.craftkaisen.entity.MergedBeastAgitoEntity;
+import net.mcreator.craftkaisen.entity.MeiMeiEntity;
 import net.mcreator.craftkaisen.entity.MegunaEntity;
 import net.mcreator.craftkaisen.entity.MegumiFushiguroEntity;
 import net.mcreator.craftkaisen.entity.MaximumElephantEntity;
@@ -93,6 +95,10 @@ import net.mcreator.craftkaisen.entity.GreenClosedDoorEntity;
 import net.mcreator.craftkaisen.entity.GreatSerpentEntity;
 import net.mcreator.craftkaisen.entity.GoldOpenDoorEntity;
 import net.mcreator.craftkaisen.entity.GoldClosedDoorEntity;
+import net.mcreator.craftkaisen.entity.FrozenFrameEntity;
+import net.mcreator.craftkaisen.entity.FrameRayEntity;
+import net.mcreator.craftkaisen.entity.FrameMobEntity;
+import net.mcreator.craftkaisen.entity.FlyingCursedSpiritEntity;
 import net.mcreator.craftkaisen.entity.FlyHeadEntity;
 import net.mcreator.craftkaisen.entity.FlowerProjectileProjectileEntity;
 import net.mcreator.craftkaisen.entity.FistProjectileEntity;
@@ -113,6 +119,8 @@ import net.mcreator.craftkaisen.entity.DismantlePrEntity;
 import net.mcreator.craftkaisen.entity.DisasterFlameRangedProjectileEntity;
 import net.mcreator.craftkaisen.entity.CrushedRangedProjectileEntity;
 import net.mcreator.craftkaisen.entity.CrumbleAwayRangedProjectileEntity;
+import net.mcreator.craftkaisen.entity.CrowMeiMeiEntity;
+import net.mcreator.craftkaisen.entity.CrowEntity;
 import net.mcreator.craftkaisen.entity.CoffinMountainEntity;
 import net.mcreator.craftkaisen.entity.ChosoEntity;
 import net.mcreator.craftkaisen.entity.ChimeraShadowGardenMobEntity;
@@ -124,6 +132,7 @@ import net.mcreator.craftkaisen.entity.BloodMeteoriteProjectileEntity;
 import net.mcreator.craftkaisen.entity.BlastAwayRangedProjectileEntity;
 import net.mcreator.craftkaisen.entity.BlackMucusProjectileEntity;
 import net.mcreator.craftkaisen.entity.BlackDivineDogEntity;
+import net.mcreator.craftkaisen.entity.BlackBirdProjectileEntity;
 import net.mcreator.craftkaisen.entity.AwakenedMakiEntity;
 import net.mcreator.craftkaisen.entity.AoiTodoEntity;
 import net.mcreator.craftkaisen.CraftKaisenMod;
@@ -410,10 +419,6 @@ public class CraftKaisenModEntities {
 			EntityType.Builder.<PandaEntity>of(PandaEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(PandaEntity::new)
 
 					.sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<FlyingCursedSpiritEntity>> FLYING_CURSED_SPIRIT = register("flying_cursed_spirit",
-			EntityType.Builder.<FlyingCursedSpiritEntity>of(FlyingCursedSpiritEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(FlyingCursedSpiritEntity::new)
-
-					.sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<MegunaEntity>> MEGUNA = register("meguna",
 			EntityType.Builder.<MegunaEntity>of(MegunaEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(MegunaEntity::new)
 
@@ -493,6 +498,33 @@ public class CraftKaisenModEntities {
 					.sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<FistProjectileEntity>> FIST_PROJECTILE = register("projectile_fist_projectile",
 			EntityType.Builder.<FistProjectileEntity>of(FistProjectileEntity::new, MobCategory.MISC).setCustomClientFactory(FistProjectileEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<FlyingCursedSpiritEntity>> FLYING_CURSED_SPIRIT = register("flying_cursed_spirit",
+			EntityType.Builder.<FlyingCursedSpiritEntity>of(FlyingCursedSpiritEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(FlyingCursedSpiritEntity::new)
+
+					.sized(1.5f, 1.8f));
+	public static final RegistryObject<EntityType<FrameRayEntity>> FRAME_RAY = register("frame_ray",
+			EntityType.Builder.<FrameRayEntity>of(FrameRayEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(FrameRayEntity::new).fireImmune().sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<FrameMobEntity>> FRAME_MOB = register("frame_mob",
+			EntityType.Builder.<FrameMobEntity>of(FrameMobEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(FrameMobEntity::new).fireImmune().sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<FrozenFrameEntity>> FROZEN_FRAME = register("frozen_frame", EntityType.Builder.<FrozenFrameEntity>of(FrozenFrameEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
+			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(FrozenFrameEntity::new).fireImmune().sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<MeiMeiEntity>> MEI_MEI = register("mei_mei",
+			EntityType.Builder.<MeiMeiEntity>of(MeiMeiEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(MeiMeiEntity::new)
+
+					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<BlackBirdProjectileEntity>> BLACK_BIRD_PROJECTILE = register("projectile_black_bird_projectile", EntityType.Builder.<BlackBirdProjectileEntity>of(BlackBirdProjectileEntity::new, MobCategory.MISC)
+			.setCustomClientFactory(BlackBirdProjectileEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<CrowEntity>> CROW = register("crow",
+			EntityType.Builder.<CrowEntity>of(CrowEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CrowEntity::new)
+
+					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<ScouterCrowProjectileEntity>> SCOUTER_CROW_PROJECTILE = register("projectile_scouter_crow_projectile",
+			EntityType.Builder.<ScouterCrowProjectileEntity>of(ScouterCrowProjectileEntity::new, MobCategory.MISC).setCustomClientFactory(ScouterCrowProjectileEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
+					.setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<CrowMeiMeiEntity>> CROW_MEI_MEI = register("crow_mei_mei",
+			EntityType.Builder.<CrowMeiMeiEntity>of(CrowMeiMeiEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CrowMeiMeiEntity::new)
+
+					.sized(0.6f, 1.8f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -555,7 +587,6 @@ public class CraftKaisenModEntities {
 			RopeMobEntity.init();
 			SuguruGetoEntity.init();
 			PandaEntity.init();
-			FlyingCursedSpiritEntity.init();
 			MegunaEntity.init();
 			HajimeKashimoEntity.init();
 			MergedBeastAgitoEntity.init();
@@ -576,6 +607,13 @@ public class CraftKaisenModEntities {
 			GoldClosedDoorEntity.init();
 			RainbowClosedDoorEntity.init();
 			JinichiZeninEntity.init();
+			FlyingCursedSpiritEntity.init();
+			FrameRayEntity.init();
+			FrameMobEntity.init();
+			FrozenFrameEntity.init();
+			MeiMeiEntity.init();
+			CrowEntity.init();
+			CrowMeiMeiEntity.init();
 		});
 	}
 
@@ -635,7 +673,6 @@ public class CraftKaisenModEntities {
 		event.put(ROPE_MOB.get(), RopeMobEntity.createAttributes().build());
 		event.put(SUGURU_GETO.get(), SuguruGetoEntity.createAttributes().build());
 		event.put(PANDA.get(), PandaEntity.createAttributes().build());
-		event.put(FLYING_CURSED_SPIRIT.get(), FlyingCursedSpiritEntity.createAttributes().build());
 		event.put(MEGUNA.get(), MegunaEntity.createAttributes().build());
 		event.put(HAJIME_KASHIMO.get(), HajimeKashimoEntity.createAttributes().build());
 		event.put(MERGED_BEAST_AGITO.get(), MergedBeastAgitoEntity.createAttributes().build());
@@ -656,5 +693,12 @@ public class CraftKaisenModEntities {
 		event.put(GOLD_CLOSED_DOOR.get(), GoldClosedDoorEntity.createAttributes().build());
 		event.put(RAINBOW_CLOSED_DOOR.get(), RainbowClosedDoorEntity.createAttributes().build());
 		event.put(JINICHI_ZENIN.get(), JinichiZeninEntity.createAttributes().build());
+		event.put(FLYING_CURSED_SPIRIT.get(), FlyingCursedSpiritEntity.createAttributes().build());
+		event.put(FRAME_RAY.get(), FrameRayEntity.createAttributes().build());
+		event.put(FRAME_MOB.get(), FrameMobEntity.createAttributes().build());
+		event.put(FROZEN_FRAME.get(), FrozenFrameEntity.createAttributes().build());
+		event.put(MEI_MEI.get(), MeiMeiEntity.createAttributes().build());
+		event.put(CROW.get(), CrowEntity.createAttributes().build());
+		event.put(CROW_MEI_MEI.get(), CrowMeiMeiEntity.createAttributes().build());
 	}
 }

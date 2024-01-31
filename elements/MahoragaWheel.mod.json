@@ -3,7 +3,7 @@
   "_type": "armor",
   "definition": {
     "enableHelmet": true,
-    "textureHelmet": "mahoragawheel",
+    "textureHelmet": "mahowheel",
     "enableBody": false,
     "textureBody": "",
     "enableLeggings": false,
@@ -32,9 +32,9 @@
     "bootsSpecialInformation": {
       "fixedValue": []
     },
-    "helmetModelName": "Modelmahoraga_wheel",
-    "helmetModelPart": "Head",
-    "helmetModelTexture": "gold.png",
+    "helmetModelName": "ModelMahoragaWheel",
+    "helmetModelPart": "head",
+    "helmetModelTexture": "mahoragaoutfittexture.png",
     "bodyModelName": "Default",
     "bodyModelPart": "Body",
     "armsModelPartL": "Arms L",
@@ -60,14 +60,26 @@
     "bodyImmuneToFire": false,
     "leggingsImmuneToFire": false,
     "bootsImmuneToFire": false,
+    "helmetPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bodyPiglinNeutral": {
+      "fixedValue": false
+    },
+    "leggingsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bootsPiglinNeutral": {
+      "fixedValue": false
+    },
     "maxDamage": 1000,
-    "damageValueHelmet": 9,
+    "damageValueHelmet": 10,
     "damageValueBody": 6,
     "damageValueLeggings": 5,
     "damageValueBoots": 2,
     "enchantability": 25,
-    "toughness": 1.3,
-    "knockbackResistance": 0.0,
+    "toughness": 2.2,
+    "knockbackResistance": 0.2,
     "equipSound": {
       "value": ""
     },

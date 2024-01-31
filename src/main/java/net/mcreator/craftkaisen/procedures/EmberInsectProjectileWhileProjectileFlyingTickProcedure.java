@@ -47,7 +47,7 @@ public class EmberInsectProjectileWhileProjectileFlyingTickProcedure {
 						}
 						if (!immediatesourceentity.level.isClientSide())
 							immediatesourceentity.discard();
-						entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC), immediatesourceentity, entity), 12);
+						entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.FIREBALL), immediatesourceentity, entity), 12);
 					}
 				}
 			}
