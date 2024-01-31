@@ -102,54 +102,61 @@ public class AdaptionProgressCommandProcedure {
 				if (entity instanceof Player _player && !_player.level.isClientSide())
 					_player.displayClientMessage(Component.literal("\u00A7aFully Adapted to Starving."), false);
 			}
+			if (entity.getPersistentData().getDouble("FreezingAdaption") <= 200) {
+				if (entity instanceof Player _player && !_player.level.isClientSide())
+					_player.displayClientMessage(Component.literal(("\u00A7cFreezing " + new java.text.DecimalFormat("##").format((entity.getPersistentData().getDouble("FreezingAdaption") / 200) * 100) + "% Adapted")), false);
+			} else if (entity.getPersistentData().getDouble("FreezingAdaption") > 200) {
+				if (entity instanceof Player _player && !_player.level.isClientSide())
+					_player.displayClientMessage(Component.literal("\u00A7aFully Adapted to Freezing."), false);
+			}
+			if (entity.getPersistentData().getDouble("BloodAdaptation") <= 200) {
+				if (entity instanceof Player _player && !_player.level.isClientSide())
+					_player.displayClientMessage(Component.literal(("\u00A7cBlood Attacks " + new java.text.DecimalFormat("##").format((entity.getPersistentData().getDouble("BloodAdaptation") / 200) * 100) + "% Adapted")), false);
+			} else if (entity.getPersistentData().getDouble("BloodAdaptation") > 200) {
+				if (entity instanceof Player _player && !_player.level.isClientSide())
+					_player.displayClientMessage(Component.literal("\u00A7aFully Adapted to Blood Attacks."), false);
+			}
+			if (entity.getPersistentData().getDouble("DismantleAdaptation") <= 200) {
+				if (entity instanceof Player _player && !_player.level.isClientSide())
+					_player.displayClientMessage(Component.literal(("\u00A7cDismantle " + new java.text.DecimalFormat("##").format((entity.getPersistentData().getDouble("DismantleAdaptation") / 200) * 100) + "% Adapted")), false);
+			} else if (entity.getPersistentData().getDouble("DismantleAdaptation") > 200) {
+				if (entity instanceof Player _player && !_player.level.isClientSide())
+					_player.displayClientMessage(Component.literal("\u00A7aFully Adapted to Dismantle."), false);
+			}
+			if (entity.getPersistentData().getDouble("ReversalRedAdaptation") <= 200) {
+				if (entity instanceof Player _player && !_player.level.isClientSide())
+					_player.displayClientMessage(Component.literal(("\u00A7cReversal Red " + new java.text.DecimalFormat("##").format((entity.getPersistentData().getDouble("ReversalRedAdaptation") / 200) * 100) + "% Adapted")), false);
+			} else if (entity.getPersistentData().getDouble("ReversalRedAdaptation") > 200) {
+				if (entity instanceof Player _player && !_player.level.isClientSide())
+					_player.displayClientMessage(Component.literal("\u00A7aFully Adapted to Reversal Red."), false);
+			}
+			if (entity.getPersistentData().getDouble("FrameAdaptation") <= 200) {
+				if (entity instanceof Player _player && !_player.level.isClientSide())
+					_player.displayClientMessage(Component.literal(("\u00A7cProjection Sorcery " + new java.text.DecimalFormat("##").format((entity.getPersistentData().getDouble("FrameAdaptation") / 200) * 100) + "% Adapted")), false);
+			} else if (entity.getPersistentData().getDouble("FrameAdaptation") > 200) {
+				if (entity instanceof Player _player && !_player.level.isClientSide())
+					_player.displayClientMessage(Component.literal("\u00A7aFully Adapted to Projection Sorcery."), false);
+			}
+			if (entity.getPersistentData().getDouble("RatioAdaptation") <= 200) {
+				if (entity instanceof Player _player && !_player.level.isClientSide())
+					_player.displayClientMessage(Component.literal(("\u00A7cRatio " + new java.text.DecimalFormat("##").format((entity.getPersistentData().getDouble("RatioAdaptation") / 200) * 100) + "% Adapted")), false);
+			} else if (entity.getPersistentData().getDouble("RatioAdaptation") > 200) {
+				if (entity instanceof Player _player && !_player.level.isClientSide())
+					_player.displayClientMessage(Component.literal("\u00A7aFully Adapted to Ratio."), false);
+			}
+			if (entity.getPersistentData().getDouble("ShrineAdaptation") <= 350) {
+				if (entity instanceof Player _player && !_player.level.isClientSide())
+					_player.displayClientMessage(Component.literal(("\u00A7cMalevolent Shrine " + new java.text.DecimalFormat("##").format((entity.getPersistentData().getDouble("ShrineAdaptation") / 350) * 100) + "% Adapted")), false);
+			} else if (entity.getPersistentData().getDouble("ShrineAdaptation") > 350) {
+				if (entity instanceof Player _player && !_player.level.isClientSide())
+					_player.displayClientMessage(Component.literal("\u00A7aFully Adapted to Malevolent Shrine."), false);
+			}
 			if (entity.getPersistentData().getDouble("MiscAdaptation") <= 100) {
 				if (entity instanceof Player _player && !_player.level.isClientSide())
 					_player.displayClientMessage(Component.literal(("\u00A7cMiscellaneous Damage " + new java.text.DecimalFormat("##").format((entity.getPersistentData().getDouble("MiscAdaptation") / 100) * 100) + "% Adapted")), false);
 			} else if (entity.getPersistentData().getDouble("MiscAdaptation") > 100) {
 				if (entity instanceof Player _player && !_player.level.isClientSide())
 					_player.displayClientMessage(Component.literal("\u00A7aFully Adapted to Miscellaneous Damage."), false);
-			}
-			if (entity.getPersistentData().getDouble("BloodAdaptation") <= 200) {
-				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal(("\u00A7cBlood Damage " + new java.text.DecimalFormat("##").format((entity.getPersistentData().getDouble("BloodAdaptation") / 200) * 100) + "% Adapted")), false);
-			} else if (entity.getPersistentData().getDouble("BloodAdaptation") > 200) {
-				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal("\u00A7aFully Adapted to Blood Damage."), false);
-			}
-			if (entity.getPersistentData().getDouble("DismantleAdaptation") <= 200) {
-				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal(("\u00A7cDismantle Damage " + new java.text.DecimalFormat("##").format((entity.getPersistentData().getDouble("DismantleAdaptation") / 200) * 100) + "% Adapted")), false);
-			} else if (entity.getPersistentData().getDouble("DismantleAdaptation") > 200) {
-				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal("\u00A7aFully Adapted to Dismantle Damage."), false);
-			}
-			if (entity.getPersistentData().getDouble("ReversalRedAdaptation") <= 200) {
-				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal(("\u00A7cReversal Red Damage " + new java.text.DecimalFormat("##").format((entity.getPersistentData().getDouble("ReversalRedAdaptation") / 200) * 100) + "% Adapted")), false);
-			} else if (entity.getPersistentData().getDouble("ReversalRedAdaptation") > 200) {
-				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal("\u00A7aFully Adapted to Reversal Red Damage."), false);
-			}
-			if (entity.getPersistentData().getDouble("FrameAdaptation") <= 200) {
-				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal(("\u00A7cFrame Damage " + new java.text.DecimalFormat("##").format((entity.getPersistentData().getDouble("FrameAdaptation") / 200) * 100) + "% Adapted")), false);
-			} else if (entity.getPersistentData().getDouble("FrameAdaptation") > 200) {
-				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal("\u00A7aFully Adapted to Frame Damage."), false);
-			}
-			if (entity.getPersistentData().getDouble("RatioAdaptation") <= 200) {
-				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal(("\u00A7cRatio Damage " + new java.text.DecimalFormat("##").format((entity.getPersistentData().getDouble("RatioAdaptation") / 200) * 100) + "% Adapted")), false);
-			} else if (entity.getPersistentData().getDouble("RatioAdaptation") > 200) {
-				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal("\u00A7aFully Adapted to Ratio Damage."), false);
-			}
-			if (entity.getPersistentData().getDouble("ShrineAdaptation") <= 350) {
-				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal(("\u00A7cMalevolent Shrine Damage " + new java.text.DecimalFormat("##").format((entity.getPersistentData().getDouble("ShrineAdaptation") / 350) * 100) + "% Adapted")), false);
-			} else if (entity.getPersistentData().getDouble("ShrineAdaptation") > 350) {
-				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal("\u00A7aFully Adapted to Malevolent Shrine Damage."), false);
 			}
 		} else {
 			if (entity instanceof Player _player && !_player.level.isClientSide())

@@ -341,7 +341,7 @@ public class PlayerAdaptionProcedure {
 						}
 					}
 				}
-				if (damagesource.is(DamageTypes.DRAGON_BREATH) || damagesource.is(DamageTypes.CRAMMING) || damagesource.is(DamageTypes.FREEZE) || damagesource.is(DamageTypes.SONIC_BOOM)) {
+				if (damagesource.is(DamageTypes.DRAGON_BREATH) || damagesource.is(DamageTypes.CRAMMING) || damagesource.is(DamageTypes.SONIC_BOOM)) {
 					if (entity.getPersistentData().getBoolean("MiscAdapted") == false) {
 						if (entity.getPersistentData().getDouble("MiscAdaptation") < 100) {
 							entity.getPersistentData().putDouble("MiscAdaptation", (entity.getPersistentData().getDouble("MiscAdaptation") + 1));
@@ -379,7 +379,7 @@ public class PlayerAdaptionProcedure {
 								}
 							}
 							if (entity instanceof Player _player && !_player.level.isClientSide())
-								_player.displayClientMessage(Component.literal("Adaptation to Blood Damage has begun."), true);
+								_player.displayClientMessage(Component.literal("Adaptation to Blood Attacks has begun."), true);
 						}
 					} else if (entity.getPersistentData().getBoolean("BloodAdapted") == true) {
 						if (event != null && event.isCancelable()) {
@@ -402,7 +402,7 @@ public class PlayerAdaptionProcedure {
 								}
 							}
 							if (entity instanceof Player _player && !_player.level.isClientSide())
-								_player.displayClientMessage(Component.literal("Adaptation to Dismantle Damage has begun."), true);
+								_player.displayClientMessage(Component.literal("Adaptation to Dismantle has begun."), true);
 						}
 					} else if (entity.getPersistentData().getBoolean("DismantleAdapted") == true) {
 						if (event != null && event.isCancelable()) {
@@ -425,7 +425,7 @@ public class PlayerAdaptionProcedure {
 								}
 							}
 							if (entity instanceof Player _player && !_player.level.isClientSide())
-								_player.displayClientMessage(Component.literal("Adaptation to Malevolent Shrine Damage has begun."), true);
+								_player.displayClientMessage(Component.literal("Adaptation to Malevolent Shrine has begun."), true);
 						}
 					} else if (entity.getPersistentData().getBoolean("ShrineAdapted") == true) {
 						if (event != null && event.isCancelable()) {
@@ -448,7 +448,7 @@ public class PlayerAdaptionProcedure {
 								}
 							}
 							if (entity instanceof Player _player && !_player.level.isClientSide())
-								_player.displayClientMessage(Component.literal("Adaptation to Ratio Damage has begun."), true);
+								_player.displayClientMessage(Component.literal("Adaptation to Ratio has begun."), true);
 						}
 					} else if (entity.getPersistentData().getBoolean("RatioAdapted") == true) {
 						if (event != null && event.isCancelable()) {
@@ -471,7 +471,7 @@ public class PlayerAdaptionProcedure {
 								}
 							}
 							if (entity instanceof Player _player && !_player.level.isClientSide())
-								_player.displayClientMessage(Component.literal("Adaptation to Frame Damage has begun."), true);
+								_player.displayClientMessage(Component.literal("Adaptation to Projection Sorcery has begun."), true);
 						}
 					} else if (entity.getPersistentData().getBoolean("FrameAdapted") == true) {
 						if (event != null && event.isCancelable()) {
@@ -494,9 +494,32 @@ public class PlayerAdaptionProcedure {
 								}
 							}
 							if (entity instanceof Player _player && !_player.level.isClientSide())
-								_player.displayClientMessage(Component.literal("Adaptation to Reversal Red Damage has begun."), true);
+								_player.displayClientMessage(Component.literal("Adaptation to Reversal Red has begun."), true);
 						}
 					} else if (entity.getPersistentData().getBoolean("ReversalRedAdapted") == true) {
+						if (event != null && event.isCancelable()) {
+							event.setCanceled(true);
+						}
+					}
+				}
+				if (damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:frost_calm_damage"))) || damagesource.is(DamageTypes.FREEZE)) {
+					if (entity.getPersistentData().getBoolean("FreezingAdapted") == false) {
+						if (entity.getPersistentData().getDouble("FreezingAdaptation") < 200) {
+							entity.getPersistentData().putDouble("FreezingAdaptation", (entity.getPersistentData().getDouble("FreezingAdaptation") + 1));
+						} else if (entity.getPersistentData().getDouble("FreezingAdaptation") == 200) {
+							entity.getPersistentData().putDouble("FreezingAdaptation", (entity.getPersistentData().getDouble("FreezingAdaptation") + 1));
+							entity.getPersistentData().putDouble("FreezingAdaptationTimer", 1200);
+							if (world instanceof Level _level) {
+								if (!_level.isClientSide()) {
+									_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.place")), SoundSource.NEUTRAL, 1, 1);
+								} else {
+									_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.place")), SoundSource.NEUTRAL, 1, 1, false);
+								}
+							}
+							if (entity instanceof Player _player && !_player.level.isClientSide())
+								_player.displayClientMessage(Component.literal("Adaptation to Freezing has begun."), true);
+						}
+					} else if (entity.getPersistentData().getBoolean("FreezingAdapted") == true) {
 						if (event != null && event.isCancelable()) {
 							event.setCanceled(true);
 						}
