@@ -44,6 +44,7 @@ public class InvertedSpearItem extends SwordItem {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level world, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, world, list, flag);
+		list.add(Component.literal("\u00A7l\u00A75Special Grade Cursed Tool: Inverted Spear"));
 		list.add(Component.literal("Perk - Disables Infinity"));
 	}
 }

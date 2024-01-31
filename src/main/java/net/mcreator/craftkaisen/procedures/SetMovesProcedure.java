@@ -29,7 +29,7 @@ public class SetMovesProcedure {
 			return;
 		if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).Page).equals("Innate")) {
 			if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Limitless")) {
-				entity.getPersistentData().putDouble("maxMoves", 7);
+				entity.getPersistentData().putDouble("maxMoves", 6);
 				if (entity.getPersistentData().getDouble("moveNumber") == 1) {
 					entity.getPersistentData().putString("moveDisplay", "Lapse Blue");
 					entity.getPersistentData().putDouble("moveCost", 7);
@@ -39,18 +39,12 @@ public class SetMovesProcedure {
 				} else if (entity.getPersistentData().getDouble("moveNumber") == 3) {
 					entity.getPersistentData().putString("moveDisplay", "Teleport");
 					entity.getPersistentData().putDouble("moveCost", 15);
-				} else if (entity.getPersistentData().getDouble("moveNumber") == 4) {
-					entity.getPersistentData().putString("moveDisplay", "Flight");
-					entity.getPersistentData().putDouble("moveCost", 15);
 				} else if (entity.getPersistentData().getDouble("moveNumber") == 5) {
 					entity.getPersistentData().putString("moveDisplay", "Hollow Purple");
 					entity.getPersistentData().putDouble("moveCost", 25);
 				} else if (entity.getPersistentData().getDouble("moveNumber") == 6) {
 					entity.getPersistentData().putString("moveDisplay", "Infinity");
 					entity.getPersistentData().putDouble("moveCost", 30);
-				} else if (entity.getPersistentData().getDouble("moveNumber") == 7) {
-					entity.getPersistentData().putString("moveDisplay", "Unlimited Void");
-					entity.getPersistentData().putDouble("moveCost", 50);
 				}
 			}
 			if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Cursed Speech")) {
@@ -341,6 +335,28 @@ public class SetMovesProcedure {
 				if (entity.getPersistentData().getDouble("moveNumber") == 1) {
 					entity.getPersistentData().putString("moveDisplay", "Fist");
 					entity.getPersistentData().putDouble("moveCost", 5);
+				}
+			}
+			if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Projection Sorcery")) {
+				entity.getPersistentData().putDouble("maxMoves", 1);
+				if (entity.getPersistentData().getDouble("moveNumber") == 1) {
+					entity.getPersistentData().putString("moveDisplay", "Frame");
+					entity.getPersistentData().putDouble("moveCost", 5);
+				}
+			}
+			if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Black Bird Manipulation")) {
+				entity.getPersistentData().putDouble("maxMoves", 3);
+				if (entity.getPersistentData().getDouble("moveNumber") == 1) {
+					entity.getPersistentData().putString("moveDisplay", "Crow");
+					entity.getPersistentData().putDouble("moveCost", 6);
+				}
+				if (entity.getPersistentData().getDouble("moveNumber") == 2) {
+					entity.getPersistentData().putString("moveDisplay", "Scouter Crow");
+					entity.getPersistentData().putDouble("moveCost", 10);
+				}
+				if (entity.getPersistentData().getDouble("moveNumber") == 3) {
+					entity.getPersistentData().putString("moveDisplay", "Bird Strike");
+					entity.getPersistentData().putDouble("moveCost", 30);
 				}
 			}
 		} else if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).Page).equals("Cursed Energy")) {

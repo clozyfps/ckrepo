@@ -9,6 +9,7 @@ import net.mcreator.craftkaisen.entity.RoundDeerEntity;
 import net.mcreator.craftkaisen.entity.RainbowDragonEntity;
 import net.mcreator.craftkaisen.entity.PandaEntity;
 import net.mcreator.craftkaisen.entity.NueEntity;
+import net.mcreator.craftkaisen.entity.FlyingCursedSpiritEntity;
 
 @Mod.EventBusSubscriber
 public class EntityAnimationFactory {

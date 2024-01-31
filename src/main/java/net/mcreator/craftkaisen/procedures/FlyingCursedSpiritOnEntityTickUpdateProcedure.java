@@ -26,8 +26,6 @@ public class FlyingCursedSpiritOnEntityTickUpdateProcedure {
 						(((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getY() - entity.getY()) / 5), (((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getZ() - entity.getZ()) / 5)));
 				CraftKaisenMod.queueServerWork(10, () -> {
 					if (world instanceof ServerLevel _level)
-						_level.sendParticles(ParticleTypes.EXPLOSION_EMITTER, x, y, z, 20, 3, 3, 3, 0);
-					if (world instanceof ServerLevel _level)
 						_level.sendParticles(ParticleTypes.POOF, x, y, z, 15, 3, 3, 3, 0.5);
 					if (world instanceof Level _level) {
 						if (!_level.isClientSide()) {

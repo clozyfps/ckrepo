@@ -1,8 +1,28 @@
 package net.mcreator.craftkaisen.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.registries.ForgeRegistries;
 
-import javax.annotation.Nullable;
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.damagesource.DamageTypes;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.BlockPos;
+
+import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
+import net.mcreator.craftkaisen.entity.JinichiZeninEntity;
+import net.mcreator.craftkaisen.CraftKaisenMod;
+
+import java.util.stream.Collectors;
+import java.util.List;
+import java.util.Comparator;
 
 public class FistProjectileWhileProjectileFlyingTickProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, Entity immediatesourceentity) {
@@ -24,16 +44,6 @@ public class FistProjectileWhileProjectileFlyingTickProcedure {
 								(float) (10 + (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 4));
 						if (world instanceof ServerLevel _level)
 							_level.sendParticles(ParticleTypes.EXPLOSION_EMITTER, (entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), 1, 1, 2, 1, 0);
-						if (world instanceof Level _level) {
-							if (!_level.isClientSide()) {
-								_level.playSound(null, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:hit")), SoundSource.NEUTRAL,
-										(float) 0.2, 1);
-							} else {
-								_level.playLocalSound((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:hit")), SoundSource.NEUTRAL, (float) 0.2, 1,
-										false);
-							}
-						}
-						entityiterator.setDeltaMovement(new Vec3((0.5 * immediatesourceentity.getLookAngle().x), (0.8 * immediatesourceentity.getLookAngle().y), (0.5 * immediatesourceentity.getLookAngle().z)));
 					}
 				}
 			}
@@ -56,10 +66,11 @@ public class FistProjectileWhileProjectileFlyingTickProcedure {
 										false);
 							}
 						}
-						entityiterator.setDeltaMovement(new Vec3((0.5 * immediatesourceentity.getLookAngle().x), (0.8 * immediatesourceentity.getLookAngle().y), (0.5 * immediatesourceentity.getLookAngle().z)));
 					}
 				}
 			}
 		}
+		if (world instanceof ServerLevel _level)
+			_level.sendParticles(ParticleTypes.POOF, x, y, z, 20, 1, 2, 1, 0.4);
 	}
 }

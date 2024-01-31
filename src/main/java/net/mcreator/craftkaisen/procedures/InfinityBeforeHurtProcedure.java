@@ -33,7 +33,7 @@ public class InfinityBeforeHurtProcedure {
 			return;
 		if (entity.getPersistentData().getBoolean("infinity") || entity instanceof SatoruGojoEntity) {
 			if (!((immediatesourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == CraftKaisenModItems.INVERTED_SPEAR.get())
-					|| immediatesourceentity instanceof LivingEntity _livEnt4 && _livEnt4.hasEffect(CraftKaisenModMobEffects.DOMAIN_AMPLIFICATION.get())) {
+					&& !(immediatesourceentity instanceof LivingEntity _livEnt4 && _livEnt4.hasEffect(CraftKaisenModMobEffects.DOMAIN_AMPLIFICATION.get()))) {
 				if (event != null && event.isCancelable()) {
 					event.setCanceled(true);
 				}

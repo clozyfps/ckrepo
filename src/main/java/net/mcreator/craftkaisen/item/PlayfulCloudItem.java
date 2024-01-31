@@ -54,6 +54,7 @@ public class PlayfulCloudItem extends SwordItem {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level world, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, world, list, flag);
+		list.add(Component.literal("\u00A7l\u00A75Special Grade Cursed Tool: Playful Cloud"));
 		list.add(Component.literal("Perk - Increased Knockback"));
 	}
 }

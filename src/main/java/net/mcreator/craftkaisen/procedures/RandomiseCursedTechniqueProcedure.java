@@ -1,8 +1,21 @@
 package net.mcreator.craftkaisen.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.util.RandomSource;
+import net.minecraft.util.Mth;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.chat.Component;
+import net.minecraft.advancements.AdvancementProgress;
+import net.minecraft.advancements.Advancement;
 
-import javax.annotation.Nullable;
+import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
+import net.mcreator.craftkaisen.init.CraftKaisenModItems;
 
 public class RandomiseCursedTechniqueProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
@@ -11,7 +24,7 @@ public class RandomiseCursedTechniqueProcedure {
 		double techniqueNumber = 0;
 		double restrictionNumber = 0;
 		double specialNumber = 0;
-		techniqueNumber = Mth.nextInt(RandomSource.create(), 1, 11);
+		techniqueNumber = Mth.nextInt(RandomSource.create(), 1, 15);
 		if (entity instanceof ServerPlayer _player) {
 			Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:cursed_technique"));
 			AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
@@ -78,7 +91,7 @@ public class RandomiseCursedTechniqueProcedure {
 			}
 		} else if (techniqueNumber == 8) {
 			{
-				String _setval = "Miracle";
+				String _setval = "Projection Sorcery";
 				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.technique = _setval;
 					capability.syncPlayerVariables(entity);
@@ -116,6 +129,30 @@ public class RandomiseCursedTechniqueProcedure {
 		} else if (techniqueNumber == 12) {
 			{
 				String _setval = "Ice Formation";
+				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.technique = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+		} else if (techniqueNumber == 13) {
+			{
+				String _setval = "Adaption";
+				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.technique = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+		} else if (techniqueNumber == 14) {
+			{
+				String _setval = "Black Bird Manipulation";
+				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.technique = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+		} else if (techniqueNumber == 15) {
+			{
+				String _setval = "Limitless";
 				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.technique = _setval;
 					capability.syncPlayerVariables(entity);

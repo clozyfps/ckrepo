@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.Comparator;
 
 public class LapseBlueControlOnEffectActiveTickProcedure {
-	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
+	public static void execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
 		if (entity.isShiftKeyDown()) {
@@ -86,17 +86,6 @@ public class LapseBlueControlOnEffectActiveTickProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
-			BlueTickProcedure.execute(world,
-					(entity.level
-							.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale((entity.getPersistentData().getDouble("bluex")))), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity))
-							.getBlockPos().getX()),
-					(entity.level
-							.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale((entity.getPersistentData().getDouble("bluey")))), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity))
-							.getBlockPos().getY()),
-					(entity.level
-							.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale((entity.getPersistentData().getDouble("bluez")))), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity))
-							.getBlockPos().getZ()),
-					entity);
 		}
 		if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy <= 0) {
 			if (entity instanceof LivingEntity _entity)

@@ -632,6 +632,22 @@
           "x": 322,
           "y": 184
         }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_display_technique",
+          "text": {
+            "fixedValue": "",
+            "name": "DisplayTechnique"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 96,
+          "y": 188
+        }
       }
     ],
     "gridSettings": {
