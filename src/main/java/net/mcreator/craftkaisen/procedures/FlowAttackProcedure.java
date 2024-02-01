@@ -48,9 +48,6 @@ public class FlowAttackProcedure {
 			return;
 		if (sourceentity instanceof LivingEntity _livEnt0 && _livEnt0.hasEffect(CraftKaisenModMobEffects.FLOW.get())) {
 			if (((sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).CeNature).equals("Electricity")) {
-				if (event != null && event.isCancelable()) {
-					event.setCanceled(true);
-				}
 				entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC), sourceentity), (float) (amount + 3));
 				if (world instanceof ServerLevel _level)
 					_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.NUE_ELECTRICITY.get()), (entity.getX()), (entity.getY()), (entity.getZ()), 3, 0.1, 2, 0.1, 0);
@@ -63,9 +60,6 @@ public class FlowAttackProcedure {
 				}
 			}
 			if (((sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).CeNature).equals("Flame")) {
-				if (event != null && event.isCancelable()) {
-					event.setCanceled(true);
-				}
 				entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC), sourceentity), (float) (amount + 3));
 				entity.setSecondsOnFire(3);
 				if (world instanceof ServerLevel _level)
@@ -87,9 +81,6 @@ public class FlowAttackProcedure {
 			}
 			if (((sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).CeNature).equals("Basic")
 					|| ((sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).CeNature).equals("Rough")) {
-				if (event != null && event.isCancelable()) {
-					event.setCanceled(true);
-				}
 				entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC), sourceentity), (float) (amount + 5));
 				if (world instanceof ServerLevel _level)
 					_level.sendParticles(ParticleTypes.EXPLOSION, (entity.getX()), (entity.getY()), (entity.getZ()), 1, 0.1, 2, 0.1, 0);
@@ -102,9 +93,6 @@ public class FlowAttackProcedure {
 				}
 			}
 			if (((sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).CeNature).equals("Frost")) {
-				if (event != null && event.isCancelable()) {
-					event.setCanceled(true);
-				}
 				entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC), sourceentity), (float) (amount + 3));
 				world.levelEvent(2001, BlockPos.containing(x, y, z), Block.getId(Blocks.ICE.defaultBlockState()));
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
