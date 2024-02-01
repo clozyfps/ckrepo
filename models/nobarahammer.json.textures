@@ -2,9 +2,7 @@
   "mappings": {
     "default": {
       "map": {
-        "0": "nobara2",
-        "1": "nobara1",
-        "2": "nobara3"
+        "1": "nobarahammertexture"
       },
       "name": "default"
     }

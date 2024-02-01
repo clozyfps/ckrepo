@@ -105,7 +105,7 @@ public class MalevolentShrineOnEntityTickUpdateProcedure {
 						}
 					}
 					entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:malevolent_shrine_damage"))),
-							(entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null)), 65);
+							(entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null)), 50);
 				} else if (entityiterator instanceof LivingEntity _livEnt53 && _livEnt53.hasEffect(CraftKaisenModMobEffects.SIMPLE_DOMAIN.get()) && !(entity == entityiterator)
 						&& !(entity instanceof TamableAnimal _tamIsTamedBy && entityiterator instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false)) {
 					if (Math.random() < 0.01) {

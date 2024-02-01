@@ -35,7 +35,7 @@ public class PlayerAdaptionTimerProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Adaptation")) {
+		if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Adaption")) {
 			if (entity.getPersistentData().getDouble("DamageAdaptationTimer") > 1) {
 				entity.getPersistentData().putDouble("DamageAdaptationTimer", (entity.getPersistentData().getDouble("DamageAdaptationTimer") - 1));
 			} else if (entity.getPersistentData().getDouble("DamageAdaptationTimer") == 1 && entity.getPersistentData().getBoolean("DamageAdapted") == false) {
@@ -244,7 +244,7 @@ public class PlayerAdaptionTimerProcedure {
 					}
 				}
 				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal("Successfully Adapted to Reversal Red Damage."), true);
+					_player.displayClientMessage(Component.literal("Successfully Adapted to Reversal Red."), true);
 			}
 			if (entity.getPersistentData().getDouble("FrameAdaptationTimer") > 1) {
 				entity.getPersistentData().putDouble("FrameAdaptationTimer", (entity.getPersistentData().getDouble("FrameAdaptationTimer") - 1));
@@ -258,7 +258,7 @@ public class PlayerAdaptionTimerProcedure {
 					}
 				}
 				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal("Successfully Adapted to Frame Damage."), true);
+					_player.displayClientMessage(Component.literal("Successfully Adapted to Projection Sorcery."), true);
 			}
 			if (entity.getPersistentData().getDouble("RatioAdaptationTimer") > 1) {
 				entity.getPersistentData().putDouble("RatioAdaptationTimer", (entity.getPersistentData().getDouble("RatioAdaptationTimer") - 1));
@@ -272,7 +272,7 @@ public class PlayerAdaptionTimerProcedure {
 					}
 				}
 				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal("Successfully Adapted to Ratio Damage."), true);
+					_player.displayClientMessage(Component.literal("Successfully Adapted to Ratio."), true);
 			}
 			if (entity.getPersistentData().getDouble("ShrineAdaptationTimer") > 1) {
 				entity.getPersistentData().putDouble("ShrineAdaptationTimer", (entity.getPersistentData().getDouble("ShrineAdaptationTimer") - 1));
@@ -286,7 +286,7 @@ public class PlayerAdaptionTimerProcedure {
 					}
 				}
 				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal("Successfully Adapted to Malevolent Shrine Damage."), true);
+					_player.displayClientMessage(Component.literal("Successfully Adapted to Malevolent Shrine."), true);
 			}
 			if (entity.getPersistentData().getDouble("DismantleAdaptationTimer") > 1) {
 				entity.getPersistentData().putDouble("DismantleAdaptationTimer", (entity.getPersistentData().getDouble("DismantleAdaptationTimer") - 1));
@@ -300,7 +300,7 @@ public class PlayerAdaptionTimerProcedure {
 					}
 				}
 				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal("Successfully Adapted to Dismantle Damage."), true);
+					_player.displayClientMessage(Component.literal("Successfully Adapted to Dismantle."), true);
 			}
 			if (entity.getPersistentData().getDouble("BloodAdaptationTimer") > 1) {
 				entity.getPersistentData().putDouble("BloodAdaptationTimer", (entity.getPersistentData().getDouble("BloodAdaptationTimer") - 1));
@@ -314,7 +314,21 @@ public class PlayerAdaptionTimerProcedure {
 					}
 				}
 				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal("Successfully Adapted to Blood Damage."), true);
+					_player.displayClientMessage(Component.literal("Successfully Adapted to Blood Attacks."), true);
+			}
+			if (entity.getPersistentData().getDouble("FreezingAdaptationTimer") > 1) {
+				entity.getPersistentData().putDouble("FreezingAdaptationTimer", (entity.getPersistentData().getDouble("FreezingAdaptationTimer") - 1));
+			} else if (entity.getPersistentData().getDouble("FreezingAdaptationTimer") == 1 && entity.getPersistentData().getBoolean("FreezingAdapted") == false) {
+				entity.getPersistentData().putBoolean("FreezingAdapted", true);
+				if (world instanceof Level _level) {
+					if (!_level.isClientSide()) {
+						_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.break")), SoundSource.PLAYERS, 1, 1);
+					} else {
+						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.break")), SoundSource.PLAYERS, 1, 1, false);
+					}
+				}
+				if (entity instanceof Player _player && !_player.level.isClientSide())
+					_player.displayClientMessage(Component.literal("Successfully Adapted to Freezing."), true);
 			}
 		}
 	}
