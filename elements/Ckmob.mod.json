@@ -17,15 +17,6 @@
         "value": "CUSTOM:BlackDivineDog"
       },
       {
-        "value": "CUSTOM:BlackMucusProjectile"
-      },
-      {
-        "value": "CUSTOM:BlastAwayRangedProjectile"
-      },
-      {
-        "value": "CUSTOM:BloodMeteoriteProjectile"
-      },
-      {
         "value": "CUSTOM:BlueEntity"
       },
       {
@@ -47,34 +38,10 @@
         "value": "CUSTOM:CoffinMountain"
       },
       {
-        "value": "CUSTOM:CrumbleAwayRangedProjectile"
-      },
-      {
-        "value": "CUSTOM:CrushedRangedProjectile"
-      },
-      {
-        "value": "CUSTOM:DismantleProjectile"
-      },
-      {
-        "value": "CUSTOM:DisasterFlameRangedProjectile"
-      },
-      {
-        "value": "CUSTOM:DontMoveRangedProjectile"
-      },
-      {
         "value": "CUSTOM:EightHandledSwordDivergentSilaDivineGeneralMahoraga"
       },
       {
         "value": "CUSTOM:EmberInsect"
-      },
-      {
-        "value": "CUSTOM:EmberInsectProjectileProjectile"
-      },
-      {
-        "value": "CUSTOM:ExplodeRangedProjectile"
-      },
-      {
-        "value": "CUSTOM:FindBlueLocationProjectile"
       },
       {
         "value": "CUSTOM:FingerBearer"

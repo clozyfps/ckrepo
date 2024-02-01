@@ -13,8 +13,8 @@
     "power": 2.0,
     "damage": 5.0,
     "knockback": 5,
-    "entityModel": "Modelemberinsect",
-    "customModelTexture": "emberinsect.png",
+    "entityModel": "ModelEmberInsect",
+    "customModelTexture": "emberinsecttexture.png",
     "onFlyingTick": {
       "name": "EmberInsectProjectileWhileProjectileFlyingTick"
     }

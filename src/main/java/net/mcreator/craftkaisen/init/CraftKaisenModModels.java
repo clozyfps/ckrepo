@@ -50,7 +50,6 @@ import net.mcreator.craftkaisen.client.model.Modelgetolegs;
 import net.mcreator.craftkaisen.client.model.Modelframewall;
 import net.mcreator.craftkaisen.client.model.Modelfist;
 import net.mcreator.craftkaisen.client.model.Modelfemaleuniform;
-import net.mcreator.craftkaisen.client.model.Modelemberinsect;
 import net.mcreator.craftkaisen.client.model.Modeldivinemahoraga;
 import net.mcreator.craftkaisen.client.model.Modeldivinedog;
 import net.mcreator.craftkaisen.client.model.Modelcustom_model;
@@ -89,6 +88,7 @@ import net.mcreator.craftkaisen.client.model.ModelFrame;
 import net.mcreator.craftkaisen.client.model.ModelFlyingCurseSpirit;
 import net.mcreator.craftkaisen.client.model.ModelFlyHead;
 import net.mcreator.craftkaisen.client.model.ModelFingerBearernew;
+import net.mcreator.craftkaisen.client.model.ModelEmberInsect;
 import net.mcreator.craftkaisen.client.model.ModelCrowProjectileFlying;
 import net.mcreator.craftkaisen.client.model.ModelCrowProjectile;
 
@@ -111,7 +111,6 @@ public class CraftKaisenModModels {
 		event.registerLayerDefinition(Modelcursedspiritgrasshopper.LAYER_LOCATION, Modelcursedspiritgrasshopper::createBodyLayer);
 		event.registerLayerDefinition(ModelJogoModel.LAYER_LOCATION, ModelJogoModel::createBodyLayer);
 		event.registerLayerDefinition(ModelRugbyFieldCurse.LAYER_LOCATION, ModelRugbyFieldCurse::createBodyLayer);
-		event.registerLayerDefinition(Modelemberinsect.LAYER_LOCATION, Modelemberinsect::createBodyLayer);
 		event.registerLayerDefinition(Modelmahoraga_wheel.LAYER_LOCATION, Modelmahoraga_wheel::createBodyLayer);
 		event.registerLayerDefinition(ModelFingerBearernew.LAYER_LOCATION, ModelFingerBearernew::createBodyLayer);
 		event.registerLayerDefinition(Modelmaximumelephant.LAYER_LOCATION, Modelmaximumelephant::createBodyLayer);
@@ -137,6 +136,7 @@ public class CraftKaisenModModels {
 		event.registerLayerDefinition(Modelmahitodistorted.LAYER_LOCATION, Modelmahitodistorted::createBodyLayer);
 		event.registerLayerDefinition(ModelHakariDoorsClosed.LAYER_LOCATION, ModelHakariDoorsClosed::createBodyLayer);
 		event.registerLayerDefinition(Modelswordslice.LAYER_LOCATION, Modelswordslice::createBodyLayer);
+		event.registerLayerDefinition(ModelEmberInsect.LAYER_LOCATION, ModelEmberInsect::createBodyLayer);
 		event.registerLayerDefinition(Modeluniform.LAYER_LOCATION, Modeluniform::createBodyLayer);
 		event.registerLayerDefinition(Modelmaximumelephantnew.LAYER_LOCATION, Modelmaximumelephantnew::createBodyLayer);
 		event.registerLayerDefinition(Modelcurse_1.LAYER_LOCATION, Modelcurse_1::createBodyLayer);

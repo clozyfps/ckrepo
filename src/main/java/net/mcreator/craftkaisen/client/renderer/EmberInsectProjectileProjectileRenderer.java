@@ -9,19 +9,19 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.MultiBufferSource;
 
 import net.mcreator.craftkaisen.entity.EmberInsectProjectileProjectileEntity;
-import net.mcreator.craftkaisen.client.model.Modelemberinsect;
+import net.mcreator.craftkaisen.client.model.ModelEmberInsect;
 
 import com.mojang.math.Axis;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.blaze3d.vertex.PoseStack;
 
 public class EmberInsectProjectileProjectileRenderer extends EntityRenderer<EmberInsectProjectileProjectileEntity> {
-	private static final ResourceLocation texture = new ResourceLocation("craft_kaisen:textures/entities/emberinsect.png");
-	private final Modelemberinsect model;
+	private static final ResourceLocation texture = new ResourceLocation("craft_kaisen:textures/entities/emberinsecttexture.png");
+	private final ModelEmberInsect model;
 
 	public EmberInsectProjectileProjectileRenderer(EntityRendererProvider.Context context) {
 		super(context);
-		model = new Modelemberinsect(context.bakeLayer(Modelemberinsect.LAYER_LOCATION));
+		model = new ModelEmberInsect(context.bakeLayer(ModelEmberInsect.LAYER_LOCATION));
 	}
 
 	@Override
