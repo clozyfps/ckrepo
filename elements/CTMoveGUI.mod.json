@@ -14,7 +14,7 @@
         "type": "image",
         "data": {
           "image": "mainmenu.png",
-          "use1Xscale": true,
+          "use1Xscale": false,
           "x": 0,
           "y": 0
         }
@@ -23,8 +23,8 @@
         "type": "image",
         "data": {
           "image": "pageoneclosed.png",
-          "use1Xscale": true,
-          "x": 0,
+          "use1Xscale": false,
+          "x": -4,
           "y": 0
         }
       },
@@ -32,8 +32,8 @@
         "type": "image",
         "data": {
           "image": "pagetwoclosed.png",
-          "use1Xscale": true,
-          "x": 0,
+          "use1Xscale": false,
+          "x": -4,
           "y": 0
         }
       },
@@ -46,7 +46,7 @@
           "onClick": {
             "name": "MenuOnKeyPressed"
           },
-          "x": 24,
+          "x": 20,
           "y": 34
         }
       },
@@ -59,7 +59,7 @@
           "onClick": {
             "name": "OpenSelfVowGUI"
           },
-          "x": 24,
+          "x": 20,
           "y": 55
         }
       },
@@ -72,7 +72,7 @@
             "name": "DisplayGradeFour"
           },
           "x": 0,
-          "y": 0
+          "y": 5
         }
       },
       {
@@ -84,7 +84,7 @@
             "name": "DisplayGradeThree"
           },
           "x": 0,
-          "y": 0
+          "y": 5
         }
       },
       {
@@ -96,7 +96,7 @@
             "name": "DisplaySemiGrade2"
           },
           "x": 0,
-          "y": 0
+          "y": 5
         }
       },
       {
@@ -108,7 +108,7 @@
             "name": "DisplayGrade2"
           },
           "x": 0,
-          "y": 0
+          "y": 5
         }
       },
       {
@@ -120,7 +120,7 @@
             "name": "DisplaySemiGrade1"
           },
           "x": 0,
-          "y": 0
+          "y": 5
         }
       },
       {
@@ -132,7 +132,7 @@
             "name": "DisplayGrade1"
           },
           "x": 0,
-          "y": 0
+          "y": 5
         }
       },
       {
@@ -144,106 +144,16 @@
             "name": "DisplaySpecialGrade"
           },
           "x": 0,
-          "y": 0
+          "y": 5
         }
       },
       {
         "type": "image",
         "data": {
           "image": "pagethreeopen.png",
-          "use1Xscale": true,
-          "x": 0,
+          "use1Xscale": false,
+          "x": -4,
           "y": 0
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "name": "button_set_ability_1",
-          "text": "Set Ability 1",
-          "isUndecorated": false,
-          "onClick": {
-            "name": "SetAbility1"
-          },
-          "width": 92,
-          "height": 20,
-          "x": 96,
-          "y": 83
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "name": "button_set_ability_2",
-          "text": "Set Ability 2",
-          "isUndecorated": false,
-          "onClick": {
-            "name": "SetAbility2"
-          },
-          "width": 92,
-          "height": 20,
-          "x": 96,
-          "y": 106
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "name": "button_set_ability_3",
-          "text": "Set Ability 3",
-          "isUndecorated": false,
-          "onClick": {
-            "name": "SetAbility3"
-          },
-          "width": 92,
-          "height": 20,
-          "x": 96,
-          "y": 128
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "name": "button_set_ability_4",
-          "text": "Set Ability 4",
-          "isUndecorated": false,
-          "onClick": {
-            "name": "SetAbility4"
-          },
-          "width": 92,
-          "height": 20,
-          "x": 96,
-          "y": 150
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "name": "button_set_ability_5",
-          "text": "Set Ability 5",
-          "isUndecorated": false,
-          "onClick": {
-            "name": "SetAbility5"
-          },
-          "width": 92,
-          "height": 20,
-          "x": 96,
-          "y": 172
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "name": "button_set_ability_6",
-          "text": "Set Ability 6",
-          "isUndecorated": false,
-          "onClick": {
-            "name": "SetAbility6"
-          },
-          "width": 92,
-          "height": 20,
-          "x": 194,
-          "y": 106
         }
       },
       {
@@ -257,8 +167,8 @@
           },
           "width": 92,
           "height": 20,
-          "x": 194,
-          "y": 35
+          "x": 195,
+          "y": 66
         }
       },
       {
@@ -272,8 +182,8 @@
           },
           "width": 92,
           "height": 20,
-          "x": 194,
-          "y": 59
+          "x": 100,
+          "y": 66
         }
       },
       {
@@ -285,11 +195,11 @@
             "name": "ReturnTechnique"
           },
           "color": {
-            "value": -12829636,
+            "value": -1,
             "falpha": 0.0
           },
-          "x": 99,
-          "y": 55
+          "x": 101,
+          "y": 52
         }
       },
       {
@@ -301,11 +211,11 @@
             "name": "ReturnMoveDisplay"
           },
           "color": {
-            "value": -12829636,
+            "value": -1,
             "falpha": 0.0
           },
-          "x": 289,
-          "y": 39
+          "x": 101,
+          "y": 91
         }
       },
       {
@@ -317,11 +227,11 @@
             "name": "ReturnMoveCost"
           },
           "color": {
-            "value": -12829636,
+            "value": -1,
             "falpha": 0.0
           },
-          "x": 289,
-          "y": 63
+          "x": 101,
+          "y": 108
         }
       },
       {
@@ -335,8 +245,8 @@
           },
           "width": 92,
           "height": 20,
-          "x": 292,
-          "y": 83
+          "x": 195,
+          "y": 122
         }
       },
       {
@@ -350,8 +260,8 @@
           },
           "width": 92,
           "height": 20,
-          "x": 194,
-          "y": 83
+          "x": 100,
+          "y": 122
         }
       },
       {
@@ -368,8 +278,8 @@
           },
           "width": 92,
           "height": 20,
-          "x": 292,
-          "y": 106
+          "x": 290,
+          "y": 122
         }
       },
       {
@@ -393,83 +303,89 @@
             "fixedValue": "Page:"
           },
           "color": {
-            "value": -12829636,
+            "value": -1,
             "falpha": 0.0
           },
-          "x": 99,
-          "y": 43
+          "x": 101,
+          "y": 38
         }
       },
       {
-        "type": "button",
+        "type": "imagebutton",
         "data": {
-          "name": "button_set_ability_7",
-          "text": "Set Ability 7",
-          "isUndecorated": false,
-          "width": 92,
-          "height": 20,
-          "x": 194,
-          "y": 128
+          "name": "imagebutton_ab_slot_1",
+          "image": "ab_slot_1.png",
+          "hoveredImage": "ab_slot_1h.png",
+          "onClick": {
+            "name": "SetAbility1"
+          },
+          "x": 102,
+          "y": 167
         }
       },
       {
-        "type": "button",
+        "type": "imagebutton",
         "data": {
-          "name": "button_set_ability_8",
-          "text": "Set Ability 8",
-          "isUndecorated": false,
-          "width": 92,
-          "height": 20,
-          "x": 194,
-          "y": 150
+          "name": "imagebutton_ab_slot_2",
+          "image": "ab_slot_2.png",
+          "hoveredImage": "ab_slot_2h.png",
+          "onClick": {
+            "name": "SetAbility2"
+          },
+          "x": 151,
+          "y": 167
         }
       },
       {
-        "type": "button",
+        "type": "imagebutton",
         "data": {
-          "name": "button_set_ability_9",
-          "text": "Set Ability 9",
-          "isUndecorated": false,
-          "width": 92,
-          "height": 20,
-          "x": 194,
-          "y": 172
+          "name": "imagebutton_ab_slot_3",
+          "image": "ab_slot_3.png",
+          "hoveredImage": "ab_slot_3h.png",
+          "onClick": {
+            "name": "SetAbility3"
+          },
+          "x": 199,
+          "y": 167
         }
       },
       {
-        "type": "button",
+        "type": "imagebutton",
         "data": {
-          "name": "button_set_ability_11",
-          "text": "Set Ability 10",
-          "isUndecorated": false,
-          "width": 92,
-          "height": 20,
-          "x": 292,
-          "y": 128
+          "name": "imagebutton_ab_slot_4",
+          "image": "ab_slot_4.png",
+          "hoveredImage": "ab_slot_4h.png",
+          "onClick": {
+            "name": "SetAbility4"
+          },
+          "x": 248,
+          "y": 167
         }
       },
       {
-        "type": "button",
+        "type": "imagebutton",
         "data": {
-          "name": "button_set_ability_12",
-          "text": "Set Ability 11",
-          "isUndecorated": false,
-          "width": 92,
-          "height": 20,
-          "x": 292,
-          "y": 150
+          "name": "imagebutton_ab_slot_5",
+          "image": "ab_slot_5.png",
+          "hoveredImage": "ab_slot_5h.png",
+          "onClick": {
+            "name": "SetAbility5"
+          },
+          "x": 297,
+          "y": 167
         }
       },
       {
-        "type": "button",
+        "type": "imagebutton",
         "data": {
-          "name": "button_set_ability_13",
-          "text": "Set Ability 12",
-          "isUndecorated": false,
-          "width": 92,
-          "height": 20,
-          "x": 292,
-          "y": 172
+          "name": "imagebutton_ab_slot_6",
+          "image": "ab_slot_6.png",
+          "hoveredImage": "ab_slot_6h.png",
+          "onClick": {
+            "name": "SetAbility6"
+          },
+          "x": 346,
+          "y": 167
         }
       }
     ],
