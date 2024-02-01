@@ -560,7 +560,7 @@ public class SetCommandCommand {
 
 					SetFragileBodyProcedure.execute(entity);
 					return 0;
-				})).then(Commands.literal("BlessedByTheSparks").executes(arguments -> {
+				})).then(Commands.literal("BlessedBySparks").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();

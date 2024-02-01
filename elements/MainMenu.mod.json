@@ -11,6 +11,15 @@
     "doesPauseGame": false,
     "components": [
       {
+        "type": "image",
+        "data": {
+          "image": "mainmenu.png",
+          "use1Xscale": false,
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
         "type": "entitymodel",
         "data": {
           "entityModel": {
@@ -31,14 +40,14 @@
             "fixedValue": "Human"
           },
           "color": {
-            "value": -11112336,
+            "value": -16724788,
             "falpha": 0.0
           },
           "displayCondition": {
             "name": "ReturnHuman"
           },
-          "x": 96,
-          "y": 35
+          "x": 51,
+          "y": 195
         }
       },
       {
@@ -50,11 +59,11 @@
             "name": "ReturnSkillpoints"
           },
           "color": {
-            "value": -12829636,
+            "value": -1,
             "falpha": 0.0
           },
-          "x": 96,
-          "y": 44
+          "x": 101,
+          "y": 56
         }
       },
       {
@@ -71,8 +80,8 @@
           "displayCondition": {
             "name": "ReturnCursedSpirit"
           },
-          "x": 96,
-          "y": 35
+          "x": 51,
+          "y": 195
         }
       },
       {
@@ -84,11 +93,11 @@
             "name": "ReturnExpDisplay"
           },
           "color": {
-            "value": -12829636,
+            "value": -1,
             "falpha": 0.0
           },
-          "x": 96,
-          "y": 62
+          "x": 101,
+          "y": 92
         }
       },
       {
@@ -100,11 +109,11 @@
             "name": "ReturnRep"
           },
           "color": {
-            "value": -12829636,
+            "value": -1,
             "falpha": 0.0
           },
-          "x": 96,
-          "y": 80
+          "x": 101,
+          "y": 174
         }
       },
       {
@@ -116,11 +125,11 @@
             "name": "ReturnAffiliation"
           },
           "color": {
-            "value": -12829636,
+            "value": -1,
             "falpha": 0.0
           },
-          "x": 96,
-          "y": 98
+          "x": 101,
+          "y": 156
         }
       },
       {
@@ -132,11 +141,11 @@
             "name": "ReturnLevel"
           },
           "color": {
-            "value": -12829636,
+            "value": -1,
             "falpha": 0.0
           },
-          "x": 96,
-          "y": 116
+          "x": 101,
+          "y": 74
         }
       },
       {
@@ -148,11 +157,11 @@
             "name": "ReturnSpecial"
           },
           "color": {
-            "value": -12829636,
+            "value": -1,
             "falpha": 0.0
           },
-          "x": 96,
-          "y": 134
+          "x": 101,
+          "y": 110
         }
       },
       {
@@ -164,11 +173,11 @@
             "name": "ReturnStrength"
           },
           "color": {
-            "value": -12829636,
+            "value": -1,
             "falpha": 0.0
           },
-          "x": 213,
-          "y": 44
+          "x": 247,
+          "y": 56
         }
       },
       {
@@ -180,11 +189,11 @@
             "name": "ReturnHealth"
           },
           "color": {
-            "value": -12829636,
+            "value": -1,
             "falpha": 0.0
           },
-          "x": 213,
-          "y": 62
+          "x": 247,
+          "y": 74
         }
       },
       {
@@ -196,11 +205,11 @@
             "name": "ReturnCursedEnergy"
           },
           "color": {
-            "value": -12829636,
+            "value": -1,
             "falpha": 0.0
           },
-          "x": 213,
-          "y": 98
+          "x": 247,
+          "y": 111
         }
       },
       {
@@ -212,11 +221,11 @@
             "name": "ReturnEnergyControl"
           },
           "color": {
-            "value": -12829636,
+            "value": -1,
             "falpha": 0.0
           },
-          "x": 213,
-          "y": 80
+          "x": 247,
+          "y": 92
         }
       },
       {
@@ -228,151 +237,76 @@
             "name": "ReturnSpeed"
           },
           "color": {
-            "value": -12829636,
+            "value": -1,
             "falpha": 0.0
           },
-          "x": 213,
-          "y": 116
+          "x": 247,
+          "y": 128
         }
       },
       {
         "type": "imagebutton",
         "data": {
           "name": "imagebutton_smallbutton1png",
-          "image": "smallbutton-1.png.png",
-          "hoveredImage": "",
+          "image": "addstatbutton.png",
+          "hoveredImage": "addstatbutton_h.png",
           "onClick": {
             "name": "StrengthButton"
           },
-          "x": 330,
-          "y": 44
+          "x": 357,
+          "y": 54
         }
       },
       {
         "type": "imagebutton",
         "data": {
           "name": "imagebutton_smallbutton1png1",
-          "image": "smallbutton-1.png.png",
-          "hoveredImage": "",
+          "image": "addstatbutton.png",
+          "hoveredImage": "addstatbutton_h.png",
           "onClick": {
             "name": "HealthButton"
           },
-          "x": 330,
-          "y": 62
+          "x": 357,
+          "y": 72
         }
       },
       {
         "type": "imagebutton",
         "data": {
           "name": "imagebutton_smallbutton1png3",
-          "image": "smallbutton-1.png.png",
-          "hoveredImage": "",
+          "image": "addstatbutton.png",
+          "hoveredImage": "addstatbutton_h.png",
           "onClick": {
             "name": "ControlButton"
           },
-          "x": 330,
-          "y": 80
+          "x": 357,
+          "y": 90
         }
       },
       {
         "type": "imagebutton",
         "data": {
           "name": "imagebutton_smallbutton1png2",
-          "image": "smallbutton-1.png.png",
-          "hoveredImage": "",
+          "image": "addstatbutton.png",
+          "hoveredImage": "addstatbutton_h.png",
           "onClick": {
             "name": "EnergyButton"
           },
-          "x": 330,
-          "y": 98
+          "x": 357,
+          "y": 108
         }
       },
       {
         "type": "imagebutton",
         "data": {
           "name": "imagebutton_smallbutton1png4",
-          "image": "smallbutton-1.png.png",
-          "hoveredImage": "",
+          "image": "addstatbutton.png",
+          "hoveredImage": "addstatbutton_h.png",
           "onClick": {
             "name": "SpeedButton"
           },
-          "x": 330,
-          "y": 116
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "name": "label_empty2",
-          "text": {
-            "fixedValue": "+"
-          },
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "x": 339,
-          "y": 44
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "name": "label_empty3",
-          "text": {
-            "fixedValue": "+"
-          },
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "x": 339,
-          "y": 62
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "name": "label_empty4",
-          "text": {
-            "fixedValue": "+"
-          },
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "x": 339,
-          "y": 116
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "name": "label_empty5",
-          "text": {
-            "fixedValue": "+"
-          },
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "x": 339,
-          "y": 80
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "name": "label_empty6",
-          "text": {
-            "fixedValue": "+"
-          },
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "x": 339,
-          "y": 98
+          "x": 357,
+          "y": 126
         }
       },
       {
@@ -382,10 +316,10 @@
           "text": {
             "fixedValue": "increases attack damage"
           },
-          "width": 19,
-          "height": 9,
-          "x": 330,
-          "y": 44
+          "width": 23,
+          "height": 13,
+          "x": 358,
+          "y": 55
         }
       },
       {
@@ -395,10 +329,10 @@
           "text": {
             "fixedValue": "increase max health"
           },
-          "width": 20,
-          "height": 9,
-          "x": 330,
-          "y": 62
+          "width": 23,
+          "height": 13,
+          "x": 358,
+          "y": 73
         }
       },
       {
@@ -408,10 +342,10 @@
           "text": {
             "fixedValue": "increase max cursed energy"
           },
-          "width": 19,
-          "height": 10,
-          "x": 330,
-          "y": 98
+          "width": 23,
+          "height": 13,
+          "x": 358,
+          "y": 109
         }
       },
       {
@@ -421,10 +355,10 @@
           "text": {
             "fixedValue": "increase energy regen rate and max output"
           },
-          "width": 19,
-          "height": 9,
-          "x": 330,
-          "y": 80
+          "width": 23,
+          "height": 13,
+          "x": 358,
+          "y": 91
         }
       },
       {
@@ -434,19 +368,10 @@
           "text": {
             "fixedValue": "increase movement speed"
           },
-          "width": 20,
-          "height": 9,
-          "x": 330,
-          "y": 116
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "mainmenu.png",
-          "use1Xscale": true,
-          "x": 0,
-          "y": 0
+          "width": 23,
+          "height": 13,
+          "x": 358,
+          "y": 127
         }
       },
       {
@@ -458,7 +383,7 @@
             "name": "DisplayGradeFour"
           },
           "x": 0,
-          "y": 0
+          "y": 5
         }
       },
       {
@@ -470,7 +395,7 @@
             "name": "DisplayGradeThree"
           },
           "x": 0,
-          "y": 0
+          "y": 5
         }
       },
       {
@@ -482,7 +407,7 @@
             "name": "DisplaySemiGrade2"
           },
           "x": 0,
-          "y": 0
+          "y": 5
         }
       },
       {
@@ -494,7 +419,7 @@
             "name": "DisplayGrade2"
           },
           "x": 0,
-          "y": 0
+          "y": 5
         }
       },
       {
@@ -506,7 +431,7 @@
             "name": "DisplaySemiGrade1"
           },
           "x": 0,
-          "y": 0
+          "y": 5
         }
       },
       {
@@ -518,7 +443,7 @@
             "name": "DisplayGrade1"
           },
           "x": 0,
-          "y": 0
+          "y": 5
         }
       },
       {
@@ -530,15 +455,15 @@
             "name": "DisplaySpecialGrade"
           },
           "x": 0,
-          "y": 0
+          "y": 5
         }
       },
       {
         "type": "image",
         "data": {
           "image": "pageoneopen.png",
-          "use1Xscale": true,
-          "x": 0,
+          "use1Xscale": false,
+          "x": -4,
           "y": 0
         }
       },
@@ -546,8 +471,8 @@
         "type": "image",
         "data": {
           "image": "pagethreeclosed.png",
-          "use1Xscale": true,
-          "x": 0,
+          "use1Xscale": false,
+          "x": -4,
           "y": 0
         }
       },
@@ -555,8 +480,8 @@
         "type": "image",
         "data": {
           "image": "pagetwoclosed.png",
-          "use1Xscale": true,
-          "x": 0,
+          "use1Xscale": false,
+          "x": -4,
           "y": 0
         }
       },
@@ -569,7 +494,7 @@
           "onClick": {
             "name": "OpenSelfVowGUI"
           },
-          "x": 24,
+          "x": 20,
           "y": 55
         }
       },
@@ -582,7 +507,7 @@
           "onClick": {
             "name": "OpenMoves"
           },
-          "x": 24,
+          "x": 20,
           "y": 76
         }
       },
@@ -595,11 +520,11 @@
             "name": "ReturnPerk"
           },
           "color": {
-            "value": -12829636,
+            "value": -1,
             "falpha": 0.0
           },
-          "x": 96,
-          "y": 152
+          "x": 101,
+          "y": 128
         }
       },
       {
@@ -611,11 +536,11 @@
             "name": "DisplayYen"
           },
           "color": {
-            "value": -12829636,
+            "value": -1,
             "falpha": 0.0
           },
-          "x": 96,
-          "y": 170
+          "x": 101,
+          "y": 191
         }
       },
       {
@@ -629,8 +554,8 @@
           },
           "width": 61,
           "height": 20,
-          "x": 322,
-          "y": 184
+          "x": 321,
+          "y": 183
         }
       },
       {
@@ -642,11 +567,11 @@
             "name": "DisplayTechnique"
           },
           "color": {
-            "value": -12829636,
+            "value": -1,
             "falpha": 0.0
           },
-          "x": 96,
-          "y": 188
+          "x": 101,
+          "y": 38
         }
       }
     ],

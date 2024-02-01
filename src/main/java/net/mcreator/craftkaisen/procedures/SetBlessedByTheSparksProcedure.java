@@ -12,7 +12,7 @@ import com.mojang.brigadier.context.CommandContext;
 public class SetBlessedByTheSparksProcedure {
 	public static void execute(CommandContext<CommandSourceStack> arguments) {
 		{
-			String _setval = "Blessed By The Sparks";
+			String _setval = "Blessed By Sparks";
 			(new Object() {
 				public Entity getEntity() {
 					try {
