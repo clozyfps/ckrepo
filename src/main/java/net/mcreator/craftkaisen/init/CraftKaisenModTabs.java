@@ -49,14 +49,12 @@ public class CraftKaisenModTabs {
 					tabData.accept(CraftKaisenModItems.SUGURU_GETO_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.PANDA_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.HAJIME_KASHIMO_SPAWN_EGG.get());
-					tabData.accept(CraftKaisenModItems.MERGED_BEAST_AGITO_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.MEGUMI_FUSHIGURO_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.TOGE_INUMAKI_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.TAKADA_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.AOI_TODO_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.URAUME_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.JINICHI_ZENIN_SPAWN_EGG.get());
-					tabData.accept(CraftKaisenModItems.FLYING_CURSED_SPIRIT_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.MEI_MEI_SPAWN_EGG.get());
 				}).withSearchBar());
 		event.registerCreativeModeTab(new ResourceLocation("craft_kaisen", "ck_weapons"),
@@ -138,6 +136,8 @@ public class CraftKaisenModTabs {
 					tabData.accept(CraftKaisenModItems.SMALL_POX_DEITY_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.FLY_HEAD_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.MEGUNA_SPAWN_EGG.get());
+					tabData.accept(CraftKaisenModItems.MERGED_BEAST_AGITO_SPAWN_EGG.get());
+					tabData.accept(CraftKaisenModItems.FLYING_CURSED_SPIRIT_SPAWN_EGG.get());
 				}).withSearchBar());
 		event.registerCreativeModeTab(new ResourceLocation("craft_kaisen", "ck_items"),
 				builder -> builder.title(Component.translatable("item_group.craft_kaisen.ck_items")).icon(() -> new ItemStack(CraftKaisenModItems.NAIL.get())).displayItems((parameters, tabData) -> {
