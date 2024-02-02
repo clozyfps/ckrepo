@@ -3,8 +3,8 @@
   "_type": "gui",
   "definition": {
     "type": 0,
-    "width": 350,
-    "height": 200,
+    "width": 0,
+    "height": 0,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
     "renderBgLayer": true,
@@ -19,11 +19,11 @@
             "name": "RctMastery"
           },
           "color": {
-            "value": -12829636,
+            "value": -1,
             "falpha": 0.0
           },
-          "x": 46,
-          "y": 26
+          "x": 176,
+          "y": 57
         }
       },
       {
@@ -35,11 +35,35 @@
             "name": "CEMastery"
           },
           "color": {
-            "value": -12829636,
+            "value": -1,
             "falpha": 0.0
           },
-          "x": 46,
-          "y": 47
+          "x": 174,
+          "y": 77
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "masterymenu.png",
+          "use1Xscale": false,
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_masterty_menu",
+          "text": {
+            "fixedValue": "Mastery Menu"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 180,
+          "y": 35
         }
       }
     ],

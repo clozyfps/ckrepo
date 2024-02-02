@@ -29,8 +29,8 @@ public class MasteryGUIScreen extends AbstractContainerScreen<MasteryGUIMenu> {
 		this.y = container.y;
 		this.z = container.z;
 		this.entity = container.entity;
-		this.imageWidth = 350;
-		this.imageHeight = 200;
+		this.imageWidth = 0;
+		this.imageHeight = 0;
 	}
 
 	private static final ResourceLocation texture = new ResourceLocation("craft_kaisen:textures/screens/mastery_gui.png");
@@ -49,6 +49,10 @@ public class MasteryGUIScreen extends AbstractContainerScreen<MasteryGUIMenu> {
 		RenderSystem.defaultBlendFunc();
 		RenderSystem.setShaderTexture(0, texture);
 		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
+
+		RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/masterymenu.png"));
+		this.blit(ms, this.leftPos + -214, this.topPos + -120, 0, 0, 427, 240, 427, 240);
+
 		RenderSystem.disableBlend();
 	}
 
@@ -70,10 +74,11 @@ public class MasteryGUIScreen extends AbstractContainerScreen<MasteryGUIMenu> {
 	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
 		this.font.draw(poseStack,
 
-				RctMasteryProcedure.execute(entity), 7, 6, -12829636);
+				RctMasteryProcedure.execute(entity), -38, -63, -1);
 		this.font.draw(poseStack,
 
-				CEMasteryProcedure.execute(entity), 7, 27, -12829636);
+				CEMasteryProcedure.execute(entity), -40, -43, -1);
+		this.font.draw(poseStack, Component.translatable("gui.craft_kaisen.mastery_gui.label_masterty_menu"), -34, -85, -1);
 	}
 
 	@Override

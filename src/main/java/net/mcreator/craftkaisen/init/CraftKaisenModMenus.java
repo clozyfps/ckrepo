@@ -13,6 +13,7 @@ import net.minecraft.world.inventory.MenuType;
 
 import net.mcreator.craftkaisen.world.inventory.StartScreenMenu;
 import net.mcreator.craftkaisen.world.inventory.SelfVowGUIMenu;
+import net.mcreator.craftkaisen.world.inventory.PrestigeMenuMenu;
 import net.mcreator.craftkaisen.world.inventory.PhoneGUIMenu;
 import net.mcreator.craftkaisen.world.inventory.PerkGuiMenu;
 import net.mcreator.craftkaisen.world.inventory.MoveGuiMenu;
@@ -41,4 +42,5 @@ public class CraftKaisenModMenus {
 	public static final RegistryObject<MenuType<CTMoveGUIMenu>> CT_MOVE_GUI = REGISTRY.register("ct_move_gui", () -> IForgeMenuType.create(CTMoveGUIMenu::new));
 	public static final RegistryObject<MenuType<KenjakuGUIMenu>> KENJAKU_GUI = REGISTRY.register("kenjaku_gui", () -> IForgeMenuType.create(KenjakuGUIMenu::new));
 	public static final RegistryObject<MenuType<MasteryGUIMenu>> MASTERY_GUI = REGISTRY.register("mastery_gui", () -> IForgeMenuType.create(MasteryGUIMenu::new));
+	public static final RegistryObject<MenuType<PrestigeMenuMenu>> PRESTIGE_MENU = REGISTRY.register("prestige_menu", () -> IForgeMenuType.create(PrestigeMenuMenu::new));
 }
