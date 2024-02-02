@@ -46,8 +46,8 @@
           "displayCondition": {
             "name": "ReturnHuman"
           },
-          "x": 51,
-          "y": 195
+          "x": 352,
+          "y": 37
         }
       },
       {
@@ -63,7 +63,7 @@
             "falpha": 0.0
           },
           "x": 101,
-          "y": 56
+          "y": 59
         }
       },
       {
@@ -80,8 +80,8 @@
           "displayCondition": {
             "name": "ReturnCursedSpirit"
           },
-          "x": 51,
-          "y": 195
+          "x": 352,
+          "y": 37
         }
       },
       {
@@ -97,7 +97,7 @@
             "falpha": 0.0
           },
           "x": 101,
-          "y": 92
+          "y": 95
         }
       },
       {
@@ -113,7 +113,7 @@
             "falpha": 0.0
           },
           "x": 101,
-          "y": 174
+          "y": 175
         }
       },
       {
@@ -129,7 +129,7 @@
             "falpha": 0.0
           },
           "x": 101,
-          "y": 156
+          "y": 157
         }
       },
       {
@@ -145,7 +145,7 @@
             "falpha": 0.0
           },
           "x": 101,
-          "y": 74
+          "y": 77
         }
       },
       {
@@ -161,7 +161,7 @@
             "falpha": 0.0
           },
           "x": 101,
-          "y": 110
+          "y": 113
         }
       },
       {
@@ -176,8 +176,8 @@
             "value": -1,
             "falpha": 0.0
           },
-          "x": 247,
-          "y": 56
+          "x": 249,
+          "y": 59
         }
       },
       {
@@ -192,8 +192,8 @@
             "value": -1,
             "falpha": 0.0
           },
-          "x": 247,
-          "y": 74
+          "x": 249,
+          "y": 77
         }
       },
       {
@@ -208,8 +208,8 @@
             "value": -1,
             "falpha": 0.0
           },
-          "x": 247,
-          "y": 111
+          "x": 249,
+          "y": 113
         }
       },
       {
@@ -224,8 +224,8 @@
             "value": -1,
             "falpha": 0.0
           },
-          "x": 247,
-          "y": 92
+          "x": 249,
+          "y": 95
         }
       },
       {
@@ -240,8 +240,8 @@
             "value": -1,
             "falpha": 0.0
           },
-          "x": 247,
-          "y": 128
+          "x": 249,
+          "y": 131
         }
       },
       {
@@ -254,7 +254,7 @@
             "name": "StrengthButton"
           },
           "x": 357,
-          "y": 54
+          "y": 55
         }
       },
       {
@@ -267,7 +267,7 @@
             "name": "HealthButton"
           },
           "x": 357,
-          "y": 72
+          "y": 73
         }
       },
       {
@@ -280,7 +280,7 @@
             "name": "ControlButton"
           },
           "x": 357,
-          "y": 90
+          "y": 91
         }
       },
       {
@@ -293,7 +293,7 @@
             "name": "EnergyButton"
           },
           "x": 357,
-          "y": 108
+          "y": 109
         }
       },
       {
@@ -306,7 +306,7 @@
             "name": "SpeedButton"
           },
           "x": 357,
-          "y": 126
+          "y": 127
         }
       },
       {
@@ -319,7 +319,7 @@
           "width": 23,
           "height": 13,
           "x": 358,
-          "y": 55
+          "y": 56
         }
       },
       {
@@ -332,7 +332,7 @@
           "width": 23,
           "height": 13,
           "x": 358,
-          "y": 73
+          "y": 74
         }
       },
       {
@@ -345,7 +345,7 @@
           "width": 23,
           "height": 13,
           "x": 358,
-          "y": 109
+          "y": 110
         }
       },
       {
@@ -358,7 +358,7 @@
           "width": 23,
           "height": 13,
           "x": 358,
-          "y": 91
+          "y": 92
         }
       },
       {
@@ -371,7 +371,7 @@
           "width": 23,
           "height": 13,
           "x": 358,
-          "y": 127
+          "y": 128
         }
       },
       {
@@ -524,7 +524,7 @@
             "falpha": 0.0
           },
           "x": 101,
-          "y": 128
+          "y": 131
         }
       },
       {
@@ -540,22 +540,7 @@
             "falpha": 0.0
           },
           "x": 101,
-          "y": 191
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "name": "button_mastery",
-          "text": "Mastery",
-          "isUndecorated": false,
-          "onClick": {
-            "name": "OpenMastery"
-          },
-          "width": 61,
-          "height": 20,
-          "x": 321,
-          "y": 183
+          "y": 193
         }
       },
       {
@@ -571,7 +556,170 @@
             "falpha": 0.0
           },
           "x": 101,
-          "y": 38
+          "y": 37
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_prestige",
+          "text": {
+            "fixedValue": "Prestige"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 45,
+          "y": 181
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_0",
+          "text": {
+            "fixedValue": "0"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayP0"
+          },
+          "x": 62,
+          "y": 193
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_ii",
+          "text": {
+            "fixedValue": "I"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayP1"
+          },
+          "x": 63,
+          "y": 193
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_ii1",
+          "text": {
+            "fixedValue": "II"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayP2"
+          },
+          "x": 62,
+          "y": 193
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_iii",
+          "text": {
+            "fixedValue": "III"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayP3"
+          },
+          "x": 60,
+          "y": 193
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_iv",
+          "text": {
+            "fixedValue": "IV"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayP4"
+          },
+          "x": 61,
+          "y": 193
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_mastery_button",
+          "image": "mastery_button.png",
+          "hoveredImage": "mastery_button_h.png",
+          "onClick": {
+            "name": "OpenMastery"
+          },
+          "x": 361,
+          "y": 183
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_prestigebutton",
+          "image": "prestigebutton.png",
+          "hoveredImage": "prestigebutton_h.png",
+          "onClick": {
+            "name": "OpenPrestigeMenu"
+          },
+          "displayCondition": {
+            "name": "DisplayPrestigeButton"
+          },
+          "x": 341,
+          "y": 183
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_open_mastery",
+          "text": {
+            "fixedValue": "Open Mastery"
+          },
+          "width": 18,
+          "height": 20,
+          "x": 362,
+          "y": 183
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_open_prestige",
+          "text": {
+            "fixedValue": "Open Prestige"
+          },
+          "displayCondition": {
+            "name": "DisplayPrestigeButton"
+          },
+          "width": 18,
+          "height": 22,
+          "x": 342,
+          "y": 182
         }
       }
     ],

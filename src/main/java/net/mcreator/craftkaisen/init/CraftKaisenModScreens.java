@@ -13,6 +13,7 @@ import net.minecraft.client.gui.screens.MenuScreens;
 
 import net.mcreator.craftkaisen.client.gui.StartScreenScreen;
 import net.mcreator.craftkaisen.client.gui.SelfVowGUIScreen;
+import net.mcreator.craftkaisen.client.gui.PrestigeMenuScreen;
 import net.mcreator.craftkaisen.client.gui.PhoneGUIScreen;
 import net.mcreator.craftkaisen.client.gui.PerkGuiScreen;
 import net.mcreator.craftkaisen.client.gui.MoveGuiScreen;
@@ -43,6 +44,7 @@ public class CraftKaisenModScreens {
 			MenuScreens.register(CraftKaisenModMenus.CT_MOVE_GUI.get(), CTMoveGUIScreen::new);
 			MenuScreens.register(CraftKaisenModMenus.KENJAKU_GUI.get(), KenjakuGUIScreen::new);
 			MenuScreens.register(CraftKaisenModMenus.MASTERY_GUI.get(), MasteryGUIScreen::new);
+			MenuScreens.register(CraftKaisenModMenus.PRESTIGE_MENU.get(), PrestigeMenuScreen::new);
 		});
 	}
 }

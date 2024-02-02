@@ -84,7 +84,7 @@ public class SetStatsProcedure {
 			}
 		}
 		if (world.getLevelData().getGameRules().getBoolean(CraftKaisenModGameRules.SMP_SETTING) == true && (entity.getDisplayName().getString()).equals("Void_Asriel")) {
-			if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).level > 500) {
+			if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).level > 600) {
 				{
 					double _setval = 500;
 					entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
@@ -94,7 +94,7 @@ public class SetStatsProcedure {
 				}
 			}
 		} else if (world.getLevelData().getGameRules().getBoolean(CraftKaisenModGameRules.SMP_SETTING) == true && (entity.getDisplayName().getString()).equals("vin_jo")) {
-			if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).level > 500) {
+			if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).level > 600) {
 				{
 					double _setval = 500;
 					entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
@@ -104,9 +104,9 @@ public class SetStatsProcedure {
 				}
 			}
 		} else if (!((entity.getDisplayName().getString()).equals("Void_Asriel") || (entity.getDisplayName().getString()).equals("vin_jo"))) {
-			if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).level > 400) {
+			if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).level > 500) {
 				{
-					double _setval = 400;
+					double _setval = 500;
 					entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.level = _setval;
 						capability.syncPlayerVariables(entity);

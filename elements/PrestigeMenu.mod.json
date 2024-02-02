@@ -1,0 +1,83 @@
+{
+  "_fv": 57,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 0,
+    "height": 0,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "prestigemenu.png",
+          "use1Xscale": false,
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_check",
+          "image": "check.png",
+          "hoveredImage": "check_h.png",
+          "onClick": {
+            "name": "Prestiging"
+          },
+          "x": 292,
+          "y": 154
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_cross",
+          "image": "cross.png",
+          "hoveredImage": "cross_h.png",
+          "onClick": {
+            "name": "OpenMainMenu"
+          },
+          "x": 274,
+          "y": 154
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_confirm",
+          "text": {
+            "fixedValue": "Confirm"
+          },
+          "width": 15,
+          "height": 14,
+          "x": 293,
+          "y": 156
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_decline",
+          "text": {
+            "fixedValue": "Decline"
+          },
+          "width": 14,
+          "height": 14,
+          "x": 276,
+          "y": 156
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

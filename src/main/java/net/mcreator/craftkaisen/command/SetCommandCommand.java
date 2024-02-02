@@ -28,6 +28,7 @@ import net.mcreator.craftkaisen.procedures.SetRoughProcedure;
 import net.mcreator.craftkaisen.procedures.SetRegainerProcedure;
 import net.mcreator.craftkaisen.procedures.SetRatioProcedure;
 import net.mcreator.craftkaisen.procedures.SetProjectionSorceryProcedure;
+import net.mcreator.craftkaisen.procedures.SetPrestigeLevelProcedure;
 import net.mcreator.craftkaisen.procedures.SetPhysicallyGiftedProcedure;
 import net.mcreator.craftkaisen.procedures.SetPPLTProcedure;
 import net.mcreator.craftkaisen.procedures.SetNoEnergyProcedure;
@@ -503,6 +504,20 @@ public class SetCommandCommand {
 						direction = entity.getDirection();
 
 					SetExpProcedure.execute(arguments);
+					return 0;
+				}))).then(Commands.literal("Prestige").then(Commands.argument("level", DoubleArgumentType.doubleArg(0, 4)).executes(arguments -> {
+					Level world = arguments.getSource().getUnsidedLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null && world instanceof ServerLevel _servLevel)
+						entity = FakePlayerFactory.getMinecraft(_servLevel);
+					Direction direction = Direction.DOWN;
+					if (entity != null)
+						direction = entity.getDirection();
+
+					SetPrestigeLevelProcedure.execute(arguments);
 					return 0;
 				}))))).then(Commands.literal("Special").then(Commands.argument("name", EntityArgument.player()).then(Commands.literal("SixEyes").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();

@@ -154,6 +154,7 @@ public class CraftKaisenModVariables {
 			clone.PageSelfVow = original.PageSelfVow;
 			clone.FlowCooldownTimer = original.FlowCooldownTimer;
 			clone.FlowCooldownActive = original.FlowCooldownActive;
+			clone.PrestigeLevel = original.PrestigeLevel;
 			if (!event.isWasDeath()) {
 				clone.currentMove = original.currentMove;
 				clone.currentOutput = original.currentOutput;
@@ -382,7 +383,7 @@ public class CraftKaisenModVariables {
 		public double energyControl = 0;
 		public String special = "";
 		public double maxOutput = 0;
-		public double level = 0;
+		public double level = 0.0;
 		public double currentOutput = 10.0;
 		public String abilitylist = "";
 		public String technique = "";
@@ -461,6 +462,7 @@ public class CraftKaisenModVariables {
 		public String PageSelfVow = "Overtime";
 		public double FlowCooldownTimer = 0;
 		public boolean FlowCooldownActive = false;
+		public double PrestigeLevel = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -570,6 +572,7 @@ public class CraftKaisenModVariables {
 			nbt.putString("PageSelfVow", PageSelfVow);
 			nbt.putDouble("FlowCooldownTimer", FlowCooldownTimer);
 			nbt.putBoolean("FlowCooldownActive", FlowCooldownActive);
+			nbt.putDouble("PrestigeLevel", PrestigeLevel);
 			return nbt;
 		}
 
@@ -676,6 +679,7 @@ public class CraftKaisenModVariables {
 			PageSelfVow = nbt.getString("PageSelfVow");
 			FlowCooldownTimer = nbt.getDouble("FlowCooldownTimer");
 			FlowCooldownActive = nbt.getBoolean("FlowCooldownActive");
+			PrestigeLevel = nbt.getDouble("PrestigeLevel");
 		}
 	}
 
@@ -801,6 +805,7 @@ public class CraftKaisenModVariables {
 					variables.PageSelfVow = message.data.PageSelfVow;
 					variables.FlowCooldownTimer = message.data.FlowCooldownTimer;
 					variables.FlowCooldownActive = message.data.FlowCooldownActive;
+					variables.PrestigeLevel = message.data.PrestigeLevel;
 				}
 			});
 			context.setPacketHandled(true);
