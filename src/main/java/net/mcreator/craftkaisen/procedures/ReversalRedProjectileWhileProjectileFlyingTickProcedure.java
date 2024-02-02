@@ -8,7 +8,6 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.entity.item.FallingBlockEntity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
@@ -40,18 +39,18 @@ public class ReversalRedProjectileWhileProjectileFlyingTickProcedure {
 		if (entity instanceof SatoruGojoEntity) {
 			{
 				final Vec3 _center = new Vec3(x, y, z);
-				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(15 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
+				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(25 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
 						.collect(Collectors.toList());
 				for (Entity entityiterator : _entfound) {
-					if (!(entity == entityiterator) && !(entityiterator instanceof FallingBlockEntity)) {
+					if (!(entity == entityiterator)) {
 						entityiterator.hurt(
-								new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:reversal_red_damage"))), entity), 59);
+								new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:reversal_red_damage"))), entity), 70);
 					}
 				}
 			}
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 5, 250, false, false));
-			CraftKaisenMod.queueServerWork(30, () -> {
+			CraftKaisenMod.queueServerWork(40, () -> {
 				if (!immediatesourceentity.level.isClientSide())
 					immediatesourceentity.discard();
 			});
@@ -93,7 +92,7 @@ public class ReversalRedProjectileWhileProjectileFlyingTickProcedure {
 							if (!((world.getBlockState(BlockPos.containing(x + xi, y + i, z + zi))).getBlock() == Blocks.AIR)) {
 								world.destroyBlock(BlockPos.containing(x + xi, y + i, z + zi), false);
 								if (world instanceof ServerLevel _level)
-									_level.sendParticles(ParticleTypes.LARGE_SMOKE, x + xi, y + i, z + zi, 1, 0.1, 2, 0.1, 0);
+									_level.sendParticles(ParticleTypes.LARGE_SMOKE, x + xi, y + i, z + zi, 2, 0.1, 2, 0.1, 0);
 							}
 						}
 					}
@@ -102,19 +101,19 @@ public class ReversalRedProjectileWhileProjectileFlyingTickProcedure {
 		} else if (!(entity instanceof SatoruGojoEntity)) {
 			{
 				final Vec3 _center = new Vec3(x, y, z);
-				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(15 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
+				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(25 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
 						.collect(Collectors.toList());
 				for (Entity entityiterator : _entfound) {
-					if (!(entity == entityiterator) && !(entityiterator instanceof FallingBlockEntity)) {
+					if (!(entity == entityiterator)) {
 						entityiterator.hurt(
 								new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:reversal_red_damage"))), entity),
-								(float) (15 + (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 3));
+								(float) (20 + (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 2));
 					}
 				}
 			}
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 5, 250, false, false));
-			CraftKaisenMod.queueServerWork(30, () -> {
+			CraftKaisenMod.queueServerWork(40, () -> {
 				if (!immediatesourceentity.level.isClientSide())
 					immediatesourceentity.discard();
 			});
@@ -134,7 +133,7 @@ public class ReversalRedProjectileWhileProjectileFlyingTickProcedure {
 			}
 			immediatesourceentity.setNoGravity(true);
 			if (world instanceof ServerLevel _level)
-				_level.sendParticles(ParticleTypes.EXPLOSION_EMITTER, x, y, z, 25, 4, 3, 4, 0);
+				_level.sendParticles(ParticleTypes.EXPLOSION_EMITTER, x, y, z, 10, 4, 3, 4, 0);
 			if (world instanceof ServerLevel _level)
 				_level.sendParticles(ParticleTypes.POOF, x, y, z, 45, 4, 3, 4, 0.3);
 			if (world instanceof ServerLevel _level)
@@ -154,7 +153,7 @@ public class ReversalRedProjectileWhileProjectileFlyingTickProcedure {
 							if (!((world.getBlockState(BlockPos.containing(x + xi, y + i, z + zi))).getBlock() == Blocks.AIR)) {
 								world.destroyBlock(BlockPos.containing(x + xi, y + i, z + zi), false);
 								if (world instanceof ServerLevel _level)
-									_level.sendParticles(ParticleTypes.LARGE_SMOKE, x + xi, y + i, z + zi, 1, 0.1, 2, 0.1, 0);
+									_level.sendParticles(ParticleTypes.LARGE_SMOKE, x + xi, y + i, z + zi, 2, 0.1, 2, 0.1, 0);
 							}
 						}
 					}

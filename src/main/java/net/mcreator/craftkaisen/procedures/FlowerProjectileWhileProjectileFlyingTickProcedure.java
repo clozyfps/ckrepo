@@ -56,7 +56,7 @@ public class FlowerProjectileWhileProjectileFlyingTickProcedure {
 			for (Entity entityiterator : _entfound) {
 				if (!(entityiterator == entity) && !(entityiterator == immediatesourceentity)) {
 					entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC), immediatesourceentity, entity),
-							(float) ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 6.5));
+							(float) (13 + (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 6.5));
 				}
 			}
 		}

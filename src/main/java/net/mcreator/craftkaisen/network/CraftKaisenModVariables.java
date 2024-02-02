@@ -242,6 +242,9 @@ public class CraftKaisenModVariables {
 		public double worldeventlocation = 0;
 		public double WorldEventTimer = 0;
 		public double WEZ = 0;
+		public double nearx = 0;
+		public double neary = 0;
+		public double nearz = 0;
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -257,6 +260,9 @@ public class CraftKaisenModVariables {
 			worldeventlocation = nbt.getDouble("worldeventlocation");
 			WorldEventTimer = nbt.getDouble("WorldEventTimer");
 			WEZ = nbt.getDouble("WEZ");
+			nearx = nbt.getDouble("nearx");
+			neary = nbt.getDouble("neary");
+			nearz = nbt.getDouble("nearz");
 		}
 
 		@Override
@@ -268,6 +274,9 @@ public class CraftKaisenModVariables {
 			nbt.putDouble("worldeventlocation", worldeventlocation);
 			nbt.putDouble("WorldEventTimer", WorldEventTimer);
 			nbt.putDouble("WEZ", WEZ);
+			nbt.putDouble("nearx", nearx);
+			nbt.putDouble("neary", neary);
+			nbt.putDouble("nearz", nearz);
 			return nbt;
 		}
 
