@@ -5,9 +5,9 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.material.Material;
 
-public class BarrierBlockBlock extends Block implements EntityBlock {
-	public BarrierBlockBlock() {
-		super(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.GLASS).strength(-1, 3600000));
+public class DomainAirBlockBlock extends Block implements EntityBlock {
+	public DomainAirBlockBlock() {
+		super(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.GRAVEL).strength(-1, 3600000).lightLevel(s -> 10).noCollission().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 	}
 
 	@Override
@@ -16,8 +16,23 @@ public class BarrierBlockBlock extends Block implements EntityBlock {
 	}
 
 	@Override
+	public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
+		return true;
+	}
+
+	@Override
 	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
-		return 15;
+		return 0;
+	}
+
+	@Override
+	public VoxelShape getVisualShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+		return Shapes.empty();
+	}
+
+	@Override
+	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+		return Shapes.empty();
 	}
 
 	@Override
@@ -36,7 +51,7 @@ public class BarrierBlockBlock extends Block implements EntityBlock {
 
 	@Override
 	public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-		return new BarrierBlockBlockEntity(pos, state);
+		return new DomainAirBlockBlockEntity(pos, state);
 	}
 
 	@Override

@@ -16,6 +16,7 @@ import net.mcreator.craftkaisen.block.SprinklerBlock;
 import net.mcreator.craftkaisen.block.ShibuyaGatesBlock;
 import net.mcreator.craftkaisen.block.QuestBoardBlock;
 import net.mcreator.craftkaisen.block.DomainBlockBlock;
+import net.mcreator.craftkaisen.block.DomainAirBlockBlock;
 import net.mcreator.craftkaisen.block.BarrierBlockBlock;
 import net.mcreator.craftkaisen.CraftKaisenMod;
 
@@ -28,4 +29,5 @@ public class CraftKaisenModBlocks {
 	public static final RegistryObject<Block> SPRINKLER_ON = REGISTRY.register("sprinkler_on", () -> new SprinklerOnBlock());
 	public static final RegistryObject<Block> BARRIER_BLOCK = REGISTRY.register("barrier_block", () -> new BarrierBlockBlock());
 	public static final RegistryObject<Block> QUEST_BOARD = REGISTRY.register("quest_board", () -> new QuestBoardBlock());
+	public static final RegistryObject<Block> DOMAIN_AIR_BLOCK = REGISTRY.register("domain_air_block", () -> new DomainAirBlockBlock());
 }

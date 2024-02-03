@@ -31,7 +31,7 @@ public class VoidRemoveProcedure {
 									return blockEntity.getPersistentData().getString(tag);
 								return "";
 							}
-						}.getValue(world, BlockPos.containing(x + xi, y + i, z + zi), "oldblock"))).toLowerCase(java.util.Locale.ENGLISH))).defaultBlockState();
+						}.getValue(world, BlockPos.containing(x + xi, y + i, z + zi), "old_block"))).toLowerCase(java.util.Locale.ENGLISH))).defaultBlockState();
 						{
 							BlockPos _bp = BlockPos.containing(x + xi, y + i, z + zi);
 							BlockState _bs = blockrevert;

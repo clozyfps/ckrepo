@@ -6,15 +6,22 @@ import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
 import net.mcreator.craftkaisen.entity.EightHandledSwordDivergentSilaDivineGeneralMahoragaEntity;
-import net.mcreator.craftkaisen.client.model.Modeldivinemahoraga;
+import net.mcreator.craftkaisen.client.model.ModelMahoraga;
 
-public class EightHandledSwordDivergentSilaDivineGeneralMahoragaRenderer extends MobRenderer<EightHandledSwordDivergentSilaDivineGeneralMahoragaEntity, Modeldivinemahoraga<EightHandledSwordDivergentSilaDivineGeneralMahoragaEntity>> {
+import com.mojang.blaze3d.vertex.PoseStack;
+
+public class EightHandledSwordDivergentSilaDivineGeneralMahoragaRenderer extends MobRenderer<EightHandledSwordDivergentSilaDivineGeneralMahoragaEntity, ModelMahoraga<EightHandledSwordDivergentSilaDivineGeneralMahoragaEntity>> {
 	public EightHandledSwordDivergentSilaDivineGeneralMahoragaRenderer(EntityRendererProvider.Context context) {
-		super(context, new Modeldivinemahoraga(context.bakeLayer(Modeldivinemahoraga.LAYER_LOCATION)), 0.5f);
+		super(context, new ModelMahoraga(context.bakeLayer(ModelMahoraga.LAYER_LOCATION)), 2f);
+	}
+
+	@Override
+	protected void scale(EightHandledSwordDivergentSilaDivineGeneralMahoragaEntity entity, PoseStack poseStack, float f) {
+		poseStack.scale(0.8f, 0.8f, 0.8f);
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(EightHandledSwordDivergentSilaDivineGeneralMahoragaEntity entity) {
-		return new ResourceLocation("craft_kaisen:textures/entities/mahoragatexturemain.png");
+		return new ResourceLocation("craft_kaisen:textures/entities/mahoragatexture.png");
 	}
 }
