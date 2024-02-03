@@ -29,7 +29,7 @@ public class SetMovesProcedure {
 			return;
 		if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).Page).equals("Innate")) {
 			if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Limitless")) {
-				entity.getPersistentData().putDouble("maxMoves", 6);
+				entity.getPersistentData().putDouble("maxMoves", 7);
 				if (entity.getPersistentData().getDouble("moveNumber") == 1) {
 					entity.getPersistentData().putString("moveDisplay", "Lapse Blue");
 					entity.getPersistentData().putDouble("moveCost", 7);
@@ -45,6 +45,9 @@ public class SetMovesProcedure {
 				} else if (entity.getPersistentData().getDouble("moveNumber") == 6) {
 					entity.getPersistentData().putString("moveDisplay", "Infinity");
 					entity.getPersistentData().putDouble("moveCost", 30);
+				} else if (entity.getPersistentData().getDouble("moveNumber") == 7) {
+					entity.getPersistentData().putString("moveDisplay", "Unlimited Void");
+					entity.getPersistentData().putDouble("moveCost", 40);
 				}
 			}
 			if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Cursed Speech")) {

@@ -36,7 +36,6 @@ import net.mcreator.craftkaisen.client.model.Modelmaximummeteornewwww;
 import net.mcreator.craftkaisen.client.model.Modelmaximumelephantnew;
 import net.mcreator.craftkaisen.client.model.Modelmaximumelephant;
 import net.mcreator.craftkaisen.client.model.Modelmalevolentshrine;
-import net.mcreator.craftkaisen.client.model.Modelmahoraga_wheel;
 import net.mcreator.craftkaisen.client.model.Modelmahitooutfit;
 import net.mcreator.craftkaisen.client.model.Modelmahitodistorted;
 import net.mcreator.craftkaisen.client.model.Modelkashimooutfit;
@@ -50,10 +49,8 @@ import net.mcreator.craftkaisen.client.model.Modelgetolegs;
 import net.mcreator.craftkaisen.client.model.Modelframewall;
 import net.mcreator.craftkaisen.client.model.Modelfist;
 import net.mcreator.craftkaisen.client.model.Modelfemaleuniform;
-import net.mcreator.craftkaisen.client.model.Modeldivinemahoraga;
 import net.mcreator.craftkaisen.client.model.Modeldivinedog;
 import net.mcreator.craftkaisen.client.model.Modelcustom_model;
-import net.mcreator.craftkaisen.client.model.Modelcursedspiritrugbyfield;
 import net.mcreator.craftkaisen.client.model.Modelcursedspiritgrasshopper;
 import net.mcreator.craftkaisen.client.model.Modelcurse_1;
 import net.mcreator.craftkaisen.client.model.Modelchosodrip;
@@ -79,6 +76,7 @@ import net.mcreator.craftkaisen.client.model.ModelMegumiFushiguro;
 import net.mcreator.craftkaisen.client.model.ModelMahoragaWheel;
 import net.mcreator.craftkaisen.client.model.ModelMahoragaPants;
 import net.mcreator.craftkaisen.client.model.ModelMahoragaChest;
+import net.mcreator.craftkaisen.client.model.ModelMahoraga;
 import net.mcreator.craftkaisen.client.model.ModelJogoModel;
 import net.mcreator.craftkaisen.client.model.ModelItadoriYuji;
 import net.mcreator.craftkaisen.client.model.ModelInventoryCurse;
@@ -96,6 +94,7 @@ import net.mcreator.craftkaisen.client.model.ModelCrowProjectile;
 public class CraftKaisenModModels {
 	@SubscribeEvent
 	public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
+		event.registerLayerDefinition(ModelMahoraga.LAYER_LOCATION, ModelMahoraga::createBodyLayer);
 		event.registerLayerDefinition(Modelfist.LAYER_LOCATION, Modelfist::createBodyLayer);
 		event.registerLayerDefinition(ModelRoppongiCurse.LAYER_LOCATION, ModelRoppongiCurse::createBodyLayer);
 		event.registerLayerDefinition(Modelyutafitnew.LAYER_LOCATION, Modelyutafitnew::createBodyLayer);
@@ -111,7 +110,6 @@ public class CraftKaisenModModels {
 		event.registerLayerDefinition(Modelcursedspiritgrasshopper.LAYER_LOCATION, Modelcursedspiritgrasshopper::createBodyLayer);
 		event.registerLayerDefinition(ModelJogoModel.LAYER_LOCATION, ModelJogoModel::createBodyLayer);
 		event.registerLayerDefinition(ModelRugbyFieldCurse.LAYER_LOCATION, ModelRugbyFieldCurse::createBodyLayer);
-		event.registerLayerDefinition(Modelmahoraga_wheel.LAYER_LOCATION, Modelmahoraga_wheel::createBodyLayer);
 		event.registerLayerDefinition(ModelFingerBearernew.LAYER_LOCATION, ModelFingerBearernew::createBodyLayer);
 		event.registerLayerDefinition(Modelmaximumelephant.LAYER_LOCATION, Modelmaximumelephant::createBodyLayer);
 		event.registerLayerDefinition(Modelmahitooutfit.LAYER_LOCATION, Modelmahitooutfit::createBodyLayer);
@@ -152,8 +150,6 @@ public class CraftKaisenModModels {
 		event.registerLayerDefinition(ModelMouthSpirit.LAYER_LOCATION, ModelMouthSpirit::createBodyLayer);
 		event.registerLayerDefinition(Modeltojipants.LAYER_LOCATION, Modeltojipants::createBodyLayer);
 		event.registerLayerDefinition(Modelchosodrip.LAYER_LOCATION, Modelchosodrip::createBodyLayer);
-		event.registerLayerDefinition(Modelcursedspiritrugbyfield.LAYER_LOCATION, Modelcursedspiritrugbyfield::createBodyLayer);
-		event.registerLayerDefinition(Modeldivinemahoraga.LAYER_LOCATION, Modeldivinemahoraga::createBodyLayer);
 		event.registerLayerDefinition(ModelFlyHead.LAYER_LOCATION, ModelFlyHead::createBodyLayer);
 		event.registerLayerDefinition(Modeljjkoutfiot.LAYER_LOCATION, Modeljjkoutfiot::createBodyLayer);
 		event.registerLayerDefinition(Modeltstoad.LAYER_LOCATION, Modeltstoad::createBodyLayer);
