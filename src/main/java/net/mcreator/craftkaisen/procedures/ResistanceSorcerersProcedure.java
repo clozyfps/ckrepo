@@ -5,6 +5,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
@@ -13,11 +14,15 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.mcreator.craftkaisen.entity.YutaOkkotsuEntity;
 import net.mcreator.craftkaisen.entity.YujiItadoriEntity;
 import net.mcreator.craftkaisen.entity.UraumeEntity;
+import net.mcreator.craftkaisen.entity.TojiFushiguroEntity;
+import net.mcreator.craftkaisen.entity.ShinjukuGojoEntity;
 import net.mcreator.craftkaisen.entity.SatoruGojoEntity;
 import net.mcreator.craftkaisen.entity.RyomenSukunaEntity;
+import net.mcreator.craftkaisen.entity.ResurrectedTojiEntity;
 import net.mcreator.craftkaisen.entity.MahitoEntity;
 import net.mcreator.craftkaisen.entity.JogoEntity;
 import net.mcreator.craftkaisen.entity.AoiTodoEntity;
+import net.mcreator.craftkaisen.CraftKaisenMod;
 
 import javax.annotation.Nullable;
 
@@ -25,14 +30,14 @@ import javax.annotation.Nullable;
 public class ResistanceSorcerersProcedure {
 	@SubscribeEvent
 	public static void onEntitySpawned(EntityJoinLevelEvent event) {
-		execute(event, event.getEntity());
+		execute(event, event.getLevel(), event.getEntity());
 	}
 
-	public static void execute(Entity entity) {
-		execute(null, entity);
+	public static void execute(LevelAccessor world, Entity entity) {
+		execute(null, world, entity);
 	}
 
-	private static void execute(@Nullable Event event, Entity entity) {
+	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
 		if (entity instanceof AoiTodoEntity || entity instanceof UraumeEntity || entity instanceof JogoEntity || entity instanceof YujiItadoriEntity) {
@@ -43,7 +48,7 @@ public class ResistanceSorcerersProcedure {
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 				_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 99999, 3, false, false));
 		}
-		if (entity instanceof SatoruGojoEntity) {
+		if (entity instanceof SatoruGojoEntity || entity instanceof ShinjukuGojoEntity) {
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 				_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 99999, 4, false, false));
 		}
@@ -54,6 +59,20 @@ public class ResistanceSorcerersProcedure {
 		if (entity instanceof JogoEntity) {
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 				_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 99999, 3, false, false));
+		}
+		if (entity instanceof TojiFushiguroEntity) {
+			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+				_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 99999, 2, false, false));
+		}
+		if (entity instanceof ResurrectedTojiEntity) {
+			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+				_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 99999, 3, false, false));
+		}
+		if (entity instanceof SatoruGojoEntity || entity instanceof ShinjukuGojoEntity || entity instanceof ResurrectedTojiEntity) {
+			CraftKaisenMod.queueServerWork(10000, () -> {
+				if (!entity.level.isClientSide())
+					entity.discard();
+			});
 		}
 	}
 }

@@ -26,6 +26,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.Packet;
 
+import net.mcreator.craftkaisen.procedures.JinichiZeninOnEntityTickUpdateProcedure;
 import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
 
 public class JinichiZeninEntity extends Monster {
@@ -80,6 +81,12 @@ public class JinichiZeninEntity extends Monster {
 		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.death"));
 	}
 
+	@Override
+	public void baseTick() {
+		super.baseTick();
+		JinichiZeninOnEntityTickUpdateProcedure.execute(this);
+	}
+
 	public static void init() {
 		SpawnPlacements.register(CraftKaisenModEntities.JINICHI_ZENIN.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules);
 	}
@@ -87,11 +94,11 @@ public class JinichiZeninEntity extends Monster {
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.3);
-		builder = builder.add(Attributes.MAX_HEALTH, 510);
+		builder = builder.add(Attributes.MAX_HEALTH, 560);
 		builder = builder.add(Attributes.ARMOR, 0.4);
-		builder = builder.add(Attributes.ATTACK_DAMAGE, 45);
+		builder = builder.add(Attributes.ATTACK_DAMAGE, 55);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 50);
-		builder = builder.add(Attributes.ATTACK_KNOCKBACK, 3);
+		builder = builder.add(Attributes.ATTACK_KNOCKBACK, 4);
 		return builder;
 	}
 }

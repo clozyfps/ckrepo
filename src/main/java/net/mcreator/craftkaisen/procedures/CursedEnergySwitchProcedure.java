@@ -9,7 +9,7 @@ public class CursedEnergySwitchProcedure {
 	public static void execute(Entity entity) {
 		if (entity == null)
 			return;
-		entity.getPersistentData().putDouble("maxMoves", 2);
+		entity.getPersistentData().putDouble("maxMoves", 3);
 		if (entity.getPersistentData().getDouble("moveNumber") == 1) {
 			if (entity instanceof ServerPlayer _plr2 && _plr2.level instanceof ServerLevel
 					&& _plr2.getAdvancements().getOrStartProgress(_plr2.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:simple_domain_learned"))).isDone()) {
@@ -23,6 +23,14 @@ public class CursedEnergySwitchProcedure {
 					&& _plr7.getAdvancements().getOrStartProgress(_plr7.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:domain_amplification_learned"))).isDone()) {
 				entity.getPersistentData().putString("moveDisplay", "Domain Amplification");
 				entity.getPersistentData().putDouble("moveCost", 35);
+			} else {
+				entity.getPersistentData().putString("moveDisplay", "Havent Learned Yet");
+			}
+		} else if (entity.getPersistentData().getDouble("moveNumber") == 3) {
+			if (entity instanceof ServerPlayer _plr12 && _plr12.level instanceof ServerLevel
+					&& _plr12.getAdvancements().getOrStartProgress(_plr12.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:cursed_energy_flow"))).isDone()) {
+				entity.getPersistentData().putString("moveDisplay", "Flow");
+				entity.getPersistentData().putDouble("moveCost", 0);
 			} else {
 				entity.getPersistentData().putString("moveDisplay", "Havent Learned Yet");
 			}

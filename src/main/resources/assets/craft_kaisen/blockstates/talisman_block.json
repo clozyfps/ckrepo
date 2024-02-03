@@ -1,7 +1,16 @@
 {
   "variants": {
-    "": {
+    "axis=x": {
+      "model": "craft_kaisen:block/talisman_block",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
       "model": "craft_kaisen:block/talisman_block"
+    },
+    "axis=z": {
+      "model": "craft_kaisen:block/talisman_block",
+      "x": 90
     }
   }
 }
