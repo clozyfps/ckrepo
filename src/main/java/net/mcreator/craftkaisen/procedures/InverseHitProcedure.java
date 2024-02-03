@@ -28,13 +28,13 @@ public class InverseHitProcedure {
 	private static void execute(@Nullable Event event, DamageSource damagesource, Entity entity, double amount) {
 		if (entity == null)
 			return;
-		if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).CtSpecial == true) {
-			if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Inverse")) {
-				if (amount >= 4 && amount <= 30) {
+		if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Inverse")) {
+			if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).CtSpecial == true) {
+				if (amount >= 4 && amount <= 50) {
 					if (event != null && event.isCancelable()) {
 						event.setCanceled(true);
 					}
-					entity.hurt(damagesource, (float) (30 / amount));
+					entity.hurt(damagesource, (float) (200 / amount));
 				}
 			}
 		}

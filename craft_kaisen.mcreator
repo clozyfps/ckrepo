@@ -8442,42 +8442,6 @@
       "path": "~/Mobs/Procedure"
     },
     {
-      "name": "ChimeraShadowGardenProcedure",
-      "type": "procedure",
-      "sortid": 359,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "chimera_shadow_garden_procedure",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/craftkaisen/procedures/ChimeraShadowGardenProcedureProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/Abilities/TenShadows"
-    },
-    {
       "name": "StandProudYouAreStrong",
       "type": "achievement",
       "sortid": 360,
@@ -13337,22 +13301,6 @@
         ]
       },
       "path": "~/Procedures"
-    },
-    {
-      "name": "UnlimitedVoidDomain",
-      "type": "dimension",
-      "sortid": 558,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "unlimited_void_domain",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/craftkaisen/world/dimension/UnlimitedVoidDomainDimension.java",
-          "src/main/resources/data/craft_kaisen/dimension/unlimited_void_domain.json",
-          "src/main/resources/data/craft_kaisen/dimension_type/unlimited_void_domain.json"
-        ]
-      },
-      "path": "~/Dimensions"
     },
     {
       "name": "Slot1CSMProcedure",
@@ -19470,7 +19418,24 @@
         "files": [
           "src/main/java/net/mcreator/craftkaisen/procedures/ToughSkinProcedure.java"
         ],
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "amount",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
       },
       "path": "~/Procedures"
     },
@@ -25964,48 +25929,6 @@
       "path": "~/Mobs/Abilities"
     },
     {
-      "name": "MalevolentShrineDamage",
-      "type": "damagetype",
-      "sortid": 1117,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "malevolent_shrine_damage",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/craft_kaisen/damage_type/malevolent_shrine_damage.json"
-        ]
-      },
-      "path": "~/Damage Sources"
-    },
-    {
-      "name": "DismantleDamage",
-      "type": "damagetype",
-      "sortid": 1118,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "dismantle_damage",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/craft_kaisen/damage_type/dismantle_damage.json"
-        ]
-      },
-      "path": "~/Damage Sources"
-    },
-    {
-      "name": "ReversalRedDamage",
-      "type": "damagetype",
-      "sortid": 1119,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "reversal_red_damage",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/craft_kaisen/damage_type/reversal_red_damage.json"
-        ]
-      },
-      "path": "~/Damage Sources"
-    },
-    {
       "name": "FrostCalmDamage",
       "type": "damagetype",
       "sortid": 1120,
@@ -26430,6 +26353,10 @@
           {
             "name": "sourceentity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -26992,6 +26919,110 @@
         ]
       },
       "path": "~/Blocks"
+    },
+    {
+      "name": "RepellingDamage",
+      "type": "damagetype",
+      "sortid": 1160,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "repelling_damage",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/damage_type/repelling_damage.json"
+        ]
+      },
+      "path": "~/Damage Sources"
+    },
+    {
+      "name": "CrushingDamage",
+      "type": "damagetype",
+      "sortid": 1161,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "crushing_damage",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/damage_type/crushing_damage.json"
+        ]
+      },
+      "path": "~/Damage Sources"
+    },
+    {
+      "name": "SlashingDamage",
+      "type": "damagetype",
+      "sortid": 1162,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "slashing_damage",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/damage_type/slashing_damage.json"
+        ]
+      },
+      "path": "~/Damage Sources"
+    },
+    {
+      "name": "ElectricDamage",
+      "type": "damagetype",
+      "sortid": 1163,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "electric_damage",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/damage_type/electric_damage.json"
+        ]
+      },
+      "path": "~/Damage Sources"
+    },
+    {
+      "name": "CursedEnergyDamage",
+      "type": "damagetype",
+      "sortid": 1164,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cursed_energy_damage",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/damage_type/cursed_energy_damage.json"
+        ]
+      },
+      "path": "~/Damage Sources"
+    },
+    {
+      "name": "SoulDamage",
+      "type": "damagetype",
+      "sortid": 1165,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "soul_damage",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/damage_type/soul_damage.json"
+        ]
+      },
+      "path": "~/Damage Sources"
+    },
+    {
+      "name": "AdaptionProgressCursedTech",
+      "type": "procedure",
+      "sortid": 1166,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "adaption_progress_cursed_tech",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/AdaptionProgressCursedTechProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Commands/Procedures"
     }
   ],
   "variable_elements": [
@@ -27830,6 +27861,8 @@
       "key.craft_kaisen.reverse_cursed_technique": "Reverse Cursed Technique",
       "entity.craft_kaisen.red_open_door": "Red Open Door",
       "entity.craft_kaisen.mei_mei": "Mei Mei",
+      "death.attack.repelling_damage": "%1$s died to repulsion",
+      "death.attack.crushing_damage.player": "%1$s died whilst trying to escape %2$s",
       "item.craft_kaisen.mahito_outfit_chestplate": "Mahito Outfit ",
       "advancements.perfect_preparation.descr": "Kill Kenjaku",
       "advancements.simple_domain_learned.title": "Simple Domain",
@@ -27840,6 +27873,7 @@
       "item.craft_kaisen.sukuna_outfit_chestplate": "Sukuna Haori",
       "gui.craft_kaisen.start_screen.button_test": "test",
       "entity.craft_kaisen.meguna": "Meguna",
+      "death.attack.repelling_damage.player": "%1$s died whilst trying to escape %2$s",
       "item.craft_kaisen.ryomen_sukuna_spawn_egg": "Ryomen Sukuna Spawn Egg",
       "item.craft_kaisen.sukuna_outfit_leggings": "Sukuna Pants",
       "advancements.cursed_technique.descr": "Get a Cursed Technique",
@@ -27867,6 +27901,7 @@
       "item.craft_kaisen.kashimo_outfit_chestplate": "Kashimo Outfit",
       "item.craft_kaisen.mahoraga_outfit_leggings": "Mahoraga Outfit",
       "item.craft_kaisen.nail": "Nail",
+      "death.attack.soul_damage": "%1$s died",
       "gamerule.sMPSetting.description": "Sets the mod to smp settings",
       "item.craft_kaisen.cursed_mask": "Cursed Mask",
       "entity.craft_kaisen.choso": "Choso",
@@ -27881,7 +27916,6 @@
       "item.craft_kaisen.black_blind_fold_helmet": "Black Blind Fold ",
       "advancements.merged_beast_agito_advancement.descr": "Tame Merged Beast Agito",
       "gui.craft_kaisen.kenjaku_gui.label_special": "Special - ",
-      "death.attack.dismantle_damage": "%1$s was cut by dismantle",
       "effect.craft_kaisen.blood_wave": "BloodWave",
       "gui.craft_kaisen.kenjaku_gui.label_do_you_want_to_steal_their": "Do you want to steal their - ",
       "entity.craft_kaisen.rika": "Rika",
@@ -27895,6 +27929,7 @@
       "block.craft_kaisen.shibuya_gates": "Shibuya Gates",
       "advancements.heian_era.title": "Heian Era",
       "gui.craft_kaisen.soul_multiplicity_overlay.label_ctrl_body_repel": "CTRL - Body Repel",
+      "death.attack.cursed_energy_damage": "%1$s died to cursed energy",
       "entity.craft_kaisen.resurrected_toji": "Resurrected Toji",
       "advancements.clan_creator.title": "Head Of The Clan",
       "item.craft_kaisen.mahito_outfit_leggings": "Mahito Outfit",
@@ -27911,11 +27946,9 @@
       "gui.craft_kaisen.main_overlay.label_0": "0",
       "advancements.semi_grade_2.title": "Semi Grade 2",
       "entity.craft_kaisen.rope_mob": "Rope Mob",
-      "death.attack.dismantle_damage.item": "%1$s was killed by %2$s using %3$s",
       "entity.craft_kaisen.shadow_frog": "Shadow Frog",
       "effect.craft_kaisen.constant_slice": "ConstantSlice",
       "advancements.the_honored_one.title": "The Honored One",
-      "death.attack.malevolent_shrine_damage.player": "%1$s died whilst trying to escape the malevolent shrine",
       "effect.craft_kaisen.through_blocks": "Through Blocks",
       "effect.craft_kaisen.frame_on": "Framed",
       "key.craft_kaisen.ability_4": "Ability 4",
@@ -27939,7 +27972,6 @@
       "subtitles.clap": "",
       "gui.craft_kaisen.main_menu.label_race_human": "Human",
       "gamerule.hardcoreLives.description": "Start with 2 lives, get 1 more life every time you level up (max is 2)",
-      "death.attack.reversal_red_damage": "%1$s was blown up by reversal red",
       "item.craft_kaisen.jogo_spawn_egg": "Jogo Spawn Egg",
       "gui.craft_kaisen.main_menu.button_mastery": "Mastery",
       "item.craft_kaisen.nobara_outfit_chestplate": "Female Jujutsu Sorcerer Outfit",
@@ -27947,6 +27979,7 @@
       "item.craft_kaisen.dragon_bone": "Dragon Bone",
       "entity.craft_kaisen.merged_beast_agito": "Merged Beast Agito",
       "item.craft_kaisen.sukuna_give": "Sukuna Give",
+      "death.attack.electric_damage.player": "%1$s died whilst trying to escape %2$s",
       "item.craft_kaisen.battle_axe": "Battle Axe",
       "entity.craft_kaisen.awakened_maki": "Maki Zenin",
       "effect.craft_kaisen.soul_multiplicity_active": "SMactive",
@@ -27960,6 +27993,7 @@
       "gui.craft_kaisen.imbue_gui.button_imbue": "Imbue",
       "effect.craft_kaisen.slicing_mahito": "SlicingMahito",
       "item.craft_kaisen.mahoraga_outfit_chestplate": "Mahoraga Outfit",
+      "death.attack.slashing_damage.player": "%1$s died whilst trying to escape %2$s",
       "advancements.the_sorcerer_killer.title": "The Sorcerer Killer",
       "item.craft_kaisen.fire_arrow": "Fire Arrow",
       "advancements.fearsome_womb.title": "Fearsome Womb",
@@ -27968,6 +28002,7 @@
       "key.craft_kaisen.imbue_ce": "Imbue CE",
       "item.craft_kaisen.miwa_katana": "Miwa Katana",
       "advancements.perfect_preparation.title": "Perfect Preparation",
+      "death.attack.cursed_energy_damage.player": "%1$s died whilst trying to escape %2$s",
       "item.craft_kaisen.yuta_okkotsu_spawn_egg": "Yuta Okkotsu Spawn Egg",
       "gamerule.malevolentShrineBlockDamage.description": "toggle if malevolent shrine should damage blocks",
       "item.craft_kaisen.kamutoke": "\"Supreme Martial Solution\" Kamutoke",
@@ -27975,12 +28010,12 @@
       "gui.craft_kaisen.perk_gui.button_accept": "Accept",
       "item.craft_kaisen.itadori_outfit_chestplate": "Itadori Uniform ",
       "subtitles.hit": "strong hit",
-      "death.attack.reversal_red_damage.item": "%1$s was killed by %2$s using %3$s",
       "entity.craft_kaisen.flying_cursed_spirit": "Flying Cursed Spirit",
       "advancements.shinjuku_showdown.title": "Shinjuku Showdown",
       "gui.craft_kaisen.main_menu.tooltip_increase_max_health": "increase max health",
       "item.craft_kaisen.cursed_teddy_bear": "Cursed Teddy Bear",
       "item.craft_kaisen.clan_invite_paper": "Clan Invite Paper",
+      "death.attack.electric_damage": "%1$s was shocked to death",
       "item.craft_kaisen.jujutsu_sorcerer_uniform_leggings": "Jujutsu Sorcerer Uniform",
       "item.craft_kaisen.panda_spawn_egg": "Panda Spawn Egg",
       "subtitles.teleport": "",
@@ -27996,6 +28031,7 @@
       "item.craft_kaisen.find_blue_location": "Find Blue Location",
       "entity.craft_kaisen.pox_deity_domain": "Pox Deity Domain",
       "entity.craft_kaisen.satoru_gojo": "Satoru Gojo",
+      "death.attack.soul_damage.player": "%1$s died whilst trying to escape %2$s",
       "entity.craft_kaisen.max_meteor": "Max Meteor",
       "advancements.black_flash_advancement.descr": "Attack a mob while your cursed energy is active with a 0.01% Chance",
       "item.craft_kaisen.pure_love_beam_ranged": "Pure Love Beam Ranged",
@@ -28007,7 +28043,7 @@
       "item.craft_kaisen.blood_blade": "Blood Dagger",
       "itemGroup.tabck_items": "Ck Items",
       "effect.craft_kaisen.rikas_love": "Rika\u0027s Love",
-      "death.attack.frost_calm_damage": "%1$s died in frost",
+      "death.attack.frost_calm_damage": "%1$s died to frost",
       "item.craft_kaisen.root_projectile": "Root Projectile",
       "gamerule.hardcoreLives": "Hardcore Lives",
       "advancements.semi_grade_2.descr": "Reach The Required Fame.",
@@ -28021,6 +28057,7 @@
       "item.craft_kaisen.cursed_spirit_orb": "Cursed Spirit Orb",
       "item.craft_kaisen.inverted_spear": "Inverted Spear",
       "item.craft_kaisen.fire_arrow_mob": "Fire Arrow Mob",
+      "death.attack.electric_damage.item": "%1$s was killed by %2$s using %3$s",
       "item.craft_kaisen.itadori_outfit_leggings": "Itadori Uniform",
       "effect.craft_kaisen.lapse_blue_control": "Lapse Blue",
       "item.craft_kaisen.jujutsu_history_book": "Jujutsu History Book",
@@ -28058,6 +28095,7 @@
       "effect.craft_kaisen.vessel_potion_effect": "Vessel",
       "gui.craft_kaisen.csmgui.button_3": "3",
       "gui.craft_kaisen.move_gui.button_6": "6",
+      "death.attack.slashing_damage.item": "%1$s was killed by %2$s using %3$s",
       "gui.craft_kaisen.csmgui.button_2": "2",
       "gui.craft_kaisen.move_gui.button_5": "5",
       "item.craft_kaisen.yuji_itadori_spawn_egg": "Yuji Itadori Spawn Egg",
@@ -28086,7 +28124,6 @@
       "gui.craft_kaisen.ct_move_gui.button_set_ability_8": "Set Ability 8",
       "gui.craft_kaisen.ct_move_gui.button_set_ability_7": "Set Ability 7",
       "gui.craft_kaisen.ct_move_gui.button_set_ability_6": "Set Ability 6",
-      "death.attack.reversal_red_damage.player": "%1$s died whilst trying to escape %2$s",
       "block.craft_kaisen.talisman_block": "Talisman Block",
       "gui.craft_kaisen.ct_move_gui.button_set_ability_5": "Set Ability 5",
       "entity.craft_kaisen.suguru_geto": "Suguru Geto",
@@ -28111,10 +28148,10 @@
       "gui.craft_kaisen.move_gui.button_empty": "\u003e",
       "death.attack.blood_damage.player": "%1$s died whilst trying to escape %2$s",
       "entity.craft_kaisen.mahito": "Mahito",
+      "death.attack.crushing_damage.item": "%1$s was killed by %2$s using %3$s",
       "advancements.perception_of_the_soul.descr": "Learn to percieve yours aswell as others souls.",
       "item.craft_kaisen.hammer": "Hammer",
       "item.craft_kaisen.finger_bearer_spawn_egg": "Finger Bearer Spawn Egg",
-      "death.attack.malevolent_shrine_damage.item": "%1$s was killed by %2$s using %3$s",
       "entity.craft_kaisen.body_repel_2": "Body Repel 2",
       "itemGroup.tabck_weapons": "Ck Weapons",
       "entity.craft_kaisen.body_repel_1": "Body Repel 1",
@@ -28169,11 +28206,13 @@
       "item.craft_kaisen.aoi_todo_spawn_egg": "Aoi Todo Spawn Egg",
       "advancements.nue_advancement.title": "Nue",
       "itemGroup.tabck_blocks": "Ck Blocks",
+      "death.attack.crushing_damage": "%1$s was crushed to death",
       "item.craft_kaisen.nanami_knife": "Blunt Blade",
       "biome.craft_kaisen.u_vbiome": "U Vbiome",
       "advancements.young_fishand_reverse_punishment.title": "Young Fish and Reverse Punishment",
       "entity.craft_kaisen.toad": "Toad",
       "entity.craft_kaisen.ember_insect": "Ember Insect",
+      "death.attack.cursed_energy_damage.item": "%1$s was killed by %2$s using %3$s",
       "gui.craft_kaisen.perk_gui.button_decline": "Decline",
       "item.craft_kaisen.jujutsu_sorcerer_uniform_chestplate": "Jujutsu Sorcerer Uniform",
       "gui.craft_kaisen.ct_move_gui.button_set_ability_12": "Set Ability 11",
@@ -28190,7 +28229,6 @@
       "entity.craft_kaisen.yuta_okkotsu": "Yuta Okkotsu",
       "advancements.rabbit_escape.descr": "Tame Rabbit Escape",
       "advancements.history_of_jujutsu.title": "History Of Jujutsu",
-      "death.attack.malevolent_shrine_damage": "%1$s was cut up by %2$s\u0027s malevolent shrine",
       "item.craft_kaisen.reversal_red_projectile": "Reversal Red Projectile",
       "effect.craft_kaisen.burn_cooldown": "BurnCooldown",
       "gui.craft_kaisen.main_menu.label_iii": "III",
@@ -28201,6 +28239,7 @@
       "entity.craft_kaisen.hundred_demons_tick": "Hundred Demons Tick",
       "advancements.semi_grade_1.title": "Semi Grade 1",
       "effect.craft_kaisen.wintry_icicle": "WI",
+      "death.attack.repelling_damage.item": "%1$s was killed by %2$s using %3$s",
       "entity.craft_kaisen.reversal_red_entity": "Reversal Red Entity",
       "gamerule.maximumSukunaVesselPlayers.description": "Control how many players can be a sukuna vessel",
       "gui.craft_kaisen.main_menu.label_empty": "---------------",
@@ -28286,6 +28325,7 @@
       "entity.craft_kaisen.frozen_frame": "Frozen Frame",
       "gui.craft_kaisen.phone_gui.BountyPlayer": "Bounty Amount",
       "entity.craft_kaisen.jogo": "Jogo",
+      "death.attack.slashing_damage": "%1$s was cut to death",
       "item.craft_kaisen.small_pox_deity_spawn_egg": "Small Pox Deity Spawn Egg",
       "item.craft_kaisen.toji_fushiguro_spawn_egg": "Toji Fushiguro Spawn Egg",
       "item.craft_kaisen.old_lady_spawn_egg": "Old Lady Spawn Egg",
@@ -28315,7 +28355,6 @@
       "advancements.grade_4.title": "Grade 4",
       "item.craft_kaisen.hollow_purple_projectile": "Hollow Purple Projectile",
       "item.craft_kaisen.hiten": "Hiten",
-      "death.attack.dismantle_damage.player": "%1$s died whilst trying to escape %2$s",
       "entity.craft_kaisen.crow_mei_mei": "Crow Mei Mei",
       "entity.craft_kaisen.blue_entity": "Blue Entity",
       "death.attack.frame_attack": "%1$s died within a frame",
@@ -28324,6 +28363,7 @@
       "key.craft_kaisen.charge_cursed_energy": "Charge Cursed Energy",
       "item.craft_kaisen.stronghit": "Stronghit",
       "gui.craft_kaisen.prestige_menu.tooltip_decline": "Decline",
+      "death.attack.soul_damage.item": "%1$s was killed by %2$s using %3$s",
       "item.craft_kaisen.nanami_outfit_leggings": "Nanami Outfit ",
       "effect.craft_kaisen.body_crushing": "Crushing",
       "advancements.round_deer_advancement.title": "Round Deer",

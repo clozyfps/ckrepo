@@ -36,7 +36,7 @@ public class BehindYouProcedureProcedure {
 						if (_ent instanceof ServerPlayer _serverPlayer)
 							_serverPlayer.connection.teleport((entityiterator.getX() - 1), (entityiterator.getY()), (entityiterator.getZ() - 1), _ent.getYRot(), _ent.getXRot());
 					}
-					entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC), entity), 5);
+					entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.PLAYER_ATTACK), entity), 5);
 					{
 						Entity _ent = entity;
 						_ent.setYRot(entityiterator.getYRot());

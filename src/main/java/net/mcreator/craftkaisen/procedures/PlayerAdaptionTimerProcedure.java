@@ -120,20 +120,6 @@ public class PlayerAdaptionTimerProcedure {
 				if (entity instanceof Player _player && !_player.level.isClientSide())
 					_player.displayClientMessage(Component.literal("Successfully Adapted to Fall Damage."), true);
 			}
-			if (entity.getPersistentData().getDouble("FallingBlockAdaptationTimer") > 1) {
-				entity.getPersistentData().putDouble("FallingBlockAdaptationTimer", (entity.getPersistentData().getDouble("FallingBlockAdaptationTimer") - 1));
-			} else if (entity.getPersistentData().getDouble("FallingBlockAdaptationTimer") == 1 && entity.getPersistentData().getBoolean("FallingBlockAdapted") == false) {
-				entity.getPersistentData().putBoolean("FallingBlockAdapted", true);
-				if (world instanceof Level _level) {
-					if (!_level.isClientSide()) {
-						_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.break")), SoundSource.PLAYERS, 1, 1);
-					} else {
-						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.break")), SoundSource.PLAYERS, 1, 1, false);
-					}
-				}
-				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal("Successfully Adapted to Falling Blocks."), true);
-			}
 			if (entity.getPersistentData().getDouble("SuffocationAdaptationTimer") > 1) {
 				entity.getPersistentData().putDouble("SuffocationAdaptationTimer", (entity.getPersistentData().getDouble("SuffocationAdaptationTimer") - 1));
 			} else if (entity.getPersistentData().getDouble("SuffocationAdaptationTimer") == 1 && entity.getPersistentData().getBoolean("SuffocationAdapted") == false) {
@@ -218,34 +204,6 @@ public class PlayerAdaptionTimerProcedure {
 				if (entity instanceof Player _player && !_player.level.isClientSide())
 					_player.displayClientMessage(Component.literal("Successfully Adapted to Starving."), true);
 			}
-			if (entity.getPersistentData().getDouble("MiscAdaptationTimer") > 1) {
-				entity.getPersistentData().putDouble("MiscAdaptationTimer", (entity.getPersistentData().getDouble("MiscAdaptationTimer") - 1));
-			} else if (entity.getPersistentData().getDouble("MiscAdaptationTimer") == 1 && entity.getPersistentData().getBoolean("MiscAdapted") == false) {
-				entity.getPersistentData().putBoolean("MiscAdapted", true);
-				if (world instanceof Level _level) {
-					if (!_level.isClientSide()) {
-						_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.break")), SoundSource.PLAYERS, 1, 1);
-					} else {
-						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.break")), SoundSource.PLAYERS, 1, 1, false);
-					}
-				}
-				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal("Successfully Adapted to Miscellaneous Damage."), true);
-			}
-			if (entity.getPersistentData().getDouble("ReversalRedAdaptationTimer") > 1) {
-				entity.getPersistentData().putDouble("ReversalRedAdaptationTimer", (entity.getPersistentData().getDouble("ReversalRedAdaptationTimer") - 1));
-			} else if (entity.getPersistentData().getDouble("ReversalRedAdaptationTimer") == 1 && entity.getPersistentData().getBoolean("ReversalRedAdapted") == false) {
-				entity.getPersistentData().putBoolean("ReversalRedAdapted", true);
-				if (world instanceof Level _level) {
-					if (!_level.isClientSide()) {
-						_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.break")), SoundSource.PLAYERS, 1, 1);
-					} else {
-						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.break")), SoundSource.PLAYERS, 1, 1, false);
-					}
-				}
-				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal("Successfully Adapted to Reversal Red."), true);
-			}
 			if (entity.getPersistentData().getDouble("FrameAdaptationTimer") > 1) {
 				entity.getPersistentData().putDouble("FrameAdaptationTimer", (entity.getPersistentData().getDouble("FrameAdaptationTimer") - 1));
 			} else if (entity.getPersistentData().getDouble("FrameAdaptationTimer") == 1 && entity.getPersistentData().getBoolean("FrameAdapted") == false) {
@@ -274,10 +232,10 @@ public class PlayerAdaptionTimerProcedure {
 				if (entity instanceof Player _player && !_player.level.isClientSide())
 					_player.displayClientMessage(Component.literal("Successfully Adapted to Ratio."), true);
 			}
-			if (entity.getPersistentData().getDouble("ShrineAdaptationTimer") > 1) {
-				entity.getPersistentData().putDouble("ShrineAdaptationTimer", (entity.getPersistentData().getDouble("ShrineAdaptationTimer") - 1));
-			} else if (entity.getPersistentData().getDouble("ShrineAdaptationTimer") == 1 && entity.getPersistentData().getBoolean("ShrineAdapted") == false) {
-				entity.getPersistentData().putBoolean("ShrineAdapted", true);
+			if (entity.getPersistentData().getDouble("FreezingAdaptationTimer") > 1) {
+				entity.getPersistentData().putDouble("FreezingAdaptationTimer", (entity.getPersistentData().getDouble("FreezingAdaptationTimer") - 1));
+			} else if (entity.getPersistentData().getDouble("FreezingAdaptationTimer") == 1 && entity.getPersistentData().getBoolean("FreezingAdapted") == false) {
+				entity.getPersistentData().putBoolean("FreezingAdapted", true);
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
 						_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.break")), SoundSource.PLAYERS, 1, 1);
@@ -286,21 +244,7 @@ public class PlayerAdaptionTimerProcedure {
 					}
 				}
 				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal("Successfully Adapted to Malevolent Shrine."), true);
-			}
-			if (entity.getPersistentData().getDouble("DismantleAdaptationTimer") > 1) {
-				entity.getPersistentData().putDouble("DismantleAdaptationTimer", (entity.getPersistentData().getDouble("DismantleAdaptationTimer") - 1));
-			} else if (entity.getPersistentData().getDouble("DismantleAdaptationTimer") == 1 && entity.getPersistentData().getBoolean("DismantleAdapted") == false) {
-				entity.getPersistentData().putBoolean("DismantleAdapted", true);
-				if (world instanceof Level _level) {
-					if (!_level.isClientSide()) {
-						_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.break")), SoundSource.PLAYERS, 1, 1);
-					} else {
-						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.break")), SoundSource.PLAYERS, 1, 1, false);
-					}
-				}
-				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal("Successfully Adapted to Dismantle."), true);
+					_player.displayClientMessage(Component.literal("Successfully Adapted to Freezing."), true);
 			}
 			if (entity.getPersistentData().getDouble("BloodAdaptationTimer") > 1) {
 				entity.getPersistentData().putDouble("BloodAdaptationTimer", (entity.getPersistentData().getDouble("BloodAdaptationTimer") - 1));
@@ -316,10 +260,10 @@ public class PlayerAdaptionTimerProcedure {
 				if (entity instanceof Player _player && !_player.level.isClientSide())
 					_player.displayClientMessage(Component.literal("Successfully Adapted to Blood Attacks."), true);
 			}
-			if (entity.getPersistentData().getDouble("FreezingAdaptationTimer") > 1) {
-				entity.getPersistentData().putDouble("FreezingAdaptationTimer", (entity.getPersistentData().getDouble("FreezingAdaptationTimer") - 1));
-			} else if (entity.getPersistentData().getDouble("FreezingAdaptationTimer") == 1 && entity.getPersistentData().getBoolean("FreezingAdapted") == false) {
-				entity.getPersistentData().putBoolean("FreezingAdapted", true);
+			if (entity.getPersistentData().getDouble("SlashesAdaptationTimer") > 1) {
+				entity.getPersistentData().putDouble("SlashesAdaptationTimer", (entity.getPersistentData().getDouble("SlashesAdaptationTimer") - 1));
+			} else if (entity.getPersistentData().getDouble("SlashesAdaptationTimer") == 1 && entity.getPersistentData().getBoolean("SlashesAdapted") == false) {
+				entity.getPersistentData().putBoolean("SlashesAdapted", true);
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
 						_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.break")), SoundSource.PLAYERS, 1, 1);
@@ -328,7 +272,77 @@ public class PlayerAdaptionTimerProcedure {
 					}
 				}
 				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal("Successfully Adapted to Freezing."), true);
+					_player.displayClientMessage(Component.literal("Successfully Adapted to Slashing Attacks."), true);
+			}
+			if (entity.getPersistentData().getDouble("RepulsionAdaptationTimer") > 1) {
+				entity.getPersistentData().putDouble("RepulsionAdaptationTimer", (entity.getPersistentData().getDouble("RepulsionAdaptationTimer") - 1));
+			} else if (entity.getPersistentData().getDouble("RepulsionAdaptationTimer") == 1 && entity.getPersistentData().getBoolean("RepulsionAdapted") == false) {
+				entity.getPersistentData().putBoolean("RepulsionAdapted", true);
+				if (world instanceof Level _level) {
+					if (!_level.isClientSide()) {
+						_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.break")), SoundSource.PLAYERS, 1, 1);
+					} else {
+						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.break")), SoundSource.PLAYERS, 1, 1, false);
+					}
+				}
+				if (entity instanceof Player _player && !_player.level.isClientSide())
+					_player.displayClientMessage(Component.literal("Successfully Adapted to Repelling Attacks."), true);
+			}
+			if (entity.getPersistentData().getDouble("CrushingAdaptationTimer") > 1) {
+				entity.getPersistentData().putDouble("CrushingAdaptationTimer", (entity.getPersistentData().getDouble("CrushingAdaptationTimer") - 1));
+			} else if (entity.getPersistentData().getDouble("CrushingAdaptationTimer") == 1 && entity.getPersistentData().getBoolean("CrushingAdapted") == false) {
+				entity.getPersistentData().putBoolean("CrushingAdapted", true);
+				if (world instanceof Level _level) {
+					if (!_level.isClientSide()) {
+						_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.break")), SoundSource.PLAYERS, 1, 1);
+					} else {
+						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.break")), SoundSource.PLAYERS, 1, 1, false);
+					}
+				}
+				if (entity instanceof Player _player && !_player.level.isClientSide())
+					_player.displayClientMessage(Component.literal("Successfully Adapted to Crushing Attacks."), true);
+			}
+			if (entity.getPersistentData().getDouble("ElectrictyAdaptationTimer") > 1) {
+				entity.getPersistentData().putDouble("ElectrictyAdaptationTimer", (entity.getPersistentData().getDouble("ElectrictyAdaptationTimer") - 1));
+			} else if (entity.getPersistentData().getDouble("ElectrictyAdaptationTimer") == 1 && entity.getPersistentData().getBoolean("ElectrictyAdapted") == false) {
+				entity.getPersistentData().putBoolean("ElectrictyAdapted", true);
+				if (world instanceof Level _level) {
+					if (!_level.isClientSide()) {
+						_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.break")), SoundSource.PLAYERS, 1, 1);
+					} else {
+						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.break")), SoundSource.PLAYERS, 1, 1, false);
+					}
+				}
+				if (entity instanceof Player _player && !_player.level.isClientSide())
+					_player.displayClientMessage(Component.literal("Successfully Adapted to Electricty."), true);
+			}
+			if (entity.getPersistentData().getDouble("CursedEnergyAdaptationTimer") > 1) {
+				entity.getPersistentData().putDouble("CursedEnergyAdaptationTimer", (entity.getPersistentData().getDouble("CursedEnergyAdaptationTimer") - 1));
+			} else if (entity.getPersistentData().getDouble("CursedEnergyAdaptationTimer") == 1 && entity.getPersistentData().getBoolean("CursedEnergyAdapted") == false) {
+				entity.getPersistentData().putBoolean("CursedEnergyAdapted", true);
+				if (world instanceof Level _level) {
+					if (!_level.isClientSide()) {
+						_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.break")), SoundSource.PLAYERS, 1, 1);
+					} else {
+						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.break")), SoundSource.PLAYERS, 1, 1, false);
+					}
+				}
+				if (entity instanceof Player _player && !_player.level.isClientSide())
+					_player.displayClientMessage(Component.literal("Successfully Adapted to Basic Cursed Energy."), true);
+			}
+			if (entity.getPersistentData().getDouble("SoulDamageAdaptationTimer") > 1) {
+				entity.getPersistentData().putDouble("SoulDamageAdaptationTimer", (entity.getPersistentData().getDouble("SoulDamageAdaptationTimer") - 1));
+			} else if (entity.getPersistentData().getDouble("SoulDamageAdaptationTimer") == 1 && entity.getPersistentData().getBoolean("SoulDamageAdapted") == false) {
+				entity.getPersistentData().putBoolean("SoulDamageAdapted", true);
+				if (world instanceof Level _level) {
+					if (!_level.isClientSide()) {
+						_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.break")), SoundSource.PLAYERS, 1, 1);
+					} else {
+						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.break")), SoundSource.PLAYERS, 1, 1, false);
+					}
+				}
+				if (entity instanceof Player _player && !_player.level.isClientSide())
+					_player.displayClientMessage(Component.literal("Successfully Adapted to Soul Attacks."), true);
 			}
 		}
 	}

@@ -4,8 +4,8 @@
   "definition": {
     "exhaustion": 0.1,
     "scaling": "never",
-    "effects": "freezing",
-    "normalDeathMessage": "%1$s died to frost",
+    "effects": "hurt",
+    "normalDeathMessage": "%1$s died to cursed energy",
     "itemDeathMessage": "%1$s was killed by %2$s using %3$s",
     "playerDeathMessage": "%1$s died whilst trying to escape %2$s"
   }
