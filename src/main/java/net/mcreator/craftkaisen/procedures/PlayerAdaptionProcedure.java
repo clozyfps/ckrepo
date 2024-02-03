@@ -110,7 +110,7 @@ public class PlayerAdaptionProcedure {
 						}
 					}
 				}
-				if (damagesource.is(DamageTypes.IN_FIRE) || damagesource.is(DamageTypes.ON_FIRE) || damagesource.is(DamageTypes.LAVA) || damagesource.is(DamageTypes.HOT_FLOOR) || damagesource.is(DamageTypes.LIGHTNING_BOLT)) {
+				if (damagesource.is(DamageTypes.IN_FIRE) || damagesource.is(DamageTypes.ON_FIRE) || damagesource.is(DamageTypes.LAVA) || damagesource.is(DamageTypes.HOT_FLOOR)) {
 					if (entity.getPersistentData().getBoolean("BurningAdapted") == false) {
 						if (entity.getPersistentData().getDouble("BurningAdaptation") < 300) {
 							entity.getPersistentData().putDouble("BurningAdaptation", (entity.getPersistentData().getDouble("BurningAdaptation") + 1));
@@ -180,29 +180,6 @@ public class PlayerAdaptionProcedure {
 						}
 					}
 				}
-				if (damagesource.is(DamageTypes.FALLING_BLOCK) || damagesource.is(DamageTypes.FALLING_STALACTITE) || damagesource.is(DamageTypes.FALLING_ANVIL)) {
-					if (entity.getPersistentData().getBoolean("FallingBlockAdapted") == false) {
-						if (entity.getPersistentData().getDouble("FallingBlockAdaptation") < 100) {
-							entity.getPersistentData().putDouble("FallingBlockAdaptation", (entity.getPersistentData().getDouble("FallingBlockAdaptation") + 1));
-						} else if (entity.getPersistentData().getDouble("FallingBlockAdaptation") == 100) {
-							entity.getPersistentData().putDouble("FallingBlockAdaptation", (entity.getPersistentData().getDouble("FallingBlockAdaptation") + 1));
-							entity.getPersistentData().putDouble("FallingBlockAdaptationTimer", 1200);
-							if (world instanceof Level _level) {
-								if (!_level.isClientSide()) {
-									_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.place")), SoundSource.PLAYERS, 1, 1);
-								} else {
-									_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.place")), SoundSource.PLAYERS, 1, 1, false);
-								}
-							}
-							if (entity instanceof Player _player && !_player.level.isClientSide())
-								_player.displayClientMessage(Component.literal("Adaptation to Falling Blocks has begun."), true);
-						}
-					} else if (entity.getPersistentData().getBoolean("FallingBlockAdapted") == true) {
-						if (event != null && event.isCancelable()) {
-							event.setCanceled(true);
-						}
-					}
-				}
 				if (damagesource.is(DamageTypes.DROWN) || damagesource.is(DamageTypes.DRY_OUT) || damagesource.is(DamageTypes.IN_WALL)) {
 					if (entity.getPersistentData().getBoolean("SuffocationAdapted") == false) {
 						if (entity.getPersistentData().getDouble("SuffocationAdaptation") < 150) {
@@ -226,7 +203,8 @@ public class PlayerAdaptionProcedure {
 						}
 					}
 				}
-				if (damagesource.is(DamageTypes.STALAGMITE) || damagesource.is(DamageTypes.CACTUS) || damagesource.is(DamageTypes.SWEET_BERRY_BUSH)) {
+				if (damagesource.is(DamageTypes.STALAGMITE) || damagesource.is(DamageTypes.CACTUS) || damagesource.is(DamageTypes.SWEET_BERRY_BUSH) || damagesource.is(DamageTypes.FALLING_BLOCK) || damagesource.is(DamageTypes.FALLING_STALACTITE)
+						|| damagesource.is(DamageTypes.FALLING_ANVIL)) {
 					if (entity.getPersistentData().getBoolean("DamageBlockAdapted") == false) {
 						if (entity.getPersistentData().getDouble("DamageBlockAdaptation") < 100) {
 							entity.getPersistentData().putDouble("DamageBlockAdaptation", (entity.getPersistentData().getDouble("DamageBlockAdaptation") + 1));
@@ -241,7 +219,7 @@ public class PlayerAdaptionProcedure {
 								}
 							}
 							if (entity instanceof Player _player && !_player.level.isClientSide())
-								_player.displayClientMessage(Component.literal("Adaptation to Damaging Blocks has begun."), true);
+								_player.displayClientMessage(Component.literal("Adaptation to Block Damage has begun."), true);
 						}
 					} else if (entity.getPersistentData().getBoolean("DamageBlockAdapted") == true) {
 						if (event != null && event.isCancelable()) {
@@ -295,7 +273,7 @@ public class PlayerAdaptionProcedure {
 						}
 					}
 				}
-				if (damagesource.is(DamageTypes.INDIRECT_MAGIC) || damagesource.is(DamageTypes.MAGIC) || damagesource.is(DamageTypes.THORNS)) {
+				if (damagesource.is(DamageTypes.INDIRECT_MAGIC) || damagesource.is(DamageTypes.MAGIC) || damagesource.is(DamageTypes.THORNS) || damagesource.is(DamageTypes.DRAGON_BREATH)) {
 					if (entity.getPersistentData().getBoolean("MagicAdapted") == false) {
 						if (entity.getPersistentData().getDouble("MagicAdaptation") < 150) {
 							entity.getPersistentData().putDouble("MagicAdaptation", (entity.getPersistentData().getDouble("MagicAdaptation") + 1));
@@ -341,34 +319,11 @@ public class PlayerAdaptionProcedure {
 						}
 					}
 				}
-				if (damagesource.is(DamageTypes.DRAGON_BREATH) || damagesource.is(DamageTypes.CRAMMING) || damagesource.is(DamageTypes.SONIC_BOOM)) {
-					if (entity.getPersistentData().getBoolean("MiscAdapted") == false) {
-						if (entity.getPersistentData().getDouble("MiscAdaptation") < 100) {
-							entity.getPersistentData().putDouble("MiscAdaptation", (entity.getPersistentData().getDouble("MiscAdaptation") + 1));
-						} else if (entity.getPersistentData().getDouble("MiscAdaptation") == 100) {
-							entity.getPersistentData().putDouble("MiscAdaptation", (entity.getPersistentData().getDouble("MiscAdaptation") + 1));
-							entity.getPersistentData().putDouble("MiscAdaptationTimer", 1200);
-							if (world instanceof Level _level) {
-								if (!_level.isClientSide()) {
-									_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.place")), SoundSource.PLAYERS, 1, 1);
-								} else {
-									_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.place")), SoundSource.PLAYERS, 1, 1, false);
-								}
-							}
-							if (entity instanceof Player _player && !_player.level.isClientSide())
-								_player.displayClientMessage(Component.literal("Adaptation to Miscellaneous Damage has begun."), true);
-						}
-					} else if (entity.getPersistentData().getBoolean("MiscAdapted") == true) {
-						if (event != null && event.isCancelable()) {
-							event.setCanceled(true);
-						}
-					}
-				}
 				if (damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:blood_damage")))) {
 					if (entity.getPersistentData().getBoolean("BloodAdapted") == false) {
-						if (entity.getPersistentData().getDouble("BloodAdaptation") < 200) {
+						if (entity.getPersistentData().getDouble("BloodAdaptation") < 300) {
 							entity.getPersistentData().putDouble("BloodAdaptation", (entity.getPersistentData().getDouble("BloodAdaptation") + 1));
-						} else if (entity.getPersistentData().getDouble("BloodAdaptation") == 200) {
+						} else if (entity.getPersistentData().getDouble("BloodAdaptation") == 300) {
 							entity.getPersistentData().putDouble("BloodAdaptation", (entity.getPersistentData().getDouble("BloodAdaptation") + 1));
 							entity.getPersistentData().putDouble("BloodAdaptationTimer", 1200);
 							if (world instanceof Level _level) {
@@ -387,57 +342,11 @@ public class PlayerAdaptionProcedure {
 						}
 					}
 				}
-				if (damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:dismantle_damage")))) {
-					if (entity.getPersistentData().getBoolean("DismantleAdapted") == false) {
-						if (entity.getPersistentData().getDouble("DismantleAdaptation") < 200) {
-							entity.getPersistentData().putDouble("DismantleAdaptation", (entity.getPersistentData().getDouble("DismantleAdaptation") + 1));
-						} else if (entity.getPersistentData().getDouble("DismantleAdaptation") == 200) {
-							entity.getPersistentData().putDouble("DismantleAdaptation", (entity.getPersistentData().getDouble("DismantleAdaptation") + 1));
-							entity.getPersistentData().putDouble("DismantleAdaptationTimer", 1200);
-							if (world instanceof Level _level) {
-								if (!_level.isClientSide()) {
-									_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.place")), SoundSource.PLAYERS, 1, 1);
-								} else {
-									_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.place")), SoundSource.PLAYERS, 1, 1, false);
-								}
-							}
-							if (entity instanceof Player _player && !_player.level.isClientSide())
-								_player.displayClientMessage(Component.literal("Adaptation to Dismantle has begun."), true);
-						}
-					} else if (entity.getPersistentData().getBoolean("DismantleAdapted") == true) {
-						if (event != null && event.isCancelable()) {
-							event.setCanceled(true);
-						}
-					}
-				}
-				if (damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:malevolent_shrine_damage")))) {
-					if (entity.getPersistentData().getBoolean("ShrineAdapted") == false) {
-						if (entity.getPersistentData().getDouble("ShrineAdaptation") < 350) {
-							entity.getPersistentData().putDouble("ShrineAdaptation", (entity.getPersistentData().getDouble("ShrineAdaptation") + 1));
-						} else if (entity.getPersistentData().getDouble("ShrineAdaptation") == 350) {
-							entity.getPersistentData().putDouble("ShrineAdaptation", (entity.getPersistentData().getDouble("ShrineAdaptation") + 1));
-							entity.getPersistentData().putDouble("ShrineAdaptationTimer", 7000);
-							if (world instanceof Level _level) {
-								if (!_level.isClientSide()) {
-									_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.place")), SoundSource.PLAYERS, 1, 1);
-								} else {
-									_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.place")), SoundSource.PLAYERS, 1, 1, false);
-								}
-							}
-							if (entity instanceof Player _player && !_player.level.isClientSide())
-								_player.displayClientMessage(Component.literal("Adaptation to Malevolent Shrine has begun."), true);
-						}
-					} else if (entity.getPersistentData().getBoolean("ShrineAdapted") == true) {
-						if (event != null && event.isCancelable()) {
-							event.setCanceled(true);
-						}
-					}
-				}
 				if (damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:ratio_damage")))) {
 					if (entity.getPersistentData().getBoolean("RatioAdapted") == false) {
-						if (entity.getPersistentData().getDouble("RatioAdaptation") < 200) {
+						if (entity.getPersistentData().getDouble("RatioAdaptation") < 300) {
 							entity.getPersistentData().putDouble("RatioAdaptation", (entity.getPersistentData().getDouble("RatioAdaptation") + 1));
-						} else if (entity.getPersistentData().getDouble("RatioAdaptation") == 200) {
+						} else if (entity.getPersistentData().getDouble("RatioAdaptation") == 300) {
 							entity.getPersistentData().putDouble("RatioAdaptation", (entity.getPersistentData().getDouble("RatioAdaptation") + 1));
 							entity.getPersistentData().putDouble("RatioAdaptationTimer", 2500);
 							if (world instanceof Level _level) {
@@ -458,9 +367,9 @@ public class PlayerAdaptionProcedure {
 				}
 				if (damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:frame_attack")))) {
 					if (entity.getPersistentData().getBoolean("FrameAdapted") == false) {
-						if (entity.getPersistentData().getDouble("FrameAdaptation") < 200) {
+						if (entity.getPersistentData().getDouble("FrameAdaptation") < 300) {
 							entity.getPersistentData().putDouble("FrameAdaptation", (entity.getPersistentData().getDouble("FrameAdaptation") + 1));
-						} else if (entity.getPersistentData().getDouble("FrameAdaptation") == 200) {
+						} else if (entity.getPersistentData().getDouble("FrameAdaptation") == 300) {
 							entity.getPersistentData().putDouble("FrameAdaptation", (entity.getPersistentData().getDouble("FrameAdaptation") + 1));
 							entity.getPersistentData().putDouble("FrameAdaptationTimer", 1200);
 							if (world instanceof Level _level) {
@@ -479,34 +388,11 @@ public class PlayerAdaptionProcedure {
 						}
 					}
 				}
-				if (damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:reversal_red_damage")))) {
-					if (entity.getPersistentData().getBoolean("ReversalRedAdapted") == false) {
-						if (entity.getPersistentData().getDouble("ReversalRedAdaptation") < 200) {
-							entity.getPersistentData().putDouble("ReversalRedAdaptation", (entity.getPersistentData().getDouble("ReversalRedAdaptation") + 1));
-						} else if (entity.getPersistentData().getDouble("ReversalRedAdaptation") == 200) {
-							entity.getPersistentData().putDouble("ReversalRedAdaptation", (entity.getPersistentData().getDouble("ReversalRedAdaptation") + 1));
-							entity.getPersistentData().putDouble("ReversalRedAdaptationTimer", 1200);
-							if (world instanceof Level _level) {
-								if (!_level.isClientSide()) {
-									_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.place")), SoundSource.PLAYERS, 1, 1);
-								} else {
-									_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.place")), SoundSource.PLAYERS, 1, 1, false);
-								}
-							}
-							if (entity instanceof Player _player && !_player.level.isClientSide())
-								_player.displayClientMessage(Component.literal("Adaptation to Reversal Red has begun."), true);
-						}
-					} else if (entity.getPersistentData().getBoolean("ReversalRedAdapted") == true) {
-						if (event != null && event.isCancelable()) {
-							event.setCanceled(true);
-						}
-					}
-				}
 				if (damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:frost_calm_damage"))) || damagesource.is(DamageTypes.FREEZE)) {
 					if (entity.getPersistentData().getBoolean("FreezingAdapted") == false) {
-						if (entity.getPersistentData().getDouble("FreezingAdaptation") < 200) {
+						if (entity.getPersistentData().getDouble("FreezingAdaptation") < 300) {
 							entity.getPersistentData().putDouble("FreezingAdaptation", (entity.getPersistentData().getDouble("FreezingAdaptation") + 1));
-						} else if (entity.getPersistentData().getDouble("FreezingAdaptation") == 200) {
+						} else if (entity.getPersistentData().getDouble("FreezingAdaptation") == 300) {
 							entity.getPersistentData().putDouble("FreezingAdaptation", (entity.getPersistentData().getDouble("FreezingAdaptation") + 1));
 							entity.getPersistentData().putDouble("FreezingAdaptationTimer", 1200);
 							if (world instanceof Level _level) {
@@ -520,6 +406,144 @@ public class PlayerAdaptionProcedure {
 								_player.displayClientMessage(Component.literal("Adaptation to Freezing has begun."), true);
 						}
 					} else if (entity.getPersistentData().getBoolean("FreezingAdapted") == true) {
+						if (event != null && event.isCancelable()) {
+							event.setCanceled(true);
+						}
+					}
+				}
+				if (damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:repelling_damage"))) || damagesource.is(DamageTypes.SONIC_BOOM)) {
+					if (entity.getPersistentData().getBoolean("RepulsionAdapted") == false) {
+						if (entity.getPersistentData().getDouble("RepulsionAdaptation") < 400) {
+							entity.getPersistentData().putDouble("RepulsionAdaptation", (entity.getPersistentData().getDouble("RepulsionAdaptation") + 1));
+						} else if (entity.getPersistentData().getDouble("RepulsionAdaptation") == 400) {
+							entity.getPersistentData().putDouble("RepulsionAdaptation", (entity.getPersistentData().getDouble("RepulsionAdaptation") + 1));
+							entity.getPersistentData().putDouble("RepulsionAdaptationTimer", 1200);
+							if (world instanceof Level _level) {
+								if (!_level.isClientSide()) {
+									_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.place")), SoundSource.PLAYERS, 1, 1);
+								} else {
+									_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.place")), SoundSource.PLAYERS, 1, 1, false);
+								}
+							}
+							if (entity instanceof Player _player && !_player.level.isClientSide())
+								_player.displayClientMessage(Component.literal("Adaptation to Repelling Attacks has begun."), true);
+						}
+					} else if (entity.getPersistentData().getBoolean("RepulsionAdapted") == true) {
+						if (event != null && event.isCancelable()) {
+							event.setCanceled(true);
+						}
+					}
+				}
+				if (damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:crushing_damage"))) || damagesource.is(DamageTypes.CRAMMING)) {
+					if (entity.getPersistentData().getBoolean("CrushingAdapted") == false) {
+						if (entity.getPersistentData().getDouble("CrushingAdaptation") < 400) {
+							entity.getPersistentData().putDouble("CrushingAdaptation", (entity.getPersistentData().getDouble("CrushingAdaptation") + 1));
+						} else if (entity.getPersistentData().getDouble("CrushingAdaptation") == 400) {
+							entity.getPersistentData().putDouble("CrushingAdaptation", (entity.getPersistentData().getDouble("CrushingAdaptation") + 1));
+							entity.getPersistentData().putDouble("CrushingAdaptationTimer", 1200);
+							if (world instanceof Level _level) {
+								if (!_level.isClientSide()) {
+									_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.place")), SoundSource.PLAYERS, 1, 1);
+								} else {
+									_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.place")), SoundSource.PLAYERS, 1, 1, false);
+								}
+							}
+							if (entity instanceof Player _player && !_player.level.isClientSide())
+								_player.displayClientMessage(Component.literal("Adaptation to Crushing Attacks has begun."), true);
+						}
+					} else if (entity.getPersistentData().getBoolean("CrushingAdapted") == true) {
+						if (event != null && event.isCancelable()) {
+							event.setCanceled(true);
+						}
+					}
+				}
+				if (damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:slashing_damage")))) {
+					if (entity.getPersistentData().getBoolean("SlashesAdapted") == false) {
+						if (entity.getPersistentData().getDouble("SlashesAdaptation") < 700) {
+							entity.getPersistentData().putDouble("SlashesAdaptation", (entity.getPersistentData().getDouble("SlashesAdaptation") + 1));
+						} else if (entity.getPersistentData().getDouble("SlashesAdaptation") == 700) {
+							entity.getPersistentData().putDouble("SlashesAdaptation", (entity.getPersistentData().getDouble("SlashesAdaptation") + 1));
+							entity.getPersistentData().putDouble("SlashesAdaptationTimer", 1200);
+							if (world instanceof Level _level) {
+								if (!_level.isClientSide()) {
+									_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.place")), SoundSource.PLAYERS, 1, 1);
+								} else {
+									_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.place")), SoundSource.PLAYERS, 1, 1, false);
+								}
+							}
+							if (entity instanceof Player _player && !_player.level.isClientSide())
+								_player.displayClientMessage(Component.literal("Adaptation to Slashing Attacks has begun."), true);
+						}
+					} else if (entity.getPersistentData().getBoolean("SlashesAdapted") == true) {
+						if (event != null && event.isCancelable()) {
+							event.setCanceled(true);
+						}
+					}
+				}
+				if (damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:electric_damage"))) || damagesource.is(DamageTypes.LIGHTNING_BOLT)) {
+					if (entity.getPersistentData().getBoolean("ElectricityAdapted") == false) {
+						if (entity.getPersistentData().getDouble("ElectricityAdaptation") < 300) {
+							entity.getPersistentData().putDouble("ElectricityAdaptation", (entity.getPersistentData().getDouble("ElectricityAdaptation") + 1));
+						} else if (entity.getPersistentData().getDouble("ElectricityAdaptation") == 300) {
+							entity.getPersistentData().putDouble("ElectricityAdaptation", (entity.getPersistentData().getDouble("ElectricityAdaptation") + 1));
+							entity.getPersistentData().putDouble("ElectricityAdaptationTimer", 1200);
+							if (world instanceof Level _level) {
+								if (!_level.isClientSide()) {
+									_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.place")), SoundSource.PLAYERS, 1, 1);
+								} else {
+									_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.place")), SoundSource.PLAYERS, 1, 1, false);
+								}
+							}
+							if (entity instanceof Player _player && !_player.level.isClientSide())
+								_player.displayClientMessage(Component.literal("Adaptation to Electricity has begun."), true);
+						}
+					} else if (entity.getPersistentData().getBoolean("ElectricityAdapted") == true) {
+						if (event != null && event.isCancelable()) {
+							event.setCanceled(true);
+						}
+					}
+				}
+				if (damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:cursed_energy_damage")))) {
+					if (entity.getPersistentData().getBoolean("CursedEnergyAdapted") == false) {
+						if (entity.getPersistentData().getDouble("CursedEnergyAdaptation") < 500) {
+							entity.getPersistentData().putDouble("CursedEnergyAdaptation", (entity.getPersistentData().getDouble("CursedEnergyAdaptation") + 1));
+						} else if (entity.getPersistentData().getDouble("CursedEnergyAdaptation") == 500) {
+							entity.getPersistentData().putDouble("CursedEnergyAdaptation", (entity.getPersistentData().getDouble("CursedEnergyAdaptation") + 1));
+							entity.getPersistentData().putDouble("CursedEnergyAdaptationTimer", 1200);
+							if (world instanceof Level _level) {
+								if (!_level.isClientSide()) {
+									_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.place")), SoundSource.PLAYERS, 1, 1);
+								} else {
+									_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.place")), SoundSource.PLAYERS, 1, 1, false);
+								}
+							}
+							if (entity instanceof Player _player && !_player.level.isClientSide())
+								_player.displayClientMessage(Component.literal("Adaptation to Basic Cursed Energy has begun."), true);
+						}
+					} else if (entity.getPersistentData().getBoolean("CursedEnergyAdapted") == true) {
+						if (event != null && event.isCancelable()) {
+							event.setCanceled(true);
+						}
+					}
+				}
+				if (damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:soul_damage")))) {
+					if (entity.getPersistentData().getBoolean("SoulDamageAdapted") == false) {
+						if (entity.getPersistentData().getDouble("SoulDamageAdaptation") < 300) {
+							entity.getPersistentData().putDouble("SoulDamageAdaptation", (entity.getPersistentData().getDouble("SoulDamageAdaptation") + 1));
+						} else if (entity.getPersistentData().getDouble("SoulDamageAdaptation") == 300) {
+							entity.getPersistentData().putDouble("SoulDamageAdaptation", (entity.getPersistentData().getDouble("SoulDamageAdaptation") + 1));
+							entity.getPersistentData().putDouble("SoulDamageAdaptationTimer", 1200);
+							if (world instanceof Level _level) {
+								if (!_level.isClientSide()) {
+									_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.place")), SoundSource.PLAYERS, 1, 1);
+								} else {
+									_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.place")), SoundSource.PLAYERS, 1, 1, false);
+								}
+							}
+							if (entity instanceof Player _player && !_player.level.isClientSide())
+								_player.displayClientMessage(Component.literal("Adaptation to Soul Attacks has begun."), true);
+						}
+					} else if (entity.getPersistentData().getBoolean("SoulDamageAdapted") == true) {
 						if (event != null && event.isCancelable()) {
 							event.setCanceled(true);
 						}

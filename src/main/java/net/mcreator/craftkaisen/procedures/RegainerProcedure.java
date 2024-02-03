@@ -34,7 +34,7 @@ public class RegainerProcedure {
 			if (((sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).Perk).equals("Regainer")) {
 				if (!(entity instanceof Player || entity instanceof ServerPlayer)) {
 					if (sourceentity instanceof LivingEntity _entity)
-						_entity.setHealth((float) ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) + 4));
+						_entity.setHealth((float) ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) + 10));
 				}
 			}
 		}

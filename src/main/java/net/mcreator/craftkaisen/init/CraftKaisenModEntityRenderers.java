@@ -96,6 +96,7 @@ import net.mcreator.craftkaisen.client.renderer.BodyRepel1Renderer;
 import net.mcreator.craftkaisen.client.renderer.BlueEntityRenderer;
 import net.mcreator.craftkaisen.client.renderer.BlackDivineDogRenderer;
 import net.mcreator.craftkaisen.client.renderer.BlackBirdProjectileRenderer;
+import net.mcreator.craftkaisen.client.renderer.BindingIceBlockRenderer;
 import net.mcreator.craftkaisen.client.renderer.AwakenedMakiRenderer;
 import net.mcreator.craftkaisen.client.renderer.AoiTodoRenderer;
 
@@ -224,5 +225,6 @@ public class CraftKaisenModEntityRenderers {
 		event.registerEntityRenderer(CraftKaisenModEntities.CROW_MEI_MEI.get(), CrowMeiMeiRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.SHINJUKU_GOJO.get(), ShinjukuGojoRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.KENJAKU.get(), KenjakuRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.BINDING_ICE_BLOCK.get(), BindingIceBlockRenderer::new);
 	}
 }

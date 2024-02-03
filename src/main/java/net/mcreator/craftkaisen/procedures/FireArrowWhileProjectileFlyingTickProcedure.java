@@ -65,7 +65,7 @@ public class FireArrowWhileProjectileFlyingTickProcedure {
 										entityiterator.setSecondsOnFire(8);
 									} else {
 										entityiterator.setSecondsOnFire(8);
-										entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC), immediatesourceentity, entity), 10);
+										entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.FIREBALL), immediatesourceentity, entity), 10);
 									}
 								}
 							}

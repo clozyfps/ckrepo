@@ -26,6 +26,7 @@ import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.AreaEffectCloud;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.damagesource.DamageTypes;
@@ -137,7 +138,7 @@ public class UnlimitedVoidMobEntity extends TamableAnimal {
 	@Override
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData livingdata, @Nullable CompoundTag tag) {
 		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
-		UnlimitedVoidMobOnInitialEntitySpawnProcedure.execute(world, this.getX(), this.getY(), this.getZ(), this);
+		UnlimitedVoidMobOnInitialEntitySpawnProcedure.execute(world, this);
 		return retval;
 	}
 
@@ -200,6 +201,29 @@ public class UnlimitedVoidMobEntity extends TamableAnimal {
 	@Override
 	public boolean isFood(ItemStack stack) {
 		return Ingredient.of().test(stack);
+	}
+
+	@Override
+	public boolean isPushedByFluid() {
+		double x = this.getX();
+		double y = this.getY();
+		double z = this.getZ();
+		Level world = this.level;
+		Entity entity = this;
+		return false;
+	}
+
+	@Override
+	public boolean isPushable() {
+		return false;
+	}
+
+	@Override
+	protected void doPush(Entity entityIn) {
+	}
+
+	@Override
+	protected void pushEntities() {
 	}
 
 	@Override

@@ -49,7 +49,7 @@ public class StronghitWhileProjectileFlyingTickProcedure {
 				for (Entity entityiterator : _entfound) {
 					if (!(immediatesourceentity == entityiterator) && !(entity == entityiterator)) {
 						entityiterator.setDeltaMovement(new Vec3((0.9 * immediatesourceentity.getLookAngle().x), (0.5 * immediatesourceentity.getLookAngle().y), (0.9 * immediatesourceentity.getLookAngle().z)));
-						entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC), immediatesourceentity, entity),
+						entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.PLAYER_ATTACK), immediatesourceentity, entity),
 								(float) ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).strengthStat / 3));
 					}
 				}

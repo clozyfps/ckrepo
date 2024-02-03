@@ -5,10 +5,10 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.core.BlockPos;
 
@@ -40,7 +40,8 @@ public class FlowerFieldHanamiReplaceProcedure {
 										.collect(Collectors.toList());
 								for (Entity entityiterator : _entfound) {
 									if (!(entity == entityiterator) && !(entityiterator instanceof ItemEntity)) {
-										entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC), entity), 16);
+										entityiterator.hurt(new DamageSource(
+												world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:cursed_energy_damage"))), entity), 16);
 									} else if (entityiterator instanceof ItemEntity) {
 										if (!entityiterator.level.isClientSide())
 											entityiterator.discard();

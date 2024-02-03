@@ -27,6 +27,7 @@ import net.mcreator.craftkaisen.client.particle.NueElectricityParticle;
 import net.mcreator.craftkaisen.client.particle.MistPurpleParticle;
 import net.mcreator.craftkaisen.client.particle.LapseParticleParticle;
 import net.mcreator.craftkaisen.client.particle.InfinityParticleParticle;
+import net.mcreator.craftkaisen.client.particle.IceCloudParticle;
 import net.mcreator.craftkaisen.client.particle.FireArrowParticleParticle;
 import net.mcreator.craftkaisen.client.particle.EvadeParticleParticle;
 import net.mcreator.craftkaisen.client.particle.DomainClashParticleParticle;
@@ -70,5 +71,6 @@ public class CraftKaisenModParticles {
 		event.registerSpriteSet(CraftKaisenModParticleTypes.SHRINE_SLICE_3.get(), ShrineSlice3Particle::provider);
 		event.registerSpriteSet(CraftKaisenModParticleTypes.PURPLE_BLOOD_SLASH.get(), PurpleBloodSlashParticle::provider);
 		event.registerSpriteSet(CraftKaisenModParticleTypes.BLACK_LIGHTNING.get(), BlackLightningParticle::provider);
+		event.registerSpriteSet(CraftKaisenModParticleTypes.ICE_CLOUD.get(), IceCloudParticle::provider);
 	}
 }

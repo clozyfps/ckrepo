@@ -12,15 +12,16 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.Direction;
 import net.minecraft.commands.Commands;
 
+import net.mcreator.craftkaisen.procedures.AdaptionProgressCursedTechProcedure;
 import net.mcreator.craftkaisen.procedures.AdaptionProgressCommandProcedure;
 
 @Mod.EventBusSubscriber
 public class AdaptProgressCommand {
 	@SubscribeEvent
 	public static void registerCommand(RegisterCommandsEvent event) {
-		event.getDispatcher().register(Commands.literal("adaptionprogress")
+		event.getDispatcher().register(Commands.literal("adaption")
 
-				.executes(arguments -> {
+				.then(Commands.literal("Basic").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
@@ -34,6 +35,20 @@ public class AdaptProgressCommand {
 
 					AdaptionProgressCommandProcedure.execute(entity);
 					return 0;
-				}));
+				})).then(Commands.literal("Technique").executes(arguments -> {
+					Level world = arguments.getSource().getUnsidedLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null && world instanceof ServerLevel _servLevel)
+						entity = FakePlayerFactory.getMinecraft(_servLevel);
+					Direction direction = Direction.DOWN;
+					if (entity != null)
+						direction = entity.getDirection();
+
+					AdaptionProgressCursedTechProcedure.execute(entity);
+					return 0;
+				})));
 	}
 }
