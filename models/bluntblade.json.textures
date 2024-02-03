@@ -2,7 +2,7 @@
   "mappings": {
     "default": {
       "map": {
-        "0": "nanamiknifetexture"
+        "0": "bluntbladetexture"
       },
       "name": "default"
     }

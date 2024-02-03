@@ -6,7 +6,7 @@
     "renderType": 1,
     "blockingRenderType": 0,
     "texture": "air102_layer_2",
-    "customModelName": "nanamikentoknife:default",
+    "customModelName": "bluntblade:default",
     "blockingModelName": "Normal blocking",
     "name": "Blunt Blade",
     "specialInformation": {

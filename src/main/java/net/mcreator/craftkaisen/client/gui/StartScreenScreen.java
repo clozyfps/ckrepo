@@ -24,9 +24,9 @@ public class StartScreenScreen extends AbstractContainerScreen<StartScreenMenu> 
 	private final Level world;
 	private final int x, y, z;
 	private final Player entity;
-	ImageButton imagebutton_button1png;
-	ImageButton imagebutton_smallbutton1png;
-	ImageButton imagebutton_smallbutton1png1;
+	ImageButton imagebutton_guiarrow_left;
+	ImageButton imagebutton_guiarrow_right;
+	ImageButton imagebutton_save_button;
 
 	public StartScreenScreen(StartScreenMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -56,16 +56,16 @@ public class StartScreenScreen extends AbstractContainerScreen<StartScreenMenu> 
 		RenderSystem.setShaderTexture(0, texture);
 		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
 
-		RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/startscroll-1.png_1.png"));
-		this.blit(ms, this.leftPos + -73, this.topPos + -112, 0, 0, 140, 212, 140, 212);
+		RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/race_menu.png"));
+		this.blit(ms, this.leftPos + -214, this.topPos + -120, 0, 0, 427, 240, 427, 240);
 
 		if (ReturnHumanProcedure.execute(entity)) {
-			RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/humanicon-1.png.png"));
-			this.blit(ms, this.leftPos + -73, this.topPos + -115, 0, 0, 140, 212, 140, 212);
+			RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/race_sorcerer.png"));
+			this.blit(ms, this.leftPos + -214, this.topPos + -120, 0, 0, 427, 240, 427, 240);
 		}
 		if (ReturnCursedSpiritProcedure.execute(entity)) {
-			RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/spiriticon-1.png.png"));
-			this.blit(ms, this.leftPos + -73, this.topPos + -115, 0, 0, 140, 212, 140, 212);
+			RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/race_curse.png"));
+			this.blit(ms, this.leftPos + -214, this.topPos + -120, 0, 0, 427, 240, 427, 240);
 		}
 		RenderSystem.disableBlend();
 	}
@@ -86,14 +86,10 @@ public class StartScreenScreen extends AbstractContainerScreen<StartScreenMenu> 
 
 	@Override
 	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
-		this.font.draw(poseStack, Component.translatable("gui.craft_kaisen.start_screen.label_empty"), 12, 24, -12829636);
-		this.font.draw(poseStack, Component.translatable("gui.craft_kaisen.start_screen.label_empty1"), -23, 24, -12829636);
-		this.font.draw(poseStack, Component.translatable("gui.craft_kaisen.start_screen.label_race"), -12, -65, -13421773);
 		if (ReturnHumanProcedure.execute(entity))
-			this.font.draw(poseStack, Component.translatable("gui.craft_kaisen.start_screen.label_human"), -14, -44, -13547705);
+			this.font.draw(poseStack, Component.translatable("gui.craft_kaisen.start_screen.label_human"), -19, 23, -13547705);
 		if (ReturnCursedSpiritProcedure.execute(entity))
-			this.font.draw(poseStack, Component.translatable("gui.craft_kaisen.start_screen.label_cursed_spirit"), -14, -44, -12380907);
-		this.font.draw(poseStack, Component.translatable("gui.craft_kaisen.start_screen.label_finish"), -13, 37, -12829636);
+			this.font.draw(poseStack, Component.translatable("gui.craft_kaisen.start_screen.label_cursed_spirit"), -19, 23, -12380907);
 	}
 
 	@Override
@@ -104,29 +100,29 @@ public class StartScreenScreen extends AbstractContainerScreen<StartScreenMenu> 
 	@Override
 	public void init() {
 		super.init();
-		imagebutton_button1png = new ImageButton(this.leftPos + -13, this.topPos + 37, 23, 12, 0, 0, 12, new ResourceLocation("craft_kaisen:textures/screens/atlas/imagebutton_button1png.png"), 23, 24, e -> {
+		imagebutton_guiarrow_left = new ImageButton(this.leftPos + 23, this.topPos + 58, 13, 19, 0, 0, 19, new ResourceLocation("craft_kaisen:textures/screens/atlas/imagebutton_guiarrow_left.png"), 13, 38, e -> {
 			if (true) {
 				CraftKaisenMod.PACKET_HANDLER.sendToServer(new StartScreenButtonMessage(0, x, y, z));
 				StartScreenButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
 		});
-		guistate.put("button:imagebutton_button1png", imagebutton_button1png);
-		this.addRenderableWidget(imagebutton_button1png);
-		imagebutton_smallbutton1png = new ImageButton(this.leftPos + -28, this.topPos + 24, 20, 10, 0, 0, 10, new ResourceLocation("craft_kaisen:textures/screens/atlas/imagebutton_smallbutton1png.png"), 20, 20, e -> {
+		guistate.put("button:imagebutton_guiarrow_left", imagebutton_guiarrow_left);
+		this.addRenderableWidget(imagebutton_guiarrow_left);
+		imagebutton_guiarrow_right = new ImageButton(this.leftPos + -38, this.topPos + 58, 13, 19, 0, 0, 19, new ResourceLocation("craft_kaisen:textures/screens/atlas/imagebutton_guiarrow_right.png"), 13, 38, e -> {
 			if (true) {
 				CraftKaisenMod.PACKET_HANDLER.sendToServer(new StartScreenButtonMessage(1, x, y, z));
 				StartScreenButtonMessage.handleButtonAction(entity, 1, x, y, z);
 			}
 		});
-		guistate.put("button:imagebutton_smallbutton1png", imagebutton_smallbutton1png);
-		this.addRenderableWidget(imagebutton_smallbutton1png);
-		imagebutton_smallbutton1png1 = new ImageButton(this.leftPos + 5, this.topPos + 24, 20, 10, 0, 0, 10, new ResourceLocation("craft_kaisen:textures/screens/atlas/imagebutton_smallbutton1png1.png"), 20, 20, e -> {
+		guistate.put("button:imagebutton_guiarrow_right", imagebutton_guiarrow_right);
+		this.addRenderableWidget(imagebutton_guiarrow_right);
+		imagebutton_save_button = new ImageButton(this.leftPos + -21, this.topPos + 59, 40, 17, 0, 0, 17, new ResourceLocation("craft_kaisen:textures/screens/atlas/imagebutton_save_button.png"), 40, 34, e -> {
 			if (true) {
 				CraftKaisenMod.PACKET_HANDLER.sendToServer(new StartScreenButtonMessage(2, x, y, z));
 				StartScreenButtonMessage.handleButtonAction(entity, 2, x, y, z);
 			}
 		});
-		guistate.put("button:imagebutton_smallbutton1png1", imagebutton_smallbutton1png1);
-		this.addRenderableWidget(imagebutton_smallbutton1png1);
+		guistate.put("button:imagebutton_save_button", imagebutton_save_button);
+		this.addRenderableWidget(imagebutton_save_button);
 	}
 }
