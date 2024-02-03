@@ -8,7 +8,10 @@ import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.network.chat.Component;
+
+import net.mcreator.craftkaisen.procedures.InvertedSpearLivingEntityIsHitWithToolProcedure;
 
 import java.util.List;
 
@@ -39,6 +42,13 @@ public class InvertedSpearItem extends SwordItem {
 				return Ingredient.of();
 			}
 		}, 3, -1f, new Item.Properties());
+	}
+
+	@Override
+	public boolean hurtEnemy(ItemStack itemstack, LivingEntity entity, LivingEntity sourceentity) {
+		boolean retval = super.hurtEnemy(itemstack, entity, sourceentity);
+		InvertedSpearLivingEntityIsHitWithToolProcedure.execute(entity);
+		return retval;
 	}
 
 	@Override

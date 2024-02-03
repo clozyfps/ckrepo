@@ -25,6 +25,7 @@ import net.minecraft.server.level.ServerBossEvent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.chat.Component;
 
 import net.mcreator.craftkaisen.procedures.MegunaOnEntityTickUpdateProcedure;
 import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
@@ -41,6 +42,8 @@ public class MegunaEntity extends Monster {
 		maxUpStep = 0.6f;
 		xpReward = 0;
 		setNoAi(false);
+		setCustomName(Component.literal("§4Meguna"));
+		setCustomNameVisible(true);
 		setPersistenceRequired();
 	}
 

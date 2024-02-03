@@ -56,6 +56,7 @@ public class CraftKaisenModTabs {
 					tabData.accept(CraftKaisenModItems.URAUME_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.JINICHI_ZENIN_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.MEI_MEI_SPAWN_EGG.get());
+					tabData.accept(CraftKaisenModItems.SHINJUKU_GOJO_SPAWN_EGG.get());
 				}).withSearchBar());
 		event.registerCreativeModeTab(new ResourceLocation("craft_kaisen", "ck_weapons"),
 				builder -> builder.title(Component.translatable("item_group.craft_kaisen.ck_weapons")).icon(() -> new ItemStack(CraftKaisenModItems.PLAYFUL_CLOUD.get())).displayItems((parameters, tabData) -> {

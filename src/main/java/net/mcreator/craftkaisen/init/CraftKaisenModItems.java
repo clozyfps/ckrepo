@@ -258,6 +258,7 @@ public class CraftKaisenModItems {
 	public static final RegistryObject<Item> MAHORAGA_OUTFIT_LEGGINGS = REGISTRY.register("mahoraga_outfit_leggings", () -> new MahoragaOutfitItem.Leggings());
 	public static final RegistryObject<Item> BATTLE_AXE = REGISTRY.register("battle_axe", () -> new BattleAxeItem());
 	public static final RegistryObject<Item> MEI_MEI_SPAWN_EGG = REGISTRY.register("mei_mei_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.MEI_MEI, -16250865, -1, new Item.Properties()));
+	public static final RegistryObject<Item> SHINJUKU_GOJO_SPAWN_EGG = REGISTRY.register("shinjuku_gojo_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.SHINJUKU_GOJO, -16777216, -1, new Item.Properties()));
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));

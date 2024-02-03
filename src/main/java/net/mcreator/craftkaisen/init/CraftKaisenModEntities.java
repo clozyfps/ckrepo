@@ -36,6 +36,7 @@ import net.mcreator.craftkaisen.entity.SmallPoxDomainSpawnerEntity;
 import net.mcreator.craftkaisen.entity.SmallPoxDeityEntity;
 import net.mcreator.craftkaisen.entity.SlicingExcorismProjectileEntity;
 import net.mcreator.craftkaisen.entity.SleepRangedProjectileEntity;
+import net.mcreator.craftkaisen.entity.ShinjukuGojoEntity;
 import net.mcreator.craftkaisen.entity.ShadowFrogEntity;
 import net.mcreator.craftkaisen.entity.ScouterCrowProjectileEntity;
 import net.mcreator.craftkaisen.entity.SatoruGojoEntity;
@@ -525,6 +526,10 @@ public class CraftKaisenModEntities {
 			EntityType.Builder.<CrowMeiMeiEntity>of(CrowMeiMeiEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CrowMeiMeiEntity::new)
 
 					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<ShinjukuGojoEntity>> SHINJUKU_GOJO = register("shinjuku_gojo",
+			EntityType.Builder.<ShinjukuGojoEntity>of(ShinjukuGojoEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(ShinjukuGojoEntity::new)
+
+					.sized(0.6f, 1.8f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -614,6 +619,7 @@ public class CraftKaisenModEntities {
 			MeiMeiEntity.init();
 			CrowEntity.init();
 			CrowMeiMeiEntity.init();
+			ShinjukuGojoEntity.init();
 		});
 	}
 
@@ -700,5 +706,6 @@ public class CraftKaisenModEntities {
 		event.put(MEI_MEI.get(), MeiMeiEntity.createAttributes().build());
 		event.put(CROW.get(), CrowEntity.createAttributes().build());
 		event.put(CROW_MEI_MEI.get(), CrowMeiMeiEntity.createAttributes().build());
+		event.put(SHINJUKU_GOJO.get(), ShinjukuGojoEntity.createAttributes().build());
 	}
 }

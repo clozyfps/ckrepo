@@ -25,6 +25,7 @@ import net.mcreator.craftkaisen.client.renderer.TakadaRenderer;
 import net.mcreator.craftkaisen.client.renderer.SuguruGetoRenderer;
 import net.mcreator.craftkaisen.client.renderer.SmallPoxDomainSpawnerRenderer;
 import net.mcreator.craftkaisen.client.renderer.SmallPoxDeityRenderer;
+import net.mcreator.craftkaisen.client.renderer.ShinjukuGojoRenderer;
 import net.mcreator.craftkaisen.client.renderer.ShadowFrogRenderer;
 import net.mcreator.craftkaisen.client.renderer.ScouterCrowProjectileRenderer;
 import net.mcreator.craftkaisen.client.renderer.SatoruGojoRenderer;
@@ -220,5 +221,6 @@ public class CraftKaisenModEntityRenderers {
 		event.registerEntityRenderer(CraftKaisenModEntities.CROW.get(), CrowRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.SCOUTER_CROW_PROJECTILE.get(), ScouterCrowProjectileRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.CROW_MEI_MEI.get(), CrowMeiMeiRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.SHINJUKU_GOJO.get(), ShinjukuGojoRenderer::new);
 	}
 }
