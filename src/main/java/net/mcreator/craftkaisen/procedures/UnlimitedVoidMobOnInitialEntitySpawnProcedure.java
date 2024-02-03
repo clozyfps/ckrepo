@@ -6,11 +6,10 @@ import net.minecraft.world.entity.Entity;
 import net.mcreator.craftkaisen.CraftKaisenMod;
 
 public class UnlimitedVoidMobOnInitialEntitySpawnProcedure {
-	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
+	public static void execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		CraftKaisenMod.queueServerWork(3000, () -> {
-			VoidRemoveProcedure.execute(world, (entity.getX()), (entity.getY()), (entity.getZ()));
+		CraftKaisenMod.queueServerWork(1200, () -> {
 			if (!entity.level.isClientSide())
 				entity.discard();
 		});

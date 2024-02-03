@@ -80,6 +80,7 @@ import net.mcreator.craftkaisen.client.model.ModelMahoraga;
 import net.mcreator.craftkaisen.client.model.ModelJogoModel;
 import net.mcreator.craftkaisen.client.model.ModelItadoriYuji;
 import net.mcreator.craftkaisen.client.model.ModelInventoryCurse;
+import net.mcreator.craftkaisen.client.model.ModelIceBlock;
 import net.mcreator.craftkaisen.client.model.ModelHakariDoorsOpen;
 import net.mcreator.craftkaisen.client.model.ModelHakariDoorsClosed;
 import net.mcreator.craftkaisen.client.model.ModelFrame;
@@ -159,6 +160,7 @@ public class CraftKaisenModModels {
 		event.registerLayerDefinition(Modelcabin.LAYER_LOCATION, Modelcabin::createBodyLayer);
 		event.registerLayerDefinition(ModelMegumiFushiguro.LAYER_LOCATION, ModelMegumiFushiguro::createBodyLayer);
 		event.registerLayerDefinition(Modelfemaleuniform.LAYER_LOCATION, Modelfemaleuniform::createBodyLayer);
+		event.registerLayerDefinition(ModelIceBlock.LAYER_LOCATION, ModelIceBlock::createBodyLayer);
 		event.registerLayerDefinition(Modelframewall.LAYER_LOCATION, Modelframewall::createBodyLayer);
 		event.registerLayerDefinition(Modelchoso.LAYER_LOCATION, Modelchoso::createBodyLayer);
 		event.registerLayerDefinition(Modelbodyrepel1.LAYER_LOCATION, Modelbodyrepel1::createBodyLayer);

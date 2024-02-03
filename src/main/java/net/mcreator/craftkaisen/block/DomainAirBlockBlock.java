@@ -20,9 +20,12 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.MenuProvider;
+import net.minecraft.util.RandomSource;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.network.chat.Component;
 import net.minecraft.core.BlockPos;
 
+import net.mcreator.craftkaisen.procedures.DomainBlockDecayProcedure;
 import net.mcreator.craftkaisen.block.entity.DomainAirBlockBlockEntity;
 
 import java.util.List;
@@ -64,6 +67,22 @@ public class DomainAirBlockBlock extends Block implements EntityBlock {
 		if (!dropsOriginal.isEmpty())
 			return dropsOriginal;
 		return Collections.singletonList(new ItemStack(Blocks.AIR));
+	}
+
+	@Override
+	public void onPlace(BlockState blockstate, Level world, BlockPos pos, BlockState oldState, boolean moving) {
+		super.onPlace(blockstate, world, pos, oldState, moving);
+		world.scheduleTick(pos, this, 1200);
+	}
+
+	@Override
+	public void tick(BlockState blockstate, ServerLevel world, BlockPos pos, RandomSource random) {
+		super.tick(blockstate, world, pos, random);
+		int x = pos.getX();
+		int y = pos.getY();
+		int z = pos.getZ();
+		DomainBlockDecayProcedure.execute(world, x, y, z);
+		world.scheduleTick(pos, this, 1200);
 	}
 
 	@Override

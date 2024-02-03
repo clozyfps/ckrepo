@@ -304,7 +304,7 @@ public class SetMovesProcedure {
 				}
 			}
 			if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Ice Formation")) {
-				entity.getPersistentData().putDouble("maxMoves", 3);
+				entity.getPersistentData().putDouble("maxMoves", 4);
 				if (entity.getPersistentData().getDouble("moveNumber") == 1) {
 					entity.getPersistentData().putString("moveDisplay", "Ice Needle");
 					entity.getPersistentData().putDouble("moveCost", 6);
@@ -316,6 +316,10 @@ public class SetMovesProcedure {
 				if (entity.getPersistentData().getDouble("moveNumber") == 3) {
 					entity.getPersistentData().putString("moveDisplay", "Frost Calm");
 					entity.getPersistentData().putDouble("moveCost", 12);
+				}
+				if (entity.getPersistentData().getDouble("moveNumber") == 4) {
+					entity.getPersistentData().putString("moveDisplay", "Glacial Embrace");
+					entity.getPersistentData().putDouble("moveCost", 20);
 				}
 			}
 			if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Private Pure Love Train")) {

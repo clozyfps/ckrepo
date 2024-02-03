@@ -5177,18 +5177,6 @@
             "type": "entity"
           },
           {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
             "name": "world",
             "type": "world"
           }
@@ -22792,6 +22780,22 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -27048,6 +27052,262 @@
         ]
       },
       "path": "~/Mobs"
+    },
+    {
+      "name": "FrozenSolid",
+      "type": "potioneffect",
+      "sortid": 1167,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "frozen_solid",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/potion/FrozenSolidMobEffect.java"
+        ]
+      },
+      "path": "~/Potions"
+    },
+    {
+      "name": "FrozenSolidOnEffectActiveTick",
+      "type": "procedure",
+      "sortid": 1168,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "frozen_solid_on_effect_active_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/FrozenSolidOnEffectActiveTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Abilities/IceFormation"
+    },
+    {
+      "name": "BindingIce",
+      "type": "procedure",
+      "sortid": 1169,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "binding_ice",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/BindingIceProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/IceFormation"
+    },
+    {
+      "name": "BindingIceBlockSpawn",
+      "type": "procedure",
+      "sortid": 1170,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "binding_ice_block_spawn",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/BindingIceBlockSpawnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Abilities/IceFormation"
+    },
+    {
+      "name": "BindingIceBlockTimerTick",
+      "type": "procedure",
+      "sortid": 1171,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "binding_ice_block_timer_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/BindingIceBlockTimerTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/IceFormation"
+    },
+    {
+      "name": "BindingIceBlock",
+      "type": "livingentity",
+      "sortid": 1172,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "binding_ice_block",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/BindingIceBlockRenderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/BindingIceBlockEntity.java"
+        ]
+      },
+      "path": "~/Mobs/Abilities"
+    },
+    {
+      "name": "IceDomainRemove",
+      "type": "procedure",
+      "sortid": 1173,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ice_domain_remove",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/IceDomainRemoveProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/IceFormation"
+    },
+    {
+      "name": "IceDomainFloor",
+      "type": "block",
+      "sortid": 1174,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ice_domain_floor",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/models/item/ice_domain_floor.json",
+          "src/main/java/net/mcreator/craftkaisen/block/IceDomainFloorBlock.java",
+          "src/main/java/net/mcreator/craftkaisen/block/entity/IceDomainFloorBlockEntity.java",
+          "src/main/resources/assets/craft_kaisen/blockstates/ice_domain_floor.json",
+          "src/main/resources/assets/craft_kaisen/models/block/ice_domain_floor.json"
+        ]
+      },
+      "path": "~/Blocks"
+    },
+    {
+      "name": "IceDomainWall",
+      "type": "block",
+      "sortid": 1175,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ice_domain_wall",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/models/item/ice_domain_wall.json",
+          "src/main/resources/assets/craft_kaisen/blockstates/ice_domain_wall.json",
+          "src/main/java/net/mcreator/craftkaisen/block/IceDomainWallBlock.java",
+          "src/main/java/net/mcreator/craftkaisen/block/entity/IceDomainWallBlockEntity.java",
+          "src/main/resources/assets/craft_kaisen/models/block/ice_domain_wall.json"
+        ]
+      },
+      "path": "~/Blocks"
+    },
+    {
+      "name": "IceCloud",
+      "type": "particle",
+      "sortid": 1176,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ice_cloud",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/particles/ice_cloud.json",
+          "src/main/java/net/mcreator/craftkaisen/client/particle/IceCloudParticle.java"
+        ]
+      },
+      "path": "~/Particles"
+    },
+    {
+      "name": "DomainBlockDecay",
+      "type": "procedure",
+      "sortid": 1177,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "domain_block_decay",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DomainBlockDecayProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures"
     }
   ],
   "variable_elements": [
@@ -27836,6 +28096,30 @@
       ],
       "category": "neutral",
       "subtitle": ""
+    },
+    {
+      "name": "freezingwind",
+      "files": [
+        "freezingwind"
+      ],
+      "category": "player",
+      "subtitle": ""
+    },
+    {
+      "name": "icedomain",
+      "files": [
+        "iceformation"
+      ],
+      "category": "player",
+      "subtitle": ""
+    },
+    {
+      "name": "reversefreezinwind",
+      "files": [
+        "reversefreezingwind"
+      ],
+      "category": "player",
+      "subtitle": ""
     }
   ],
   "language_map": {
@@ -27872,6 +28156,7 @@
       "item.craft_kaisen.toge_inumaki_spawn_egg": "Toge Inumaki Spawn Egg",
       "gui.craft_kaisen.body_shape_overlay.label_ctrl_rope": "CTRL - Rope",
       "gui.craft_kaisen.soul_multiplicity_overlay.label_alt_soul_isomer": "ALT - Soul Isomer",
+      "block.craft_kaisen.ice_domain_wall": "Domain Block",
       "item.craft_kaisen.naginata": "Naginata",
       "gui.craft_kaisen.main_menu.label_0": "0",
       "advancements.special_grade.title": "Special Grade",
@@ -27988,6 +28273,7 @@
       "item.craft_kaisen.reversal_red": "Reversal Red",
       "effect.craft_kaisen.cooldown": "Cooldown",
       "advancements.young_fishand_reverse_punishment.descr": "Kill Mahito",
+      "entity.craft_kaisen.binding_ice_block": "Binding Ice Block",
       "entity.craft_kaisen.hanami": "Hanami",
       "gui.craft_kaisen.ct_move_gui.label_page": "Page:",
       "entity.craft_kaisen.frame_ray": "Frame Ray",
@@ -28004,6 +28290,7 @@
       "death.attack.electric_damage.player": "%1$s died whilst trying to escape %2$s",
       "item.craft_kaisen.battle_axe": "Battle Axe",
       "entity.craft_kaisen.awakened_maki": "Maki Zenin",
+      "subtitles.icedomain": "",
       "effect.craft_kaisen.soul_multiplicity_active": "SMactive",
       "death.attack.frame_attack.player": "%1$s died whilst trying to escape %2$s",
       "gui.craft_kaisen.main_menu.tooltip_cursed_technique": "Cursed Technique",
@@ -28152,6 +28439,7 @@
       "item_group.craft_kaisen.ck_mobs": "Craft Kaisen Humans",
       "gamerule.maximumSukunaVesselPlayers": "MaximumSukunaVesselPlayers (singeplayer)",
       "itemGroup.tabck_mobs": "Craft Kaisen Humans",
+      "block.craft_kaisen.ice_domain_floor": "Domain Block",
       "item.craft_kaisen.geto_outfit_boots": "Geto Sandals",
       "advancements.cursed_spirit.descr": "Become a Cursed Spirit",
       "entity.craft_kaisen.riko_amanai": "Riko Amanai",
@@ -28179,6 +28467,7 @@
       "entity.craft_kaisen.old_lady": "Old Lady",
       "entity.craft_kaisen.ryomen_sukuna": "Ryomen Sukuna",
       "item.craft_kaisen.twist_ranged": "Twist Ranged",
+      "subtitles.freezingwind": "",
       "advancements.six_eyes_advancement.title": "Six Eyes",
       "gui.craft_kaisen.start_screen.label_finish": "SAVE",
       "item.craft_kaisen.nue_spawn_egg": "Nue Spawn Egg",
@@ -28333,6 +28622,7 @@
       "effect.craft_kaisen.toji_cooldown": "TojiCooldown",
       "advancements.fearsome_womb.descr": "Kill a Finger Bearer",
       "item.craft_kaisen.blast_away_ranged": "Blast Away Ranged",
+      "subtitles.reversefreezinwind": "",
       "effect.craft_kaisen.pure_love_active": "PureLoveActive",
       "advancements.divergent_fists.descr": "Reach Enough Cursed Energy Mastery",
       "advancements.maximum_elephant_advancement.title": "Maximum Elephant",
@@ -28340,6 +28630,7 @@
       "advancements.mastered_reversed_cursed_technique.descr": "Master RCT",
       "entity.craft_kaisen.frozen_frame": "Frozen Frame",
       "gui.craft_kaisen.phone_gui.BountyPlayer": "Bounty Amount",
+      "effect.craft_kaisen.frozen_solid": "Frozen Solid",
       "entity.craft_kaisen.jogo": "Jogo",
       "death.attack.slashing_damage": "%1$s was cut to death",
       "item.craft_kaisen.small_pox_deity_spawn_egg": "Small Pox Deity Spawn Egg",

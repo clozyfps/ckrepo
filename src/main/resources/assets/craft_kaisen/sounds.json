@@ -119,5 +119,29 @@
         "stream": false
       }
     ]
+  },
+  "freezingwind": {
+    "sounds": [
+      {
+        "name": "craft_kaisen:freezingwind",
+        "stream": false
+      }
+    ]
+  },
+  "icedomain": {
+    "sounds": [
+      {
+        "name": "craft_kaisen:iceformation",
+        "stream": false
+      }
+    ]
+  },
+  "reversefreezinwind": {
+    "sounds": [
+      {
+        "name": "craft_kaisen:reversefreezingwind",
+        "stream": false
+      }
+    ]
   }
 }

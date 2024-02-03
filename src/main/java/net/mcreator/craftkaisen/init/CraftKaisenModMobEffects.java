@@ -39,6 +39,7 @@ import net.mcreator.craftkaisen.potion.PiercingBloodMobEffect;
 import net.mcreator.craftkaisen.potion.NueElectricityEffectMobEffect;
 import net.mcreator.craftkaisen.potion.LapseBlueControlMobEffect;
 import net.mcreator.craftkaisen.potion.HeianSlicesMobEffect;
+import net.mcreator.craftkaisen.potion.FrozenSolidMobEffect;
 import net.mcreator.craftkaisen.potion.FrameOnMobEffect;
 import net.mcreator.craftkaisen.potion.FrameEnableMobEffect;
 import net.mcreator.craftkaisen.potion.FlowMobEffect;
@@ -104,4 +105,5 @@ public class CraftKaisenModMobEffects {
 	public static final RegistryObject<MobEffect> FLOW = REGISTRY.register("flow", () -> new FlowMobEffect());
 	public static final RegistryObject<MobEffect> FRAME_ENABLE = REGISTRY.register("frame_enable", () -> new FrameEnableMobEffect());
 	public static final RegistryObject<MobEffect> FRAME_ON = REGISTRY.register("frame_on", () -> new FrameOnMobEffect());
+	public static final RegistryObject<MobEffect> FROZEN_SOLID = REGISTRY.register("frozen_solid", () -> new FrozenSolidMobEffect());
 }
