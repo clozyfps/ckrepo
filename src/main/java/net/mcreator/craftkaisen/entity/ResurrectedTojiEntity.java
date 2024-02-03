@@ -39,6 +39,7 @@ public class ResurrectedTojiEntity extends Monster {
 		maxUpStep = 0.6f;
 		xpReward = 0;
 		setNoAi(false);
+		setPersistenceRequired();
 		this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(CraftKaisenModItems.PLAYFUL_CLOUD.get()));
 	}
 
@@ -65,6 +66,11 @@ public class ResurrectedTojiEntity extends Monster {
 	@Override
 	public MobType getMobType() {
 		return MobType.UNDEFINED;
+	}
+
+	@Override
+	public boolean removeWhenFarAway(double distanceToClosestPlayer) {
+		return false;
 	}
 
 	@Override

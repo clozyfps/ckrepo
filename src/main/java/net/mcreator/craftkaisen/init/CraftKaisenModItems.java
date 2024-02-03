@@ -260,6 +260,7 @@ public class CraftKaisenModItems {
 	public static final RegistryObject<Item> MEI_MEI_SPAWN_EGG = REGISTRY.register("mei_mei_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.MEI_MEI, -16250865, -1, new Item.Properties()));
 	public static final RegistryObject<Item> DOMAIN_AIR_BLOCK = block(CraftKaisenModBlocks.DOMAIN_AIR_BLOCK);
 	public static final RegistryObject<Item> SHINJUKU_GOJO_SPAWN_EGG = REGISTRY.register("shinjuku_gojo_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.SHINJUKU_GOJO, -16777216, -1, new Item.Properties()));
+	public static final RegistryObject<Item> KENJAKU_SPAWN_EGG = REGISTRY.register("kenjaku_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.KENJAKU, -15459797, -2055680, new Item.Properties()));
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));

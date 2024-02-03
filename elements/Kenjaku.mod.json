@@ -2,10 +2,10 @@
   "_fv": 57,
   "_type": "livingentity",
   "definition": {
-    "mobName": "Gojo Satoru (Shinjuku Showdown)",
-    "mobLabel": "§bAwakened Gojo",
+    "mobName": "Kenjaku",
+    "mobLabel": "§6Kenjaku",
     "mobModelName": "Biped",
-    "mobModelTexture": "gojo_satoru_minecraft_skin.png",
+    "mobModelTexture": "kenjaku-jogo-do-abate-minecraft-skin-on-planetminecraft-com.png",
     "transparentModelCondition": {
       "fixedValue": false
     },
@@ -28,18 +28,18 @@
     "mountedYOffset": 0.0,
     "hasSpawnEgg": true,
     "spawnEggBaseColor": {
-      "value": -16777216,
+      "value": -15459797,
       "falpha": 0.0
     },
     "spawnEggDotColor": {
-      "value": -1,
+      "value": -2055680,
       "falpha": 0.0
     },
     "creativeTab": {
       "value": "CUSTOM:CkMobs"
     },
     "isBoss": true,
-    "bossBarColor": "BLUE",
+    "bossBarColor": "YELLOW",
     "bossBarType": "PROGRESS",
     "equipmentMainHand": {
       "value": ""
@@ -61,22 +61,22 @@
     },
     "mobBehaviourType": "Mob",
     "mobCreatureType": "UNDEFINED",
-    "attackStrength": 119,
-    "attackKnockback": 5.0,
-    "knockbackResistance": 1.0,
+    "attackStrength": 60,
+    "attackKnockback": 3.0,
+    "knockbackResistance": 0.0,
     "movementSpeed": 0.3,
     "stepHeight": 0.6,
-    "armorBaseValue": 0.5,
+    "armorBaseValue": 0.4,
     "trackingRange": 64,
     "followRange": 50,
-    "health": 1024,
+    "health": 790,
     "xpAmount": 0,
     "waterMob": false,
     "breatheUnderwater": {
       "fixedValue": false
     },
     "pushedByFluids": {
-      "fixedValue": false
+      "fixedValue": true
     },
     "flyingMob": false,
     "guiBoundTo": "<NONE>",
@@ -115,12 +115,9 @@
       "value": ""
     },
     "entityDataEntries": [],
-    "onMobTickUpdate": {
-      "name": "ShinjukuGojoOnEntityTickUpdate"
-    },
     "hasAI": true,
     "aiBase": "(none)",
-    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"attack_on_collide\"><field name=\"speed\">1.2</field><field name=\"longmemory\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"wander\"><field name=\"speed\">1</field><field name=\"condition\">null,null</field><next><block type=\"attack_action\"><field name=\"callhelp\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"look_around\"><field name=\"condition\">null,null</field><next><block type=\"swim_in_water\"><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></next></block></xml>",
+    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"attack_on_collide\"><field name=\"speed\">1.7</field><field name=\"longmemory\">TRUE</field><field name=\"condition\">null,null</field><next><block type=\"wander\"><field name=\"speed\">1</field><field name=\"condition\">null,null</field><next><block type=\"attack_action\"><field name=\"callhelp\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"look_around\"><field name=\"condition\">null,null</field><next><block type=\"swim_in_water\"><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></next></block></xml>",
     "breedable": false,
     "tameable": false,
     "breedTriggerItems": [],
@@ -132,7 +129,7 @@
     "rangedAttackInterval": 20,
     "rangedAttackRadius": 10.0,
     "spawnThisMob": false,
-    "doesDespawnWhenIdle": false,
+    "doesDespawnWhenIdle": true,
     "spawningProbability": 1,
     "mobSpawningType": "ambient",
     "minNumberOfMobsPerGroup": 1,

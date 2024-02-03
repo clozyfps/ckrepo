@@ -77,8 +77,8 @@ public class HollowPurpeWhilstFlyingProcedure {
 					}
 				}
 			}
-			int horizontalRadiusSphere = (int) ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 12) - 1;
-			int verticalRadiusSphere = (int) ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 12) - 1;
+			int horizontalRadiusSphere = (int) (4 + (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 12) - 1;
+			int verticalRadiusSphere = (int) (4 + (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 12) - 1;
 			int yIterationsSphere = verticalRadiusSphere;
 			for (int i = -yIterationsSphere; i <= yIterationsSphere; i++) {
 				for (int xi = -horizontalRadiusSphere; xi <= horizontalRadiusSphere; xi++) {

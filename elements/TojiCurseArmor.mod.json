@@ -5,7 +5,7 @@
     "enableHelmet": false,
     "textureHelmet": "",
     "enableBody": true,
-    "textureBody": "inventorycurse",
+    "textureBody": "nyt",
     "enableLeggings": false,
     "textureLeggings": "",
     "enableBoots": false,
@@ -15,7 +15,7 @@
     },
     "armorTextureFile": "template",
     "helmetName": "Toji Curse Armor Helmet",
-    "bodyName": "Toji Curse Armor ",
+    "bodyName": "Inventory Curse Armor ",
     "leggingsName": "Toji Curse Armor Leggings",
     "bootsName": "Toji Curse Armor Boots",
     "helmetSpecialInformation": {
@@ -58,6 +58,18 @@
     "bodyImmuneToFire": false,
     "leggingsImmuneToFire": false,
     "bootsImmuneToFire": false,
+    "helmetPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bodyPiglinNeutral": {
+      "fixedValue": false
+    },
+    "leggingsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bootsPiglinNeutral": {
+      "fixedValue": false
+    },
     "maxDamage": 1000,
     "damageValueHelmet": 2,
     "damageValueBody": 7,

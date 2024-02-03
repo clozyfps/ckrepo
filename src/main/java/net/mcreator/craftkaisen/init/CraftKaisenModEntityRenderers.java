@@ -60,6 +60,7 @@ import net.mcreator.craftkaisen.client.renderer.MalevolentShrineRenderer;
 import net.mcreator.craftkaisen.client.renderer.MahitoRenderer;
 import net.mcreator.craftkaisen.client.renderer.MahitoCloneRenderer;
 import net.mcreator.craftkaisen.client.renderer.KoGuyRenderer;
+import net.mcreator.craftkaisen.client.renderer.KenjakuRenderer;
 import net.mcreator.craftkaisen.client.renderer.JogoRenderer;
 import net.mcreator.craftkaisen.client.renderer.JinichiZeninRenderer;
 import net.mcreator.craftkaisen.client.renderer.InventoryCurseMobRenderer;
@@ -222,5 +223,6 @@ public class CraftKaisenModEntityRenderers {
 		event.registerEntityRenderer(CraftKaisenModEntities.SCOUTER_CROW_PROJECTILE.get(), ScouterCrowProjectileRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.CROW_MEI_MEI.get(), CrowMeiMeiRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.SHINJUKU_GOJO.get(), ShinjukuGojoRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.KENJAKU.get(), KenjakuRenderer::new);
 	}
 }

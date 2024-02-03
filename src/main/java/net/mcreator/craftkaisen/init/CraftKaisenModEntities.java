@@ -78,6 +78,7 @@ import net.mcreator.craftkaisen.entity.MahitoEntity;
 import net.mcreator.craftkaisen.entity.MahitoCloneEntity;
 import net.mcreator.craftkaisen.entity.LapseBlueRangedProjectileEntity;
 import net.mcreator.craftkaisen.entity.KoGuyEntity;
+import net.mcreator.craftkaisen.entity.KenjakuEntity;
 import net.mcreator.craftkaisen.entity.KaichiEntity;
 import net.mcreator.craftkaisen.entity.JogoEntity;
 import net.mcreator.craftkaisen.entity.JinichiZeninEntity;
@@ -530,6 +531,10 @@ public class CraftKaisenModEntities {
 			EntityType.Builder.<ShinjukuGojoEntity>of(ShinjukuGojoEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(ShinjukuGojoEntity::new)
 
 					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<KenjakuEntity>> KENJAKU = register("kenjaku",
+			EntityType.Builder.<KenjakuEntity>of(KenjakuEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(KenjakuEntity::new)
+
+					.sized(0.6f, 1.8f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -620,6 +625,7 @@ public class CraftKaisenModEntities {
 			CrowEntity.init();
 			CrowMeiMeiEntity.init();
 			ShinjukuGojoEntity.init();
+			KenjakuEntity.init();
 		});
 	}
 
@@ -707,5 +713,6 @@ public class CraftKaisenModEntities {
 		event.put(CROW.get(), CrowEntity.createAttributes().build());
 		event.put(CROW_MEI_MEI.get(), CrowMeiMeiEntity.createAttributes().build());
 		event.put(SHINJUKU_GOJO.get(), ShinjukuGojoEntity.createAttributes().build());
+		event.put(KENJAKU.get(), KenjakuEntity.createAttributes().build());
 	}
 }

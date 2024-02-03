@@ -104,8 +104,6 @@ public class WorldEventsProcedure {
 						_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
 					_level.addFreshEntity(entityToSpawn);
 				}
-				if (!world.isClientSide() && world.getServer() != null)
-					world.getServer().getPlayerList().broadcastSystemMessage(Component.literal("\u00A74/eventtp to teleport"), false);
 			}
 			if (randomworldevent == 2) {
 				CraftKaisenModVariables.MapVariables.get(world).nearx = world.getLevelData().getXSpawn() + Mth.nextInt(RandomSource.create(), 100, 1500);
@@ -137,8 +135,6 @@ public class WorldEventsProcedure {
 					world.getServer().getPlayerList()
 							.broadcastSystemMessage(Component.literal(("\u00A74 Night Parade of a Hundred Demons has started at x: " + new java.text.DecimalFormat("#").format(Math.round(CraftKaisenModVariables.MapVariables.get(world).nearx)) + " z: "
 									+ new java.text.DecimalFormat("#").format(Math.round(CraftKaisenModVariables.MapVariables.get(world).nearz)))), false);
-				if (!world.isClientSide() && world.getServer() != null)
-					world.getServer().getPlayerList().broadcastSystemMessage(Component.literal("\u00A74/eventtp to teleport"), false);
 				if (world instanceof ServerLevel _level) {
 					Entity entityToSpawn = new HundredDemonsTickEntity(CraftKaisenModEntities.HUNDRED_DEMONS_TICK.get(), _level);
 					entityToSpawn.moveTo(CraftKaisenModVariables.MapVariables.get(world).nearx, CraftKaisenModVariables.MapVariables.get(world).neary, CraftKaisenModVariables.MapVariables.get(world).nearz, world.getRandom().nextFloat() * 360F, 0);
@@ -177,8 +173,6 @@ public class WorldEventsProcedure {
 					world.getServer().getPlayerList()
 							.broadcastSystemMessage(Component.literal(("\u00A74 The Disaster Curses Are Attacking at x: " + new java.text.DecimalFormat("#").format(Math.round(CraftKaisenModVariables.MapVariables.get(world).nearx)) + " z: "
 									+ new java.text.DecimalFormat("#").format(Math.round(CraftKaisenModVariables.MapVariables.get(world).nearz)))), false);
-				if (!world.isClientSide() && world.getServer() != null)
-					world.getServer().getPlayerList().broadcastSystemMessage(Component.literal("\u00A74/eventtp to teleport"), false);
 				if (world instanceof ServerLevel _level) {
 					Entity entityToSpawn = new JogoEntity(CraftKaisenModEntities.JOGO.get(), _level);
 					entityToSpawn.moveTo(CraftKaisenModVariables.MapVariables.get(world).nearx, CraftKaisenModVariables.MapVariables.get(world).neary, CraftKaisenModVariables.MapVariables.get(world).nearz, world.getRandom().nextFloat() * 360F, 0);
@@ -277,8 +271,6 @@ public class WorldEventsProcedure {
 				if (!world.isClientSide() && world.getServer() != null)
 					world.getServer().getPlayerList().broadcastSystemMessage(Component.literal(("\u00A74 Awakened Gojo Has Appeared At x: " + new java.text.DecimalFormat("#").format(Math.round(CraftKaisenModVariables.MapVariables.get(world).nearx))
 							+ " z: " + new java.text.DecimalFormat("#").format(Math.round(CraftKaisenModVariables.MapVariables.get(world).nearz)))), false);
-				if (!world.isClientSide() && world.getServer() != null)
-					world.getServer().getPlayerList().broadcastSystemMessage(Component.literal("\u00A74/eventtp to teleport"), false);
 				if (world instanceof ServerLevel _level) {
 					Entity entityToSpawn = new ShinjukuGojoEntity(CraftKaisenModEntities.SHINJUKU_GOJO.get(), _level);
 					entityToSpawn.moveTo(CraftKaisenModVariables.MapVariables.get(world).nearx, CraftKaisenModVariables.MapVariables.get(world).neary, CraftKaisenModVariables.MapVariables.get(world).nearz, world.getRandom().nextFloat() * 360F, 0);
