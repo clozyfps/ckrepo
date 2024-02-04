@@ -3,7 +3,7 @@
   "_type": "livingentity",
   "definition": {
     "mobName": "Meguna",
-    "mobLabel": "",
+    "mobLabel": "§4Meguna",
     "mobModelName": "ModelMeguna",
     "mobModelTexture": "megunatexture.png",
     "transparentModelCondition": {
@@ -132,7 +132,7 @@
     "rangedAttackInterval": 20,
     "rangedAttackRadius": 10.0,
     "spawnThisMob": false,
-    "doesDespawnWhenIdle": true,
+    "doesDespawnWhenIdle": false,
     "spawningProbability": 20,
     "mobSpawningType": "monster",
     "minNumberOfMobsPerGroup": 4,

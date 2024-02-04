@@ -33,7 +33,7 @@ public class CaveAirDespawnProcedure {
 			return;
 		CraftKaisenMod.queueServerWork(5, () -> {
 			if (entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("craft_kaisen:ckmob")))) {
-				if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == Blocks.CAVE_AIR) {
+				if ((world.getBlockState(BlockPos.containing(x, y + 1, z))).getBlock() == Blocks.CAVE_AIR) {
 					if (!entity.level.isClientSide())
 						entity.discard();
 				}

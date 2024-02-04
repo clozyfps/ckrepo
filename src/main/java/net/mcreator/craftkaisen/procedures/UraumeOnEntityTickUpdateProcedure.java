@@ -19,7 +19,7 @@ public class UraumeOnEntityTickUpdateProcedure {
 			return;
 		if ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof LivingEntity) {
 			if (!(entity instanceof LivingEntity _livEnt2 && _livEnt2.hasEffect(CraftKaisenModMobEffects.STOP_ATTACKS.get()))) {
-				if (Math.random() < 0.001) {
+				if (Math.random() < 0.009) {
 					{
 						Entity _shootFrom = entity;
 						Level projectileLevel = _shootFrom.level;
@@ -61,7 +61,7 @@ public class UraumeOnEntityTickUpdateProcedure {
 						}
 					}
 				}
-				if (Math.random() < 0.001) {
+				if (Math.random() < 0.01) {
 					if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 						_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.WINTRY_ICICLE.get(), 30, 0, false, false));
 				}

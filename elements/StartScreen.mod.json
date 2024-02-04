@@ -11,84 +11,6 @@
     "doesPauseGame": false,
     "components": [
       {
-        "type": "image",
-        "data": {
-          "image": "startscroll-1.png_1.png",
-          "use1Xscale": false,
-          "x": 141,
-          "y": 8
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "name": "label_empty",
-          "text": {
-            "fixedValue": ">"
-          },
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "x": 226,
-          "y": 144
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "name": "label_empty1",
-          "text": {
-            "fixedValue": "<"
-          },
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "x": 191,
-          "y": 144
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "humanicon-1.png.png",
-          "use1Xscale": false,
-          "displayCondition": {
-            "name": "ReturnHuman"
-          },
-          "x": 141,
-          "y": 5
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "name": "label_race",
-          "text": {
-            "fixedValue": "RACE:"
-          },
-          "color": {
-            "value": -13421773,
-            "falpha": 0.0
-          },
-          "x": 202,
-          "y": 55
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "spiriticon-1.png.png",
-          "use1Xscale": false,
-          "displayCondition": {
-            "name": "ReturnCursedSpirit"
-          },
-          "x": 141,
-          "y": 5
-        }
-      },
-      {
         "type": "label",
         "data": {
           "name": "label_human",
@@ -102,8 +24,8 @@
           "displayCondition": {
             "name": "ReturnHuman"
           },
-          "x": 200,
-          "y": 76
+          "x": 195,
+          "y": 143
         }
       },
       {
@@ -120,62 +42,80 @@
           "displayCondition": {
             "name": "ReturnCursedSpirit"
           },
-          "x": 200,
-          "y": 76
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "name": "label_finish",
-          "text": {
-            "fixedValue": "SAVE"
-          },
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "x": 201,
-          "y": 157
+          "x": 195,
+          "y": 143
         }
       },
       {
         "type": "imagebutton",
         "data": {
-          "name": "imagebutton_button1png",
-          "image": "button-1.png.png",
-          "hoveredImage": "",
+          "name": "imagebutton_guiarrow_left",
+          "image": "guiarrow_left.png",
+          "hoveredImage": "guiarrow_left_h.png",
+          "onClick": {
+            "name": "ForwardButtonRace"
+          },
+          "x": 237,
+          "y": 178
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_guiarrow_right",
+          "image": "guiarrow_right.png",
+          "hoveredImage": "guiarrow_right_h.png",
+          "onClick": {
+            "name": "ForwardButtonRace"
+          },
+          "x": 176,
+          "y": 178
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_save_button",
+          "image": "save_button.png",
+          "hoveredImage": "save_button_h.png",
           "onClick": {
             "name": "FinishCharacter"
           },
-          "x": 201,
-          "y": 157
+          "x": 193,
+          "y": 179
         }
       },
       {
-        "type": "imagebutton",
+        "type": "image",
         "data": {
-          "name": "imagebutton_smallbutton1png",
-          "image": "smallbutton-1.png.png",
-          "hoveredImage": "",
-          "onClick": {
-            "name": "ForwardButtonRace"
-          },
-          "x": 186,
-          "y": 144
+          "image": "race_menu.png",
+          "use1Xscale": false,
+          "x": 0,
+          "y": 0
         }
       },
       {
-        "type": "imagebutton",
+        "type": "image",
         "data": {
-          "name": "imagebutton_smallbutton1png1",
-          "image": "smallbutton-1.png.png",
-          "hoveredImage": "",
-          "onClick": {
-            "name": "ForwardButtonRace"
+          "image": "race_sorcerer.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "ReturnHuman"
           },
-          "x": 219,
-          "y": 144
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "race_curse.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "ReturnCursedSpirit"
+          },
+          "x": 0,
+          "y": 0
         }
       }
     ],

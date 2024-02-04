@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "craft_kaisen:cursed_womb_death_painting"
+    },
+    "title": {
+      "translate": "advancements.cursed_womb.title"
+    },
+    "description": {
+      "translate": "advancements.cursed_womb.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "cursed_womb": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 5
+  },
+  "parent": "craft_kaisen:jujutsu_kaisen"
+}

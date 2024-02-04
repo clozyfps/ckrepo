@@ -58,7 +58,7 @@
     "material": {
       "value": "GLASS"
     },
-    "tickRate": 0,
+    "tickRate": 1200,
     "tickRandomly": false,
     "isReplaceable": false,
     "canProvidePower": false,
@@ -102,13 +102,13 @@
     "unbreakable": true,
     "breakHarvestLevel": 1,
     "isBonemealable": false,
-    "hasInventory": false,
+    "hasInventory": true,
     "guiBoundTo": "<NONE>",
     "openGUIOnRightClick": false,
     "inventorySize": 9,
     "inventoryStackSize": 64,
-    "inventoryDropWhenDestroyed": true,
-    "inventoryComparatorPower": true,
+    "inventoryDropWhenDestroyed": false,
+    "inventoryComparatorPower": false,
     "inventoryOutSlotIDs": [],
     "inventoryInSlotIDs": [],
     "hasEnergyStorage": false,
@@ -119,6 +119,9 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
+    "onTickUpdate": {
+      "name": "DomainBlockDecay"
+    },
     "generateFeature": false,
     "restrictionBiomes": [],
     "blocksToReplace": [],

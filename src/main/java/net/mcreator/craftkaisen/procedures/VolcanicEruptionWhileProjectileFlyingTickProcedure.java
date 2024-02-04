@@ -47,7 +47,7 @@ public class VolcanicEruptionWhileProjectileFlyingTickProcedure {
 					.sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).collect(Collectors.toList());
 			for (Entity entityiterator : _entfound) {
 				if (!(entityiterator == entity) && !(entityiterator == immediatesourceentity)) {
-					entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.FIREBALL), immediatesourceentity, entity), 8);
+					entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.FIREBALL), immediatesourceentity, entity), 20);
 					entityiterator.setSecondsOnFire(5);
 				}
 			}

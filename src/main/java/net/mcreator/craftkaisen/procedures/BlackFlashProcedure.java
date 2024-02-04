@@ -51,7 +51,7 @@ public class BlackFlashProcedure {
 		if (immediatesourceentity instanceof Player) {
 			if ((immediatesourceentity.getPersistentData().getString("currentmoveactive")).isEmpty()) {
 				if ((immediatesourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy > 0) {
-					if (!((immediatesourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).special).equals("Blessed By The Sparks")) {
+					if (!((immediatesourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).special).equals("Blessed By Sparks")) {
 						if (Math.random() < 0.0001) {
 							if (world instanceof Level _level) {
 								if (!_level.isClientSide()) {
@@ -84,7 +84,7 @@ public class BlackFlashProcedure {
 							if (immediatesourceentity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 								_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.ZONE.get(), 1000, 0));
 						}
-					} else if (((immediatesourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).special).equals("Blessed By The Sparks")) {
+					} else if (((immediatesourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).special).equals("Blessed By Sparks")) {
 						if (Math.random() < 0.001) {
 							if (world instanceof Level _level) {
 								if (!_level.isClientSide()) {

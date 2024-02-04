@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:diamond_sword"
+    },
+    "title": {
+      "translate": "advancements.divergent_fists.title"
+    },
+    "description": {
+      "translate": "advancements.divergent_fists.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "divergent_fists": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "craft_kaisen:jujutsu_kaisen"
+}

@@ -3,7 +3,7 @@
   "_type": "achievement",
   "definition": {
     "achievementName": "Six Eyes",
-    "achievementDescription": "Your cursed energy manipulation allows for almost zero cursed energy cost.",
+    "achievementDescription": "You passively regenerate cursed energy at a rapid rate,  you can also see others cursed energy and health.",
     "achievementIcon": {
       "value": "Items.NETHER_STAR"
     },

@@ -20,7 +20,7 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.Minecraft;
 
-import net.mcreator.craftkaisen.client.model.Modelmahoraga_wheel;
+import net.mcreator.craftkaisen.client.model.ModelMahoragaWheel;
 
 import java.util.function.Consumer;
 import java.util.Map;
@@ -37,7 +37,7 @@ public abstract class MahoragaWheelItem extends ArmorItem {
 
 			@Override
 			public int getDefenseForType(ArmorItem.Type type) {
-				return new int[]{2, 5, 6, 9}[type.getSlot().getIndex()];
+				return new int[]{2, 5, 6, 10}[type.getSlot().getIndex()];
 			}
 
 			@Override
@@ -62,12 +62,12 @@ public abstract class MahoragaWheelItem extends ArmorItem {
 
 			@Override
 			public float getToughness() {
-				return 1.3f;
+				return 2.2f;
 			}
 
 			@Override
 			public float getKnockbackResistance() {
-				return 0f;
+				return 0.2f;
 			}
 		}, type, properties);
 	}
@@ -83,7 +83,7 @@ public abstract class MahoragaWheelItem extends ArmorItem {
 				@Override
 				public HumanoidModel getHumanoidArmorModel(LivingEntity living, ItemStack stack, EquipmentSlot slot, HumanoidModel defaultModel) {
 					HumanoidModel armorModel = new HumanoidModel(new ModelPart(Collections.emptyList(),
-							Map.of("head", new Modelmahoraga_wheel(Minecraft.getInstance().getEntityModels().bakeLayer(Modelmahoraga_wheel.LAYER_LOCATION)).Head, "hat", new ModelPart(Collections.emptyList(), Collections.emptyMap()), "body",
+							Map.of("head", new ModelMahoragaWheel(Minecraft.getInstance().getEntityModels().bakeLayer(ModelMahoragaWheel.LAYER_LOCATION)).head, "hat", new ModelPart(Collections.emptyList(), Collections.emptyMap()), "body",
 									new ModelPart(Collections.emptyList(), Collections.emptyMap()), "right_arm", new ModelPart(Collections.emptyList(), Collections.emptyMap()), "left_arm",
 									new ModelPart(Collections.emptyList(), Collections.emptyMap()), "right_leg", new ModelPart(Collections.emptyList(), Collections.emptyMap()), "left_leg",
 									new ModelPart(Collections.emptyList(), Collections.emptyMap()))));
@@ -103,7 +103,12 @@ public abstract class MahoragaWheelItem extends ArmorItem {
 
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "craft_kaisen:textures/entities/gold.png";
+			return "craft_kaisen:textures/entities/mahoragaoutfittexture.png";
+		}
+
+		@Override
+		public boolean makesPiglinsNeutral(ItemStack itemstack, LivingEntity entity) {
+			return false;
 		}
 	}
 }

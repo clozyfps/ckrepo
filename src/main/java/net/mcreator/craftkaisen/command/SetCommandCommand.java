@@ -27,9 +27,12 @@ import net.mcreator.craftkaisen.procedures.SetSafeFarmingProcedure;
 import net.mcreator.craftkaisen.procedures.SetRoughProcedure;
 import net.mcreator.craftkaisen.procedures.SetRegainerProcedure;
 import net.mcreator.craftkaisen.procedures.SetRatioProcedure;
+import net.mcreator.craftkaisen.procedures.SetProjectionSorceryProcedure;
+import net.mcreator.craftkaisen.procedures.SetPrestigeLevelProcedure;
 import net.mcreator.craftkaisen.procedures.SetPhysicallyGiftedProcedure;
 import net.mcreator.craftkaisen.procedures.SetPPLTProcedure;
 import net.mcreator.craftkaisen.procedures.SetNoEnergyProcedure;
+import net.mcreator.craftkaisen.procedures.SetMissileFistsProcedure;
 import net.mcreator.craftkaisen.procedures.SetMiracleProcedure;
 import net.mcreator.craftkaisen.procedures.SetLimitlessProcedure;
 import net.mcreator.craftkaisen.procedures.SetLevelProcedure;
@@ -54,8 +57,11 @@ import net.mcreator.craftkaisen.procedures.SetCopyProcedure;
 import net.mcreator.craftkaisen.procedures.SetCSMProcedure;
 import net.mcreator.craftkaisen.procedures.SetBoogieWoogieProcedure;
 import net.mcreator.craftkaisen.procedures.SetBloodManipulationProcedure;
+import net.mcreator.craftkaisen.procedures.SetBlessedByTheSparksProcedure;
+import net.mcreator.craftkaisen.procedures.SetBlackBirdManipulationProcedure;
 import net.mcreator.craftkaisen.procedures.SetBasicProcedure;
 import net.mcreator.craftkaisen.procedures.SetAuspiciousBeastsSummonProcedure;
+import net.mcreator.craftkaisen.procedures.SetAdaptionProcedure;
 import net.mcreator.craftkaisen.procedures.ResetButtonProcedure;
 
 import com.mojang.brigadier.arguments.DoubleArgumentType;
@@ -303,6 +309,62 @@ public class SetCommandCommand {
 
 					SetPPLTProcedure.execute(entity);
 					return 0;
+				})).then(Commands.literal("MissileFists").executes(arguments -> {
+					Level world = arguments.getSource().getUnsidedLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null && world instanceof ServerLevel _servLevel)
+						entity = FakePlayerFactory.getMinecraft(_servLevel);
+					Direction direction = Direction.DOWN;
+					if (entity != null)
+						direction = entity.getDirection();
+
+					SetMissileFistsProcedure.execute(arguments);
+					return 0;
+				})).then(Commands.literal("Adaption").executes(arguments -> {
+					Level world = arguments.getSource().getUnsidedLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null && world instanceof ServerLevel _servLevel)
+						entity = FakePlayerFactory.getMinecraft(_servLevel);
+					Direction direction = Direction.DOWN;
+					if (entity != null)
+						direction = entity.getDirection();
+
+					SetAdaptionProcedure.execute(arguments);
+					return 0;
+				})).then(Commands.literal("ProjectionSorcery").executes(arguments -> {
+					Level world = arguments.getSource().getUnsidedLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null && world instanceof ServerLevel _servLevel)
+						entity = FakePlayerFactory.getMinecraft(_servLevel);
+					Direction direction = Direction.DOWN;
+					if (entity != null)
+						direction = entity.getDirection();
+
+					SetProjectionSorceryProcedure.execute(arguments);
+					return 0;
+				})).then(Commands.literal("BlackBirdManipulation").executes(arguments -> {
+					Level world = arguments.getSource().getUnsidedLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null && world instanceof ServerLevel _servLevel)
+						entity = FakePlayerFactory.getMinecraft(_servLevel);
+					Direction direction = Direction.DOWN;
+					if (entity != null)
+						direction = entity.getDirection();
+
+					SetBlackBirdManipulationProcedure.execute(arguments);
+					return 0;
 				})))).then(Commands.literal("Race").then(Commands.argument("name", EntityArgument.player()).then(Commands.literal("Human").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
 					double x = arguments.getSource().getPosition().x();
@@ -443,6 +505,20 @@ public class SetCommandCommand {
 
 					SetExpProcedure.execute(arguments);
 					return 0;
+				}))).then(Commands.literal("Prestige").then(Commands.argument("level", DoubleArgumentType.doubleArg(0, 4)).executes(arguments -> {
+					Level world = arguments.getSource().getUnsidedLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null && world instanceof ServerLevel _servLevel)
+						entity = FakePlayerFactory.getMinecraft(_servLevel);
+					Direction direction = Direction.DOWN;
+					if (entity != null)
+						direction = entity.getDirection();
+
+					SetPrestigeLevelProcedure.execute(arguments);
+					return 0;
 				}))))).then(Commands.literal("Special").then(Commands.argument("name", EntityArgument.player()).then(Commands.literal("SixEyes").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
 					double x = arguments.getSource().getPosition().x();
@@ -498,6 +574,20 @@ public class SetCommandCommand {
 						direction = entity.getDirection();
 
 					SetFragileBodyProcedure.execute(entity);
+					return 0;
+				})).then(Commands.literal("BlessedBySparks").executes(arguments -> {
+					Level world = arguments.getSource().getUnsidedLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null && world instanceof ServerLevel _servLevel)
+						entity = FakePlayerFactory.getMinecraft(_servLevel);
+					Direction direction = Direction.DOWN;
+					if (entity != null)
+						direction = entity.getDirection();
+
+					SetBlessedByTheSparksProcedure.execute(arguments);
 					return 0;
 				})))).then(Commands.literal("Affiliation").then(Commands.argument("name", EntityArgument.player()).then(Commands.literal("Sorcerer").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();

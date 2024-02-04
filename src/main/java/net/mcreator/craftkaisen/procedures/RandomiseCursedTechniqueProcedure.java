@@ -24,7 +24,7 @@ public class RandomiseCursedTechniqueProcedure {
 		double techniqueNumber = 0;
 		double restrictionNumber = 0;
 		double specialNumber = 0;
-		techniqueNumber = Mth.nextInt(RandomSource.create(), 1, 11);
+		techniqueNumber = Mth.nextInt(RandomSource.create(), 1, 14);
 		if (entity instanceof ServerPlayer _player) {
 			Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:cursed_technique"));
 			AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
@@ -83,7 +83,7 @@ public class RandomiseCursedTechniqueProcedure {
 			}
 		} else if (techniqueNumber == 7) {
 			{
-				String _setval = "Inverse";
+				String _setval = "Missile Fists";
 				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.technique = _setval;
 					capability.syncPlayerVariables(entity);
@@ -91,7 +91,7 @@ public class RandomiseCursedTechniqueProcedure {
 			}
 		} else if (techniqueNumber == 8) {
 			{
-				String _setval = "Miracle";
+				String _setval = "Projection Sorcery";
 				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.technique = _setval;
 					capability.syncPlayerVariables(entity);
@@ -129,6 +129,22 @@ public class RandomiseCursedTechniqueProcedure {
 		} else if (techniqueNumber == 12) {
 			{
 				String _setval = "Ice Formation";
+				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.technique = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+		} else if (techniqueNumber == 13) {
+			{
+				String _setval = "Black Bird Manipulation";
+				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.technique = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+		} else if (techniqueNumber == 14) {
+			{
+				String _setval = "Limitless";
 				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.technique = _setval;
 					capability.syncPlayerVariables(entity);

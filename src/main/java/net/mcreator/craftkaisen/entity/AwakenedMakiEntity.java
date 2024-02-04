@@ -60,7 +60,7 @@ public class AwakenedMakiEntity extends Monster {
 	@Override
 	protected void registerGoals() {
 		super.registerGoals();
-		this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.5, true) {
+		this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.7, true) {
 			@Override
 			protected double getAttackReachSqr(LivingEntity entity) {
 				return this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth();
@@ -106,9 +106,9 @@ public class AwakenedMakiEntity extends Monster {
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.5);
-		builder = builder.add(Attributes.MAX_HEALTH, 480);
+		builder = builder.add(Attributes.MAX_HEALTH, 720);
 		builder = builder.add(Attributes.ARMOR, 0.4);
-		builder = builder.add(Attributes.ATTACK_DAMAGE, 37);
+		builder = builder.add(Attributes.ATTACK_DAMAGE, 58);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 50);
 		builder = builder.add(Attributes.KNOCKBACK_RESISTANCE, 0.1);
 		builder = builder.add(Attributes.ATTACK_KNOCKBACK, 3);

@@ -4,8 +4,8 @@
   "definition": {
     "mobName": "Eight Handled Sword Divergent Sila Divine General Mahoraga",
     "mobLabel": "",
-    "mobModelName": "Modeldivinemahoraga",
-    "mobModelTexture": "mahoragatexturemain.png",
+    "mobModelName": "ModelMahoraga",
+    "mobModelTexture": "mahoragatexture.png",
     "transparentModelCondition": {
       "fixedValue": false
     },
@@ -16,15 +16,15 @@
       "fixedValue": false
     },
     "visualScale": {
-      "fixedValue": 1.0
+      "fixedValue": 0.8
     },
     "boundingBoxScale": {
       "fixedValue": 1.0
     },
     "modelLayers": [],
-    "modelWidth": 2.1,
-    "modelHeight": 2.8000000000000003,
-    "modelShadowSize": 0.5,
+    "modelWidth": 2.5,
+    "modelHeight": 6.5,
+    "modelShadowSize": 2.0,
     "mountedYOffset": 0.0,
     "hasSpawnEgg": true,
     "spawnEggBaseColor": {

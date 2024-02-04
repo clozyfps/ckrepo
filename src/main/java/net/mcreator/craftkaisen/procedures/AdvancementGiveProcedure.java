@@ -13,6 +13,7 @@ import net.minecraft.advancements.AdvancementProgress;
 import net.minecraft.advancements.Advancement;
 
 import net.mcreator.craftkaisen.entity.YutaOkkotsuEntity;
+import net.mcreator.craftkaisen.entity.TojiFushiguroEntity;
 import net.mcreator.craftkaisen.entity.SatoruGojoEntity;
 import net.mcreator.craftkaisen.entity.MegunaEntity;
 import net.mcreator.craftkaisen.entity.MahitoEntity;
@@ -113,6 +114,18 @@ public class AdvancementGiveProcedure {
 			if (sourceentity instanceof Player || sourceentity instanceof ServerPlayer) {
 				if (sourceentity instanceof ServerPlayer _player) {
 					Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:heian_era"));
+					AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+					if (!_ap.isDone()) {
+						for (String criteria : _ap.getRemainingCriteria())
+							_player.getAdvancements().award(_adv, criteria);
+					}
+				}
+			}
+		}
+		if (entity instanceof TojiFushiguroEntity) {
+			if (sourceentity instanceof Player || sourceentity instanceof ServerPlayer) {
+				if (sourceentity instanceof ServerPlayer _player) {
+					Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:the_sorcerer_killer"));
 					AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 					if (!_ap.isDone()) {
 						for (String criteria : _ap.getRemainingCriteria())

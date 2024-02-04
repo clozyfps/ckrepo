@@ -106,5 +106,10 @@ public abstract class TojiCurseArmorItem extends ArmorItem {
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
 			return "craft_kaisen:textures/entities/maininventorycurseatlas.png";
 		}
+
+		@Override
+		public boolean makesPiglinsNeutral(ItemStack itemstack, LivingEntity entity) {
+			return false;
+		}
 	}
 }

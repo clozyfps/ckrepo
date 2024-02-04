@@ -11,6 +11,7 @@ import net.minecraft.world.entity.Entity;
 
 import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
 import net.mcreator.craftkaisen.init.CraftKaisenModItems;
+import net.mcreator.craftkaisen.entity.ShinjukuGojoEntity;
 import net.mcreator.craftkaisen.entity.SatoruGojoEntity;
 
 import javax.annotation.Nullable;
@@ -31,9 +32,9 @@ public class InfinityBeforeHurtProcedure {
 	private static void execute(@Nullable Event event, Entity entity, Entity immediatesourceentity) {
 		if (entity == null || immediatesourceentity == null)
 			return;
-		if (entity.getPersistentData().getBoolean("infinity") || entity instanceof SatoruGojoEntity) {
+		if (entity.getPersistentData().getBoolean("infinity") || entity instanceof SatoruGojoEntity || entity instanceof ShinjukuGojoEntity) {
 			if (!((immediatesourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == CraftKaisenModItems.INVERTED_SPEAR.get())
-					|| immediatesourceentity instanceof LivingEntity _livEnt4 && _livEnt4.hasEffect(CraftKaisenModMobEffects.DOMAIN_AMPLIFICATION.get())) {
+					&& !(immediatesourceentity instanceof LivingEntity _livEnt5 && _livEnt5.hasEffect(CraftKaisenModMobEffects.DOMAIN_AMPLIFICATION.get()))) {
 				if (event != null && event.isCancelable()) {
 					event.setCanceled(true);
 				}

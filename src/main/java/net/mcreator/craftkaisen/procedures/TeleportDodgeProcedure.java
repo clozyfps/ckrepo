@@ -18,6 +18,7 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.craftkaisen.init.CraftKaisenModParticleTypes;
 import net.mcreator.craftkaisen.entity.TojiFushiguroEntity;
+import net.mcreator.craftkaisen.entity.ResurrectedTojiEntity;
 
 import javax.annotation.Nullable;
 
@@ -37,8 +38,11 @@ public class TeleportDodgeProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity, Entity immediatesourceentity) {
 		if (entity == null || immediatesourceentity == null)
 			return;
-		if (entity instanceof TojiFushiguroEntity) {
-			if (Math.random() < 0.06) {
+		if (entity instanceof TojiFushiguroEntity || entity instanceof ResurrectedTojiEntity) {
+			if (Math.random() < 0.09) {
+				if (event != null && event.isCancelable()) {
+					event.setCanceled(true);
+				}
 				{
 					Entity _ent = entity;
 					_ent.teleportTo((immediatesourceentity.getX() - 1.5), (immediatesourceentity.getY()), (immediatesourceentity.getZ() - 1.5));
@@ -47,9 +51,9 @@ public class TeleportDodgeProcedure {
 				}
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
-						_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:teleport")), SoundSource.NEUTRAL, 1, 1);
+						_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.enderman.teleport")), SoundSource.NEUTRAL, 1, 1);
 					} else {
-						_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:teleport")), SoundSource.NEUTRAL, 1, 1, false);
+						_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.enderman.teleport")), SoundSource.NEUTRAL, 1, 1, false);
 					}
 				}
 				if (world instanceof ServerLevel _level)

@@ -39,6 +39,7 @@ public class ResurrectedTojiEntity extends Monster {
 		maxUpStep = 0.6f;
 		xpReward = 0;
 		setNoAi(false);
+		setPersistenceRequired();
 		this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(CraftKaisenModItems.PLAYFUL_CLOUD.get()));
 	}
 
@@ -68,6 +69,11 @@ public class ResurrectedTojiEntity extends Monster {
 	}
 
 	@Override
+	public boolean removeWhenFarAway(double distanceToClosestPlayer) {
+		return false;
+	}
+
+	@Override
 	public double getMyRidingOffset() {
 		return -0.35D;
 	}
@@ -87,13 +93,13 @@ public class ResurrectedTojiEntity extends Monster {
 
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
-		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.3);
+		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.4);
 		builder = builder.add(Attributes.MAX_HEALTH, 800);
-		builder = builder.add(Attributes.ARMOR, 0.2);
-		builder = builder.add(Attributes.ATTACK_DAMAGE, 55);
+		builder = builder.add(Attributes.ARMOR, 0.4);
+		builder = builder.add(Attributes.ATTACK_DAMAGE, 63);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 50);
 		builder = builder.add(Attributes.KNOCKBACK_RESISTANCE, 0.1);
-		builder = builder.add(Attributes.ATTACK_KNOCKBACK, 2);
+		builder = builder.add(Attributes.ATTACK_KNOCKBACK, 3);
 		return builder;
 	}
 }

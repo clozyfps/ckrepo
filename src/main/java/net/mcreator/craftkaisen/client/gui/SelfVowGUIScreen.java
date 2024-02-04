@@ -62,46 +62,46 @@ public class SelfVowGUIScreen extends AbstractContainerScreen<SelfVowGUIMenu> {
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
 
-		RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/mainmenu.png"));
+		RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/mainmenu_empty.png"));
 		this.blit(ms, this.leftPos + -126, this.topPos + -37, 0, 0, 427, 240, 427, 240);
 
 		RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/pageoneclosed.png"));
-		this.blit(ms, this.leftPos + -126, this.topPos + -37, 0, 0, 427, 240, 427, 240);
+		this.blit(ms, this.leftPos + -130, this.topPos + -37, 0, 0, 427, 240, 427, 240);
 
 		RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/pagetwoopen.png"));
-		this.blit(ms, this.leftPos + -126, this.topPos + -37, 0, 0, 427, 240, 427, 240);
+		this.blit(ms, this.leftPos + -130, this.topPos + -37, 0, 0, 427, 240, 427, 240);
 
 		if (DisplayGradeFourProcedure.execute(entity)) {
 			RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/fourthgrade.png"));
-			this.blit(ms, this.leftPos + -126, this.topPos + -37, 0, 0, 427, 240, 427, 240);
+			this.blit(ms, this.leftPos + -126, this.topPos + -32, 0, 0, 427, 240, 427, 240);
 		}
 		if (DisplayGradeThreeProcedure.execute(entity)) {
 			RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/thirdgrade.png"));
-			this.blit(ms, this.leftPos + -126, this.topPos + -37, 0, 0, 427, 240, 427, 240);
+			this.blit(ms, this.leftPos + -126, this.topPos + -32, 0, 0, 427, 240, 427, 240);
 		}
 		if (DisplaySemiGrade2Procedure.execute(entity)) {
 			RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/stwograde.png"));
-			this.blit(ms, this.leftPos + -126, this.topPos + -37, 0, 0, 427, 240, 427, 240);
+			this.blit(ms, this.leftPos + -126, this.topPos + -32, 0, 0, 427, 240, 427, 240);
 		}
 		if (DisplayGrade2Procedure.execute(entity)) {
 			RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/twograde.png"));
-			this.blit(ms, this.leftPos + -126, this.topPos + -37, 0, 0, 427, 240, 427, 240);
+			this.blit(ms, this.leftPos + -126, this.topPos + -32, 0, 0, 427, 240, 427, 240);
 		}
 		if (DisplaySemiGrade1Procedure.execute(entity)) {
 			RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/sonegrade.png"));
-			this.blit(ms, this.leftPos + -126, this.topPos + -37, 0, 0, 427, 240, 427, 240);
+			this.blit(ms, this.leftPos + -126, this.topPos + -32, 0, 0, 427, 240, 427, 240);
 		}
 		if (DisplayGrade1Procedure.execute(entity)) {
 			RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/onegrade.png"));
-			this.blit(ms, this.leftPos + -126, this.topPos + -37, 0, 0, 427, 240, 427, 240);
+			this.blit(ms, this.leftPos + -126, this.topPos + -32, 0, 0, 427, 240, 427, 240);
 		}
 		if (DisplaySpecialGradeProcedure.execute(entity)) {
 			RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/spgrade.png"));
-			this.blit(ms, this.leftPos + -126, this.topPos + -37, 0, 0, 427, 240, 427, 240);
+			this.blit(ms, this.leftPos + -126, this.topPos + -32, 0, 0, 427, 240, 427, 240);
 		}
 
 		RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/pagethreeclosed.png"));
-		this.blit(ms, this.leftPos + -126, this.topPos + -37, 0, 0, 427, 240, 427, 240);
+		this.blit(ms, this.leftPos + -130, this.topPos + -37, 0, 0, 427, 240, 427, 240);
 
 		RenderSystem.disableBlend();
 	}
@@ -132,7 +132,7 @@ public class SelfVowGUIScreen extends AbstractContainerScreen<SelfVowGUIMenu> {
 	@Override
 	public void init() {
 		super.init();
-		imagebutton_click = new ImageButton(this.leftPos + -102, this.topPos + -3, 20, 20, 0, 0, 20, new ResourceLocation("craft_kaisen:textures/screens/atlas/imagebutton_click.png"), 20, 40, e -> {
+		imagebutton_click = new ImageButton(this.leftPos + -106, this.topPos + -3, 20, 20, 0, 0, 20, new ResourceLocation("craft_kaisen:textures/screens/atlas/imagebutton_click.png"), 20, 40, e -> {
 			if (true) {
 				CraftKaisenMod.PACKET_HANDLER.sendToServer(new SelfVowGUIButtonMessage(0, x, y, z));
 				SelfVowGUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
@@ -140,7 +140,7 @@ public class SelfVowGUIScreen extends AbstractContainerScreen<SelfVowGUIMenu> {
 		});
 		guistate.put("button:imagebutton_click", imagebutton_click);
 		this.addRenderableWidget(imagebutton_click);
-		imagebutton_click1 = new ImageButton(this.leftPos + -102, this.topPos + 39, 20, 20, 0, 0, 20, new ResourceLocation("craft_kaisen:textures/screens/atlas/imagebutton_click1.png"), 20, 40, e -> {
+		imagebutton_click1 = new ImageButton(this.leftPos + -106, this.topPos + 39, 20, 20, 0, 0, 20, new ResourceLocation("craft_kaisen:textures/screens/atlas/imagebutton_click1.png"), 20, 40, e -> {
 			if (true) {
 				CraftKaisenMod.PACKET_HANDLER.sendToServer(new SelfVowGUIButtonMessage(1, x, y, z));
 				SelfVowGUIButtonMessage.handleButtonAction(entity, 1, x, y, z);

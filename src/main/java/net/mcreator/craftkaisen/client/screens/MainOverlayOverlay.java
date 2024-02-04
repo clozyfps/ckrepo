@@ -16,8 +16,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.client.Minecraft;
 
-import net.mcreator.craftkaisen.procedures.ReturnTargetTwoProcedure;
-import net.mcreator.craftkaisen.procedures.ReturnTargetOneProcedure;
 import net.mcreator.craftkaisen.procedures.ReturnCEOverlayProcedure;
 import net.mcreator.craftkaisen.procedures.DisplayOutput9Procedure;
 import net.mcreator.craftkaisen.procedures.DisplayOutput8Procedure;
@@ -29,7 +27,6 @@ import net.mcreator.craftkaisen.procedures.DisplayOutput3Procedure;
 import net.mcreator.craftkaisen.procedures.DisplayOutput2Procedure;
 import net.mcreator.craftkaisen.procedures.DisplayOutput1Procedure;
 import net.mcreator.craftkaisen.procedures.DisplayOutput10Procedure;
-import net.mcreator.craftkaisen.procedures.DisplayBoogieWoogieTargetsProcedure;
 import net.mcreator.craftkaisen.procedures.DisplayBarEmptyProcedure;
 import net.mcreator.craftkaisen.procedures.DisplayBar9Procedure;
 import net.mcreator.craftkaisen.procedures.DisplayBar8Procedure;
@@ -169,14 +166,6 @@ public class MainOverlayOverlay {
 			RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/lockedhalf.png"));
 			Minecraft.getInstance().gui.blit(event.getPoseStack(), 0, h / 2 + -120, 0, 0, 427, 240, 427, 240);
 
-			if (DisplayBoogieWoogieTargetsProcedure.execute(entity))
-				Minecraft.getInstance().font.draw(event.getPoseStack(),
-
-						ReturnTargetOneProcedure.execute(entity), w / 2 + -189, h / 2 + 86, -1);
-			if (DisplayBoogieWoogieTargetsProcedure.execute(entity))
-				Minecraft.getInstance().font.draw(event.getPoseStack(),
-
-						ReturnTargetTwoProcedure.execute(entity), w / 2 + -189, h / 2 + 95, -1);
 			if (DisplayBar12Procedure.execute(entity))
 				Minecraft.getInstance().font.draw(event.getPoseStack(),
 

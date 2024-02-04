@@ -65,7 +65,7 @@ public class StartScreenButtonMessage {
 			return;
 		if (buttonID == 0) {
 
-			FinishCharacterProcedure.execute(world, x, y, z, entity);
+			ForwardButtonRaceProcedure.execute(entity);
 		}
 		if (buttonID == 1) {
 
@@ -73,7 +73,7 @@ public class StartScreenButtonMessage {
 		}
 		if (buttonID == 2) {
 
-			ForwardButtonRaceProcedure.execute(entity);
+			FinishCharacterProcedure.execute(world, x, y, z, entity);
 		}
 	}
 

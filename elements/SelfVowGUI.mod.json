@@ -13,8 +13,8 @@
       {
         "type": "image",
         "data": {
-          "image": "mainmenu.png",
-          "use1Xscale": true,
+          "image": "mainmenu_empty.png",
+          "use1Xscale": false,
           "x": 0,
           "y": 0
         }
@@ -23,8 +23,8 @@
         "type": "image",
         "data": {
           "image": "pageoneclosed.png",
-          "use1Xscale": true,
-          "x": 0,
+          "use1Xscale": false,
+          "x": -4,
           "y": 0
         }
       },
@@ -32,8 +32,8 @@
         "type": "image",
         "data": {
           "image": "pagetwoopen.png",
-          "use1Xscale": true,
-          "x": 0,
+          "use1Xscale": false,
+          "x": -4,
           "y": 0
         }
       },
@@ -46,7 +46,7 @@
           "onClick": {
             "name": "MenuOnKeyPressed"
           },
-          "x": 24,
+          "x": 20,
           "y": 34
         }
       },
@@ -59,7 +59,7 @@
             "name": "DisplayGradeFour"
           },
           "x": 0,
-          "y": 0
+          "y": 5
         }
       },
       {
@@ -71,7 +71,7 @@
             "name": "DisplayGradeThree"
           },
           "x": 0,
-          "y": 0
+          "y": 5
         }
       },
       {
@@ -83,7 +83,7 @@
             "name": "DisplaySemiGrade2"
           },
           "x": 0,
-          "y": 0
+          "y": 5
         }
       },
       {
@@ -95,7 +95,7 @@
             "name": "DisplayGrade2"
           },
           "x": 0,
-          "y": 0
+          "y": 5
         }
       },
       {
@@ -107,7 +107,7 @@
             "name": "DisplaySemiGrade1"
           },
           "x": 0,
-          "y": 0
+          "y": 5
         }
       },
       {
@@ -119,7 +119,7 @@
             "name": "DisplayGrade1"
           },
           "x": 0,
-          "y": 0
+          "y": 5
         }
       },
       {
@@ -131,15 +131,15 @@
             "name": "DisplaySpecialGrade"
           },
           "x": 0,
-          "y": 0
+          "y": 5
         }
       },
       {
         "type": "image",
         "data": {
           "image": "pagethreeclosed.png",
-          "use1Xscale": true,
-          "x": 0,
+          "use1Xscale": false,
+          "x": -4,
           "y": 0
         }
       },
@@ -152,7 +152,7 @@
           "onClick": {
             "name": "OpenMoves"
           },
-          "x": 24,
+          "x": 20,
           "y": 76
         }
       },

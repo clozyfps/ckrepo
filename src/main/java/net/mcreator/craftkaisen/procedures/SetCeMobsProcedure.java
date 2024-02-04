@@ -31,9 +31,11 @@ import net.mcreator.craftkaisen.entity.MaximumElephantEntity;
 import net.mcreator.craftkaisen.entity.MahitoEntity;
 import net.mcreator.craftkaisen.entity.KoGuyEntity;
 import net.mcreator.craftkaisen.entity.JogoEntity;
+import net.mcreator.craftkaisen.entity.JinichiZeninEntity;
 import net.mcreator.craftkaisen.entity.HanamiEntity;
 import net.mcreator.craftkaisen.entity.HajimeKashimoEntity;
 import net.mcreator.craftkaisen.entity.GreatSerpentEntity;
+import net.mcreator.craftkaisen.entity.FlyingCursedSpiritEntity;
 import net.mcreator.craftkaisen.entity.FlyHeadEntity;
 import net.mcreator.craftkaisen.entity.FingerBearerEntity;
 import net.mcreator.craftkaisen.entity.EightHandledSwordDivergentSilaDivineGeneralMahoragaEntity;
@@ -121,6 +123,9 @@ public class SetCeMobsProcedure {
 		}
 		if (entity instanceof EightHandledSwordDivergentSilaDivineGeneralMahoragaEntity || entity instanceof MergedBeastAgitoEntity) {
 			entity.getPersistentData().putDouble("ce", 50000);
+		}
+		if (entity instanceof JinichiZeninEntity) {
+			entity.getPersistentData().putDouble("ce", 20000);
 		}
 	}
 }

@@ -7,11 +7,11 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.BlockPos;
@@ -41,7 +41,8 @@ public class ReversalRedWhileProjectileFlyingTickProcedure {
 						.collect(Collectors.toList());
 				for (Entity entityiterator : _entfound) {
 					if (!(entity == entityiterator)) {
-						entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.EXPLOSION), immediatesourceentity, entity), 12);
+						entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:repelling_damage"))),
+								immediatesourceentity, entity), 12);
 						entityiterator.setDeltaMovement(new Vec3(((entity.getX() + entityiterator.getX()) / 9), ((entity.getY() + entityiterator.getY()) / 9), ((entity.getZ() + entityiterator.getZ()) / 9)));
 						entityiterator.setDeltaMovement(new Vec3((1 * entity.getLookAngle().x), (1 * entity.getLookAngle().y), (1 * entity.getLookAngle().z)));
 					}
@@ -81,8 +82,8 @@ public class ReversalRedWhileProjectileFlyingTickProcedure {
 						.collect(Collectors.toList());
 				for (Entity entityiterator : _entfound) {
 					if (!(entity == entityiterator)) {
-						entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.EXPLOSION), immediatesourceentity, entity),
-								(float) ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 8));
+						entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:repelling_damage"))),
+								immediatesourceentity, entity), (float) ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 8));
 						entityiterator.setDeltaMovement(new Vec3((1 * entity.getLookAngle().x), (1 * entity.getLookAngle().y), (1 * entity.getLookAngle().z)));
 					}
 				}

@@ -30,7 +30,7 @@ public class RepEventsProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).reputation < -50) {
+		if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).reputation < -10) {
 			entity.getPersistentData().putDouble("repeventtimer", (entity.getPersistentData().getDouble("repeventtimer") - 1));
 			if (entity.getPersistentData().getDouble("repeventtimer") >= 15000) {
 				entity.getPersistentData().putDouble("repeventtimer", 0);

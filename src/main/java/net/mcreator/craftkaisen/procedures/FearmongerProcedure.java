@@ -34,7 +34,7 @@ public class FearmongerProcedure {
 			return;
 		if (sourceentity instanceof Player || sourceentity instanceof ServerPlayer) {
 			if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).Perk).equals("Fearmonger")) {
-				if (entity instanceof Player || entity instanceof ServerPlayer) {
+				if ((entity instanceof Player || entity instanceof ServerPlayer) && !(entity == sourceentity)) {
 					if (Math.random() < 0.1) {
 						if (sourceentity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 							_entity.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 20, 0, false, false));

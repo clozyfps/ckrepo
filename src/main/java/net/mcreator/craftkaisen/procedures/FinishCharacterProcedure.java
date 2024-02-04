@@ -21,6 +21,7 @@ public class FinishCharacterProcedure {
 		double Flash = 0;
 		double overflow = 0;
 		double SoulPerception = 0;
+		double CursedWomb = 0;
 		SixEyes = Mth.nextInt(RandomSource.create(), 1, 600);
 		Flash = Mth.nextInt(RandomSource.create(), 1, 100);
 		overflow = Mth.nextInt(RandomSource.create(), 1, 200);
@@ -119,6 +120,25 @@ public class FinishCharacterProcedure {
 				_player.displayClientMessage(Component.literal("You are born with the ability to percieve souls"), false);
 			{
 				String _setval = "Soul Perception";
+				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.special = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+		}
+		if (CursedWomb == 1) {
+			if (entity instanceof ServerPlayer _player) {
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:cursed_womb"));
+				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+				if (!_ap.isDone()) {
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
+				}
+			}
+			if (entity instanceof Player _player && !_player.level.isClientSide())
+				_player.displayClientMessage(Component.literal("You are born as a cursed womb"), false);
+			{
+				String _setval = "Cursed Womb";
 				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.special = _setval;
 					capability.syncPlayerVariables(entity);

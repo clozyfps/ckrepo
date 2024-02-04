@@ -57,7 +57,7 @@ public class JogoOnEntityTickUpdateProcedure {
 						}
 					}
 				}
-				if (Math.random() < 0.009) {
+				if (Math.random() < 0.01) {
 					for (int index0 = 0; index0 < 5; index0++) {
 						{
 							Entity _shootFrom = entity;
@@ -80,7 +80,7 @@ public class JogoOnEntityTickUpdateProcedure {
 						}
 					}
 				}
-				if (Math.random() < 0.0002) {
+				if (Math.random() < 0.0006) {
 					if (entity instanceof Player _player && !_player.level.isClientSide())
 						_player.displayClientMessage(Component.literal("\u00A7l\u00A76Maximum....."), false);
 					if (world instanceof ServerLevel _level) {

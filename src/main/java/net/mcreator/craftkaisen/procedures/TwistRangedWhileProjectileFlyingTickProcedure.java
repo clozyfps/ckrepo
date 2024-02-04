@@ -6,8 +6,9 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.core.registries.Registries;
 
 import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
@@ -31,8 +32,8 @@ public class TwistRangedWhileProjectileFlyingTickProcedure {
 			for (Entity entityiterator : _entfound) {
 				if (!(entity == entityiterator)) {
 					if (!(immediatesourceentity == entityiterator)) {
-						entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC), immediatesourceentity, entity),
-								(float) ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 5));
+						entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:cursed_energy_damage"))),
+								immediatesourceentity, entity), (float) ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 5));
 						if (entityiterator instanceof LivingEntity _entity && !_entity.level.isClientSide())
 							_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.TWISTING.get(), 50, 1, false, false));
 						{

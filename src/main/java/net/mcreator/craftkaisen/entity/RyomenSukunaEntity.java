@@ -121,11 +121,11 @@ public class RyomenSukunaEntity extends Monster {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.4);
 		builder = builder.add(Attributes.MAX_HEALTH, 890);
-		builder = builder.add(Attributes.ARMOR, 10);
-		builder = builder.add(Attributes.ATTACK_DAMAGE, 30);
+		builder = builder.add(Attributes.ARMOR, 0.5);
+		builder = builder.add(Attributes.ATTACK_DAMAGE, 69);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 500);
 		builder = builder.add(Attributes.KNOCKBACK_RESISTANCE, 0.5);
-		builder = builder.add(Attributes.ATTACK_KNOCKBACK, 2);
+		builder = builder.add(Attributes.ATTACK_KNOCKBACK, 6);
 		return builder;
 	}
 }

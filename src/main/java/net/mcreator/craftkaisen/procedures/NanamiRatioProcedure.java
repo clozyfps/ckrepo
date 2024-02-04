@@ -12,13 +12,13 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.particles.ParticleTypes;
@@ -47,13 +47,14 @@ public class NanamiRatioProcedure {
 			return;
 		if (sourceentity instanceof NanamiKentoEntity) {
 			if (!((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Blocks.AIR.asItem())) {
-				sourceentity.getPersistentData().putDouble("ratio", (Mth.nextInt(RandomSource.create(), 1, 5)));
+				sourceentity.getPersistentData().putDouble("ratio", (Mth.nextInt(RandomSource.create(), 1, 3)));
 				if (sourceentity.getPersistentData().getDouble("ratio") == 2) {
 					if (world instanceof ServerLevel _level)
 						_level.sendParticles(ParticleTypes.ENCHANTED_HIT, (entity.getX()), (entity.getY()), (entity.getZ()), 25, 0.1, 2, 0.1, 0.1);
 					if (world instanceof ServerLevel _level)
 						_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.BLOOD_SPLASH.get()), (entity.getX()), (entity.getY()), (entity.getZ()), 15, 0.5, 2, 0.5, 0.2);
-					entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC), sourceentity), (float) (amount * 2));
+					entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:ratio_damage"))), sourceentity),
+							(float) (amount * 2));
 					if (world instanceof ServerLevel _level)
 						_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.RATIO_PARTICLE.get()), (entity.getX()), (entity.getY()), (entity.getZ()), 1, 0.1, 2, 0.1, 0.1);
 					if (world instanceof Level _level) {

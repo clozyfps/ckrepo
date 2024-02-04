@@ -14,6 +14,7 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
 import net.mcreator.craftkaisen.entity.IcileEntity;
+import net.mcreator.craftkaisen.CraftKaisenMod;
 
 import java.util.stream.Collectors;
 import java.util.List;
@@ -23,6 +24,10 @@ public class IcileOnEntityTickUpdateProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
+		CraftKaisenMod.queueServerWork(60, () -> {
+			if (!entity.level.isClientSide())
+				entity.discard();
+		});
 		if (!((world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == Blocks.AIR)) {
 			if (!entity.level.isClientSide())
 				entity.discard();
@@ -33,9 +38,9 @@ public class IcileOnEntityTickUpdateProcedure {
 						.collect(Collectors.toList());
 				for (Entity entityiterator : _entfound) {
 					if (!(entity == entityiterator)) {
-						if (!(entityiterator instanceof LivingEntity _livEnt5 && _livEnt5.hasEffect(CraftKaisenModMobEffects.WINTRY_ICICLE.get()))) {
+						if (!(entityiterator instanceof LivingEntity _livEnt7 && _livEnt7.hasEffect(CraftKaisenModMobEffects.WINTRY_ICICLE.get()))) {
 							if (!(entityiterator instanceof IcileEntity)) {
-								entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.FALLING_BLOCK), entity), 13);
+								entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.FREEZE), entity), 13);
 							}
 						}
 					}

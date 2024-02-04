@@ -54,13 +54,15 @@ public class LapseBlueRangedWhileProjectileFlyingTickProcedure {
 							List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(15 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
 									.collect(Collectors.toList());
 							for (Entity entityiterator : _entfound) {
-								if (!(entity == entityiterator) && !(entityiterator instanceof FallingBlockEntity)) {
-									entityiterator.setDeltaMovement(new Vec3(((x + xi - entityiterator.getX()) / 4), ((y + i - entityiterator.getY()) / 4), ((z + zi - entityiterator.getZ()) / 4)));
-								} else if (entityiterator instanceof ItemEntity) {
-									if (!entityiterator.level.isClientSide())
-										entityiterator.discard();
-								} else if (entityiterator instanceof FallingBlockEntity) {
-									entityiterator.setDeltaMovement(new Vec3(((x + xi - entityiterator.getX()) / 4), ((y + i - entityiterator.getY()) / 4), ((z + zi - entityiterator.getZ()) / 4)));
+								if (!(entityiterator == entity)) {
+									if (!(entityiterator instanceof FallingBlockEntity)) {
+										entityiterator.setDeltaMovement(new Vec3(((x + xi - entityiterator.getX()) / 4), ((y + i - entityiterator.getY()) / 4), ((z + zi - entityiterator.getZ()) / 4)));
+									} else if (entityiterator instanceof ItemEntity) {
+										if (!entityiterator.level.isClientSide())
+											entityiterator.discard();
+									} else if (entityiterator instanceof FallingBlockEntity) {
+										entityiterator.setDeltaMovement(new Vec3(((x + xi - entityiterator.getX()) / 4), ((y + i - entityiterator.getY()) / 4), ((z + zi - entityiterator.getZ()) / 4)));
+									}
 								}
 							}
 						}

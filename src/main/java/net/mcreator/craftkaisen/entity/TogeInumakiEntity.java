@@ -119,9 +119,9 @@ public class TogeInumakiEntity extends Monster {
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.4);
-		builder = builder.add(Attributes.MAX_HEALTH, 210);
+		builder = builder.add(Attributes.MAX_HEALTH, 270);
 		builder = builder.add(Attributes.ARMOR, 0.3);
-		builder = builder.add(Attributes.ATTACK_DAMAGE, 22);
+		builder = builder.add(Attributes.ATTACK_DAMAGE, 26);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 50);
 		builder = builder.add(Attributes.ATTACK_KNOCKBACK, 1);
 		return builder;

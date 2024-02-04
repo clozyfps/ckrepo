@@ -11,6 +11,15 @@
     "doesPauseGame": false,
     "components": [
       {
+        "type": "image",
+        "data": {
+          "image": "mainmenu.png",
+          "use1Xscale": false,
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
         "type": "entitymodel",
         "data": {
           "entityModel": {
@@ -31,14 +40,14 @@
             "fixedValue": "Human"
           },
           "color": {
-            "value": -11112336,
+            "value": -16724788,
             "falpha": 0.0
           },
           "displayCondition": {
             "name": "ReturnHuman"
           },
-          "x": 96,
-          "y": 35
+          "x": 352,
+          "y": 37
         }
       },
       {
@@ -50,11 +59,11 @@
             "name": "ReturnSkillpoints"
           },
           "color": {
-            "value": -12829636,
+            "value": -1,
             "falpha": 0.0
           },
-          "x": 96,
-          "y": 44
+          "x": 101,
+          "y": 59
         }
       },
       {
@@ -71,8 +80,8 @@
           "displayCondition": {
             "name": "ReturnCursedSpirit"
           },
-          "x": 96,
-          "y": 35
+          "x": 352,
+          "y": 37
         }
       },
       {
@@ -84,11 +93,11 @@
             "name": "ReturnExpDisplay"
           },
           "color": {
-            "value": -12829636,
+            "value": -1,
             "falpha": 0.0
           },
-          "x": 96,
-          "y": 62
+          "x": 101,
+          "y": 95
         }
       },
       {
@@ -100,11 +109,11 @@
             "name": "ReturnRep"
           },
           "color": {
-            "value": -12829636,
+            "value": -1,
             "falpha": 0.0
           },
-          "x": 96,
-          "y": 80
+          "x": 101,
+          "y": 175
         }
       },
       {
@@ -116,11 +125,11 @@
             "name": "ReturnAffiliation"
           },
           "color": {
-            "value": -12829636,
+            "value": -1,
             "falpha": 0.0
           },
-          "x": 96,
-          "y": 98
+          "x": 101,
+          "y": 157
         }
       },
       {
@@ -132,11 +141,11 @@
             "name": "ReturnLevel"
           },
           "color": {
-            "value": -12829636,
+            "value": -1,
             "falpha": 0.0
           },
-          "x": 96,
-          "y": 116
+          "x": 101,
+          "y": 77
         }
       },
       {
@@ -148,11 +157,11 @@
             "name": "ReturnSpecial"
           },
           "color": {
-            "value": -12829636,
+            "value": -1,
             "falpha": 0.0
           },
-          "x": 96,
-          "y": 134
+          "x": 101,
+          "y": 113
         }
       },
       {
@@ -164,11 +173,11 @@
             "name": "ReturnStrength"
           },
           "color": {
-            "value": -12829636,
+            "value": -1,
             "falpha": 0.0
           },
-          "x": 213,
-          "y": 44
+          "x": 249,
+          "y": 59
         }
       },
       {
@@ -180,11 +189,11 @@
             "name": "ReturnHealth"
           },
           "color": {
-            "value": -12829636,
+            "value": -1,
             "falpha": 0.0
           },
-          "x": 213,
-          "y": 62
+          "x": 249,
+          "y": 77
         }
       },
       {
@@ -196,11 +205,11 @@
             "name": "ReturnCursedEnergy"
           },
           "color": {
-            "value": -12829636,
+            "value": -1,
             "falpha": 0.0
           },
-          "x": 213,
-          "y": 98
+          "x": 249,
+          "y": 113
         }
       },
       {
@@ -212,11 +221,11 @@
             "name": "ReturnEnergyControl"
           },
           "color": {
-            "value": -12829636,
+            "value": -1,
             "falpha": 0.0
           },
-          "x": 213,
-          "y": 80
+          "x": 249,
+          "y": 95
         }
       },
       {
@@ -228,151 +237,76 @@
             "name": "ReturnSpeed"
           },
           "color": {
-            "value": -12829636,
+            "value": -1,
             "falpha": 0.0
           },
-          "x": 213,
-          "y": 116
+          "x": 249,
+          "y": 131
         }
       },
       {
         "type": "imagebutton",
         "data": {
           "name": "imagebutton_smallbutton1png",
-          "image": "smallbutton-1.png.png",
-          "hoveredImage": "",
+          "image": "addstatbutton.png",
+          "hoveredImage": "addstatbutton_h.png",
           "onClick": {
             "name": "StrengthButton"
           },
-          "x": 330,
-          "y": 44
+          "x": 357,
+          "y": 55
         }
       },
       {
         "type": "imagebutton",
         "data": {
           "name": "imagebutton_smallbutton1png1",
-          "image": "smallbutton-1.png.png",
-          "hoveredImage": "",
+          "image": "addstatbutton.png",
+          "hoveredImage": "addstatbutton_h.png",
           "onClick": {
             "name": "HealthButton"
           },
-          "x": 330,
-          "y": 62
+          "x": 357,
+          "y": 73
         }
       },
       {
         "type": "imagebutton",
         "data": {
           "name": "imagebutton_smallbutton1png3",
-          "image": "smallbutton-1.png.png",
-          "hoveredImage": "",
+          "image": "addstatbutton.png",
+          "hoveredImage": "addstatbutton_h.png",
           "onClick": {
             "name": "ControlButton"
           },
-          "x": 330,
-          "y": 80
+          "x": 357,
+          "y": 91
         }
       },
       {
         "type": "imagebutton",
         "data": {
           "name": "imagebutton_smallbutton1png2",
-          "image": "smallbutton-1.png.png",
-          "hoveredImage": "",
+          "image": "addstatbutton.png",
+          "hoveredImage": "addstatbutton_h.png",
           "onClick": {
             "name": "EnergyButton"
           },
-          "x": 330,
-          "y": 98
+          "x": 357,
+          "y": 109
         }
       },
       {
         "type": "imagebutton",
         "data": {
           "name": "imagebutton_smallbutton1png4",
-          "image": "smallbutton-1.png.png",
-          "hoveredImage": "",
+          "image": "addstatbutton.png",
+          "hoveredImage": "addstatbutton_h.png",
           "onClick": {
             "name": "SpeedButton"
           },
-          "x": 330,
-          "y": 116
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "name": "label_empty2",
-          "text": {
-            "fixedValue": "+"
-          },
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "x": 339,
-          "y": 44
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "name": "label_empty3",
-          "text": {
-            "fixedValue": "+"
-          },
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "x": 339,
-          "y": 62
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "name": "label_empty4",
-          "text": {
-            "fixedValue": "+"
-          },
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "x": 339,
-          "y": 116
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "name": "label_empty5",
-          "text": {
-            "fixedValue": "+"
-          },
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "x": 339,
-          "y": 80
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "name": "label_empty6",
-          "text": {
-            "fixedValue": "+"
-          },
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "x": 339,
-          "y": 98
+          "x": 357,
+          "y": 127
         }
       },
       {
@@ -382,10 +316,10 @@
           "text": {
             "fixedValue": "increases attack damage"
           },
-          "width": 19,
-          "height": 9,
-          "x": 330,
-          "y": 44
+          "width": 23,
+          "height": 13,
+          "x": 358,
+          "y": 56
         }
       },
       {
@@ -395,10 +329,10 @@
           "text": {
             "fixedValue": "increase max health"
           },
-          "width": 20,
-          "height": 9,
-          "x": 330,
-          "y": 62
+          "width": 23,
+          "height": 13,
+          "x": 358,
+          "y": 74
         }
       },
       {
@@ -408,10 +342,10 @@
           "text": {
             "fixedValue": "increase max cursed energy"
           },
-          "width": 19,
-          "height": 10,
-          "x": 330,
-          "y": 98
+          "width": 23,
+          "height": 13,
+          "x": 358,
+          "y": 110
         }
       },
       {
@@ -421,10 +355,10 @@
           "text": {
             "fixedValue": "increase energy regen rate and max output"
           },
-          "width": 19,
-          "height": 9,
-          "x": 330,
-          "y": 80
+          "width": 23,
+          "height": 13,
+          "x": 358,
+          "y": 92
         }
       },
       {
@@ -434,19 +368,10 @@
           "text": {
             "fixedValue": "increase movement speed"
           },
-          "width": 20,
-          "height": 9,
-          "x": 330,
-          "y": 116
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "mainmenu.png",
-          "use1Xscale": true,
-          "x": 0,
-          "y": 0
+          "width": 23,
+          "height": 13,
+          "x": 358,
+          "y": 128
         }
       },
       {
@@ -458,7 +383,7 @@
             "name": "DisplayGradeFour"
           },
           "x": 0,
-          "y": 0
+          "y": 5
         }
       },
       {
@@ -470,7 +395,7 @@
             "name": "DisplayGradeThree"
           },
           "x": 0,
-          "y": 0
+          "y": 5
         }
       },
       {
@@ -482,7 +407,7 @@
             "name": "DisplaySemiGrade2"
           },
           "x": 0,
-          "y": 0
+          "y": 5
         }
       },
       {
@@ -494,7 +419,7 @@
             "name": "DisplayGrade2"
           },
           "x": 0,
-          "y": 0
+          "y": 5
         }
       },
       {
@@ -506,7 +431,7 @@
             "name": "DisplaySemiGrade1"
           },
           "x": 0,
-          "y": 0
+          "y": 5
         }
       },
       {
@@ -518,7 +443,7 @@
             "name": "DisplayGrade1"
           },
           "x": 0,
-          "y": 0
+          "y": 5
         }
       },
       {
@@ -530,15 +455,15 @@
             "name": "DisplaySpecialGrade"
           },
           "x": 0,
-          "y": 0
+          "y": 5
         }
       },
       {
         "type": "image",
         "data": {
           "image": "pageoneopen.png",
-          "use1Xscale": true,
-          "x": 0,
+          "use1Xscale": false,
+          "x": -4,
           "y": 0
         }
       },
@@ -546,8 +471,8 @@
         "type": "image",
         "data": {
           "image": "pagethreeclosed.png",
-          "use1Xscale": true,
-          "x": 0,
+          "use1Xscale": false,
+          "x": -4,
           "y": 0
         }
       },
@@ -555,8 +480,8 @@
         "type": "image",
         "data": {
           "image": "pagetwoclosed.png",
-          "use1Xscale": true,
-          "x": 0,
+          "use1Xscale": false,
+          "x": -4,
           "y": 0
         }
       },
@@ -569,7 +494,7 @@
           "onClick": {
             "name": "OpenSelfVowGUI"
           },
-          "x": 24,
+          "x": 20,
           "y": 55
         }
       },
@@ -582,7 +507,7 @@
           "onClick": {
             "name": "OpenMoves"
           },
-          "x": 24,
+          "x": 20,
           "y": 76
         }
       },
@@ -595,11 +520,11 @@
             "name": "ReturnPerk"
           },
           "color": {
-            "value": -12829636,
+            "value": -1,
             "falpha": 0.0
           },
-          "x": 96,
-          "y": 152
+          "x": 101,
+          "y": 131
         }
       },
       {
@@ -611,26 +536,190 @@
             "name": "DisplayYen"
           },
           "color": {
-            "value": -12829636,
+            "value": -1,
             "falpha": 0.0
           },
-          "x": 96,
-          "y": 170
+          "x": 101,
+          "y": 193
         }
       },
       {
-        "type": "button",
+        "type": "label",
         "data": {
-          "name": "button_mastery",
-          "text": "Mastery",
-          "isUndecorated": false,
+          "name": "label_proc_display_technique",
+          "text": {
+            "fixedValue": "",
+            "name": "DisplayTechnique"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 101,
+          "y": 37
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_prestige",
+          "text": {
+            "fixedValue": "Prestige"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 45,
+          "y": 181
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_0",
+          "text": {
+            "fixedValue": "0"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayP0"
+          },
+          "x": 62,
+          "y": 193
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_ii",
+          "text": {
+            "fixedValue": "I"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayP1"
+          },
+          "x": 63,
+          "y": 193
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_ii1",
+          "text": {
+            "fixedValue": "II"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayP2"
+          },
+          "x": 62,
+          "y": 193
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_iii",
+          "text": {
+            "fixedValue": "III"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayP3"
+          },
+          "x": 60,
+          "y": 193
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_iv",
+          "text": {
+            "fixedValue": "IV"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayP4"
+          },
+          "x": 61,
+          "y": 193
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_mastery_button",
+          "image": "mastery_button.png",
+          "hoveredImage": "mastery_button_h.png",
           "onClick": {
             "name": "OpenMastery"
           },
-          "width": 61,
+          "x": 361,
+          "y": 183
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_prestigebutton",
+          "image": "prestigebutton.png",
+          "hoveredImage": "prestigebutton_h.png",
+          "onClick": {
+            "name": "OpenPrestigeMenu"
+          },
+          "displayCondition": {
+            "name": "DisplayPrestigeButton"
+          },
+          "x": 341,
+          "y": 183
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_open_mastery",
+          "text": {
+            "fixedValue": "Open Mastery"
+          },
+          "width": 18,
           "height": 20,
-          "x": 322,
-          "y": 184
+          "x": 362,
+          "y": 183
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_open_prestige",
+          "text": {
+            "fixedValue": "Open Prestige"
+          },
+          "displayCondition": {
+            "name": "DisplayPrestigeButton"
+          },
+          "width": 18,
+          "height": 22,
+          "x": 342,
+          "y": 182
         }
       }
     ],

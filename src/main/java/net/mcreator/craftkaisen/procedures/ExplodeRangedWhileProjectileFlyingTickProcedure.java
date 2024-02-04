@@ -32,7 +32,7 @@ public class ExplodeRangedWhileProjectileFlyingTickProcedure {
 			for (Entity entityiterator : _entfound) {
 				if (!(entity == entityiterator)) {
 					if (!(immediatesourceentity == entityiterator)) {
-						entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC), immediatesourceentity, entity),
+						entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.EXPLOSION), immediatesourceentity, entity),
 								(float) ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 5));
 						if (world instanceof Level _level && !_level.isClientSide())
 							_level.explode(null, (entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()),

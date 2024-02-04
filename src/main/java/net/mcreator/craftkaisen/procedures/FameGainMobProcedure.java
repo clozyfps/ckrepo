@@ -9,6 +9,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
 
+import net.mcreator.craftkaisen.entity.UraumeEntity;
 import net.mcreator.craftkaisen.entity.SmallPoxDeityEntity;
 import net.mcreator.craftkaisen.entity.RyomenSukunaEntity;
 import net.mcreator.craftkaisen.entity.RugbyFieldCursedSpiritEntity;
@@ -21,6 +22,7 @@ import net.mcreator.craftkaisen.entity.JogoEntity;
 import net.mcreator.craftkaisen.entity.InventoryCurseMobEntity;
 import net.mcreator.craftkaisen.entity.HeianEraSukunaEntity;
 import net.mcreator.craftkaisen.entity.HanamiEntity;
+import net.mcreator.craftkaisen.entity.FlyingCursedSpiritEntity;
 import net.mcreator.craftkaisen.entity.FingerBearerEntity;
 
 import javax.annotation.Nullable;
@@ -80,6 +82,9 @@ public class FameGainMobProcedure {
 		}
 		if (entity instanceof MegunaEntity) {
 			entity.getPersistentData().putDouble("famegain", (Mth.nextInt(RandomSource.create(), 80000, 100000)));
+		}
+		if (entity instanceof UraumeEntity) {
+			entity.getPersistentData().putDouble("famegain", (Mth.nextInt(RandomSource.create(), 60000, 69000)));
 		}
 	}
 }

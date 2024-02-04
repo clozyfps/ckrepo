@@ -40,12 +40,12 @@ public class HajimeKashimoOnEntityTickUpdateProcedure {
 						if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 							_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 70, 250, false, false));
 						if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-							_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 40, 3, false, false));
+							_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 40, 5, false, false));
 						if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 							_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.SURGE.get(), 9000, 0, false, false));
 					}
 				}
-				if (Math.random() < 0.009) {
+				if (Math.random() < 0.01) {
 					if (world instanceof ServerLevel _level)
 						_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.PURPLE_ELECTRICITY_PARTICLE.get()), x, y, z, 25, 4, 6, 4, 0);
 					if (world instanceof ServerLevel _level)
@@ -72,7 +72,7 @@ public class HajimeKashimoOnEntityTickUpdateProcedure {
 								.collect(Collectors.toList());
 						for (Entity entityiterator : _entfound) {
 							if (!(entity == entityiterator)) {
-								entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC), entity), 9);
+								entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC), entity), 25);
 							}
 						}
 					}
@@ -86,7 +86,7 @@ public class HajimeKashimoOnEntityTickUpdateProcedure {
 								.collect(Collectors.toList());
 						for (Entity entityiterator : _entfound) {
 							if (!(entity == entityiterator)) {
-								entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC), entity), 8);
+								entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC), entity), 21);
 								if (world instanceof ServerLevel _level)
 									_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.PUNCH_IMPACT.get()), x, y, z, 3, 5, 3, 5, 0);
 								if (world instanceof Level _level) {

@@ -16,14 +16,14 @@
       "fixedValue": false
     },
     "visualScale": {
-      "fixedValue": 1.0
+      "fixedValue": 1.2
     },
     "boundingBoxScale": {
       "fixedValue": 1.0
     },
     "modelLayers": [],
-    "modelWidth": 1.0,
-    "modelHeight": 3.0,
+    "modelWidth": 2.0,
+    "modelHeight": 5.5,
     "modelShadowSize": 0.5,
     "mountedYOffset": 0.0,
     "hasSpawnEgg": true,
@@ -36,7 +36,7 @@
       "falpha": 0.0
     },
     "creativeTab": {
-      "value": "CUSTOM:CkMobs"
+      "value": "CUSTOM:CkCurses"
     },
     "isBoss": false,
     "bossBarColor": "PINK",

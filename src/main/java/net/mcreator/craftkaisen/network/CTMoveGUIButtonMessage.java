@@ -76,55 +76,55 @@ public class CTMoveGUIButtonMessage {
 			return;
 		if (buttonID == 0) {
 
-			SetAbility1Procedure.execute(entity);
+			ForwardPageProcedure.execute(entity);
 		}
 		if (buttonID == 1) {
 
-			SetAbility2Procedure.execute(entity);
+			BackPageProcedure.execute(entity);
 		}
 		if (buttonID == 2) {
 
-			SetAbility3Procedure.execute(entity);
+			ForwardbuttonProcedure.execute(entity);
 		}
 		if (buttonID == 3) {
 
-			SetAbility4Procedure.execute(entity);
+			BackButtonProcedure.execute(entity);
 		}
 		if (buttonID == 4) {
 
-			SetAbility5Procedure.execute(entity);
+			UnlockButtonProcedure.execute(entity);
 		}
 		if (buttonID == 5) {
 
-			SetAbility6Procedure.execute(entity);
+			MenuOnKeyPressedProcedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 6) {
 
-			ForwardPageProcedure.execute(entity);
+			OpenSelfVowGUIProcedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 7) {
 
-			BackPageProcedure.execute(entity);
+			SetAbility1Procedure.execute(entity);
 		}
 		if (buttonID == 8) {
 
-			ForwardbuttonProcedure.execute(entity);
+			SetAbility2Procedure.execute(entity);
 		}
 		if (buttonID == 9) {
 
-			BackButtonProcedure.execute(entity);
+			SetAbility3Procedure.execute(entity);
 		}
 		if (buttonID == 10) {
 
-			UnlockButtonProcedure.execute(entity);
+			SetAbility4Procedure.execute(entity);
 		}
-		if (buttonID == 17) {
+		if (buttonID == 11) {
 
-			MenuOnKeyPressedProcedure.execute(world, x, y, z, entity);
+			SetAbility5Procedure.execute(entity);
 		}
-		if (buttonID == 18) {
+		if (buttonID == 12) {
 
-			OpenSelfVowGUIProcedure.execute(world, x, y, z, entity);
+			SetAbility6Procedure.execute(entity);
 		}
 	}
 

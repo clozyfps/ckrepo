@@ -72,6 +72,13 @@ public class LiveResetProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
+			{
+				String _setval = "Human";
+				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.race = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
 		}
 		{
 			double _setval = 0;
@@ -172,9 +179,30 @@ public class LiveResetProcedure {
 			});
 		}
 		{
-			String _setval = "Human";
+			double _setval = 0;
 			entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.race = _setval;
+				capability.RCTLevel = _setval;
+				capability.syncPlayerVariables(entity);
+			});
+		}
+		{
+			double _setval = 0;
+			entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				capability.RCTExp = _setval;
+				capability.syncPlayerVariables(entity);
+			});
+		}
+		{
+			double _setval = 0;
+			entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				capability.Bounty = _setval;
+				capability.syncPlayerVariables(entity);
+			});
+		}
+		{
+			double _setval = 0;
+			entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				capability.Intelligence = _setval;
 				capability.syncPlayerVariables(entity);
 			});
 		}

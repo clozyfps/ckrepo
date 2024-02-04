@@ -6,6 +6,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.TickEvent;
 
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.MobSpawnType;
@@ -21,8 +22,14 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
 import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
+import net.mcreator.craftkaisen.entity.ShinjukuGojoEntity;
+import net.mcreator.craftkaisen.entity.ResurrectedTojiEntity;
 import net.mcreator.craftkaisen.entity.MegunaEntity;
+import net.mcreator.craftkaisen.entity.MahitoEntity;
+import net.mcreator.craftkaisen.entity.JogoEntity;
 import net.mcreator.craftkaisen.entity.HundredDemonsTickEntity;
+import net.mcreator.craftkaisen.entity.HanamiEntity;
+import net.mcreator.craftkaisen.entity.ChosoEntity;
 
 import javax.annotation.Nullable;
 
@@ -53,17 +60,59 @@ public class WorldEventsProcedure {
 		double nearx = 0;
 		double nearz = 0;
 		double neary = 0;
+		double eventteleport = 0;
 		if (CraftKaisenModVariables.MapVariables.get(world).WorldEventTimer < 120000) {
 			CraftKaisenModVariables.MapVariables.get(world).WorldEventTimer = CraftKaisenModVariables.MapVariables.get(world).WorldEventTimer + 1;
 			CraftKaisenModVariables.MapVariables.get(world).syncData(world);
 		} else if (CraftKaisenModVariables.MapVariables.get(world).WorldEventTimer >= 120000) {
 			CraftKaisenModVariables.MapVariables.get(world).WorldEventTimer = 0;
 			CraftKaisenModVariables.MapVariables.get(world).syncData(world);
-			randomworldevent = Mth.nextInt(RandomSource.create(), 1, 2);
+			randomworldevent = Mth.nextInt(RandomSource.create(), 1, 5);
 			if (randomworldevent == 1) {
-				nearx = world.getLevelData().getXSpawn() + Mth.nextInt(RandomSource.create(), 100, 1500);
-				nearz = world.getLevelData().getZSpawn() + Mth.nextInt(RandomSource.create(), 100, 1500);
-				neary = world.getLevelData().getYSpawn();
+				CraftKaisenModVariables.MapVariables.get(world).nearx = world.getLevelData().getXSpawn() + Mth.nextInt(RandomSource.create(), 100, 1500);
+				CraftKaisenModVariables.MapVariables.get(world).syncData(world);
+				CraftKaisenModVariables.MapVariables.get(world).nearz = world.getLevelData().getZSpawn() + Mth.nextInt(RandomSource.create(), 100, 1500);
+				CraftKaisenModVariables.MapVariables.get(world).syncData(world);
+				CraftKaisenModVariables.MapVariables.get(world).neary = world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) CraftKaisenModVariables.MapVariables.get(world).nearx,
+						(int) CraftKaisenModVariables.MapVariables.get(world).nearz);
+				CraftKaisenModVariables.MapVariables.get(world).syncData(world);
+				for (Entity entityiterator : new ArrayList<>(world.players())) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.lightning_bolt.thunder")),
+									SoundSource.NEUTRAL, 1, 1);
+						} else {
+							_level.playLocalSound((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.lightning_bolt.thunder")), SoundSource.NEUTRAL, 1, 1,
+									false);
+						}
+					}
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("ambient.cave")), SoundSource.NEUTRAL, 1, 1);
+						} else {
+							_level.playLocalSound((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("ambient.cave")), SoundSource.NEUTRAL, 1, 1, false);
+						}
+					}
+				}
+				if (!world.isClientSide() && world.getServer() != null)
+					world.getServer().getPlayerList().broadcastSystemMessage(Component.literal(("\u00A74Meguna has appeared at x: " + new java.text.DecimalFormat("#").format(Math.round(CraftKaisenModVariables.MapVariables.get(world).nearx)) + " z: "
+							+ new java.text.DecimalFormat("#").format(Math.round(CraftKaisenModVariables.MapVariables.get(world).nearz)))), false);
+				if (world instanceof ServerLevel _level) {
+					Entity entityToSpawn = new MegunaEntity(CraftKaisenModEntities.MEGUNA.get(), _level);
+					entityToSpawn.moveTo(CraftKaisenModVariables.MapVariables.get(world).nearx, CraftKaisenModVariables.MapVariables.get(world).neary, CraftKaisenModVariables.MapVariables.get(world).nearz, world.getRandom().nextFloat() * 360F, 0);
+					if (entityToSpawn instanceof Mob _mobToSpawn)
+						_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+					_level.addFreshEntity(entityToSpawn);
+				}
+			}
+			if (randomworldevent == 2) {
+				CraftKaisenModVariables.MapVariables.get(world).nearx = world.getLevelData().getXSpawn() + Mth.nextInt(RandomSource.create(), 100, 1500);
+				CraftKaisenModVariables.MapVariables.get(world).syncData(world);
+				CraftKaisenModVariables.MapVariables.get(world).nearz = world.getLevelData().getZSpawn() + Mth.nextInt(RandomSource.create(), 100, 1500);
+				CraftKaisenModVariables.MapVariables.get(world).syncData(world);
+				CraftKaisenModVariables.MapVariables.get(world).neary = world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) CraftKaisenModVariables.MapVariables.get(world).nearx,
+						(int) CraftKaisenModVariables.MapVariables.get(world).nearz);
+				CraftKaisenModVariables.MapVariables.get(world).syncData(world);
 				for (Entity entityiterator : new ArrayList<>(world.players())) {
 					if (world instanceof Level _level) {
 						if (!_level.isClientSide()) {
@@ -84,19 +133,24 @@ public class WorldEventsProcedure {
 				}
 				if (!world.isClientSide() && world.getServer() != null)
 					world.getServer().getPlayerList()
-							.broadcastSystemMessage(Component.literal(("\u00A74Meguna has appeared at x: " + new java.text.DecimalFormat("#").format(Math.round(nearx)) + " z: " + new java.text.DecimalFormat("#").format(Math.round(nearz)))), false);
+							.broadcastSystemMessage(Component.literal(("\u00A74 Night Parade of a Hundred Demons has started at x: " + new java.text.DecimalFormat("#").format(Math.round(CraftKaisenModVariables.MapVariables.get(world).nearx)) + " z: "
+									+ new java.text.DecimalFormat("#").format(Math.round(CraftKaisenModVariables.MapVariables.get(world).nearz)))), false);
 				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = new MegunaEntity(CraftKaisenModEntities.MEGUNA.get(), _level);
-					entityToSpawn.moveTo(nearx, neary, nearz, world.getRandom().nextFloat() * 360F, 0);
+					Entity entityToSpawn = new HundredDemonsTickEntity(CraftKaisenModEntities.HUNDRED_DEMONS_TICK.get(), _level);
+					entityToSpawn.moveTo(CraftKaisenModVariables.MapVariables.get(world).nearx, CraftKaisenModVariables.MapVariables.get(world).neary, CraftKaisenModVariables.MapVariables.get(world).nearz, world.getRandom().nextFloat() * 360F, 0);
 					if (entityToSpawn instanceof Mob _mobToSpawn)
 						_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
 					_level.addFreshEntity(entityToSpawn);
 				}
 			}
-			if (randomworldevent == 2) {
-				nearx = world.getLevelData().getXSpawn() + Mth.nextInt(RandomSource.create(), 100, 1500);
-				nearz = world.getLevelData().getZSpawn() + Mth.nextInt(RandomSource.create(), 100, 1500);
-				neary = world.getLevelData().getYSpawn();
+			if (randomworldevent == 3) {
+				CraftKaisenModVariables.MapVariables.get(world).nearx = world.getLevelData().getXSpawn() + Mth.nextInt(RandomSource.create(), 100, 1500);
+				CraftKaisenModVariables.MapVariables.get(world).syncData(world);
+				CraftKaisenModVariables.MapVariables.get(world).nearz = world.getLevelData().getZSpawn() + Mth.nextInt(RandomSource.create(), 100, 1500);
+				CraftKaisenModVariables.MapVariables.get(world).syncData(world);
+				CraftKaisenModVariables.MapVariables.get(world).neary = world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) CraftKaisenModVariables.MapVariables.get(world).nearx,
+						(int) CraftKaisenModVariables.MapVariables.get(world).nearz);
+				CraftKaisenModVariables.MapVariables.get(world).syncData(world);
 				for (Entity entityiterator : new ArrayList<>(world.players())) {
 					if (world instanceof Level _level) {
 						if (!_level.isClientSide()) {
@@ -116,11 +170,110 @@ public class WorldEventsProcedure {
 					}
 				}
 				if (!world.isClientSide() && world.getServer() != null)
-					world.getServer().getPlayerList().broadcastSystemMessage(
-							Component.literal(("\u00A74 Night Parade of a Hundred Demons has started at x: " + new java.text.DecimalFormat("#").format(Math.round(nearx)) + " z: " + new java.text.DecimalFormat("#").format(Math.round(nearz)))), false);
+					world.getServer().getPlayerList()
+							.broadcastSystemMessage(Component.literal(("\u00A74 The Disaster Curses Are Attacking at x: " + new java.text.DecimalFormat("#").format(Math.round(CraftKaisenModVariables.MapVariables.get(world).nearx)) + " z: "
+									+ new java.text.DecimalFormat("#").format(Math.round(CraftKaisenModVariables.MapVariables.get(world).nearz)))), false);
 				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = new HundredDemonsTickEntity(CraftKaisenModEntities.HUNDRED_DEMONS_TICK.get(), _level);
-					entityToSpawn.moveTo(nearx, neary, nearz, world.getRandom().nextFloat() * 360F, 0);
+					Entity entityToSpawn = new JogoEntity(CraftKaisenModEntities.JOGO.get(), _level);
+					entityToSpawn.moveTo(CraftKaisenModVariables.MapVariables.get(world).nearx, CraftKaisenModVariables.MapVariables.get(world).neary, CraftKaisenModVariables.MapVariables.get(world).nearz, world.getRandom().nextFloat() * 360F, 0);
+					if (entityToSpawn instanceof Mob _mobToSpawn)
+						_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+					_level.addFreshEntity(entityToSpawn);
+				}
+				if (world instanceof ServerLevel _level) {
+					Entity entityToSpawn = new MahitoEntity(CraftKaisenModEntities.MAHITO.get(), _level);
+					entityToSpawn.moveTo(CraftKaisenModVariables.MapVariables.get(world).nearx, CraftKaisenModVariables.MapVariables.get(world).neary, CraftKaisenModVariables.MapVariables.get(world).nearz, world.getRandom().nextFloat() * 360F, 0);
+					if (entityToSpawn instanceof Mob _mobToSpawn)
+						_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+					_level.addFreshEntity(entityToSpawn);
+				}
+				if (world instanceof ServerLevel _level) {
+					Entity entityToSpawn = new ChosoEntity(CraftKaisenModEntities.CHOSO.get(), _level);
+					entityToSpawn.moveTo(CraftKaisenModVariables.MapVariables.get(world).nearx, CraftKaisenModVariables.MapVariables.get(world).neary, CraftKaisenModVariables.MapVariables.get(world).nearz, world.getRandom().nextFloat() * 360F, 0);
+					if (entityToSpawn instanceof Mob _mobToSpawn)
+						_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+					_level.addFreshEntity(entityToSpawn);
+				}
+				if (world instanceof ServerLevel _level) {
+					Entity entityToSpawn = new HanamiEntity(CraftKaisenModEntities.HANAMI.get(), _level);
+					entityToSpawn.moveTo(CraftKaisenModVariables.MapVariables.get(world).nearx, CraftKaisenModVariables.MapVariables.get(world).neary, CraftKaisenModVariables.MapVariables.get(world).nearz, world.getRandom().nextFloat() * 360F, 0);
+					if (entityToSpawn instanceof Mob _mobToSpawn)
+						_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+					_level.addFreshEntity(entityToSpawn);
+				}
+			}
+			if (randomworldevent == 4) {
+				CraftKaisenModVariables.MapVariables.get(world).nearx = world.getLevelData().getXSpawn() + Mth.nextInt(RandomSource.create(), 100, 1500);
+				CraftKaisenModVariables.MapVariables.get(world).syncData(world);
+				CraftKaisenModVariables.MapVariables.get(world).nearz = world.getLevelData().getZSpawn() + Mth.nextInt(RandomSource.create(), 100, 1500);
+				CraftKaisenModVariables.MapVariables.get(world).syncData(world);
+				CraftKaisenModVariables.MapVariables.get(world).neary = world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) CraftKaisenModVariables.MapVariables.get(world).nearx,
+						(int) CraftKaisenModVariables.MapVariables.get(world).nearz);
+				CraftKaisenModVariables.MapVariables.get(world).syncData(world);
+				for (Entity entityiterator : new ArrayList<>(world.players())) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.lightning_bolt.thunder")),
+									SoundSource.NEUTRAL, 1, 1);
+						} else {
+							_level.playLocalSound((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.lightning_bolt.thunder")), SoundSource.NEUTRAL, 1, 1,
+									false);
+						}
+					}
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("ambient.cave")), SoundSource.NEUTRAL, 1, 1);
+						} else {
+							_level.playLocalSound((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("ambient.cave")), SoundSource.NEUTRAL, 1, 1, false);
+						}
+					}
+				}
+				if (!world.isClientSide() && world.getServer() != null)
+					world.getServer().getPlayerList()
+							.broadcastSystemMessage(Component.literal(("\u00A74 Revived Toji Zenin Has Appeared at x: " + new java.text.DecimalFormat("#").format(Math.round(CraftKaisenModVariables.MapVariables.get(world).nearx)) + " z: "
+									+ new java.text.DecimalFormat("#").format(Math.round(CraftKaisenModVariables.MapVariables.get(world).nearz)))), false);
+				if (!world.isClientSide() && world.getServer() != null)
+					world.getServer().getPlayerList().broadcastSystemMessage(Component.literal("\u00A74/eventtp to teleport"), false);
+				if (world instanceof ServerLevel _level) {
+					Entity entityToSpawn = new ResurrectedTojiEntity(CraftKaisenModEntities.RESURRECTED_TOJI.get(), _level);
+					entityToSpawn.moveTo(CraftKaisenModVariables.MapVariables.get(world).nearx, CraftKaisenModVariables.MapVariables.get(world).neary, CraftKaisenModVariables.MapVariables.get(world).nearz, world.getRandom().nextFloat() * 360F, 0);
+					if (entityToSpawn instanceof Mob _mobToSpawn)
+						_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+					_level.addFreshEntity(entityToSpawn);
+				}
+			}
+			if (randomworldevent == 5) {
+				CraftKaisenModVariables.MapVariables.get(world).nearx = world.getLevelData().getXSpawn() + Mth.nextInt(RandomSource.create(), 100, 1500);
+				CraftKaisenModVariables.MapVariables.get(world).syncData(world);
+				CraftKaisenModVariables.MapVariables.get(world).nearz = world.getLevelData().getZSpawn() + Mth.nextInt(RandomSource.create(), 100, 1500);
+				CraftKaisenModVariables.MapVariables.get(world).syncData(world);
+				CraftKaisenModVariables.MapVariables.get(world).neary = world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) CraftKaisenModVariables.MapVariables.get(world).nearx,
+						(int) CraftKaisenModVariables.MapVariables.get(world).nearz);
+				CraftKaisenModVariables.MapVariables.get(world).syncData(world);
+				for (Entity entityiterator : new ArrayList<>(world.players())) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.lightning_bolt.thunder")),
+									SoundSource.NEUTRAL, 1, 1);
+						} else {
+							_level.playLocalSound((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.lightning_bolt.thunder")), SoundSource.NEUTRAL, 1, 1,
+									false);
+						}
+					}
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("ambient.cave")), SoundSource.NEUTRAL, 1, 1);
+						} else {
+							_level.playLocalSound((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("ambient.cave")), SoundSource.NEUTRAL, 1, 1, false);
+						}
+					}
+				}
+				if (!world.isClientSide() && world.getServer() != null)
+					world.getServer().getPlayerList().broadcastSystemMessage(Component.literal(("\u00A74 Awakened Gojo Has Appeared At x: " + new java.text.DecimalFormat("#").format(Math.round(CraftKaisenModVariables.MapVariables.get(world).nearx))
+							+ " z: " + new java.text.DecimalFormat("#").format(Math.round(CraftKaisenModVariables.MapVariables.get(world).nearz)))), false);
+				if (world instanceof ServerLevel _level) {
+					Entity entityToSpawn = new ShinjukuGojoEntity(CraftKaisenModEntities.SHINJUKU_GOJO.get(), _level);
+					entityToSpawn.moveTo(CraftKaisenModVariables.MapVariables.get(world).nearx, CraftKaisenModVariables.MapVariables.get(world).neary, CraftKaisenModVariables.MapVariables.get(world).nearz, world.getRandom().nextFloat() * 360F, 0);
 					if (entityToSpawn instanceof Mob _mobToSpawn)
 						_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
 					_level.addFreshEntity(entityToSpawn);
