@@ -1,11 +1,13 @@
 package net.mcreator.craftkaisen.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraft.world.entity.Entity;
 
-import javax.annotation.Nullable;
+import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
 
 public class SoulsDisplayProcedure {
-	public static String execute() {
-		return "Souls: " + new java.text.DecimalFormat("#").format();
+	public static String execute(Entity entity) {
+		if (entity == null)
+			return "";
+		return "Souls: " + new java.text.DecimalFormat("#").format((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).Souls);
 	}
 }

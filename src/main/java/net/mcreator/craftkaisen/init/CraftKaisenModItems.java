@@ -21,6 +21,7 @@ import net.mcreator.craftkaisen.item.TwistRangedItem;
 import net.mcreator.craftkaisen.item.TojiOutfitItem;
 import net.mcreator.craftkaisen.item.TojiCurseArmorItem;
 import net.mcreator.craftkaisen.item.TestItem;
+import net.mcreator.craftkaisen.item.SwordOfExterminationItem;
 import net.mcreator.craftkaisen.item.SukunaOutfitItem;
 import net.mcreator.craftkaisen.item.SukunaGiveItem;
 import net.mcreator.craftkaisen.item.SukunaFingerItem;
@@ -47,6 +48,7 @@ import net.mcreator.craftkaisen.item.NaginataItem;
 import net.mcreator.craftkaisen.item.MiwaKatanaItem;
 import net.mcreator.craftkaisen.item.MedicineItem;
 import net.mcreator.craftkaisen.item.MahoragaWheelItem;
+import net.mcreator.craftkaisen.item.MahoragaOutfitItem;
 import net.mcreator.craftkaisen.item.MahitoOutfitItem;
 import net.mcreator.craftkaisen.item.LdawdaItem;
 import net.mcreator.craftkaisen.item.LapseBlueRangedItem;
@@ -92,6 +94,7 @@ import net.mcreator.craftkaisen.item.BloodAxeItem;
 import net.mcreator.craftkaisen.item.BlastAwayRangedItem;
 import net.mcreator.craftkaisen.item.BlackMucusItem;
 import net.mcreator.craftkaisen.item.BlackBlindFoldItem;
+import net.mcreator.craftkaisen.item.BattleAxeItem;
 import net.mcreator.craftkaisen.item.BandageBlindFoldItem;
 import net.mcreator.craftkaisen.CraftKaisenMod;
 
@@ -218,7 +221,6 @@ public class CraftKaisenModItems {
 	public static final RegistryObject<Item> DISTORTED_BODY_CHESTPLATE = REGISTRY.register("distorted_body_chestplate", () -> new DistortedBodyItem.Chestplate());
 	public static final RegistryObject<Item> DISTORTED_BODY_LEGGINGS = REGISTRY.register("distorted_body_leggings", () -> new DistortedBodyItem.Leggings());
 	public static final RegistryObject<Item> PANDA_SPAWN_EGG = REGISTRY.register("panda_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.PANDA, -1, -16777216, new Item.Properties()));
-	public static final RegistryObject<Item> FLYING_CURSED_SPIRIT_SPAWN_EGG = REGISTRY.register("flying_cursed_spirit_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.FLYING_CURSED_SPIRIT, -1528117, -1, new Item.Properties()));
 	public static final RegistryObject<Item> MEGUNA_SPAWN_EGG = REGISTRY.register("meguna_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.MEGUNA, -1, -13421773, new Item.Properties()));
 	public static final RegistryObject<Item> CLAN_INVITE_PAPER = REGISTRY.register("clan_invite_paper", () -> new ClanInvitePaperItem());
 	public static final RegistryObject<Item> NYOI_STAFF = REGISTRY.register("nyoi_staff", () -> new NyoiStaffItem());
@@ -249,6 +251,18 @@ public class CraftKaisenModItems {
 	public static final RegistryObject<Item> NANAMI_OUTFIT_CHESTPLATE = REGISTRY.register("nanami_outfit_chestplate", () -> new NanamiOutfitItem.Chestplate());
 	public static final RegistryObject<Item> NANAMI_OUTFIT_LEGGINGS = REGISTRY.register("nanami_outfit_leggings", () -> new NanamiOutfitItem.Leggings());
 	public static final RegistryObject<Item> RAINBOW_CLOSED_DOOR_SPAWN_EGG = REGISTRY.register("rainbow_closed_door_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.RAINBOW_CLOSED_DOOR, -1, -1, new Item.Properties()));
+	public static final RegistryObject<Item> JINICHI_ZENIN_SPAWN_EGG = REGISTRY.register("jinichi_zenin_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.JINICHI_ZENIN, -1976400, -16777216, new Item.Properties()));
+	public static final RegistryObject<Item> FLYING_CURSED_SPIRIT_SPAWN_EGG = REGISTRY.register("flying_cursed_spirit_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.FLYING_CURSED_SPIRIT, -1528117, -1, new Item.Properties()));
+	public static final RegistryObject<Item> SWORD_OF_EXTERMINATION = REGISTRY.register("sword_of_extermination", () -> new SwordOfExterminationItem());
+	public static final RegistryObject<Item> MAHORAGA_OUTFIT_CHESTPLATE = REGISTRY.register("mahoraga_outfit_chestplate", () -> new MahoragaOutfitItem.Chestplate());
+	public static final RegistryObject<Item> MAHORAGA_OUTFIT_LEGGINGS = REGISTRY.register("mahoraga_outfit_leggings", () -> new MahoragaOutfitItem.Leggings());
+	public static final RegistryObject<Item> BATTLE_AXE = REGISTRY.register("battle_axe", () -> new BattleAxeItem());
+	public static final RegistryObject<Item> MEI_MEI_SPAWN_EGG = REGISTRY.register("mei_mei_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.MEI_MEI, -16250865, -1, new Item.Properties()));
+	public static final RegistryObject<Item> DOMAIN_AIR_BLOCK = block(CraftKaisenModBlocks.DOMAIN_AIR_BLOCK);
+	public static final RegistryObject<Item> SHINJUKU_GOJO_SPAWN_EGG = REGISTRY.register("shinjuku_gojo_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.SHINJUKU_GOJO, -16777216, -1, new Item.Properties()));
+	public static final RegistryObject<Item> KENJAKU_SPAWN_EGG = REGISTRY.register("kenjaku_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.KENJAKU, -15459797, -2055680, new Item.Properties()));
+	public static final RegistryObject<Item> ICE_DOMAIN_FLOOR = block(CraftKaisenModBlocks.ICE_DOMAIN_FLOOR);
+	public static final RegistryObject<Item> ICE_DOMAIN_WALL = block(CraftKaisenModBlocks.ICE_DOMAIN_WALL);
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));
