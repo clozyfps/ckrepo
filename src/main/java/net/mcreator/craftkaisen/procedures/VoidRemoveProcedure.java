@@ -15,8 +15,8 @@ import java.util.Map;
 public class VoidRemoveProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
 		BlockState blockrevert = Blocks.AIR.defaultBlockState();
-		int horizontalRadiusSphere = (int) 21 - 1;
-		int verticalRadiusSphere = (int) 21 - 1;
+		int horizontalRadiusSphere = (int) 25 - 1;
+		int verticalRadiusSphere = (int) 25 - 1;
 		int yIterationsSphere = verticalRadiusSphere;
 		for (int i = -yIterationsSphere; i <= yIterationsSphere; i++) {
 			for (int xi = -horizontalRadiusSphere; xi <= horizontalRadiusSphere; xi++) {
