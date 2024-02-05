@@ -1,6 +1,13 @@
 package net.mcreator.craftkaisen.procedures;
 
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.event.TickEvent;
+
+import net.minecraft.world.entity.Entity;
+
+import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
 
 import javax.annotation.Nullable;
 
@@ -300,7 +307,7 @@ public class SetMovesProcedure {
 				}
 			}
 			if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Ice Formation")) {
-				entity.getPersistentData().putDouble("maxMoves", 3);
+				entity.getPersistentData().putDouble("maxMoves", 4);
 				if (entity.getPersistentData().getDouble("moveNumber") == 1) {
 					entity.getPersistentData().putString("moveDisplay", "Ice Needle");
 					entity.getPersistentData().putDouble("moveCost", 6);
@@ -312,6 +319,10 @@ public class SetMovesProcedure {
 				if (entity.getPersistentData().getDouble("moveNumber") == 3) {
 					entity.getPersistentData().putString("moveDisplay", "Frost Calm");
 					entity.getPersistentData().putDouble("moveCost", 12);
+				}
+				if (entity.getPersistentData().getDouble("moveNumber") == 4) {
+					entity.getPersistentData().putString("moveDisplay", "Glacial Embrace");
+					entity.getPersistentData().putDouble("moveCost", 25);
 				}
 			}
 			if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Private Pure Love Train")) {

@@ -1,51 +1,59 @@
 package net.mcreator.craftkaisen.procedures;
 
+import net.minecraftforge.registries.ForgeRegistries;
+
+import net.minecraft.world.level.block.state.properties.Property;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.BlockPos;
 
-import net.mcreator.craftkaisen.init.CraftKaisenModBlocks;
+import java.util.Map;
 
 public class RemoveCoffinProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
-		int horizontalRadiusHemiTop = (int) 50 - 1;
-		int verticalRadiusHemiTop = (int) 50;
-		int yIterationsHemiTop = verticalRadiusHemiTop;
-		for (int i = 0; i < yIterationsHemiTop; i++) {
-			if (i == verticalRadiusHemiTop) {
-				continue;
-			}
-			for (int xi = -horizontalRadiusHemiTop; xi <= horizontalRadiusHemiTop; xi++) {
-				for (int zi = -horizontalRadiusHemiTop; zi <= horizontalRadiusHemiTop; zi++) {
-					double distanceSq = (xi * xi) / (double) (horizontalRadiusHemiTop * horizontalRadiusHemiTop) + (i * i) / (double) (verticalRadiusHemiTop * verticalRadiusHemiTop)
-							+ (zi * zi) / (double) (horizontalRadiusHemiTop * horizontalRadiusHemiTop);
+		BlockState blockrevert = Blocks.AIR.defaultBlockState();
+		int horizontalRadiusSphere = (int) 21 - 1;
+		int verticalRadiusSphere = (int) 21 - 1;
+		int yIterationsSphere = verticalRadiusSphere;
+		for (int i = -yIterationsSphere; i <= yIterationsSphere; i++) {
+			for (int xi = -horizontalRadiusSphere; xi <= horizontalRadiusSphere; xi++) {
+				for (int zi = -horizontalRadiusSphere; zi <= horizontalRadiusSphere; zi++) {
+					double distanceSq = (xi * xi) / (double) (horizontalRadiusSphere * horizontalRadiusSphere) + (i * i) / (double) (verticalRadiusSphere * verticalRadiusSphere)
+							+ (zi * zi) / (double) (horizontalRadiusSphere * horizontalRadiusSphere);
 					if (distanceSq <= 1.0) {
-						if ((world.getBlockState(BlockPos.containing(x + xi, y + i, z + zi))).getBlock() == CraftKaisenModBlocks.DOMAIN_BLOCK.get()
-								|| (world.getBlockState(BlockPos.containing(x + xi, y + i, z + zi))).getBlock() == Blocks.MAGMA_BLOCK) {
-							world.destroyBlock(BlockPos.containing(x + xi, y + i, z + zi), false);
-							world.levelEvent(2001, BlockPos.containing(x + xi, y + i, z + zi), Block.getId(Blocks.WHITE_STAINED_GLASS_PANE.defaultBlockState()));
-						}
-					}
-				}
-			}
-		}
-		int horizontalRadiusHemiBot = (int) 50 - 1;
-		int verticalRadiusHemiBot = (int) 50;
-		int yIterationsHemiBot = verticalRadiusHemiBot;
-		for (int i = -yIterationsHemiBot; i <= 0; i++) {
-			if (i == -verticalRadiusHemiBot) {
-				continue;
-			}
-			for (int xi = -horizontalRadiusHemiBot; xi <= horizontalRadiusHemiBot; xi++) {
-				for (int zi = -horizontalRadiusHemiBot; zi <= horizontalRadiusHemiBot; zi++) {
-					double distanceSq = (xi * xi) / (double) (horizontalRadiusHemiBot * horizontalRadiusHemiBot) + (i * i) / (double) (verticalRadiusHemiBot * verticalRadiusHemiBot)
-							+ (zi * zi) / (double) (horizontalRadiusHemiBot * horizontalRadiusHemiBot);
-					if (distanceSq <= 1.0) {
-						if ((world.getBlockState(BlockPos.containing(x + xi, y + i, z + zi))).getBlock() == CraftKaisenModBlocks.DOMAIN_BLOCK.get()
-								|| (world.getBlockState(BlockPos.containing(x + xi, y + i, z + zi))).getBlock() == Blocks.MAGMA_BLOCK) {
-							world.destroyBlock(BlockPos.containing(x + xi, y + i, z + zi), false);
-							world.levelEvent(2001, BlockPos.containing(x + xi, y + i, z + zi), Block.getId(Blocks.WHITE_STAINED_GLASS_PANE.defaultBlockState()));
+						if (!(new Object() {
+							public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+								BlockEntity blockEntity = world.getBlockEntity(pos);
+								if (blockEntity != null)
+									return blockEntity.getPersistentData().getString(tag);
+								return "";
+							}
+						}.getValue(world, BlockPos.containing(x + xi, y + i, z + zi), "old_block")).equals("")) {
+							blockrevert = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(((new Object() {
+								public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+									BlockEntity blockEntity = world.getBlockEntity(pos);
+									if (blockEntity != null)
+										return blockEntity.getPersistentData().getString(tag);
+									return "";
+								}
+							}.getValue(world, BlockPos.containing(x + xi, y + i, z + zi), "old_block"))).toLowerCase(java.util.Locale.ENGLISH))).defaultBlockState();
+							{
+								BlockPos _bp = BlockPos.containing(x + xi, y + i, z + zi);
+								BlockState _bs = blockrevert;
+								BlockState _bso = world.getBlockState(_bp);
+								for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
+									Property _property = _bs.getBlock().getStateDefinition().getProperty(entry.getKey().getName());
+									if (_property != null && _bs.getValue(_property) != null)
+										try {
+											_bs = _bs.setValue(_property, (Comparable) entry.getValue());
+										} catch (Exception e) {
+										}
+								}
+								world.setBlock(_bp, _bs, 3);
+							}
 						}
 					}
 				}

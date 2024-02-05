@@ -51,6 +51,7 @@ import net.mcreator.craftkaisen.potion.DistortedBodyKillingMobEffect;
 import net.mcreator.craftkaisen.potion.CooldownMobEffect;
 import net.mcreator.craftkaisen.potion.ConstantSliceMobEffect;
 import net.mcreator.craftkaisen.potion.CleaveMobEffect;
+import net.mcreator.craftkaisen.potion.COTMeffectMobEffect;
 import net.mcreator.craftkaisen.potion.BurnCooldownMobEffect;
 import net.mcreator.craftkaisen.potion.BodyShapeCooldownMobEffect;
 import net.mcreator.craftkaisen.potion.BodyShapeActiveMobEffect;
@@ -106,4 +107,5 @@ public class CraftKaisenModMobEffects {
 	public static final RegistryObject<MobEffect> FRAME_ENABLE = REGISTRY.register("frame_enable", () -> new FrameEnableMobEffect());
 	public static final RegistryObject<MobEffect> FRAME_ON = REGISTRY.register("frame_on", () -> new FrameOnMobEffect());
 	public static final RegistryObject<MobEffect> FROZEN_SOLID = REGISTRY.register("frozen_solid", () -> new FrozenSolidMobEffect());
+	public static final RegistryObject<MobEffect> COT_MEFFECT = REGISTRY.register("cot_meffect", () -> new COTMeffectMobEffect());
 }

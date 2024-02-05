@@ -15,6 +15,8 @@ import net.mcreator.craftkaisen.block.SprinklerOnBlock;
 import net.mcreator.craftkaisen.block.SprinklerBlock;
 import net.mcreator.craftkaisen.block.ShibuyaGatesBlock;
 import net.mcreator.craftkaisen.block.QuestBoardBlock;
+import net.mcreator.craftkaisen.block.MagmaDomainWallBlock;
+import net.mcreator.craftkaisen.block.MagmaDomainFloorBlock;
 import net.mcreator.craftkaisen.block.IceDomainWallBlock;
 import net.mcreator.craftkaisen.block.IceDomainFloorBlock;
 import net.mcreator.craftkaisen.block.DomainBlockBlock;
@@ -34,4 +36,6 @@ public class CraftKaisenModBlocks {
 	public static final RegistryObject<Block> DOMAIN_AIR_BLOCK = REGISTRY.register("domain_air_block", () -> new DomainAirBlockBlock());
 	public static final RegistryObject<Block> ICE_DOMAIN_FLOOR = REGISTRY.register("ice_domain_floor", () -> new IceDomainFloorBlock());
 	public static final RegistryObject<Block> ICE_DOMAIN_WALL = REGISTRY.register("ice_domain_wall", () -> new IceDomainWallBlock());
+	public static final RegistryObject<Block> MAGMA_DOMAIN_WALL = REGISTRY.register("magma_domain_wall", () -> new MagmaDomainWallBlock());
+	public static final RegistryObject<Block> MAGMA_DOMAIN_FLOOR = REGISTRY.register("magma_domain_floor", () -> new MagmaDomainFloorBlock());
 }

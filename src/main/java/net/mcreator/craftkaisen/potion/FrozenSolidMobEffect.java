@@ -1,6 +1,18 @@
 
 package net.mcreator.craftkaisen.potion;
 
+import net.minecraftforge.client.extensions.common.IClientMobEffectExtensions;
+
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffectCategory;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.client.gui.screens.inventory.EffectRenderingInventoryScreen;
+
+import net.mcreator.craftkaisen.procedures.FrozenSolidOnEffectActiveTickProcedure;
+
+import com.mojang.blaze3d.vertex.PoseStack;
+
 public class FrozenSolidMobEffect extends MobEffect {
 	public FrozenSolidMobEffect() {
 		super(MobEffectCategory.NEUTRAL, -10040065);
@@ -13,7 +25,7 @@ public class FrozenSolidMobEffect extends MobEffect {
 
 	@Override
 	public void applyEffectTick(LivingEntity entity, int amplifier) {
-		FrozenSolidOnEffectActiveTickProcedure.execute();
+		FrozenSolidOnEffectActiveTickProcedure.execute(entity);
 	}
 
 	@Override

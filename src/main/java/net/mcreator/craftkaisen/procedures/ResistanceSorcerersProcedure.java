@@ -1,6 +1,28 @@
 package net.mcreator.craftkaisen.procedures;
 
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.event.entity.EntityJoinLevelEvent;
+
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.effect.MobEffectInstance;
+
+import net.mcreator.craftkaisen.entity.YutaOkkotsuEntity;
+import net.mcreator.craftkaisen.entity.YujiItadoriEntity;
+import net.mcreator.craftkaisen.entity.UraumeEntity;
+import net.mcreator.craftkaisen.entity.TojiFushiguroEntity;
+import net.mcreator.craftkaisen.entity.ShinjukuGojoEntity;
+import net.mcreator.craftkaisen.entity.SatoruGojoEntity;
+import net.mcreator.craftkaisen.entity.RyomenSukunaEntity;
+import net.mcreator.craftkaisen.entity.ResurrectedTojiEntity;
+import net.mcreator.craftkaisen.entity.MahitoEntity;
+import net.mcreator.craftkaisen.entity.JogoEntity;
+import net.mcreator.craftkaisen.entity.AoiTodoEntity;
+import net.mcreator.craftkaisen.CraftKaisenMod;
 
 import javax.annotation.Nullable;
 

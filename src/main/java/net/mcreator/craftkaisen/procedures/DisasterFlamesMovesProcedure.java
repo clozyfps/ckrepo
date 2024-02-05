@@ -170,6 +170,24 @@ public class DisasterFlamesMovesProcedure {
 					});
 				}
 			} else if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentMove).equals("Coffin of the Iron Mountain")) {
+				if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy >= 500) {
+					CoffinOfTheIronMountainProcedureProcedure.execute(world, x, y, z, entity);
+					if (!entity.getPersistentData().getBoolean("domain")) {
+						{
+							double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy - 500;
+							entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.currentCursedEnergy = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+						entity.getPersistentData().putDouble(("cooldown" + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("coolset"))), 60);
+					} else if (entity.getPersistentData().getBoolean("domain")) {
+						entity.getPersistentData().putDouble(("cooldown" + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("coolset"))), 1500);
+					}
+				} else if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy < 500) {
+					if (entity instanceof Player _player && !_player.level.isClientSide())
+						_player.displayClientMessage(Component.literal(("You need " + new java.text.DecimalFormat("#").format(500) + " cursed energy to use this move.")), true);
+				}
 				{
 					String _setval = "";
 					entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
