@@ -265,6 +265,7 @@ public class CraftKaisenModItems {
 	public static final RegistryObject<Item> ICE_DOMAIN_WALL = block(CraftKaisenModBlocks.ICE_DOMAIN_WALL);
 	public static final RegistryObject<Item> MAGMA_DOMAIN_WALL = block(CraftKaisenModBlocks.MAGMA_DOMAIN_WALL);
 	public static final RegistryObject<Item> MAGMA_DOMAIN_FLOOR = block(CraftKaisenModBlocks.MAGMA_DOMAIN_FLOOR);
+	public static final RegistryObject<Item> UNLIMITED_VOID_WALL = block(CraftKaisenModBlocks.UNLIMITED_VOID_WALL);
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));

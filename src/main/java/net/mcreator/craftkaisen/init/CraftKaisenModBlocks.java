@@ -10,6 +10,7 @@ import net.minecraftforge.registries.DeferredRegister;
 
 import net.minecraft.world.level.block.Block;
 
+import net.mcreator.craftkaisen.block.UnlimitedVoidWallBlock;
 import net.mcreator.craftkaisen.block.TalismanBlockBlock;
 import net.mcreator.craftkaisen.block.SprinklerOnBlock;
 import net.mcreator.craftkaisen.block.SprinklerBlock;
@@ -38,4 +39,5 @@ public class CraftKaisenModBlocks {
 	public static final RegistryObject<Block> ICE_DOMAIN_WALL = REGISTRY.register("ice_domain_wall", () -> new IceDomainWallBlock());
 	public static final RegistryObject<Block> MAGMA_DOMAIN_WALL = REGISTRY.register("magma_domain_wall", () -> new MagmaDomainWallBlock());
 	public static final RegistryObject<Block> MAGMA_DOMAIN_FLOOR = REGISTRY.register("magma_domain_floor", () -> new MagmaDomainFloorBlock());
+	public static final RegistryObject<Block> UNLIMITED_VOID_WALL = REGISTRY.register("unlimited_void_wall", () -> new UnlimitedVoidWallBlock());
 }

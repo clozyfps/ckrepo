@@ -24,6 +24,7 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
+import net.mcreator.craftkaisen.CraftKaisenMod;
 
 import javax.annotation.Nullable;
 
@@ -210,17 +211,34 @@ public class LimitlessMovesProcedure {
 										_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:domain")), SoundSource.PLAYERS, 1, 1, false);
 									}
 								}
+								CraftKaisenMod.queueServerWork(20, () -> {
+									if (world instanceof Level _level) {
+										if (!_level.isClientSide()) {
+											_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:unlimitedvoid_start")), SoundSource.PLAYERS, 1, 1);
+										} else {
+											_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:unlimitedvoid_start")), SoundSource.PLAYERS, 1, 1, false);
+										}
+									}
+								});
+								CraftKaisenMod.queueServerWork(90, () -> {
+									if (world instanceof Level _level) {
+										if (!_level.isClientSide()) {
+											_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:unlimitedvoid_splash")), SoundSource.PLAYERS, 1, 1);
+										} else {
+											_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:unlimitedvoid_splash")), SoundSource.PLAYERS, 1, 1, false);
+										}
+									}
+								});
 								entity.getPersistentData().putDouble(("cooldown" + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("coolset"))), 1500);
 							} else if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy < 600) {
 								if (entity instanceof Player _player && !_player.level.isClientSide())
 									_player.displayClientMessage(Component.literal(("You need " + new java.text.DecimalFormat("##.##").format(600) + " cursed energy to use this move.")), true);
 							}
 						} else if (entity.getPersistentData().getBoolean("domain")) {
-							UnlimitedVoidProcedureProcedure.execute(world, x, y, z, entity);
 						}
 					}
-				} else if (!(entity instanceof ServerPlayer _plr29 && _plr29.level instanceof ServerLevel
-						&& _plr29.getAdvancements().getOrStartProgress(_plr29.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:point_two_second_domains"))).isDone())) {
+				} else if (!(entity instanceof ServerPlayer _plr33 && _plr33.level instanceof ServerLevel
+						&& _plr33.getAdvancements().getOrStartProgress(_plr33.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:point_two_second_domains"))).isDone())) {
 					if (!entity.getPersistentData().getBoolean("domain")) {
 						if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy >= 600) {
 							{
@@ -238,6 +256,24 @@ public class LimitlessMovesProcedure {
 									_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:domain")), SoundSource.PLAYERS, 1, 1, false);
 								}
 							}
+							CraftKaisenMod.queueServerWork(20, () -> {
+								if (world instanceof Level _level) {
+									if (!_level.isClientSide()) {
+										_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:unlimitedvoid_start")), SoundSource.PLAYERS, 1, 1);
+									} else {
+										_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:unlimitedvoid_start")), SoundSource.PLAYERS, 1, 1, false);
+									}
+								}
+							});
+							CraftKaisenMod.queueServerWork(90, () -> {
+								if (world instanceof Level _level) {
+									if (!_level.isClientSide()) {
+										_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:unlimitedvoid_splash")), SoundSource.PLAYERS, 1, 1);
+									} else {
+										_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:unlimitedvoid_splash")), SoundSource.PLAYERS, 1, 1, false);
+									}
+								}
+							});
 							entity.getPersistentData().putDouble(("cooldown" + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("coolset"))), 60);
 						} else if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy < 600) {
 							if (entity instanceof Player _player && !_player.level.isClientSide())

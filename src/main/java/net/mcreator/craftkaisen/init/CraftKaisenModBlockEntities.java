@@ -11,6 +11,9 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.Block;
 
+import net.mcreator.craftkaisen.block.entity.UnlimitedVoidWallBlockEntity;
+import net.mcreator.craftkaisen.block.entity.MagmaDomainWallBlockEntity;
+import net.mcreator.craftkaisen.block.entity.MagmaDomainFloorBlockEntity;
 import net.mcreator.craftkaisen.block.entity.IceDomainWallBlockEntity;
 import net.mcreator.craftkaisen.block.entity.IceDomainFloorBlockEntity;
 import net.mcreator.craftkaisen.block.entity.DomainBlockBlockEntity;
@@ -25,6 +28,9 @@ public class CraftKaisenModBlockEntities {
 	public static final RegistryObject<BlockEntityType<?>> DOMAIN_AIR_BLOCK = register("domain_air_block", CraftKaisenModBlocks.DOMAIN_AIR_BLOCK, DomainAirBlockBlockEntity::new);
 	public static final RegistryObject<BlockEntityType<?>> ICE_DOMAIN_FLOOR = register("ice_domain_floor", CraftKaisenModBlocks.ICE_DOMAIN_FLOOR, IceDomainFloorBlockEntity::new);
 	public static final RegistryObject<BlockEntityType<?>> ICE_DOMAIN_WALL = register("ice_domain_wall", CraftKaisenModBlocks.ICE_DOMAIN_WALL, IceDomainWallBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> MAGMA_DOMAIN_WALL = register("magma_domain_wall", CraftKaisenModBlocks.MAGMA_DOMAIN_WALL, MagmaDomainWallBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> MAGMA_DOMAIN_FLOOR = register("magma_domain_floor", CraftKaisenModBlocks.MAGMA_DOMAIN_FLOOR, MagmaDomainFloorBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> UNLIMITED_VOID_WALL = register("unlimited_void_wall", CraftKaisenModBlocks.UNLIMITED_VOID_WALL, UnlimitedVoidWallBlockEntity::new);
 
 	private static RegistryObject<BlockEntityType<?>> register(String registryname, RegistryObject<Block> block, BlockEntityType.BlockEntitySupplier<?> supplier) {
 		return REGISTRY.register(registryname, () -> BlockEntityType.Builder.of(supplier, block.get()).build(null));

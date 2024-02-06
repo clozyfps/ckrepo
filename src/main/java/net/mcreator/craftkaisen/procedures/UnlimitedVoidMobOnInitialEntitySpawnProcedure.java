@@ -1,8 +1,9 @@
 package net.mcreator.craftkaisen.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.entity.Entity;
 
-import javax.annotation.Nullable;
+import net.mcreator.craftkaisen.CraftKaisenMod;
 
 public class UnlimitedVoidMobOnInitialEntitySpawnProcedure {
 	public static void execute(LevelAccessor world, Entity entity) {
@@ -12,5 +13,7 @@ public class UnlimitedVoidMobOnInitialEntitySpawnProcedure {
 			if (!entity.level.isClientSide())
 				entity.discard();
 		});
+		entity.getPersistentData().putDouble("spawnhole", 100);
+		entity.getPersistentData().putDouble("spawnparticles", 100);
 	}
 }
