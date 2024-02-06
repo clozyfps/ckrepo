@@ -63,6 +63,7 @@ import net.mcreator.craftkaisen.client.model.Modelblackblindfold;
 import net.mcreator.craftkaisen.client.model.Modelbeastsummonmask;
 import net.mcreator.craftkaisen.client.model.ModelYujikunaShirtless;
 import net.mcreator.craftkaisen.client.model.ModelYujikuna;
+import net.mcreator.craftkaisen.client.model.ModelVoidAccelerate;
 import net.mcreator.craftkaisen.client.model.ModelTrueSukuna;
 import net.mcreator.craftkaisen.client.model.ModelTenShadowBunny;
 import net.mcreator.craftkaisen.client.model.ModelSorcererArmor;
@@ -136,6 +137,7 @@ public class CraftKaisenModModels {
 		event.registerLayerDefinition(ModelHakariDoorsClosed.LAYER_LOCATION, ModelHakariDoorsClosed::createBodyLayer);
 		event.registerLayerDefinition(Modelswordslice.LAYER_LOCATION, Modelswordslice::createBodyLayer);
 		event.registerLayerDefinition(ModelEmberInsect.LAYER_LOCATION, ModelEmberInsect::createBodyLayer);
+		event.registerLayerDefinition(ModelVoidAccelerate.LAYER_LOCATION, ModelVoidAccelerate::createBodyLayer);
 		event.registerLayerDefinition(Modeluniform.LAYER_LOCATION, Modeluniform::createBodyLayer);
 		event.registerLayerDefinition(Modelmaximumelephantnew.LAYER_LOCATION, Modelmaximumelephantnew::createBodyLayer);
 		event.registerLayerDefinition(Modelcurse_1.LAYER_LOCATION, Modelcurse_1::createBodyLayer);

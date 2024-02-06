@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "craft_kaisen:block/unlimitedvoid_wall",
+    "up": "craft_kaisen:block/unlimitedvoid_wall",
+    "north": "craft_kaisen:block/unlimitedvoid_wall",
+    "east": "craft_kaisen:block/unlimitedvoid_wall",
+    "south": "craft_kaisen:block/unlimitedvoid_wall",
+    "west": "craft_kaisen:block/unlimitedvoid_wall",
+    "particle": "craft_kaisen:block/unlimitedvoid_wall"
+  },
+  "render_type": "solid"
+}

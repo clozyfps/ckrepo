@@ -2,12 +2,12 @@
   "_fv": 57,
   "_type": "block",
   "definition": {
-    "texture": "magma_block",
-    "textureTop": "magma_block",
-    "textureLeft": "magma_block",
-    "textureFront": "magma_block",
-    "textureRight": "magma_block",
-    "textureBack": "magma_block",
+    "texture": "unlimitedvoid_wall",
+    "textureTop": "unlimitedvoid_wall",
+    "textureLeft": "unlimitedvoid_wall",
+    "textureFront": "unlimitedvoid_wall",
+    "textureRight": "unlimitedvoid_wall",
+    "textureBack": "unlimitedvoid_wall",
     "renderType": 10,
     "customModelName": "Normal",
     "rotationMode": 0,
@@ -33,7 +33,7 @@
         "subtract": false
       }
     ],
-    "name": "Magma Domain Floor",
+    "name": "Domain Block",
     "specialInformation": {
       "fixedValue": []
     },
@@ -46,7 +46,7 @@
     },
     "destroyTool": "Not specified",
     "customDrop": {
-      "value": ""
+      "value": "Blocks.AIR"
     },
     "dropAmount": 1,
     "useLootTableForDrops": false,
@@ -58,7 +58,7 @@
     "material": {
       "value": "GLASS"
     },
-    "tickRate": 0,
+    "tickRate": 1200,
     "tickRandomly": false,
     "isReplaceable": false,
     "canProvidePower": false,
@@ -107,8 +107,8 @@
     "openGUIOnRightClick": false,
     "inventorySize": 9,
     "inventoryStackSize": 64,
-    "inventoryDropWhenDestroyed": true,
-    "inventoryComparatorPower": true,
+    "inventoryDropWhenDestroyed": false,
+    "inventoryComparatorPower": false,
     "inventoryOutSlotIDs": [],
     "inventoryInSlotIDs": [],
     "hasEnergyStorage": false,
@@ -119,6 +119,9 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
+    "onTickUpdate": {
+      "name": "DomainBlockDecay"
+    },
     "generateFeature": false,
     "restrictionBiomes": [],
     "blocksToReplace": [],

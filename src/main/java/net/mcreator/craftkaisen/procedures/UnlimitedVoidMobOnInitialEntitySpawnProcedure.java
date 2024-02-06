@@ -13,5 +13,7 @@ public class UnlimitedVoidMobOnInitialEntitySpawnProcedure {
 			if (!entity.level.isClientSide())
 				entity.discard();
 		});
+		entity.getPersistentData().putDouble("spawnhole", 100);
+		entity.getPersistentData().putDouble("spawnparticles", 100);
 	}
 }
