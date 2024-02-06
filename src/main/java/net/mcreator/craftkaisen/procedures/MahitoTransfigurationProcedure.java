@@ -1,6 +1,18 @@
 package net.mcreator.craftkaisen.procedures;
 
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.event.entity.living.LivingAttackEvent;
+
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.core.registries.Registries;
+
+import net.mcreator.craftkaisen.entity.MahitoEntity;
 
 import javax.annotation.Nullable;
 
