@@ -144,18 +144,10 @@
       }
     ]
   },
-  "unlimitedvoid_start": {
+  "coffindomain_end": {
     "sounds": [
       {
-        "name": "craft_kaisen:unlimitedvoid",
-        "stream": false
-      }
-    ]
-  },
-  "unlimitedvoid_splash": {
-    "sounds": [
-      {
-        "name": "craft_kaisen:unlimited_splash",
+        "name": "craft_kaisen:coffindomain_end",
         "stream": false
       }
     ]
@@ -164,14 +156,6 @@
     "sounds": [
       {
         "name": "craft_kaisen:coffindomain",
-        "stream": false
-      }
-    ]
-  },
-  "coffindomain_end": {
-    "sounds": [
-      {
-        "name": "craft_kaisen:coffindomain_end",
         "stream": false
       }
     ]
