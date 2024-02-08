@@ -24,6 +24,7 @@ import net.mcreator.craftkaisen.entity.WaterMaximumElephantProjectileEntity;
 import net.mcreator.craftkaisen.entity.VolcanicEruptionProjectileEntity;
 import net.mcreator.craftkaisen.entity.UraumeEntity;
 import net.mcreator.craftkaisen.entity.UnlimitedVoidMobEntity;
+import net.mcreator.craftkaisen.entity.UnlimitedVoidAccelerateEntity;
 import net.mcreator.craftkaisen.entity.TwistRangedProjectileEntity;
 import net.mcreator.craftkaisen.entity.TojiFushiguroEntity;
 import net.mcreator.craftkaisen.entity.TogeInumakiEntity;
@@ -540,6 +541,11 @@ public class CraftKaisenModEntities {
 			EntityType.Builder.<BindingIceBlockEntity>of(BindingIceBlockEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(BindingIceBlockEntity::new)
 
 					.sized(1f, 2f));
+	public static final RegistryObject<EntityType<UnlimitedVoidAccelerateEntity>> UNLIMITED_VOID_ACCELERATE = register("unlimited_void_accelerate",
+			EntityType.Builder.<UnlimitedVoidAccelerateEntity>of(UnlimitedVoidAccelerateEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
+					.setCustomClientFactory(UnlimitedVoidAccelerateEntity::new)
+
+					.sized(0.6f, 1.8f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -632,6 +638,7 @@ public class CraftKaisenModEntities {
 			ShinjukuGojoEntity.init();
 			KenjakuEntity.init();
 			BindingIceBlockEntity.init();
+			UnlimitedVoidAccelerateEntity.init();
 		});
 	}
 
@@ -721,5 +728,6 @@ public class CraftKaisenModEntities {
 		event.put(SHINJUKU_GOJO.get(), ShinjukuGojoEntity.createAttributes().build());
 		event.put(KENJAKU.get(), KenjakuEntity.createAttributes().build());
 		event.put(BINDING_ICE_BLOCK.get(), BindingIceBlockEntity.createAttributes().build());
+		event.put(UNLIMITED_VOID_ACCELERATE.get(), UnlimitedVoidAccelerateEntity.createAttributes().build());
 	}
 }

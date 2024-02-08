@@ -5232,7 +5232,7 @@
           "src/main/resources/assets/craft_kaisen/models/item/domain_block.json"
         ]
       },
-      "path": "~/Blocks/Domains"
+      "path": "~/Blocks/Domain Blocks"
     },
     {
       "name": "JujutsuKaisen",
@@ -26947,7 +26947,7 @@
           "src/main/java/net/mcreator/craftkaisen/block/entity/DomainAirBlockBlockEntity.java"
         ]
       },
-      "path": "~/Blocks/Domains"
+      "path": "~/Blocks/Domain Blocks"
     },
     {
       "name": "IdleTransfigurationOverlayDisplayOverlayIngame",
@@ -27413,7 +27413,7 @@
           "src/main/resources/assets/craft_kaisen/models/block/magma_domain_floor.json"
         ]
       },
-      "path": "~/Blocks/Domains"
+      "path": "~/Blocks/Domain Blocks"
     },
     {
       "name": "COTMeffect",
@@ -27517,7 +27517,7 @@
           "src/main/resources/assets/craft_kaisen/models/block/magma_domain_wall.json"
         ]
       },
-      "path": "~/Blocks/Domains"
+      "path": "~/Blocks/Domain Blocks"
     },
     {
       "name": "COTMeffectOnEffectActiveTick",
@@ -27587,7 +27587,7 @@
           "src/main/resources/assets/craft_kaisen/blockstates/domain_mini_volcano.json"
         ]
       },
-      "path": "~/Blocks/Domains"
+      "path": "~/Blocks/Domain Blocks"
     },
     {
       "name": "DomainSmoothBasalt",
@@ -27605,7 +27605,7 @@
           "src/main/java/net/mcreator/craftkaisen/block/entity/DomainSmoothBasaltBlockEntity.java"
         ]
       },
-      "path": "~/Blocks/Domains"
+      "path": "~/Blocks/Domain Blocks"
     },
     {
       "name": "DomainBlackstone",
@@ -27623,7 +27623,7 @@
           "src/main/java/net/mcreator/craftkaisen/block/entity/DomainBlackstoneBlockEntity.java"
         ]
       },
-      "path": "~/Blocks/Domains"
+      "path": "~/Blocks/Domain Blocks"
     },
     {
       "name": "DomainBlueIce",
@@ -27641,7 +27641,7 @@
           "src/main/resources/assets/craft_kaisen/blockstates/domain_blue_ice.json"
         ]
       },
-      "path": "~/Blocks/Domains"
+      "path": "~/Blocks/Domain Blocks"
     },
     {
       "name": "DomainStarBlock",
@@ -27659,7 +27659,7 @@
           "src/main/resources/assets/craft_kaisen/blockstates/domain_star_block.json"
         ]
       },
-      "path": "~/Blocks/Domains"
+      "path": "~/Blocks/Domain Blocks"
     },
     {
       "name": "DomainLava",
@@ -27677,7 +27677,7 @@
           "src/main/resources/assets/craft_kaisen/models/block/domain_lava.json"
         ]
       },
-      "path": "~/Blocks/Domains"
+      "path": "~/Blocks/Domain Blocks"
     },
     {
       "name": "DomainBlackstoneStalagmiteTall",
@@ -27695,7 +27695,7 @@
           "src/main/resources/assets/craft_kaisen/models/item/domain_blackstone_stalagmite_tall.json"
         ]
       },
-      "path": "~/Blocks/Domains"
+      "path": "~/Blocks/Domain Blocks"
     },
     {
       "name": "DomainIceStalagmiteTall",
@@ -27713,7 +27713,7 @@
           "src/main/java/net/mcreator/craftkaisen/block/entity/DomainIceStalagmiteTallBlockEntity.java"
         ]
       },
-      "path": "~/Blocks/Domains"
+      "path": "~/Blocks/Domain Blocks"
     },
     {
       "name": "DomainPackedIce",
@@ -27731,7 +27731,7 @@
           "src/main/resources/assets/craft_kaisen/blockstates/domain_packed_ice.json"
         ]
       },
-      "path": "~/Blocks/Domains"
+      "path": "~/Blocks/Domain Blocks"
     },
     {
       "name": "BlockFlameParticle",
@@ -27813,7 +27813,7 @@
           "src/main/java/net/mcreator/craftkaisen/block/entity/DomainMagmaBlockEntity.java"
         ]
       },
-      "path": "~/Blocks/Domains"
+      "path": "~/Blocks/Domain Blocks"
     },
     {
       "name": "DomainBasalt",
@@ -27831,7 +27831,7 @@
           "src/main/resources/assets/craft_kaisen/models/item/domain_basalt.json"
         ]
       },
-      "path": "~/Blocks/Domains"
+      "path": "~/Blocks/Domain Blocks"
     },
     {
       "name": "DomainIceStalagmite",
@@ -27849,7 +27849,7 @@
           "src/main/java/net/mcreator/craftkaisen/block/entity/DomainIceStalagmiteBlockEntity.java"
         ]
       },
-      "path": "~/Blocks/Domains"
+      "path": "~/Blocks/Domain Blocks"
     },
     {
       "name": "DomainIceBlock",
@@ -27867,7 +27867,7 @@
           "src/main/java/net/mcreator/craftkaisen/block/DomainIceBlockBlock.java"
         ]
       },
-      "path": "~/Blocks/Domains"
+      "path": "~/Blocks/Domain Blocks"
     },
     {
       "name": "DomainBlackstoneStalagmite",
@@ -27885,7 +27885,7 @@
           "src/main/resources/assets/craft_kaisen/models/item/domain_blackstone_stalagmite.json"
         ]
       },
-      "path": "~/Blocks/Domains"
+      "path": "~/Blocks/Domain Blocks"
     },
     {
       "name": "DomainDripstone",
@@ -27903,7 +27903,82 @@
           "src/main/java/net/mcreator/craftkaisen/block/entity/DomainDripstoneBlockEntity.java"
         ]
       },
-      "path": "~/Blocks/Domains"
+      "path": "~/Blocks/Domain Blocks"
+    },
+    {
+      "name": "UnlimitedVoidAccelerate",
+      "type": "livingentity",
+      "sortid": 1212,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "unlimited_void_accelerate",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/UnlimitedVoidAccelerateRenderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/UnlimitedVoidAccelerateEntity.java"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "UnlimitedVoidSplash1",
+      "type": "particle",
+      "sortid": 1213,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "unlimited_void_splash_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/particles/unlimited_void_splash_1.json",
+          "src/main/java/net/mcreator/craftkaisen/client/particle/UnlimitedVoidSplash1Particle.java"
+        ]
+      },
+      "path": "~/Particles"
+    },
+    {
+      "name": "UnlimitedVoidSplash2",
+      "type": "particle",
+      "sortid": 1214,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "unlimited_void_splash_2",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/particles/unlimited_void_splash_2.json",
+          "src/main/java/net/mcreator/craftkaisen/client/particle/UnlimitedVoidSplash2Particle.java"
+        ]
+      },
+      "path": "~/Particles"
+    },
+    {
+      "name": "UnlimitedVoidSplash3",
+      "type": "particle",
+      "sortid": 1215,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "unlimited_void_splash_3",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/particles/unlimited_void_splash_3.json",
+          "src/main/java/net/mcreator/craftkaisen/client/particle/UnlimitedVoidSplash3Particle.java"
+        ]
+      },
+      "path": "~/Particles"
+    },
+    {
+      "name": "UnlimitedBlackhole",
+      "type": "particle",
+      "sortid": 1216,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "unlimited_blackhole",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/particle/UnlimitedBlackholeParticle.java",
+          "src/main/resources/assets/craft_kaisen/particles/unlimited_blackhole.json"
+        ]
+      },
+      "path": "~/Particles"
     }
   ],
   "variable_elements": [
@@ -28764,11 +28839,11 @@
       "item.craft_kaisen.mahoraga_wheel_helmet": "Mahoraga Wheel",
       "gui.craft_kaisen.imbue_gui.ImbueValue": "Cursed Energy Amount",
       "entity.craft_kaisen.round_deer": "Round Deer",
-      "entity.craft_kaisen.icile": "Icile",
       "advancements.ten_shadows_technique.title": "Ten Shadows Technique",
+      "entity.craft_kaisen.icile": "Icile",
       "item.craft_kaisen.ember_insect_spawn_egg": "Ember Insect Spawn Egg",
-      "item.craft_kaisen.choso_armor_leggings": "Choso Pants",
       "entity.craft_kaisen.inventory_curse_mob": "Inventory Curse Mob",
+      "item.craft_kaisen.choso_armor_leggings": "Choso Pants",
       "entity.craft_kaisen.jinichi_zenin": "Jinichi Zenin",
       "advancements.grade_4.descr": "Reach The Required Fame.",
       "gui.craft_kaisen.soul_multiplicity_overlay.label_shift_soul_summon": "SHIFT - Soul Summon",
@@ -28776,8 +28851,8 @@
       "advancements.divine_general_mahoraga.descr": "Tame Mahoraga",
       "item.craft_kaisen.distorted_body_leggings": "Distorted Body Legs",
       "item.craft_kaisen.toge_inumaki_spawn_egg": "Toge Inumaki Spawn Egg",
-      "gui.craft_kaisen.body_shape_overlay.label_ctrl_rope": "CTRL - Rope",
       "gui.craft_kaisen.soul_multiplicity_overlay.label_alt_soul_isomer": "ALT - Soul Isomer",
+      "gui.craft_kaisen.body_shape_overlay.label_ctrl_rope": "CTRL - Rope",
       "item.craft_kaisen.naginata": "Naginata",
       "item.craft_kaisen.ski_mask_helmet": "Ski Mask",
       "advancements.special_grade.title": "Special Grade",
@@ -28786,11 +28861,11 @@
       "item.craft_kaisen.takada_spawn_egg": "Takada Spawn Egg",
       "item_group.craft_kaisen.ck_weapons": "Ck Weapons",
       "advancements.the_sorcerer_killer.descr": "Kill Toji Fushiguro",
-      "entity.craft_kaisen.red_open_door": "Red Open Door",
       "key.craft_kaisen.reverse_cursed_technique": "Reverse Cursed Technique",
+      "entity.craft_kaisen.red_open_door": "Red Open Door",
       "entity.craft_kaisen.mei_mei": "Mei Mei",
-      "death.attack.crushing_damage.player": "%1$s died whilst trying to escape %2$s",
       "death.attack.repelling_damage": "%1$s died to repulsion",
+      "death.attack.crushing_damage.player": "%1$s died whilst trying to escape %2$s",
       "advancements.simple_domain_learned.title": "Simple Domain",
       "advancements.perfect_preparation.descr": "Kill Kenjaku",
       "item.craft_kaisen.mahito_outfit_chestplate": "Mahito Outfit ",
@@ -28807,8 +28882,8 @@
       "advancements.cursed_technique.descr": "Get a Cursed Technique",
       "item.craft_kaisen.phone": "Phone",
       "death.attack.ratio_damage.player": "%1$s died whilst trying to escape %2$s",
-      "effect.craft_kaisen.small_pox_deity_cooldown": "SPDC",
       "item.craft_kaisen.choso_armor_chestplate": "Choso Outfit",
+      "effect.craft_kaisen.small_pox_deity_cooldown": "SPDC",
       "item.craft_kaisen.fly_head_spawn_egg": "Fly Head Spawn Egg",
       "item.craft_kaisen.uraume_spawn_egg": "Uraume Spawn Egg",
       "item.craft_kaisen.white_divine_dog_spawn_egg": "White Divine Dog Spawn Egg",
@@ -28830,6 +28905,7 @@
       "item.craft_kaisen.mahoraga_outfit_leggings": "Mahoraga Outfit",
       "item.craft_kaisen.nail": "Nail",
       "death.attack.soul_damage": "%1$s died",
+      "block.craft_kaisen.domain_lava": "Domain Block",
       "gamerule.sMPSetting.description": "Sets the mod to smp settings",
       "item.craft_kaisen.cursed_mask": "Cursed Mask",
       "entity.craft_kaisen.choso": "Choso",
@@ -28854,6 +28930,7 @@
       "effect.craft_kaisen.domain_amplification": "Domain Amplification",
       "entity.craft_kaisen.hajime_kashimo": "\"The God of Lightning\" Hajime Kashimo",
       "death.attack.frost_calm_damage.item": "%1$s was killed by %2$s using %3$s",
+      "block.craft_kaisen.domain_ice_stalagmite": "Domain Block",
       "item.craft_kaisen.ten_shadow_rabbit_spawn_egg": "Ten Shadow Rabbit Spawn Egg",
       "item.craft_kaisen.resurrected_toji_spawn_egg": "Resurrected Toji Spawn Egg",
       "block.craft_kaisen.shibuya_gates": "Shibuya Gates",
@@ -28873,6 +28950,7 @@
       "advancements.cursed_spirit.title": "Cursed Spirit",
       "item.craft_kaisen.mei_mei_spawn_egg": "Mei Mei Spawn Egg",
       "gui.craft_kaisen.main_menu.tooltip_open_prestige": "Open Prestige",
+      "block.craft_kaisen.domain_mini_volcano": "Domain Block",
       "gui.craft_kaisen.main_overlay.label_0": "0",
       "advancements.semi_grade_2.title": "Semi Grade 2",
       "entity.craft_kaisen.rope_mob": "Rope Mob",
@@ -28914,6 +28992,7 @@
       "entity.craft_kaisen.merged_beast_agito": "Merged Beast Agito",
       "item.craft_kaisen.sukuna_give": "Sukuna Give",
       "death.attack.electric_damage.player": "%1$s died whilst trying to escape %2$s",
+      "block.craft_kaisen.domain_smooth_basalt": "Domain Block",
       "item.craft_kaisen.battle_axe": "Battle Axe",
       "entity.craft_kaisen.awakened_maki": "Maki Zenin",
       "effect.craft_kaisen.cot_meffect": "COTMEFFECT",
@@ -28966,6 +29045,7 @@
       "item.craft_kaisen.nobara_outfit_leggings": "Female Jujutsu Sorcerer Outfit",
       "entity.craft_kaisen.yuji_itadori": "Yuji Itadori",
       "item.craft_kaisen.find_blue_location": "Find Blue Location",
+      "block.craft_kaisen.domain_blackstone_stalagmite": "Domain Block",
       "entity.craft_kaisen.pox_deity_domain": "Pox Deity Domain",
       "entity.craft_kaisen.satoru_gojo": "Satoru Gojo",
       "death.attack.soul_damage.player": "%1$s died whilst trying to escape %2$s",
@@ -29067,10 +29147,12 @@
       "gui.craft_kaisen.ct_move_gui.button_set_ability_5": "Set Ability 5",
       "entity.craft_kaisen.suguru_geto": "Suguru Geto",
       "advancements.cursed_technique.title": "Cursed Technique",
+      "block.craft_kaisen.domain_ice_block": "Domain Block",
       "advancements.domain_amplification_learned.title": "Domain Amplification",
       "advancements.the_honored_one.descr": "Kill Satoru Gojo",
       "advancements.shibuya_incident.descr": "Arrive at Shibuya during the shibuya world event",
       "gui.craft_kaisen.mastery_gui.label_masterty_menu": "Mastery Menu",
+      "block.craft_kaisen.domain_basalt": "Domain Block",
       "entity.craft_kaisen.frame_mob": "Frame Mob",
       "item_group.craft_kaisen.ck_mobs": "Craft Kaisen Humans",
       "gamerule.maximumSukunaVesselPlayers": "MaximumSukunaVesselPlayers (singeplayer)",
@@ -29106,6 +29188,7 @@
       "entity.craft_kaisen.old_lady": "Old Lady",
       "entity.craft_kaisen.ryomen_sukuna": "Ryomen Sukuna",
       "item.craft_kaisen.twist_ranged": "Twist Ranged",
+      "entity.craft_kaisen.unlimited_void_accelerate": "Unlimited Void Accelerate",
       "advancements.six_eyes_advancement.title": "Six Eyes",
       "gui.craft_kaisen.start_screen.label_finish": "SAVE",
       "item.craft_kaisen.nue_spawn_egg": "Nue Spawn Egg",
@@ -29168,6 +29251,7 @@
       "item.craft_kaisen.slicing_excorism": "Slicing Excorism",
       "item_group.craft_kaisen.ck_armor": "Ck Armor",
       "entity.craft_kaisen.uraume": "Uraume",
+      "block.craft_kaisen.domain_magma": "Domain Block",
       "effect.craft_kaisen.flow": "Flow",
       "item.craft_kaisen.mouth_cursed_spirit_spawn_egg": "Mouth Cursed Spirit Spawn Egg",
       "entity.craft_kaisen.yuta_okkotsu": "Yuta Okkotsu",
@@ -29209,6 +29293,7 @@
       "effect.craft_kaisen.simple_domain_cooldown": "Simple Domain Cooldown",
       "advancements.stand_proud_you_are_strong.descr": "Get Sukuna To Atleast Half Health And Lose To Him",
       "effect.craft_kaisen.unlimited_void_effect": "UnlimitedVoid",
+      "block.craft_kaisen.domain_blackstone": "Domain Block",
       "item.craft_kaisen.disaster_flame_ranged": "Disaster Flame Ranged",
       "item.craft_kaisen.merged_beast_agito_spawn_egg": "Merged Beast Agito Spawn Egg",
       "gui.craft_kaisen.main_menu.label_ii1": "II",
@@ -29225,6 +29310,7 @@
       "entity.craft_kaisen.small_pox_deity": "Small Pox Deity",
       "gui.craft_kaisen.main_menu.tooltip_increase_energy_regen_rate_and_m": "increase energy regen rate and max output",
       "advancements.six_eyes_advancement.descr": "You passively regenerate cursed energy at a rapid rate,  you can also see others cursed energy and health.",
+      "block.craft_kaisen.domain_ice_stalagmite_tall": "Domain Block",
       "advancements.grade_3.title": "Grade 3",
       "entity.craft_kaisen.aoi_todo": "Aoi Todo",
       "item.craft_kaisen.blood_meteorite": "Blood Meteorite",
@@ -29264,6 +29350,7 @@
       "effect.craft_kaisen.toji_cooldown": "TojiCooldown",
       "advancements.fearsome_womb.descr": "Kill a Finger Bearer",
       "item.craft_kaisen.blast_away_ranged": "Blast Away Ranged",
+      "block.craft_kaisen.domain_blue_ice": "Domain Block",
       "effect.craft_kaisen.pure_love_active": "PureLoveActive",
       "advancements.divergent_fists.descr": "Reach Enough Cursed Energy Mastery",
       "advancements.maximum_elephant_advancement.title": "Maximum Elephant",
@@ -29276,7 +29363,10 @@
       "entity.craft_kaisen.jogo": "Jogo",
       "death.attack.slashing_damage": "%1$s was cut to death",
       "item.craft_kaisen.small_pox_deity_spawn_egg": "Small Pox Deity Spawn Egg",
+      "block.craft_kaisen.domain_star_block": "Domain Block",
       "item.craft_kaisen.toji_fushiguro_spawn_egg": "Toji Fushiguro Spawn Egg",
+      "block.craft_kaisen.domain_blackstone_stalagmite_tall": "Domain Block",
+      "block.craft_kaisen.domain_packed_ice": "Domain Block",
       "item.craft_kaisen.old_lady_spawn_egg": "Old Lady Spawn Egg",
       "gui.craft_kaisen.lapse_blue_overlay.label_alt_move_closer": "CTRL - Pull",
       "item.craft_kaisen.rika_spawn_egg": "Rika Spawn Egg",
@@ -29311,6 +29401,7 @@
       "advancements.cursed_womb.title": "Cursed Womb",
       "item_group.craft_kaisen.ck_items": "Ck Items",
       "advancements.cursed_child.title": "Cursed Child",
+      "block.craft_kaisen.domain_dripstone": "Domain Block",
       "key.craft_kaisen.charge_cursed_energy": "Charge Cursed Energy",
       "item.craft_kaisen.stronghit": "Stronghit",
       "gui.craft_kaisen.prestige_menu.tooltip_decline": "Decline",
@@ -29503,6 +29594,10 @@
         "children": [
           {
             "name": "Procedure",
+            "children": []
+          },
+          {
+            "name": "Domain Blocks",
             "children": []
           }
         ]

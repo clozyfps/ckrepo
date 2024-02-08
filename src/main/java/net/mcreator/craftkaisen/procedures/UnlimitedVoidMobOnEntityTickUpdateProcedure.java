@@ -21,7 +21,7 @@ import net.minecraft.commands.CommandSource;
 
 import net.mcreator.craftkaisen.init.CraftKaisenModParticleTypes;
 import net.mcreator.craftkaisen.init.CraftKaisenModBlocks;
-import net.mcreator.craftkaisen.entity.UnlimitedVoidAccelerationEntity;
+import net.mcreator.craftkaisen.entity.UnlimitedVoidAccelerateEntity;
 
 import java.util.stream.Collectors;
 import java.util.List;
@@ -69,7 +69,7 @@ public class UnlimitedVoidMobOnEntityTickUpdateProcedure {
 				if (!(entity == entityiterator)) {
 					if (!(entity instanceof TamableAnimal _tamIsTamedBy && entityiterator instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false)) {
 						if (!(entityiterator instanceof ItemEntity)) {
-							if (!(entityiterator instanceof UnlimitedVoidAccelerationEntity)) {
+							if (!(entityiterator instanceof UnlimitedVoidAccelerateEntity)) {
 								if ((world.getBlockState(BlockPos.containing(entityiterator.getX(), entityiterator.getY() - 1, entityiterator.getZ()))).getBlock() == CraftKaisenModBlocks.DOMAIN_BLOCK.get()) {
 									entityiterator.setDeltaMovement(new Vec3(0, 0, 0));
 									if (world instanceof ServerLevel _level)

@@ -24,7 +24,7 @@ import net.minecraft.client.Minecraft;
 import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
 import net.mcreator.craftkaisen.init.CraftKaisenModBlocks;
 import net.mcreator.craftkaisen.entity.UnlimitedVoidMobEntity;
-import net.mcreator.craftkaisen.entity.UnlimitedVoidAccelerationEntity;
+import net.mcreator.craftkaisen.entity.UnlimitedVoidAccelerateEntity;
 import net.mcreator.craftkaisen.CraftKaisenMod;
 
 import java.util.stream.Collectors;
@@ -56,7 +56,7 @@ public class UnlimitedVoidProcedureProcedure {
 				_level.addFreshEntity(entityToSpawn);
 			}
 			if (world instanceof ServerLevel _level) {
-				Entity entityToSpawn = new UnlimitedVoidAccelerationEntity(CraftKaisenModEntities.UNLIMITED_VOID_ACCELERATION.get(), _level);
+				Entity entityToSpawn = new UnlimitedVoidAccelerateEntity(CraftKaisenModEntities.UNLIMITED_VOID_ACCELERATE.get(), _level);
 				entityToSpawn.moveTo(x, y, z, 0, 0);
 				entityToSpawn.setYBodyRot(0);
 				entityToSpawn.setYHeadRot(0);
@@ -74,7 +74,7 @@ public class UnlimitedVoidProcedureProcedure {
 						if (entityiterator instanceof TamableAnimal _toTame && entity instanceof Player _owner)
 							_toTame.tame(_owner);
 					}
-					if (entityiterator instanceof UnlimitedVoidAccelerationEntity) {
+					if (entityiterator instanceof UnlimitedVoidAccelerateEntity) {
 						{
 							Entity _ent = entityiterator;
 							_ent.setYRot((float) entity.getViewYRot(Minecraft.getInstance().getPartialTick()));
@@ -136,7 +136,7 @@ public class UnlimitedVoidProcedureProcedure {
 					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(15 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
 							.collect(Collectors.toList());
 					for (Entity entityiterator : _entfound) {
-						if (entityiterator instanceof UnlimitedVoidAccelerationEntity) {
+						if (entityiterator instanceof UnlimitedVoidAccelerateEntity) {
 							if (!entityiterator.level.isClientSide())
 								entityiterator.discard();
 						}

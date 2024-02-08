@@ -17,6 +17,7 @@ import net.mcreator.craftkaisen.client.renderer.WoodenBoxRenderer;
 import net.mcreator.craftkaisen.client.renderer.WhiteDivineDogRenderer;
 import net.mcreator.craftkaisen.client.renderer.UraumeRenderer;
 import net.mcreator.craftkaisen.client.renderer.UnlimitedVoidMobRenderer;
+import net.mcreator.craftkaisen.client.renderer.UnlimitedVoidAccelerateRenderer;
 import net.mcreator.craftkaisen.client.renderer.TojiFushiguroRenderer;
 import net.mcreator.craftkaisen.client.renderer.TogeInumakiRenderer;
 import net.mcreator.craftkaisen.client.renderer.ToadRenderer;
@@ -226,5 +227,6 @@ public class CraftKaisenModEntityRenderers {
 		event.registerEntityRenderer(CraftKaisenModEntities.SHINJUKU_GOJO.get(), ShinjukuGojoRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.KENJAKU.get(), KenjakuRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.BINDING_ICE_BLOCK.get(), BindingIceBlockRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.UNLIMITED_VOID_ACCELERATE.get(), UnlimitedVoidAccelerateRenderer::new);
 	}
 }
