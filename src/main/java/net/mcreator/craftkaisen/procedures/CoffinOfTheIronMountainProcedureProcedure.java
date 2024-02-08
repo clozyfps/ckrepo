@@ -35,6 +35,7 @@ public class CoffinOfTheIronMountainProcedureProcedure {
 		if (entity == null)
 			return;
 		String block = "";
+		boolean gate = false;
 		if (!entity.getPersistentData().getBoolean("domain")) {
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 				_entity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 20, 1, false, false));
@@ -46,13 +47,6 @@ public class CoffinOfTheIronMountainProcedureProcedure {
 			if (world instanceof ServerLevel _level)
 				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 						"particle minecraft:flame ^ ^ ^ 20 1 20 0.1 300 force @a");
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:domain")), SoundSource.PLAYERS, 1, 1);
-				} else {
-					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:domain")), SoundSource.PLAYERS, 1, 1, false);
-				}
-			}
 			int horizontalRadiusSphere = (int) 20 - 1;
 			int verticalRadiusSphere = (int) 20 - 1;
 			int yIterationsSphere = verticalRadiusSphere;
@@ -63,14 +57,45 @@ public class CoffinOfTheIronMountainProcedureProcedure {
 								+ (zi * zi) / (double) (horizontalRadiusSphere * horizontalRadiusSphere);
 						if (distanceSq <= 1.0) {
 							block = "" + ForgeRegistries.BLOCKS.getKey((world.getBlockState(BlockPos.containing(x + xi, y + i, z + zi))).getBlock()).toString();
-							if (y + i >= entity.getY()) {
+							if (y + i < entity.getY()) {
+								if (Math.random() >= 0.5) {
+									world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_BASALT.get().defaultBlockState(), 3);
+								} else {
+									if (Math.random() >= 0.5) {
+										if (Math.random() >= 0.75) {
+											world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_LAVA.get().defaultBlockState(), 3);
+										} else {
+											world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_MAGMA.get().defaultBlockState(), 3);
+										}
+									} else {
+										world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_DRIPSTONE.get().defaultBlockState(), 3);
+									}
+								}
+							}
+							if (y + i == entity.getY()) {
+								if (Math.random() >= 0.9) {
+									if (Math.random() >= 0.5) {
+										if (Math.random() >= 0.5) {
+											world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_BLACKSTONE_STALAGMITE_TALL.get().defaultBlockState(), 3);
+										} else {
+											world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_MINI_VOLCANO.get().defaultBlockState(), 3);
+										}
+									} else {
+										world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_BLACKSTONE_STALAGMITE.get().defaultBlockState(), 3);
+									}
+								} else {
+									world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_AIR_BLOCK.get().defaultBlockState(), 3);
+								}
+							}
+							if (y + i > entity.getY()) {
 								world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_AIR_BLOCK.get().defaultBlockState(), 3);
 							}
-							if (y + i < entity.getY()) {
-								world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.MAGMA_DOMAIN_FLOOR.get().defaultBlockState(), 3);
-							}
 							if (Math.round(Math.sqrt(Math.pow(x + xi - x, 2) + Math.pow(y + i - y, 2) + Math.pow(z + zi - z, 2))) >= 16 && Math.round(Math.sqrt(Math.pow(x + xi - x, 2) + Math.pow(y + i - y, 2) + Math.pow(z + zi - z, 2))) < 18) {
-								world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.MAGMA_DOMAIN_WALL.get().defaultBlockState(), 3);
+								if (Math.random() >= 0.5) {
+									world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_SMOOTH_BASALT.get().defaultBlockState(), 3);
+								} else {
+									world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_BLACKSTONE.get().defaultBlockState(), 3);
+								}
 							}
 							if (Math.round(Math.sqrt(Math.pow(x + xi - x, 2) + Math.pow(y + i - y, 2) + Math.pow(z + zi - z, 2))) >= 18) {
 								world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_BLOCK.get().defaultBlockState(), 3);
@@ -100,12 +125,21 @@ public class CoffinOfTheIronMountainProcedureProcedure {
 				}
 			}
 			CraftKaisenMod.queueServerWork(1190, () -> {
-				if (entity.getPersistentData().getBoolean("domain")) {
+				if (entity.getPersistentData().getBoolean("domain") == true) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:coffindomain_end")), SoundSource.PLAYERS, 1, 1);
+						} else {
+							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:coffindomain_end")), SoundSource.PLAYERS, 1, 1, false);
+						}
+					}
 					entity.getPersistentData().putBoolean("domain", false);
 				}
 			});
+			entity.getPersistentData().putBoolean("domain", true);
 		} else if (entity.getPersistentData().getBoolean("domain")) {
 			RemoveCoffinProcedure.execute(world, (entity.getPersistentData().getDouble("domainx")), (entity.getPersistentData().getDouble("domainy")), (entity.getPersistentData().getDouble("domainz")));
+			entity.getPersistentData().putBoolean("domain", false);
 		}
 	}
 }

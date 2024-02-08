@@ -1,0 +1,9 @@
+{
+  "parent": "craft_kaisen:custom/icestalagmite",
+  "textures": {
+    "all": "craft_kaisen:block/ice_spike",
+    "particle": "craft_kaisen:block/ice_spike",
+    "0": "craft_kaisen:block/ice_spike"
+  },
+  "render_type": "cutout"
+}

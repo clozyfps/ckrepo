@@ -159,5 +159,21 @@
         "stream": false
       }
     ]
+  },
+  "coffindomain": {
+    "sounds": [
+      {
+        "name": "craft_kaisen:coffindomain",
+        "stream": false
+      }
+    ]
+  },
+  "coffindomain_end": {
+    "sounds": [
+      {
+        "name": "craft_kaisen:coffindomain_end",
+        "stream": false
+      }
+    ]
   }
 }

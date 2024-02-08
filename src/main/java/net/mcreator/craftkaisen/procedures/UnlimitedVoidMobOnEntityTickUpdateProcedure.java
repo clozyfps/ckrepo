@@ -3,6 +3,7 @@ package net.mcreator.craftkaisen.procedures;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.Vec2;
 import net.minecraft.world.phys.AABB;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.TamableAnimal;
@@ -31,14 +32,15 @@ public class UnlimitedVoidMobOnEntityTickUpdateProcedure {
 		if (entity == null)
 			return;
 		double rand = 0;
+		entity.makeStuckInBlock(Blocks.AIR.defaultBlockState(), new Vec3(0.25, 0.05, 0.25));
 		if (entity.getPersistentData().getDouble("spawnhole") > 0) {
 			entity.getPersistentData().putDouble("spawnhole", (entity.getPersistentData().getDouble("spawnhole") - 1));
 		}
 		if (entity.getPersistentData().getDouble("spawnhole") == 0) {
 			if (world instanceof ServerLevel _level)
 				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-						"particle craft_kaisen:unlimited_blackhole ^ ^6 ^ 0.01 0.01 0.01 0.01 1 force @a");
-			entity.getPersistentData().putDouble("spawnhole", 20);
+						"particle craft_kaisen:unlimited_blackhole ^ ^1.5 ^ 0.01 0.01 0.01 0.01 1 force @a");
+			entity.getPersistentData().putDouble("spawnhole", 100);
 		}
 		if (entity.getPersistentData().getDouble("spawnparticles") > 0) {
 			entity.getPersistentData().putDouble("spawnparticles", (entity.getPersistentData().getDouble("spawnparticles") - 1));
@@ -48,20 +50,14 @@ public class UnlimitedVoidMobOnEntityTickUpdateProcedure {
 			if (rand == 1) {
 				if (world instanceof ServerLevel _level)
 					_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.UNLIMITED_VOID_SPLASH_1.get()), x, y, z, 1, 8, 5, 8, 0);
-				if (world instanceof ServerLevel _level)
-					_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.UNLIMITED_VOID_SPLASH_2.get()), x, y, z, 1, 8, 5, 8, 0);
 			}
 			if (rand == 2) {
 				if (world instanceof ServerLevel _level)
 					_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.UNLIMITED_VOID_SPLASH_2.get()), x, y, z, 1, 8, 5, 8, 0);
-				if (world instanceof ServerLevel _level)
-					_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.UNLIMITED_VOID_SPLASH_3.get()), x, y, z, 1, 8, 5, 8, 0);
 			}
 			if (rand == 3) {
 				if (world instanceof ServerLevel _level)
 					_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.UNLIMITED_VOID_SPLASH_3.get()), x, y, z, 1, 8, 5, 8, 0);
-				if (world instanceof ServerLevel _level)
-					_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.UNLIMITED_VOID_SPLASH_1.get()), x, y, z, 1, 8, 5, 8, 0);
 			}
 			if (world instanceof ServerLevel _level)
 				_level.sendParticles(ParticleTypes.ELECTRIC_SPARK, x, y, z, 10, 8, 5, 8, 0);

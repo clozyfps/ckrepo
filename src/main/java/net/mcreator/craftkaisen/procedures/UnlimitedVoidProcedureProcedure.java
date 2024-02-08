@@ -47,7 +47,7 @@ public class UnlimitedVoidProcedureProcedure {
 			entity.getPersistentData().putDouble("domainz", (entity.getZ()));
 			if (world instanceof ServerLevel _level) {
 				Entity entityToSpawn = new UnlimitedVoidMobEntity(CraftKaisenModEntities.UNLIMITED_VOID_MOB.get(), _level);
-				entityToSpawn.moveTo(x, y, z, 0, 0);
+				entityToSpawn.moveTo(x, (y + 3), z, 0, 0);
 				entityToSpawn.setYBodyRot(0);
 				entityToSpawn.setYHeadRot(0);
 				entityToSpawn.setDeltaMovement(0, 0, 0);
@@ -67,7 +67,7 @@ public class UnlimitedVoidProcedureProcedure {
 			}
 			{
 				final Vec3 _center = new Vec3(x, y, z);
-				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(6 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
+				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(15 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
 						.collect(Collectors.toList());
 				for (Entity entityiterator : _entfound) {
 					if (entityiterator instanceof UnlimitedVoidMobEntity && !(entityiterator instanceof TamableAnimal _tamEnt ? _tamEnt.isTame() : false)) {
@@ -109,7 +109,7 @@ public class UnlimitedVoidProcedureProcedure {
 							}
 							if (Math.round(Math.sqrt(Math.pow(x + xi - x, 2) + Math.pow(y + i - y, 2) + Math.pow(z + zi - z, 2))) >= 16 && Math.round(Math.sqrt(Math.pow(x + xi - x, 2) + Math.pow(y + i - y, 2) + Math.pow(z + zi - z, 2))) < 18) {
 								if (Math.random() >= 0.75) {
-									world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.UNLIMITED_VOID_WALL.get().defaultBlockState(), 3);
+									world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_STAR_BLOCK.get().defaultBlockState(), 3);
 								} else {
 									world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_BLOCK.get().defaultBlockState(), 3);
 								}
@@ -133,7 +133,7 @@ public class UnlimitedVoidProcedureProcedure {
 			CraftKaisenMod.queueServerWork(100, () -> {
 				{
 					final Vec3 _center = new Vec3(x, y, z);
-					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(10 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
+					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(15 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
 							.collect(Collectors.toList());
 					for (Entity entityiterator : _entfound) {
 						if (entityiterator instanceof UnlimitedVoidAccelerationEntity) {
@@ -144,6 +144,11 @@ public class UnlimitedVoidProcedureProcedure {
 				}
 			});
 			entity.getPersistentData().putBoolean("domain", true);
+			CraftKaisenMod.queueServerWork(1190, () -> {
+				if (entity.getPersistentData().getBoolean("domain")) {
+					entity.getPersistentData().putBoolean("domain", false);
+				}
+			});
 		} else if (entity.getPersistentData().getBoolean("domain")) {
 			entity.getPersistentData().putBoolean("domain", false);
 			VoidRemoveProcedure.execute(world, (entity.getPersistentData().getDouble("domainx")), (entity.getPersistentData().getDouble("domainy")), (entity.getPersistentData().getDouble("domainz")));

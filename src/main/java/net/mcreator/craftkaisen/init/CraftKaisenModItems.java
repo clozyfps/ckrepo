@@ -261,11 +261,23 @@ public class CraftKaisenModItems {
 	public static final RegistryObject<Item> DOMAIN_AIR_BLOCK = block(CraftKaisenModBlocks.DOMAIN_AIR_BLOCK);
 	public static final RegistryObject<Item> SHINJUKU_GOJO_SPAWN_EGG = REGISTRY.register("shinjuku_gojo_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.SHINJUKU_GOJO, -16777216, -1, new Item.Properties()));
 	public static final RegistryObject<Item> KENJAKU_SPAWN_EGG = REGISTRY.register("kenjaku_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.KENJAKU, -15459797, -2055680, new Item.Properties()));
-	public static final RegistryObject<Item> ICE_DOMAIN_FLOOR = block(CraftKaisenModBlocks.ICE_DOMAIN_FLOOR);
-	public static final RegistryObject<Item> ICE_DOMAIN_WALL = block(CraftKaisenModBlocks.ICE_DOMAIN_WALL);
 	public static final RegistryObject<Item> MAGMA_DOMAIN_WALL = block(CraftKaisenModBlocks.MAGMA_DOMAIN_WALL);
 	public static final RegistryObject<Item> MAGMA_DOMAIN_FLOOR = block(CraftKaisenModBlocks.MAGMA_DOMAIN_FLOOR);
-	public static final RegistryObject<Item> UNLIMITED_VOID_WALL = block(CraftKaisenModBlocks.UNLIMITED_VOID_WALL);
+	public static final RegistryObject<Item> DOMAIN_BLUE_ICE = block(CraftKaisenModBlocks.DOMAIN_BLUE_ICE);
+	public static final RegistryObject<Item> DOMAIN_PACKED_ICE = block(CraftKaisenModBlocks.DOMAIN_PACKED_ICE);
+	public static final RegistryObject<Item> DOMAIN_STAR_BLOCK = block(CraftKaisenModBlocks.DOMAIN_STAR_BLOCK);
+	public static final RegistryObject<Item> DOMAIN_ICE_BLOCK = block(CraftKaisenModBlocks.DOMAIN_ICE_BLOCK);
+	public static final RegistryObject<Item> DOMAIN_BLACKSTONE_STALAGMITE = block(CraftKaisenModBlocks.DOMAIN_BLACKSTONE_STALAGMITE);
+	public static final RegistryObject<Item> DOMAIN_BLACKSTONE_STALAGMITE_TALL = block(CraftKaisenModBlocks.DOMAIN_BLACKSTONE_STALAGMITE_TALL);
+	public static final RegistryObject<Item> DOMAIN_BLACKSTONE = block(CraftKaisenModBlocks.DOMAIN_BLACKSTONE);
+	public static final RegistryObject<Item> DOMAIN_BASALT = block(CraftKaisenModBlocks.DOMAIN_BASALT);
+	public static final RegistryObject<Item> DOMAIN_DRIPSTONE = block(CraftKaisenModBlocks.DOMAIN_DRIPSTONE);
+	public static final RegistryObject<Item> DOMAIN_SMOOTH_BASALT = block(CraftKaisenModBlocks.DOMAIN_SMOOTH_BASALT);
+	public static final RegistryObject<Item> DOMAIN_MAGMA = block(CraftKaisenModBlocks.DOMAIN_MAGMA);
+	public static final RegistryObject<Item> DOMAIN_MINI_VOLCANO = block(CraftKaisenModBlocks.DOMAIN_MINI_VOLCANO);
+	public static final RegistryObject<Item> DOMAIN_LAVA = block(CraftKaisenModBlocks.DOMAIN_LAVA);
+	public static final RegistryObject<Item> DOMAIN_ICE_STALAGMITE = block(CraftKaisenModBlocks.DOMAIN_ICE_STALAGMITE);
+	public static final RegistryObject<Item> DOMAIN_ICE_STALAGMITE_TALL = block(CraftKaisenModBlocks.DOMAIN_ICE_STALAGMITE_TALL);
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));
