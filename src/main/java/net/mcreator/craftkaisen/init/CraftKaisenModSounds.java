@@ -32,4 +32,6 @@ public class CraftKaisenModSounds {
 	public static final RegistryObject<SoundEvent> ICEDOMAIN = REGISTRY.register("icedomain", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("craft_kaisen", "icedomain")));
 	public static final RegistryObject<SoundEvent> FREEZINGWIND = REGISTRY.register("freezingwind", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("craft_kaisen", "freezingwind")));
 	public static final RegistryObject<SoundEvent> REVERSEFREEZINWIND = REGISTRY.register("reversefreezinwind", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("craft_kaisen", "reversefreezinwind")));
+	public static final RegistryObject<SoundEvent> COFFINDOMAIN_END = REGISTRY.register("coffindomain_end", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("craft_kaisen", "coffindomain_end")));
+	public static final RegistryObject<SoundEvent> COFFINDOMAIN = REGISTRY.register("coffindomain", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("craft_kaisen", "coffindomain")));
 }

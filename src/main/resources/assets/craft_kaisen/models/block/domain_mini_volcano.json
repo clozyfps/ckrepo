@@ -1,0 +1,9 @@
+{
+  "parent": "craft_kaisen:custom/domainvolcano",
+  "textures": {
+    "all": "craft_kaisen:block/domainvolcano",
+    "particle": "craft_kaisen:block/domainvolcano",
+    "0": "craft_kaisen:block/domainvolcano"
+  },
+  "render_type": "cutout"
+}

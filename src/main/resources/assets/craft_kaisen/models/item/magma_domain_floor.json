@@ -1,5 +1,5 @@
 {
-  "parent": "craft_kaisen:block/ice_domain_floor",
+  "parent": "craft_kaisen:block/magma_domain_floor",
   "display": {
     "thirdperson": {
       "rotation": [

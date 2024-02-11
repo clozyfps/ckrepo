@@ -1,0 +1,10 @@
+{
+  "parent": "craft_kaisen:custom/blackstonestalagmitetall",
+  "textures": {
+    "all": "craft_kaisen:block/blackstone_stalagmite_tall",
+    "particle": "craft_kaisen:block/blackstone_stalagmite_tall",
+    "0": "craft_kaisen:block/blackstone_stalagmite_tall",
+    "missing": "craft_kaisen:block/blackstone_stalagmite_tall"
+  },
+  "render_type": "cutout"
+}

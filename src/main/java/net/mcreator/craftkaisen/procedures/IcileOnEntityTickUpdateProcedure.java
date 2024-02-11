@@ -27,6 +27,7 @@ public class IcileOnEntityTickUpdateProcedure {
 		CraftKaisenMod.queueServerWork(60, () -> {
 			if (!entity.level.isClientSide())
 				entity.discard();
+			world.levelEvent(2001, BlockPos.containing(x, y, z), Block.getId(Blocks.PACKED_ICE.defaultBlockState()));
 		});
 		if (!((world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == Blocks.AIR)) {
 			if (!entity.level.isClientSide())
@@ -38,7 +39,7 @@ public class IcileOnEntityTickUpdateProcedure {
 						.collect(Collectors.toList());
 				for (Entity entityiterator : _entfound) {
 					if (!(entity == entityiterator)) {
-						if (!(entityiterator instanceof LivingEntity _livEnt7 && _livEnt7.hasEffect(CraftKaisenModMobEffects.WINTRY_ICICLE.get()))) {
+						if (!(entityiterator instanceof LivingEntity _livEnt8 && _livEnt8.hasEffect(CraftKaisenModMobEffects.WINTRY_ICICLE.get()))) {
 							if (!(entityiterator instanceof IcileEntity)) {
 								entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.FREEZE), entity), 13);
 							}

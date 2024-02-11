@@ -1,0 +1,10 @@
+{
+  "parent": "craft_kaisen:custom/icestalagmitetall",
+  "textures": {
+    "all": "craft_kaisen:block/ice_spike_tall",
+    "particle": "craft_kaisen:block/ice_spike_tall",
+    "0": "craft_kaisen:block/ice_spike_tall",
+    "missing": "craft_kaisen:block/ice_spike_tall"
+  },
+  "render_type": "cutout"
+}

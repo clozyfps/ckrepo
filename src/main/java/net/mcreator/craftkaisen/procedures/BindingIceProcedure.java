@@ -61,14 +61,33 @@ public class BindingIceProcedure {
 								+ (zi * zi) / (double) (horizontalRadiusSphere * horizontalRadiusSphere);
 						if (distanceSq <= 1.0) {
 							block = "" + ForgeRegistries.BLOCKS.getKey((world.getBlockState(BlockPos.containing(x + xi, y + i, z + zi))).getBlock()).toString();
-							if (y + i >= entity.getY()) {
+							if (y + i == entity.getY()) {
+								if (Math.random() >= 0.9) {
+									if (Math.random() >= 0.5) {
+										world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_ICE_STALAGMITE_TALL.get().defaultBlockState(), 3);
+									} else {
+										world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_ICE_STALAGMITE.get().defaultBlockState(), 3);
+									}
+								} else {
+									world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_AIR_BLOCK.get().defaultBlockState(), 3);
+								}
+							}
+							if (y + i > entity.getY()) {
 								world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_AIR_BLOCK.get().defaultBlockState(), 3);
 							}
 							if (y + i < entity.getY()) {
-								world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.ICE_DOMAIN_FLOOR.get().defaultBlockState(), 3);
+								if (Math.random() >= 0.5) {
+									world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_ICE_BLOCK.get().defaultBlockState(), 3);
+								} else {
+									world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_PACKED_ICE.get().defaultBlockState(), 3);
+								}
 							}
 							if (Math.round(Math.sqrt(Math.pow(x + xi - x, 2) + Math.pow(y + i - y, 2) + Math.pow(z + zi - z, 2))) >= 16 && Math.round(Math.sqrt(Math.pow(x + xi - x, 2) + Math.pow(y + i - y, 2) + Math.pow(z + zi - z, 2))) < 18) {
-								world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.ICE_DOMAIN_WALL.get().defaultBlockState(), 3);
+								if (Math.random() >= 0.5) {
+									world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_BLUE_ICE.get().defaultBlockState(), 3);
+								} else {
+									world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_PACKED_ICE.get().defaultBlockState(), 3);
+								}
 							}
 							if (Math.round(Math.sqrt(Math.pow(x + xi - x, 2) + Math.pow(y + i - y, 2) + Math.pow(z + zi - z, 2))) >= 18) {
 								world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_BLOCK.get().defaultBlockState(), 3);

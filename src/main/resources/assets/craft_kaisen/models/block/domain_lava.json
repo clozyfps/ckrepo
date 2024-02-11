@@ -1,0 +1,9 @@
+{
+  "parent": "craft_kaisen:custom/domainlava",
+  "textures": {
+    "all": "craft_kaisen:block/coffindomainlava",
+    "particle": "craft_kaisen:block/coffindomainlava",
+    "0": "craft_kaisen:block/coffindomainlava"
+  },
+  "render_type": "cutout"
+}
