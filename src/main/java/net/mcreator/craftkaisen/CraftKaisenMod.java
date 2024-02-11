@@ -36,6 +36,7 @@ import net.mcreator.craftkaisen.init.CraftKaisenModMenus;
 import net.mcreator.craftkaisen.init.CraftKaisenModItems;
 import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
 import net.mcreator.craftkaisen.init.CraftKaisenModBlocks;
+import net.mcreator.craftkaisen.init.CraftKaisenModBlockEntities;
 
 import java.util.function.Supplier;
 import java.util.function.Function;
@@ -58,6 +59,7 @@ public class CraftKaisenMod {
 		CraftKaisenModBlocks.REGISTRY.register(bus);
 		CraftKaisenModItems.REGISTRY.register(bus);
 		CraftKaisenModEntities.REGISTRY.register(bus);
+		CraftKaisenModBlockEntities.REGISTRY.register(bus);
 
 		CraftKaisenModParticleTypes.REGISTRY.register(bus);
 		CraftKaisenModMobEffects.REGISTRY.register(bus);

@@ -152,6 +152,10 @@ public class CraftKaisenModVariables {
 			clone.SfDesc = original.SfDesc;
 			clone.CeMastery = original.CeMastery;
 			clone.PageSelfVow = original.PageSelfVow;
+			clone.FlowCooldownTimer = original.FlowCooldownTimer;
+			clone.FlowCooldownActive = original.FlowCooldownActive;
+			clone.PrestigeLevel = original.PrestigeLevel;
+			clone.Souls = original.Souls;
 			if (!event.isWasDeath()) {
 				clone.currentMove = original.currentMove;
 				clone.currentOutput = original.currentOutput;
@@ -240,6 +244,9 @@ public class CraftKaisenModVariables {
 		public double worldeventlocation = 0;
 		public double WorldEventTimer = 0;
 		public double WEZ = 0;
+		public double neary = 0;
+		public double nearx = 0;
+		public double nearz = 0;
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -255,6 +262,9 @@ public class CraftKaisenModVariables {
 			worldeventlocation = nbt.getDouble("worldeventlocation");
 			WorldEventTimer = nbt.getDouble("WorldEventTimer");
 			WEZ = nbt.getDouble("WEZ");
+			neary = nbt.getDouble("neary");
+			nearx = nbt.getDouble("nearx");
+			nearz = nbt.getDouble("nearz");
 		}
 
 		@Override
@@ -266,6 +276,9 @@ public class CraftKaisenModVariables {
 			nbt.putDouble("worldeventlocation", worldeventlocation);
 			nbt.putDouble("WorldEventTimer", WorldEventTimer);
 			nbt.putDouble("WEZ", WEZ);
+			nbt.putDouble("neary", neary);
+			nbt.putDouble("nearx", nearx);
+			nbt.putDouble("nearz", nearz);
 			return nbt;
 		}
 
@@ -457,6 +470,10 @@ public class CraftKaisenModVariables {
 		public String SfDesc = "\"\"";
 		public double CeMastery = 0;
 		public String PageSelfVow = "Overtime";
+		public double FlowCooldownTimer = 0;
+		public boolean FlowCooldownActive = false;
+		public double PrestigeLevel = 0;
+		public double Souls = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -564,6 +581,10 @@ public class CraftKaisenModVariables {
 			nbt.putString("SfDesc", SfDesc);
 			nbt.putDouble("CeMastery", CeMastery);
 			nbt.putString("PageSelfVow", PageSelfVow);
+			nbt.putDouble("FlowCooldownTimer", FlowCooldownTimer);
+			nbt.putBoolean("FlowCooldownActive", FlowCooldownActive);
+			nbt.putDouble("PrestigeLevel", PrestigeLevel);
+			nbt.putDouble("Souls", Souls);
 			return nbt;
 		}
 
@@ -668,6 +689,10 @@ public class CraftKaisenModVariables {
 			SfDesc = nbt.getString("SfDesc");
 			CeMastery = nbt.getDouble("CeMastery");
 			PageSelfVow = nbt.getString("PageSelfVow");
+			FlowCooldownTimer = nbt.getDouble("FlowCooldownTimer");
+			FlowCooldownActive = nbt.getBoolean("FlowCooldownActive");
+			PrestigeLevel = nbt.getDouble("PrestigeLevel");
+			Souls = nbt.getDouble("Souls");
 		}
 	}
 
@@ -791,6 +816,10 @@ public class CraftKaisenModVariables {
 					variables.SfDesc = message.data.SfDesc;
 					variables.CeMastery = message.data.CeMastery;
 					variables.PageSelfVow = message.data.PageSelfVow;
+					variables.FlowCooldownTimer = message.data.FlowCooldownTimer;
+					variables.FlowCooldownActive = message.data.FlowCooldownActive;
+					variables.PrestigeLevel = message.data.PrestigeLevel;
+					variables.Souls = message.data.Souls;
 				}
 			});
 			context.setPacketHandled(true);

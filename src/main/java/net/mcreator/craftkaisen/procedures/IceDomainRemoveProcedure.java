@@ -1,8 +1,29 @@
 package net.mcreator.craftkaisen.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.registries.ForgeRegistries;
 
-import javax.annotation.Nullable;
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.Vec2;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.level.block.state.properties.Property;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.chat.Component;
+import net.minecraft.core.BlockPos;
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.commands.CommandSource;
+
+import net.mcreator.craftkaisen.entity.BindingIceBlockEntity;
+
+import java.util.stream.Collectors;
+import java.util.Map;
+import java.util.List;
+import java.util.Comparator;
 
 public class IceDomainRemoveProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z) {

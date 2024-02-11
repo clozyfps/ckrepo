@@ -48,15 +48,16 @@ public class CraftKaisenModTabs {
 					tabData.accept(CraftKaisenModItems.AWAKENED_MAKI_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.SUGURU_GETO_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.PANDA_SPAWN_EGG.get());
-					tabData.accept(CraftKaisenModItems.FLYING_CURSED_SPIRIT_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.HAJIME_KASHIMO_SPAWN_EGG.get());
-					tabData.accept(CraftKaisenModItems.MERGED_BEAST_AGITO_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.MEGUMI_FUSHIGURO_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.TOGE_INUMAKI_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.TAKADA_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.AOI_TODO_SPAWN_EGG.get());
-					tabData.accept(CraftKaisenModItems.REROLL_CT.get());
 					tabData.accept(CraftKaisenModItems.URAUME_SPAWN_EGG.get());
+					tabData.accept(CraftKaisenModItems.JINICHI_ZENIN_SPAWN_EGG.get());
+					tabData.accept(CraftKaisenModItems.MEI_MEI_SPAWN_EGG.get());
+					tabData.accept(CraftKaisenModItems.SHINJUKU_GOJO_SPAWN_EGG.get());
+					tabData.accept(CraftKaisenModItems.KENJAKU_SPAWN_EGG.get());
 				}).withSearchBar());
 		event.registerCreativeModeTab(new ResourceLocation("craft_kaisen", "ck_weapons"),
 				builder -> builder.title(Component.translatable("item_group.craft_kaisen.ck_weapons")).icon(() -> new ItemStack(CraftKaisenModItems.PLAYFUL_CLOUD.get())).displayItems((parameters, tabData) -> {
@@ -75,6 +76,8 @@ public class CraftKaisenModTabs {
 					tabData.accept(CraftKaisenModItems.NYOI_STAFF.get());
 					tabData.accept(CraftKaisenModItems.HITEN.get());
 					tabData.accept(CraftKaisenModItems.KAMUTOKE.get());
+					tabData.accept(CraftKaisenModItems.SWORD_OF_EXTERMINATION.get());
+					tabData.accept(CraftKaisenModItems.BATTLE_AXE.get());
 				}).withSearchBar());
 		event.registerCreativeModeTab(new ResourceLocation("craft_kaisen", "ck_armor"),
 				builder -> builder.title(Component.translatable("item_group.craft_kaisen.ck_armor")).icon(() -> new ItemStack(CraftKaisenModItems.BANDAGE_BLIND_FOLD_HELMET.get())).displayItems((parameters, tabData) -> {
@@ -105,6 +108,8 @@ public class CraftKaisenModTabs {
 					tabData.accept(CraftKaisenModItems.MAHITO_OUTFIT_LEGGINGS.get());
 					tabData.accept(CraftKaisenModItems.NANAMI_OUTFIT_CHESTPLATE.get());
 					tabData.accept(CraftKaisenModItems.NANAMI_OUTFIT_LEGGINGS.get());
+					tabData.accept(CraftKaisenModItems.MAHORAGA_OUTFIT_CHESTPLATE.get());
+					tabData.accept(CraftKaisenModItems.MAHORAGA_OUTFIT_LEGGINGS.get());
 				}).withSearchBar());
 		event.registerCreativeModeTab(new ResourceLocation("craft_kaisen", "ck_curses"),
 				builder -> builder.title(Component.translatable("item_group.craft_kaisen.ck_curses")).icon(() -> new ItemStack(CraftKaisenModItems.HEIAN_ERA_SUKUNA_SPAWN_EGG.get())).displayItems((parameters, tabData) -> {
@@ -133,6 +138,8 @@ public class CraftKaisenModTabs {
 					tabData.accept(CraftKaisenModItems.SMALL_POX_DEITY_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.FLY_HEAD_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.MEGUNA_SPAWN_EGG.get());
+					tabData.accept(CraftKaisenModItems.MERGED_BEAST_AGITO_SPAWN_EGG.get());
+					tabData.accept(CraftKaisenModItems.FLYING_CURSED_SPIRIT_SPAWN_EGG.get());
 				}).withSearchBar());
 		event.registerCreativeModeTab(new ResourceLocation("craft_kaisen", "ck_items"),
 				builder -> builder.title(Component.translatable("item_group.craft_kaisen.ck_items")).icon(() -> new ItemStack(CraftKaisenModItems.NAIL.get())).displayItems((parameters, tabData) -> {
@@ -150,6 +157,7 @@ public class CraftKaisenModTabs {
 					tabData.accept(CraftKaisenModItems.CURSED_GLASSES.get());
 					tabData.accept(CraftKaisenModItems.CURSED_MASK.get());
 					tabData.accept(CraftKaisenModItems.CURSED_TOTEM.get());
+					tabData.accept(CraftKaisenModItems.REROLL_CT.get());
 				}).withSearchBar());
 		event.registerCreativeModeTab(new ResourceLocation("craft_kaisen", "ck_blocks"),
 				builder -> builder.title(Component.translatable("item_group.craft_kaisen.ck_blocks")).icon(() -> new ItemStack(CraftKaisenModBlocks.BARRIER_BLOCK.get())).displayItems((parameters, tabData) -> {

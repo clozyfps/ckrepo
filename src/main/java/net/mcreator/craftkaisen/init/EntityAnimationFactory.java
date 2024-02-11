@@ -9,7 +9,6 @@ import net.mcreator.craftkaisen.entity.RoundDeerEntity;
 import net.mcreator.craftkaisen.entity.RainbowDragonEntity;
 import net.mcreator.craftkaisen.entity.PandaEntity;
 import net.mcreator.craftkaisen.entity.NueEntity;
-import net.mcreator.craftkaisen.entity.FlyingCursedSpiritEntity;
 
 @Mod.EventBusSubscriber
 public class EntityAnimationFactory {
@@ -45,13 +44,6 @@ public class EntityAnimationFactory {
 				}
 			}
 			if (event.getEntity() instanceof PandaEntity syncable) {
-				String animation = syncable.getSyncedAnimation();
-				if (!animation.equals("undefined")) {
-					syncable.setAnimation("undefined");
-					syncable.animationprocedure = animation;
-				}
-			}
-			if (event.getEntity() instanceof FlyingCursedSpiritEntity syncable) {
 				String animation = syncable.getSyncedAnimation();
 				if (!animation.equals("undefined")) {
 					syncable.setAnimation("undefined");

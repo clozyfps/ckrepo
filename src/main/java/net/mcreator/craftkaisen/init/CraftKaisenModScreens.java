@@ -13,6 +13,7 @@ import net.minecraft.client.gui.screens.MenuScreens;
 
 import net.mcreator.craftkaisen.client.gui.StartScreenScreen;
 import net.mcreator.craftkaisen.client.gui.SelfVowGUIScreen;
+import net.mcreator.craftkaisen.client.gui.PrestigeMenuScreen;
 import net.mcreator.craftkaisen.client.gui.PhoneGUIScreen;
 import net.mcreator.craftkaisen.client.gui.PerkGuiScreen;
 import net.mcreator.craftkaisen.client.gui.MasteryGUIScreen;
@@ -28,10 +29,8 @@ public class CraftKaisenModScreens {
 	@SubscribeEvent
 	public static void clientLoad(FMLClientSetupEvent event) {
 		event.enqueueWork(() -> {
-			MenuScreens.register(CraftKaisenModMenus.MOVE_GUI.get(), MoveGuiScreen::new);
 			MenuScreens.register(CraftKaisenModMenus.START_SCREEN.get(), StartScreenScreen::new);
 			MenuScreens.register(CraftKaisenModMenus.MAIN_MENU.get(), MainMenuScreen::new);
-			MenuScreens.register(CraftKaisenModMenus.INVENTORY_CURSE_GUI.get(), InventoryCurseGuiScreen::new);
 			MenuScreens.register(CraftKaisenModMenus.DOMAIN_CLASH.get(), DomainClashScreen::new);
 			MenuScreens.register(CraftKaisenModMenus.CSMGUI.get(), CSMGUIScreen::new);
 			MenuScreens.register(CraftKaisenModMenus.IMBUE_GUI.get(), ImbueGUIScreen::new);
@@ -41,6 +40,7 @@ public class CraftKaisenModScreens {
 			MenuScreens.register(CraftKaisenModMenus.CT_MOVE_GUI.get(), CTMoveGUIScreen::new);
 			MenuScreens.register(CraftKaisenModMenus.KENJAKU_GUI.get(), KenjakuGUIScreen::new);
 			MenuScreens.register(CraftKaisenModMenus.MASTERY_GUI.get(), MasteryGUIScreen::new);
+			MenuScreens.register(CraftKaisenModMenus.PRESTIGE_MENU.get(), PrestigeMenuScreen::new);
 		});
 	}
 }
