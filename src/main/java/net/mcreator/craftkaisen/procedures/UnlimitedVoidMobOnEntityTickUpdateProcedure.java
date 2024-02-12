@@ -20,7 +20,6 @@ import net.minecraft.commands.CommandSource;
 
 import net.mcreator.craftkaisen.init.CraftKaisenModParticleTypes;
 import net.mcreator.craftkaisen.init.CraftKaisenModBlocks;
-import net.mcreator.craftkaisen.entity.UnlimitedVoidAccelerationEntity;
 
 import java.util.stream.Collectors;
 import java.util.List;
@@ -47,21 +46,21 @@ public class UnlimitedVoidMobOnEntityTickUpdateProcedure {
 			rand = Mth.nextInt(RandomSource.create(), 1, 3);
 			if (rand == 1) {
 				if (world instanceof ServerLevel _level)
-					_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.UNLIMITED_VOID_SPLASH_1.get()), x, y, z, 1, 8, 5, 8, 0);
+					_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.DELETED_MOD_ELEMENT.get()), x, y, z, 1, 8, 5, 8, 0);
 				if (world instanceof ServerLevel _level)
-					_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.UNLIMITED_VOID_SPLASH_2.get()), x, y, z, 1, 8, 5, 8, 0);
+					_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.DELETED_MOD_ELEMENT.get()), x, y, z, 1, 8, 5, 8, 0);
 			}
 			if (rand == 2) {
 				if (world instanceof ServerLevel _level)
-					_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.UNLIMITED_VOID_SPLASH_2.get()), x, y, z, 1, 8, 5, 8, 0);
+					_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.DELETED_MOD_ELEMENT.get()), x, y, z, 1, 8, 5, 8, 0);
 				if (world instanceof ServerLevel _level)
-					_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.UNLIMITED_VOID_SPLASH_3.get()), x, y, z, 1, 8, 5, 8, 0);
+					_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.DELETED_MOD_ELEMENT.get()), x, y, z, 1, 8, 5, 8, 0);
 			}
 			if (rand == 3) {
 				if (world instanceof ServerLevel _level)
-					_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.UNLIMITED_VOID_SPLASH_3.get()), x, y, z, 1, 8, 5, 8, 0);
+					_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.DELETED_MOD_ELEMENT.get()), x, y, z, 1, 8, 5, 8, 0);
 				if (world instanceof ServerLevel _level)
-					_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.UNLIMITED_VOID_SPLASH_1.get()), x, y, z, 1, 8, 5, 8, 0);
+					_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.DELETED_MOD_ELEMENT.get()), x, y, z, 1, 8, 5, 8, 0);
 			}
 			if (world instanceof ServerLevel _level)
 				_level.sendParticles(ParticleTypes.ELECTRIC_SPARK, x, y, z, 10, 8, 5, 8, 0);

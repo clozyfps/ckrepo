@@ -21,10 +21,10 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.client.Minecraft;
 
+import net.mcreator.craftkaisen.init.CraftKaisenModItems;
 import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
 import net.mcreator.craftkaisen.init.CraftKaisenModBlocks;
 import net.mcreator.craftkaisen.entity.UnlimitedVoidMobEntity;
-import net.mcreator.craftkaisen.entity.UnlimitedVoidAccelerationEntity;
 import net.mcreator.craftkaisen.CraftKaisenMod;
 
 import java.util.stream.Collectors;
@@ -56,7 +56,7 @@ public class UnlimitedVoidProcedureProcedure {
 				_level.addFreshEntity(entityToSpawn);
 			}
 			if (world instanceof ServerLevel _level) {
-				Entity entityToSpawn = new UnlimitedVoidAccelerationEntity(CraftKaisenModEntities.UNLIMITED_VOID_ACCELERATION.get(), _level);
+				Entity entityToSpawn = new UnlimitedVoidAccelerationEntity(CraftKaisenModEntities.DELETED_MOD_ELEMENT.get(), _level);
 				entityToSpawn.moveTo(x, y, z, 0, 0);
 				entityToSpawn.setYBodyRot(0);
 				entityToSpawn.setYHeadRot(0);
@@ -109,7 +109,7 @@ public class UnlimitedVoidProcedureProcedure {
 							}
 							if (Math.round(Math.sqrt(Math.pow(x + xi - x, 2) + Math.pow(y + i - y, 2) + Math.pow(z + zi - z, 2))) >= 16 && Math.round(Math.sqrt(Math.pow(x + xi - x, 2) + Math.pow(y + i - y, 2) + Math.pow(z + zi - z, 2))) < 18) {
 								if (Math.random() >= 0.75) {
-									world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.UNLIMITED_VOID_WALL.get().defaultBlockState(), 3);
+									world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModItems.DELETED_MOD_ELEMENT.get().defaultBlockState(), 3);
 								} else {
 									world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_BLOCK.get().defaultBlockState(), 3);
 								}
