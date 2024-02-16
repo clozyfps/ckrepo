@@ -1,11 +1,25 @@
 
 package net.mcreator.craftkaisen.client.renderer;
 
-public class UnlimitedVoidAccelerateRenderer extends MobRenderer<UnlimitedVoidAccelerateEntity, ModelVoidAccelerate<UnlimitedVoidAccelerateEntity>> {
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.client.renderer.entity.layers.RenderLayer;
+import net.minecraft.client.renderer.entity.MobRenderer;
+import net.minecraft.client.renderer.entity.LivingEntityRenderer;
+import net.minecraft.client.renderer.entity.EntityRendererProvider;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.model.EntityModel;
+import net.minecraft.client.Minecraft;
 
+import net.mcreator.craftkaisen.entity.UnlimitedVoidAccelerateEntity;
+import net.mcreator.craftkaisen.client.model.ModelVoidAccelerate;
+
+import com.mojang.blaze3d.vertex.VertexConsumer;
+import com.mojang.blaze3d.vertex.PoseStack;
+
+public class UnlimitedVoidAccelerateRenderer extends MobRenderer<UnlimitedVoidAccelerateEntity, ModelVoidAccelerate<UnlimitedVoidAccelerateEntity>> {
 	public UnlimitedVoidAccelerateRenderer(EntityRendererProvider.Context context) {
 		super(context, new ModelVoidAccelerate(context.bakeLayer(ModelVoidAccelerate.LAYER_LOCATION)), 0.5f);
-
 		this.addLayer(new RenderLayer<UnlimitedVoidAccelerateEntity, ModelVoidAccelerate<UnlimitedVoidAccelerateEntity>>(this) {
 			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("craft_kaisen:textures/entities/voidacceleratetexture.png");
 
@@ -30,5 +44,4 @@ public class UnlimitedVoidAccelerateRenderer extends MobRenderer<UnlimitedVoidAc
 	protected boolean isBodyVisible(UnlimitedVoidAccelerateEntity entity) {
 		return false;
 	}
-
 }

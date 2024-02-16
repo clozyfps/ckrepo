@@ -1,8 +1,34 @@
 package net.mcreator.craftkaisen.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.registries.ForgeRegistries;
 
-import javax.annotation.Nullable;
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.Vec2;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.entity.TamableAnimal;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.chat.Component;
+import net.minecraft.core.BlockPos;
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.commands.CommandSource;
+
+import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
+import net.mcreator.craftkaisen.init.CraftKaisenModBlocks;
+import net.mcreator.craftkaisen.CraftKaisenMod;
+
+import java.util.stream.Collectors;
+import java.util.List;
+import java.util.Comparator;
 
 public class CoffinOfTheIronMountainProcedureProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
@@ -39,10 +65,10 @@ public class CoffinOfTheIronMountainProcedureProcedure {
 										if (Math.random() >= 0.75) {
 											world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_LAVA.get().defaultBlockState(), 3);
 										} else {
-											world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModItems.DELETED_MOD_ELEMENT.get().defaultBlockState(), 3);
+											world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_MAGMA.get().defaultBlockState(), 3);
 										}
 									} else {
-										world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModItems.DELETED_MOD_ELEMENT.get().defaultBlockState(), 3);
+										world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_DRIPSTONE.get().defaultBlockState(), 3);
 									}
 								}
 							}
@@ -50,12 +76,12 @@ public class CoffinOfTheIronMountainProcedureProcedure {
 								if (Math.random() >= 0.9) {
 									if (Math.random() >= 0.5) {
 										if (Math.random() >= 0.5) {
-											world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModItems.DELETED_MOD_ELEMENT.get().defaultBlockState(), 3);
+											world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_BLACKSTONE_STALAGMITE_TALL.get().defaultBlockState(), 3);
 										} else {
 											world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_MINI_VOLCANO.get().defaultBlockState(), 3);
 										}
 									} else {
-										world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModItems.DELETED_MOD_ELEMENT.get().defaultBlockState(), 3);
+										world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_BLACKSTONE_STALAGMITE.get().defaultBlockState(), 3);
 									}
 								} else {
 									world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_AIR_BLOCK.get().defaultBlockState(), 3);
