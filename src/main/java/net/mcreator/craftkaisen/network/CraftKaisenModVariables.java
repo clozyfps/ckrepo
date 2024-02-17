@@ -157,12 +157,12 @@ public class CraftKaisenModVariables {
 			clone.FlowCooldownActive = original.FlowCooldownActive;
 			clone.PrestigeLevel = original.PrestigeLevel;
 			clone.Souls = original.Souls;
-			clone.Slot1 = original.Slot1;
 			clone.Slot2 = original.Slot2;
 			clone.Slot3 = original.Slot3;
-			clone.Slot0 = original.Slot0;
 			clone.Slot4 = original.Slot4;
 			clone.Slot5 = original.Slot5;
+			clone.Slot0 = original.Slot0;
+			clone.Slot1 = original.Slot1;
 			clone.Slot6 = original.Slot6;
 			clone.Slot7 = original.Slot7;
 			if (!event.isWasDeath()) {
@@ -483,12 +483,12 @@ public class CraftKaisenModVariables {
 		public boolean FlowCooldownActive = false;
 		public double PrestigeLevel = 0;
 		public double Souls = 0;
-		public ItemStack Slot1 = ItemStack.EMPTY;
 		public ItemStack Slot2 = ItemStack.EMPTY;
 		public ItemStack Slot3 = ItemStack.EMPTY;
-		public ItemStack Slot0 = ItemStack.EMPTY;
 		public ItemStack Slot4 = ItemStack.EMPTY;
 		public ItemStack Slot5 = ItemStack.EMPTY;
+		public ItemStack Slot0 = ItemStack.EMPTY;
+		public ItemStack Slot1 = ItemStack.EMPTY;
 		public ItemStack Slot6 = ItemStack.EMPTY;
 		public ItemStack Slot7 = ItemStack.EMPTY;
 
@@ -602,12 +602,12 @@ public class CraftKaisenModVariables {
 			nbt.putBoolean("FlowCooldownActive", FlowCooldownActive);
 			nbt.putDouble("PrestigeLevel", PrestigeLevel);
 			nbt.putDouble("Souls", Souls);
-			nbt.put("Slot1", Slot1.save(new CompoundTag()));
 			nbt.put("Slot2", Slot2.save(new CompoundTag()));
 			nbt.put("Slot3", Slot3.save(new CompoundTag()));
-			nbt.put("Slot0", Slot0.save(new CompoundTag()));
 			nbt.put("Slot4", Slot4.save(new CompoundTag()));
 			nbt.put("Slot5", Slot5.save(new CompoundTag()));
+			nbt.put("Slot0", Slot0.save(new CompoundTag()));
+			nbt.put("Slot1", Slot1.save(new CompoundTag()));
 			nbt.put("Slot6", Slot6.save(new CompoundTag()));
 			nbt.put("Slot7", Slot7.save(new CompoundTag()));
 			return nbt;
@@ -718,12 +718,12 @@ public class CraftKaisenModVariables {
 			FlowCooldownActive = nbt.getBoolean("FlowCooldownActive");
 			PrestigeLevel = nbt.getDouble("PrestigeLevel");
 			Souls = nbt.getDouble("Souls");
-			Slot1 = ItemStack.of(nbt.getCompound("Slot1"));
 			Slot2 = ItemStack.of(nbt.getCompound("Slot2"));
 			Slot3 = ItemStack.of(nbt.getCompound("Slot3"));
-			Slot0 = ItemStack.of(nbt.getCompound("Slot0"));
 			Slot4 = ItemStack.of(nbt.getCompound("Slot4"));
 			Slot5 = ItemStack.of(nbt.getCompound("Slot5"));
+			Slot0 = ItemStack.of(nbt.getCompound("Slot0"));
+			Slot1 = ItemStack.of(nbt.getCompound("Slot1"));
 			Slot6 = ItemStack.of(nbt.getCompound("Slot6"));
 			Slot7 = ItemStack.of(nbt.getCompound("Slot7"));
 		}
@@ -853,12 +853,12 @@ public class CraftKaisenModVariables {
 					variables.FlowCooldownActive = message.data.FlowCooldownActive;
 					variables.PrestigeLevel = message.data.PrestigeLevel;
 					variables.Souls = message.data.Souls;
-					variables.Slot1 = message.data.Slot1;
 					variables.Slot2 = message.data.Slot2;
 					variables.Slot3 = message.data.Slot3;
-					variables.Slot0 = message.data.Slot0;
 					variables.Slot4 = message.data.Slot4;
 					variables.Slot5 = message.data.Slot5;
+					variables.Slot0 = message.data.Slot0;
+					variables.Slot1 = message.data.Slot1;
 					variables.Slot6 = message.data.Slot6;
 					variables.Slot7 = message.data.Slot7;
 				}

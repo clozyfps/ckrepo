@@ -144,18 +144,10 @@
       }
     ]
   },
-  "coffindomain_end": {
+  "voidsplash": {
     "sounds": [
       {
-        "name": "craft_kaisen:coffindomain_end",
-        "stream": false
-      }
-    ]
-  },
-  "coffindomain": {
-    "sounds": [
-      {
-        "name": "craft_kaisen:coffindomain",
+        "name": "craft_kaisen:unlimited_splash",
         "stream": false
       }
     ]
@@ -168,10 +160,18 @@
       }
     ]
   },
-  "voidsplash": {
+  "coffindomain_end": {
     "sounds": [
       {
-        "name": "craft_kaisen:unlimited_splash",
+        "name": "craft_kaisen:coffindomain_end",
+        "stream": false
+      }
+    ]
+  },
+  "coffindomain": {
+    "sounds": [
+      {
+        "name": "craft_kaisen:coffindomain",
         "stream": false
       }
     ]
