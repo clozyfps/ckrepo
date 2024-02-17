@@ -1,8 +1,33 @@
 package net.mcreator.craftkaisen.procedures;
 
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.event.TickEvent;
+
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.chat.Component;
+import net.minecraft.core.BlockPos;
+
+import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
+import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
+import net.mcreator.craftkaisen.entity.VolcanicEruptionProjectileEntity;
 
 import javax.annotation.Nullable;
+
+import java.util.stream.Collectors;
+import java.util.List;
+import java.util.Comparator;
 
 @Mod.EventBusSubscriber
 public class DisasterFlamesMovesProcedure {
@@ -175,6 +200,7 @@ public class DisasterFlamesMovesProcedure {
 								}
 							}
 						}
+						CoffinOfTheIronMountainProcedureProcedure.execute(world, x, y, z, entity);
 						if (world instanceof Level _level) {
 							if (!_level.isClientSide()) {
 								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:coffindomain")), SoundSource.PLAYERS, 1, 1);

@@ -1,8 +1,13 @@
 package net.mcreator.craftkaisen.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.util.RandomSource;
+import net.minecraft.util.Mth;
 
-import javax.annotation.Nullable;
+import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
 
 public class NaobitoOnEntityTickUpdateProcedure {
 	public static void execute(Entity entity) {

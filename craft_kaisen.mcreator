@@ -5294,18 +5294,6 @@
             "type": "entity"
           },
           {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
             "name": "world",
             "type": "world"
           }
@@ -5332,7 +5320,7 @@
       "name": "UnlimitedVoidMobOnEntityTickUpdate",
       "type": "procedure",
       "sortid": 233,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "unlimited_void_mob_on_entity_tick_update",
       "metadata": {
@@ -6688,6 +6676,18 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
           },
           {
             "name": "world",
@@ -18312,6 +18312,10 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
           }
         ]
       },
@@ -19842,8 +19846,7 @@
             "type": "world"
           }
         ]
-      },
-      "path": "~/Armor/Procedures"
+      }
     },
     {
       "name": "HollowPurpleGojo",
@@ -23622,8 +23625,24 @@
         ],
         "dependencies": [
           {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
             "name": "immediatesourceentity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
           },
           {
             "name": "world",
@@ -24925,7 +24944,7 @@
       "name": "UnlimitedVoidProcedure",
       "type": "procedure",
       "sortid": 1072,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "unlimited_void_procedure",
       "metadata": {
@@ -28019,7 +28038,12 @@
         "files": [
           "src/main/java/net/mcreator/craftkaisen/procedures/Slot1ChangeProcedure.java"
         ],
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
       },
       "path": "~/GUI/Procedures"
     },
@@ -28093,7 +28117,12 @@
         "files": [
           "src/main/java/net/mcreator/craftkaisen/procedures/Slot3ChangeProcedure.java"
         ],
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
       },
       "path": "~/GUI/Procedures"
     },
@@ -28108,7 +28137,12 @@
         "files": [
           "src/main/java/net/mcreator/craftkaisen/procedures/Slot6ChangeProcedure.java"
         ],
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
       },
       "path": "~/GUI/Procedures"
     },
@@ -28223,7 +28257,12 @@
         "files": [
           "src/main/java/net/mcreator/craftkaisen/procedures/Slot5ChangeProcedure.java"
         ],
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
       },
       "path": "~/GUI/Procedures"
     },
@@ -28238,7 +28277,12 @@
         "files": [
           "src/main/java/net/mcreator/craftkaisen/procedures/Slot0ChangeProcedure.java"
         ],
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
       },
       "path": "~/GUI/Procedures"
     },
@@ -28269,7 +28313,12 @@
         "files": [
           "src/main/java/net/mcreator/craftkaisen/procedures/Slot7ChangeProcedure.java"
         ],
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
       },
       "path": "~/GUI/Procedures"
     },
@@ -28340,7 +28389,12 @@
         "files": [
           "src/main/java/net/mcreator/craftkaisen/procedures/Slot2ChangeProcedure.java"
         ],
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
       },
       "path": "~/GUI/Procedures"
     },
@@ -28375,7 +28429,12 @@
         "files": [
           "src/main/java/net/mcreator/craftkaisen/procedures/Slot4ChangeProcedure.java"
         ],
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
       },
       "path": "~/GUI/Procedures"
     },
@@ -29316,11 +29375,11 @@
       "item.craft_kaisen.mahoraga_wheel_helmet": "Mahoraga Wheel",
       "gui.craft_kaisen.imbue_gui.ImbueValue": "Cursed Energy Amount",
       "entity.craft_kaisen.round_deer": "Round Deer",
-      "advancements.ten_shadows_technique.title": "Ten Shadows Technique",
       "entity.craft_kaisen.icile": "Icile",
+      "advancements.ten_shadows_technique.title": "Ten Shadows Technique",
       "item.craft_kaisen.ember_insect_spawn_egg": "Ember Insect Spawn Egg",
-      "entity.craft_kaisen.inventory_curse_mob": "Inventory Curse Mob",
       "item.craft_kaisen.choso_armor_leggings": "Choso Pants",
+      "entity.craft_kaisen.inventory_curse_mob": "Inventory Curse Mob",
       "entity.craft_kaisen.jinichi_zenin": "Jinichi Zenin",
       "advancements.grade_4.descr": "Reach The Required Fame.",
       "gui.craft_kaisen.soul_multiplicity_overlay.label_shift_soul_summon": "SHIFT - Soul Summon",
@@ -29328,22 +29387,22 @@
       "advancements.divine_general_mahoraga.descr": "Tame Mahoraga",
       "item.craft_kaisen.distorted_body_leggings": "Distorted Body Legs",
       "item.craft_kaisen.toge_inumaki_spawn_egg": "Toge Inumaki Spawn Egg",
-      "gui.craft_kaisen.soul_multiplicity_overlay.label_alt_soul_isomer": "ALT - Soul Isomer",
       "gui.craft_kaisen.body_shape_overlay.label_ctrl_rope": "CTRL - Rope",
+      "gui.craft_kaisen.soul_multiplicity_overlay.label_alt_soul_isomer": "ALT - Soul Isomer",
       "block.craft_kaisen.ice_domain_wall": "Ice Domain Wall",
       "item.craft_kaisen.naginata": "Naginata",
-      "item.craft_kaisen.ski_mask_helmet": "Ski Mask",
-      "advancements.special_grade.title": "Special Grade",
       "gui.craft_kaisen.main_menu.label_0": "0",
+      "advancements.special_grade.title": "Special Grade",
+      "item.craft_kaisen.ski_mask_helmet": "Ski Mask",
       "advancements.history_of_jujutsu.descr": "Find a Jujutsu History Book",
       "item.craft_kaisen.takada_spawn_egg": "Takada Spawn Egg",
       "item_group.craft_kaisen.ck_weapons": "Ck Weapons",
       "advancements.the_sorcerer_killer.descr": "Kill Toji Fushiguro",
-      "entity.craft_kaisen.red_open_door": "Red Open Door",
       "key.craft_kaisen.reverse_cursed_technique": "Reverse Cursed Technique",
+      "entity.craft_kaisen.red_open_door": "Red Open Door",
       "entity.craft_kaisen.mei_mei": "Mei Mei",
-      "death.attack.crushing_damage.player": "%1$s died whilst trying to escape %2$s",
       "death.attack.repelling_damage": "%1$s died to repulsion",
+      "death.attack.crushing_damage.player": "%1$s died whilst trying to escape %2$s",
       "item.craft_kaisen.mahito_outfit_chestplate": "Mahito Outfit ",
       "advancements.perfect_preparation.descr": "Kill Kenjaku",
       "advancements.simple_domain_learned.title": "Simple Domain",
@@ -29361,8 +29420,8 @@
       "advancements.cursed_technique.descr": "Get a Cursed Technique",
       "item.craft_kaisen.phone": "Phone",
       "death.attack.ratio_damage.player": "%1$s died whilst trying to escape %2$s",
-      "item.craft_kaisen.choso_armor_chestplate": "Choso Outfit",
       "effect.craft_kaisen.small_pox_deity_cooldown": "SPDC",
+      "item.craft_kaisen.choso_armor_chestplate": "Choso Outfit",
       "item.craft_kaisen.fly_head_spawn_egg": "Fly Head Spawn Egg",
       "item.craft_kaisen.uraume_spawn_egg": "Uraume Spawn Egg",
       "item.craft_kaisen.white_divine_dog_spawn_egg": "White Divine Dog Spawn Egg",
@@ -29373,6 +29432,7 @@
       "item.craft_kaisen.yuta_outfit_leggings": "Yuta Pants",
       "item.craft_kaisen.choso_spawn_egg": "Choso Spawn Egg",
       "effect.craft_kaisen.pre_red": "PreRed",
+      "entity.craft_kaisen.naobito": "Naobito",
       "gui.craft_kaisen.body_shape_overlay.label_alt": "ALT - Spike ",
       "entity.craft_kaisen.finger_bearer": "Finger Bearer",
       "block.craft_kaisen.sprinkler_on": "Sprinkler On",
@@ -29409,6 +29469,7 @@
       "entity.craft_kaisen.hajime_kashimo": "\"The God of Lightning\" Hajime Kashimo",
       "death.attack.frost_calm_damage.item": "%1$s was killed by %2$s using %3$s",
       "block.craft_kaisen.domain_ice_stalagmite": "Domain Block",
+      "item.craft_kaisen.todo_outfit_leggings": "Todo Outfit ",
       "item.craft_kaisen.ten_shadow_rabbit_spawn_egg": "Ten Shadow Rabbit Spawn Egg",
       "item.craft_kaisen.resurrected_toji_spawn_egg": "Resurrected Toji Spawn Egg",
       "block.craft_kaisen.shibuya_gates": "Shibuya Gates",
@@ -29477,6 +29538,7 @@
       "effect.craft_kaisen.soul_multiplicity_active": "SMactive",
       "death.attack.frame_attack.player": "%1$s died whilst trying to escape %2$s",
       "gui.craft_kaisen.main_menu.tooltip_cursed_technique": "Cursed Technique",
+      "gamerule.oPBlessedByTheSparks": "Overpowered Blessed By The Sparks",
       "effect.craft_kaisen.cleave": "Cleave",
       "item.craft_kaisen.cursed_necklace": "Cursed Necklace",
       "item.craft_kaisen.sword_of_extermination": "Sword Of Extermination",
@@ -29487,6 +29549,7 @@
       "item.craft_kaisen.mahoraga_outfit_chestplate": "Mahoraga Outfit",
       "death.attack.slashing_damage.player": "%1$s died whilst trying to escape %2$s",
       "advancements.the_sorcerer_killer.title": "The Sorcerer Killer",
+      "gamerule.noOverwhelmingPressure": "No Overwhelming Pressure",
       "item.craft_kaisen.fire_arrow": "Fire Arrow",
       "advancements.fearsome_womb.title": "Fearsome Womb",
       "item.craft_kaisen.ldawda": "Ldawda",
@@ -29541,6 +29604,7 @@
       "item.craft_kaisen.root_projectile": "Root Projectile",
       "gamerule.hardcoreLives": "Hardcore Lives",
       "advancements.semi_grade_2.descr": "Reach The Required Fame.",
+      "gamerule.oPBlessedByTheSparks.description": "Makes Blessed By The Sparks Special extremely common and overpowered",
       "itemGroup.tabck_curses": "Craft Kaisen Curses",
       "entity.craft_kaisen.ten_shadow_rabbit": "Ten Shadow Rabbit",
       "effect.craft_kaisen.nue_electricity_effect": "NueElectricity",
@@ -29651,6 +29715,7 @@
       "death.attack.crushing_damage.item": "%1$s was killed by %2$s using %3$s",
       "advancements.perception_of_the_soul.descr": "Learn to percieve yours aswell as others souls.",
       "item.craft_kaisen.hammer": "Hammer",
+      "item.craft_kaisen.gojo_outfit_chestplate": "Gojo Outfit",
       "item.craft_kaisen.finger_bearer_spawn_egg": "Finger Bearer Spawn Egg",
       "death.attack.malevolent_shrine_damage.item": "%1$s was killed by %2$s using %3$s",
       "entity.craft_kaisen.body_repel_2": "Body Repel 2",
@@ -29737,6 +29802,7 @@
       "death.attack.malevolent_shrine_damage": "%1$s was cut up by %2$s\u0027s malevolent shrine",
       "item.craft_kaisen.reversal_red_projectile": "Reversal Red Projectile",
       "effect.craft_kaisen.burn_cooldown": "BurnCooldown",
+      "item.craft_kaisen.naobito_spawn_egg": "Naobito Spawn Egg",
       "gui.craft_kaisen.main_menu.label_iii": "III",
       "item.craft_kaisen.crumble_away_ranged": "Crumble Away Ranged",
       "item.craft_kaisen.sleep_ranged": "Sleep Ranged",
@@ -29757,6 +29823,7 @@
       "entity.craft_kaisen.toge_inumaki": "Toge Inumaki",
       "advancements.black_flash_advancement.title": "Black Flash",
       "advancements.toad_advancement.title": "Toad",
+      "item.craft_kaisen.gojo_outfit_leggings": "Gojo Outfit ",
       "effect.craft_kaisen.twisting": "Twisting",
       "advancements.sacred_treasure.title": "Sacred Treasure",
       "item_group.craft_kaisen.ck_blocks": "Ck Blocks",
@@ -29787,6 +29854,7 @@
       "entity.craft_kaisen.small_pox_deity": "Small Pox Deity",
       "gui.craft_kaisen.main_menu.tooltip_increase_energy_regen_rate_and_m": "increase energy regen rate and max output",
       "advancements.six_eyes_advancement.descr": "You passively regenerate cursed energy at a rapid rate,  you can also see others cursed energy and health.",
+      "gamerule.noOverwhelmingPressure.description": "Removes Pressure From Cursed Energy Flow",
       "block.craft_kaisen.domain_ice_stalagmite_tall": "Domain Block",
       "advancements.grade_3.title": "Grade 3",
       "entity.craft_kaisen.aoi_todo": "Aoi Todo",
@@ -29834,6 +29902,7 @@
       "advancements.grade_2.title": "Grade 2",
       "advancements.mastered_reversed_cursed_technique.descr": "Master RCT",
       "entity.craft_kaisen.frozen_frame": "Frozen Frame",
+      "item.craft_kaisen.naobito_outfit_leggings": "Naobito Outfit",
       "gui.craft_kaisen.phone_gui.BountyPlayer": "Bounty Amount",
       "effect.craft_kaisen.frozen_solid": "Frozen Solid",
       "advancements.point_two_second_domains.title": "0.2 Domain Expansion",
@@ -29864,11 +29933,13 @@
       "item.craft_kaisen.flying_cursed_spirit_spawn_egg": "Flying Cursed Spirit Spawn Egg",
       "item.craft_kaisen.distorted_body_chestplate": "Distorted Body ",
       "item.craft_kaisen.toji_outfit_chestplate": "Toji Shirt",
+      "item.craft_kaisen.todo_outfit_chestplate": "Todo Outfit",
       "entity.craft_kaisen.chimera_shadow_garden_mob": "Chimera Shadow Garden Mob",
       "effect.craft_kaisen.sukuna_itadori": "Itadori Sukuna",
       "item.craft_kaisen.dismantle": "Dismantle",
       "item.craft_kaisen.flower_projectile": "Flower Projectile",
       "advancements.grade_4.title": "Grade 4",
+      "item.craft_kaisen.naobito_outfit_chestplate": "Naobito Outfit",
       "item.craft_kaisen.hollow_purple_projectile": "Hollow Purple Projectile",
       "item.craft_kaisen.hiten": "Hiten",
       "death.attack.dismantle_damage.player": "%1$s died whilst trying to escape %2$s",
@@ -29887,6 +29958,7 @@
       "effect.craft_kaisen.body_crushing": "Crushing",
       "advancements.round_deer_advancement.title": "Round Deer",
       "gui.craft_kaisen.phone_gui.button_place": "Place",
+      "key.craft_kaisen.inventory_curse_open": "Open Inventory Curse",
       "item.craft_kaisen.volcanic_eruption": "Volcanic Eruption",
       "key.craft_kaisen.menu": "Menu",
       "item.craft_kaisen.nanami_outfit_chestplate": "Nanami Outfit",
