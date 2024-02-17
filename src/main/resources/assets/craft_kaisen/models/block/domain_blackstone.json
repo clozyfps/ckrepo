@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "craft_kaisen:block/coffindomainblackstonetop",
+    "up": "craft_kaisen:block/coffindomainblackstonetop",
+    "north": "craft_kaisen:block/coffindomainblackstone",
+    "east": "craft_kaisen:block/coffindomainblackstone",
+    "south": "craft_kaisen:block/coffindomainblackstone",
+    "west": "craft_kaisen:block/coffindomainblackstone",
+    "particle": "craft_kaisen:block/coffindomainblackstonetop"
+  },
+  "render_type": "solid"
+}

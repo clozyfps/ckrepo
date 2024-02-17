@@ -51,14 +51,13 @@ public class SixEyesTickProcedure {
 						entity.getPersistentData().putDouble("healthray", ((entityiterator instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) / 2));
 						entity.getPersistentData().putDouble("ceray", (entity.getPersistentData().getDouble("ce")));
 						if (entity instanceof Player _player && !_player.level.isClientSide())
-							_player.displayClientMessage(Component.literal(
-									("Hearts: " + (new java.text.DecimalFormat("#").format((entityiterator instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) / 2)) + " Cursed Energy: " + entityiterator.getPersistentData().getDouble("ce"))),
-									true);
+							_player.displayClientMessage(Component.literal(("Hearts: " + (new java.text.DecimalFormat("#").format((entityiterator instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) / 2)) + " Cursed Energy: "
+									+ new java.text.DecimalFormat("#").format(entityiterator.getPersistentData().getDouble("ce")))), true);
 					}
 				}
 			}
 			{
-				double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy + 0.2;
+				double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy + 5;
 				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.currentCursedEnergy = _setval;
 					capability.syncPlayerVariables(entity);

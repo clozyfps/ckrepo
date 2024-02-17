@@ -64,6 +64,7 @@ import net.mcreator.craftkaisen.client.model.Modelbeastsummonmask;
 import net.mcreator.craftkaisen.client.model.ModelYujikunaShirtless;
 import net.mcreator.craftkaisen.client.model.ModelYujikuna;
 import net.mcreator.craftkaisen.client.model.ModelVoidAccelerate;
+import net.mcreator.craftkaisen.client.model.ModelUnlimitedBlackhole;
 import net.mcreator.craftkaisen.client.model.ModelTrueSukuna;
 import net.mcreator.craftkaisen.client.model.ModelTenShadowBunny;
 import net.mcreator.craftkaisen.client.model.ModelSorcererArmor;
@@ -175,6 +176,7 @@ public class CraftKaisenModModels {
 		event.registerLayerDefinition(ModelInventoryCurse.LAYER_LOCATION, ModelInventoryCurse::createBodyLayer);
 		event.registerLayerDefinition(Modelreversalred.LAYER_LOCATION, Modelreversalred::createBodyLayer);
 		event.registerLayerDefinition(ModelTenShadowBunny.LAYER_LOCATION, ModelTenShadowBunny::createBodyLayer);
+		event.registerLayerDefinition(ModelUnlimitedBlackhole.LAYER_LOCATION, ModelUnlimitedBlackhole::createBodyLayer);
 		event.registerLayerDefinition(Modeldivinedog.LAYER_LOCATION, Modeldivinedog::createBodyLayer);
 		event.registerLayerDefinition(Modelmaximummeteornewwww.LAYER_LOCATION, Modelmaximummeteornewwww::createBodyLayer);
 		event.registerLayerDefinition(Modelnewmuzi.LAYER_LOCATION, Modelnewmuzi::createBodyLayer);

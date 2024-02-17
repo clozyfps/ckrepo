@@ -19,6 +19,7 @@ import net.mcreator.craftkaisen.world.inventory.PerkGuiMenu;
 import net.mcreator.craftkaisen.world.inventory.MasteryGUIMenu;
 import net.mcreator.craftkaisen.world.inventory.MainMenuMenu;
 import net.mcreator.craftkaisen.world.inventory.KenjakuGUIMenu;
+import net.mcreator.craftkaisen.world.inventory.InventoryCurseGUIMenu;
 import net.mcreator.craftkaisen.world.inventory.ImbueGUIMenu;
 import net.mcreator.craftkaisen.world.inventory.DomainClashMenu;
 import net.mcreator.craftkaisen.world.inventory.CTMoveGUIMenu;
@@ -39,4 +40,5 @@ public class CraftKaisenModMenus {
 	public static final RegistryObject<MenuType<KenjakuGUIMenu>> KENJAKU_GUI = REGISTRY.register("kenjaku_gui", () -> IForgeMenuType.create(KenjakuGUIMenu::new));
 	public static final RegistryObject<MenuType<MasteryGUIMenu>> MASTERY_GUI = REGISTRY.register("mastery_gui", () -> IForgeMenuType.create(MasteryGUIMenu::new));
 	public static final RegistryObject<MenuType<PrestigeMenuMenu>> PRESTIGE_MENU = REGISTRY.register("prestige_menu", () -> IForgeMenuType.create(PrestigeMenuMenu::new));
+	public static final RegistryObject<MenuType<InventoryCurseGUIMenu>> INVENTORY_CURSE_GUI = REGISTRY.register("inventory_curse_gui", () -> IForgeMenuType.create(InventoryCurseGUIMenu::new));
 }

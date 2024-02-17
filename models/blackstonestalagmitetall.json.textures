@@ -1,0 +1,11 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "blackstone_stalagmite_tall",
+        "missing": "blackstone_stalagmite_tall"
+      },
+      "name": "default"
+    }
+  }
+}

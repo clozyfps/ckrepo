@@ -6,6 +6,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
@@ -54,11 +55,9 @@ public class RatioHitProcedure {
 						_level.sendParticles(ParticleTypes.ENCHANTED_HIT, (entity.getX()), (entity.getY()), (entity.getZ()), 25, 0.1, 2, 0.1, 0.1);
 					if (world instanceof ServerLevel _level)
 						_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.BLOOD_SPLASH.get()), (entity.getX()), (entity.getY()), (entity.getZ()), 15, 0.5, 2, 0.5, 0.2);
-					if (event != null && event.isCancelable()) {
-						event.setCanceled(true);
-					}
 					entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:ratio_damage"))), sourceentity),
 							(float) (amount * 2));
+					entity.setDeltaMovement(new Vec3((0.8 * sourceentity.getLookAngle().x), (0.3 * sourceentity.getLookAngle().y), (0.8 * sourceentity.getLookAngle().z)));
 					if (world instanceof ServerLevel _level)
 						_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.RATIO_PARTICLE.get()), (entity.getX()), (entity.getY()), (entity.getZ()), 1, 0.1, 2, 0.1, 0.1);
 					if (world instanceof Level _level) {

@@ -16,7 +16,7 @@
             "item": {
               "value": "CUSTOM:CursedDoll"
             },
-            "weight": 1,
+            "weight": 10,
             "minCount": 1,
             "maxCount": 1,
             "minEnchantmentLevel": 0,
@@ -30,7 +30,7 @@
             "item": {
               "value": "CUSTOM:CursedTeddyBear"
             },
-            "weight": 1,
+            "weight": 10,
             "minCount": 1,
             "maxCount": 1,
             "minEnchantmentLevel": 0,
@@ -44,7 +44,7 @@
             "item": {
               "value": "CUSTOM:CursedRing"
             },
-            "weight": 1,
+            "weight": 7,
             "minCount": 1,
             "maxCount": 1,
             "minEnchantmentLevel": 0,
@@ -58,7 +58,7 @@
             "item": {
               "value": "CUSTOM:CursedMask"
             },
-            "weight": 1,
+            "weight": 10,
             "minCount": 1,
             "maxCount": 1,
             "minEnchantmentLevel": 0,
@@ -72,7 +72,7 @@
             "item": {
               "value": "CUSTOM:CursedTotem"
             },
-            "weight": 1,
+            "weight": 10,
             "minCount": 1,
             "maxCount": 1,
             "minEnchantmentLevel": 0,

@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "craft_kaisen:block/icedomainfloor",
+    "up": "craft_kaisen:block/icedomainfloor",
+    "north": "craft_kaisen:block/icedomainfloor",
+    "east": "craft_kaisen:block/icedomainfloor",
+    "south": "craft_kaisen:block/icedomainfloor",
+    "west": "craft_kaisen:block/icedomainfloor",
+    "particle": "craft_kaisen:block/icedomainfloor"
+  },
+  "render_type": "solid"
+}

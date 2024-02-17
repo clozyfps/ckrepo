@@ -2,34 +2,20 @@ package net.mcreator.craftkaisen.procedures;
 
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.util.RandomSource;
 
 public class HistoryBookRightClickedProcedure {
-	public static void execute(Entity entity) {
+	public static void execute(Entity entity, ItemStack itemstack) {
 		if (entity == null)
 			return;
-		if (((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getString("HistoryType")).equals("Simple Domain")) {
+		if ((itemstack.getOrCreateTag().getString("HistoryType")).equals("Simple Domain")) {
 			if (entity instanceof Player _player)
-				_player.getCooldowns().addCooldown((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem(), 100);
-			{
-				ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY);
-				if (_ist.hurt(5, RandomSource.create(), null)) {
-					_ist.shrink(1);
-					_ist.setDamageValue(0);
-				}
-			}
-		} else if (((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getString("HistoryType")).equals("Domain Amplification")) {
+				_player.getCooldowns().addCooldown(itemstack.getItem(), 100);
+			itemstack.getOrCreateTag().putDouble("itemhealth", (itemstack.getOrCreateTag().getDouble("itemhealth") - 5));
+		} else if ((itemstack.getOrCreateTag().getString("HistoryType")).equals("Domain Amplification")) {
 			if (entity instanceof Player _player)
-				_player.getCooldowns().addCooldown((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem(), 100);
-			{
-				ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY);
-				if (_ist.hurt(3, RandomSource.create(), null)) {
-					_ist.shrink(1);
-					_ist.setDamageValue(0);
-				}
-			}
+				_player.getCooldowns().addCooldown(itemstack.getItem(), 100);
+			itemstack.getOrCreateTag().putDouble("itemhealth", (itemstack.getOrCreateTag().getDouble("itemhealth") - 5));
 		}
 	}
 }

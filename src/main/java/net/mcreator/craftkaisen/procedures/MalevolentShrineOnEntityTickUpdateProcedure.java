@@ -49,8 +49,8 @@ public class MalevolentShrineOnEntityTickUpdateProcedure {
 				entity.discard();
 		}
 		if (world.getLevelData().getGameRules().getBoolean(CraftKaisenModGameRules.MALEVOLENT_SHRINE_BLOCK_DAMAGE) == true) {
-			int horizontalRadiusHemiTop = (int) (entity.getPersistentData().getDouble("shrineTick") / 22) - 1;
-			int verticalRadiusHemiTop = (int) (entity.getPersistentData().getDouble("shrineTick") / 22);
+			int horizontalRadiusHemiTop = (int) (entity.getPersistentData().getDouble("shrineTick") / 15) - 1;
+			int verticalRadiusHemiTop = (int) (entity.getPersistentData().getDouble("shrineTick") / 15);
 			int yIterationsHemiTop = verticalRadiusHemiTop;
 			for (int i = 0; i < yIterationsHemiTop; i++) {
 				if (i == verticalRadiusHemiTop) {
@@ -66,6 +66,8 @@ public class MalevolentShrineOnEntityTickUpdateProcedure {
 								world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), Blocks.AIR.defaultBlockState(), 3);
 								if (world instanceof ServerLevel _level)
 									_level.sendParticles(ParticleTypes.SWEEP_ATTACK, x + xi, y + i, z + zi, 1, 0.1, 1, 0.1, 0);
+								if (world instanceof ServerLevel _level)
+									_level.sendParticles(ParticleTypes.CAMPFIRE_COSY_SMOKE, x + xi, y + i, z + zi, 1, 0.1, 1, 0.1, 0);
 							}
 						}
 					}
@@ -77,7 +79,7 @@ public class MalevolentShrineOnEntityTickUpdateProcedure {
 			List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(100 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).collect(Collectors.toList());
 			for (Entity entityiterator : _entfound) {
 				if (!(entity == entityiterator) && !(entity instanceof TamableAnimal _tamIsTamedBy && entityiterator instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false)
-						&& !(entityiterator instanceof LivingEntity _livEnt28 && _livEnt28.hasEffect(CraftKaisenModMobEffects.SIMPLE_DOMAIN.get()))
+						&& !(entityiterator instanceof LivingEntity _livEnt32 && _livEnt32.hasEffect(CraftKaisenModMobEffects.SIMPLE_DOMAIN.get()))
 						&& !(entity.getPersistentData().getString("tamer")).equals(entityiterator.getDisplayName().getString())) {
 					if (entityiterator.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("craft_kaisen:cursed_spirits")))) {
 						if (world instanceof ServerLevel _level)
@@ -95,21 +97,12 @@ public class MalevolentShrineOnEntityTickUpdateProcedure {
 							_level.playLocalSound((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.player.attack.sweep")), SoundSource.NEUTRAL, 1, 1, false);
 						}
 					}
-					if (world instanceof Level _level) {
-						if (!_level.isClientSide()) {
-							_level.playSound(null, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:slice")), SoundSource.NEUTRAL,
-									(float) 0.1, 1);
-						} else {
-							_level.playLocalSound((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:slice")), SoundSource.NEUTRAL, (float) 0.1, 1,
-									false);
-						}
-					}
 					entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:slashing_damage"))),
 							(entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null)), 50);
 				} else if (entityiterator instanceof LivingEntity _livEnt53 && _livEnt53.hasEffect(CraftKaisenModMobEffects.SIMPLE_DOMAIN.get()) && !(entity == entityiterator)
 						&& !(entity instanceof TamableAnimal _tamIsTamedBy && entityiterator instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false)) {
 					if (Math.random() < 0.01) {
-						entity.getPersistentData().putDouble("simpledomainlevel", (entity.getPersistentData().getDouble("simpledomainlevel") - 1));
+						entityiterator.getPersistentData().putDouble("simpledomainlevel", (entityiterator.getPersistentData().getDouble("simpledomainlevel") - 0.1));
 					}
 				}
 			}
@@ -127,5 +120,7 @@ public class MalevolentShrineOnEntityTickUpdateProcedure {
 			if (world instanceof ServerLevel _level)
 				_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.SHRINE_SLICE_3.get()), x, y, z, 25, 50, 10, 50, 0.2);
 		}
+		if (world instanceof ServerLevel _level)
+			_level.sendParticles(ParticleTypes.POOF, x, y, z, 25, 25, 10, 25, 0.3);
 	}
 }

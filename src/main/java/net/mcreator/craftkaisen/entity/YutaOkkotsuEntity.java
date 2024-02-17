@@ -122,9 +122,9 @@ public class YutaOkkotsuEntity extends Monster {
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.4);
-		builder = builder.add(Attributes.MAX_HEALTH, 790);
-		builder = builder.add(Attributes.ARMOR, 0.3);
-		builder = builder.add(Attributes.ATTACK_DAMAGE, 57);
+		builder = builder.add(Attributes.MAX_HEALTH, 810);
+		builder = builder.add(Attributes.ARMOR, 0.4);
+		builder = builder.add(Attributes.ATTACK_DAMAGE, 69);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 50);
 		builder = builder.add(Attributes.KNOCKBACK_RESISTANCE, 0.1);
 		builder = builder.add(Attributes.ATTACK_KNOCKBACK, 3.4);

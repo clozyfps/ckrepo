@@ -35,16 +35,22 @@ public class JujutsuHistoryBookRandomizerProcedure {
 		double type = 0;
 		double ct = 0;
 		double barrier = 0;
-		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == CraftKaisenModItems.JUJUTSU_HISTORY_BOOK.get()
-				&& ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getString("HistoryType")).isEmpty()) {
-			type = Mth.nextInt(RandomSource.create(), 1, 2);
-			if (type == 1) {
-				(entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().putString("HistoryType", "Simple Domain");
-				(entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).setHoverName(Component.literal("\u00A7dJujutsu History Book: Simple Domain"));
+		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == CraftKaisenModItems.JUJUTSU_HISTORY_BOOK.get()) {
+			if (((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getString("HistoryType")).isEmpty()) {
+				type = Mth.nextInt(RandomSource.create(), 1, 2);
+				if (type == 1) {
+					(entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().putString("HistoryType", "Simple Domain");
+					(entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).setHoverName(Component.literal("\u00A7dJujutsu History Book: Simple Domain"));
+					(entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().putDouble("itemhealth", 100);
+				}
+				if (type == 2) {
+					(entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().putString("HistoryType", "Domain Amplification");
+					(entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).setHoverName(Component.literal("\u00A7dJujutsu History Book: Domain Amplification"));
+					(entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().putDouble("itemhealth", 130);
+				}
 			}
-			if (type == 2) {
-				(entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().putString("HistoryType", "Domain Amplification");
-				(entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).setHoverName(Component.literal("\u00A7dJujutsu History Book: Domain Amplification"));
+			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getDouble("itemhealth") <= 0) {
+				JujutsuHistoryBookPlayerFinishesUsingItemProcedure.execute(entity);
 			}
 		}
 	}

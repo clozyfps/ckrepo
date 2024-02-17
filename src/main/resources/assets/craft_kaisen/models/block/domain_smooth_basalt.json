@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "craft_kaisen:block/coffindomainsmoothbasalt",
+    "up": "craft_kaisen:block/coffindomainsmoothbasalt",
+    "north": "craft_kaisen:block/coffindomainsmoothbasalt",
+    "east": "craft_kaisen:block/coffindomainsmoothbasalt",
+    "south": "craft_kaisen:block/coffindomainsmoothbasalt",
+    "west": "craft_kaisen:block/coffindomainsmoothbasalt",
+    "particle": "craft_kaisen:block/coffindomainsmoothbasalt"
+  },
+  "render_type": "solid"
+}

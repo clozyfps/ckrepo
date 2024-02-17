@@ -41,6 +41,7 @@ public class BindingIceProcedure {
 			return;
 		String block = "";
 		if (!entity.getPersistentData().getBoolean("domain")) {
+			entity.getPersistentData().putString("domaintype", "Glacier");
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 				_entity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 20, 1, false, false));
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
@@ -61,14 +62,33 @@ public class BindingIceProcedure {
 								+ (zi * zi) / (double) (horizontalRadiusSphere * horizontalRadiusSphere);
 						if (distanceSq <= 1.0) {
 							block = "" + ForgeRegistries.BLOCKS.getKey((world.getBlockState(BlockPos.containing(x + xi, y + i, z + zi))).getBlock()).toString();
-							if (y + i >= entity.getY()) {
+							if (y + i == entity.getY()) {
+								if (Math.random() >= 0.9) {
+									if (Math.random() >= 0.5) {
+										world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_ICE_STALAGMITE_TALL.get().defaultBlockState(), 3);
+									} else {
+										world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_ICE_STALAGMITE.get().defaultBlockState(), 3);
+									}
+								} else {
+									world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_AIR_BLOCK.get().defaultBlockState(), 3);
+								}
+							}
+							if (y + i > entity.getY()) {
 								world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_AIR_BLOCK.get().defaultBlockState(), 3);
 							}
 							if (y + i < entity.getY()) {
-								world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.ICE_DOMAIN_FLOOR.get().defaultBlockState(), 3);
+								if (Math.random() >= 0.5) {
+									world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_ICE_BLOCK.get().defaultBlockState(), 3);
+								} else {
+									world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_PACKED_ICE.get().defaultBlockState(), 3);
+								}
 							}
 							if (Math.round(Math.sqrt(Math.pow(x + xi - x, 2) + Math.pow(y + i - y, 2) + Math.pow(z + zi - z, 2))) >= 16 && Math.round(Math.sqrt(Math.pow(x + xi - x, 2) + Math.pow(y + i - y, 2) + Math.pow(z + zi - z, 2))) < 18) {
-								world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.ICE_DOMAIN_WALL.get().defaultBlockState(), 3);
+								if (Math.random() >= 0.5) {
+									world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_BLUE_ICE.get().defaultBlockState(), 3);
+								} else {
+									world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_PACKED_ICE.get().defaultBlockState(), 3);
+								}
 							}
 							if (Math.round(Math.sqrt(Math.pow(x + xi - x, 2) + Math.pow(y + i - y, 2) + Math.pow(z + zi - z, 2))) >= 18) {
 								world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_BLOCK.get().defaultBlockState(), 3);
@@ -106,17 +126,20 @@ public class BindingIceProcedure {
 						.collect(Collectors.toList());
 				for (Entity entityiterator : _entfound) {
 					if (!(entityiterator == entity) && !(entityiterator instanceof TamableAnimal _tamIsTamedBy && entity instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false)) {
-						if (entityiterator instanceof LivingEntity _entity && !_entity.level.isClientSide())
-							_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.FROZEN_SOLID.get(), 150, 0, false, false));
-						if (world instanceof ServerLevel _level) {
-							Entity entityToSpawn = new BindingIceBlockEntity(CraftKaisenModEntities.BINDING_ICE_BLOCK.get(), _level);
-							entityToSpawn.moveTo((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), 0, 0);
-							entityToSpawn.setYBodyRot(0);
-							entityToSpawn.setYHeadRot(0);
-							entityToSpawn.setDeltaMovement(0, 0, 0);
-							if (entityToSpawn instanceof Mob _mobToSpawn)
-								_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-							_level.addFreshEntity(entityToSpawn);
+						if (!(entityiterator instanceof LivingEntity _livEnt76 && _livEnt76.hasEffect(CraftKaisenModMobEffects.SIMPLE_DOMAIN.get()))
+								|| !(entityiterator instanceof LivingEntity _livEnt77 && _livEnt77.hasEffect(CraftKaisenModMobEffects.DOMAIN_AMPLIFICATION.get()))) {
+							if (entityiterator instanceof LivingEntity _entity && !_entity.level.isClientSide())
+								_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.FROZEN_SOLID.get(), 150, 0, false, false));
+							if (world instanceof ServerLevel _level) {
+								Entity entityToSpawn = new BindingIceBlockEntity(CraftKaisenModEntities.BINDING_ICE_BLOCK.get(), _level);
+								entityToSpawn.moveTo((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), 0, 0);
+								entityToSpawn.setYBodyRot(0);
+								entityToSpawn.setYHeadRot(0);
+								entityToSpawn.setDeltaMovement(0, 0, 0);
+								if (entityToSpawn instanceof Mob _mobToSpawn)
+									_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+								_level.addFreshEntity(entityToSpawn);
+							}
 						}
 					}
 					CraftKaisenMod.queueServerWork(1, () -> {

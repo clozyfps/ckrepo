@@ -1,0 +1,11 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "ice_spike_tall",
+        "missing": "ice_spike_tall"
+      },
+      "name": "default"
+    }
+  }
+}

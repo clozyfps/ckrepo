@@ -181,6 +181,7 @@ public class RyomenSukunaOnEntityTickUpdateProcedure {
 					if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) <= 250) {
 						if (!entity.getPersistentData().getBoolean("useddomain")) {
 							entity.getPersistentData().putBoolean("useddomain", true);
+							entity.getPersistentData().putString("currentmoveactive", "Malevolent Shrine");
 							MalevolentShrineSukunaProcedure.execute(world, x, y, z, entity);
 						}
 					}

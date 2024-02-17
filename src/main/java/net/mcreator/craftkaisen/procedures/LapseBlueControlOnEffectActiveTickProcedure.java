@@ -10,6 +10,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.network.chat.Component;
 import net.minecraft.core.registries.Registries;
@@ -29,13 +30,17 @@ public class LapseBlueControlOnEffectActiveTickProcedure {
 		if (entity == null)
 			return;
 		if (entity.isShiftKeyDown()) {
-			entity.getPersistentData().putDouble("bluex", (entity.getPersistentData().getDouble("bluex") + 1));
-			entity.getPersistentData().putDouble("bluez", (entity.getPersistentData().getDouble("bluez") + 1));
-			entity.getPersistentData().putDouble("bluey", (entity.getPersistentData().getDouble("bluey") + 1));
+			if (entity.getPersistentData().getDouble("bluex") < 15) {
+				entity.getPersistentData().putDouble("bluex", (entity.getPersistentData().getDouble("bluex") + 1));
+				entity.getPersistentData().putDouble("bluez", (entity.getPersistentData().getDouble("bluez") + 1));
+				entity.getPersistentData().putDouble("bluey", (entity.getPersistentData().getDouble("bluey") + 1));
+			}
 		} else if (Screen.hasControlDown()) {
-			entity.getPersistentData().putDouble("bluex", (entity.getPersistentData().getDouble("bluex") - 1));
-			entity.getPersistentData().putDouble("bluez", (entity.getPersistentData().getDouble("bluez") - 1));
-			entity.getPersistentData().putDouble("bluey", (entity.getPersistentData().getDouble("bluey") - 1));
+			if (entity.getPersistentData().getDouble("bluex") > 0) {
+				entity.getPersistentData().putDouble("bluex", (entity.getPersistentData().getDouble("bluex") - 1));
+				entity.getPersistentData().putDouble("bluez", (entity.getPersistentData().getDouble("bluez") - 1));
+				entity.getPersistentData().putDouble("bluey", (entity.getPersistentData().getDouble("bluey") - 1));
+			}
 		}
 		if (world instanceof ServerLevel _level)
 			_level.getServer().getCommands()
@@ -71,15 +76,29 @@ public class LapseBlueControlOnEffectActiveTickProcedure {
 						.collect(Collectors.toList());
 				for (Entity entityiterator : _entfound) {
 					if (!(entity == entityiterator) && !(entityiterator instanceof TamableAnimal _tamIsTamedBy && entity instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false)) {
-						entityiterator.setDeltaMovement(new Vec3(
-								((entity.level.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale((entity.getPersistentData().getDouble("bluex")))), ClipContext.Block.OUTLINE,
-										ClipContext.Fluid.NONE, entity)).getBlockPos().getX() - entityiterator.getX()) / 5),
-								((entity.level.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale((entity.getPersistentData().getDouble("bluey")))), ClipContext.Block.OUTLINE,
-										ClipContext.Fluid.NONE, entity)).getBlockPos().getY() - entityiterator.getY()) / 5),
-								((entity.level.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale((entity.getPersistentData().getDouble("bluez")))), ClipContext.Block.OUTLINE,
-										ClipContext.Fluid.NONE, entity)).getBlockPos().getZ() - entityiterator.getZ()) / 5)));
-						entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.EXPLOSION), entity),
-								(float) (6 + (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 3));
+						if (entityiterator instanceof LivingEntity) {
+							entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.EXPLOSION), entity),
+									(float) (6 + (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 3));
+							{
+								Entity _ent = entityiterator;
+								_ent.teleportTo(
+										(entity.level.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale((entity.getPersistentData().getDouble("bluex")))), ClipContext.Block.OUTLINE,
+												ClipContext.Fluid.NONE, entity)).getBlockPos().getX()),
+										(entity.level.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale((entity.getPersistentData().getDouble("bluey")))), ClipContext.Block.OUTLINE,
+												ClipContext.Fluid.NONE, entity)).getBlockPos().getY()),
+										(entity.level.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale((entity.getPersistentData().getDouble("bluez")))), ClipContext.Block.OUTLINE,
+												ClipContext.Fluid.NONE, entity)).getBlockPos().getZ()));
+								if (_ent instanceof ServerPlayer _serverPlayer)
+									_serverPlayer.connection.teleport(
+											(entity.level.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale((entity.getPersistentData().getDouble("bluex")))), ClipContext.Block.OUTLINE,
+													ClipContext.Fluid.NONE, entity)).getBlockPos().getX()),
+											(entity.level.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale((entity.getPersistentData().getDouble("bluey")))), ClipContext.Block.OUTLINE,
+													ClipContext.Fluid.NONE, entity)).getBlockPos().getY()),
+											(entity.level.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale((entity.getPersistentData().getDouble("bluez")))), ClipContext.Block.OUTLINE,
+													ClipContext.Fluid.NONE, entity)).getBlockPos().getZ()),
+											_ent.getYRot(), _ent.getXRot());
+							}
+						}
 					}
 				}
 			}

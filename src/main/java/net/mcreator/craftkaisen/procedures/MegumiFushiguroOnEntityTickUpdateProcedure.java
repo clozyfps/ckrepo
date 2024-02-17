@@ -327,6 +327,13 @@ public class MegumiFushiguroOnEntityTickUpdateProcedure {
 						}
 					}
 				}
+				if (Math.random() < 0.0001) {
+					if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) <= 200) {
+						if (!entity.getPersistentData().getBoolean("domain")) {
+							ChimeraGardenMegumiProcedure.execute(world, x, y, z, entity);
+						}
+					}
+				}
 			}
 		}
 	}

@@ -33,7 +33,7 @@ import java.util.Collections;
 
 public class DomainAirBlockBlock extends Block implements EntityBlock {
 	public DomainAirBlockBlock() {
-		super(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.GRAVEL).strength(-1, 3600000).lightLevel(s -> 10).noCollission().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+		super(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.GLASS).strength(-1, 3600000).lightLevel(s -> 10).noCollission().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 	}
 
 	@Override

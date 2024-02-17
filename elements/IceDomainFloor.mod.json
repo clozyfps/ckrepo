@@ -33,12 +33,12 @@
         "subtract": false
       }
     ],
-    "name": "Domain Block",
+    "name": "Ice Domain Floor",
     "specialInformation": {
       "fixedValue": []
     },
-    "hardness": 5000.0,
-    "resistance": 5000.0,
+    "hardness": 3500.0,
+    "resistance": 3500.0,
     "hasGravity": false,
     "isWaterloggable": false,
     "creativeTab": {
@@ -46,7 +46,7 @@
     },
     "destroyTool": "Not specified",
     "customDrop": {
-      "value": "Blocks.AIR"
+      "value": ""
     },
     "dropAmount": 1,
     "useLootTableForDrops": false,
@@ -56,9 +56,9 @@
     "canRedstoneConnect": false,
     "lightOpacity": 15,
     "material": {
-      "value": "GLASS"
+      "value": "ICE"
     },
-    "tickRate": 1200,
+    "tickRate": 0,
     "tickRandomly": false,
     "isReplaceable": false,
     "canProvidePower": false,
@@ -102,13 +102,13 @@
     "unbreakable": true,
     "breakHarvestLevel": 1,
     "isBonemealable": false,
-    "hasInventory": true,
+    "hasInventory": false,
     "guiBoundTo": "<NONE>",
     "openGUIOnRightClick": false,
     "inventorySize": 9,
     "inventoryStackSize": 64,
-    "inventoryDropWhenDestroyed": false,
-    "inventoryComparatorPower": false,
+    "inventoryDropWhenDestroyed": true,
+    "inventoryComparatorPower": true,
     "inventoryOutSlotIDs": [],
     "inventoryInSlotIDs": [],
     "hasEnergyStorage": false,
@@ -119,9 +119,6 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
-    "onTickUpdate": {
-      "name": "DomainBlockDecay"
-    },
     "generateFeature": false,
     "restrictionBiomes": [],
     "blocksToReplace": [],

@@ -1,0 +1,47 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "nolimbs.model.new": {
+      "loop": true,
+      "bones": {
+        "RightArm": {
+          "scale": {
+            "vector": [
+              1,
+              0,
+              1
+            ]
+          }
+        },
+        "LeftArm": {
+          "position": {
+            "vector": [
+              -4,
+              0,
+              0
+            ]
+          }
+        },
+        "RightLeg": {
+          "rotation": {
+            "vector": [
+              0,
+              0,
+              180
+            ]
+          }
+        },
+        "LeftLeg": {
+          "position": {
+            "vector": [
+              0,
+              -2446,
+              0
+            ]
+          }
+        }
+      }
+    }
+  },
+  "geckolib_format_version": 2
+}
