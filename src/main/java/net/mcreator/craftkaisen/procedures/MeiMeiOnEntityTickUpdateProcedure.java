@@ -30,6 +30,7 @@ public class MeiMeiOnEntityTickUpdateProcedure {
 						_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
 					_level.addFreshEntity(entityToSpawn);
 				}
+				entity.getPersistentData().putString("currentmoveactive", "Crow");
 			}
 			if (Math.random() < 0.0001) {
 				{
@@ -52,6 +53,7 @@ public class MeiMeiOnEntityTickUpdateProcedure {
 						projectileLevel.addFreshEntity(_entityToSpawn);
 					}
 				}
+				entity.getPersistentData().putString("currentmoveactive", "Bird Strike");
 			}
 		}
 	}

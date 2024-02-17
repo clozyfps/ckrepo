@@ -13,6 +13,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
@@ -90,7 +91,10 @@ public class ReversalRedProjectileWhileProjectileFlyingTickProcedure {
 								+ (zi * zi) / (double) (horizontalRadiusSphere * horizontalRadiusSphere);
 						if (distanceSq <= 1.0) {
 							if (!((world.getBlockState(BlockPos.containing(x + xi, y + i, z + zi))).getBlock() == Blocks.AIR)) {
-								world.destroyBlock(BlockPos.containing(x + xi, y + i, z + zi), false);
+								if (!(world.getBlockState(BlockPos.containing(x + xi, y + i, z + zi))).is(BlockTags.create(new ResourceLocation("craft_kaisen:domain_blocks")))) {
+									world.destroyBlock(BlockPos.containing(x + xi, y + i, z + zi), false);
+									world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), Blocks.AIR.defaultBlockState(), 3);
+								}
 								if (world instanceof ServerLevel _level)
 									_level.sendParticles(ParticleTypes.LARGE_SMOKE, x + xi, y + i, z + zi, 2, 0.1, 2, 0.1, 0);
 							}
@@ -150,7 +154,10 @@ public class ReversalRedProjectileWhileProjectileFlyingTickProcedure {
 								+ (zi * zi) / (double) (horizontalRadiusSphere * horizontalRadiusSphere);
 						if (distanceSq <= 1.0) {
 							if (!((world.getBlockState(BlockPos.containing(x + xi, y + i, z + zi))).getBlock() == Blocks.AIR)) {
-								world.destroyBlock(BlockPos.containing(x + xi, y + i, z + zi), false);
+								if (!(world.getBlockState(BlockPos.containing(x + xi, y + i, z + zi))).is(BlockTags.create(new ResourceLocation("craft_kaisen:domain_blocks")))) {
+									world.destroyBlock(BlockPos.containing(x + xi, y + i, z + zi), false);
+									world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), Blocks.AIR.defaultBlockState(), 3);
+								}
 								if (world instanceof ServerLevel _level)
 									_level.sendParticles(ParticleTypes.LARGE_SMOKE, x + xi, y + i, z + zi, 2, 0.1, 2, 0.1, 0);
 							}

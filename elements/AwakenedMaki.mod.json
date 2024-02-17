@@ -10,7 +10,7 @@
       "fixedValue": false
     },
     "isShakingCondition": {
-      "fixedValue": true
+      "fixedValue": false
     },
     "solidBoundingBox": {
       "fixedValue": false

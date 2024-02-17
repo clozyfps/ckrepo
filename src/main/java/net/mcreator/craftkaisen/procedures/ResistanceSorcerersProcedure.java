@@ -19,6 +19,8 @@ import net.mcreator.craftkaisen.entity.ShinjukuGojoEntity;
 import net.mcreator.craftkaisen.entity.SatoruGojoEntity;
 import net.mcreator.craftkaisen.entity.RyomenSukunaEntity;
 import net.mcreator.craftkaisen.entity.ResurrectedTojiEntity;
+import net.mcreator.craftkaisen.entity.NaobitoEntity;
+import net.mcreator.craftkaisen.entity.MergedBeastAgitoEntity;
 import net.mcreator.craftkaisen.entity.MahitoEntity;
 import net.mcreator.craftkaisen.entity.JogoEntity;
 import net.mcreator.craftkaisen.entity.AoiTodoEntity;
@@ -50,11 +52,13 @@ public class ResistanceSorcerersProcedure {
 		}
 		if (entity instanceof SatoruGojoEntity || entity instanceof ShinjukuGojoEntity) {
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 99999, 4, false, false));
+				_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 99999, 3, false, false));
+			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 99999, 2, false, false));
 		}
 		if (entity instanceof RyomenSukunaEntity) {
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 99999, 4, false, false));
+				_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 99999, 3, false, false));
 		}
 		if (entity instanceof JogoEntity) {
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
@@ -67,6 +71,18 @@ public class ResistanceSorcerersProcedure {
 		if (entity instanceof ResurrectedTojiEntity) {
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 				_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 99999, 3, false, false));
+		}
+		if (entity instanceof NaobitoEntity) {
+			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+				_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 99999, 1, false, false));
+			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 99999, 0, false, false));
+		}
+		if (entity instanceof MergedBeastAgitoEntity) {
+			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+				_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 99999, 3, false, false));
+			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 99999, 0, false, false));
 		}
 		if (entity instanceof SatoruGojoEntity || entity instanceof ShinjukuGojoEntity || entity instanceof ResurrectedTojiEntity) {
 			CraftKaisenMod.queueServerWork(10000, () -> {

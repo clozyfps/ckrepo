@@ -42,6 +42,7 @@ public class JinichiZeninOnEntityTickUpdateProcedure {
 						projectileLevel.addFreshEntity(_entityToSpawn);
 					}
 				}
+				entity.getPersistentData().putString("currentmoveactive", "Fist");
 			}
 		}
 	}

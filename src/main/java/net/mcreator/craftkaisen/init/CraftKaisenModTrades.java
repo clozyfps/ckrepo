@@ -18,7 +18,9 @@ public class CraftKaisenModTrades {
 	@SubscribeEvent
 	public static void registerTrades(VillagerTradesEvent event) {
 		if (event.getType() == VillagerProfession.LIBRARIAN) {
-			event.getTrades().get(1).add(new BasicItemListing(new ItemStack(Items.DIAMOND, 20), new ItemStack(Items.EMERALD, 18), new ItemStack(CraftKaisenModItems.JUJUTSU_HISTORY_BOOK.get()), 10, 5, 0.15f));
+			event.getTrades().get(1).add(new BasicItemListing(new ItemStack(Items.DIAMOND),
+
+					new ItemStack(CraftKaisenModItems.JUJUTSU_HISTORY_BOOK.get()), 10, 5, 0.15f));
 		}
 		if (event.getType() == VillagerProfession.ARMORER) {
 			event.getTrades().get(1).add(new BasicItemListing(new ItemStack(CraftKaisenModItems.CURSED_MASK.get()),

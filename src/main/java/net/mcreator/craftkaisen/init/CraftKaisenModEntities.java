@@ -61,10 +61,10 @@ import net.mcreator.craftkaisen.entity.RainbowDragonEntity;
 import net.mcreator.craftkaisen.entity.RainbowClosedDoorEntity;
 import net.mcreator.craftkaisen.entity.PureLoveBeamRangedProjectileEntity;
 import net.mcreator.craftkaisen.entity.PoxDeityDomainEntity;
-import net.mcreator.craftkaisen.entity.PandaEntity;
 import net.mcreator.craftkaisen.entity.OldLadyEntity;
 import net.mcreator.craftkaisen.entity.NueEntity;
 import net.mcreator.craftkaisen.entity.NobaraKugisakiEntity;
+import net.mcreator.craftkaisen.entity.NaobitoEntity;
 import net.mcreator.craftkaisen.entity.NanamiKentoEntity;
 import net.mcreator.craftkaisen.entity.NailProjectileProjectileEntity;
 import net.mcreator.craftkaisen.entity.MouthCursedSpiritEntity;
@@ -419,10 +419,6 @@ public class CraftKaisenModEntities {
 			EntityType.Builder.<SuguruGetoEntity>of(SuguruGetoEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(SuguruGetoEntity::new)
 
 					.sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<PandaEntity>> PANDA = register("panda",
-			EntityType.Builder.<PandaEntity>of(PandaEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(PandaEntity::new)
-
-					.sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<MegunaEntity>> MEGUNA = register("meguna",
 			EntityType.Builder.<MegunaEntity>of(MegunaEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(MegunaEntity::new)
 
@@ -546,6 +542,10 @@ public class CraftKaisenModEntities {
 					.setCustomClientFactory(UnlimitedVoidAccelerateEntity::new)
 
 					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<NaobitoEntity>> NAOBITO = register("naobito",
+			EntityType.Builder.<NaobitoEntity>of(NaobitoEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(NaobitoEntity::new)
+
+					.sized(0.6f, 1.8f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -607,7 +607,6 @@ public class CraftKaisenModEntities {
 			BodyRepel3Entity.init();
 			RopeMobEntity.init();
 			SuguruGetoEntity.init();
-			PandaEntity.init();
 			MegunaEntity.init();
 			HajimeKashimoEntity.init();
 			MergedBeastAgitoEntity.init();
@@ -639,6 +638,7 @@ public class CraftKaisenModEntities {
 			KenjakuEntity.init();
 			BindingIceBlockEntity.init();
 			UnlimitedVoidAccelerateEntity.init();
+			NaobitoEntity.init();
 		});
 	}
 
@@ -697,7 +697,6 @@ public class CraftKaisenModEntities {
 		event.put(BODY_REPEL_3.get(), BodyRepel3Entity.createAttributes().build());
 		event.put(ROPE_MOB.get(), RopeMobEntity.createAttributes().build());
 		event.put(SUGURU_GETO.get(), SuguruGetoEntity.createAttributes().build());
-		event.put(PANDA.get(), PandaEntity.createAttributes().build());
 		event.put(MEGUNA.get(), MegunaEntity.createAttributes().build());
 		event.put(HAJIME_KASHIMO.get(), HajimeKashimoEntity.createAttributes().build());
 		event.put(MERGED_BEAST_AGITO.get(), MergedBeastAgitoEntity.createAttributes().build());
@@ -729,5 +728,6 @@ public class CraftKaisenModEntities {
 		event.put(KENJAKU.get(), KenjakuEntity.createAttributes().build());
 		event.put(BINDING_ICE_BLOCK.get(), BindingIceBlockEntity.createAttributes().build());
 		event.put(UNLIMITED_VOID_ACCELERATE.get(), UnlimitedVoidAccelerateEntity.createAttributes().build());
+		event.put(NAOBITO.get(), NaobitoEntity.createAttributes().build());
 	}
 }

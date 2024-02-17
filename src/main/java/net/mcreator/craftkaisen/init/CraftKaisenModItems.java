@@ -20,6 +20,7 @@ import net.mcreator.craftkaisen.item.VolcanicEruptionItem;
 import net.mcreator.craftkaisen.item.TwistRangedItem;
 import net.mcreator.craftkaisen.item.TojiOutfitItem;
 import net.mcreator.craftkaisen.item.TojiCurseArmorItem;
+import net.mcreator.craftkaisen.item.TodoOutfitItem;
 import net.mcreator.craftkaisen.item.TestItem;
 import net.mcreator.craftkaisen.item.SwordOfExterminationItem;
 import net.mcreator.craftkaisen.item.SukunaOutfitItem;
@@ -40,6 +41,7 @@ import net.mcreator.craftkaisen.item.PlayfulCloudItem;
 import net.mcreator.craftkaisen.item.PhoneItem;
 import net.mcreator.craftkaisen.item.NyoiStaffItem;
 import net.mcreator.craftkaisen.item.NobaraOutfitItem;
+import net.mcreator.craftkaisen.item.NaobitoOutfitItem;
 import net.mcreator.craftkaisen.item.NanamiOutfitItem;
 import net.mcreator.craftkaisen.item.NanamiKnifeItem;
 import net.mcreator.craftkaisen.item.NailProjectileItem;
@@ -61,6 +63,7 @@ import net.mcreator.craftkaisen.item.InvertedSpearItem;
 import net.mcreator.craftkaisen.item.HollowPurpleProjectileItem;
 import net.mcreator.craftkaisen.item.HitenItem;
 import net.mcreator.craftkaisen.item.HammerItem;
+import net.mcreator.craftkaisen.item.GojoOutfitItem;
 import net.mcreator.craftkaisen.item.GiftedGiveItem;
 import net.mcreator.craftkaisen.item.GetoOutfitItem;
 import net.mcreator.craftkaisen.item.FlowerProjectileItem;
@@ -220,7 +223,6 @@ public class CraftKaisenModItems {
 	public static final RegistryObject<Item> DISTORTED_BODY_HELMET = REGISTRY.register("distorted_body_helmet", () -> new DistortedBodyItem.Helmet());
 	public static final RegistryObject<Item> DISTORTED_BODY_CHESTPLATE = REGISTRY.register("distorted_body_chestplate", () -> new DistortedBodyItem.Chestplate());
 	public static final RegistryObject<Item> DISTORTED_BODY_LEGGINGS = REGISTRY.register("distorted_body_leggings", () -> new DistortedBodyItem.Leggings());
-	public static final RegistryObject<Item> PANDA_SPAWN_EGG = REGISTRY.register("panda_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.PANDA, -1, -16777216, new Item.Properties()));
 	public static final RegistryObject<Item> MEGUNA_SPAWN_EGG = REGISTRY.register("meguna_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.MEGUNA, -1, -13421773, new Item.Properties()));
 	public static final RegistryObject<Item> CLAN_INVITE_PAPER = REGISTRY.register("clan_invite_paper", () -> new ClanInvitePaperItem());
 	public static final RegistryObject<Item> NYOI_STAFF = REGISTRY.register("nyoi_staff", () -> new NyoiStaffItem());
@@ -278,6 +280,15 @@ public class CraftKaisenModItems {
 	public static final RegistryObject<Item> DOMAIN_LAVA = block(CraftKaisenModBlocks.DOMAIN_LAVA);
 	public static final RegistryObject<Item> DOMAIN_ICE_STALAGMITE = block(CraftKaisenModBlocks.DOMAIN_ICE_STALAGMITE);
 	public static final RegistryObject<Item> DOMAIN_ICE_STALAGMITE_TALL = block(CraftKaisenModBlocks.DOMAIN_ICE_STALAGMITE_TALL);
+	public static final RegistryObject<Item> ICE_DOMAIN_FLOOR = block(CraftKaisenModBlocks.ICE_DOMAIN_FLOOR);
+	public static final RegistryObject<Item> ICE_DOMAIN_WALL = block(CraftKaisenModBlocks.ICE_DOMAIN_WALL);
+	public static final RegistryObject<Item> NAOBITO_SPAWN_EGG = REGISTRY.register("naobito_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.NAOBITO, -3355444, -1, new Item.Properties()));
+	public static final RegistryObject<Item> TODO_OUTFIT_CHESTPLATE = REGISTRY.register("todo_outfit_chestplate", () -> new TodoOutfitItem.Chestplate());
+	public static final RegistryObject<Item> TODO_OUTFIT_LEGGINGS = REGISTRY.register("todo_outfit_leggings", () -> new TodoOutfitItem.Leggings());
+	public static final RegistryObject<Item> GOJO_OUTFIT_CHESTPLATE = REGISTRY.register("gojo_outfit_chestplate", () -> new GojoOutfitItem.Chestplate());
+	public static final RegistryObject<Item> GOJO_OUTFIT_LEGGINGS = REGISTRY.register("gojo_outfit_leggings", () -> new GojoOutfitItem.Leggings());
+	public static final RegistryObject<Item> NAOBITO_OUTFIT_CHESTPLATE = REGISTRY.register("naobito_outfit_chestplate", () -> new NaobitoOutfitItem.Chestplate());
+	public static final RegistryObject<Item> NAOBITO_OUTFIT_LEGGINGS = REGISTRY.register("naobito_outfit_leggings", () -> new NaobitoOutfitItem.Leggings());
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));

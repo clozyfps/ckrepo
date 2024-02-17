@@ -19,6 +19,7 @@ import net.mcreator.craftkaisen.network.ToggleCTSpecialMessage;
 import net.mcreator.craftkaisen.network.ReverseCursedTechniqueMessage;
 import net.mcreator.craftkaisen.network.OutputMessage;
 import net.mcreator.craftkaisen.network.MenuMessage;
+import net.mcreator.craftkaisen.network.InventoryCurseOpenMessage;
 import net.mcreator.craftkaisen.network.ImbueCEMessage;
 import net.mcreator.craftkaisen.network.ChargeCursedEnergyMessage;
 import net.mcreator.craftkaisen.network.Ability6Message;
@@ -202,6 +203,19 @@ public class CraftKaisenModKeyMappings {
 			isDownOld = isDown;
 		}
 	};
+	public static final KeyMapping INVENTORY_CURSE_OPEN = new KeyMapping("key.craft_kaisen.inventory_curse_open", GLFW.GLFW_KEY_K, "key.categories.craft_kaisen") {
+		private boolean isDownOld = false;
+
+		@Override
+		public void setDown(boolean isDown) {
+			super.setDown(isDown);
+			if (isDownOld != isDown && isDown) {
+				CraftKaisenMod.PACKET_HANDLER.sendToServer(new InventoryCurseOpenMessage(0, 0));
+				InventoryCurseOpenMessage.pressAction(Minecraft.getInstance().player, 0, 0);
+			}
+			isDownOld = isDown;
+		}
+	};
 	private static long CHARGE_CURSED_ENERGY_LASTPRESS = 0;
 	private static long REVERSE_CURSED_TECHNIQUE_LASTPRESS = 0;
 	private static long IMBUE_CE_LASTPRESS = 0;
@@ -220,6 +234,7 @@ public class CraftKaisenModKeyMappings {
 		event.register(TOGGLE_CT_SPECIAL);
 		event.register(REVERSE_CURSED_TECHNIQUE);
 		event.register(IMBUE_CE);
+		event.register(INVENTORY_CURSE_OPEN);
 	}
 
 	@Mod.EventBusSubscriber({Dist.CLIENT})
@@ -239,6 +254,7 @@ public class CraftKaisenModKeyMappings {
 				TOGGLE_CT_SPECIAL.consumeClick();
 				REVERSE_CURSED_TECHNIQUE.consumeClick();
 				IMBUE_CE.consumeClick();
+				INVENTORY_CURSE_OPEN.consumeClick();
 			}
 		}
 	}

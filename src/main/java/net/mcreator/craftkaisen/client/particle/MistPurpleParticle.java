@@ -37,7 +37,7 @@ public class MistPurpleParticle extends TextureSheetParticle {
 		this.spriteSet = spriteSet;
 		this.setSize(0.2f, 0.2f);
 		this.quadSize *= 5f;
-		this.lifetime = 25;
+		this.lifetime = 5;
 		this.gravity = 0f;
 		this.hasPhysics = false;
 		this.xd = vx * 0;
@@ -47,8 +47,13 @@ public class MistPurpleParticle extends TextureSheetParticle {
 	}
 
 	@Override
+	public int getLightColor(float partialTick) {
+		return 15728880;
+	}
+
+	@Override
 	public ParticleRenderType getRenderType() {
-		return ParticleRenderType.PARTICLE_SHEET_OPAQUE;
+		return ParticleRenderType.PARTICLE_SHEET_LIT;
 	}
 
 	@Override

@@ -39,6 +39,7 @@ public class HanamiOnEntityTickUpdateProcedure {
 		if ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof LivingEntity) {
 			if (!(entity instanceof LivingEntity _livEnt2 && _livEnt2.hasEffect(CraftKaisenModMobEffects.STOP_ATTACKS.get()))) {
 				if (Math.random() < 0.01) {
+					entity.getPersistentData().putString("currentmoveactive", "Roots");
 					if (entity instanceof LivingEntity _entity)
 						_entity.swing(InteractionHand.MAIN_HAND, true);
 					{
@@ -62,6 +63,7 @@ public class HanamiOnEntityTickUpdateProcedure {
 					}
 				}
 				if (Math.random() < 0.009) {
+					entity.getPersistentData().putString("currentmoveactive", "Roots");
 					if (entity instanceof LivingEntity _entity)
 						_entity.swing(InteractionHand.MAIN_HAND, true);
 					{
@@ -131,6 +133,7 @@ public class HanamiOnEntityTickUpdateProcedure {
 					});
 				}
 				if (Math.random() < 0.01) {
+					entity.getPersistentData().putString("currentmoveactive", "Flower Field");
 					if (entity instanceof LivingEntity _entity)
 						_entity.swing(InteractionHand.MAIN_HAND, true);
 					{

@@ -49,7 +49,7 @@ public class RikaCopyHitProcedure {
 								}
 								if ((immediatesourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof Player _player && !_player.level.isClientSide())
 									_player.displayClientMessage(
-											Component.literal(("Copied Technique " + (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).ability1 + "To Slot 1!")),
+											Component.literal(("Copied Technique " + (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).ability1 + " To Slot 1!")),
 											true);
 							} else if ((((immediatesourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null).getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 									.orElse(new CraftKaisenModVariables.PlayerVariables())).ability2).equals("Copy")) {
@@ -62,7 +62,7 @@ public class RikaCopyHitProcedure {
 								}
 								if ((immediatesourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof Player _player && !_player.level.isClientSide())
 									_player.displayClientMessage(
-											Component.literal(("Copied Technique " + (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).ability2 + "To Slot 2!")),
+											Component.literal(("Copied Technique " + (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).ability2 + " To Slot 2!")),
 											true);
 							} else if ((((immediatesourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null).getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 									.orElse(new CraftKaisenModVariables.PlayerVariables())).ability3).equals("Copy")) {
@@ -75,7 +75,7 @@ public class RikaCopyHitProcedure {
 								}
 								if ((immediatesourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof Player _player && !_player.level.isClientSide())
 									_player.displayClientMessage(
-											Component.literal(("Copied Technique " + (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).ability3 + "To Slot 3!")),
+											Component.literal(("Copied Technique " + (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).ability3 + " To Slot 3!")),
 											true);
 							} else if ((((immediatesourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null).getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 									.orElse(new CraftKaisenModVariables.PlayerVariables())).ability4).equals("Copy")) {
@@ -88,7 +88,7 @@ public class RikaCopyHitProcedure {
 								}
 								if ((immediatesourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof Player _player && !_player.level.isClientSide())
 									_player.displayClientMessage(
-											Component.literal(("Copied Technique " + (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).ability4 + "To Slot 4!")),
+											Component.literal(("Copied Technique " + (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).ability4 + " To Slot 4!")),
 											true);
 							} else if ((((immediatesourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null).getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 									.orElse(new CraftKaisenModVariables.PlayerVariables())).ability5).equals("Copy")) {
@@ -101,7 +101,7 @@ public class RikaCopyHitProcedure {
 								}
 								if ((immediatesourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof Player _player && !_player.level.isClientSide())
 									_player.displayClientMessage(
-											Component.literal(("Copied Technique " + (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).ability5 + "To Slot 5!")),
+											Component.literal(("Copied Technique " + (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).ability5 + " To Slot 5!")),
 											true);
 							} else if ((((immediatesourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null).getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 									.orElse(new CraftKaisenModVariables.PlayerVariables())).ability6).equals("Copy")) {
@@ -114,7 +114,7 @@ public class RikaCopyHitProcedure {
 								}
 								if ((immediatesourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof Player _player && !_player.level.isClientSide())
 									_player.displayClientMessage(
-											Component.literal(("Copied Technique " + (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).ability6 + "To Slot 6!")),
+											Component.literal(("Copied Technique " + (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).ability6 + " To Slot 6!")),
 											true);
 							}
 						}

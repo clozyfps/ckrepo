@@ -159,5 +159,21 @@
         "stream": false
       }
     ]
+  },
+  "voidsplash": {
+    "sounds": [
+      {
+        "name": "craft_kaisen:unlimited_splash",
+        "stream": false
+      }
+    ]
+  },
+  "void": {
+    "sounds": [
+      {
+        "name": "craft_kaisen:unlimitedvoid",
+        "stream": false
+      }
+    ]
   }
 }

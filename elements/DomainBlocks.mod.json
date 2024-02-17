@@ -1,0 +1,82 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Blocks",
+    "items": [],
+    "blocks": [
+      {
+        "value": "CUSTOM:DomainBlock"
+      },
+      {
+        "value": "CUSTOM:BarrierBlock"
+      },
+      {
+        "value": "CUSTOM:QuestBoard"
+      },
+      {
+        "value": "CUSTOM:DomainAirBlock"
+      },
+      {
+        "value": "CUSTOM:MagmaDomainFloor"
+      },
+      {
+        "value": "CUSTOM:MagmaDomainWall"
+      },
+      {
+        "value": "CUSTOM:DomainMiniVolcano"
+      },
+      {
+        "value": "CUSTOM:DomainSmoothBasalt"
+      },
+      {
+        "value": "CUSTOM:DomainBlackstone"
+      },
+      {
+        "value": "CUSTOM:DomainBlueIce"
+      },
+      {
+        "value": "CUSTOM:DomainStarBlock"
+      },
+      {
+        "value": "CUSTOM:DomainIceStalagmiteTall"
+      },
+      {
+        "value": "CUSTOM:DomainBlackstoneStalagmiteTall"
+      },
+      {
+        "value": "CUSTOM:DomainPackedIce"
+      },
+      {
+        "value": "CUSTOM:DomainMagma"
+      },
+      {
+        "value": "CUSTOM:DomainBasalt"
+      },
+      {
+        "value": "CUSTOM:DomainIceStalagmite"
+      },
+      {
+        "value": "CUSTOM:DomainIceBlock"
+      },
+      {
+        "value": "CUSTOM:DomainBlackstoneStalagmite"
+      },
+      {
+        "value": "CUSTOM:DomainDripstone"
+      },
+      {
+        "value": "CUSTOM:IceDomainFloor"
+      },
+      {
+        "value": "CUSTOM:IceDomainWall"
+      }
+    ],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "domain_blocks",
+    "namespace": "mod"
+  }
+}

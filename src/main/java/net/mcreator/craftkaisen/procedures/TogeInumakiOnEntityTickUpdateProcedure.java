@@ -46,6 +46,7 @@ public class TogeInumakiOnEntityTickUpdateProcedure {
 					}
 					if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 						_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 10, 3, false, false));
+					entity.getPersistentData().putString("currentmoveactive", "Explode");
 				}
 				if (Math.random() < 0.001) {
 					{
@@ -69,6 +70,7 @@ public class TogeInumakiOnEntityTickUpdateProcedure {
 					}
 					if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 						_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 10, 3, false, false));
+					entity.getPersistentData().putString("currentmoveactive", "Sleep");
 				}
 				if (Math.random() < 0.001) {
 					{
@@ -92,6 +94,7 @@ public class TogeInumakiOnEntityTickUpdateProcedure {
 					}
 					if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 						_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 10, 3, false, false));
+					entity.getPersistentData().putString("currentmoveactive", "Run Away");
 				}
 				if (Math.random() < 0.001) {
 					{
@@ -115,6 +118,7 @@ public class TogeInumakiOnEntityTickUpdateProcedure {
 					}
 					if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 						_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 10, 3, false, false));
+					entity.getPersistentData().putString("currentmoveactive", "Dont Move");
 				}
 				if (Math.random() < 0.001) {
 					{
@@ -138,6 +142,7 @@ public class TogeInumakiOnEntityTickUpdateProcedure {
 					}
 					if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 						_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 10, 3, false, false));
+					entity.getPersistentData().putString("currentmoveactive", "Get Crushed");
 				}
 				if (Math.random() < 0.001) {
 					{
@@ -161,6 +166,7 @@ public class TogeInumakiOnEntityTickUpdateProcedure {
 					}
 					if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 						_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 10, 3, false, false));
+					entity.getPersistentData().putString("currentmoveactive", "Crumble Away");
 				}
 			}
 		}

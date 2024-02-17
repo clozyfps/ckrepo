@@ -5,15 +5,15 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.TickEvent;
 
-import net.minecraft.world.level.block.state.properties.Property;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.BlockPos;
 
@@ -22,8 +22,6 @@ import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
 import net.mcreator.craftkaisen.entity.HollowPurpleProjectileProjectileEntity;
 
 import javax.annotation.Nullable;
-
-import java.util.Map;
 
 @Mod.EventBusSubscriber
 public class LimitlessTick2Procedure {
@@ -52,7 +50,7 @@ public class LimitlessTick2Procedure {
 				}
 				{
 					// Get the radius of the sphere
-					double radius = 1; // 3 blocks
+					double radius = 0.5; // 3 blocks
 					// Set the tolerance for how close to the surface a point must be to create a particle
 					double tolerance = 0.15; // 0.1 blocks
 					for (double xx = -radius; xx <= radius; xx += 0.1) {
@@ -76,7 +74,7 @@ public class LimitlessTick2Procedure {
 				}
 				{
 					// Get the radius of the sphere
-					double radius = 1; // 3 blocks
+					double radius = 0.5; // 3 blocks
 					// Set the tolerance for how close to the surface a point must be to create a particle
 					double tolerance = 0.15; // 0.1 blocks
 					for (double xx = -radius; xx <= radius; xx += 0.1) {
@@ -114,19 +112,8 @@ public class LimitlessTick2Procedure {
 								double distanceSq = (xi * xi) / (double) (horizontalRadiusHemiTop * horizontalRadiusHemiTop) + (i * i) / (double) (verticalRadiusHemiTop * verticalRadiusHemiTop)
 										+ (zi * zi) / (double) (horizontalRadiusHemiTop * horizontalRadiusHemiTop);
 								if (distanceSq <= 1.0) {
-									{
-										BlockPos _bp = BlockPos.containing(x + xi, y + i, z + zi);
-										BlockState _bs = Blocks.AIR.defaultBlockState();
-										BlockState _bso = world.getBlockState(_bp);
-										for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-											Property _property = _bs.getBlock().getStateDefinition().getProperty(entry.getKey().getName());
-											if (_property != null && _bs.getValue(_property) != null)
-												try {
-													_bs = _bs.setValue(_property, (Comparable) entry.getValue());
-												} catch (Exception e) {
-												}
-										}
-										world.setBlock(_bp, _bs, 3);
+									if (!(world.getBlockState(BlockPos.containing(x + xi, y + i, z + zi))).is(BlockTags.create(new ResourceLocation("craft_kaisen:domain_blocks")))) {
+										world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), Blocks.AIR.defaultBlockState(), 3);
 									}
 								}
 							}
@@ -142,19 +129,8 @@ public class LimitlessTick2Procedure {
 								double distanceSq = (xi * xi) / (double) (horizontalRadiusSphere * horizontalRadiusSphere) + (i * i) / (double) (verticalRadiusSphere * verticalRadiusSphere)
 										+ (zi * zi) / (double) (horizontalRadiusSphere * horizontalRadiusSphere);
 								if (distanceSq <= 1.0) {
-									{
-										BlockPos _bp = BlockPos.containing(x + xi, y + i, z + zi);
-										BlockState _bs = Blocks.AIR.defaultBlockState();
-										BlockState _bso = world.getBlockState(_bp);
-										for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-											Property _property = _bs.getBlock().getStateDefinition().getProperty(entry.getKey().getName());
-											if (_property != null && _bs.getValue(_property) != null)
-												try {
-													_bs = _bs.setValue(_property, (Comparable) entry.getValue());
-												} catch (Exception e) {
-												}
-										}
-										world.setBlock(_bp, _bs, 3);
+									if (!(world.getBlockState(BlockPos.containing(x + xi, y + i, z + zi))).is(BlockTags.create(new ResourceLocation("craft_kaisen:domain_blocks")))) {
+										world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), Blocks.AIR.defaultBlockState(), 3);
 									}
 								}
 							}

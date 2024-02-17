@@ -18928,24 +18928,6 @@
       "path": "~/Mobs"
     },
     {
-      "name": "Panda",
-      "type": "animatedentity",
-      "sortid": 823,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "panda",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/craft_kaisen/forge/biome_modifier/panda_biome_modifier.json",
-          "src/main/resources/assets/craft_kaisen/models/item/panda_spawn_egg.json",
-          "src/main/java/net/mcreator/craftkaisen/entity/model/PandaModel.java",
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/PandaRenderer.java",
-          "src/main/java/net/mcreator/craftkaisen/entity/PandaEntity.java"
-        ]
-      },
-      "path": "~/Mobs"
-    },
-    {
       "name": "FloatingTick",
       "type": "procedure",
       "sortid": 837,
@@ -27416,51 +27398,6 @@
       "path": "~/Blocks/Domain Blocks"
     },
     {
-      "name": "UnlimitedVoidSplash1",
-      "type": "particle",
-      "sortid": 1213,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "unlimited_void_splash_1",
-      "metadata": {
-        "files": [
-          "src/main/resources/assets/craft_kaisen/particles/unlimited_void_splash_1.json",
-          "src/main/java/net/mcreator/craftkaisen/client/particle/UnlimitedVoidSplash1Particle.java"
-        ]
-      },
-      "path": "~/Particles"
-    },
-    {
-      "name": "UnlimitedVoidSplash2",
-      "type": "particle",
-      "sortid": 1214,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "unlimited_void_splash_2",
-      "metadata": {
-        "files": [
-          "src/main/resources/assets/craft_kaisen/particles/unlimited_void_splash_2.json",
-          "src/main/java/net/mcreator/craftkaisen/client/particle/UnlimitedVoidSplash2Particle.java"
-        ]
-      },
-      "path": "~/Particles"
-    },
-    {
-      "name": "UnlimitedVoidSplash3",
-      "type": "particle",
-      "sortid": 1215,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "unlimited_void_splash_3",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/particle/UnlimitedVoidSplash3Particle.java",
-          "src/main/resources/assets/craft_kaisen/particles/unlimited_void_splash_3.json"
-        ]
-      },
-      "path": "~/Particles"
-    },
-    {
       "name": "PointTwoIceBind",
       "type": "procedure",
       "sortid": 1179,
@@ -27531,21 +27468,6 @@
         ]
       },
       "path": "~/Blocks/Domain Blocks"
-    },
-    {
-      "name": "UnlimitedBlackhole",
-      "type": "particle",
-      "sortid": 1216,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "unlimited_blackhole",
-      "metadata": {
-        "files": [
-          "src/main/resources/assets/craft_kaisen/particles/unlimited_blackhole.json",
-          "src/main/java/net/mcreator/craftkaisen/client/particle/UnlimitedBlackholeParticle.java"
-        ]
-      },
-      "path": "~/Particles"
     },
     {
       "name": "COTMeffect",
@@ -27979,6 +27901,497 @@
         ]
       },
       "path": "~/Mobs"
+    },
+    {
+      "name": "IceDomainFloor",
+      "type": "block",
+      "sortid": 1217,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ice_domain_floor",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/models/item/ice_domain_floor.json",
+          "src/main/resources/assets/craft_kaisen/blockstates/ice_domain_floor.json",
+          "src/main/resources/assets/craft_kaisen/models/block/ice_domain_floor.json",
+          "src/main/java/net/mcreator/craftkaisen/block/IceDomainFloorBlock.java"
+        ]
+      },
+      "path": "~/Blocks"
+    },
+    {
+      "name": "IceDomainWall",
+      "type": "block",
+      "sortid": 1218,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ice_domain_wall",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/blockstates/ice_domain_wall.json",
+          "src/main/resources/assets/craft_kaisen/models/block/ice_domain_wall.json",
+          "src/main/resources/assets/craft_kaisen/models/item/ice_domain_wall.json",
+          "src/main/java/net/mcreator/craftkaisen/block/IceDomainWallBlock.java"
+        ]
+      },
+      "path": "~/Blocks"
+    },
+    {
+      "name": "DomainExpire",
+      "type": "procedure",
+      "sortid": 1221,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "domain_expire",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DomainExpireProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "ChimeraGardenMegumi",
+      "type": "procedure",
+      "sortid": 1224,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "chimera_garden_megumi",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/ChimeraGardenMegumiProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/TenShadows"
+    },
+    {
+      "name": "Slot1Change",
+      "type": "procedure",
+      "sortid": 1230,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "slot_1_change",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/Slot1ChangeProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "NoOverwhelmingPressure",
+      "type": "gamerule",
+      "sortid": 1242,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "no_overwhelming_pressure",
+      "metadata": {
+        "files": [],
+        "type": "logic"
+      },
+      "path": "~/Gamerules"
+    },
+    {
+      "name": "OPBlessedByTheSparks",
+      "type": "gamerule",
+      "sortid": 1241,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "op_blessed_by_the_sparks",
+      "metadata": {
+        "files": [],
+        "type": "logic"
+      },
+      "path": "~/Gamerules"
+    },
+    {
+      "name": "NaobitoOutfit",
+      "type": "armor",
+      "sortid": 1228,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "naobito_outfit",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/models/item/naobito_outfit_chestplate.json",
+          "src/main/resources/assets/craft_kaisen/models/item/naobito_outfit_leggings.json",
+          "src/main/java/net/mcreator/craftkaisen/item/NaobitoOutfitItem.java"
+        ]
+      },
+      "path": "~/Armor"
+    },
+    {
+      "name": "Naobito",
+      "type": "livingentity",
+      "sortid": 1220,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "naobito",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/models/item/naobito_spawn_egg.json",
+          "src/main/resources/data/craft_kaisen/forge/biome_modifier/naobito_biome_modifier.json",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/NaobitoRenderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/NaobitoEntity.java"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "Slot3Change",
+      "type": "procedure",
+      "sortid": 1232,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "slot_3_change",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/Slot3ChangeProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "Slot6Change",
+      "type": "procedure",
+      "sortid": 1235,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "slot_6_change",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/Slot6ChangeProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "DomainDIe",
+      "type": "procedure",
+      "sortid": 1223,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "domain_d_ie",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DomainDIeProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "TodoOutfit",
+      "type": "armor",
+      "sortid": 1226,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "todo_outfit",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/models/item/todo_outfit_chestplate.json",
+          "src/main/resources/assets/craft_kaisen/models/item/todo_outfit_leggings.json",
+          "src/main/java/net/mcreator/craftkaisen/item/TodoOutfitItem.java"
+        ]
+      },
+      "path": "~/Armor"
+    },
+    {
+      "name": "InventoryCurseOpen",
+      "type": "keybind",
+      "sortid": 1239,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "inventory_curse_open",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/network/InventoryCurseOpenMessage.java"
+        ]
+      },
+      "path": "~/Keybinds"
+    },
+    {
+      "name": "DomainBlocks",
+      "type": "tag",
+      "sortid": 1225,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "domain_blocks",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/tags/blocks/domain_blocks.json"
+        ]
+      },
+      "path": "~/Tags"
+    },
+    {
+      "name": "InventoryCurseGUI",
+      "type": "gui",
+      "sortid": 1237,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "inventory_curse_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/world/inventory/InventoryCurseGUIMenu.java",
+          "src/main/java/net/mcreator/craftkaisen/client/gui/InventoryCurseGUIScreen.java",
+          "src/main/java/net/mcreator/craftkaisen/network/InventoryCurseGUISlotMessage.java"
+        ]
+      },
+      "path": "~/GUI"
+    },
+    {
+      "name": "Slot5Change",
+      "type": "procedure",
+      "sortid": 1234,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "slot_5_change",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/Slot5ChangeProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "Slot0Change",
+      "type": "procedure",
+      "sortid": 1229,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "slot_0_change",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/Slot0ChangeProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "GojoOutfit",
+      "type": "armor",
+      "sortid": 1227,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gojo_outfit",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/models/item/gojo_outfit_chestplate.json",
+          "src/main/java/net/mcreator/craftkaisen/item/GojoOutfitItem.java",
+          "src/main/resources/assets/craft_kaisen/models/item/gojo_outfit_leggings.json"
+        ]
+      },
+      "path": "~/Armor"
+    },
+    {
+      "name": "Slot7Change",
+      "type": "procedure",
+      "sortid": 1236,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "slot_7_change",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/Slot7ChangeProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "InventoryCurseOpenOnKeyPressed",
+      "type": "procedure",
+      "sortid": 1238,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "inventory_curse_open_on_key_pressed",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/InventoryCurseOpenOnKeyPressedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Keybinds/Procedures"
+    },
+    {
+      "name": "NaobitoOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 1219,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "naobito_on_entity_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/NaobitoOnEntityTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Procedure"
+    },
+    {
+      "name": "Slot2Change",
+      "type": "procedure",
+      "sortid": 1231,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "slot_2_change",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/Slot2ChangeProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "InventoryCurseMobEntityDies",
+      "type": "procedure",
+      "sortid": 1240,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "inventory_curse_mob_entity_dies",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/InventoryCurseMobEntityDiesProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Procedure"
+    },
+    {
+      "name": "Slot4Change",
+      "type": "procedure",
+      "sortid": 1233,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "slot_4_change",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/Slot4ChangeProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "KnowledgeBook",
+      "type": "loottable",
+      "sortid": 1222,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "knowledge_book",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/loot_tables/chests.json"
+        ]
+      },
+      "path": "~/Loot Tables"
     }
   ],
   "variable_elements": [
@@ -28659,6 +29072,54 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "0"
+    },
+    {
+      "name": "Slot2",
+      "type": "itemstack",
+      "scope": "player_persistent",
+      "value": "ItemStack.EMPTY"
+    },
+    {
+      "name": "Slot3",
+      "type": "itemstack",
+      "scope": "player_persistent",
+      "value": "ItemStack.EMPTY"
+    },
+    {
+      "name": "Slot4",
+      "type": "itemstack",
+      "scope": "player_persistent",
+      "value": "ItemStack.EMPTY"
+    },
+    {
+      "name": "Slot5",
+      "type": "itemstack",
+      "scope": "player_persistent",
+      "value": "ItemStack.EMPTY"
+    },
+    {
+      "name": "Slot0",
+      "type": "itemstack",
+      "scope": "player_persistent",
+      "value": "ItemStack.EMPTY"
+    },
+    {
+      "name": "Slot1",
+      "type": "itemstack",
+      "scope": "player_persistent",
+      "value": "ItemStack.EMPTY"
+    },
+    {
+      "name": "Slot6",
+      "type": "itemstack",
+      "scope": "player_persistent",
+      "value": "ItemStack.EMPTY"
+    },
+    {
+      "name": "Slot7",
+      "type": "itemstack",
+      "scope": "player_persistent",
+      "value": "ItemStack.EMPTY"
     }
   ],
   "sound_elements": [
@@ -28813,6 +29274,22 @@
       ],
       "category": "player",
       "subtitle": ""
+    },
+    {
+      "name": "voidsplash",
+      "files": [
+        "unlimited_splash"
+      ],
+      "category": "neutral",
+      "subtitle": ""
+    },
+    {
+      "name": "void",
+      "files": [
+        "unlimitedvoid"
+      ],
+      "category": "neutral",
+      "subtitle": ""
     }
   ],
   "language_map": {
@@ -28839,11 +29316,11 @@
       "item.craft_kaisen.mahoraga_wheel_helmet": "Mahoraga Wheel",
       "gui.craft_kaisen.imbue_gui.ImbueValue": "Cursed Energy Amount",
       "entity.craft_kaisen.round_deer": "Round Deer",
-      "entity.craft_kaisen.icile": "Icile",
       "advancements.ten_shadows_technique.title": "Ten Shadows Technique",
+      "entity.craft_kaisen.icile": "Icile",
       "item.craft_kaisen.ember_insect_spawn_egg": "Ember Insect Spawn Egg",
-      "item.craft_kaisen.choso_armor_leggings": "Choso Pants",
       "entity.craft_kaisen.inventory_curse_mob": "Inventory Curse Mob",
+      "item.craft_kaisen.choso_armor_leggings": "Choso Pants",
       "entity.craft_kaisen.jinichi_zenin": "Jinichi Zenin",
       "advancements.grade_4.descr": "Reach The Required Fame.",
       "gui.craft_kaisen.soul_multiplicity_overlay.label_shift_soul_summon": "SHIFT - Soul Summon",
@@ -28851,27 +29328,28 @@
       "advancements.divine_general_mahoraga.descr": "Tame Mahoraga",
       "item.craft_kaisen.distorted_body_leggings": "Distorted Body Legs",
       "item.craft_kaisen.toge_inumaki_spawn_egg": "Toge Inumaki Spawn Egg",
-      "gui.craft_kaisen.body_shape_overlay.label_ctrl_rope": "CTRL - Rope",
       "gui.craft_kaisen.soul_multiplicity_overlay.label_alt_soul_isomer": "ALT - Soul Isomer",
-      "block.craft_kaisen.ice_domain_wall": "Domain Block",
+      "gui.craft_kaisen.body_shape_overlay.label_ctrl_rope": "CTRL - Rope",
+      "block.craft_kaisen.ice_domain_wall": "Ice Domain Wall",
       "item.craft_kaisen.naginata": "Naginata",
-      "gui.craft_kaisen.main_menu.label_0": "0",
-      "advancements.special_grade.title": "Special Grade",
       "item.craft_kaisen.ski_mask_helmet": "Ski Mask",
+      "advancements.special_grade.title": "Special Grade",
+      "gui.craft_kaisen.main_menu.label_0": "0",
       "advancements.history_of_jujutsu.descr": "Find a Jujutsu History Book",
       "item.craft_kaisen.takada_spawn_egg": "Takada Spawn Egg",
       "item_group.craft_kaisen.ck_weapons": "Ck Weapons",
       "advancements.the_sorcerer_killer.descr": "Kill Toji Fushiguro",
-      "key.craft_kaisen.reverse_cursed_technique": "Reverse Cursed Technique",
       "entity.craft_kaisen.red_open_door": "Red Open Door",
+      "key.craft_kaisen.reverse_cursed_technique": "Reverse Cursed Technique",
       "entity.craft_kaisen.mei_mei": "Mei Mei",
-      "death.attack.repelling_damage": "%1$s died to repulsion",
       "death.attack.crushing_damage.player": "%1$s died whilst trying to escape %2$s",
+      "death.attack.repelling_damage": "%1$s died to repulsion",
       "item.craft_kaisen.mahito_outfit_chestplate": "Mahito Outfit ",
       "advancements.perfect_preparation.descr": "Kill Kenjaku",
       "advancements.simple_domain_learned.title": "Simple Domain",
       "entity.craft_kaisen.maximum_elephant": "Maximum Elephant",
       "gui.craft_kaisen.prestige_menu.tooltip_confirm": "Confirm",
+      "subtitles.void": "",
       "item.craft_kaisen.cursed_womb_death_painting": "Cursed Womb: Death Painting",
       "item.craft_kaisen.explode_ranged": "Explode Ranged",
       "item.craft_kaisen.sukuna_outfit_chestplate": "Sukuna Haori",
@@ -28883,8 +29361,8 @@
       "advancements.cursed_technique.descr": "Get a Cursed Technique",
       "item.craft_kaisen.phone": "Phone",
       "death.attack.ratio_damage.player": "%1$s died whilst trying to escape %2$s",
-      "effect.craft_kaisen.small_pox_deity_cooldown": "SPDC",
       "item.craft_kaisen.choso_armor_chestplate": "Choso Outfit",
+      "effect.craft_kaisen.small_pox_deity_cooldown": "SPDC",
       "item.craft_kaisen.fly_head_spawn_egg": "Fly Head Spawn Egg",
       "item.craft_kaisen.uraume_spawn_egg": "Uraume Spawn Egg",
       "item.craft_kaisen.white_divine_dog_spawn_egg": "White Divine Dog Spawn Egg",
@@ -29032,7 +29510,6 @@
       "item.craft_kaisen.clan_invite_paper": "Clan Invite Paper",
       "death.attack.electric_damage": "%1$s was shocked to death",
       "item.craft_kaisen.jujutsu_sorcerer_uniform_leggings": "Jujutsu Sorcerer Uniform",
-      "item.craft_kaisen.panda_spawn_egg": "Panda Spawn Egg",
       "subtitles.teleport": "",
       "gui.craft_kaisen.main_menu.label_prestige": "Prestige",
       "entity.craft_kaisen.gold_closed_door": "Gold Closed Door",
@@ -29157,7 +29634,7 @@
       "gamerule.maximumSukunaVesselPlayers": "MaximumSukunaVesselPlayers (singeplayer)",
       "item.craft_kaisen.kenjaku_spawn_egg": "Kenjaku Spawn Egg",
       "itemGroup.tabck_mobs": "Craft Kaisen Humans",
-      "block.craft_kaisen.ice_domain_floor": "Domain Block",
+      "block.craft_kaisen.ice_domain_floor": "Ice Domain Floor",
       "block.craft_kaisen.magma_domain_floor": "Magma Domain Floor",
       "item.craft_kaisen.geto_outfit_boots": "Geto Sandals",
       "advancements.cursed_spirit.descr": "Become a Cursed Spirit",
@@ -29325,12 +29802,12 @@
       "advancements.perception_of_the_soul.title": "Perception Of The Soul",
       "item.craft_kaisen.roppongi_cursed_spirit_spawn_egg": "Roppongi Cursed Spirit Spawn Egg",
       "advancements.grade_1.descr": "Reach The Required Fame.",
-      "entity.craft_kaisen.panda": "Panda",
       "gui.craft_kaisen.main_menu.tooltip_open_mastery": "Open Mastery",
       "advancements.cursed_womb.descr": "Be Born as a Cursed Womb Death Painting",
       "key.categories.craft_kaisen": "Craft Kaisen",
       "entity.craft_kaisen.heian_era_sukuna": "Heian Era Sukuna",
       "gamerule.sukunaVesselMode": "SukunaVesselMultiplayer",
+      "subtitles.voidsplash": "",
       "effect.craft_kaisen.surge": "Surge",
       "item.craft_kaisen.medicine": "Medicine",
       "advancements.shibuya_incident.title": "Shibuya Incident",
@@ -29421,12 +29898,7 @@
     "children": [
       {
         "name": "Armor",
-        "children": [
-          {
-            "name": "Procedures",
-            "children": []
-          }
-        ]
+        "children": []
       },
       {
         "name": "Abilities",
@@ -29759,6 +30231,10 @@
         ]
       },
       {
+        "name": "LimbSystem",
+        "children": []
+      },
+      {
         "name": "Commands",
         "children": [
           {
@@ -29766,10 +30242,6 @@
             "children": []
           }
         ]
-      },
-      {
-        "name": "LimbSystem",
-        "children": []
       }
     ]
   },

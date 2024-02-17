@@ -1,0 +1,27 @@
+{
+  "replace": false,
+  "values": [
+    "craft_kaisen:domain_block",
+    "craft_kaisen:barrier_block",
+    "craft_kaisen:quest_board",
+    "craft_kaisen:domain_air_block",
+    "craft_kaisen:magma_domain_floor",
+    "craft_kaisen:magma_domain_wall",
+    "craft_kaisen:domain_mini_volcano",
+    "craft_kaisen:domain_smooth_basalt",
+    "craft_kaisen:domain_blackstone",
+    "craft_kaisen:domain_blue_ice",
+    "craft_kaisen:domain_star_block",
+    "craft_kaisen:domain_ice_stalagmite_tall",
+    "craft_kaisen:domain_blackstone_stalagmite_tall",
+    "craft_kaisen:domain_packed_ice",
+    "craft_kaisen:domain_magma",
+    "craft_kaisen:domain_basalt",
+    "craft_kaisen:domain_ice_stalagmite",
+    "craft_kaisen:domain_ice_block",
+    "craft_kaisen:domain_blackstone_stalagmite",
+    "craft_kaisen:domain_dripstone",
+    "craft_kaisen:ice_domain_floor",
+    "craft_kaisen:ice_domain_wall"
+  ]
+}
