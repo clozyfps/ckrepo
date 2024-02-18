@@ -19846,8 +19846,7 @@
             "type": "world"
           }
         ]
-      },
-      "path": "~/Armor"
+      }
     },
     {
       "name": "HollowPurpleGojo",
@@ -28467,51 +28466,6 @@
         ]
       },
       "path": "~/Particles"
-    },
-    {
-      "name": "UnlimitedVoidSplash1",
-      "type": "particle",
-      "sortid": 1244,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "unlimited_void_splash_1",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/particle/UnlimitedVoidSplash1Particle.java",
-          "src/main/resources/assets/craft_kaisen/particles/unlimited_void_splash_1.json"
-        ]
-      },
-      "path": "~/Particles"
-    },
-    {
-      "name": "UnlimitedVoidSplash2",
-      "type": "particle",
-      "sortid": 1245,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "unlimited_void_splash_2",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/particle/UnlimitedVoidSplash2Particle.java",
-          "src/main/resources/assets/craft_kaisen/particles/unlimited_void_splash_2.json"
-        ]
-      },
-      "path": "~/Particles"
-    },
-    {
-      "name": "UnlimitedVoidSplash3",
-      "type": "particle",
-      "sortid": 1246,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "unlimited_void_splash_3",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/particle/UnlimitedVoidSplash3Particle.java",
-          "src/main/resources/assets/craft_kaisen/particles/unlimited_void_splash_3.json"
-        ]
-      },
-      "path": "~/Particles"
     }
   ],
   "variable_elements": [
@@ -30030,6 +29984,10 @@
     "name": "~",
     "children": [
       {
+        "name": "Armor",
+        "children": []
+      },
+      {
         "name": "Abilities",
         "children": [
           {
@@ -30360,6 +30318,10 @@
         ]
       },
       {
+        "name": "LimbSystem",
+        "children": []
+      },
+      {
         "name": "Commands",
         "children": [
           {
@@ -30367,10 +30329,6 @@
             "children": []
           }
         ]
-      },
-      {
-        "name": "Armor",
-        "children": []
       }
     ]
   },
