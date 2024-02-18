@@ -1,0 +1,26 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"piercingbloodactive": {
+			"loop": true,
+			"bones": {
+				"right_arm": {
+					"rotation": {
+						"vector": [-87.3398, -19.98015, -0.90956]
+					},
+					"position": {
+						"vector": [0, 0, -1]
+					}
+				},
+				"left_arm": {
+					"rotation": {
+						"vector": [-87.182, 24.97457, 1.16524]
+					},
+					"position": {
+						"vector": [0, 0, -1]
+					}
+				}
+			}
+		}
+	}
+}

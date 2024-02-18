@@ -135,7 +135,7 @@ public class LimitlessMovesProcedure {
 							capability.syncPlayerVariables(entity);
 						});
 					}
-					PurpleProcedureProcedure.execute(entity);
+					PurpleProcedureProcedure.execute(world, entity);
 					entity.getPersistentData().putDouble(("cooldown" + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("coolset"))), 900);
 				} else if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy < 190
 						* ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 10)) {

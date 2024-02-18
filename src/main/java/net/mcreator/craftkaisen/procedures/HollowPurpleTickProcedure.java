@@ -5,17 +5,13 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.living.LivingEvent;
 
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.particles.SimpleParticleType;
-import net.minecraft.core.BlockPos;
 
 import net.mcreator.craftkaisen.init.CraftKaisenModParticleTypes;
 import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
@@ -99,48 +95,6 @@ public class HollowPurpleTickProcedure {
 					entity.getPersistentData().putDouble("hollowDistance", (entity.getPersistentData().getDouble("hollowDistance") - 0.12857143));
 				}
 				if (entity.getPersistentData().getDouble("hollowPurple") == 1) {
-					if (Math.sin(Math.toRadians(entity.getXRot())) < 0) {
-						int horizontalRadiusHemiTop = (int) 10 - 1;
-						int verticalRadiusHemiTop = (int) 10;
-						int yIterationsHemiTop = verticalRadiusHemiTop;
-						for (int i = 0; i < yIterationsHemiTop; i++) {
-							if (i == verticalRadiusHemiTop) {
-								continue;
-							}
-							for (int xi = -horizontalRadiusHemiTop; xi <= horizontalRadiusHemiTop; xi++) {
-								for (int zi = -horizontalRadiusHemiTop; zi <= horizontalRadiusHemiTop; zi++) {
-									double distanceSq = (xi * xi) / (double) (horizontalRadiusHemiTop * horizontalRadiusHemiTop) + (i * i) / (double) (verticalRadiusHemiTop * verticalRadiusHemiTop)
-											+ (zi * zi) / (double) (horizontalRadiusHemiTop * horizontalRadiusHemiTop);
-									if (distanceSq <= 1.0) {
-										if (!(world.getBlockState(BlockPos.containing(x + xi, y + i, z + zi))).is(BlockTags.create(new ResourceLocation("craft_kaisen:domain_blocks")))) {
-											if (!(world.getBlockState(BlockPos.containing(x + xi, y + i, z + zi))).is(BlockTags.create(new ResourceLocation("craft_kaisen:domain_blocks")))) {
-												world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), Blocks.AIR.defaultBlockState(), 3);
-											}
-										}
-									}
-								}
-							}
-						}
-					} else {
-						int horizontalRadiusSphere = (int) 10 - 1;
-						int verticalRadiusSphere = (int) 10 - 1;
-						int yIterationsSphere = verticalRadiusSphere;
-						for (int i = -yIterationsSphere; i <= yIterationsSphere; i++) {
-							for (int xi = -horizontalRadiusSphere; xi <= horizontalRadiusSphere; xi++) {
-								for (int zi = -horizontalRadiusSphere; zi <= horizontalRadiusSphere; zi++) {
-									double distanceSq = (xi * xi) / (double) (horizontalRadiusSphere * horizontalRadiusSphere) + (i * i) / (double) (verticalRadiusSphere * verticalRadiusSphere)
-											+ (zi * zi) / (double) (horizontalRadiusSphere * horizontalRadiusSphere);
-									if (distanceSq <= 1.0) {
-										if (!(world.getBlockState(BlockPos.containing(x + xi, y + i, z + zi))).is(BlockTags.create(new ResourceLocation("craft_kaisen:domain_blocks")))) {
-											if (!(world.getBlockState(BlockPos.containing(x + xi, y + i, z + zi))).is(BlockTags.create(new ResourceLocation("craft_kaisen:domain_blocks")))) {
-												world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), Blocks.AIR.defaultBlockState(), 3);
-											}
-										}
-									}
-								}
-							}
-						}
-					}
 					entity.getPersistentData().putDouble("purpleDistance", 0);
 					entity.getPersistentData().putDouble("hollowPurple", 0);
 					{

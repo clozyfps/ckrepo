@@ -71,7 +71,7 @@ public class TeleportProcedureProcedure {
 				_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.enderman.teleport")), SoundSource.NEUTRAL, 1, 1, false);
 			}
 		}
-		if (entity.getPersistentData().getBoolean("reversalred")) {
+		if (entity.getPersistentData().getBoolean("reversal")) {
 			{
 				final Vec3 _center = new Vec3(
 						(entity.level.clip(new ClipContext(entity.getEyePosition(1f),
@@ -91,33 +91,28 @@ public class TeleportProcedureProcedure {
 				for (Entity entityiterator : _entfound) {
 					if (!(entity == entityiterator)) {
 						if (!(entityiterator instanceof ItemEntity || entityiterator instanceof FallingBlockEntity)) {
-							{
-								Entity _ent = entity;
-								_ent.teleportTo((entityiterator.getX() - 2), (entityiterator.getY()), (entityiterator.getZ() - 2));
-								if (_ent instanceof ServerPlayer _serverPlayer)
-									_serverPlayer.connection.teleport((entityiterator.getX() - 2), (entityiterator.getY()), (entityiterator.getZ() - 2), _ent.getYRot(), _ent.getXRot());
-							}
 							if (!world.getEntitiesOfClass(LivingEntity.class, AABB.ofSize(new Vec3(x, y, z), 5, 5, 5), e -> true).isEmpty()) {
 								{
 									Entity _ent = entity;
 									if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-										_ent.getServer().getCommands().performPrefixedCommand(
-												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
-														_ent.getDisplayName(), _ent.level.getServer(), _ent),
-												("execute as " + entity.getStringUUID() + " at @s run tp @s ~ ~ ~ facing entity "
-														+ ((Entity) world.getEntitiesOfClass(LivingEntity.class, AABB.ofSize(new Vec3((entity.getX()), (entity.getY()), (entity.getZ())), 5, 5, 5), e -> true).stream().sorted(new Object() {
-															Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-																return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-															}
-														}.compareDistOf((entity.getX()), (entity.getY()), (entity.getZ()))).findFirst().orElse(null)).getStringUUID()));
+										_ent.getServer().getCommands()
+												.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+														_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent),
+														("execute as " + entity.getStringUUID() + " at @s run tp @s ~ ~ ~ facing entity " + entityiterator.getStringUUID()));
 									}
 								}
-							}
-							if (world.isClientSide()) {
-								if (entity instanceof AbstractClientPlayer player) {
-									var animation = (ModifierLayer<IAnimation>) PlayerAnimationAccess.getPlayerAssociatedData(player).get(new ResourceLocation("craft_kaisen", "player_animation"));
-									if (animation != null && !animation.isActive()) {
-										animation.setAnimation(new KeyframeAnimationPlayer(PlayerAnimationRegistry.getAnimation(new ResourceLocation("craft_kaisen", "upsidedown"))));
+								{
+									Entity _ent = entity;
+									_ent.teleportTo((entityiterator.getX() - 2), (entityiterator.getY()), (entityiterator.getZ() - 2));
+									if (_ent instanceof ServerPlayer _serverPlayer)
+										_serverPlayer.connection.teleport((entityiterator.getX() - 2), (entityiterator.getY()), (entityiterator.getZ() - 2), _ent.getYRot(), _ent.getXRot());
+								}
+								if (world.isClientSide()) {
+									if (entity instanceof AbstractClientPlayer player) {
+										var animation = (ModifierLayer<IAnimation>) PlayerAnimationAccess.getPlayerAssociatedData(player).get(new ResourceLocation("craft_kaisen", "player_animation"));
+										if (animation != null && !animation.isActive()) {
+											animation.setAnimation(new KeyframeAnimationPlayer(PlayerAnimationRegistry.getAnimation(new ResourceLocation("craft_kaisen", "upsidedown"))));
+										}
 									}
 								}
 							}

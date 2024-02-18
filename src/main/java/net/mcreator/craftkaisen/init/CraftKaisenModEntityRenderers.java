@@ -228,5 +228,6 @@ public class CraftKaisenModEntityRenderers {
 		event.registerEntityRenderer(CraftKaisenModEntities.BINDING_ICE_BLOCK.get(), BindingIceBlockRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.UNLIMITED_VOID_ACCELERATE.get(), UnlimitedVoidAccelerateRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.NAOBITO.get(), NaobitoRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.PIERCING_BLOOD_PROJECTILE.get(), ThrownItemRenderer::new);
 	}
 }

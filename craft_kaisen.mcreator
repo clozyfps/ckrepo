@@ -9836,6 +9836,10 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -19846,7 +19850,8 @@
             "type": "world"
           }
         ]
-      }
+      },
+      "path": "~/Armor"
     },
     {
       "name": "HollowPurpleGojo",
@@ -28466,6 +28471,129 @@
         ]
       },
       "path": "~/Particles"
+    },
+    {
+      "name": "UnlimitedVoidSplash1",
+      "type": "particle",
+      "sortid": 1244,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "unlimited_void_splash_1",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/particle/UnlimitedVoidSplash1Particle.java",
+          "src/main/resources/assets/craft_kaisen/particles/unlimited_void_splash_1.json"
+        ]
+      },
+      "path": "~/Particles"
+    },
+    {
+      "name": "UnlimitedVoidSplash2",
+      "type": "particle",
+      "sortid": 1245,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "unlimited_void_splash_2",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/particle/UnlimitedVoidSplash2Particle.java",
+          "src/main/resources/assets/craft_kaisen/particles/unlimited_void_splash_2.json"
+        ]
+      },
+      "path": "~/Particles"
+    },
+    {
+      "name": "UnlimitedVoidSplash3",
+      "type": "particle",
+      "sortid": 1246,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "unlimited_void_splash_3",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/particle/UnlimitedVoidSplash3Particle.java",
+          "src/main/resources/assets/craft_kaisen/particles/unlimited_void_splash_3.json"
+        ]
+      },
+      "path": "~/Particles"
+    },
+    {
+      "name": "PiercingBloodProjectileWhileProjectileFlyingTick",
+      "type": "procedure",
+      "sortid": 1247,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "piercing_blood_projectile_while_projectile_flying_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/PiercingBloodProjectileWhileProjectileFlyingTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "immediatesourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/BloodManipulation"
+    },
+    {
+      "name": "PiercingBloodProjectile",
+      "type": "projectile",
+      "sortid": 1248,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "piercing_blood_projectile",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/entity/PiercingBloodProjectileEntity.java"
+        ]
+      },
+      "path": "~/Abilities/BloodManipulation"
+    },
+    {
+      "name": "PiercingBloodEffectExpires",
+      "type": "procedure",
+      "sortid": 1249,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "piercing_blood_effect_expires",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/PiercingBloodEffectExpiresProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Potions/Procedures"
     }
   ],
   "variable_elements": [
@@ -29364,6 +29492,14 @@
       ],
       "category": "player",
       "subtitle": ""
+    },
+    {
+      "name": "piercingblood",
+      "files": [
+        "piercingbloodstart"
+      ],
+      "category": "neutral",
+      "subtitle": ""
     }
   ],
   "language_map": {
@@ -29640,6 +29776,7 @@
       "gui.craft_kaisen.main_menu.label_iv": "IV",
       "item.craft_kaisen.gifted_give": "Gifted Give",
       "entity.craft_kaisen.green_open_door": "Green Open Door",
+      "subtitles.piercingblood": "",
       "advancements.semi_grade_3.descr": "Reach The Required Fame.",
       "item.craft_kaisen.jinichi_zenin_spawn_egg": "Jinichi Zenin Spawn Egg",
       "item.craft_kaisen.distorted_body_helmet": "Distorted Body Face",

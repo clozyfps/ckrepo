@@ -10,7 +10,7 @@ public class ToggleCTSpecialOnKeyPressedProcedure {
 	public static void execute(Entity entity) {
 		if (entity == null)
 			return;
-		if (!((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).special).equals("")) {
+		if (!((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("")) {
 			if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).CtSpecial == true) {
 				{
 					boolean _setval = false;
@@ -20,7 +20,7 @@ public class ToggleCTSpecialOnKeyPressedProcedure {
 					});
 				}
 				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal("Cursed Technique Special: On"), true);
+					_player.displayClientMessage(Component.literal("Cursed Technique Special: Off"), true);
 			} else if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).CtSpecial == false) {
 				{
 					boolean _setval = true;
@@ -30,7 +30,10 @@ public class ToggleCTSpecialOnKeyPressedProcedure {
 					});
 				}
 				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal("Cursed Technique Special: Off"), true);
+					_player.displayClientMessage(Component.literal("Cursed Technique Special: On"), true);
+				if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Limitless")) {
+					InfinityProcedureProcedure.execute(entity);
+				}
 			}
 		}
 	}

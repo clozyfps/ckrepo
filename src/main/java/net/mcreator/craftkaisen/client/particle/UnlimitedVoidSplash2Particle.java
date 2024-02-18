@@ -1,6 +1,17 @@
 
 package net.mcreator.craftkaisen.client.particle;
 
+import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.api.distmarker.Dist;
+
+import net.minecraft.core.particles.SimpleParticleType;
+import net.minecraft.client.particle.TextureSheetParticle;
+import net.minecraft.client.particle.SpriteSet;
+import net.minecraft.client.particle.ParticleRenderType;
+import net.minecraft.client.particle.ParticleProvider;
+import net.minecraft.client.particle.Particle;
+import net.minecraft.client.multiplayer.ClientLevel;
+
 @OnlyIn(Dist.CLIENT)
 public class UnlimitedVoidSplash2Particle extends TextureSheetParticle {
 	public static UnlimitedVoidSplash2ParticleProvider provider(SpriteSet spriteSet) {
@@ -29,15 +40,15 @@ public class UnlimitedVoidSplash2Particle extends TextureSheetParticle {
 		this.lifetime = 7;
 		this.gravity = 0f;
 		this.hasPhysics = false;
-		this.xd = vx * 0;
-		this.yd = vy * 0;
-		this.zd = vz * 0;
+		this.xd = vx * 0.2;
+		this.yd = vy * 0.2;
+		this.zd = vz * 0.2;
 		this.pickSprite(spriteSet);
 	}
 
 	@Override
 	public ParticleRenderType getRenderType() {
-		return ParticleRenderType.PARTICLE_SHEET_OPAQUE;
+		return ParticleRenderType.PARTICLE_SHEET_TRANSLUCENT;
 	}
 
 	@Override

@@ -61,6 +61,7 @@ import net.mcreator.craftkaisen.entity.RainbowDragonEntity;
 import net.mcreator.craftkaisen.entity.RainbowClosedDoorEntity;
 import net.mcreator.craftkaisen.entity.PureLoveBeamRangedProjectileEntity;
 import net.mcreator.craftkaisen.entity.PoxDeityDomainEntity;
+import net.mcreator.craftkaisen.entity.PiercingBloodProjectileEntity;
 import net.mcreator.craftkaisen.entity.OldLadyEntity;
 import net.mcreator.craftkaisen.entity.NueEntity;
 import net.mcreator.craftkaisen.entity.NobaraKugisakiEntity;
@@ -546,6 +547,9 @@ public class CraftKaisenModEntities {
 			EntityType.Builder.<NaobitoEntity>of(NaobitoEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(NaobitoEntity::new)
 
 					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<PiercingBloodProjectileEntity>> PIERCING_BLOOD_PROJECTILE = register("projectile_piercing_blood_projectile",
+			EntityType.Builder.<PiercingBloodProjectileEntity>of(PiercingBloodProjectileEntity::new, MobCategory.MISC).setCustomClientFactory(PiercingBloodProjectileEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
+					.setUpdateInterval(1).sized(0.5f, 0.5f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));

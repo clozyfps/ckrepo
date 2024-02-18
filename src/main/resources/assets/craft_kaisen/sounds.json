@@ -175,5 +175,13 @@
         "stream": false
       }
     ]
+  },
+  "piercingblood": {
+    "sounds": [
+      {
+        "name": "craft_kaisen:piercingbloodstart",
+        "stream": false
+      }
+    ]
   }
 }
