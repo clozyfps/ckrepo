@@ -5292,10 +5292,6 @@
           {
             "name": "entity",
             "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ]
       },
@@ -5320,7 +5316,7 @@
       "name": "UnlimitedVoidMobOnEntityTickUpdate",
       "type": "procedure",
       "sortid": 233,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "unlimited_void_mob_on_entity_tick_update",
       "metadata": {
@@ -28451,6 +28447,82 @@
         ]
       },
       "path": "~/Loot Tables"
+    },
+    {
+      "name": "MainDamageSystem",
+      "type": "procedure",
+      "sortid": 1243,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "main_damage_system",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/MainDamageSystemProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "damagesource",
+            "type": "damagesource"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "amount",
+            "type": "number"
+          }
+        ]
+      },
+      "path": "~/LimbSystem"
+    },
+    {
+      "name": "CheckLimbDamage",
+      "type": "procedure",
+      "sortid": 1244,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "check_limb_damage",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/CheckLimbDamageProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/LimbSystem"
+    },
+    {
+      "name": "RemoveLimbs",
+      "type": "procedure",
+      "sortid": 1245,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "remove_limbs",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/RemoveLimbsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/LimbSystem"
     }
   ],
   "variable_elements": [
@@ -29179,6 +29251,30 @@
       "type": "itemstack",
       "scope": "player_persistent",
       "value": "ItemStack.EMPTY"
+    },
+    {
+      "name": "leftLegDamage",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    },
+    {
+      "name": "leftArmDamage",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    },
+    {
+      "name": "rightArmDamage",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    },
+    {
+      "name": "rightLegDamage",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
     }
   ],
   "sound_elements": [

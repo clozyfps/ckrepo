@@ -1,0 +1,15 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"rightleggone": {
+			"loop": true,
+			"bones": {
+				"right_leg": {
+					"position": {
+						"vector": [0, -2071, 0]
+					}
+				}
+			}
+		}
+	}
+}

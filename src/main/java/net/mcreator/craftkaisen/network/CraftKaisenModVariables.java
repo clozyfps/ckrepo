@@ -185,6 +185,10 @@ public class CraftKaisenModVariables {
 				clone.MoveCombo = original.MoveCombo;
 				clone.PerkDescription = original.PerkDescription;
 				clone.PerkPage = original.PerkPage;
+				clone.leftLegDamage = original.leftLegDamage;
+				clone.leftArmDamage = original.leftArmDamage;
+				clone.rightArmDamage = original.rightArmDamage;
+				clone.rightLegDamage = original.rightLegDamage;
 			}
 		}
 
@@ -491,6 +495,10 @@ public class CraftKaisenModVariables {
 		public ItemStack Slot1 = ItemStack.EMPTY;
 		public ItemStack Slot6 = ItemStack.EMPTY;
 		public ItemStack Slot7 = ItemStack.EMPTY;
+		public double leftLegDamage = 0;
+		public double leftArmDamage = 0;
+		public double rightArmDamage = 0;
+		public double rightLegDamage = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -610,6 +618,10 @@ public class CraftKaisenModVariables {
 			nbt.put("Slot1", Slot1.save(new CompoundTag()));
 			nbt.put("Slot6", Slot6.save(new CompoundTag()));
 			nbt.put("Slot7", Slot7.save(new CompoundTag()));
+			nbt.putDouble("leftLegDamage", leftLegDamage);
+			nbt.putDouble("leftArmDamage", leftArmDamage);
+			nbt.putDouble("rightArmDamage", rightArmDamage);
+			nbt.putDouble("rightLegDamage", rightLegDamage);
 			return nbt;
 		}
 
@@ -726,6 +738,10 @@ public class CraftKaisenModVariables {
 			Slot1 = ItemStack.of(nbt.getCompound("Slot1"));
 			Slot6 = ItemStack.of(nbt.getCompound("Slot6"));
 			Slot7 = ItemStack.of(nbt.getCompound("Slot7"));
+			leftLegDamage = nbt.getDouble("leftLegDamage");
+			leftArmDamage = nbt.getDouble("leftArmDamage");
+			rightArmDamage = nbt.getDouble("rightArmDamage");
+			rightLegDamage = nbt.getDouble("rightLegDamage");
 		}
 	}
 
@@ -861,6 +877,10 @@ public class CraftKaisenModVariables {
 					variables.Slot1 = message.data.Slot1;
 					variables.Slot6 = message.data.Slot6;
 					variables.Slot7 = message.data.Slot7;
+					variables.leftLegDamage = message.data.leftLegDamage;
+					variables.leftArmDamage = message.data.leftArmDamage;
+					variables.rightArmDamage = message.data.rightArmDamage;
+					variables.rightLegDamage = message.data.rightLegDamage;
 				}
 			});
 			context.setPacketHandled(true);
