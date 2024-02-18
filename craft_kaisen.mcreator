@@ -9836,10 +9836,6 @@
           {
             "name": "entity",
             "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ]
       },
@@ -19850,8 +19846,7 @@
             "type": "world"
           }
         ]
-      },
-      "path": "~/Armor"
+      }
     },
     {
       "name": "HollowPurpleGojo",
@@ -28558,20 +28553,6 @@
       "path": "~/Abilities/BloodManipulation"
     },
     {
-      "name": "PiercingBloodProjectile",
-      "type": "projectile",
-      "sortid": 1248,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "piercing_blood_projectile",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/craftkaisen/entity/PiercingBloodProjectileEntity.java"
-        ]
-      },
-      "path": "~/Abilities/BloodManipulation"
-    },
-    {
       "name": "PiercingBloodEffectExpires",
       "type": "procedure",
       "sortid": 1249,
@@ -28594,6 +28575,92 @@
         ]
       },
       "path": "~/Potions/Procedures"
+    },
+    {
+      "name": "PiercingBloodProjectile",
+      "type": "projectile",
+      "sortid": 1248,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "piercing_blood_projectile",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/entity/PiercingBloodProjectileEntity.java"
+        ]
+      },
+      "path": "~/Abilities/BloodManipulation"
+    },
+    {
+      "name": "RemoveLimbs",
+      "type": "procedure",
+      "sortid": 1245,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "remove_limbs",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/RemoveLimbsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/LimbSystem"
+    },
+    {
+      "name": "MainDamageSystem",
+      "type": "procedure",
+      "sortid": 1243,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "main_damage_system",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/MainDamageSystemProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "damagesource",
+            "type": "damagesource"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/LimbSystem"
+    },
+    {
+      "name": "CheckLimbDamage",
+      "type": "procedure",
+      "sortid": 1244,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "check_limb_damage",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/CheckLimbDamageProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/LimbSystem"
     }
   ],
   "variable_elements": [
@@ -29322,6 +29389,30 @@
       "type": "itemstack",
       "scope": "player_persistent",
       "value": "ItemStack.EMPTY"
+    },
+    {
+      "name": "leftArmDamage",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    },
+    {
+      "name": "rightArmDamage",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    },
+    {
+      "name": "leftLegDamage",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    },
+    {
+      "name": "rightLegDamage",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
     }
   ],
   "sound_elements": [
@@ -29526,11 +29617,11 @@
       "item.craft_kaisen.mahoraga_wheel_helmet": "Mahoraga Wheel",
       "gui.craft_kaisen.imbue_gui.ImbueValue": "Cursed Energy Amount",
       "entity.craft_kaisen.round_deer": "Round Deer",
-      "advancements.ten_shadows_technique.title": "Ten Shadows Technique",
       "entity.craft_kaisen.icile": "Icile",
+      "advancements.ten_shadows_technique.title": "Ten Shadows Technique",
       "item.craft_kaisen.ember_insect_spawn_egg": "Ember Insect Spawn Egg",
-      "entity.craft_kaisen.inventory_curse_mob": "Inventory Curse Mob",
       "item.craft_kaisen.choso_armor_leggings": "Choso Pants",
+      "entity.craft_kaisen.inventory_curse_mob": "Inventory Curse Mob",
       "entity.craft_kaisen.jinichi_zenin": "Jinichi Zenin",
       "advancements.grade_4.descr": "Reach The Required Fame.",
       "gui.craft_kaisen.soul_multiplicity_overlay.label_shift_soul_summon": "SHIFT - Soul Summon",
@@ -29538,22 +29629,22 @@
       "advancements.divine_general_mahoraga.descr": "Tame Mahoraga",
       "item.craft_kaisen.distorted_body_leggings": "Distorted Body Legs",
       "item.craft_kaisen.toge_inumaki_spawn_egg": "Toge Inumaki Spawn Egg",
-      "gui.craft_kaisen.soul_multiplicity_overlay.label_alt_soul_isomer": "ALT - Soul Isomer",
       "gui.craft_kaisen.body_shape_overlay.label_ctrl_rope": "CTRL - Rope",
+      "gui.craft_kaisen.soul_multiplicity_overlay.label_alt_soul_isomer": "ALT - Soul Isomer",
       "block.craft_kaisen.ice_domain_wall": "Ice Domain Wall",
       "item.craft_kaisen.naginata": "Naginata",
-      "gui.craft_kaisen.main_menu.label_0": "0",
-      "advancements.special_grade.title": "Special Grade",
       "item.craft_kaisen.ski_mask_helmet": "Ski Mask",
+      "advancements.special_grade.title": "Special Grade",
+      "gui.craft_kaisen.main_menu.label_0": "0",
       "advancements.history_of_jujutsu.descr": "Find a Jujutsu History Book",
       "item.craft_kaisen.takada_spawn_egg": "Takada Spawn Egg",
       "item_group.craft_kaisen.ck_weapons": "Ck Weapons",
       "advancements.the_sorcerer_killer.descr": "Kill Toji Fushiguro",
-      "entity.craft_kaisen.red_open_door": "Red Open Door",
       "key.craft_kaisen.reverse_cursed_technique": "Reverse Cursed Technique",
+      "entity.craft_kaisen.red_open_door": "Red Open Door",
       "entity.craft_kaisen.mei_mei": "Mei Mei",
-      "death.attack.repelling_damage": "%1$s died to repulsion",
       "death.attack.crushing_damage.player": "%1$s died whilst trying to escape %2$s",
+      "death.attack.repelling_damage": "%1$s died to repulsion",
       "advancements.simple_domain_learned.title": "Simple Domain",
       "advancements.perfect_preparation.descr": "Kill Kenjaku",
       "item.craft_kaisen.mahito_outfit_chestplate": "Mahito Outfit ",
