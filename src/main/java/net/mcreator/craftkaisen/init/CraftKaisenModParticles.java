@@ -9,6 +9,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.api.distmarker.Dist;
 
+import net.mcreator.craftkaisen.client.particle.UnlimitedblackholeParticle;
 import net.mcreator.craftkaisen.client.particle.SoundWaveParticle;
 import net.mcreator.craftkaisen.client.particle.SnowflakeParticle;
 import net.mcreator.craftkaisen.client.particle.ShrineSlice3Particle;
@@ -72,5 +73,6 @@ public class CraftKaisenModParticles {
 		event.registerSpriteSet(CraftKaisenModParticleTypes.PURPLE_BLOOD_SLASH.get(), PurpleBloodSlashParticle::provider);
 		event.registerSpriteSet(CraftKaisenModParticleTypes.BLACK_LIGHTNING.get(), BlackLightningParticle::provider);
 		event.registerSpriteSet(CraftKaisenModParticleTypes.ICE_CLOUD.get(), IceCloudParticle::provider);
+		event.registerSpriteSet(CraftKaisenModParticleTypes.UNLIMITEDBLACKHOLE.get(), UnlimitedblackholeParticle::provider);
 	}
 }

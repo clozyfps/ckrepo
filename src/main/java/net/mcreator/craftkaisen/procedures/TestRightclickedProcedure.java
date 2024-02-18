@@ -1,10 +1,8 @@
 package net.mcreator.craftkaisen.procedures;
 
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.entity.Entity;
+import net.minecraftforge.eventbus.api.Event;
 
-import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
+import javax.annotation.Nullable;
 
 public class TestRightclickedProcedure {
 	public static void execute(Entity entity) {

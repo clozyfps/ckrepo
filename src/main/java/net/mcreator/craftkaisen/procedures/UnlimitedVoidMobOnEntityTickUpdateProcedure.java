@@ -1,32 +1,8 @@
 package net.mcreator.craftkaisen.procedures;
 
-import net.minecraft.world.phys.Vec3;
-import net.minecraft.world.phys.Vec2;
-import net.minecraft.world.phys.AABB;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.entity.item.ItemEntity;
-import net.minecraft.world.entity.TamableAnimal;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.util.RandomSource;
-import net.minecraft.util.Mth;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.network.chat.Component;
-import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.core.BlockPos;
-import net.minecraft.commands.CommandSourceStack;
-import net.minecraft.commands.CommandSource;
+import net.minecraftforge.eventbus.api.Event;
 
-import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
-import net.mcreator.craftkaisen.init.CraftKaisenModBlocks;
-import net.mcreator.craftkaisen.entity.UnlimitedVoidAccelerateEntity;
-
-import java.util.stream.Collectors;
-import java.util.List;
-import java.util.Comparator;
+import javax.annotation.Nullable;
 
 public class UnlimitedVoidMobOnEntityTickUpdateProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
