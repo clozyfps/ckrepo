@@ -1,0 +1,28 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Entities",
+    "items": [],
+    "blocks": [],
+    "functions": [],
+    "entities": [
+      {
+        "value": "CUSTOM:MalevolentShrine"
+      },
+      {
+        "value": "CUSTOM:UnlimitedVoidMob"
+      },
+      {
+        "value": "CUSTOM:CoffinMountain"
+      },
+      {
+        "value": "CUSTOM:ChimeraShadowGardenMob"
+      }
+    ],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "domain_mobs",
+    "namespace": "mod"
+  }
+}

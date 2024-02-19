@@ -105,9 +105,6 @@ public class FlowAttackProcedure {
 			}
 		}
 		if (entity instanceof LivingEntity _livEnt32 && _livEnt32.hasEffect(CraftKaisenModMobEffects.FLOW.get())) {
-			if (event != null && event.isCancelable()) {
-				event.setCanceled(true);
-			}
 			entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:cursed_energy_damage")))), (float) (amount / 1.6));
 		}
 	}

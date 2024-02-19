@@ -6,6 +6,8 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.TickEvent;
 
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.projectile.Projectile;
@@ -22,6 +24,10 @@ import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
 import net.mcreator.craftkaisen.entity.VolcanicEruptionProjectileEntity;
 
 import javax.annotation.Nullable;
+
+import java.util.stream.Collectors;
+import java.util.List;
+import java.util.Comparator;
 
 @Mod.EventBusSubscriber
 public class DisasterFlamesMovesProcedure {
@@ -182,6 +188,17 @@ public class DisasterFlamesMovesProcedure {
 								capability.currentCursedEnergy = _setval;
 								capability.syncPlayerVariables(entity);
 							});
+						}
+						VoidRemoveProcedure.execute(world, x, y, z);
+						{
+							final Vec3 _center = new Vec3(x, y, z);
+							List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(25 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
+									.collect(Collectors.toList());
+							for (Entity entityiterator : _entfound) {
+								if (!(entity == entityiterator)) {
+									entityiterator.getPersistentData().putBoolean("domain", false);
+								}
+							}
 						}
 						CoffinOfTheIronMountainProcedureProcedure.execute(world, x, y, z, entity);
 						if (world instanceof Level _level) {

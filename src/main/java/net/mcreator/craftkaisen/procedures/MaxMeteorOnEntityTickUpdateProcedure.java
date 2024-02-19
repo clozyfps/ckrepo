@@ -4,6 +4,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
@@ -17,6 +18,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.BlockPos;
+
+import net.mcreator.craftkaisen.CraftKaisenMod;
 
 import java.util.stream.Collectors;
 import java.util.List;
@@ -59,13 +62,13 @@ public class MaxMeteorOnEntityTickUpdateProcedure {
 			}
 		}
 		if (world instanceof ServerLevel _level)
-			_level.sendParticles(ParticleTypes.EXPLOSION, x, y, z, 50, 3, 3, 3, 0);
+			_level.sendParticles(ParticleTypes.EXPLOSION, x, y, z, 50, 5, 3, 5, 0);
 		if (world instanceof ServerLevel _level)
-			_level.sendParticles(ParticleTypes.FLAME, x, y, z, 25, 3, 3, 3, 0);
+			_level.sendParticles(ParticleTypes.FLAME, x, y, z, 25, 5, 3, 5, 0);
 		if (world instanceof ServerLevel _level)
 			_level.sendParticles(ParticleTypes.POOF, x, y, z, 10, 5, 1, 5, 1);
 		if (world instanceof ServerLevel _level)
-			_level.sendParticles(ParticleTypes.SMOKE, x, y, z, 25, 3, 1, 3, 1);
+			_level.sendParticles(ParticleTypes.SMOKE, x, y, z, 25, 5, 1, 5, 1);
 		int horizontalRadiusHemiBot = (int) 6 - 1;
 		int verticalRadiusHemiBot = (int) 6;
 		int yIterationsHemiBot = verticalRadiusHemiBot;
@@ -78,7 +81,7 @@ public class MaxMeteorOnEntityTickUpdateProcedure {
 					double distanceSq = (xi * xi) / (double) (horizontalRadiusHemiBot * horizontalRadiusHemiBot) + (i * i) / (double) (verticalRadiusHemiBot * verticalRadiusHemiBot)
 							+ (zi * zi) / (double) (horizontalRadiusHemiBot * horizontalRadiusHemiBot);
 					if (distanceSq <= 1.0) {
-						if (world.getBlockState(BlockPos.containing(x + xi, y + i, z + zi)).canOcclude()) {
+						if (!((world.getBlockState(BlockPos.containing(x + xi, y + i, z + zi))).getBlock() == Blocks.AIR)) {
 							if (world instanceof Level _level && !_level.isClientSide())
 								_level.explode(null, x, y, z, 20, Level.ExplosionInteraction.BLOCK);
 							if (world instanceof ServerLevel _level)
@@ -126,5 +129,9 @@ public class MaxMeteorOnEntityTickUpdateProcedure {
 				}
 			}
 		}
+		CraftKaisenMod.queueServerWork(100, () -> {
+			if (!entity.level.isClientSide())
+				entity.discard();
+		});
 	}
 }

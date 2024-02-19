@@ -20,8 +20,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.core.particles.ParticleTypes;
 
-import net.mcreator.craftkaisen.CraftKaisenMod;
-
 import javax.annotation.Nullable;
 
 import java.util.stream.Collectors;
@@ -44,26 +42,24 @@ public class EntityUpAttackProcedure {
 			return;
 		if (entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("craft_kaisen:dashable")))) {
 			if ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof LivingEntity) {
-				if (Math.random() < 0.09) {
+				if (Math.random() < 0.01) {
 					if ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getY() > entity.getY()) {
-						entity.setDeltaMovement(new Vec3((((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getX() - entity.getX()) / 4),
-								(((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getY() - entity.getY()) / 4), (((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getZ() - entity.getZ()) / 4)));
-						CraftKaisenMod.queueServerWork(10, () -> {
-							if (entity instanceof LivingEntity _entity)
-								_entity.swing(InteractionHand.MAIN_HAND, true);
-							if (world instanceof ServerLevel _level)
-								_level.sendParticles(ParticleTypes.POOF, x, y, z, 5, 1, 2, 1, 0);
-							{
-								final Vec3 _center = new Vec3(x, y, z);
-								List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(6 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
-										.collect(Collectors.toList());
-								for (Entity entityiterator : _entfound) {
-									if (!(entityiterator == entity)) {
-										entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.PLAYER_ATTACK)), 10);
-									}
+						entity.setDeltaMovement(new Vec3((((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getX() - entity.getX()) / 9),
+								(((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getY() - entity.getY()) / 9), (((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getZ() - entity.getZ()) / 9)));
+						if (entity instanceof LivingEntity _entity)
+							_entity.swing(InteractionHand.MAIN_HAND, true);
+						if (world instanceof ServerLevel _level)
+							_level.sendParticles(ParticleTypes.POOF, x, y, z, 5, 1, 2, 1, 0);
+						{
+							final Vec3 _center = new Vec3(x, y, z);
+							List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(6 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
+									.collect(Collectors.toList());
+							for (Entity entityiterator : _entfound) {
+								if (!(entityiterator == entity)) {
+									entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.PLAYER_ATTACK)), 10);
 								}
 							}
-						});
+						}
 					}
 				}
 			}

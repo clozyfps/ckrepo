@@ -10,33 +10,37 @@ import net.minecraft.world.entity.Entity;
 import net.mcreator.craftkaisen.entity.YutaOkkotsuEntity;
 import net.mcreator.craftkaisen.entity.YujiItadoriEntity;
 import net.mcreator.craftkaisen.entity.WhiteDivineDogEntity;
+import net.mcreator.craftkaisen.entity.UraumeEntity;
 import net.mcreator.craftkaisen.entity.TojiFushiguroEntity;
 import net.mcreator.craftkaisen.entity.TogeInumakiEntity;
 import net.mcreator.craftkaisen.entity.ToadEntity;
 import net.mcreator.craftkaisen.entity.TenShadowRabbitEntity;
+import net.mcreator.craftkaisen.entity.ShinjukuGojoEntity;
 import net.mcreator.craftkaisen.entity.SatoruGojoEntity;
 import net.mcreator.craftkaisen.entity.RyomenSukunaEntity;
 import net.mcreator.craftkaisen.entity.RugbyFieldCursedSpiritEntity;
 import net.mcreator.craftkaisen.entity.RoundDeerEntity;
 import net.mcreator.craftkaisen.entity.RoppongiCursedSpiritEntity;
 import net.mcreator.craftkaisen.entity.ResurrectedTojiEntity;
-import net.mcreator.craftkaisen.entity.PandaEntity;
 import net.mcreator.craftkaisen.entity.NobaraKugisakiEntity;
+import net.mcreator.craftkaisen.entity.NaobitoEntity;
 import net.mcreator.craftkaisen.entity.NanamiKentoEntity;
 import net.mcreator.craftkaisen.entity.MouthCursedSpiritEntity;
 import net.mcreator.craftkaisen.entity.MergedBeastAgitoEntity;
+import net.mcreator.craftkaisen.entity.MeiMeiEntity;
 import net.mcreator.craftkaisen.entity.MegunaEntity;
 import net.mcreator.craftkaisen.entity.MegumiFushiguroEntity;
 import net.mcreator.craftkaisen.entity.MaximumElephantEntity;
 import net.mcreator.craftkaisen.entity.MahitoEntity;
 import net.mcreator.craftkaisen.entity.KoGuyEntity;
+import net.mcreator.craftkaisen.entity.KenjakuEntity;
 import net.mcreator.craftkaisen.entity.JogoEntity;
 import net.mcreator.craftkaisen.entity.JinichiZeninEntity;
+import net.mcreator.craftkaisen.entity.HeianEraSukunaEntity;
 import net.mcreator.craftkaisen.entity.HanamiEntity;
 import net.mcreator.craftkaisen.entity.HajimeKashimoEntity;
 import net.mcreator.craftkaisen.entity.GreatSerpentEntity;
 import net.mcreator.craftkaisen.entity.FlyingCursedSpiritEntity;
-import net.mcreator.craftkaisen.entity.FlyHeadEntity;
 import net.mcreator.craftkaisen.entity.FingerBearerEntity;
 import net.mcreator.craftkaisen.entity.EightHandledSwordDivergentSilaDivineGeneralMahoragaEntity;
 import net.mcreator.craftkaisen.entity.ChosoEntity;
@@ -60,10 +64,10 @@ public class SetCeMobsProcedure {
 	private static void execute(@Nullable Event event, Entity entity) {
 		if (entity == null)
 			return;
-		if (entity instanceof RyomenSukunaEntity || entity instanceof MegunaEntity || entity instanceof FlyHeadEntity) {
+		if (entity instanceof RyomenSukunaEntity || entity instanceof MegunaEntity || entity instanceof HeianEraSukunaEntity) {
 			entity.getPersistentData().putDouble("ce", 90000);
 		}
-		if (entity instanceof SatoruGojoEntity) {
+		if (entity instanceof SatoruGojoEntity || entity instanceof ShinjukuGojoEntity) {
 			entity.getPersistentData().putDouble("ce", 100000);
 		}
 		if (entity instanceof YutaOkkotsuEntity) {
@@ -114,7 +118,7 @@ public class SetCeMobsProcedure {
 		if (entity instanceof TojiFushiguroEntity || entity instanceof ResurrectedTojiEntity) {
 			entity.getPersistentData().putDouble("ce", 0);
 		}
-		if (entity instanceof RoppongiCursedSpiritEntity || entity instanceof RugbyFieldCursedSpiritEntity || entity instanceof FlyingCursedSpiritEntity || entity instanceof MouthCursedSpiritEntity || entity instanceof PandaEntity) {
+		if (entity instanceof RoppongiCursedSpiritEntity || entity instanceof RugbyFieldCursedSpiritEntity || entity instanceof FlyingCursedSpiritEntity || entity instanceof MouthCursedSpiritEntity) {
 			entity.getPersistentData().putDouble("ce", 3000);
 		}
 		if (entity instanceof BlackDivineDogEntity || entity instanceof WhiteDivineDogEntity || entity instanceof GreatSerpentEntity || entity instanceof ToadEntity || entity instanceof MaximumElephantEntity || entity instanceof RoundDeerEntity
@@ -126,6 +130,18 @@ public class SetCeMobsProcedure {
 		}
 		if (entity instanceof JinichiZeninEntity) {
 			entity.getPersistentData().putDouble("ce", 20000);
+		}
+		if (entity instanceof MeiMeiEntity) {
+			entity.getPersistentData().putDouble("ce", 15000);
+		}
+		if (entity instanceof NaobitoEntity) {
+			entity.getPersistentData().putDouble("ce", 24000);
+		}
+		if (entity instanceof KenjakuEntity) {
+			entity.getPersistentData().putDouble("ce", 85000);
+		}
+		if (entity instanceof UraumeEntity) {
+			entity.getPersistentData().putDouble("ce", 40000);
 		}
 	}
 }

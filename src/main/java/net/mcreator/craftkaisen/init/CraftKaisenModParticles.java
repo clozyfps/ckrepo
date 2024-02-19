@@ -12,7 +12,6 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.mcreator.craftkaisen.client.particle.UnlimitedVoidSplash3Particle;
 import net.mcreator.craftkaisen.client.particle.UnlimitedVoidSplash2Particle;
 import net.mcreator.craftkaisen.client.particle.UnlimitedVoidSplash1Particle;
-import net.mcreator.craftkaisen.client.particle.UnlimitedBlackholeParticle;
 import net.mcreator.craftkaisen.client.particle.SoundWaveParticle;
 import net.mcreator.craftkaisen.client.particle.SnowflakeParticle;
 import net.mcreator.craftkaisen.client.particle.ShrineSlice3Particle;
@@ -32,6 +31,7 @@ import net.mcreator.craftkaisen.client.particle.MistPurpleParticle;
 import net.mcreator.craftkaisen.client.particle.LapseParticleParticle;
 import net.mcreator.craftkaisen.client.particle.InfinityParticleParticle;
 import net.mcreator.craftkaisen.client.particle.IceCloudParticle;
+import net.mcreator.craftkaisen.client.particle.FireParticleParticle;
 import net.mcreator.craftkaisen.client.particle.FireArrowParticleParticle;
 import net.mcreator.craftkaisen.client.particle.EvadeParticleParticle;
 import net.mcreator.craftkaisen.client.particle.DomainClashParticleParticle;
@@ -79,6 +79,6 @@ public class CraftKaisenModParticles {
 		event.registerSpriteSet(CraftKaisenModParticleTypes.UNLIMITED_VOID_SPLASH_1.get(), UnlimitedVoidSplash1Particle::provider);
 		event.registerSpriteSet(CraftKaisenModParticleTypes.UNLIMITED_VOID_SPLASH_2.get(), UnlimitedVoidSplash2Particle::provider);
 		event.registerSpriteSet(CraftKaisenModParticleTypes.UNLIMITED_VOID_SPLASH_3.get(), UnlimitedVoidSplash3Particle::provider);
-		event.registerSpriteSet(CraftKaisenModParticleTypes.UNLIMITED_BLACKHOLE.get(), UnlimitedBlackholeParticle::provider);
+		event.registerSpriteSet(CraftKaisenModParticleTypes.FIRE_PARTICLE.get(), FireParticleParticle::provider);
 	}
 }

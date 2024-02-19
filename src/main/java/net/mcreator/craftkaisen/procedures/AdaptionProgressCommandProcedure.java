@@ -1,16 +1,21 @@
 package net.mcreator.craftkaisen.procedures;
 
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.network.chat.Component;
 
 import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
+import net.mcreator.craftkaisen.init.CraftKaisenModItems;
 
 public class AdaptionProgressCommandProcedure {
 	public static void execute(Entity entity) {
 		if (entity == null)
 			return;
-		if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Adaption")) {
+		if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Adaption")
+				|| (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY).getItem() == CraftKaisenModItems.MAHORAGA_WHEEL_HELMET.get()) {
 			if (entity.getPersistentData().getDouble("DamageAdaptation") <= 500) {
 				if (entity instanceof Player _player && !_player.level.isClientSide())
 					_player.displayClientMessage(Component.literal(("\u00A7cGeneric Damage " + new java.text.DecimalFormat("##").format((entity.getPersistentData().getDouble("DamageAdaptation") / 500) * 100) + "% Adapted")), false);
@@ -111,7 +116,7 @@ public class AdaptionProgressCommandProcedure {
 			}
 		} else {
 			if (entity instanceof Player _player && !_player.level.isClientSide())
-				_player.displayClientMessage(Component.literal("You do not have the Adaption cursed technique!"), false);
+				_player.displayClientMessage(Component.literal("You do not have the ability to Adapt!"), false);
 		}
 	}
 }

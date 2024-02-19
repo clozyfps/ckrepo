@@ -68,7 +68,7 @@ public class MahoragaProcedureProcedure {
 							}
 						}.compareDistOf(x, y, z)).findFirst().orElse(null)).discard();
 				}
-			} else if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).TenShadowDeaths).contains("Eight Handled Sword Divergent Sila Divine General Mahoraga")) {
+			} else if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).TenShadowDeaths).contains("Eight Handled Sword")) {
 				if (entity instanceof Player _player && !_player.level.isClientSide())
 					_player.displayClientMessage(Component.literal("Mahoraga Is Dead."), true);
 			}

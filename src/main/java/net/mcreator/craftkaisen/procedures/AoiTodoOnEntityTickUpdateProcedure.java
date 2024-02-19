@@ -32,6 +32,7 @@ public class AoiTodoOnEntityTickUpdateProcedure {
 		if ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof LivingEntity) {
 			if (!(entity instanceof LivingEntity _livEnt2 && _livEnt2.hasEffect(CraftKaisenModMobEffects.STOP_ATTACKS.get()))) {
 				if (Math.random() < 0.009) {
+					entity.getPersistentData().putString("currentmoveactive", "Clap");
 					if (world instanceof Level _level) {
 						if (!_level.isClientSide()) {
 							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:clap")), SoundSource.NEUTRAL, 1, 1);

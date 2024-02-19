@@ -18928,24 +18928,6 @@
       "path": "~/Mobs"
     },
     {
-      "name": "Panda",
-      "type": "animatedentity",
-      "sortid": 823,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "panda",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/PandaRenderer.java",
-          "src/main/java/net/mcreator/craftkaisen/entity/PandaEntity.java",
-          "src/main/resources/assets/craft_kaisen/models/item/panda_spawn_egg.json",
-          "src/main/resources/data/craft_kaisen/forge/biome_modifier/panda_biome_modifier.json",
-          "src/main/java/net/mcreator/craftkaisen/entity/model/PandaModel.java"
-        ]
-      },
-      "path": "~/Mobs"
-    },
-    {
       "name": "FloatingTick",
       "type": "procedure",
       "sortid": 837,
@@ -27966,19 +27948,1032 @@
       "path": "~/Particles"
     },
     {
-      "name": "UnlimitedBlackhole",
-      "type": "particle",
-      "sortid": 1216,
+      "name": "IceDomainFloor",
+      "type": "block",
+      "sortid": 1217,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "unlimited_blackhole",
+      "registry_name": "ice_domain_floor",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/particle/UnlimitedBlackholeParticle.java",
-          "src/main/resources/assets/craft_kaisen/particles/unlimited_blackhole.json"
+          "src/main/resources/assets/craft_kaisen/models/item/ice_domain_floor.json",
+          "src/main/java/net/mcreator/craftkaisen/block/IceDomainFloorBlock.java",
+          "src/main/resources/assets/craft_kaisen/blockstates/ice_domain_floor.json",
+          "src/main/resources/assets/craft_kaisen/models/block/ice_domain_floor.json"
+        ]
+      },
+      "path": "~/Blocks"
+    },
+    {
+      "name": "IceDomainWall",
+      "type": "block",
+      "sortid": 1218,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ice_domain_wall",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/models/item/ice_domain_wall.json",
+          "src/main/resources/assets/craft_kaisen/blockstates/ice_domain_wall.json",
+          "src/main/java/net/mcreator/craftkaisen/block/IceDomainWallBlock.java",
+          "src/main/resources/assets/craft_kaisen/models/block/ice_domain_wall.json"
+        ]
+      },
+      "path": "~/Blocks"
+    },
+    {
+      "name": "DomainExpire",
+      "type": "procedure",
+      "sortid": 1221,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "domain_expire",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DomainExpireProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "ChimeraGardenMegumi",
+      "type": "procedure",
+      "sortid": 1224,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "chimera_garden_megumi",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/ChimeraGardenMegumiProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/TenShadows"
+    },
+    {
+      "name": "Slot1Change",
+      "type": "procedure",
+      "sortid": 1230,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "slot_1_change",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/Slot1ChangeProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "NoOverwhelmingPressure",
+      "type": "gamerule",
+      "sortid": 1242,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "no_overwhelming_pressure",
+      "metadata": {
+        "files": [],
+        "type": "logic"
+      },
+      "path": "~/Gamerules"
+    },
+    {
+      "name": "OPBlessedByTheSparks",
+      "type": "gamerule",
+      "sortid": 1241,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "op_blessed_by_the_sparks",
+      "metadata": {
+        "files": [],
+        "type": "logic"
+      },
+      "path": "~/Gamerules"
+    },
+    {
+      "name": "NaobitoOutfit",
+      "type": "armor",
+      "sortid": 1228,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "naobito_outfit",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/models/item/naobito_outfit_chestplate.json",
+          "src/main/resources/assets/craft_kaisen/models/item/naobito_outfit_leggings.json",
+          "src/main/java/net/mcreator/craftkaisen/item/NaobitoOutfitItem.java"
+        ]
+      },
+      "path": "~/Armor"
+    },
+    {
+      "name": "RemoveLimbs",
+      "type": "procedure",
+      "sortid": 1245,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "remove_limbs",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/RemoveLimbsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/SecretFolder/LimbSystem"
+    },
+    {
+      "name": "Naobito",
+      "type": "livingentity",
+      "sortid": 1220,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "naobito",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/NaobitoRenderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/NaobitoEntity.java",
+          "src/main/resources/data/craft_kaisen/forge/biome_modifier/naobito_biome_modifier.json",
+          "src/main/resources/assets/craft_kaisen/models/item/naobito_spawn_egg.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "Slot3Change",
+      "type": "procedure",
+      "sortid": 1232,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "slot_3_change",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/Slot3ChangeProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "Slot6Change",
+      "type": "procedure",
+      "sortid": 1235,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "slot_6_change",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/Slot6ChangeProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "DomainDIe",
+      "type": "procedure",
+      "sortid": 1223,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "domain_d_ie",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DomainDIeProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "MegunaOutfit",
+      "type": "armor",
+      "sortid": 1251,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "meguna_outfit",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/models/item/meguna_outfit_leggings.json",
+          "src/main/java/net/mcreator/craftkaisen/item/MegunaOutfitItem.java",
+          "src/main/resources/assets/craft_kaisen/models/item/meguna_outfit_chestplate.json"
+        ]
+      },
+      "path": "~/Armor"
+    },
+    {
+      "name": "TodoOutfit",
+      "type": "armor",
+      "sortid": 1226,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "todo_outfit",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/item/TodoOutfitItem.java",
+          "src/main/resources/assets/craft_kaisen/models/item/todo_outfit_chestplate.json",
+          "src/main/resources/assets/craft_kaisen/models/item/todo_outfit_leggings.json"
+        ]
+      },
+      "path": "~/Armor"
+    },
+    {
+      "name": "RctMasterySet",
+      "type": "procedure",
+      "sortid": 1258,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rct_mastery_set",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/RctMasterySetProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Commands/Procedures"
+    },
+    {
+      "name": "InventoryCurseOpen",
+      "type": "keybind",
+      "sortid": 1239,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "inventory_curse_open",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/network/InventoryCurseOpenMessage.java"
+        ]
+      },
+      "path": "~/Keybinds"
+    },
+    {
+      "name": "DomainBlocks",
+      "type": "tag",
+      "sortid": 1225,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "domain_blocks",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/tags/blocks/domain_blocks.json"
+        ]
+      },
+      "path": "~/Tags"
+    },
+    {
+      "name": "InventoryCurseGUI",
+      "type": "gui",
+      "sortid": 1237,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "inventory_curse_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/world/inventory/InventoryCurseGUIMenu.java",
+          "src/main/java/net/mcreator/craftkaisen/network/InventoryCurseGUISlotMessage.java",
+          "src/main/java/net/mcreator/craftkaisen/client/gui/InventoryCurseGUIScreen.java"
+        ]
+      },
+      "path": "~/GUI"
+    },
+    {
+      "name": "ThrowPlayerMobOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 1260,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "throw_player_mob_on_entity_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/ThrowPlayerMobOnEntityTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Abilities"
+    },
+    {
+      "name": "Slot5Change",
+      "type": "procedure",
+      "sortid": 1234,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "slot_5_change",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/Slot5ChangeProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "DomainMobs",
+      "type": "tag",
+      "sortid": 1259,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "domain_mobs",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/tags/entity_types/domain_mobs.json"
+        ]
+      },
+      "path": "~/Tags"
+    },
+    {
+      "name": "CheckLimbDamage",
+      "type": "procedure",
+      "sortid": 1244,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "check_limb_damage",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/CheckLimbDamageProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/SecretFolder/LimbSystem"
+    },
+    {
+      "name": "Slot0Change",
+      "type": "procedure",
+      "sortid": 1229,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "slot_0_change",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/Slot0ChangeProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "GojoOutfit",
+      "type": "armor",
+      "sortid": 1227,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gojo_outfit",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/models/item/gojo_outfit_leggings.json",
+          "src/main/java/net/mcreator/craftkaisen/item/GojoOutfitItem.java",
+          "src/main/resources/assets/craft_kaisen/models/item/gojo_outfit_chestplate.json"
+        ]
+      },
+      "path": "~/Armor"
+    },
+    {
+      "name": "Unlimitedblackhole",
+      "type": "particle",
+      "sortid": 1243,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "unlimitedblackhole",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/particles/unlimitedblackhole.json",
+          "src/main/java/net/mcreator/craftkaisen/client/particle/UnlimitedblackholeParticle.java"
         ]
       },
       "path": "~/Particles"
+    },
+    {
+      "name": "Slot7Change",
+      "type": "procedure",
+      "sortid": 1236,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "slot_7_change",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/Slot7ChangeProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "ThrownTick",
+      "type": "procedure",
+      "sortid": 1253,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "thrown_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/ThrownTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/SukunaVessel"
+    },
+    {
+      "name": "InventoryCurseOpenOnKeyPressed",
+      "type": "procedure",
+      "sortid": 1238,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "inventory_curse_open_on_key_pressed",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/InventoryCurseOpenOnKeyPressedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Keybinds/Procedures"
+    },
+    {
+      "name": "FireArrowMobProjectileProjectileHitsBlock2",
+      "type": "procedure",
+      "sortid": 1256,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fire_arrow_mob_projectile_projectile_hits_block_2",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/FireArrowMobProjectileProjectileHitsBlock2Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Projectile/Procedures"
+    },
+    {
+      "name": "NaobitoOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 1219,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "naobito_on_entity_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/NaobitoOnEntityTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Procedure"
+    },
+    {
+      "name": "Rctset",
+      "type": "procedure",
+      "sortid": 1257,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rctset",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/RctsetProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Commands/Procedures"
+    },
+    {
+      "name": "Slot2Change",
+      "type": "procedure",
+      "sortid": 1231,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "slot_2_change",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/Slot2ChangeProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "InventoryCurseMobEntityDies",
+      "type": "procedure",
+      "sortid": 1240,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "inventory_curse_mob_entity_dies",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/InventoryCurseMobEntityDiesProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Procedure"
+    },
+    {
+      "name": "PiercingBloodProjectileWhileProjectileFlyingTick",
+      "type": "procedure",
+      "sortid": 1247,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "piercing_blood_projectile_while_projectile_flying_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/PiercingBloodProjectileWhileProjectileFlyingTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "immediatesourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/BloodManipulation"
+    },
+    {
+      "name": "PiercingBloodEffectExpires",
+      "type": "procedure",
+      "sortid": 1249,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "piercing_blood_effect_expires",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/PiercingBloodEffectExpiresProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Potions/Procedures"
+    },
+    {
+      "name": "Slot4Change",
+      "type": "procedure",
+      "sortid": 1233,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "slot_4_change",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/Slot4ChangeProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "MainDamageSystem",
+      "type": "procedure",
+      "sortid": 1243,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "main_damage_system",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/MainDamageSystemProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "damagesource",
+            "type": "damagesource"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/SecretFolder/LimbSystem"
+    },
+    {
+      "name": "FireParticle",
+      "type": "particle",
+      "sortid": 1254,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fire_particle",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/particle/FireParticleParticle.java",
+          "src/main/resources/assets/craft_kaisen/particles/fire_particle.json"
+        ]
+      },
+      "path": "~/Particles"
+    },
+    {
+      "name": "ThrowProcedure",
+      "type": "procedure",
+      "sortid": 1252,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "throw_procedure",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/ThrowProcedureProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/SukunaVessel"
+    },
+    {
+      "name": "KnowledgeBook",
+      "type": "loottable",
+      "sortid": 1222,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "knowledge_book",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/loot_tables/chests.json"
+        ]
+      },
+      "path": "~/Loot Tables"
+    },
+    {
+      "name": "PiercingBloodProjectile",
+      "type": "projectile",
+      "sortid": 1248,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "piercing_blood_projectile",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/entity/PiercingBloodProjectileEntity.java"
+        ]
+      },
+      "path": "~/Abilities/BloodManipulation"
+    },
+    {
+      "name": "RemovedLimbsTick",
+      "type": "procedure",
+      "sortid": 1250,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "removed_limbs_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/RemovedLimbsTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/SecretFolder/LimbSystem"
+    },
+    {
+      "name": "FireArrowMobProjectileProjectileHitsBlock",
+      "type": "procedure",
+      "sortid": 1255,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fire_arrow_mob_projectile_projectile_hits_block",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/FireArrowMobProjectileProjectileHitsBlockProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Projectile"
+    },
+    {
+      "name": "ThrowPlayerMob",
+      "type": "livingentity",
+      "sortid": 1261,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "throw_player_mob",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/ThrowPlayerMobRenderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/ThrowPlayerMobEntity.java"
+        ]
+      },
+      "path": "~/Mobs/Abilities"
+    },
+    {
+      "name": "SuperJump",
+      "type": "procedure",
+      "sortid": 1262,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "super_jump",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/SuperJumpProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures"
     }
   ],
   "variable_elements": [
@@ -28659,6 +29654,102 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "0"
+    },
+    {
+      "name": "leftArmDamage",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    },
+    {
+      "name": "rightArmDamage",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    },
+    {
+      "name": "rightLegDamage",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    },
+    {
+      "name": "RightLegGone",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
+    },
+    {
+      "name": "RightArmGone",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
+    },
+    {
+      "name": "LeftLegGone",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
+    },
+    {
+      "name": "Slot2",
+      "type": "itemstack",
+      "scope": "player_persistent",
+      "value": "ItemStack.EMPTY"
+    },
+    {
+      "name": "Slot3",
+      "type": "itemstack",
+      "scope": "player_persistent",
+      "value": "ItemStack.EMPTY"
+    },
+    {
+      "name": "Slot4",
+      "type": "itemstack",
+      "scope": "player_persistent",
+      "value": "ItemStack.EMPTY"
+    },
+    {
+      "name": "Slot5",
+      "type": "itemstack",
+      "scope": "player_persistent",
+      "value": "ItemStack.EMPTY"
+    },
+    {
+      "name": "Slot0",
+      "type": "itemstack",
+      "scope": "player_persistent",
+      "value": "ItemStack.EMPTY"
+    },
+    {
+      "name": "leftLegDamage",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    },
+    {
+      "name": "Slot1",
+      "type": "itemstack",
+      "scope": "player_persistent",
+      "value": "ItemStack.EMPTY"
+    },
+    {
+      "name": "Slot6",
+      "type": "itemstack",
+      "scope": "player_persistent",
+      "value": "ItemStack.EMPTY"
+    },
+    {
+      "name": "Slot7",
+      "type": "itemstack",
+      "scope": "player_persistent",
+      "value": "ItemStack.EMPTY"
+    },
+    {
+      "name": "LeftArmGone",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
     }
   ],
   "sound_elements": [
@@ -28813,6 +29904,30 @@
       ],
       "category": "player",
       "subtitle": ""
+    },
+    {
+      "name": "voidsplash",
+      "files": [
+        "unlimited_splash"
+      ],
+      "category": "neutral",
+      "subtitle": ""
+    },
+    {
+      "name": "void",
+      "files": [
+        "unlimitedvoid"
+      ],
+      "category": "neutral",
+      "subtitle": ""
+    },
+    {
+      "name": "piercingblood",
+      "files": [
+        "piercingbloodstart"
+      ],
+      "category": "neutral",
+      "subtitle": ""
     }
   ],
   "language_map": {
@@ -28871,6 +29986,7 @@
       "item.craft_kaisen.mahito_outfit_chestplate": "Mahito Outfit ",
       "entity.craft_kaisen.maximum_elephant": "Maximum Elephant",
       "gui.craft_kaisen.prestige_menu.tooltip_confirm": "Confirm",
+      "subtitles.void": "",
       "item.craft_kaisen.cursed_womb_death_painting": "Cursed Womb: Death Painting",
       "item.craft_kaisen.explode_ranged": "Explode Ranged",
       "item.craft_kaisen.sukuna_outfit_chestplate": "Sukuna Haori",
@@ -28921,7 +30037,6 @@
       "advancements.merged_beast_agito_advancement.descr": "Tame Merged Beast Agito",
       "gui.craft_kaisen.kenjaku_gui.label_special": "Special - ",
       "death.attack.dismantle_damage": "%1$s was cut by dismantle",
-      "subtitles.coffindomain_end": "",
       "effect.craft_kaisen.blood_wave": "BloodWave",
       "gui.craft_kaisen.kenjaku_gui.label_do_you_want_to_steal_their": "Do you want to steal their - ",
       "entity.craft_kaisen.rika": "Rika",
@@ -29032,7 +30147,6 @@
       "item.craft_kaisen.clan_invite_paper": "Clan Invite Paper",
       "death.attack.electric_damage": "%1$s was shocked to death",
       "item.craft_kaisen.jujutsu_sorcerer_uniform_leggings": "Jujutsu Sorcerer Uniform",
-      "item.craft_kaisen.panda_spawn_egg": "Panda Spawn Egg",
       "subtitles.teleport": "",
       "gui.craft_kaisen.main_menu.label_prestige": "Prestige",
       "entity.craft_kaisen.gold_closed_door": "Gold Closed Door",
@@ -29072,7 +30186,6 @@
       "death.attack.ratio_damage.item": "%1$s was killed by %2$s using %3$s",
       "gui.craft_kaisen.main_menu.label_ii": "I",
       "item.craft_kaisen.cursed_spirit_orb": "Cursed Spirit Orb",
-      "subtitles.coffindomain": "",
       "item.craft_kaisen.inverted_spear": "Inverted Spear",
       "item.craft_kaisen.fire_arrow_mob": "Fire Arrow Mob",
       "death.attack.electric_damage.item": "%1$s was killed by %2$s using %3$s",
@@ -29085,6 +30198,7 @@
       "gui.craft_kaisen.main_menu.label_iv": "IV",
       "item.craft_kaisen.gifted_give": "Gifted Give",
       "entity.craft_kaisen.green_open_door": "Green Open Door",
+      "subtitles.piercingblood": "",
       "advancements.semi_grade_3.descr": "Reach The Required Fame.",
       "item.craft_kaisen.jinichi_zenin_spawn_egg": "Jinichi Zenin Spawn Egg",
       "item.craft_kaisen.distorted_body_helmet": "Distorted Body Face",
@@ -29325,12 +30439,12 @@
       "advancements.perception_of_the_soul.title": "Perception Of The Soul",
       "item.craft_kaisen.roppongi_cursed_spirit_spawn_egg": "Roppongi Cursed Spirit Spawn Egg",
       "advancements.grade_1.descr": "Reach The Required Fame.",
-      "entity.craft_kaisen.panda": "Panda",
       "gui.craft_kaisen.main_menu.tooltip_open_mastery": "Open Mastery",
       "advancements.cursed_womb.descr": "Be Born as a Cursed Womb Death Painting",
       "key.categories.craft_kaisen": "Craft Kaisen",
       "entity.craft_kaisen.heian_era_sukuna": "Heian Era Sukuna",
       "gamerule.sukunaVesselMode": "SukunaVesselMultiplayer",
+      "subtitles.voidsplash": "",
       "effect.craft_kaisen.surge": "Surge",
       "item.craft_kaisen.medicine": "Medicine",
       "advancements.shibuya_incident.title": "Shibuya Incident",
@@ -29593,11 +30707,11 @@
         "name": "Blocks",
         "children": [
           {
-            "name": "Procedure",
+            "name": "Domain Blocks",
             "children": []
           },
           {
-            "name": "Domain Blocks",
+            "name": "Procedure",
             "children": []
           }
         ]
@@ -29640,6 +30754,15 @@
       {
         "name": "Structure",
         "children": []
+      },
+      {
+        "name": "SecretFolder",
+        "children": [
+          {
+            "name": "LimbSystem",
+            "children": []
+          }
+        ]
       },
       {
         "name": "Recipe",

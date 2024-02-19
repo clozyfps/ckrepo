@@ -1,5 +1,7 @@
 package net.mcreator.craftkaisen.procedures;
 
+import net.minecraftforge.registries.ForgeRegistries;
+
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
@@ -14,8 +16,11 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
+import net.minecraft.core.BlockPos;
 
 import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
 import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
@@ -56,8 +61,10 @@ public class JogoOnEntityTickUpdateProcedure {
 							projectileLevel.addFreshEntity(_entityToSpawn);
 						}
 					}
+					entity.getPersistentData().putString("currentmoveactive", "Disaster Flames");
 				}
 				if (Math.random() < 0.01) {
+					entity.getPersistentData().putString("currentmoveactive", "Ember Insects");
 					for (int index0 = 0; index0 < 5; index0++) {
 						{
 							Entity _shootFrom = entity;
@@ -107,6 +114,23 @@ public class JogoOnEntityTickUpdateProcedure {
 							}
 						}
 					});
+					entity.getPersistentData().putString("currentmoveactive", "Maximum Meteor");
+				}
+				if (Math.random() < 0.001) {
+					if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) <= 350) {
+						if (!entity.getPersistentData().getBoolean("domain")) {
+							entity.getPersistentData().putBoolean("domain", true);
+							if (world instanceof Level _level) {
+								if (!_level.isClientSide()) {
+									_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:coffindomain")), SoundSource.NEUTRAL, 1, 1);
+								} else {
+									_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:coffindomain")), SoundSource.NEUTRAL, 1, 1, false);
+								}
+							}
+							entity.getPersistentData().putString("currentmoveactive", "Coffin of the Iron Mountain");
+							CoffinOfTheIronMountainProcedureProcedure.execute(world, x, y, z, entity);
+						}
+					}
 				}
 			}
 		}

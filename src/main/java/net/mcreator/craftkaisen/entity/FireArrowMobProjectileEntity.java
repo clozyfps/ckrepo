@@ -7,6 +7,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.phys.EntityHitResult;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.ItemStack;
@@ -20,6 +21,7 @@ import net.minecraft.network.protocol.Packet;
 
 import net.mcreator.craftkaisen.procedures.FireArrowMobWhileProjectileFlyingTickProcedure;
 import net.mcreator.craftkaisen.procedures.FireArrowMobProjectileProjectileHitsLivingEntityProcedure;
+import net.mcreator.craftkaisen.procedures.FireArrowMobProjectileProjectileHitsBlock2Procedure;
 import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
 
 @OnlyIn(value = Dist.CLIENT, _interface = ItemSupplier.class)
@@ -68,6 +70,12 @@ public class FireArrowMobProjectileEntity extends AbstractArrow implements ItemS
 	public void onHitEntity(EntityHitResult entityHitResult) {
 		super.onHitEntity(entityHitResult);
 		FireArrowMobProjectileProjectileHitsLivingEntityProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), this.getOwner());
+	}
+
+	@Override
+	public void onHitBlock(BlockHitResult blockHitResult) {
+		super.onHitBlock(blockHitResult);
+		FireArrowMobProjectileProjectileHitsBlock2Procedure.execute(this.level, blockHitResult.getBlockPos().getX(), blockHitResult.getBlockPos().getY(), blockHitResult.getBlockPos().getZ(), this.getOwner());
 	}
 
 	@Override

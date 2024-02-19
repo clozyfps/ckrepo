@@ -32,7 +32,7 @@ public class BloodWaveOnEffectActiveTickProcedure {
 			return;
 		if (world instanceof ServerLevel _level)
 			_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-					"particle minecraft:dust 1 0 0 3.5 ^0 ^0 ^0 7 0.1 7 0 35");
+					"particle minecraft:dust 1 0 0 3.5 ^0 ^0 ^0 7 0.1 7 0 55");
 		if (world instanceof ServerLevel _level)
 			_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.BLOOD_SPLASH.get()), x, y, z, 1, 9, 1, 9, 0);
 		{

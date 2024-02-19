@@ -47,7 +47,6 @@ public class CraftKaisenModTabs {
 					tabData.accept(CraftKaisenModItems.RIKO_AMANAI_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.AWAKENED_MAKI_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.SUGURU_GETO_SPAWN_EGG.get());
-					tabData.accept(CraftKaisenModItems.PANDA_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.HAJIME_KASHIMO_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.MEGUMI_FUSHIGURO_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.TOGE_INUMAKI_SPAWN_EGG.get());
@@ -58,6 +57,7 @@ public class CraftKaisenModTabs {
 					tabData.accept(CraftKaisenModItems.MEI_MEI_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.SHINJUKU_GOJO_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.KENJAKU_SPAWN_EGG.get());
+					tabData.accept(CraftKaisenModItems.NAOBITO_SPAWN_EGG.get());
 				}).withSearchBar());
 		event.registerCreativeModeTab(new ResourceLocation("craft_kaisen", "ck_weapons"),
 				builder -> builder.title(Component.translatable("item_group.craft_kaisen.ck_weapons")).icon(() -> new ItemStack(CraftKaisenModItems.PLAYFUL_CLOUD.get())).displayItems((parameters, tabData) -> {
@@ -110,6 +110,14 @@ public class CraftKaisenModTabs {
 					tabData.accept(CraftKaisenModItems.NANAMI_OUTFIT_LEGGINGS.get());
 					tabData.accept(CraftKaisenModItems.MAHORAGA_OUTFIT_CHESTPLATE.get());
 					tabData.accept(CraftKaisenModItems.MAHORAGA_OUTFIT_LEGGINGS.get());
+					tabData.accept(CraftKaisenModItems.TODO_OUTFIT_CHESTPLATE.get());
+					tabData.accept(CraftKaisenModItems.TODO_OUTFIT_LEGGINGS.get());
+					tabData.accept(CraftKaisenModItems.GOJO_OUTFIT_CHESTPLATE.get());
+					tabData.accept(CraftKaisenModItems.GOJO_OUTFIT_LEGGINGS.get());
+					tabData.accept(CraftKaisenModItems.NAOBITO_OUTFIT_CHESTPLATE.get());
+					tabData.accept(CraftKaisenModItems.NAOBITO_OUTFIT_LEGGINGS.get());
+					tabData.accept(CraftKaisenModItems.MEGUNA_OUTFIT_CHESTPLATE.get());
+					tabData.accept(CraftKaisenModItems.MEGUNA_OUTFIT_LEGGINGS.get());
 				}).withSearchBar());
 		event.registerCreativeModeTab(new ResourceLocation("craft_kaisen", "ck_curses"),
 				builder -> builder.title(Component.translatable("item_group.craft_kaisen.ck_curses")).icon(() -> new ItemStack(CraftKaisenModItems.HEIAN_ERA_SUKUNA_SPAWN_EGG.get())).displayItems((parameters, tabData) -> {

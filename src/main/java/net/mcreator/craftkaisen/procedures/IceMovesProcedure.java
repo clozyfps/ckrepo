@@ -244,6 +244,17 @@ public class IceMovesProcedure {
 									});
 								}
 								entity.getPersistentData().putDouble(("cooldown" + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("coolset"))), 60);
+								VoidRemoveProcedure.execute(world, x, y, z);
+								{
+									final Vec3 _center = new Vec3(x, y, z);
+									List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(25 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
+											.collect(Collectors.toList());
+									for (Entity entityiterator : _entfound) {
+										if (!(entity == entityiterator)) {
+											entityiterator.getPersistentData().putBoolean("domain", false);
+										}
+									}
+								}
 								if (world instanceof Level _level) {
 									if (!_level.isClientSide()) {
 										_level.playSound(null, x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:freezingwind")), SoundSource.NEUTRAL, 1, 1);
@@ -289,8 +300,8 @@ public class IceMovesProcedure {
 							}
 						}
 					}
-				} else if (!(entity instanceof ServerPlayer _plr51 && _plr51.level instanceof ServerLevel
-						&& _plr51.getAdvancements().getOrStartProgress(_plr51.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:point_two_second_domains"))).isDone())) {
+				} else if (!(entity instanceof ServerPlayer _plr54 && _plr54.level instanceof ServerLevel
+						&& _plr54.getAdvancements().getOrStartProgress(_plr54.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:point_two_second_domains"))).isDone())) {
 					if (!entity.getPersistentData().getBoolean("domain")) {
 						if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy >= 550) {
 							{
@@ -301,6 +312,18 @@ public class IceMovesProcedure {
 								});
 							}
 							entity.getPersistentData().putDouble(("cooldown" + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("coolset"))), 60);
+							VoidRemoveProcedure.execute(world, x, y, z);
+							{
+								final Vec3 _center = new Vec3(x, y, z);
+								List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(25 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
+										.collect(Collectors.toList());
+								for (Entity entityiterator : _entfound) {
+									if (!(entity == entityiterator)) {
+										entityiterator.getPersistentData().putBoolean("domain", false);
+									}
+								}
+							}
+							BindingIceProcedure.execute(world, x, y, z, entity);
 							if (world instanceof Level _level) {
 								if (!_level.isClientSide()) {
 									_level.playSound(null, x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:freezingwind")), SoundSource.NEUTRAL, 1, 1);
@@ -311,7 +334,6 @@ public class IceMovesProcedure {
 									_level.playSound(null, x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:icedomain")), SoundSource.NEUTRAL, 1, 1);
 								}
 							}
-							BindingIceProcedure.execute(world, x, y, z, entity);
 							CraftKaisenMod.queueServerWork(1, () -> {
 								entity.getPersistentData().putBoolean("domain", true);
 							});

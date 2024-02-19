@@ -79,7 +79,7 @@ public class NueOnEntityTickUpdateProcedure {
 				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(9 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
 						.collect(Collectors.toList());
 				for (Entity entityiterator : _entfound) {
-					if (entity == entityiterator) {
+					if (!(entity == entityiterator)) {
 						if (!(entity instanceof TamableAnimal _tamIsTamedBy && entityiterator instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false)) {
 							if (entityiterator instanceof LivingEntity) {
 								if (world instanceof Level _level) {

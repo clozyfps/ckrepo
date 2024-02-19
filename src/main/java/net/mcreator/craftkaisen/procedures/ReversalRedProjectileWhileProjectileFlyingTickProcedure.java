@@ -13,6 +13,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
@@ -90,7 +91,12 @@ public class ReversalRedProjectileWhileProjectileFlyingTickProcedure {
 								+ (zi * zi) / (double) (horizontalRadiusSphere * horizontalRadiusSphere);
 						if (distanceSq <= 1.0) {
 							if (!((world.getBlockState(BlockPos.containing(x + xi, y + i, z + zi))).getBlock() == Blocks.AIR)) {
-								world.destroyBlock(BlockPos.containing(x + xi, y + i, z + zi), false);
+								if (!(world.getBlockState(BlockPos.containing(x + xi, y + i, z + zi))).is(BlockTags.create(new ResourceLocation("craft_kaisen:domain_blocks")))) {
+									if (!((world.getBlockState(BlockPos.containing(x + xi, y + i, z + zi))).getBlock() == Blocks.BEDROCK)) {
+										world.destroyBlock(BlockPos.containing(x + xi, y + i, z + zi), false);
+										world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), Blocks.AIR.defaultBlockState(), 3);
+									}
+								}
 								if (world instanceof ServerLevel _level)
 									_level.sendParticles(ParticleTypes.LARGE_SMOKE, x + xi, y + i, z + zi, 2, 0.1, 2, 0.1, 0);
 							}
@@ -138,6 +144,8 @@ public class ReversalRedProjectileWhileProjectileFlyingTickProcedure {
 			if (world instanceof ServerLevel _level)
 				_level.sendParticles(ParticleTypes.CAMPFIRE_COSY_SMOKE, x, y, z, 5, 4, 3, 4, 0);
 			if (world instanceof ServerLevel _level)
+				_level.sendParticles(ParticleTypes.FLASH, x, y, z, 1, 4, 3, 4, 0);
+			if (world instanceof ServerLevel _level)
 				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 						"particle minecraft:dust 0.88 0.09 0.25 3 ^0 ^0 ^0 2 1.5 2 0 25");
 			int horizontalRadiusSphere = (int) 4 - 1;
@@ -150,7 +158,12 @@ public class ReversalRedProjectileWhileProjectileFlyingTickProcedure {
 								+ (zi * zi) / (double) (horizontalRadiusSphere * horizontalRadiusSphere);
 						if (distanceSq <= 1.0) {
 							if (!((world.getBlockState(BlockPos.containing(x + xi, y + i, z + zi))).getBlock() == Blocks.AIR)) {
-								world.destroyBlock(BlockPos.containing(x + xi, y + i, z + zi), false);
+								if (!(world.getBlockState(BlockPos.containing(x + xi, y + i, z + zi))).is(BlockTags.create(new ResourceLocation("craft_kaisen:domain_blocks")))) {
+									if (!((world.getBlockState(BlockPos.containing(x + xi, y + i, z + zi))).getBlock() == Blocks.BEDROCK)) {
+										world.destroyBlock(BlockPos.containing(x + xi, y + i, z + zi), false);
+										world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), Blocks.AIR.defaultBlockState(), 3);
+									}
+								}
 								if (world instanceof ServerLevel _level)
 									_level.sendParticles(ParticleTypes.LARGE_SMOKE, x + xi, y + i, z + zi, 2, 0.1, 2, 0.1, 0);
 							}

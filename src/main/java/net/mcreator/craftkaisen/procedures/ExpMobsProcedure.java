@@ -22,8 +22,8 @@ import net.mcreator.craftkaisen.entity.RugbyFieldCursedSpiritEntity;
 import net.mcreator.craftkaisen.entity.RoundDeerEntity;
 import net.mcreator.craftkaisen.entity.RoppongiCursedSpiritEntity;
 import net.mcreator.craftkaisen.entity.ResurrectedTojiEntity;
-import net.mcreator.craftkaisen.entity.PandaEntity;
 import net.mcreator.craftkaisen.entity.NobaraKugisakiEntity;
+import net.mcreator.craftkaisen.entity.NaobitoEntity;
 import net.mcreator.craftkaisen.entity.NanamiKentoEntity;
 import net.mcreator.craftkaisen.entity.MouthCursedSpiritEntity;
 import net.mcreator.craftkaisen.entity.MergedBeastAgitoEntity;
@@ -225,7 +225,7 @@ public class ExpMobsProcedure {
 				});
 			}
 		}
-		if (entity instanceof RoppongiCursedSpiritEntity || entity instanceof RugbyFieldCursedSpiritEntity || entity instanceof FlyingCursedSpiritEntity || entity instanceof MouthCursedSpiritEntity || entity instanceof PandaEntity) {
+		if (entity instanceof RoppongiCursedSpiritEntity || entity instanceof RugbyFieldCursedSpiritEntity || entity instanceof FlyingCursedSpiritEntity || entity instanceof MouthCursedSpiritEntity) {
 			{
 				double _setval = (sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentExp + 300;
 				sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
@@ -256,6 +256,15 @@ public class ExpMobsProcedure {
 		if (entity instanceof UraumeEntity) {
 			{
 				double _setval = (sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentExp + 1000;
+				sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.currentExp = _setval;
+					capability.syncPlayerVariables(sourceentity);
+				});
+			}
+		}
+		if (entity instanceof NaobitoEntity) {
+			{
+				double _setval = (sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentExp + 2500;
 				sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.currentExp = _setval;
 					capability.syncPlayerVariables(sourceentity);

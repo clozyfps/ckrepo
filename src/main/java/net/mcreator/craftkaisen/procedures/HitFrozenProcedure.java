@@ -55,7 +55,7 @@ public class HitFrozenProcedure {
 			if (entity instanceof LivingEntity _entity)
 				_entity.removeEffect(CraftKaisenModMobEffects.FRAME_ON.get());
 			entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:frame_attack"))), sourceentity),
-					(float) (amount + 15));
+					(float) (amount + 20));
 			{
 				final Vec3 _center = new Vec3(x, y, z);
 				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(5 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))

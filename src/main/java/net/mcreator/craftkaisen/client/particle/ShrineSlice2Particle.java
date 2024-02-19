@@ -37,7 +37,7 @@ public class ShrineSlice2Particle extends TextureSheetParticle {
 		this.spriteSet = spriteSet;
 		this.setSize(0.2f, 0.2f);
 		this.quadSize *= 45f;
-		this.lifetime = 3;
+		this.lifetime = 1;
 		this.gravity = 0f;
 		this.hasPhysics = false;
 		this.xd = vx * 0;

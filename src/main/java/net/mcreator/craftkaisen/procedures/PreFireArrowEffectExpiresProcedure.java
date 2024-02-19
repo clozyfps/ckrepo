@@ -8,12 +8,15 @@ import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.BlockPos;
+import net.minecraft.client.player.AbstractClientPlayer;
 
 import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
 import net.mcreator.craftkaisen.init.CraftKaisenModParticleTypes;
@@ -22,6 +25,12 @@ import net.mcreator.craftkaisen.entity.RyomenSukunaEntity;
 import net.mcreator.craftkaisen.entity.MegunaEntity;
 import net.mcreator.craftkaisen.entity.FireArrowProjectileEntity;
 import net.mcreator.craftkaisen.entity.FireArrowMobProjectileEntity;
+
+import dev.kosmx.playerAnim.minecraftApi.PlayerAnimationRegistry;
+import dev.kosmx.playerAnim.minecraftApi.PlayerAnimationAccess;
+import dev.kosmx.playerAnim.api.layered.ModifierLayer;
+import dev.kosmx.playerAnim.api.layered.KeyframeAnimationPlayer;
+import dev.kosmx.playerAnim.api.layered.IAnimation;
 
 public class PreFireArrowEffectExpiresProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
@@ -60,7 +69,7 @@ public class PreFireArrowEffectExpiresProcedure {
 							entityToSpawn.setSecondsOnFire(100);
 							return entityToSpawn;
 						}
-					}.getArrow(projectileLevel, entity, (float) (5 + (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 5), 2);
+					}.getArrow(projectileLevel, entity, (float) (20 + (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 3), 2);
 					_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
 					_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, 7, 0);
 					projectileLevel.addFreshEntity(_entityToSpawn);
@@ -89,5 +98,20 @@ public class PreFireArrowEffectExpiresProcedure {
 			}
 		}
 		entity.getPersistentData().putBoolean("stop", false);
+		entity.clearFire();
+		if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+			_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 20, 250, false, false));
+		entity.getPersistentData().putDouble("xincrease", 0);
+		entity.getPersistentData().putDouble("zincrease", 0);
+		entity.getPersistentData().putDouble("xdecrease", 0);
+		entity.getPersistentData().putDouble("zdecrease", 0);
+		if (world.isClientSide()) {
+			if (entity instanceof AbstractClientPlayer player) {
+				var animation = (ModifierLayer<IAnimation>) PlayerAnimationAccess.getPlayerAssociatedData(player).get(new ResourceLocation("craft_kaisen", "player_animation"));
+				if (animation != null && !animation.isActive()) {
+					animation.setAnimation(new KeyframeAnimationPlayer(PlayerAnimationRegistry.getAnimation(new ResourceLocation("craft_kaisen", "defaultend"))));
+				}
+			}
+		}
 	}
 }

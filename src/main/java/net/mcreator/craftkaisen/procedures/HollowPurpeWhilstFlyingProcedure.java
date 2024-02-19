@@ -8,9 +8,13 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.tags.TagKey;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.BlockPos;
@@ -28,7 +32,7 @@ public class HollowPurpeWhilstFlyingProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, Entity immediatesourceentity) {
 		if (entity == null || immediatesourceentity == null)
 			return;
-		CraftKaisenMod.queueServerWork(200, () -> {
+		CraftKaisenMod.queueServerWork(100, () -> {
 			if (!immediatesourceentity.level.isClientSide())
 				immediatesourceentity.discard();
 		});
@@ -58,14 +62,14 @@ public class HollowPurpeWhilstFlyingProcedure {
 				}
 			}
 			if (world instanceof ServerLevel _level)
-				_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.PURPLE_ELECTRICITY.get()), x, y, z, 5,
+				_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.PURPLE_ELECTRICITY.get()), x, y, z, 10,
 						((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 10),
 						((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 10),
 						((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 10), 1);
 			if (world instanceof ServerLevel _level)
 				_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.PURPLE_PULSE.get()), x, y, z, 1, 0.1, 0.1, 0.1, 1);
 			if (world instanceof ServerLevel _level)
-				_level.sendParticles(ParticleTypes.POOF, x, y, z, 9, 3, 3, 3, 0);
+				_level.sendParticles(ParticleTypes.POOF, x, y, z, 15, 3, 3, 3, 0.3);
 			{
 				final Vec3 _center = new Vec3(x, y, z);
 				List<Entity> _entfound = world
@@ -74,11 +78,32 @@ public class HollowPurpeWhilstFlyingProcedure {
 						.stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).collect(Collectors.toList());
 				for (Entity entityiterator : _entfound) {
 					if (!(entity == entityiterator)) {
+						if (!entityiterator.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("craft_kaisen:domain_mobs")))) {
+						}
 					}
 				}
 			}
-			int horizontalRadiusSphere = (int) (4 + (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 12) - 1;
-			int verticalRadiusSphere = (int) (4 + (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 12) - 1;
+			{
+				final Vec3 _center = new Vec3(x, y, z);
+				List<Entity> _entfound = world
+						.getEntitiesOfClass(Entity.class,
+								new AABB(_center, _center).inflate(((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 6) / 2d), e -> true)
+						.stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).collect(Collectors.toList());
+				for (Entity entityiterator : _entfound) {
+					if (!(entity == entityiterator)) {
+						if (!entityiterator.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("craft_kaisen:domain_mobs")))) {
+							{
+								Entity _ent = entityiterator;
+								_ent.teleportTo(x, y, z);
+								if (_ent instanceof ServerPlayer _serverPlayer)
+									_serverPlayer.connection.teleport(x, y, z, _ent.getYRot(), _ent.getXRot());
+							}
+						}
+					}
+				}
+			}
+			int horizontalRadiusSphere = (int) (2 + (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 15) - 1;
+			int verticalRadiusSphere = (int) (2 + (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 15) - 1;
 			int yIterationsSphere = verticalRadiusSphere;
 			for (int i = -yIterationsSphere; i <= yIterationsSphere; i++) {
 				for (int xi = -horizontalRadiusSphere; xi <= horizontalRadiusSphere; xi++) {
@@ -86,8 +111,12 @@ public class HollowPurpeWhilstFlyingProcedure {
 						double distanceSq = (xi * xi) / (double) (horizontalRadiusSphere * horizontalRadiusSphere) + (i * i) / (double) (verticalRadiusSphere * verticalRadiusSphere)
 								+ (zi * zi) / (double) (horizontalRadiusSphere * horizontalRadiusSphere);
 						if (distanceSq <= 1.0) {
-							world.destroyBlock(BlockPos.containing(x + xi, y + i, z + zi), false);
-							world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), Blocks.AIR.defaultBlockState(), 3);
+							if (!(world.getBlockState(BlockPos.containing(x + xi, y + i, z + zi))).is(BlockTags.create(new ResourceLocation("craft_kaisen:domain_blocks")))) {
+								if (!((world.getBlockState(BlockPos.containing(x + xi, y + i, z + zi))).getBlock() == Blocks.BEDROCK)) {
+									world.destroyBlock(BlockPos.containing(x + xi, y + i, z + zi), false);
+									world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), Blocks.AIR.defaultBlockState(), 3);
+								}
+							}
 						}
 					}
 				}
@@ -103,7 +132,7 @@ public class HollowPurpeWhilstFlyingProcedure {
 		} else {
 			{
 				// Get the radius of the sphere
-				double radius = 6; // 3 blocks
+				double radius = 4; // 3 blocks
 				// Set the tolerance for how close to the surface a point must be to create a particle
 				double tolerance = 0.15; // 0.1 blocks
 				for (double xx = -radius; xx <= radius; xx += 0.1) {
@@ -137,6 +166,31 @@ public class HollowPurpeWhilstFlyingProcedure {
 						.collect(Collectors.toList());
 				for (Entity entityiterator : _entfound) {
 					if (!(entity == entityiterator)) {
+						if (!entityiterator.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("craft_kaisen:domain_mobs")))) {
+							{
+								Entity _ent = entityiterator;
+								_ent.teleportTo(x, y, z);
+								if (_ent instanceof ServerPlayer _serverPlayer)
+									_serverPlayer.connection.teleport(x, y, z, _ent.getYRot(), _ent.getXRot());
+							}
+						}
+					}
+				}
+			}
+			{
+				final Vec3 _center = new Vec3(x, y, z);
+				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(9 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
+						.collect(Collectors.toList());
+				for (Entity entityiterator : _entfound) {
+					if (!(entity == entityiterator)) {
+						if (!entityiterator.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("craft_kaisen:domain_mobs")))) {
+							{
+								Entity _ent = entityiterator;
+								_ent.teleportTo(x, y, z);
+								if (_ent instanceof ServerPlayer _serverPlayer)
+									_serverPlayer.connection.teleport(x, y, z, _ent.getYRot(), _ent.getXRot());
+							}
+						}
 					}
 				}
 			}
@@ -149,8 +203,12 @@ public class HollowPurpeWhilstFlyingProcedure {
 						double distanceSq = (xi * xi) / (double) (horizontalRadiusSphere * horizontalRadiusSphere) + (i * i) / (double) (verticalRadiusSphere * verticalRadiusSphere)
 								+ (zi * zi) / (double) (horizontalRadiusSphere * horizontalRadiusSphere);
 						if (distanceSq <= 1.0) {
-							world.destroyBlock(BlockPos.containing(x + xi, y + i, z + zi), false);
-							world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), Blocks.AIR.defaultBlockState(), 3);
+							if (!(world.getBlockState(BlockPos.containing(x + xi, y + i, z + zi))).is(BlockTags.create(new ResourceLocation("craft_kaisen:domain_blocks")))) {
+								if (!((world.getBlockState(BlockPos.containing(x + xi, y + i, z + zi))).getBlock() == Blocks.BEDROCK)) {
+									world.destroyBlock(BlockPos.containing(x + xi, y + i, z + zi), false);
+									world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), Blocks.AIR.defaultBlockState(), 3);
+								}
+							}
 						}
 					}
 				}

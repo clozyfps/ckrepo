@@ -44,8 +44,8 @@ public class CraftKaisenModParticleTypes {
 	public static final RegistryObject<SimpleParticleType> PURPLE_BLOOD_SLASH = REGISTRY.register("purple_blood_slash", () -> new SimpleParticleType(true));
 	public static final RegistryObject<SimpleParticleType> BLACK_LIGHTNING = REGISTRY.register("black_lightning", () -> new SimpleParticleType(true));
 	public static final RegistryObject<SimpleParticleType> ICE_CLOUD = REGISTRY.register("ice_cloud", () -> new SimpleParticleType(false));
-	public static final RegistryObject<SimpleParticleType> UNLIMITED_VOID_SPLASH_1 = REGISTRY.register("unlimited_void_splash_1", () -> new SimpleParticleType(false));
-	public static final RegistryObject<SimpleParticleType> UNLIMITED_VOID_SPLASH_2 = REGISTRY.register("unlimited_void_splash_2", () -> new SimpleParticleType(false));
-	public static final RegistryObject<SimpleParticleType> UNLIMITED_VOID_SPLASH_3 = REGISTRY.register("unlimited_void_splash_3", () -> new SimpleParticleType(false));
-	public static final RegistryObject<SimpleParticleType> UNLIMITED_BLACKHOLE = REGISTRY.register("unlimited_blackhole", () -> new SimpleParticleType(false));
+	public static final RegistryObject<SimpleParticleType> UNLIMITED_VOID_SPLASH_1 = REGISTRY.register("unlimited_void_splash_1", () -> new SimpleParticleType(true));
+	public static final RegistryObject<SimpleParticleType> UNLIMITED_VOID_SPLASH_2 = REGISTRY.register("unlimited_void_splash_2", () -> new SimpleParticleType(true));
+	public static final RegistryObject<SimpleParticleType> UNLIMITED_VOID_SPLASH_3 = REGISTRY.register("unlimited_void_splash_3", () -> new SimpleParticleType(true));
+	public static final RegistryObject<SimpleParticleType> FIRE_PARTICLE = REGISTRY.register("fire_particle", () -> new SimpleParticleType(true));
 }

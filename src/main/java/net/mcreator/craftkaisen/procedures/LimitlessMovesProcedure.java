@@ -50,26 +50,32 @@ public class LimitlessMovesProcedure {
 			return;
 		if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput > 0) {
 			if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentMove).equals("Reversal Red")) {
-				if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy >= 50
-						* ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 10)) {
-					{
-						double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy
-								- 50 * ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 10);
-						entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.currentCursedEnergy = _setval;
-							capability.syncPlayerVariables(entity);
-						});
+				if (!((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).RightArmGone
+						|| (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).LeftArmGone)) {
+					if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy >= 50
+							* ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 10)) {
+						{
+							double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy
+									- 50 * ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 10);
+							entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.currentCursedEnergy = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+						ReversalRedProceduresProcedure.execute(entity);
+						if (entity instanceof Player _player && !_player.level.isClientSide())
+							_player.displayClientMessage(Component.literal("Reversal Red"), true);
+						entity.getPersistentData().putDouble(("cooldown" + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("coolset"))), 100);
+					} else if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy < 50
+							* ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 10)) {
+						if (entity instanceof Player _player && !_player.level.isClientSide())
+							_player.displayClientMessage(Component.literal(("You need "
+									+ new java.text.DecimalFormat("##.##").format(50 * ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 10))
+									+ " cursed energy to use this move.")), true);
 					}
-					ReversalRedProceduresProcedure.execute(entity);
+				} else {
 					if (entity instanceof Player _player && !_player.level.isClientSide())
-						_player.displayClientMessage(Component.literal("Reversal Red"), true);
-					entity.getPersistentData().putDouble(("cooldown" + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("coolset"))), 100);
-				} else if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy < 50
-						* ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 10)) {
-					if (entity instanceof Player _player && !_player.level.isClientSide())
-						_player.displayClientMessage(Component.literal(("You need "
-								+ new java.text.DecimalFormat("##.##").format(50 * ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 10))
-								+ " cursed energy to use this move.")), true);
+						_player.displayClientMessage(Component.literal("You dont have arms to perform Reversal Red"), true);
 				}
 				{
 					String _setval = "";
@@ -125,75 +131,129 @@ public class LimitlessMovesProcedure {
 				}
 			}
 			if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentMove).equals("Hollow Purple")) {
-				if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy >= 190
-						* ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 10)) {
+				if (!((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).RightArmGone
+						|| (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).LeftArmGone)) {
+					if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy >= 190
+							* ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 10)) {
+						{
+							double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy
+									- 190 * ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 10);
+							entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.currentCursedEnergy = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+						PurpleProcedureProcedure.execute(world, entity);
+						entity.getPersistentData().putDouble(("cooldown" + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("coolset"))), 900);
+					} else if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy < 190
+							* ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 10)) {
+						if (entity instanceof Player _player && !_player.level.isClientSide())
+							_player.displayClientMessage(Component.literal(("You need "
+									+ new java.text.DecimalFormat("##.##").format(190 * ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 10))
+									+ " cursed energy to use this move.")), true);
+					}
 					{
-						double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy
-								- 190 * ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 10);
+						String _setval = "";
 						entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.currentCursedEnergy = _setval;
+							capability.currentMove = _setval;
 							capability.syncPlayerVariables(entity);
 						});
 					}
-					PurpleProcedureProcedure.execute(entity);
-					entity.getPersistentData().putDouble(("cooldown" + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("coolset"))), 900);
-				} else if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy < 190
-						* ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 10)) {
+				} else {
 					if (entity instanceof Player _player && !_player.level.isClientSide())
-						_player.displayClientMessage(Component.literal(("You need "
-								+ new java.text.DecimalFormat("##.##").format(190 * ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 10))
-								+ " cursed energy to use this move.")), true);
-				}
-				{
-					String _setval = "";
-					entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.currentMove = _setval;
-						capability.syncPlayerVariables(entity);
-					});
+						_player.displayClientMessage(Component.literal("You dont have arms to perform Hollow Purple"), true);
 				}
 			}
 			if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentMove).equals("Unlimited Void")) {
-				if (entity instanceof ServerPlayer _plr10 && _plr10.level instanceof ServerLevel
-						&& _plr10.getAdvancements().getOrStartProgress(_plr10.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:point_two_second_domains"))).isDone()) {
-					if (entity.isShiftKeyDown()) {
-						if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy >= 600) {
-							{
-								double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy - 600;
-								entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.currentCursedEnergy = _setval;
-									capability.syncPlayerVariables(entity);
-								});
-							}
-							if (world instanceof Level _level) {
-								if (!_level.isClientSide()) {
-									_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:domain")), SoundSource.PLAYERS, 1, 1);
-								} else {
-									_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:domain")), SoundSource.PLAYERS, 1, 1, false);
+				if (!((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).RightArmGone
+						|| (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).LeftArmGone)) {
+					if (entity instanceof ServerPlayer _plr12 && _plr12.level instanceof ServerLevel
+							&& _plr12.getAdvancements().getOrStartProgress(_plr12.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:point_two_second_domains"))).isDone()) {
+						if (entity.isShiftKeyDown()) {
+							if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy >= 600) {
+								{
+									double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy - 600;
+									entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+										capability.currentCursedEnergy = _setval;
+										capability.syncPlayerVariables(entity);
+									});
 								}
-							}
-							if (world instanceof ServerLevel _level)
-								_level.sendParticles(ParticleTypes.ELECTRIC_SPARK, x, y, z, 10, 9, 0.1, 9, 0);
-							if (world instanceof ServerLevel _level)
-								_level.sendParticles(ParticleTypes.POOF, x, y, z, 5, 9, 0.1, 9, 0);
-							{
-								final Vec3 _center = new Vec3(x, y, z);
-								List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(25 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
-										.collect(Collectors.toList());
-								for (Entity entityiterator : _entfound) {
-									if (!(entity == entityiterator)) {
-										if (entityiterator instanceof LivingEntity _entity && !_entity.level.isClientSide())
-											_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 250, false, false));
-										if (entityiterator instanceof LivingEntity _entity && !_entity.level.isClientSide())
-											_entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 100, 250, false, false));
+								if (world instanceof Level _level) {
+									if (!_level.isClientSide()) {
+										_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:domain")), SoundSource.PLAYERS, 1, 1);
+									} else {
+										_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:domain")), SoundSource.PLAYERS, 1, 1, false);
 									}
 								}
+								if (world instanceof ServerLevel _level)
+									_level.sendParticles(ParticleTypes.ELECTRIC_SPARK, x, y, z, 10, 9, 0.1, 9, 0);
+								if (world instanceof ServerLevel _level)
+									_level.sendParticles(ParticleTypes.POOF, x, y, z, 5, 9, 0.1, 9, 0);
+								{
+									final Vec3 _center = new Vec3(x, y, z);
+									List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(25 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
+											.collect(Collectors.toList());
+									for (Entity entityiterator : _entfound) {
+										if (!(entity == entityiterator)) {
+											if (entityiterator instanceof LivingEntity _entity && !_entity.level.isClientSide())
+												_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 250, false, false));
+											if (entityiterator instanceof LivingEntity _entity && !_entity.level.isClientSide())
+												_entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 100, 250, false, false));
+										}
+									}
+								}
+								entity.getPersistentData().putDouble(("cooldown" + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("coolset"))), 1500);
+							} else if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy < 600) {
+								if (entity instanceof Player _player && !_player.level.isClientSide())
+									_player.displayClientMessage(Component.literal(("You need " + new java.text.DecimalFormat("##.##").format(600) + " cursed energy to use this move.")), true);
 							}
-							entity.getPersistentData().putDouble(("cooldown" + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("coolset"))), 1500);
-						} else if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy < 600) {
-							if (entity instanceof Player _player && !_player.level.isClientSide())
-								_player.displayClientMessage(Component.literal(("You need " + new java.text.DecimalFormat("##.##").format(600) + " cursed energy to use this move.")), true);
+						} else if (!entity.isShiftKeyDown()) {
+							if (!entity.getPersistentData().getBoolean("domain")) {
+								if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy >= 600) {
+									{
+										double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy - 600;
+										entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+											capability.currentCursedEnergy = _setval;
+											capability.syncPlayerVariables(entity);
+										});
+									}
+									UnlimitedVoidProcedureProcedure.execute(world, x, y, z, entity);
+									if (world instanceof Level _level) {
+										if (!_level.isClientSide()) {
+											_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:domain")), SoundSource.PLAYERS, 1, 1);
+										} else {
+											_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:domain")), SoundSource.PLAYERS, 1, 1, false);
+										}
+									}
+									CraftKaisenMod.queueServerWork(20, () -> {
+										if (world instanceof Level _level) {
+											if (!_level.isClientSide()) {
+												_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:unlimitedvoid_start")), SoundSource.PLAYERS, 1, 1);
+											} else {
+												_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:unlimitedvoid_start")), SoundSource.PLAYERS, 1, 1, false);
+											}
+										}
+									});
+									CraftKaisenMod.queueServerWork(90, () -> {
+										if (world instanceof Level _level) {
+											if (!_level.isClientSide()) {
+												_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:unlimitedvoid_splash")), SoundSource.PLAYERS, 1, 1);
+											} else {
+												_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:unlimitedvoid_splash")), SoundSource.PLAYERS, 1, 1, false);
+											}
+										}
+									});
+									entity.getPersistentData().putDouble(("cooldown" + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("coolset"))), 1500);
+								} else if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy < 600) {
+									if (entity instanceof Player _player && !_player.level.isClientSide())
+										_player.displayClientMessage(Component.literal(("You need " + new java.text.DecimalFormat("##.##").format(600) + " cursed energy to use this move.")), true);
+								}
+							} else if (entity.getPersistentData().getBoolean("domain")) {
+								UnlimitedVoidProcedureProcedure.execute(world, x, y, z, entity);
+							}
 						}
-					} else if (!entity.isShiftKeyDown()) {
+					} else if (!(entity instanceof ServerPlayer _plr35 && _plr35.level instanceof ServerLevel
+							&& _plr35.getAdvancements().getOrStartProgress(_plr35.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:point_two_second_domains"))).isDone())) {
 						if (!entity.getPersistentData().getBoolean("domain")) {
 							if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy >= 600) {
 								{
@@ -202,6 +262,17 @@ public class LimitlessMovesProcedure {
 										capability.currentCursedEnergy = _setval;
 										capability.syncPlayerVariables(entity);
 									});
+								}
+								VoidRemoveProcedure.execute(world, x, y, z);
+								{
+									final Vec3 _center = new Vec3(x, y, z);
+									List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(25 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
+											.collect(Collectors.toList());
+									for (Entity entityiterator : _entfound) {
+										if (!(entity == entityiterator)) {
+											entityiterator.getPersistentData().putBoolean("domain", false);
+										}
+									}
 								}
 								UnlimitedVoidProcedureProcedure.execute(world, x, y, z, entity);
 								if (world instanceof Level _level) {
@@ -214,82 +285,41 @@ public class LimitlessMovesProcedure {
 								CraftKaisenMod.queueServerWork(20, () -> {
 									if (world instanceof Level _level) {
 										if (!_level.isClientSide()) {
-											_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:unlimitedvoid_start")), SoundSource.PLAYERS, 1, 1);
+											_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:void")), SoundSource.PLAYERS, 1, 1);
 										} else {
-											_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:unlimitedvoid_start")), SoundSource.PLAYERS, 1, 1, false);
+											_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:void")), SoundSource.PLAYERS, 1, 1, false);
 										}
 									}
 								});
 								CraftKaisenMod.queueServerWork(90, () -> {
 									if (world instanceof Level _level) {
 										if (!_level.isClientSide()) {
-											_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:unlimitedvoid_splash")), SoundSource.PLAYERS, 1, 1);
+											_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:voidsplash")), SoundSource.PLAYERS, 1, 1);
 										} else {
-											_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:unlimitedvoid_splash")), SoundSource.PLAYERS, 1, 1, false);
+											_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:voidsplash")), SoundSource.PLAYERS, 1, 1, false);
 										}
 									}
 								});
-								entity.getPersistentData().putDouble(("cooldown" + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("coolset"))), 1500);
+								entity.getPersistentData().putDouble(("cooldown" + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("coolset"))), 60);
 							} else if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy < 600) {
 								if (entity instanceof Player _player && !_player.level.isClientSide())
 									_player.displayClientMessage(Component.literal(("You need " + new java.text.DecimalFormat("##.##").format(600) + " cursed energy to use this move.")), true);
 							}
 						} else if (entity.getPersistentData().getBoolean("domain")) {
-						}
-					}
-				} else if (!(entity instanceof ServerPlayer _plr33 && _plr33.level instanceof ServerLevel
-						&& _plr33.getAdvancements().getOrStartProgress(_plr33.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:point_two_second_domains"))).isDone())) {
-					if (!entity.getPersistentData().getBoolean("domain")) {
-						if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy >= 600) {
-							{
-								double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy - 600;
-								entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.currentCursedEnergy = _setval;
-									capability.syncPlayerVariables(entity);
-								});
-							}
 							UnlimitedVoidProcedureProcedure.execute(world, x, y, z, entity);
-							if (world instanceof Level _level) {
-								if (!_level.isClientSide()) {
-									_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:domain")), SoundSource.PLAYERS, 1, 1);
-								} else {
-									_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:domain")), SoundSource.PLAYERS, 1, 1, false);
-								}
-							}
-							CraftKaisenMod.queueServerWork(20, () -> {
-								if (world instanceof Level _level) {
-									if (!_level.isClientSide()) {
-										_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:unlimitedvoid_start")), SoundSource.PLAYERS, 1, 1);
-									} else {
-										_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:unlimitedvoid_start")), SoundSource.PLAYERS, 1, 1, false);
-									}
-								}
-							});
-							CraftKaisenMod.queueServerWork(90, () -> {
-								if (world instanceof Level _level) {
-									if (!_level.isClientSide()) {
-										_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:unlimitedvoid_splash")), SoundSource.PLAYERS, 1, 1);
-									} else {
-										_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:unlimitedvoid_splash")), SoundSource.PLAYERS, 1, 1, false);
-									}
-								}
-							});
-							entity.getPersistentData().putDouble(("cooldown" + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("coolset"))), 60);
-						} else if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy < 600) {
-							if (entity instanceof Player _player && !_player.level.isClientSide())
-								_player.displayClientMessage(Component.literal(("You need " + new java.text.DecimalFormat("##.##").format(600) + " cursed energy to use this move.")), true);
+							entity.getPersistentData().putDouble(("cooldown" + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("coolset"))), 1500);
 						}
-					} else if (entity.getPersistentData().getBoolean("domain")) {
-						UnlimitedVoidProcedureProcedure.execute(world, x, y, z, entity);
-						entity.getPersistentData().putDouble(("cooldown" + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("coolset"))), 1500);
 					}
-				}
-				{
-					String _setval = "";
-					entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.currentMove = _setval;
-						capability.syncPlayerVariables(entity);
-					});
+					{
+						String _setval = "";
+						entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.currentMove = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+				} else {
+					if (entity instanceof Player _player && !_player.level.isClientSide())
+						_player.displayClientMessage(Component.literal("You dont have arms to perform Unlimited Void handsigns"), true);
 				}
 			}
 		}

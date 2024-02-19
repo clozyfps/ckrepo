@@ -35,9 +35,9 @@ public class ShrineSlice3Particle extends TextureSheetParticle {
 	protected ShrineSlice3Particle(ClientLevel world, double x, double y, double z, double vx, double vy, double vz, SpriteSet spriteSet) {
 		super(world, x, y, z);
 		this.spriteSet = spriteSet;
-		this.setSize(0.2f, 0.2f);
+		this.setSize(0.05f, 0.2f);
 		this.quadSize *= 45f;
-		this.lifetime = 3;
+		this.lifetime = 1;
 		this.gravity = 0f;
 		this.hasPhysics = false;
 		this.xd = vx * 0;

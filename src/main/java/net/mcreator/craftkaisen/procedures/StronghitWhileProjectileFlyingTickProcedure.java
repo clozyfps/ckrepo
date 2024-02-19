@@ -29,28 +29,30 @@ public class StronghitWhileProjectileFlyingTickProcedure {
 			return;
 		immediatesourceentity.setNoGravity(true);
 		if (world instanceof ServerLevel _level)
-			_level.sendParticles(ParticleTypes.CRIT, x, y, z, 3, 0.1, 1, 0.1, 0);
-		CraftKaisenMod.queueServerWork(10, () -> {
+			_level.sendParticles(ParticleTypes.CRIT, x, y, z, 5, 0.1, 1, 0.1, 0);
+		CraftKaisenMod.queueServerWork(3, () -> {
 			if (!immediatesourceentity.level.isClientSide())
 				immediatesourceentity.discard();
-			if (world instanceof ServerLevel _level)
-				_level.sendParticles(ParticleTypes.EXPLOSION, x, y, z, 1, 0.1, 1, 0.1, 0);
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.explode")), SoundSource.NEUTRAL, 1, 1);
-				} else {
-					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.explode")), SoundSource.NEUTRAL, 1, 1, false);
-				}
-			}
 			{
 				final Vec3 _center = new Vec3(x, y, z);
 				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(3 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
 						.collect(Collectors.toList());
 				for (Entity entityiterator : _entfound) {
 					if (!(immediatesourceentity == entityiterator) && !(entity == entityiterator)) {
-						entityiterator.setDeltaMovement(new Vec3((0.9 * immediatesourceentity.getLookAngle().x), (0.5 * immediatesourceentity.getLookAngle().y), (0.9 * immediatesourceentity.getLookAngle().z)));
+						if (world instanceof Level _level) {
+							if (!_level.isClientSide()) {
+								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.explode")), SoundSource.NEUTRAL, 1, 1);
+							} else {
+								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.explode")), SoundSource.NEUTRAL, 1, 1, false);
+							}
+						}
+						if (world instanceof ServerLevel _level)
+							_level.sendParticles(ParticleTypes.POOF, (entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), 3, 0.1, 2, 0.1, 0.3);
+						if (world instanceof ServerLevel _level)
+							_level.sendParticles(ParticleTypes.EXPLOSION, (entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), 3, 0.1, 2, 0.1, 0);
 						entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.PLAYER_ATTACK), immediatesourceentity, entity),
-								(float) ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).strengthStat / 3));
+								(float) (5 + (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).strengthStat / 7));
+						entityiterator.setDeltaMovement(new Vec3((0.9 * entity.getLookAngle().x), (0.5 * entity.getLookAngle().y), (0.9 * entity.getLookAngle().z)));
 					}
 				}
 			}

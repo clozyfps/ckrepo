@@ -22,6 +22,7 @@ import net.minecraft.commands.CommandSource;
 
 import net.mcreator.craftkaisen.init.CraftKaisenModParticleTypes;
 import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
+import net.mcreator.craftkaisen.CraftKaisenMod;
 
 import java.util.stream.Collectors;
 import java.util.List;
@@ -36,7 +37,7 @@ public class SatoruGojoOnEntityTickUpdateProcedure {
 			if (!entity.getPersistentData().getBoolean("floating")) {
 				if ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof LivingEntity) {
 					if (!(entity instanceof LivingEntity _livEnt4 && _livEnt4.hasEffect(CraftKaisenModMobEffects.COOLDOWN.get()))) {
-						if (Math.random() < 0.001) {
+						if (Math.random() < 0.01) {
 							if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) <= 100) {
 								if (!(entity instanceof LivingEntity _livEnt6 && _livEnt6.hasEffect(CraftKaisenModMobEffects.SURGE.get()))) {
 									if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
@@ -50,7 +51,7 @@ public class SatoruGojoOnEntityTickUpdateProcedure {
 							if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 								_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 15, 6, false, false));
 						}
-						if (Math.random() < 0.0009) {
+						if (Math.random() < 0.001) {
 							entity.getPersistentData().putDouble("hollowPurple", 35);
 							if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 								_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.COOLDOWN.get(), 100, 1, false, false));
@@ -58,8 +59,9 @@ public class SatoruGojoOnEntityTickUpdateProcedure {
 								_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 45, 250, false, false));
 							if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 								_entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 45, 250, false, false));
+							entity.getPersistentData().putString("currentmoveactive", "Hollow Purple");
 						}
-						if (Math.random() < 0.001) {
+						if (Math.random() < 0.01) {
 							{
 								final Vec3 _center = new Vec3(x, y, z);
 								List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(15 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
@@ -67,8 +69,9 @@ public class SatoruGojoOnEntityTickUpdateProcedure {
 								for (Entity entityiterator : _entfound) {
 									if (!(entity == entityiterator) && (entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == entityiterator) {
 										entityiterator.setDeltaMovement(new Vec3(((entity.getX() - entityiterator.getX()) / 5), ((entity.getY() - entityiterator.getY()) / 5), ((entity.getZ() - entityiterator.getZ()) / 5)));
+										entity.getPersistentData().putString("currentmoveactive", "Lapse Blue");
 										if (world instanceof ServerLevel _level)
-											_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.BLUE_PARTICLE.get()), x, y, z, 15, 3, 2, 3, 0);
+											_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.BLUE_PARTICLE.get()), x, y, z, 25, 2, 2, 2, 0);
 										if (world instanceof ServerLevel _level)
 											_level.sendParticles(ParticleTypes.POOF, x, y, z, 25, 3, 2, 3, 0.4);
 										if (world instanceof ServerLevel _level)
@@ -77,11 +80,12 @@ public class SatoruGojoOnEntityTickUpdateProcedure {
 								}
 							}
 						}
-						if (Math.random() < 0.007) {
+						if (Math.random() < 0.009) {
 							if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 								_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.COOLDOWN.get(), 40, 1, false, false));
 							if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 								_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.PRE_RED.get(), 15, 0, false, false));
+							entity.getPersistentData().putString("currentmoveactive", "Reversal Red");
 						} else if (Math.random() < 0.002) {
 							{
 								final Vec3 _center = new Vec3(x, y, z);
@@ -108,6 +112,39 @@ public class SatoruGojoOnEntityTickUpdateProcedure {
 					}
 					if (Math.random() < 0.001) {
 						entity.getPersistentData().putDouble("dashAttack", 40);
+					}
+					if (Math.random() < 0.01) {
+						if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) <= 400) {
+							if (!entity.getPersistentData().getBoolean("domain")) {
+								if (world instanceof Level _level) {
+									if (!_level.isClientSide()) {
+										_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:domain")), SoundSource.NEUTRAL, 1, 1);
+									} else {
+										_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:domain")), SoundSource.NEUTRAL, 1, 1, false);
+									}
+								}
+								CraftKaisenMod.queueServerWork(20, () -> {
+									if (world instanceof Level _level) {
+										if (!_level.isClientSide()) {
+											_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:void")), SoundSource.NEUTRAL, 1, 1);
+										} else {
+											_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:void")), SoundSource.NEUTRAL, 1, 1, false);
+										}
+									}
+								});
+								CraftKaisenMod.queueServerWork(90, () -> {
+									if (world instanceof Level _level) {
+										if (!_level.isClientSide()) {
+											_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:voidsplash")), SoundSource.NEUTRAL, 1, 1);
+										} else {
+											_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:voidsplash")), SoundSource.NEUTRAL, 1, 1, false);
+										}
+									}
+								});
+								UnlimitedVoidProcedureProcedure.execute(world, x, y, z, entity);
+								entity.getPersistentData().putString("currentmoveactive", "Unlimited Void");
+							}
+						}
 					}
 					if (entity.getPersistentData().getDouble("dashAttack") >= 1) {
 						if (entity.getPersistentData().getDouble("dashAttack") >= 1) {

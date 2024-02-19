@@ -41,14 +41,17 @@ public class ChosoOnEntityTickUpdateProcedure {
 							projectileLevel.addFreshEntity(_entityToSpawn);
 						}
 					}
+					entity.getPersistentData().putString("currentmoveactive", "Blood Meteorite");
 				}
 				if (Math.random() < 0.001) {
 					if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 						_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.PIERCING_BLOOD.get(), 100, 0, false, false));
+					entity.getPersistentData().putString("currentmoveactive", "Piercing Blood");
 				}
 				if (Math.random() < 0.001) {
 					if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 						_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.BLOOD_WAVE.get(), 60, 0, false, false));
+					entity.getPersistentData().putString("currentmoveactive", "Slicing Exorcism");
 				}
 			}
 		}

@@ -6,7 +6,6 @@ import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.effect.MobEffectInstance;
 
 import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
 import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
@@ -19,7 +18,7 @@ public class UraumeOnEntityTickUpdateProcedure {
 			return;
 		if ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof LivingEntity) {
 			if (!(entity instanceof LivingEntity _livEnt2 && _livEnt2.hasEffect(CraftKaisenModMobEffects.STOP_ATTACKS.get()))) {
-				if (Math.random() < 0.009) {
+				if (Math.random() < 0.005) {
 					{
 						Entity _shootFrom = entity;
 						Level projectileLevel = _shootFrom.level;
@@ -39,8 +38,9 @@ public class UraumeOnEntityTickUpdateProcedure {
 							projectileLevel.addFreshEntity(_entityToSpawn);
 						}
 					}
+					entity.getPersistentData().putString("currentmoveactive", "Frost Calm");
 				}
-				if (Math.random() < 0.01) {
+				if (Math.random() < 0.005) {
 					{
 						Entity _shootFrom = entity;
 						Level projectileLevel = _shootFrom.level;
@@ -60,10 +60,7 @@ public class UraumeOnEntityTickUpdateProcedure {
 							projectileLevel.addFreshEntity(_entityToSpawn);
 						}
 					}
-				}
-				if (Math.random() < 0.01) {
-					if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-						_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.WINTRY_ICICLE.get(), 30, 0, false, false));
+					entity.getPersistentData().putString("currentmoveactive", "Ice Needle");
 				}
 			}
 		}

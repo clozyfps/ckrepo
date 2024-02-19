@@ -32,7 +32,7 @@ public class CooldownSetProcedure {
 		if (entity == null)
 			return;
 		if (!((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentMove).isEmpty() && entity instanceof LivingEntity _livEnt0
-				&& _livEnt0.hasEffect(CraftKaisenModMobEffects.COOLDOWN.get())) {
+				&& _livEnt0.hasEffect(CraftKaisenModMobEffects.STOP_ATTACKS.get())) {
 			{
 				String _setval = "";
 				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
@@ -41,7 +41,7 @@ public class CooldownSetProcedure {
 				});
 			}
 			if (entity instanceof Player _player && !_player.level.isClientSide())
-				_player.displayClientMessage(Component.literal("On Cooldown.."), true);
+				_player.displayClientMessage(Component.literal("Skill Nullified"), true);
 		}
 	}
 }

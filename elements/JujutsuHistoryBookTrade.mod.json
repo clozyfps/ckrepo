@@ -12,9 +12,9 @@
             "price1": {
               "value": "Items.DIAMOND"
             },
-            "countPrice1": 20,
+            "countPrice1": 1,
             "price2": {
-              "value": "Items.EMERALD"
+              "value": ""
             },
             "countPrice2": 18,
             "offer": {

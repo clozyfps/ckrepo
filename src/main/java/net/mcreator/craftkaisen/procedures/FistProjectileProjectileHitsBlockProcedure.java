@@ -6,6 +6,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
@@ -41,7 +42,9 @@ public class FistProjectileProjectileHitsBlockProcedure {
 								+ (zi * zi) / (double) (horizontalRadiusSphere * horizontalRadiusSphere);
 						if (distanceSq <= 1.0) {
 							if (!((world.getBlockState(BlockPos.containing(x + xi, y + i, z + zi))).getBlock() == Blocks.AIR)) {
-								world.destroyBlock(BlockPos.containing(x + xi, y + i, z + zi), false);
+								if (!(world.getBlockState(BlockPos.containing(x + xi, y + i, z + zi))).is(BlockTags.create(new ResourceLocation("craft_kaisen:domain_blocks")))) {
+									world.destroyBlock(BlockPos.containing(x + xi, y + i, z + zi), false);
+								}
 							}
 						}
 					}
@@ -69,7 +72,9 @@ public class FistProjectileProjectileHitsBlockProcedure {
 								+ (zi * zi) / (double) (horizontalRadiusSphere * horizontalRadiusSphere);
 						if (distanceSq <= 1.0) {
 							if (!((world.getBlockState(BlockPos.containing(x + xi, y + i, z + zi))).getBlock() == Blocks.AIR)) {
-								world.destroyBlock(BlockPos.containing(x + xi, y + i, z + zi), false);
+								if (!(world.getBlockState(BlockPos.containing(x + xi, y + i, z + zi))).is(BlockTags.create(new ResourceLocation("craft_kaisen:domain_blocks")))) {
+									world.destroyBlock(BlockPos.containing(x + xi, y + i, z + zi), false);
+								}
 							}
 						}
 					}

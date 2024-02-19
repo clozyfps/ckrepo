@@ -15,8 +15,11 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.BlockPos;
+
+import net.mcreator.craftkaisen.init.CraftKaisenModParticleTypes;
 
 import java.util.stream.Collectors;
 import java.util.List;
@@ -35,7 +38,9 @@ public class FireArrowStormOnEntityTickUpdateProcedure {
 		if (world instanceof ServerLevel _level)
 			_level.sendParticles(ParticleTypes.FLAME, x, y, z, 250, 10, 10, 10, 0);
 		if (world instanceof ServerLevel _level)
-			_level.sendParticles(ParticleTypes.SMOKE, x, y, z, 150, 10, 10, 10, 0);
+			_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.FIRE_PARTICLE.get()), x, y, z, 100, 9, 10, 9, 0.6);
+		if (world instanceof ServerLevel _level)
+			_level.sendParticles(ParticleTypes.CAMPFIRE_COSY_SMOKE, x, y, z, 15, 10, 10, 10, 0);
 		if (world instanceof ServerLevel _level)
 			_level.sendParticles(ParticleTypes.POOF, x, y, z, 50, 10, 10, 10, 1);
 		{

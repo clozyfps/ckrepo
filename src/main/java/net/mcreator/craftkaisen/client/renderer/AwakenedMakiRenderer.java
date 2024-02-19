@@ -20,9 +20,4 @@ public class AwakenedMakiRenderer extends HumanoidMobRenderer<AwakenedMakiEntity
 	public ResourceLocation getTextureLocation(AwakenedMakiEntity entity) {
 		return new ResourceLocation("craft_kaisen:textures/entities/maki_zenin.png");
 	}
-
-	@Override
-	protected boolean isShaking(AwakenedMakiEntity entity) {
-		return true;
-	}
 }

@@ -17,6 +17,8 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.core.BlockPos;
 
+import net.mcreator.craftkaisen.CraftKaisenMod;
+
 import java.util.stream.Collectors;
 import java.util.List;
 import java.util.Comparator;
@@ -37,7 +39,89 @@ public class KamutokeRightclickedProcedure {
 						entityToSpawn.moveTo(Vec3.atBottomCenterOf(BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ())));;
 						_level.addFreshEntity(entityToSpawn);
 					}
+					if (world instanceof ServerLevel _level) {
+						LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+						entityToSpawn.moveTo(Vec3.atBottomCenterOf(BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ())));;
+						_level.addFreshEntity(entityToSpawn);
+					}
+					if (world instanceof ServerLevel _level) {
+						LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+						entityToSpawn.moveTo(Vec3.atBottomCenterOf(BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ())));;
+						_level.addFreshEntity(entityToSpawn);
+					}
 					entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.LIGHTNING_BOLT), entity), 8);
+					CraftKaisenMod.queueServerWork(10, () -> {
+						if (world instanceof ServerLevel _level) {
+							LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+							entityToSpawn.moveTo(Vec3.atBottomCenterOf(BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ())));;
+							_level.addFreshEntity(entityToSpawn);
+						}
+						if (world instanceof ServerLevel _level) {
+							LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+							entityToSpawn.moveTo(Vec3.atBottomCenterOf(BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ())));;
+							_level.addFreshEntity(entityToSpawn);
+						}
+						if (world instanceof ServerLevel _level) {
+							LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+							entityToSpawn.moveTo(Vec3.atBottomCenterOf(BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ())));;
+							_level.addFreshEntity(entityToSpawn);
+						}
+						entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.LIGHTNING_BOLT), entity), 8);
+						CraftKaisenMod.queueServerWork(10, () -> {
+							if (world instanceof ServerLevel _level) {
+								LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+								entityToSpawn.moveTo(Vec3.atBottomCenterOf(BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ())));;
+								_level.addFreshEntity(entityToSpawn);
+							}
+							if (world instanceof ServerLevel _level) {
+								LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+								entityToSpawn.moveTo(Vec3.atBottomCenterOf(BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ())));;
+								_level.addFreshEntity(entityToSpawn);
+							}
+							if (world instanceof ServerLevel _level) {
+								LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+								entityToSpawn.moveTo(Vec3.atBottomCenterOf(BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ())));;
+								_level.addFreshEntity(entityToSpawn);
+							}
+							entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.LIGHTNING_BOLT), entity), 8);
+							CraftKaisenMod.queueServerWork(10, () -> {
+								if (world instanceof ServerLevel _level) {
+									LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+									entityToSpawn.moveTo(Vec3.atBottomCenterOf(BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ())));;
+									_level.addFreshEntity(entityToSpawn);
+								}
+								if (world instanceof ServerLevel _level) {
+									LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+									entityToSpawn.moveTo(Vec3.atBottomCenterOf(BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ())));;
+									_level.addFreshEntity(entityToSpawn);
+								}
+								if (world instanceof ServerLevel _level) {
+									LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+									entityToSpawn.moveTo(Vec3.atBottomCenterOf(BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ())));;
+									_level.addFreshEntity(entityToSpawn);
+								}
+								entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.LIGHTNING_BOLT), entity), 8);
+								CraftKaisenMod.queueServerWork(10, () -> {
+									if (world instanceof ServerLevel _level) {
+										LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+										entityToSpawn.moveTo(Vec3.atBottomCenterOf(BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ())));;
+										_level.addFreshEntity(entityToSpawn);
+									}
+									if (world instanceof ServerLevel _level) {
+										LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+										entityToSpawn.moveTo(Vec3.atBottomCenterOf(BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ())));;
+										_level.addFreshEntity(entityToSpawn);
+									}
+									if (world instanceof ServerLevel _level) {
+										LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+										entityToSpawn.moveTo(Vec3.atBottomCenterOf(BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ())));;
+										_level.addFreshEntity(entityToSpawn);
+									}
+									entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.LIGHTNING_BOLT), entity), 8);
+								});
+							});
+						});
+					});
 				}
 			}
 		}

@@ -17,6 +17,8 @@ import net.mcreator.craftkaisen.block.ShibuyaGatesBlock;
 import net.mcreator.craftkaisen.block.QuestBoardBlock;
 import net.mcreator.craftkaisen.block.MagmaDomainWallBlock;
 import net.mcreator.craftkaisen.block.MagmaDomainFloorBlock;
+import net.mcreator.craftkaisen.block.IceDomainWallBlock;
+import net.mcreator.craftkaisen.block.IceDomainFloorBlock;
 import net.mcreator.craftkaisen.block.DomainStarBlockBlock;
 import net.mcreator.craftkaisen.block.DomainSmoothBasaltBlock;
 import net.mcreator.craftkaisen.block.DomainPackedIceBlock;
@@ -64,4 +66,6 @@ public class CraftKaisenModBlocks {
 	public static final RegistryObject<Block> DOMAIN_LAVA = REGISTRY.register("domain_lava", () -> new DomainLavaBlock());
 	public static final RegistryObject<Block> DOMAIN_ICE_STALAGMITE = REGISTRY.register("domain_ice_stalagmite", () -> new DomainIceStalagmiteBlock());
 	public static final RegistryObject<Block> DOMAIN_ICE_STALAGMITE_TALL = REGISTRY.register("domain_ice_stalagmite_tall", () -> new DomainIceStalagmiteTallBlock());
+	public static final RegistryObject<Block> ICE_DOMAIN_FLOOR = REGISTRY.register("ice_domain_floor", () -> new IceDomainFloorBlock());
+	public static final RegistryObject<Block> ICE_DOMAIN_WALL = REGISTRY.register("ice_domain_wall", () -> new IceDomainWallBlock());
 }

@@ -1,0 +1,12 @@
+{
+  "_fv": 57,
+  "_type": "gamerule",
+  "definition": {
+    "type": "Logic",
+    "displayName": "Overpowered Blessed By The Sparks",
+    "description": "Makes Blessed By The Sparks Special extremely common and overpowered",
+    "category": "PLAYER",
+    "defaultValueLogic": false,
+    "defaultValueNumber": 0
+  }
+}

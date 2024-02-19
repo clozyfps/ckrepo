@@ -1,0 +1,30 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"nolimbs": {
+			"loop": true,
+			"bones": {
+				"right_arm": {
+					"scale": {
+						"vector": [1, 0, 1]
+					}
+				},
+				"left_arm": {
+					"position": {
+						"vector": [-4, 0, 0]
+					}
+				},
+				"right_leg": {
+					"rotation": {
+						"vector": [0, 0, 180]
+					}
+				},
+				"left_leg": {
+					"position": {
+						"vector": [0, -2551, 0]
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,23 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"leftarmdetach": {
+			"animation_length": 0.08333,
+			"bones": {
+				"left_arm": {
+					"position": {
+						"0.0": {
+							"vector": [0, -3, 0]
+						},
+						"0.0417": {
+							"vector": [0, -22, 0]
+						},
+						"0.0833": {
+							"vector": [0, -2624, 0]
+						}
+					}
+				}
+			}
+		}
+	}
+}

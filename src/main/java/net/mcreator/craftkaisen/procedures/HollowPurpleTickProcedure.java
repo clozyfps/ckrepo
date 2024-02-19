@@ -5,9 +5,6 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.living.LivingEvent;
 
-import net.minecraft.world.level.block.state.properties.Property;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.projectile.Projectile;
@@ -15,7 +12,6 @@ import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.particles.SimpleParticleType;
-import net.minecraft.core.BlockPos;
 
 import net.mcreator.craftkaisen.init.CraftKaisenModParticleTypes;
 import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
@@ -23,8 +19,6 @@ import net.mcreator.craftkaisen.entity.SatoruGojoEntity;
 import net.mcreator.craftkaisen.entity.HollowPurpleProjectileProjectileEntity;
 
 import javax.annotation.Nullable;
-
-import java.util.Map;
 
 @Mod.EventBusSubscriber
 public class HollowPurpleTickProcedure {
@@ -52,7 +46,7 @@ public class HollowPurpleTickProcedure {
 					}
 					{
 						// Get the radius of the sphere
-						double radius = 1; // 3 blocks
+						double radius = 0.5; // 3 blocks
 						// Set the tolerance for how close to the surface a point must be to create a particle
 						double tolerance = 0.15; // 0.1 blocks
 						for (double xx = -radius; xx <= radius; xx += 0.1) {
@@ -76,7 +70,7 @@ public class HollowPurpleTickProcedure {
 					}
 					{
 						// Get the radius of the sphere
-						double radius = 1; // 3 blocks
+						double radius = 0.5; // 3 blocks
 						// Set the tolerance for how close to the surface a point must be to create a particle
 						double tolerance = 0.15; // 0.1 blocks
 						for (double xx = -radius; xx <= radius; xx += 0.1) {
@@ -101,66 +95,6 @@ public class HollowPurpleTickProcedure {
 					entity.getPersistentData().putDouble("hollowDistance", (entity.getPersistentData().getDouble("hollowDistance") - 0.12857143));
 				}
 				if (entity.getPersistentData().getDouble("hollowPurple") == 1) {
-					if (Math.sin(Math.toRadians(entity.getXRot())) < 0) {
-						int horizontalRadiusHemiTop = (int) 10 - 1;
-						int verticalRadiusHemiTop = (int) 10;
-						int yIterationsHemiTop = verticalRadiusHemiTop;
-						for (int i = 0; i < yIterationsHemiTop; i++) {
-							if (i == verticalRadiusHemiTop) {
-								continue;
-							}
-							for (int xi = -horizontalRadiusHemiTop; xi <= horizontalRadiusHemiTop; xi++) {
-								for (int zi = -horizontalRadiusHemiTop; zi <= horizontalRadiusHemiTop; zi++) {
-									double distanceSq = (xi * xi) / (double) (horizontalRadiusHemiTop * horizontalRadiusHemiTop) + (i * i) / (double) (verticalRadiusHemiTop * verticalRadiusHemiTop)
-											+ (zi * zi) / (double) (horizontalRadiusHemiTop * horizontalRadiusHemiTop);
-									if (distanceSq <= 1.0) {
-										{
-											BlockPos _bp = BlockPos.containing(x + xi, y + i, z + zi);
-											BlockState _bs = Blocks.AIR.defaultBlockState();
-											BlockState _bso = world.getBlockState(_bp);
-											for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-												Property _property = _bs.getBlock().getStateDefinition().getProperty(entry.getKey().getName());
-												if (_property != null && _bs.getValue(_property) != null)
-													try {
-														_bs = _bs.setValue(_property, (Comparable) entry.getValue());
-													} catch (Exception e) {
-													}
-											}
-											world.setBlock(_bp, _bs, 3);
-										}
-									}
-								}
-							}
-						}
-					} else {
-						int horizontalRadiusSphere = (int) 10 - 1;
-						int verticalRadiusSphere = (int) 10 - 1;
-						int yIterationsSphere = verticalRadiusSphere;
-						for (int i = -yIterationsSphere; i <= yIterationsSphere; i++) {
-							for (int xi = -horizontalRadiusSphere; xi <= horizontalRadiusSphere; xi++) {
-								for (int zi = -horizontalRadiusSphere; zi <= horizontalRadiusSphere; zi++) {
-									double distanceSq = (xi * xi) / (double) (horizontalRadiusSphere * horizontalRadiusSphere) + (i * i) / (double) (verticalRadiusSphere * verticalRadiusSphere)
-											+ (zi * zi) / (double) (horizontalRadiusSphere * horizontalRadiusSphere);
-									if (distanceSq <= 1.0) {
-										{
-											BlockPos _bp = BlockPos.containing(x + xi, y + i, z + zi);
-											BlockState _bs = Blocks.AIR.defaultBlockState();
-											BlockState _bso = world.getBlockState(_bp);
-											for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-												Property _property = _bs.getBlock().getStateDefinition().getProperty(entry.getKey().getName());
-												if (_property != null && _bs.getValue(_property) != null)
-													try {
-														_bs = _bs.setValue(_property, (Comparable) entry.getValue());
-													} catch (Exception e) {
-													}
-											}
-											world.setBlock(_bp, _bs, 3);
-										}
-									}
-								}
-							}
-						}
-					}
 					entity.getPersistentData().putDouble("purpleDistance", 0);
 					entity.getPersistentData().putDouble("hollowPurple", 0);
 					{

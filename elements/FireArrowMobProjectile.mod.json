@@ -15,6 +15,9 @@
     "knockback": 2,
     "entityModel": "Default",
     "customModelTexture": "",
+    "onHitsBlock": {
+      "name": "FireArrowMobProjectileProjectileHitsBlock2"
+    },
     "onHitsEntity": {
       "name": "FireArrowMobProjectileProjectileHitsLivingEntity"
     },

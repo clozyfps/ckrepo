@@ -21,7 +21,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
-import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
 import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
 import net.mcreator.craftkaisen.entity.ChimeraShadowGardenMobEntity;
 import net.mcreator.craftkaisen.CraftKaisenMod;
@@ -41,6 +40,7 @@ public class ChimeraShadowGardenProcedure {
 						capability.syncPlayerVariables(entity);
 					});
 				}
+				entity.getPersistentData().putString("domaintype", "Chimera Shadow Garden");
 				CraftKaisenMod.queueServerWork(1, () -> {
 					entity.getPersistentData().putBoolean("domain", true);
 				});
@@ -74,6 +74,11 @@ public class ChimeraShadowGardenProcedure {
 								}
 							}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof TamableAnimal _toTame && entity instanceof Player _owner)
 								_toTame.tame(_owner);
+							((Entity) world.getEntitiesOfClass(ChimeraShadowGardenMobEntity.class, AABB.ofSize(new Vec3(x, y, z), 20, 20, 20), e -> true).stream().sorted(new Object() {
+								Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+									return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
+								}
+							}.compareDistOf(x, y, z)).findFirst().orElse(null)).getPersistentData().putString("ownerdomain", (entity.getDisplayName().getString()));
 						}
 					});
 				});
@@ -104,10 +109,9 @@ public class ChimeraShadowGardenProcedure {
 						}
 					}
 				}
-				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.COOLDOWN.get(), 2500, 0, false, false));
 				if (entity instanceof Player _player && !_player.level.isClientSide())
 					_player.displayClientMessage(Component.literal("Burnout"), true);
+				entity.getPersistentData().putDouble(("cooldown" + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("coolset"))), 1900);
 			});
 		}
 	}

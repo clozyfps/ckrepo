@@ -19,6 +19,7 @@ import net.minecraft.world.level.saveddata.SavedData;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerPlayer;
@@ -156,6 +157,14 @@ public class CraftKaisenModVariables {
 			clone.FlowCooldownActive = original.FlowCooldownActive;
 			clone.PrestigeLevel = original.PrestigeLevel;
 			clone.Souls = original.Souls;
+			clone.Slot2 = original.Slot2;
+			clone.Slot3 = original.Slot3;
+			clone.Slot4 = original.Slot4;
+			clone.Slot5 = original.Slot5;
+			clone.Slot0 = original.Slot0;
+			clone.Slot1 = original.Slot1;
+			clone.Slot6 = original.Slot6;
+			clone.Slot7 = original.Slot7;
 			if (!event.isWasDeath()) {
 				clone.currentMove = original.currentMove;
 				clone.currentOutput = original.currentOutput;
@@ -176,6 +185,14 @@ public class CraftKaisenModVariables {
 				clone.MoveCombo = original.MoveCombo;
 				clone.PerkDescription = original.PerkDescription;
 				clone.PerkPage = original.PerkPage;
+				clone.leftArmDamage = original.leftArmDamage;
+				clone.rightArmDamage = original.rightArmDamage;
+				clone.rightLegDamage = original.rightLegDamage;
+				clone.RightLegGone = original.RightLegGone;
+				clone.RightArmGone = original.RightArmGone;
+				clone.LeftLegGone = original.LeftLegGone;
+				clone.leftLegDamage = original.leftLegDamage;
+				clone.LeftArmGone = original.LeftArmGone;
 			}
 		}
 
@@ -474,6 +491,22 @@ public class CraftKaisenModVariables {
 		public boolean FlowCooldownActive = false;
 		public double PrestigeLevel = 0;
 		public double Souls = 0;
+		public double leftArmDamage = 0;
+		public double rightArmDamage = 0;
+		public double rightLegDamage = 0;
+		public boolean RightLegGone = false;
+		public boolean RightArmGone = false;
+		public boolean LeftLegGone = false;
+		public ItemStack Slot2 = ItemStack.EMPTY;
+		public ItemStack Slot3 = ItemStack.EMPTY;
+		public ItemStack Slot4 = ItemStack.EMPTY;
+		public ItemStack Slot5 = ItemStack.EMPTY;
+		public ItemStack Slot0 = ItemStack.EMPTY;
+		public double leftLegDamage = 0;
+		public ItemStack Slot1 = ItemStack.EMPTY;
+		public ItemStack Slot6 = ItemStack.EMPTY;
+		public ItemStack Slot7 = ItemStack.EMPTY;
+		public boolean LeftArmGone = false;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -585,6 +618,22 @@ public class CraftKaisenModVariables {
 			nbt.putBoolean("FlowCooldownActive", FlowCooldownActive);
 			nbt.putDouble("PrestigeLevel", PrestigeLevel);
 			nbt.putDouble("Souls", Souls);
+			nbt.putDouble("leftArmDamage", leftArmDamage);
+			nbt.putDouble("rightArmDamage", rightArmDamage);
+			nbt.putDouble("rightLegDamage", rightLegDamage);
+			nbt.putBoolean("RightLegGone", RightLegGone);
+			nbt.putBoolean("RightArmGone", RightArmGone);
+			nbt.putBoolean("LeftLegGone", LeftLegGone);
+			nbt.put("Slot2", Slot2.save(new CompoundTag()));
+			nbt.put("Slot3", Slot3.save(new CompoundTag()));
+			nbt.put("Slot4", Slot4.save(new CompoundTag()));
+			nbt.put("Slot5", Slot5.save(new CompoundTag()));
+			nbt.put("Slot0", Slot0.save(new CompoundTag()));
+			nbt.putDouble("leftLegDamage", leftLegDamage);
+			nbt.put("Slot1", Slot1.save(new CompoundTag()));
+			nbt.put("Slot6", Slot6.save(new CompoundTag()));
+			nbt.put("Slot7", Slot7.save(new CompoundTag()));
+			nbt.putBoolean("LeftArmGone", LeftArmGone);
 			return nbt;
 		}
 
@@ -693,6 +742,22 @@ public class CraftKaisenModVariables {
 			FlowCooldownActive = nbt.getBoolean("FlowCooldownActive");
 			PrestigeLevel = nbt.getDouble("PrestigeLevel");
 			Souls = nbt.getDouble("Souls");
+			leftArmDamage = nbt.getDouble("leftArmDamage");
+			rightArmDamage = nbt.getDouble("rightArmDamage");
+			rightLegDamage = nbt.getDouble("rightLegDamage");
+			RightLegGone = nbt.getBoolean("RightLegGone");
+			RightArmGone = nbt.getBoolean("RightArmGone");
+			LeftLegGone = nbt.getBoolean("LeftLegGone");
+			Slot2 = ItemStack.of(nbt.getCompound("Slot2"));
+			Slot3 = ItemStack.of(nbt.getCompound("Slot3"));
+			Slot4 = ItemStack.of(nbt.getCompound("Slot4"));
+			Slot5 = ItemStack.of(nbt.getCompound("Slot5"));
+			Slot0 = ItemStack.of(nbt.getCompound("Slot0"));
+			leftLegDamage = nbt.getDouble("leftLegDamage");
+			Slot1 = ItemStack.of(nbt.getCompound("Slot1"));
+			Slot6 = ItemStack.of(nbt.getCompound("Slot6"));
+			Slot7 = ItemStack.of(nbt.getCompound("Slot7"));
+			LeftArmGone = nbt.getBoolean("LeftArmGone");
 		}
 	}
 
@@ -820,6 +885,22 @@ public class CraftKaisenModVariables {
 					variables.FlowCooldownActive = message.data.FlowCooldownActive;
 					variables.PrestigeLevel = message.data.PrestigeLevel;
 					variables.Souls = message.data.Souls;
+					variables.leftArmDamage = message.data.leftArmDamage;
+					variables.rightArmDamage = message.data.rightArmDamage;
+					variables.rightLegDamage = message.data.rightLegDamage;
+					variables.RightLegGone = message.data.RightLegGone;
+					variables.RightArmGone = message.data.RightArmGone;
+					variables.LeftLegGone = message.data.LeftLegGone;
+					variables.Slot2 = message.data.Slot2;
+					variables.Slot3 = message.data.Slot3;
+					variables.Slot4 = message.data.Slot4;
+					variables.Slot5 = message.data.Slot5;
+					variables.Slot0 = message.data.Slot0;
+					variables.leftLegDamage = message.data.leftLegDamage;
+					variables.Slot1 = message.data.Slot1;
+					variables.Slot6 = message.data.Slot6;
+					variables.Slot7 = message.data.Slot7;
+					variables.LeftArmGone = message.data.LeftArmGone;
 				}
 			});
 			context.setPacketHandled(true);

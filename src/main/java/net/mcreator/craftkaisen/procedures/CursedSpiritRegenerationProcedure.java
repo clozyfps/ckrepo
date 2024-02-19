@@ -30,9 +30,9 @@ public class CursedSpiritRegenerationProcedure {
 		if (entity == null)
 			return;
 		if (entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("craft_kaisen:cursed_spirits")))) {
-			if (Math.random() < 0.008) {
+			if (Math.random() < 0.004) {
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 30, 5, false, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 30, 4, false, true));
 			}
 		}
 	}

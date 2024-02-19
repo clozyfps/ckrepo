@@ -37,6 +37,7 @@ public class CoffinOfTheIronMountainProcedureProcedure {
 		String block = "";
 		boolean gate = false;
 		if (!entity.getPersistentData().getBoolean("domain")) {
+			entity.getPersistentData().putString("domaintype", "Coffin Of The Iron Mountain");
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 				_entity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 20, 1, false, false));
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
@@ -119,8 +120,10 @@ public class CoffinOfTheIronMountainProcedureProcedure {
 						.collect(Collectors.toList());
 				for (Entity entityiterator : _entfound) {
 					if (!(entityiterator == entity) && !(entityiterator instanceof TamableAnimal _tamIsTamedBy && entity instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false)) {
-						if (entityiterator instanceof LivingEntity _entity && !_entity.level.isClientSide())
-							_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.COT_MEFFECT.get(), 150, 0, false, false));
+						if (!(entityiterator instanceof LivingEntity _livEnt86 && _livEnt86.hasEffect(CraftKaisenModMobEffects.SIMPLE_DOMAIN.get()))) {
+							if (entityiterator instanceof LivingEntity _entity && !_entity.level.isClientSide())
+								_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.COT_MEFFECT.get(), 150, 0, false, false));
+						}
 					}
 				}
 			}

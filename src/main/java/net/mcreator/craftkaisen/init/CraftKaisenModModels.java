@@ -73,6 +73,7 @@ import net.mcreator.craftkaisen.client.model.ModelRoppongiCurse;
 import net.mcreator.craftkaisen.client.model.ModelRika;
 import net.mcreator.craftkaisen.client.model.ModelMouthSpirit;
 import net.mcreator.craftkaisen.client.model.ModelMergedBeastAgito;
+import net.mcreator.craftkaisen.client.model.ModelMegunaArmor;
 import net.mcreator.craftkaisen.client.model.ModelMeguna;
 import net.mcreator.craftkaisen.client.model.ModelMegumiFushiguro;
 import net.mcreator.craftkaisen.client.model.ModelMahoragaWheel;
@@ -159,6 +160,7 @@ public class CraftKaisenModModels {
 		event.registerLayerDefinition(Modeltstoad.LAYER_LOCATION, Modeltstoad::createBodyLayer);
 		event.registerLayerDefinition(Modelroppongicursedspirit.LAYER_LOCATION, Modelroppongicursedspirit::createBodyLayer);
 		event.registerLayerDefinition(Modelbodyrepelpincer.LAYER_LOCATION, Modelbodyrepelpincer::createBodyLayer);
+		event.registerLayerDefinition(ModelMegunaArmor.LAYER_LOCATION, ModelMegunaArmor::createBodyLayer);
 		event.registerLayerDefinition(Modelchimerafrog.LAYER_LOCATION, Modelchimerafrog::createBodyLayer);
 		event.registerLayerDefinition(Modelcabin.LAYER_LOCATION, Modelcabin::createBodyLayer);
 		event.registerLayerDefinition(ModelMegumiFushiguro.LAYER_LOCATION, ModelMegumiFushiguro::createBodyLayer);

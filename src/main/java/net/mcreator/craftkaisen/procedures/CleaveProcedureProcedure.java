@@ -30,10 +30,12 @@ public class CleaveProcedureProcedure {
 			for (Entity entityiterator : _entfound) {
 				if (!(entity == entityiterator)) {
 					if (!((entityiterator.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).special).equals("Physically Gifted")) {
-						entity.getPersistentData().putDouble("cleaveTime", (10 + (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 3));
-						entityiterator.getPersistentData().putString("cleaveSource", (entity.getDisplayName().getString()));
-						if (entityiterator instanceof LivingEntity _entity && !_entity.level.isClientSide())
-							_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 20, 2, false, false));
+						if ((entityiterator.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).maxCursedEnergy > 0) {
+							entity.getPersistentData().putDouble("cleaveTime", (10 + (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 3));
+							entityiterator.getPersistentData().putString("cleaveSource", (entity.getDisplayName().getString()));
+							if (entityiterator instanceof LivingEntity _entity && !_entity.level.isClientSide())
+								_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 20, 2, false, false));
+						}
 					}
 				}
 			}

@@ -38,6 +38,7 @@ public class UnlimitedVoidProcedureProcedure {
 		BlockState blockrevert = Blocks.AIR.defaultBlockState();
 		String block = "";
 		if (!entity.getPersistentData().getBoolean("domain")) {
+			entity.getPersistentData().putString("domaintype", "Unlimited Void");
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 				_entity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 120, 1, false, false));
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
@@ -73,6 +74,7 @@ public class UnlimitedVoidProcedureProcedure {
 					if (entityiterator instanceof UnlimitedVoidMobEntity && !(entityiterator instanceof TamableAnimal _tamEnt ? _tamEnt.isTame() : false)) {
 						if (entityiterator instanceof TamableAnimal _toTame && entity instanceof Player _owner)
 							_toTame.tame(_owner);
+						entityiterator.getPersistentData().putString("ownerdomain", (entity.getDisplayName().getString()));
 					}
 					if (entityiterator instanceof UnlimitedVoidAccelerateEntity) {
 						{
@@ -88,6 +90,10 @@ public class UnlimitedVoidProcedureProcedure {
 								_entity.yHeadRotO = _entity.getYRot();
 							}
 						}
+					}
+					if (!(entityiterator instanceof UnlimitedVoidMobEntity)) {
+						if (entityiterator instanceof LivingEntity _entity && !_entity.level.isClientSide())
+							_entity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 120, 1, false, false));
 					}
 				}
 			}
@@ -116,15 +122,15 @@ public class UnlimitedVoidProcedureProcedure {
 							}
 							if (Math.round(Math.sqrt(Math.pow(x + xi - x, 2) + Math.pow(y + i - y, 2) + Math.pow(z + zi - z, 2))) >= 18) {
 								world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_BLOCK.get().defaultBlockState(), 3);
-							}
-							if (!world.isClientSide()) {
-								BlockPos _bp = BlockPos.containing(x + xi, y + i, z + zi);
-								BlockEntity _blockEntity = world.getBlockEntity(_bp);
-								BlockState _bs = world.getBlockState(_bp);
-								if (_blockEntity != null)
-									_blockEntity.getPersistentData().putString("old_block", block);
-								if (world instanceof Level _level)
-									_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+								if (!world.isClientSide()) {
+									BlockPos _bp = BlockPos.containing(x + xi, y + i, z + zi);
+									BlockEntity _blockEntity = world.getBlockEntity(_bp);
+									BlockState _bs = world.getBlockState(_bp);
+									if (_blockEntity != null)
+										_blockEntity.getPersistentData().putString("old_block", block);
+									if (world instanceof Level _level)
+										_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+								}
 							}
 						}
 					}
@@ -157,7 +163,8 @@ public class UnlimitedVoidProcedureProcedure {
 				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(10 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
 						.collect(Collectors.toList());
 				for (Entity entityiterator : _entfound) {
-					if (entityiterator instanceof UnlimitedVoidMobEntity && (entityiterator instanceof TamableAnimal _tamIsTamedBy && entity instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false)) {
+					if (entityiterator instanceof UnlimitedVoidMobEntity && ((entityiterator instanceof TamableAnimal _tamIsTamedBy && entity instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false)
+							|| (entityiterator.getPersistentData().getString("ownerdomain")).equals(entity.getDisplayName().getString()))) {
 						if (!entityiterator.level.isClientSide())
 							entityiterator.discard();
 					}
