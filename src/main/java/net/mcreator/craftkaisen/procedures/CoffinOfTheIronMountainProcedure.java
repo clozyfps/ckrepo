@@ -41,6 +41,7 @@ public class CoffinOfTheIronMountainProcedure {
 			return;
 		String block = "";
 		boolean gate = false;
+		BlockState blockrevert = Blocks.AIR.defaultBlockState();
 		if (!entity.getPersistentData().getBoolean("domain")) {
 			gate = false;
 			entity.getPersistentData().putBoolean("domain", true);
