@@ -1,8 +1,34 @@
 package net.mcreator.craftkaisen.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.Vec2;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.TamableAnimal;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.util.RandomSource;
+import net.minecraft.util.Mth;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.network.chat.Component;
+import net.minecraft.core.particles.SimpleParticleType;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.BlockPos;
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.commands.CommandSource;
 
-import javax.annotation.Nullable;
+import net.mcreator.craftkaisen.init.CraftKaisenModParticleTypes;
+import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
+import net.mcreator.craftkaisen.init.CraftKaisenModBlocks;
+import net.mcreator.craftkaisen.entity.UnlimitedVoidAccelerateEntity;
+
+import java.util.stream.Collectors;
+import java.util.List;
+import java.util.Comparator;
 
 public class UnlimitedVoidMobOnEntityTickUpdateProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
@@ -16,7 +42,7 @@ public class UnlimitedVoidMobOnEntityTickUpdateProcedure {
 		if (entity.getPersistentData().getDouble("spawnhole") == 0) {
 			if (world instanceof ServerLevel _level)
 				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-						"particle craft_kaisen:unlimited_blackhole ^ ^1.5 ^ 0.01 0.01 0.01 0.01 1 force @a");
+						"particle craft_kaisen:unlimitedblackhole ^ ^1.5 ^ 0.01 0.01 0.01 0.01 1 force @a");
 			entity.getPersistentData().putDouble("spawnhole", 100);
 		}
 		if (entity.getPersistentData().getDouble("spawnparticles") > 0) {
@@ -27,6 +53,12 @@ public class UnlimitedVoidMobOnEntityTickUpdateProcedure {
 			if (world instanceof ServerLevel _level)
 				_level.sendParticles(ParticleTypes.ELECTRIC_SPARK, x, y, z, 10, 8, 5, 8, 0);
 		}
+		if (world instanceof ServerLevel _level)
+			_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.UNLIMITED_VOID_SPLASH_1.get()), x, y, z, 1, 6, 5, 6, 0);
+		if (world instanceof ServerLevel _level)
+			_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.UNLIMITED_VOID_SPLASH_2.get()), x, y, z, 1, 6, 5, 6, 0);
+		if (world instanceof ServerLevel _level)
+			_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.UNLIMITED_VOID_SPLASH_3.get()), x, y, z, 1, 6, 5, 6, 0);
 		{
 			final Vec3 _center = new Vec3(x, y, z);
 			List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(15 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).collect(Collectors.toList());
@@ -36,8 +68,8 @@ public class UnlimitedVoidMobOnEntityTickUpdateProcedure {
 						if (!(entity.getPersistentData().getString("ownerdomain")).equals(entityiterator.getDisplayName().getString())) {
 							if (!(entityiterator instanceof ItemEntity)) {
 								if (!(entityiterator instanceof UnlimitedVoidAccelerateEntity)) {
-									if (!(entityiterator instanceof LivingEntity _livEnt19 && _livEnt19.hasEffect(CraftKaisenModMobEffects.SIMPLE_DOMAIN.get()))
-											|| !(entityiterator instanceof LivingEntity _livEnt20 && _livEnt20.hasEffect(CraftKaisenModMobEffects.DOMAIN_AMPLIFICATION.get()))) {
+									if (!(entityiterator instanceof LivingEntity _livEnt22 && _livEnt22.hasEffect(CraftKaisenModMobEffects.SIMPLE_DOMAIN.get()))
+											|| !(entityiterator instanceof LivingEntity _livEnt23 && _livEnt23.hasEffect(CraftKaisenModMobEffects.DOMAIN_AMPLIFICATION.get()))) {
 										if ((world.getBlockState(BlockPos.containing(entityiterator.getX(), entityiterator.getY() - 1, entityiterator.getZ()))).getBlock() == CraftKaisenModBlocks.DOMAIN_BLOCK.get()) {
 											entityiterator.setDeltaMovement(new Vec3(0, 0, 0));
 											if (world instanceof ServerLevel _level)
@@ -54,7 +86,7 @@ public class UnlimitedVoidMobOnEntityTickUpdateProcedure {
 											if (entityiterator instanceof LivingEntity _entity && !_entity.level.isClientSide())
 												_entity.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 25, 250, false, false));
 										}
-									} else if (entityiterator instanceof LivingEntity _livEnt40 && _livEnt40.hasEffect(CraftKaisenModMobEffects.SIMPLE_DOMAIN.get())) {
+									} else if (entityiterator instanceof LivingEntity _livEnt43 && _livEnt43.hasEffect(CraftKaisenModMobEffects.SIMPLE_DOMAIN.get())) {
 										entityiterator.getPersistentData().putDouble("simpledomainlevel", (entityiterator.getPersistentData().getDouble("simpledomainlevel") - 0.1));
 									}
 								}

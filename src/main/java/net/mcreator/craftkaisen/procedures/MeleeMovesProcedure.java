@@ -275,6 +275,16 @@ public class MeleeMovesProcedure {
 				});
 			}
 			entity.getPersistentData().putDouble(("cooldown" + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("coolset"))), 220);
+		} else if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentMove).equals("Throw")) {
+			ThrowProcedureProcedure.execute(world, x, y, z, entity);
+			entity.getPersistentData().putDouble(("cooldown" + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("coolset"))), 100);
+			{
+				String _setval = "";
+				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.currentMove = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
 		}
 	}
 }

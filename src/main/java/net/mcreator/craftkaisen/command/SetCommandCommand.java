@@ -63,6 +63,8 @@ import net.mcreator.craftkaisen.procedures.SetBasicProcedure;
 import net.mcreator.craftkaisen.procedures.SetAuspiciousBeastsSummonProcedure;
 import net.mcreator.craftkaisen.procedures.SetAdaptionProcedure;
 import net.mcreator.craftkaisen.procedures.ResetButtonProcedure;
+import net.mcreator.craftkaisen.procedures.RctsetProcedure;
+import net.mcreator.craftkaisen.procedures.RctMasterySetProcedure;
 
 import com.mojang.brigadier.arguments.DoubleArgumentType;
 
@@ -393,7 +395,21 @@ public class SetCommandCommand {
 
 					SetCurseProcedure.execute(entity);
 					return 0;
-				})))).then(Commands.literal("Stat").then(Commands.argument("name", EntityArgument.player()).then(Commands.literal("CursedEnergy").then(Commands.argument("cursedEnergy", DoubleArgumentType.doubleArg()).executes(arguments -> {
+				})))).then(Commands.literal("Mastery").then(Commands.argument("name", EntityArgument.player()).then(Commands.literal("RCT").then(Commands.argument("number", DoubleArgumentType.doubleArg()).executes(arguments -> {
+					Level world = arguments.getSource().getUnsidedLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null && world instanceof ServerLevel _servLevel)
+						entity = FakePlayerFactory.getMinecraft(_servLevel);
+					Direction direction = Direction.DOWN;
+					if (entity != null)
+						direction = entity.getDirection();
+
+					RctMasterySetProcedure.execute(arguments, entity);
+					return 0;
+				}))))).then(Commands.literal("Stat").then(Commands.argument("name", EntityArgument.player()).then(Commands.literal("CursedEnergy").then(Commands.argument("cursedEnergy", DoubleArgumentType.doubleArg()).executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
@@ -588,6 +604,20 @@ public class SetCommandCommand {
 						direction = entity.getDirection();
 
 					SetBlessedByTheSparksProcedure.execute(arguments);
+					return 0;
+				})).then(Commands.literal("RCT").executes(arguments -> {
+					Level world = arguments.getSource().getUnsidedLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null && world instanceof ServerLevel _servLevel)
+						entity = FakePlayerFactory.getMinecraft(_servLevel);
+					Direction direction = Direction.DOWN;
+					if (entity != null)
+						direction = entity.getDirection();
+
+					RctsetProcedure.execute(arguments, entity);
 					return 0;
 				})))).then(Commands.literal("Affiliation").then(Commands.argument("name", EntityArgument.player()).then(Commands.literal("Sorcerer").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();

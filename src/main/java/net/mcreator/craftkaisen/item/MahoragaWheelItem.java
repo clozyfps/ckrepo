@@ -98,7 +98,7 @@ public abstract class MahoragaWheelItem extends ArmorItem {
 		@Override
 		public void appendHoverText(ItemStack itemstack, Level world, List<Component> list, TooltipFlag flag) {
 			super.appendHoverText(itemstack, world, list, flag);
-			list.add(Component.literal("Perk - Regenerates You After Being Attacked (5% Chance)"));
+			list.add(Component.literal("Perk - Gives you adaption ability"));
 		}
 
 		@Override

@@ -116,6 +116,8 @@ public class CraftKaisenModTabs {
 					tabData.accept(CraftKaisenModItems.GOJO_OUTFIT_LEGGINGS.get());
 					tabData.accept(CraftKaisenModItems.NAOBITO_OUTFIT_CHESTPLATE.get());
 					tabData.accept(CraftKaisenModItems.NAOBITO_OUTFIT_LEGGINGS.get());
+					tabData.accept(CraftKaisenModItems.MEGUNA_OUTFIT_CHESTPLATE.get());
+					tabData.accept(CraftKaisenModItems.MEGUNA_OUTFIT_LEGGINGS.get());
 				}).withSearchBar());
 		event.registerCreativeModeTab(new ResourceLocation("craft_kaisen", "ck_curses"),
 				builder -> builder.title(Component.translatable("item_group.craft_kaisen.ck_curses")).icon(() -> new ItemStack(CraftKaisenModItems.HEIAN_ERA_SUKUNA_SPAWN_EGG.get())).displayItems((parameters, tabData) -> {

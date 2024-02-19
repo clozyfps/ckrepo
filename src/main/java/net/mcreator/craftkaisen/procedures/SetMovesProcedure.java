@@ -76,7 +76,7 @@ public class SetMovesProcedure {
 				}
 			}
 			if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Sukuna Vessel")) {
-				entity.getPersistentData().putDouble("maxMoves", 5);
+				entity.getPersistentData().putDouble("maxMoves", 4);
 				if (entity.getPersistentData().getDouble("moveNumber") == 1) {
 					entity.getPersistentData().putString("moveDisplay", "Dismantle");
 					entity.getPersistentData().putDouble("moveCost", 7);
@@ -84,12 +84,9 @@ public class SetMovesProcedure {
 					entity.getPersistentData().putString("moveDisplay", "Cleave");
 					entity.getPersistentData().putDouble("moveCost", 10);
 				} else if (entity.getPersistentData().getDouble("moveNumber") == 3) {
-					entity.getPersistentData().putString("moveDisplay", "Constant Distmantle");
-					entity.getPersistentData().putDouble("moveCost", 15);
-				} else if (entity.getPersistentData().getDouble("moveNumber") == 4) {
 					entity.getPersistentData().putString("moveDisplay", "Fire Arrow");
 					entity.getPersistentData().putDouble("moveCost", 18);
-				} else if (entity.getPersistentData().getDouble("moveNumber") == 5) {
+				} else if (entity.getPersistentData().getDouble("moveNumber") == 4) {
 					entity.getPersistentData().putString("moveDisplay", "Malevolent Shrine");
 					entity.getPersistentData().putDouble("moveCost", 40);
 				}

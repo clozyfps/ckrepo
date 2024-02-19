@@ -122,15 +122,15 @@ public class UnlimitedVoidProcedureProcedure {
 							}
 							if (Math.round(Math.sqrt(Math.pow(x + xi - x, 2) + Math.pow(y + i - y, 2) + Math.pow(z + zi - z, 2))) >= 18) {
 								world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_BLOCK.get().defaultBlockState(), 3);
-							}
-							if (!world.isClientSide()) {
-								BlockPos _bp = BlockPos.containing(x + xi, y + i, z + zi);
-								BlockEntity _blockEntity = world.getBlockEntity(_bp);
-								BlockState _bs = world.getBlockState(_bp);
-								if (_blockEntity != null)
-									_blockEntity.getPersistentData().putString("old_block", block);
-								if (world instanceof Level _level)
-									_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+								if (!world.isClientSide()) {
+									BlockPos _bp = BlockPos.containing(x + xi, y + i, z + zi);
+									BlockEntity _blockEntity = world.getBlockEntity(_bp);
+									BlockState _bs = world.getBlockState(_bp);
+									if (_blockEntity != null)
+										_blockEntity.getPersistentData().putString("old_block", block);
+									if (world instanceof Level _level)
+										_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+								}
 							}
 						}
 					}

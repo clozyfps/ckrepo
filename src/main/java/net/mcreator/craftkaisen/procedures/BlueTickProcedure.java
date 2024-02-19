@@ -29,7 +29,6 @@ public class BlueTickProcedure {
 							+ (zi * zi) / (double) (horizontalRadiusSphere * horizontalRadiusSphere);
 					if (distanceSq <= 1.0) {
 						if (world.getBlockState(BlockPos.containing(x + xi, y + i, z + zi)).canOcclude()) {
-							world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), Blocks.AIR.defaultBlockState(), 3);
 							if (world instanceof ServerLevel _level)
 								FallingBlockEntity.fall(_level, BlockPos.containing(x + xi, y + i, z + zi), (world.getBlockState(BlockPos.containing(x + xi, y + i, z + zi))));
 							{
@@ -55,8 +54,9 @@ public class BlueTickProcedure {
 									}
 								}
 							}
-							world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), Blocks.AIR.defaultBlockState(), 3);
 						}
+						world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), Blocks.AIR.defaultBlockState(), 3);
+						world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), Blocks.AIR.defaultBlockState(), 3);
 					}
 				}
 			}

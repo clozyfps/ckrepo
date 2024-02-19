@@ -119,7 +119,7 @@ public class BlackFlashProcedure {
 									_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.ZONE.get(), 1000, 0));
 							}
 						} else if (world.getLevelData().getGameRules().getBoolean(CraftKaisenModGameRules.OP_BLESSED_BY_THE_SPARKS) == true) {
-							if (Math.random() < 0.08) {
+							if (Math.random() < 0.005) {
 								if (world instanceof Level _level) {
 									if (!_level.isClientSide()) {
 										_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:electric")), SoundSource.NEUTRAL, 1, 1);

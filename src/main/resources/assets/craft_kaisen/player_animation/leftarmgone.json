@@ -2,7 +2,7 @@
 	"format_version": "1.8.0",
 	"animations": {
 		"leftarmgone": {
-			"loop": true,
+			"animation_length": 1,
 			"bones": {
 				"left_arm": {
 					"position": {

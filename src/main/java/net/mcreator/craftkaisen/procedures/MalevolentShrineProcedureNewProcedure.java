@@ -19,6 +19,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
 import net.minecraft.core.BlockPos;
+import net.minecraft.client.player.AbstractClientPlayer;
 
 import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
 import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
@@ -27,12 +28,26 @@ import net.mcreator.craftkaisen.CraftKaisenMod;
 
 import java.util.Comparator;
 
+import dev.kosmx.playerAnim.minecraftApi.PlayerAnimationRegistry;
+import dev.kosmx.playerAnim.minecraftApi.PlayerAnimationAccess;
+import dev.kosmx.playerAnim.api.layered.ModifierLayer;
+import dev.kosmx.playerAnim.api.layered.KeyframeAnimationPlayer;
+import dev.kosmx.playerAnim.api.layered.IAnimation;
+
 public class MalevolentShrineProcedureNewProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
 		if (!entity.getPersistentData().getBoolean("domain")) {
 			if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy >= 500) {
+				if (world.isClientSide()) {
+					if (entity instanceof AbstractClientPlayer player) {
+						var animation = (ModifierLayer<IAnimation>) PlayerAnimationAccess.getPlayerAssociatedData(player).get(new ResourceLocation("craft_kaisen", "player_animation"));
+						if (animation != null) {
+							animation.setAnimation(new KeyframeAnimationPlayer(PlayerAnimationRegistry.getAnimation(new ResourceLocation("craft_kaisen", "shrinestart"))));
+						}
+					}
+				}
 				entity.getPersistentData().putString("domaintype", "Malevolent Shrine");
 				{
 					double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy - 500;
@@ -43,6 +58,16 @@ public class MalevolentShrineProcedureNewProcedure {
 				}
 				CraftKaisenMod.queueServerWork(1, () -> {
 					entity.getPersistentData().putBoolean("domain", true);
+				});
+				CraftKaisenMod.queueServerWork(15, () -> {
+					if (world.isClientSide()) {
+						if (entity instanceof AbstractClientPlayer player) {
+							var animation = (ModifierLayer<IAnimation>) PlayerAnimationAccess.getPlayerAssociatedData(player).get(new ResourceLocation("craft_kaisen", "player_animation"));
+							if (animation != null) {
+								animation.setAnimation(new KeyframeAnimationPlayer(PlayerAnimationRegistry.getAnimation(new ResourceLocation("craft_kaisen", "shrineactive"))));
+							}
+						}
+					}
 				});
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
@@ -86,11 +111,29 @@ public class MalevolentShrineProcedureNewProcedure {
 						});
 					});
 				});
+				CraftKaisenMod.queueServerWork(200, () -> {
+					if (world.isClientSide()) {
+						if (entity instanceof AbstractClientPlayer player) {
+							var animation = (ModifierLayer<IAnimation>) PlayerAnimationAccess.getPlayerAssociatedData(player).get(new ResourceLocation("craft_kaisen", "player_animation"));
+							if (animation != null && !animation.isActive()) {
+								animation.setAnimation(new KeyframeAnimationPlayer(PlayerAnimationRegistry.getAnimation(new ResourceLocation("craft_kaisen", "defaultend"))));
+							}
+						}
+					}
+				});
 			} else if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy < 500) {
 				if (entity instanceof Player _player && !_player.level.isClientSide())
 					_player.displayClientMessage(Component.literal(("You need " + new java.text.DecimalFormat("##.##").format(500) + " cursed energy to use this move.")), true);
 			}
 		} else if (entity.getPersistentData().getBoolean("domain")) {
+			if (world.isClientSide()) {
+				if (entity instanceof AbstractClientPlayer player) {
+					var animation = (ModifierLayer<IAnimation>) PlayerAnimationAccess.getPlayerAssociatedData(player).get(new ResourceLocation("craft_kaisen", "player_animation"));
+					if (animation != null && !animation.isActive()) {
+						animation.setAnimation(new KeyframeAnimationPlayer(PlayerAnimationRegistry.getAnimation(new ResourceLocation("craft_kaisen", "defaultend"))));
+					}
+				}
+			}
 			CraftKaisenMod.queueServerWork(1, () -> {
 				entity.getPersistentData().putBoolean("domain", false);
 				if (!world.getEntitiesOfClass(MalevolentShrineEntity.class, AABB.ofSize(new Vec3(x, y, z), 150, 150, 150), e -> true).isEmpty()) {

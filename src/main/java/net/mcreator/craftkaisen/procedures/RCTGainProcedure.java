@@ -45,7 +45,7 @@ public class RCTGainProcedure {
 			return;
 		if (entity.getPersistentData().getBoolean("rct")) {
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-				_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.RCT.get(), 5, 0, false, true));
+				_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.RCT.get(), 5, 0, false, false));
 		}
 		if (!(entity instanceof ServerPlayer _plr2 && _plr2.level instanceof ServerLevel
 				&& _plr2.getAdvancements().getOrStartProgress(_plr2.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:reversed_cursed_technique"))).isDone())) {

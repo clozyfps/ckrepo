@@ -48,6 +48,7 @@ import net.mcreator.craftkaisen.item.NailProjectileItem;
 import net.mcreator.craftkaisen.item.NailItem;
 import net.mcreator.craftkaisen.item.NaginataItem;
 import net.mcreator.craftkaisen.item.MiwaKatanaItem;
+import net.mcreator.craftkaisen.item.MegunaOutfitItem;
 import net.mcreator.craftkaisen.item.MedicineItem;
 import net.mcreator.craftkaisen.item.MahoragaWheelItem;
 import net.mcreator.craftkaisen.item.MahoragaOutfitItem;
@@ -289,6 +290,8 @@ public class CraftKaisenModItems {
 	public static final RegistryObject<Item> GOJO_OUTFIT_LEGGINGS = REGISTRY.register("gojo_outfit_leggings", () -> new GojoOutfitItem.Leggings());
 	public static final RegistryObject<Item> NAOBITO_OUTFIT_CHESTPLATE = REGISTRY.register("naobito_outfit_chestplate", () -> new NaobitoOutfitItem.Chestplate());
 	public static final RegistryObject<Item> NAOBITO_OUTFIT_LEGGINGS = REGISTRY.register("naobito_outfit_leggings", () -> new NaobitoOutfitItem.Leggings());
+	public static final RegistryObject<Item> MEGUNA_OUTFIT_CHESTPLATE = REGISTRY.register("meguna_outfit_chestplate", () -> new MegunaOutfitItem.Chestplate());
+	public static final RegistryObject<Item> MEGUNA_OUTFIT_LEGGINGS = REGISTRY.register("meguna_outfit_leggings", () -> new MegunaOutfitItem.Leggings());
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));

@@ -21,6 +21,7 @@ import net.mcreator.craftkaisen.client.renderer.UnlimitedVoidAccelerateRenderer;
 import net.mcreator.craftkaisen.client.renderer.TojiFushiguroRenderer;
 import net.mcreator.craftkaisen.client.renderer.TogeInumakiRenderer;
 import net.mcreator.craftkaisen.client.renderer.ToadRenderer;
+import net.mcreator.craftkaisen.client.renderer.ThrowPlayerMobRenderer;
 import net.mcreator.craftkaisen.client.renderer.TenShadowRabbitRenderer;
 import net.mcreator.craftkaisen.client.renderer.TakadaRenderer;
 import net.mcreator.craftkaisen.client.renderer.SuguruGetoRenderer;
@@ -229,5 +230,6 @@ public class CraftKaisenModEntityRenderers {
 		event.registerEntityRenderer(CraftKaisenModEntities.UNLIMITED_VOID_ACCELERATE.get(), UnlimitedVoidAccelerateRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.NAOBITO.get(), NaobitoRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.PIERCING_BLOOD_PROJECTILE.get(), ThrownItemRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.THROW_PLAYER_MOB.get(), ThrowPlayerMobRenderer::new);
 	}
 }

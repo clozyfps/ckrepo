@@ -36,8 +36,8 @@ public class UnlimitedblackholeParticle extends TextureSheetParticle {
 		super(world, x, y, z);
 		this.spriteSet = spriteSet;
 		this.setSize(0.2f, 0.2f);
-		this.quadSize *= 10f;
-		this.lifetime = 100;
+		this.quadSize *= 20f;
+		this.lifetime = 250;
 		this.gravity = 0f;
 		this.hasPhysics = false;
 		this.xd = vx * 1;

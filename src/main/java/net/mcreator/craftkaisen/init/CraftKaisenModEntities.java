@@ -29,6 +29,7 @@ import net.mcreator.craftkaisen.entity.TwistRangedProjectileEntity;
 import net.mcreator.craftkaisen.entity.TojiFushiguroEntity;
 import net.mcreator.craftkaisen.entity.TogeInumakiEntity;
 import net.mcreator.craftkaisen.entity.ToadEntity;
+import net.mcreator.craftkaisen.entity.ThrowPlayerMobEntity;
 import net.mcreator.craftkaisen.entity.TenShadowRabbitEntity;
 import net.mcreator.craftkaisen.entity.TakadaEntity;
 import net.mcreator.craftkaisen.entity.SuguruGetoEntity;
@@ -550,6 +551,8 @@ public class CraftKaisenModEntities {
 	public static final RegistryObject<EntityType<PiercingBloodProjectileEntity>> PIERCING_BLOOD_PROJECTILE = register("projectile_piercing_blood_projectile",
 			EntityType.Builder.<PiercingBloodProjectileEntity>of(PiercingBloodProjectileEntity::new, MobCategory.MISC).setCustomClientFactory(PiercingBloodProjectileEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
 					.setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<ThrowPlayerMobEntity>> THROW_PLAYER_MOB = register("throw_player_mob", EntityType.Builder.<ThrowPlayerMobEntity>of(ThrowPlayerMobEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
+			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(ThrowPlayerMobEntity::new).fireImmune().sized(0.6f, 1.8f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -643,6 +646,7 @@ public class CraftKaisenModEntities {
 			BindingIceBlockEntity.init();
 			UnlimitedVoidAccelerateEntity.init();
 			NaobitoEntity.init();
+			ThrowPlayerMobEntity.init();
 		});
 	}
 
@@ -733,5 +737,6 @@ public class CraftKaisenModEntities {
 		event.put(BINDING_ICE_BLOCK.get(), BindingIceBlockEntity.createAttributes().build());
 		event.put(UNLIMITED_VOID_ACCELERATE.get(), UnlimitedVoidAccelerateEntity.createAttributes().build());
 		event.put(NAOBITO.get(), NaobitoEntity.createAttributes().build());
+		event.put(THROW_PLAYER_MOB.get(), ThrowPlayerMobEntity.createAttributes().build());
 	}
 }

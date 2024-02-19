@@ -25,7 +25,7 @@ public class RCTMobEffect extends MobEffect {
 
 	@Override
 	public void applyEffectTick(LivingEntity entity, int amplifier) {
-		RCTOnEffectActiveTickProcedure.execute(entity);
+		RCTOnEffectActiveTickProcedure.execute(entity.level, entity.getX(), entity.getY(), entity.getZ(), entity);
 	}
 
 	@Override

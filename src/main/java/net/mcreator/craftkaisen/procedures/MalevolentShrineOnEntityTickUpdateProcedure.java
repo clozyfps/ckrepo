@@ -14,6 +14,7 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
 import net.minecraft.tags.TagKey;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
@@ -49,8 +50,8 @@ public class MalevolentShrineOnEntityTickUpdateProcedure {
 				entity.discard();
 		}
 		if (world.getLevelData().getGameRules().getBoolean(CraftKaisenModGameRules.MALEVOLENT_SHRINE_BLOCK_DAMAGE) == true) {
-			int horizontalRadiusHemiTop = (int) (entity.getPersistentData().getDouble("shrineTick") / 15) - 1;
-			int verticalRadiusHemiTop = (int) (entity.getPersistentData().getDouble("shrineTick") / 15);
+			int horizontalRadiusHemiTop = (int) (entity.getPersistentData().getDouble("shrineTick") / 30) - 1;
+			int verticalRadiusHemiTop = (int) (entity.getPersistentData().getDouble("shrineTick") / 30);
 			int yIterationsHemiTop = verticalRadiusHemiTop;
 			for (int i = 0; i < yIterationsHemiTop; i++) {
 				if (i == verticalRadiusHemiTop) {
@@ -62,12 +63,14 @@ public class MalevolentShrineOnEntityTickUpdateProcedure {
 								+ (zi * zi) / (double) (horizontalRadiusHemiTop * horizontalRadiusHemiTop);
 						if (distanceSq <= 1.0) {
 							if (!((world.getBlockState(BlockPos.containing(x + xi, y + i, z + zi))).getBlock() == Blocks.AIR)) {
-								world.destroyBlock(BlockPos.containing(x + xi, y + i, z + zi), false);
-								world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), Blocks.AIR.defaultBlockState(), 3);
-								if (world instanceof ServerLevel _level)
-									_level.sendParticles(ParticleTypes.SWEEP_ATTACK, x + xi, y + i, z + zi, 1, 0.1, 1, 0.1, 0);
-								if (world instanceof ServerLevel _level)
-									_level.sendParticles(ParticleTypes.CAMPFIRE_COSY_SMOKE, x + xi, y + i, z + zi, 1, 0.1, 1, 0.1, 0);
+								if ((world.getBlockState(BlockPos.containing(x + xi, y + i, z + zi))).is(BlockTags.create(new ResourceLocation("craft_kaisen:non_solid")))) {
+									world.destroyBlock(BlockPos.containing(x + xi, y + i, z + zi), false);
+									world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), Blocks.AIR.defaultBlockState(), 3);
+									if (world instanceof ServerLevel _level)
+										_level.sendParticles(ParticleTypes.SWEEP_ATTACK, x + xi, y + i, z + zi, 1, 0.1, 1, 0.1, 0);
+									if (world instanceof ServerLevel _level)
+										_level.sendParticles(ParticleTypes.CAMPFIRE_COSY_SMOKE, x + xi, y + i, z + zi, 1, 0.1, 1, 0.1, 0);
+								}
 							}
 						}
 					}
@@ -79,7 +82,7 @@ public class MalevolentShrineOnEntityTickUpdateProcedure {
 			List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(100 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).collect(Collectors.toList());
 			for (Entity entityiterator : _entfound) {
 				if (!(entity == entityiterator) && !(entity instanceof TamableAnimal _tamIsTamedBy && entityiterator instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false)
-						&& !(entityiterator instanceof LivingEntity _livEnt32 && _livEnt32.hasEffect(CraftKaisenModMobEffects.SIMPLE_DOMAIN.get()))
+						&& !(entityiterator instanceof LivingEntity _livEnt37 && _livEnt37.hasEffect(CraftKaisenModMobEffects.SIMPLE_DOMAIN.get()))
 						&& !(entity.getPersistentData().getString("tamer")).equals(entityiterator.getDisplayName().getString())) {
 					if (entityiterator.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("craft_kaisen:cursed_spirits")))) {
 						if (world instanceof ServerLevel _level)
@@ -99,7 +102,7 @@ public class MalevolentShrineOnEntityTickUpdateProcedure {
 					}
 					entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:slashing_damage"))),
 							(entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null)), 50);
-				} else if (entityiterator instanceof LivingEntity _livEnt53 && _livEnt53.hasEffect(CraftKaisenModMobEffects.SIMPLE_DOMAIN.get()) && !(entity == entityiterator)
+				} else if (entityiterator instanceof LivingEntity _livEnt58 && _livEnt58.hasEffect(CraftKaisenModMobEffects.SIMPLE_DOMAIN.get()) && !(entity == entityiterator)
 						&& !(entity instanceof TamableAnimal _tamIsTamedBy && entityiterator instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false)) {
 					if (Math.random() < 0.01) {
 						entityiterator.getPersistentData().putDouble("simpledomainlevel", (entityiterator.getPersistentData().getDouble("simpledomainlevel") - 0.1));

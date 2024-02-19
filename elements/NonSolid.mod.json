@@ -472,6 +472,264 @@
       },
       {
         "value": "Blocks.HANGING_ROOTS"
+      },
+      {
+        "value": "Blocks.GLASS"
+      },
+      {
+        "value": "Blocks.TINTED_GLASS"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS#0"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS#1"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS#2"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS#3"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS#4"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS#5"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS#6"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS#7"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS#8"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS#9"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS#10"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS#11"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS#12"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS#13"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS#14"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS#15"
+      },
+      {
+        "value": "Blocks.GLASS_PANE"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS_PANE#0"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS_PANE#1"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS_PANE#2"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS_PANE#3"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS_PANE#4"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS_PANE#5"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS_PANE#6"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS_PANE#7"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS_PANE#8"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS_PANE#9"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS_PANE#10"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS_PANE#11"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS_PANE#12"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS_PANE#13"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS_PANE#14"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS_PANE#15"
+      },
+      {
+        "value": "Blocks.DIRT#0"
+      },
+      {
+        "value": "Blocks.DIRT#1"
+      },
+      {
+        "value": "Blocks.DIRT#2"
+      },
+      {
+        "value": "Blocks.ROOTED_DIRT"
+      },
+      {
+        "value": "Blocks.LOG#0"
+      },
+      {
+        "value": "Blocks.LOG#1"
+      },
+      {
+        "value": "Blocks.LOG#2"
+      },
+      {
+        "value": "Blocks.LOG#3"
+      },
+      {
+        "value": "Blocks.LOG2#0"
+      },
+      {
+        "value": "Blocks.LOG2#1"
+      },
+      {
+        "value": "Blocks.WARPED_STEM"
+      },
+      {
+        "value": "Blocks.CRIMSON_STEM"
+      },
+      {
+        "value": "Blocks.MANGROVE_LOG"
+      },
+      {
+        "value": "Blocks.MANGROVE_ROOTS"
+      },
+      {
+        "value": "Blocks.MUDDY_MANGROVE_ROOTS"
+      },
+      {
+        "value": "Blocks.STRIPPED_OAK_LOG"
+      },
+      {
+        "value": "Blocks.STRIPPED_SPRUCE_LOG"
+      },
+      {
+        "value": "Blocks.STRIPPED_BIRCH_LOG"
+      },
+      {
+        "value": "Blocks.STRIPPED_JUNGLE_LOG"
+      },
+      {
+        "value": "Blocks.STRIPPED_ACACIA_LOG"
+      },
+      {
+        "value": "Blocks.STRIPPED_DARK_OAK_LOG"
+      },
+      {
+        "value": "Blocks.STRIPPED_WARPED_STEM"
+      },
+      {
+        "value": "Blocks.STRIPPED_CRIMSON_STEM"
+      },
+      {
+        "value": "Blocks.STRIPPED_MANGROVE_LOG"
+      },
+      {
+        "value": "Blocks.OAK_WOOD"
+      },
+      {
+        "value": "Blocks.SPRUCE_WOOD"
+      },
+      {
+        "value": "Blocks.BIRCH_WOOD"
+      },
+      {
+        "value": "Blocks.JUNGLE_WOOD"
+      },
+      {
+        "value": "Blocks.ACACIA_WOOD"
+      },
+      {
+        "value": "Blocks.DARK_OAK_WOOD"
+      },
+      {
+        "value": "Blocks.WARPED_HYPHAE"
+      },
+      {
+        "value": "Blocks.CRIMSON_HYPHAE"
+      },
+      {
+        "value": "Blocks.MANGROVE_WOOD"
+      },
+      {
+        "value": "Blocks.STRIPPED_OAK_WOOD"
+      },
+      {
+        "value": "Blocks.STRIPPED_SPRUCE_WOOD"
+      },
+      {
+        "value": "Blocks.STRIPPED_BIRCH_WOOD"
+      },
+      {
+        "value": "Blocks.STRIPPED_JUNGLE_WOOD"
+      },
+      {
+        "value": "Blocks.STRIPPED_ACACIA_WOOD"
+      },
+      {
+        "value": "Blocks.STRIPPED_DARK_OAK_WOOD"
+      },
+      {
+        "value": "Blocks.STRIPPED_WARPED_HYPHAE"
+      },
+      {
+        "value": "Blocks.STRIPPED_CRIMSON_HYPHAE"
+      },
+      {
+        "value": "Blocks.STRIPPED_MANGROVE_WOOD"
+      },
+      {
+        "value": "Blocks.LEAVES#0"
+      },
+      {
+        "value": "Blocks.LEAVES#1"
+      },
+      {
+        "value": "Blocks.LEAVES#2"
+      },
+      {
+        "value": "Blocks.LEAVES#3"
+      },
+      {
+        "value": "Blocks.LEAVES2#0"
+      },
+      {
+        "value": "Blocks.LEAVES2#1"
+      },
+      {
+        "value": "Blocks.MANGROVE_LEAVES"
+      },
+      {
+        "value": "Blocks.AZALEA_LEAVES"
+      },
+      {
+        "value": "Blocks.FLOWERING_AZALEA_LEAVES"
       }
     ],
     "functions": [],

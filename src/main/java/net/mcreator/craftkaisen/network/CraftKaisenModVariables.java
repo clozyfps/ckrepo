@@ -189,6 +189,10 @@ public class CraftKaisenModVariables {
 				clone.rightArmDamage = original.rightArmDamage;
 				clone.leftLegDamage = original.leftLegDamage;
 				clone.rightLegDamage = original.rightLegDamage;
+				clone.RightLegGone = original.RightLegGone;
+				clone.LeftLegGone = original.LeftLegGone;
+				clone.RightArmGone = original.RightArmGone;
+				clone.LeftArmGone = original.LeftArmGone;
 			}
 		}
 
@@ -499,6 +503,10 @@ public class CraftKaisenModVariables {
 		public double rightArmDamage = 0;
 		public double leftLegDamage = 0;
 		public double rightLegDamage = 0;
+		public boolean RightLegGone = false;
+		public boolean LeftLegGone = false;
+		public boolean RightArmGone = false;
+		public boolean LeftArmGone = false;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -622,6 +630,10 @@ public class CraftKaisenModVariables {
 			nbt.putDouble("rightArmDamage", rightArmDamage);
 			nbt.putDouble("leftLegDamage", leftLegDamage);
 			nbt.putDouble("rightLegDamage", rightLegDamage);
+			nbt.putBoolean("RightLegGone", RightLegGone);
+			nbt.putBoolean("LeftLegGone", LeftLegGone);
+			nbt.putBoolean("RightArmGone", RightArmGone);
+			nbt.putBoolean("LeftArmGone", LeftArmGone);
 			return nbt;
 		}
 
@@ -742,6 +754,10 @@ public class CraftKaisenModVariables {
 			rightArmDamage = nbt.getDouble("rightArmDamage");
 			leftLegDamage = nbt.getDouble("leftLegDamage");
 			rightLegDamage = nbt.getDouble("rightLegDamage");
+			RightLegGone = nbt.getBoolean("RightLegGone");
+			LeftLegGone = nbt.getBoolean("LeftLegGone");
+			RightArmGone = nbt.getBoolean("RightArmGone");
+			LeftArmGone = nbt.getBoolean("LeftArmGone");
 		}
 	}
 
@@ -881,6 +897,10 @@ public class CraftKaisenModVariables {
 					variables.rightArmDamage = message.data.rightArmDamage;
 					variables.leftLegDamage = message.data.leftLegDamage;
 					variables.rightLegDamage = message.data.rightLegDamage;
+					variables.RightLegGone = message.data.RightLegGone;
+					variables.LeftLegGone = message.data.LeftLegGone;
+					variables.RightArmGone = message.data.RightArmGone;
+					variables.LeftArmGone = message.data.LeftArmGone;
 				}
 			});
 			context.setPacketHandled(true);

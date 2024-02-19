@@ -1,0 +1,26 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"shrineactive": {
+			"loop": true,
+			"bones": {
+				"right_arm": {
+					"rotation": {
+						"vector": [-118.87562, -39.65742, 13.20917]
+					},
+					"position": {
+						"vector": [0, -3, 0]
+					}
+				},
+				"left_arm": {
+					"rotation": {
+						"vector": [-102.39281, 34.76403, 1.64463]
+					},
+					"position": {
+						"vector": [0, -2, 0]
+					}
+				}
+			}
+		}
+	}
+}

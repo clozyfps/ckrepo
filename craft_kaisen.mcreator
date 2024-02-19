@@ -2773,6 +2773,18 @@
             "type": "entity"
           },
           {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
             "name": "world",
             "type": "world"
           }
@@ -3971,6 +3983,10 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -5292,10 +5308,6 @@
           {
             "name": "entity",
             "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ]
       },
@@ -9836,6 +9848,10 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -13073,6 +13089,10 @@
           {
             "name": "sourceentity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -15376,6 +15396,22 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -19846,7 +19882,8 @@
             "type": "world"
           }
         ]
-      }
+      },
+      "path": "~/Armor/Procedures"
     },
     {
       "name": "HollowPurpleGojo",
@@ -28607,12 +28644,24 @@
             "type": "entity"
           },
           {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
             "name": "world",
             "type": "world"
           }
         ]
       },
-      "path": "~/LimbSystem"
+      "path": "~/SecretFolder/LimbSystem"
     },
     {
       "name": "MainDamageSystem",
@@ -28633,10 +28682,14 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "amount",
+            "type": "number"
           }
         ]
       },
-      "path": "~/LimbSystem"
+      "path": "~/SecretFolder/LimbSystem"
     },
     {
       "name": "CheckLimbDamage",
@@ -28655,12 +28708,372 @@
             "type": "entity"
           },
           {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
             "name": "world",
             "type": "world"
           }
         ]
       },
-      "path": "~/LimbSystem"
+      "path": "~/SecretFolder/LimbSystem"
+    },
+    {
+      "name": "RemovedLimbsTick",
+      "type": "procedure",
+      "sortid": 1250,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "removed_limbs_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/RemovedLimbsTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/SecretFolder/LimbSystem"
+    },
+    {
+      "name": "MegunaOutfit",
+      "type": "armor",
+      "sortid": 1251,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "meguna_outfit",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/models/item/meguna_outfit_leggings.json",
+          "src/main/java/net/mcreator/craftkaisen/item/MegunaOutfitItem.java",
+          "src/main/resources/assets/craft_kaisen/models/item/meguna_outfit_chestplate.json"
+        ]
+      },
+      "path": "~/Armor"
+    },
+    {
+      "name": "ThrowProcedure",
+      "type": "procedure",
+      "sortid": 1252,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "throw_procedure",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/ThrowProcedureProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/SukunaVessel"
+    },
+    {
+      "name": "ThrownTick",
+      "type": "procedure",
+      "sortid": 1253,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "thrown_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/ThrownTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/SukunaVessel"
+    },
+    {
+      "name": "FireParticle",
+      "type": "particle",
+      "sortid": 1254,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fire_particle",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/particles/fire_particle.json",
+          "src/main/java/net/mcreator/craftkaisen/client/particle/FireParticleParticle.java"
+        ]
+      },
+      "path": "~/Particles"
+    },
+    {
+      "name": "FireArrowMobProjectileProjectileHitsBlock",
+      "type": "procedure",
+      "sortid": 1255,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fire_arrow_mob_projectile_projectile_hits_block",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/FireArrowMobProjectileProjectileHitsBlockProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Projectile"
+    },
+    {
+      "name": "FireArrowMobProjectileProjectileHitsBlock2",
+      "type": "procedure",
+      "sortid": 1256,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fire_arrow_mob_projectile_projectile_hits_block_2",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/FireArrowMobProjectileProjectileHitsBlock2Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Projectile/Procedures"
+    },
+    {
+      "name": "Rctset",
+      "type": "procedure",
+      "sortid": 1257,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rctset",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/RctsetProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Commands/Procedures"
+    },
+    {
+      "name": "RctMasterySet",
+      "type": "procedure",
+      "sortid": 1258,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rct_mastery_set",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/RctMasterySetProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Commands/Procedures"
+    },
+    {
+      "name": "DomainMobs",
+      "type": "tag",
+      "sortid": 1259,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "domain_mobs",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/tags/entity_types/domain_mobs.json"
+        ]
+      },
+      "path": "~/Tags"
+    },
+    {
+      "name": "ThrowPlayerMobOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 1260,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "throw_player_mob_on_entity_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/ThrowPlayerMobOnEntityTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Abilities"
+    },
+    {
+      "name": "ThrowPlayerMob",
+      "type": "livingentity",
+      "sortid": 1261,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "throw_player_mob",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/ThrowPlayerMobRenderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/ThrowPlayerMobEntity.java"
+        ]
+      },
+      "path": "~/Mobs/Abilities"
+    },
+    {
+      "name": "SuperJump",
+      "type": "procedure",
+      "sortid": 1262,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "super_jump",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/SuperJumpProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures"
     }
   ],
   "variable_elements": [
@@ -29413,6 +29826,30 @@
       "type": "number",
       "scope": "player_lifetime",
       "value": "0"
+    },
+    {
+      "name": "RightLegGone",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
+    },
+    {
+      "name": "LeftLegGone",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
+    },
+    {
+      "name": "RightArmGone",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
+    },
+    {
+      "name": "LeftArmGone",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
     }
   ],
   "sound_elements": [
@@ -29617,11 +30054,11 @@
       "item.craft_kaisen.mahoraga_wheel_helmet": "Mahoraga Wheel",
       "gui.craft_kaisen.imbue_gui.ImbueValue": "Cursed Energy Amount",
       "entity.craft_kaisen.round_deer": "Round Deer",
-      "entity.craft_kaisen.icile": "Icile",
       "advancements.ten_shadows_technique.title": "Ten Shadows Technique",
+      "entity.craft_kaisen.icile": "Icile",
       "item.craft_kaisen.ember_insect_spawn_egg": "Ember Insect Spawn Egg",
-      "item.craft_kaisen.choso_armor_leggings": "Choso Pants",
       "entity.craft_kaisen.inventory_curse_mob": "Inventory Curse Mob",
+      "item.craft_kaisen.choso_armor_leggings": "Choso Pants",
       "entity.craft_kaisen.jinichi_zenin": "Jinichi Zenin",
       "advancements.grade_4.descr": "Reach The Required Fame.",
       "gui.craft_kaisen.soul_multiplicity_overlay.label_shift_soul_summon": "SHIFT - Soul Summon",
@@ -29629,22 +30066,22 @@
       "advancements.divine_general_mahoraga.descr": "Tame Mahoraga",
       "item.craft_kaisen.distorted_body_leggings": "Distorted Body Legs",
       "item.craft_kaisen.toge_inumaki_spawn_egg": "Toge Inumaki Spawn Egg",
-      "gui.craft_kaisen.body_shape_overlay.label_ctrl_rope": "CTRL - Rope",
       "gui.craft_kaisen.soul_multiplicity_overlay.label_alt_soul_isomer": "ALT - Soul Isomer",
+      "gui.craft_kaisen.body_shape_overlay.label_ctrl_rope": "CTRL - Rope",
       "block.craft_kaisen.ice_domain_wall": "Ice Domain Wall",
       "item.craft_kaisen.naginata": "Naginata",
-      "item.craft_kaisen.ski_mask_helmet": "Ski Mask",
-      "advancements.special_grade.title": "Special Grade",
       "gui.craft_kaisen.main_menu.label_0": "0",
+      "advancements.special_grade.title": "Special Grade",
+      "item.craft_kaisen.ski_mask_helmet": "Ski Mask",
       "advancements.history_of_jujutsu.descr": "Find a Jujutsu History Book",
       "item.craft_kaisen.takada_spawn_egg": "Takada Spawn Egg",
       "item_group.craft_kaisen.ck_weapons": "Ck Weapons",
       "advancements.the_sorcerer_killer.descr": "Kill Toji Fushiguro",
-      "key.craft_kaisen.reverse_cursed_technique": "Reverse Cursed Technique",
       "entity.craft_kaisen.red_open_door": "Red Open Door",
+      "key.craft_kaisen.reverse_cursed_technique": "Reverse Cursed Technique",
       "entity.craft_kaisen.mei_mei": "Mei Mei",
-      "death.attack.crushing_damage.player": "%1$s died whilst trying to escape %2$s",
       "death.attack.repelling_damage": "%1$s died to repulsion",
+      "death.attack.crushing_damage.player": "%1$s died whilst trying to escape %2$s",
       "advancements.simple_domain_learned.title": "Simple Domain",
       "advancements.perfect_preparation.descr": "Kill Kenjaku",
       "item.craft_kaisen.mahito_outfit_chestplate": "Mahito Outfit ",
@@ -29997,6 +30434,7 @@
       "entity.craft_kaisen.malevolent_shrine": "Malevolent Shrine",
       "item.craft_kaisen.toji_outfit_leggings": "Toji Pants",
       "entity.craft_kaisen.mahito_clone": "Mahito Clone",
+      "item.craft_kaisen.meguna_outfit_leggings": "Meguna Outfit",
       "item.craft_kaisen.bandage_blind_fold_helmet": "Bandage Blind Fold",
       "item.craft_kaisen.cursed_glasses": "Cursed Glasses",
       "advancements.grade_3.descr": "Reach The Required Fame.",
@@ -30089,6 +30527,7 @@
       "entity.craft_kaisen.unlimited_void_mob": "Unlimited Void Mob",
       "item.craft_kaisen.run_away_ranged": "Run Away Ranged",
       "item.craft_kaisen.heian_era_sukuna_spawn_egg": "Heian Era Sukuna Spawn Egg",
+      "item.craft_kaisen.meguna_outfit_chestplate": "Meguna Outfit",
       "item.craft_kaisen.hajime_kashimo_spawn_egg": "\"The God of Lightning\" Hajime Kashimo Spawn Egg",
       "advancements.great_serpent_advancement.title": "Great Serpent",
       "gui.craft_kaisen.domain_clash.button_x": "X",
@@ -30107,6 +30546,7 @@
       "item.craft_kaisen.great_serpent_spawn_egg": "Great Serpent Spawn Egg",
       "advancements.divine_general_mahoraga.title": "Unable To Tame",
       "advancements.rika_tamed.title": "Rika",
+      "entity.craft_kaisen.throw_player_mob": "Throw Player Mob",
       "advancements.blessed_by_the_sparks_advancement.descr": "Your chances for landing a black flash are significantly increased.",
       "advancements.rabbit_escape.title": "Rabbit Escape",
       "entity.craft_kaisen.nanami_kento": "Nanami Kento",
@@ -30213,7 +30653,12 @@
     "children": [
       {
         "name": "Armor",
-        "children": []
+        "children": [
+          {
+            "name": "Procedures",
+            "children": []
+          }
+        ]
       },
       {
         "name": "Abilities",
@@ -30546,14 +30991,19 @@
         ]
       },
       {
-        "name": "LimbSystem",
-        "children": []
-      },
-      {
         "name": "Commands",
         "children": [
           {
             "name": "Procedures",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "SecretFolder",
+        "children": [
+          {
+            "name": "LimbSystem",
             "children": []
           }
         ]
