@@ -1,8 +1,19 @@
 package net.mcreator.craftkaisen.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.chat.Component;
+import net.minecraft.commands.arguments.EntityArgument;
+import net.minecraft.commands.CommandSourceStack;
 
-import javax.annotation.Nullable;
+import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
+
+import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import com.mojang.brigadier.context.CommandContext;
+import com.mojang.brigadier.arguments.DoubleArgumentType;
 
 public class RctMasterySetProcedure {
 	public static void execute(CommandContext<CommandSourceStack> arguments, Entity entity) {

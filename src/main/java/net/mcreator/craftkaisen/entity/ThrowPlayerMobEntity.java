@@ -1,17 +1,30 @@
 
 package net.mcreator.craftkaisen.entity;
 
-import net.minecraft.world.entity.ai.attributes.Attribute;
-import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.level.material.Material;
-import net.minecraft.nbt.Tag;
-import net.minecraft.network.syncher.EntityDataAccessor;
-import net.minecraft.sounds.SoundEvent;
+import net.minecraftforge.network.PlayMessages;
+import net.minecraftforge.network.NetworkHooks;
 
-import javax.annotation.Nullable;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.entity.projectile.ThrownPotion;
+import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
+import net.minecraft.world.entity.MobType;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.AreaEffectCloud;
+import net.minecraft.world.damagesource.DamageTypes;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.network.protocol.Packet;
+
+import net.mcreator.craftkaisen.procedures.ThrowPlayerMobOnEntityTickUpdateProcedure;
+import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
 
 public class ThrowPlayerMobEntity extends Monster {
-
 	public ThrowPlayerMobEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(CraftKaisenModEntities.THROW_PLAYER_MOB.get(), world);
 	}
@@ -21,7 +34,6 @@ public class ThrowPlayerMobEntity extends Monster {
 		maxUpStep = 0.6f;
 		xpReward = 0;
 		setNoAi(true);
-
 	}
 
 	@Override
@@ -92,7 +104,6 @@ public class ThrowPlayerMobEntity extends Monster {
 	}
 
 	public static void init() {
-
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
@@ -102,8 +113,6 @@ public class ThrowPlayerMobEntity extends Monster {
 		builder = builder.add(Attributes.ARMOR, 0);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 3);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 16);
-
 		return builder;
 	}
-
 }

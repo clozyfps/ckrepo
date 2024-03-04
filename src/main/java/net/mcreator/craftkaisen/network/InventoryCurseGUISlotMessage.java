@@ -1,9 +1,32 @@
 
 package net.mcreator.craftkaisen.network;
 
+import net.minecraftforge.network.NetworkEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+
+import net.minecraft.world.level.Level;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.core.BlockPos;
+
+import net.mcreator.craftkaisen.world.inventory.InventoryCurseGUIMenu;
+import net.mcreator.craftkaisen.procedures.Slot7ChangeProcedure;
+import net.mcreator.craftkaisen.procedures.Slot6ChangeProcedure;
+import net.mcreator.craftkaisen.procedures.Slot5ChangeProcedure;
+import net.mcreator.craftkaisen.procedures.Slot4ChangeProcedure;
+import net.mcreator.craftkaisen.procedures.Slot3ChangeProcedure;
+import net.mcreator.craftkaisen.procedures.Slot2ChangeProcedure;
+import net.mcreator.craftkaisen.procedures.Slot1ChangeProcedure;
+import net.mcreator.craftkaisen.procedures.Slot0ChangeProcedure;
+import net.mcreator.craftkaisen.CraftKaisenMod;
+
+import java.util.function.Supplier;
+import java.util.HashMap;
+
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class InventoryCurseGUISlotMessage {
-
 	private final int slotID, x, y, z, changeType, meta;
 
 	public InventoryCurseGUISlotMessage(int slotID, int x, int y, int z, int changeType, int meta) {
@@ -43,7 +66,6 @@ public class InventoryCurseGUISlotMessage {
 			int x = message.x;
 			int y = message.y;
 			int z = message.z;
-
 			handleSlotAction(entity, slotID, changeType, meta, x, y, z);
 		});
 		context.setPacketHandled(true);
@@ -52,42 +74,40 @@ public class InventoryCurseGUISlotMessage {
 	public static void handleSlotAction(Player entity, int slot, int changeType, int meta, int x, int y, int z) {
 		Level world = entity.level;
 		HashMap guistate = InventoryCurseGUIMenu.guistate;
-
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(new BlockPos(x, y, z)))
 			return;
-
 		if (slot == 0 && changeType == 0) {
 
-			Slot0ChangeProcedure.execute();
+			Slot0ChangeProcedure.execute(entity);
 		}
 		if (slot == 1 && changeType == 0) {
 
-			Slot1ChangeProcedure.execute();
+			Slot1ChangeProcedure.execute(entity);
 		}
 		if (slot == 2 && changeType == 0) {
 
-			Slot2ChangeProcedure.execute();
+			Slot2ChangeProcedure.execute(entity);
 		}
 		if (slot == 3 && changeType == 0) {
 
-			Slot3ChangeProcedure.execute();
+			Slot3ChangeProcedure.execute(entity);
 		}
 		if (slot == 4 && changeType == 0) {
 
-			Slot4ChangeProcedure.execute();
+			Slot4ChangeProcedure.execute(entity);
 		}
 		if (slot == 5 && changeType == 0) {
 
-			Slot5ChangeProcedure.execute();
+			Slot5ChangeProcedure.execute(entity);
 		}
 		if (slot == 6 && changeType == 0) {
 
-			Slot6ChangeProcedure.execute();
+			Slot6ChangeProcedure.execute(entity);
 		}
 		if (slot == 7 && changeType == 0) {
 
-			Slot7ChangeProcedure.execute();
+			Slot7ChangeProcedure.execute(entity);
 		}
 	}
 
@@ -95,5 +115,4 @@ public class InventoryCurseGUISlotMessage {
 	public static void registerMessage(FMLCommonSetupEvent event) {
 		CraftKaisenMod.addNetworkMessage(InventoryCurseGUISlotMessage.class, InventoryCurseGUISlotMessage::buffer, InventoryCurseGUISlotMessage::new, InventoryCurseGUISlotMessage::handler);
 	}
-
 }

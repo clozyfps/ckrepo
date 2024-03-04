@@ -1,8 +1,17 @@
 package net.mcreator.craftkaisen.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.commands.arguments.EntityArgument;
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.advancements.AdvancementProgress;
+import net.minecraft.advancements.Advancement;
 
-import javax.annotation.Nullable;
+import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
+
+import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import com.mojang.brigadier.context.CommandContext;
 
 public class RctsetProcedure {
 	public static void execute(CommandContext<CommandSourceStack> arguments, Entity entity) {

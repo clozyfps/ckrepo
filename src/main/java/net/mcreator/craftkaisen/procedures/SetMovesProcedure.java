@@ -320,18 +320,26 @@ public class SetMovesProcedure {
 				}
 			}
 			if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Private Pure Love Train")) {
-				entity.getPersistentData().putDouble("maxMoves", 3);
+				entity.getPersistentData().putDouble("maxMoves", 5);
 				if (entity.getPersistentData().getDouble("moveNumber") == 1) {
-					entity.getPersistentData().putString("moveDisplay", "Doors");
-					entity.getPersistentData().putDouble("moveCost", 6);
+					entity.getPersistentData().putString("moveDisplay", "Idle Death Gamble");
+					entity.getPersistentData().putDouble("moveCost", 25);
 				}
 				if (entity.getPersistentData().getDouble("moveNumber") == 2) {
-					entity.getPersistentData().putString("moveDisplay", "Pachinko Balls");
+					entity.getPersistentData().putString("moveDisplay", "Shutter Doors");
 					entity.getPersistentData().putDouble("moveCost", 10);
 				}
 				if (entity.getPersistentData().getDouble("moveNumber") == 3) {
-					entity.getPersistentData().putString("moveDisplay", "Idle Death Gamble");
-					entity.getPersistentData().putDouble("moveCost", 25);
+					entity.getPersistentData().putString("moveDisplay", "Pachinko Balls");
+					entity.getPersistentData().putDouble("moveCost", 12);
+				}
+				if (entity.getPersistentData().getDouble("moveNumber") == 3) {
+					entity.getPersistentData().putString("moveDisplay", "Contanier Throw");
+					entity.getPersistentData().putDouble("moveCost", 17);
+				}
+				if (entity.getPersistentData().getDouble("moveNumber") == 3) {
+					entity.getPersistentData().putString("moveDisplay", "Pachinko Roll");
+					entity.getPersistentData().putDouble("moveCost", 20);
 				}
 			}
 			if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Missile Fists")) {
